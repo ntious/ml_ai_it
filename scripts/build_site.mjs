@@ -30,6 +30,8 @@ for (const page of pages) {
   if (!title) throw new Error(`Missing page title: ${page.source}`);
   const usedIds = new Map();
   let body = marked.parse(markdown, { gfm: true });
+  // Overflowing examples need an explicit keyboard-focus target.
+  body = body.replaceAll('<pre>', '<pre tabindex="0" aria-label="Code or text example">');
   body = body.replace(/<h([1-6])>([\s\S]*?)<\/h\1>/g, (_, level, text) => {
     const base = text.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     const count = usedIds.get(base) || 0; usedIds.set(base, count + 1);
