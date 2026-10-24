@@ -1,5 +1,6 @@
 """Behavioral checks for descriptive exploration and its evidence artifacts."""
 import csv
+import hashlib
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -46,6 +47,8 @@ class ExplorationTests(unittest.TestCase):
         self.assertEqual(summary["median_daily_service_p95_ms"], 34)
         self.assertEqual(summary["iqr_upper_fence_ms"], 58)
         self.assertEqual(summary["flagged_observations"], [{"date": "2027-01-07", "service": "network_monitor", "p95_latency_ms": 160.0}])
+        manifest = json.loads((ROOT / "data/manifests/service-workload.json").read_text())
+        self.assertEqual(hashlib.sha256(SAMPLE.read_bytes()).hexdigest(), manifest["files"][0]["sha256"])
         self.assertEqual(len(frame), 24)
         self.assertEqual(tables["latency_distribution"]["count"].tolist(), [16, 6, 0, 0, 1])
         self.assertEqual(int(tables["daily_requests"]["requests"].max()), 560)

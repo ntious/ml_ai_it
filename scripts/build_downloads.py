@@ -8,7 +8,7 @@ from practical_ml_ai.exploration import run_exploration
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
-ROOT_FILES = ["README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore"]
+ROOT_FILES = ["README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
 SOURCE_FOLDERS = ["src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
 ALLOWED_SUFFIXES = {".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
 

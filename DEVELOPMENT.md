@@ -12,6 +12,7 @@ The local environment adds Matplotlib 3.10.8 and Seaborn 0.13.2 to Python 3.12.1
 - Normalize only documented service case/whitespace, retain the first exact duplicate, reject conflicting keys, and preserve raw bytes.
 - Keep the missing-latency observation for request totals. Whole-row deletion would discard 130 known requests. Omit it only from latency-specific views.
 - Retain the deliberately constructed 160 ms spike. An IQR flag invites investigation; sensitivity analysis demonstrates the effect of removal without establishing an error.
+- Preserve raw fixture bytes through Git checkout using `.gitattributes`; the Module 4 checksum is also asserted in CI to expose data/provenance drift.
 - Do not infer zero workload for absent dates/services. Daily tables state coverage, and absent dates break the time line.
 - Generate four analytical figures and one labeled misleading-axis demonstration. Each figure has a short alternative, a detailed description, and the exact CSV/HTML table used to plot it. Scatter text notes overlap and avoids causal claims.
 - Include a notebook variation that authors a horizontal comparison, rather than asking learners only to run a finished report. Core practice requests a purposeful modification and its reproducible evidence.
@@ -36,7 +37,7 @@ This implements the existing curriculum proposal, using its identifiers. Origina
 - Practice changes are checked: dropping the unavailable-latency row gives 4,050 requests and 23 normalized rows; excluding only the flagged latency gives 22 observed values, mean about 33.18 ms, median 33 ms.
 - All five generated PNGs were inspected for legible labels, units, scales, clipping, and the axis demonstration. This figure-file review is not browser/zoom/screen-reader testing.
 - The build produces 22 reading pages plus the generated evidence report: 23 HTML pages pass local link/fragment and basic structural checks. The evidence report includes five captioned tables with scoped column headers and named keyboard-focusable table regions.
-- The data SHA-256 checksum matches. All 67 allowlisted-source ZIP entries byte-match the source, with no private attached documents or workspace analysis. The documented CLI also runs from a freshly extracted archive outside the repository. Version 0.3.0 builds as an offline wheel without dependency downloads.
+- The data SHA-256 checksum matches. All 68 allowlisted-source ZIP entries byte-match the source, with no private attached documents or workspace analysis. The documented CLI also runs from a freshly extracted archive outside the repository. Version 0.3.0 builds as an offline wheel without dependency downloads.
 
 Remote Windows/Linux results must be inspected after pushing this increment. Manual keyboard/browser, screen-reader, zoom/reflow, notebook-interface, macOS, and hosted-route testing remain pending; no conformance is claimed.
 
