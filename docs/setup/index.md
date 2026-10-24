@@ -1,24 +1,20 @@
 # Setup and execution routes
 
-Start with the [first-run guide](../../QUICKSTART.md). It has explicit Windows PowerShell and macOS/Linux commands, expected output, and saving/troubleshooting steps.
+Start with the [first-run guide](../../QUICKSTART.md). Modules 1 and 2 need Python 3.11 or newer and no third-party libraries. Module 3 adds an isolated environment and NumPy/pandas. Each guide supplies commands, expected output, saving, and recovery steps.
 
 ## Current support status
 
-- Local Python: the data example and software tests have been exercised in the recorded Linux/Python 3.12 development environment. Windows/macOS require verification; a CI workflow is included to exercise Windows and Linux after a push.
-- Jupyter notebook: the curated Python cells are checked sequentially in a clean process. Notebook UI and assistive-technology compatibility have not been verified.
-- Codespaces: configuration is included as an experimental route, with installation and first-run verification still required.
-- Colab: a private repository requires authorized access or a source upload. The [source archive](../downloads/ml_ai_it-source.zip) includes code/data; unzip it, install the extracted package in that runtime, and open the notebook. This route has not been tested and is not represented as one-click support.
-- Binder: the experimental requirements are included, but public mybinder.org cannot use this private repository as a normal public launch. Revisit and test when a public release is authorized.
+- Local scripts: checked in Linux with Python 3.12. Modules 1 and 2 are also run with Python's site-package loading disabled to verify standard-library-only execution. Windows/Linux CI checks the expanded sequence after a push; inspect its commit-specific results. macOS is pending.
+- Jupyter: three curated notebooks' plain Python cells are executed in fresh namespaces. Notebook interface, installation journey, and assistive-technology compatibility are not verified by this check.
+- Codespaces: configuration is experimental; installation and first-run verification are pending.
+- Colab: authorized private-repository access or source upload is required. The [source archive](../downloads/ml_ai_it-source.zip) includes code/data; retain the folder structure. Module 3 needs the extracted package installed in that runtime. This is an untested route, not one-click support.
+- Binder: experimental requirements are included. Public mybinder.org cannot launch this private repository through an ordinary public-repository link. Revisit after public release authorization.
 
-No launch badge is used to imply an unverified route works.
+## Source and interfaces
 
-## Source archive
+Extract the [complete source archive](../downloads/ml_ai_it-source.zip) into a working folder. It contains an `ml_ai_it` directory with source, scripts, data, notebooks, reading content, and checks. A standalone notebook download does not include its shared imports.
 
-The [downloadable source archive](../downloads/ml_ai_it-source.zip) contains an `ml_ai_it` folder. Extract its contents into a working folder. It includes the package, sample, scripts, notebook, reading source, and checks. Installation still requires the declared Python dependencies.
-
-## Accessibility
-
-Read [accessibility status](../accessibility/index.md) before selecting an execution interface. The shared script offers the same data decisions and result evidence as the notebook. Test the actual screen-reader/browser/editor combination; no hosted provider's accessibility is assumed.
+The reading site is static HTML, not a browser Python runtime. The script route supplies named text and saved files for the same implementation used in the notebook. Review [accessibility status](../accessibility/index.md) before choosing an interface; test the actual editor/terminal/browser and assistive technology.
 
 ## Reading-site development
 
@@ -31,4 +27,4 @@ npm run check
 python -m http.server 8000 --directory site
 ```
 
-Open `http://localhost:8000`. `site/` is generated output. Edit source Markdown under `docs/` and rebuild. Building creates downloads from an explicit source allowlist. It does not publish or change repository visibility.
+Here `python` denotes your project environment executable. Open `http://localhost:8000`. Edit Markdown under `docs/` and rebuild; `site/` is generated output. The build creates downloads from a source allowlist. It does not publish or change visibility.

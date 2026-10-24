@@ -1,31 +1,33 @@
 # Practical Machine Learning and AI Systems
 
-Learn to inspect data, implement reliable workflows, evaluate results, and explain decisions. These original educational resources support independent learners and instructors who want to link a single module from Canvas or another learning platform.
+Learn to frame problems, implement reliable workflows, evaluate evidence, and explain decisions. These original educational resources support independent learners and instructors linking a single module from Canvas or another learning platform.
 
-**Development edition 0.1.0:** Module 3, Data Processing, is the first implemented module. The remaining modules and prediction/deployment cases are planned; they are not advertised as available lessons.
+**Development edition 0.2.0:** Modules 1, 2, and 3 are implemented. Follow them in order if you are new to Python and ML; use a direct module link if you already have its prerequisites. Modules 4–14 and model-training/deployment cases remain in development.
 
 ## Start here
 
-1. Follow [setup and first run](QUICKSTART.md).
-2. Read [Module 3](docs/lessons/03-data-processing/index.md).
-3. Run the separated preparation script or the [guided notebook](notebooks/lessons/03-data-processing/complete_walkthrough.ipynb). Both call the same Python functions.
-4. Complete the module's original practice and inspect its worked feedback.
+1. Follow the [first-run guide](QUICKSTART.md): the first two modules need only Python, with no third-party package installation.
+2. [Module 1: ML and AI foundations](docs/lessons/01-foundations/index.md): compare methods, run a written rule, predict a change, and save a result.
+3. [Module 2: Python for reproducible workflows](docs/lessons/02-python-workflows/index.md): process synthetic CSV/JSON files with functions and labeled summaries.
+4. [Module 3: Data processing](docs/lessons/03-data-processing/index.md): install NumPy/pandas, validate events, and explain accepted/rejected records.
 
-The example interprets synthetic authentication-gateway and network-monitor events. It validates records, records reasons for rejection, preserves missing latency, and produces CSV, JSON, and plain-text results. It performs no ML training and makes no claims about real network performance.
+Each module has a script route, a notebook using the same implementation, original practice/discussion, public worked feedback, and adaptable criteria. These first examples establish programming and data-processing skills; they do not train an ML model or call an AI service.
 
 ## Repository contents
 
 - `src/practical_ml_ai/`: reusable implementation.
-- `examples/network-events/scripts/`: thin command-line entry point.
-- `data/`: synthetic sample, data contract, and provenance.
-- `notebooks/`: runnable walkthrough calling shared functions.
-- `docs/`: reading-site source, practice, setup, accessibility, and adoption guidance.
-- `tests/`: behavior and clean-run checks.
+- `examples/`: thin command-line entry scripts.
+- `data/`: original synthetic samples, contracts, provenance, and checksums.
+- `notebooks/lessons/`: guided walkthroughs calling shared functions.
+- `docs/`: reading-site source, practice, feedback, setup, and adoption guidance.
+- `tests/`: behavior and script checks.
 - `scripts/`: site/download generation and validation.
 
-See [development status](docs/status.md) for the exact verified scope. See [accessibility requirements](ACCESSIBILITY.md): keyboard/screen-reader and third-party runtime testing remain to be completed. The site uses semantic HTML, a skip link, text-first explanations, and named results; those choices alone do not establish accessibility conformance.
+See [development status](docs/status.md) for the verified scope and [accessibility requirements](ACCESSIBILITY.md) for authoring expectations. Semantic HTML, a skip link, text-first explanations, and script alternatives are implemented. Manual keyboard, screen-reader, and zoom/reflow testing remain pending; accessibility conformance is not claimed.
 
 ## Development checks
+
+Install the package for Module 3 as explained in the first-run guide, then run:
 
 ```sh
 python -m unittest discover -s tests -v
@@ -35,10 +37,10 @@ npm run build
 npm run check
 ```
 
-The site is generated from trusted local Markdown using a small Marked-based builder. It is static reading content; it does not execute notebooks in a browser. GitHub Pages deployment is deliberately not enabled in this first private development increment. The CI workflow builds and checks an artifact.
+Here `python` is your project environment's executable. The static reading site does not execute notebooks in the browser. CI builds and checks a downloadable site artifact on Windows and Linux. GitHub Pages deployment is not enabled; no live site is implied.
 
 ## Teaching and reuse
 
-The public resource has its own activities, discussion prompts, feedback, and an adaptable rubric. No original Canvas assignments, student records, university branding, or master course documents are included. Adopting instructors choose which activities to use and publish their own assessment/AI-use rules. [Instructor guide](docs/instructor/index.md)
+No original Canvas assignments, student records, university branding, or master course documents are included. Instructors select activities and publish local assessment and AI-use rules. See the [instructor guide](docs/instructor/index.md). Optional depth is clearly labeled and skippable.
 
-Original code: [MIT](LICENSE). Original educational prose and synthetic sample data: [CC BY 4.0 with component boundaries](OER_LICENSE.md). External documentation, dependencies, and services retain their own terms.
+Original code: [MIT](LICENSE). Original educational prose and synthetic data: [CC BY 4.0 with component boundaries](OER_LICENSE.md). External documentation, dependencies, and services retain their own terms.

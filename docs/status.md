@@ -1,24 +1,23 @@
 # Development status
 
-This is the first implementation increment, version 0.1.0. It is not the complete 14-module course.
+Development edition 0.2.0 implements Modules 1–3. It is not the complete 14-module course.
 
 ## Implemented
 
-- A standalone Module 3 reading path with prerequisite support, original practice/discussion, worked feedback, and adaptable rubric.
-- Synthetic two-source event data, a documented contract, and provenance/checksum.
-- Shared NumPy/pandas preparation functions, a separated script, and a guided notebook.
-- Cleaned/rejected CSV outputs plus named JSON and text reports.
-- A small static reading-site builder and source/notebook/data downloads.
-- Software, notebook-code, and generated-site checks; a CI workflow for Windows and Linux.
+- Module 1: terminology, method choice, first Python run, a saved threshold-rule result, original practice and feedback.
+- Module 2: a beginner bridge, reusable functions, CSV/JSON processing, invalid-input investigation, original practice and feedback.
+- Module 3: NumPy/pandas data preparation, accepted/rejected outputs, quality reporting, original practice and feedback.
+- A shared implementation, a command-line script and curated notebook per module, synthetic data and provenance.
+- Static reading pages, controlled source/data/notebook downloads, automated behavior/code/link/structure checks, and Windows/Linux CI.
 
 ## Verification boundaries
 
-Local verification and exact results are recorded in `DEVELOPMENT.md` in the repository. A generated reading page is not an executable notebook, and a code-cell check is not a notebook-interface test. Structural HTML checks are not a WCAG conformance assessment.
+Exact local results are recorded in `DEVELOPMENT.md` in the repository. Remote CI is separate evidence for each commit. Windows and Linux passed for the earlier 0.1 increment; the expanded sequence must pass its own run. macOS has not been exercised.
 
-Browser-based visual/keyboard testing, screen-reader usability, Windows/macOS runs, and the experimental hosted execution routes require verification. CI results are separate evidence and must be checked after the branch is pushed.
+Notebook code checks do not test notebook UI. HTML structure/link checks do not establish WCAG conformance. Browser/keyboard, screen-reader, visual/zoom/reflow review, and hosted execution routes remain pending. No accessible-use certification is claimed.
 
 ## Next development
 
-Complete the accessible task-based pilot, refine the Module 3 experience, and add the service-workload modeling case with separated training/validation/final evaluation/inference stages. Add other modules when their own outcomes, examples, feedback, and execution routes are usable.
+Develop Module 4, exploration and visual communication, with named numerical/text evidence for every figure. Continue in order through Module 14. Each increment needs its own usable example, prerequisites, practice, feedback, and verification. Accessibility piloting remains part of development across modules.
 
-GitHub Pages publication and repository visibility changes are not part of this development increment.
+GitHub Pages publication and repository visibility changes are separate release actions, not performed by this increment.

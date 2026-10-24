@@ -16,8 +16,14 @@ def build():
         (ROOT / "data/samples/network-events/events.csv", "events.csv"),
         (ROOT / "data/schemas/network-events.schema.json", "network-events.schema.json"),
         (ROOT / "notebooks/lessons/03-data-processing/complete_walkthrough.ipynb", "complete_walkthrough.ipynb"),
+        (ROOT / "notebooks/lessons/01-foundations/first_steps.ipynb", "module01/first_steps.ipynb"),
+        (ROOT / "notebooks/lessons/02-python-workflows/workflow.ipynb", "module02/workflow.ipynb"),
+        (ROOT / "data/samples/service-files/tickets.csv", "module02/tickets.csv"),
+        (ROOT / "data/samples/service-files/events.json", "module02/events.json"),
     ]:
-        shutil.copyfile(source, DESTINATION / name)
+        target = DESTINATION / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
     files = [ROOT / name for name in ROOT_FILES]
     for folder in SOURCE_FOLDERS:
         files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in p.parts))

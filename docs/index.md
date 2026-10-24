@@ -1,24 +1,26 @@
 # Practical Machine Learning and AI Systems
 
-Learn by building workflows you can run, inspect, test, and explain. Start with one module or follow the planned sequence as it becomes available.
+Learn by running, inspecting, changing, and explaining small workflows. Start with Module 1 or enter a module directly using its prerequisite support. No enrollment or Canvas access is needed.
 
-## Available now
+## Learning sequence
 
-[Module 3: Data processing](lessons/03-data-processing/index.md) is a standalone lesson with prerequisite support, synthetic event data, a preparation script, a guided notebook, original practice, worked feedback, and an adaptable rubric.
+| Module | What you will build | Preparation |
+| --- | --- | --- |
+| [1: ML and AI foundations](lessons/01-foundations/index.md) | A saved first Python result and a reasoned method choice | No prior programming; Python only |
+| [2: Python workflows](lessons/02-python-workflows/index.md) | A reusable CSV/JSON summary program | Basic values and running Python; foundation bridge included |
+| [3: Data processing](lessons/03-data-processing/index.md) | Validated events and a quality report | Functions and files; NumPy/pandas setup supplied |
 
-You do not need enrollment in a particular university or access to Canvas. An instructor can link directly to that module as an additional resource. Reading and practice are independent of local grading policies.
+Each has original practice, public worked feedback, adaptable criteria, and a skippable extension. Scripts and notebooks call shared functions. A paid AI account is not required.
 
-## Choose your next action
+## Get started or teach
 
-- [Set up and run the example](setup/index.md).
-- [Read the accessibility status and routes](accessibility/index.md).
-- [Select content for your course](instructor/index.md).
-- [Check what has and has not been verified](status.md).
+- [Set up and run the first example](setup/index.md).
+- [Read accessibility provisions and remaining verification](accessibility/index.md).
+- [Select direct module links for your course](instructor/index.md).
+- [Check development scope and status](status.md).
 
 ## Learning approach
 
-Understand the stakeholder and data, predict what a small example will do, run it, test a change, and explain the result. Use AI assistance thoughtfully: inspect suggestions, run tests, disclose assistance when your instructor requires it, and write your own interpretation.
+Identify a stakeholder's need, predict an example's behavior, run it, test a change, and explain the evidence. If using an AI assistant, inspect its suggestions, verify them with code/data, and follow your instructor's disclosure rules.
 
-## In development
-
-The curriculum plan spans Python foundations, classical ML, neural networks, NLP, LLMs, fine-tuning, deployment, fairness, and agents. Those additional lessons will be linked when they are usable. This edition implements data preparation; it does not yet implement the complete model-training/deployment case.
+Modules 4–14 are planned in sequence, from exploration and classical ML through neural networks, NLP, GenAI, deployment, ethics, and bounded agents. Only usable lessons are linked here. The current three examples establish foundations and data preparation; model training and deployment come later.

@@ -4,15 +4,15 @@ Accessibility for blind and low-vision learners is a core requirement. See the [
 
 ## Available design provisions
 
-The reading site uses semantic headings, landmarks, descriptive links, a keyboard skip link, visible focus, and selectable code. Module 3 communicates its numeric results in named text values. There is no required chart, pointer gesture, color distinction, or animation. Feedback and practice remain available as text.
+The reading site uses semantic headings, landmarks, descriptive links, a keyboard skip link, visible focus, and selectable code. Modules 1–3 communicate their results in named text values. There is no required chart, pointer gesture, color distinction, or animation. Feedback and practice remain available as text.
 
-The script and notebook call the same preparation functions. If a notebook interface is a barrier, the script route preserves execution, data decisions, outputs, and practice goals. This route still needs testing with a learner's actual editor/terminal and assistive technology.
+Each module’s script and notebook call the same shared functions. If a notebook interface is a barrier, the script route preserves execution, data decisions, outputs, and practice goals. This route still needs testing with a learner's actual editor/terminal and assistive technology.
 
 ## Verification status
 
 Software checks exercise data contracts, script outputs, notebook code, generated links, and basic HTML structure. These checks do not certify accessibility.
 
-Keyboard-only browser review, NVDA/Firefox review, VoiceOver/Safari review, zoom/reflow, and learner task-based review are **pending**. No combination has been verified for screen-reader usability in this first increment. Third-party notebook and hosting interfaces also require evaluation.
+Keyboard-only browser review, NVDA/Firefox review, VoiceOver/Safari review, zoom/reflow, and learner task-based review are **pending**. No combination has been verified for screen-reader usability in this development edition. Third-party notebook and hosting interfaces also require evaluation.
 
 ## Reporting a barrier
 

@@ -79,6 +79,6 @@ Record module/release, platform/browser, assistive technology, task, observed re
 
 Keep this policy at repository root as `ACCESSIBILITY.md`. Add `docs/accessibility/` for learner instructions, tested routes, known limitations, and reporting; `templates/accessibility-review.md` for the task record; and accessibility checks alongside site/app tests. Include accessibility review in lesson/case templates, contribution guidance, pull-request review, and release criteria.
 
-Apply these requirements from the first Module 3/data-processing pilot onward. Accessibility work is part of implementation and maintenance, not a final visual review after the content is complete.
+Apply these requirements across Modules 1–3 and all subsequent modules. Accessibility work is part of implementation and maintenance, not a final visual review after the content is complete.
 
 Sources checked October 24, 2026. The references inform our design; they do not certify this planned resource or replace testing its actual implementation.

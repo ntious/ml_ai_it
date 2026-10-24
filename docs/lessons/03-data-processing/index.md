@@ -119,3 +119,7 @@ Complete the [original practice, discussion, and self-checks](practice.md). Then
 - Optional next concept: [scikit-learn common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html), focusing on preprocessing and leakage.
 
 Read the named selections rather than assigning an entire documentation site. [Accessibility routes and limitations](../../accessibility/index.md) explain the verification status of the reading and execution interfaces.
+
+## Earlier modules
+
+For the complete beginner sequence, start with [Module 1: ML and AI foundations](../01-foundations/index.md), then [Module 2: Python workflows](../02-python-workflows/index.md). You may also use this data-processing module directly with its foundation support.

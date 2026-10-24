@@ -1,0 +1,16 @@
+{
+  "title": "Fictional service tickets and events",
+  "provenance": "Original synthetic teaching fixtures created for this repository. No real tickets, people, or production records.",
+  "license": "CC-BY-4.0",
+  "purpose": "Small standard-library CSV/JSON learning example; not representative operational evidence.",
+  "files": [
+    {
+      "path": "data/samples/service-files/tickets.csv",
+      "sha256": "db469bcf381a4120981ee0b8f136615fddced0026c98f9ab82c240b753558aa0"
+    },
+    {
+      "path": "data/samples/service-files/events.json",
+      "sha256": "f192b1c33f1a96b673ab01d5f131263c1117f4f15a4073577a0a66d82def68da"
+    }
+  ]
+}
