@@ -1,4 +1,4 @@
-"""Execute only the three trusted, curated plain-Python notebooks named below.
+"""Execute only the four trusted, curated plain-Python notebooks named below.
 
 Fresh namespaces check code paths, not notebook UI or assistive technology.
 Do not use this executor for untrusted notebooks.
@@ -14,6 +14,7 @@ NOTEBOOKS = [
     "01-foundations/first_steps.ipynb",
     "02-python-workflows/workflow.ipynb",
     "03-data-processing/complete_walkthrough.ipynb",
+    "04-exploration/exploration.ipynb",
 ]
 
 
@@ -47,11 +48,19 @@ def check(relative):
         assert namespace["report"]["events"]["count"] == 3
         assert namespace["saved_report"] == namespace["report"]
         assert "Total handling minutes: 60" in output.getvalue()
-    else:
+    elif relative.startswith("03-"):
         assert namespace["result"].report["rows_accepted"] == 6
         assert namespace["result"].report["accepted_missing_latency"] == 1
         assert namespace["np"].allclose(namespace["solution"], [3, 2])
         assert "Accepted records: 6" in output.getvalue()
+    else:
+        assert namespace["result"]["total_requests"] == 4180
+        assert namespace["result"]["observed_latency"] == 23
+        assert len(namespace["result"]["flagged_observations"]) == 1
+        assert len(namespace["sensitivity"]) == 22
+        assert abs(namespace["sensitivity"].mean() - 730 / 22) < 1e-10
+        assert namespace["custom_plot"].is_file()
+        assert "Total requests: 4180" in output.getvalue()
     print(f"Verified {relative}: {count} curated Python cells and expected results.")
     return count
 

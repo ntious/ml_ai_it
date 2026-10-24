@@ -2,7 +2,7 @@
 
 Learn to frame problems, implement reliable workflows, evaluate evidence, and explain decisions. These original educational resources support independent learners and instructors linking a single module from Canvas or another learning platform.
 
-**Development edition 0.2.0:** Modules 1, 2, and 3 are implemented. Follow them in order if you are new to Python and ML; use a direct module link if you already have its prerequisites. Modules 4–14 and model-training/deployment cases remain in development.
+**Development edition 0.3.0:** Modules 1–4 are implemented. Follow them in order if you are new to Python and ML; use a direct module link if you already have its prerequisites. Modules 5–14 and model-training/deployment cases remain in development.
 
 ## Start here
 
@@ -10,6 +10,7 @@ Learn to frame problems, implement reliable workflows, evaluate evidence, and ex
 2. [Module 1: ML and AI foundations](docs/lessons/01-foundations/index.md): compare methods, run a written rule, predict a change, and save a result.
 3. [Module 2: Python for reproducible workflows](docs/lessons/02-python-workflows/index.md): process synthetic CSV/JSON files with functions and labeled summaries.
 4. [Module 3: Data processing](docs/lessons/03-data-processing/index.md): install NumPy/pandas, validate events, and explain accepted/rejected records.
+5. [Module 4: Exploration and visual communication](docs/lessons/04-exploration/index.md): add the visualization extra, create labeled plots, and communicate evidence through paired tables/descriptions.
 
 Each module has a script route, a notebook using the same implementation, original practice/discussion, public worked feedback, and adaptable criteria. These first examples establish programming and data-processing skills; they do not train an ML model or call an AI service.
 
@@ -27,7 +28,7 @@ See [development status](docs/status.md) for the verified scope and [accessibili
 
 ## Development checks
 
-Install the package for Module 3 as explained in the first-run guide, then run:
+Install the package with its visualization extra as explained in the first-run guide, then run:
 
 ```sh
 python -m unittest discover -s tests -v

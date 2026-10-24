@@ -2,6 +2,9 @@
 from pathlib import Path
 import shutil
 import zipfile
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from practical_ml_ai.exploration import run_exploration
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
@@ -20,10 +23,13 @@ def build():
         (ROOT / "notebooks/lessons/02-python-workflows/workflow.ipynb", "module02/workflow.ipynb"),
         (ROOT / "data/samples/service-files/tickets.csv", "module02/tickets.csv"),
         (ROOT / "data/samples/service-files/events.json", "module02/events.json"),
+        (ROOT / "notebooks/lessons/04-exploration/exploration.ipynb", "module04/exploration.ipynb"),
+        (ROOT / "data/samples/service-workload/daily.csv", "module04/daily.csv"),
     ]:
         target = DESTINATION / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
+    run_exploration(ROOT / "data/samples/service-workload/daily.csv", DESTINATION / "module04/example")
     files = [ROOT / name for name in ROOT_FILES]
     for folder in SOURCE_FOLDERS:
         files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in p.parts))

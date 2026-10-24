@@ -1,6 +1,6 @@
 {
   "name": "ml-ai-it-reading-site",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {"build": "node scripts/build_site.mjs", "check": "python scripts/check_site.py"},

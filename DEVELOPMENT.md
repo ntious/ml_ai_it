@@ -1,5 +1,45 @@
 # Development verification
 
+## Increment 0.3.0: exploration and visual communication
+
+Module 4 is implemented with four measurable outcomes, a foundation bridge, shared script/notebook exploration, original practice/discussion, worked feedback, and adaptable criteria. Modules 1–3 remain available in sequence or by direct link. Module 5 is next; Modules 5–14 remain future work.
+
+The local environment adds Matplotlib 3.10.8 and Seaborn 0.13.2 to Python 3.12.14, NumPy 2.3.5, and pandas 2.2.3. Node.js 24.22.1/Marked 17.0.5 build the reading site. Plotting uses the headless Agg backend and local data; no display server or dataset download is required. The optional `visualization` extra is exercised by CI and required for a complete site build.
+
+## Module 4 observations and decisions
+
+- Observation unit is one service-day. Supplied p95 values are already aggregated; their mean/median is not an overall request-level percentile.
+- Normalize only documented service case/whitespace, retain the first exact duplicate, reject conflicting keys, and preserve raw bytes.
+- Keep the missing-latency observation for request totals. Whole-row deletion would discard 130 known requests. Omit it only from latency-specific views.
+- Retain the deliberately constructed 160 ms spike. An IQR flag invites investigation; sensitivity analysis demonstrates the effect of removal without establishing an error.
+- Do not infer zero workload for absent dates/services. Daily tables state coverage, and absent dates break the time line.
+- Generate four analytical figures and one labeled misleading-axis demonstration. Each figure has a short alternative, a detailed description, and the exact CSV/HTML table used to plot it. Scatter text notes overlap and avoids causal claims.
+- Include a notebook variation that authors a horizontal comparison, rather than asking learners only to run a finished report. Core practice requests a purposeful modification and its reproducible evidence.
+- Keep GenAI optional. The same critique checklist and public feedback support learners without an assistant. Final-test data must stay outside later model-directed exploratory choices.
+
+## Module 4 alignment and evidence
+
+This implements the existing curriculum proposal, using its identifiers. Original-outcome references point to the supplied private M4 source register; that source is not published. Course and ABET labels retain the advisory definitions in the separate planning crosswalk. They are evidence opportunities, not attainment or accreditation claims.
+
+| Module outcome | Original alignment | Course alignment | Planned advisory ABET opportunity | Evidence |
+| --- | --- | --- | --- | --- |
+| M04.1: preprocessing rationale | O04.1 | CLO3 | A1 | Row accounting and sensitivity explanation |
+| M04.2: labeled, appropriate plots | O04.2 | CLO8 | A2, A3 | Plotting code, three figures, matching tables and scales |
+| M04.3: evidence-based interpretation | O04.3 | CLO3, CLO8 | A1, A3 | Exact values, anomaly discussion, causal limits |
+| M04.4: stakeholder communication | O04.2–O04.3 | CLO8 | A3 | Memo, useful descriptions, and limitations |
+
+## Increment 0.3.0 verification
+
+- All 31 behavior tests pass, including 11 exploration tests covering reconciliation, missingness, retained flags, sensitivity, conflicts, invalid values, exact grouped-count bounds, empty input, absent dates, all-missing latency, artifact pairs, and raw/output preservation.
+- Four curated notebooks execute 17 code cells in fresh namespaces with expected results. Notebook-interface operation is not tested by this executor.
+- The documented CLI produces 25 raw rows → 24 observations, 4,180 requests, 23 observed latencies/1 unavailable, mean daily service p95 about 38.70 ms, median 34 ms, and one retained IQR flag.
+- Practice changes are checked: dropping the unavailable-latency row gives 4,050 requests and 23 normalized rows; excluding only the flagged latency gives 22 observed values, mean about 33.18 ms, median 33 ms.
+- All five generated PNGs were inspected for legible labels, units, scales, clipping, and the axis demonstration. This figure-file review is not browser/zoom/screen-reader testing.
+- The build produces 22 reading pages plus the generated evidence report: 23 HTML pages pass local link/fragment and basic structural checks. The evidence report includes five captioned tables with scoped column headers and named keyboard-focusable table regions.
+- The data SHA-256 checksum matches. All 67 allowlisted-source ZIP entries byte-match the source, with no private attached documents or workspace analysis. The documented CLI also runs from a freshly extracted archive outside the repository. Version 0.3.0 builds as an offline wheel without dependency downloads.
+
+Remote Windows/Linux results must be inspected after pushing this increment. Manual keyboard/browser, screen-reader, zoom/reflow, notebook-interface, macOS, and hosted-route testing remain pending; no conformance is claimed.
+
 ## Increment 0.2.0: Modules 1–3 in sequence
 
 Modules 1 and 2 now precede the existing Module 3. Each has an entry page, measurable outcomes, runnable shared-code script/notebook examples, original practice, discussion/solo reflection, public worked feedback, adaptable criteria, and a skippable extension. Modules 4–14 and the model-training/deployment cases remain future work.

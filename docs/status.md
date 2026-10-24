@@ -1,23 +1,24 @@
 # Development status
 
-Development edition 0.2.0 implements Modules 1–3. It is not the complete 14-module course.
+Development edition 0.3.0 implements Modules 1–4. It is not the complete 14-module course.
 
 ## Implemented
 
-- Module 1: terminology, method choice, first Python run, a saved threshold-rule result, original practice and feedback.
-- Module 2: a beginner bridge, reusable functions, CSV/JSON processing, invalid-input investigation, original practice and feedback.
-- Module 3: NumPy/pandas data preparation, accepted/rejected outputs, quality reporting, original practice and feedback.
-- A shared implementation, a command-line script and curated notebook per module, synthetic data and provenance.
-- Static reading pages, controlled source/data/notebook downloads, automated behavior/code/link/structure checks, and Windows/Linux CI.
+- Module 1: terminology, method choice, first Python run, and saved rule output.
+- Module 2: Python structures/functions, CSV/JSON processing, and debugging.
+- Module 3: NumPy/pandas preparation, accepted/rejected records, and quality reporting.
+- Module 4: exploratory preprocessing, Matplotlib/pandas/Seaborn plots, underlying tables/descriptions, sensitivity analysis, and a stakeholder memo.
+- Each module has original practice, discussion/solo reflection, public worked feedback, and an optional extension.
+- Shared scripts/notebooks, original synthetic data and provenance, static reading pages, controlled downloads, and Windows/Linux CI.
 
 ## Verification boundaries
 
-Exact local results are recorded in `DEVELOPMENT.md` in the repository. Remote CI is separate evidence for each commit. Windows and Linux passed for the earlier 0.1 increment; the expanded sequence must pass its own run. macOS has not been exercised.
+Exact local results and instructional decisions are recorded in `DEVELOPMENT.md` in the repository. Remote CI is separate evidence for each commit. Earlier increments passed Windows/Linux; the expanded Module 4 increment requires its own result. macOS has not been exercised.
 
-Notebook code checks do not test notebook UI. HTML structure/link checks do not establish WCAG conformance. Browser/keyboard, screen-reader, visual/zoom/reflow review, and hosted execution routes remain pending. No accessible-use certification is claimed.
+Notebook code checks do not test notebook UI. HTML/link checks and reviewed figure files do not establish WCAG conformance. Browser/keyboard, screen-reader, visual/zoom/reflow review, and hosted execution routes remain pending. The report supplies numerical/text evidence alongside every figure; actual task-based usability still needs verification.
 
 ## Next development
 
-Develop Module 4, exploration and visual communication, with named numerical/text evidence for every figure. Continue in order through Module 14. Each increment needs its own usable example, prerequisites, practice, feedback, and verification. Accessibility piloting remains part of development across modules.
+Develop Module 5, regression and reliable evaluation, with a simple baseline, training/development/final-test boundaries, and error interpretation. Continue in order through Module 14. Each increment needs a usable example, prerequisite support, original practice, feedback, and verification. Accessibility piloting continues across modules.
 
 GitHub Pages publication and repository visibility changes are separate release actions, not performed by this increment.

@@ -11,6 +11,7 @@ The routes below are relative to the eventual site base URL. The reading site is
 | [1](../lessons/01-foundations/index.md) | Concepts, problem brief, first executed/saved Python result | `/lessons/01-foundations/` |
 | [2](../lessons/02-python-workflows/index.md) | Python structures/functions, CSV/JSON summary, debugging evidence | `/lessons/02-python-workflows/` |
 | [3](../lessons/03-data-processing/index.md) | Data validation, quality report, explained cleaning decisions | `/lessons/03-data-processing/` |
+| [4](../lessons/04-exploration/index.md) | Justified preprocessing, labeled figures/tables, chart descriptions, and a stakeholder memo | `/lessons/04-exploration/` |
 
 Suggested LMS description, adapted for the module you select:
 

@@ -60,6 +60,24 @@ python3 -m venv .venv
 
 If Python 3.12 is unavailable, use a supported installed version and record it when reporting an issue. Expect 12 input records, 6 accepted, 6 rejected, and 1 accepted record retaining missing latency. Observed latency mean/median are 24/20 milliseconds. See [Module 3](docs/lessons/03-data-processing/index.md).
 
+## Module 4: add plotting libraries
+
+After creating `.venv`, install the visualization extra and run exploration. In Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[visualization]" -c environments/constraints-tested.txt
+.\.venv\Scripts\python.exe examples/service-workload/scripts/explore.py --input data/samples/service-workload/daily.csv --output runs/module04
+```
+
+On macOS/Linux:
+
+```sh
+.venv/bin/python -m pip install -e ".[visualization]" -c environments/constraints-tested.txt
+.venv/bin/python examples/service-workload/scripts/explore.py --input data/samples/service-workload/daily.csv --output runs/module04
+```
+
+Expect 24 distinct observations, 4,180 requests, 23 observed latencies and one unavailable latency. Open `runs/module04/index.html` for the five figures with actual tables/descriptions, or use its plain-text/CSV evidence. See [Module 4](docs/lessons/04-exploration/index.md) for preprocessing and interpretation. No display server is required for generating figures.
+
 ## Notebook option
 
 Notebooks are optional execution companions. To operate one locally, create a project environment as above and install an interface into that environment:

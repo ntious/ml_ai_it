@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 development
+
+- Add Module 4 with preprocessing rationale, chart selection, interpretation, original practice, and worked feedback.
+- Add original synthetic service-day workload, provenance, contracts, and a shared exploration workflow.
+- Generate four analytical figures and a misleading-axis demonstration, each paired with its actual CSV/HTML table and short/detailed descriptions.
+- Add the optional visualization dependency extra, headless plotting, a guided notebook, and behavioral checks.
+- Extend navigation, controlled downloads, and CI through Module 4. Manual assistive-technology testing remains pending.
+
 ## 0.2.0 development
 
 - Add Modules 1 and 2 with outcomes, original practice, discussion/solo alternatives, worked feedback, and skippable extensions.

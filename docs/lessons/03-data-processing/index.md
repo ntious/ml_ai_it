@@ -123,3 +123,7 @@ Read the named selections rather than assigning an entire documentation site. [A
 ## Earlier modules
 
 For the complete beginner sequence, start with [Module 1: ML and AI foundations](../01-foundations/index.md), then [Module 2: Python workflows](../02-python-workflows/index.md). You may also use this data-processing module directly with its foundation support.
+
+## Next module
+
+Continue to [Module 4: Exploration and visual communication](../04-exploration/index.md) to investigate workload patterns with plots, underlying tables, and descriptions.
