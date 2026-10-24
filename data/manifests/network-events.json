@@ -1,0 +1,17 @@
+{
+  "dataset_id": "synthetic-network-events",
+  "version": "1.0",
+  "creator": "ML_AI_IT contributors",
+  "origin": "Original hand-authored synthetic teaching fixture. No real records used.",
+  "purpose": "Demonstrate validation, missingness, duplicate/conflict handling, and documented preparation.",
+  "license": "CC BY 4.0 for original sample data; see OER_LICENSE.md",
+  "unit_of_observation": "One fictional network/service event; event key is source plus event_id.",
+  "source_file": "data/samples/network-events/events.csv",
+  "sha256": "618372a70ee6a3284f6836f4bc1083f9d51f348ec1b0c3ff887bc0cf4a6c4787",
+  "limitations": [
+    "Twelve intentionally selected rows are not a representative sample.",
+    "Values and errors are constructed; no production performance or fairness claim is justified.",
+    "Source categories and validation rules are illustrative, not universal network schemas."
+  ],
+  "retrieval": "Use the checked-in sample; no account, scraping, or external download is required."
+}
