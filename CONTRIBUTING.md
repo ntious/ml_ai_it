@@ -20,3 +20,7 @@ Run the commands in [README.md](README.md). Notebook code checks do not replace 
 ## Review and releases
 
 Use a development branch and a pull request with a concrete behavior summary and validation. Keep generated `site/`, `runs/`, caches, and local environments out of commits. Preserve stable module links or supply redirects when changing published paths. Do not change an adopting institution's grading rules through repository edits.
+
+## Naming conventions
+
+Use neutral, descriptive names for repository folders and branches. Prefer topic/task names such as `data-processing`, `development/module-03-foundation`, or `feature/model-evaluation`. Avoid tool- or vendor-branded naming prefixes. Preserve the project's existing author attribution and license notices.
