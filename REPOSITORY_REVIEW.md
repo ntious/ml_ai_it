@@ -6,7 +6,7 @@ Review date: October 25, 2026. Scope: all 159 tracked source files at baseline c
 
 All baseline text/source files were read through GitHub. The local terminal environment was unavailable; execution is performed by the commit-specific GitHub Actions workflow. Earlier private planning attachments could not be independently reread, and personal-context retrieval was unavailable. This is a comprehensive repository and visible-requirements review, not a claim that an inaccessible original design was fully reconciled.
 
-See the [draft integration review](https://github.com/ntious/ml_ai_it/pull/2) for the current commit and CI evidence. The baseline complete run was [40154906162](https://github.com/ntious/ml_ai_it/actions/runs/40154906162). New checks require the audit commit's own successful run; earlier results do not prove new behavior.
+See the [course integration review](https://github.com/ntious/ml_ai_it/pull/2) for the current commit and CI evidence. The baseline complete run was [40154906162](https://github.com/ntious/ml_ai_it/actions/runs/40154906162). New checks require the audit commit's own successful run; earlier results do not prove new behavior.
 
 ## Findings and changes
 
@@ -57,7 +57,7 @@ No additional Canvas assessments were invented. Existing companion practice, sol
 
 ## Subsequent GitHub Pages website development
 
-The website adds a learning-path homepage, module directory/filter, course outline, lesson tabs/pager, real-data worked-example gallery, source/executed notebook downloads, optional browser-local search, and custom 404 recovery. Each page links its exact repository source revision.
+The [website development review](https://github.com/ntious/ml_ai_it/pull/3) adds a learning-path homepage, module directory/filter, course outline, lesson tabs/pager, real-data worked-example gallery, source/executed notebook downloads, optional browser-local search, and custom 404 recovery. Each page links its exact repository source revision.
 
 New checks exercise Chromium interaction, selected mobile/large-text reflow, no-JavaScript navigation, representative light/dark axe findings, and release provenance. The manual publishing workflow accepts only a reviewed successful default-branch push artifact and validates its embedded manifest; it does not publish draft pull-request content automatically. See [publishing steps](docs/publishing.md).
 

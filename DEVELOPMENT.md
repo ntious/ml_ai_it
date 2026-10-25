@@ -4,7 +4,7 @@
 
 The site now has a registry-driven module directory, learning-path homepage, lesson tabs and adjacent-module links, worked examples, source/executed notebook downloads, optional browser-local search, a project-prefix custom 404, and source links pinned to the build revision. It retains a usable reading/navigation route without JavaScript.
 
-The site build job runs the release-provenance checks, complete HTML/link and HTTP checks, Chromium interaction/reflow checks, and representative light/dark axe checks before uploading the complete-reading-site artifact. Browser screenshots/traces are separate evidence; human visual and assistive-technology review remains pending. Run npm run check:release and npm run check:browser after assembling the site.
+The site build/browser job uses Ubuntu 24.04 with Playwright 1.56.1, rather than a moving ubuntu-latest image whose current Ubuntu 26.04 is unsupported by that browser package. Core/framework jobs retain their separately exercised platforms. The site build job runs the release-provenance checks, complete HTML/link and HTTP checks, Chromium interaction/reflow checks, and representative light/dark axe checks before uploading the complete-reading-site artifact. Browser screenshots/traces are separate evidence; human visual and assistive-technology review remains pending. Run npm run check:release and npm run check:browser after assembling the site.
 
 The manual Pages workflow selects a successful default-branch push run, validates its reviewed commit and artifact, and checks the embedded source/run manifest before deployment. Pages is not enabled through this development connector. See docs/publishing.md for exact owner activation steps. A live URL is not claimed before the deployment succeeds.
 

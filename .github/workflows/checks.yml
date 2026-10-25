@@ -74,7 +74,7 @@ jobs:
           path: runs/verified/
   build-site:
     needs: [verify, framework-checks]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       OMP_NUM_THREADS: '2'
       OPENBLAS_NUM_THREADS: '2'
@@ -108,6 +108,12 @@ jobs:
         run: npm run check
       - name: Check project-prefix HTTP routes
         run: python scripts/check_http_routes.py
+      - name: Check source and data archives and extracted CLI
+        run: python scripts/check_downloads.py
+      - name: Build package
+        run: python -m pip wheel . --no-deps --wheel-dir dist
+      - name: Exercise the installed wheel outside the checkout
+        run: python scripts/check_wheel.py
       - name: Install Chromium for site browser verification
         run: npx playwright install --with-deps chromium
       - name: Exercise browser navigation, search, reflow, and axe checks
@@ -117,12 +123,6 @@ jobs:
         with:
           name: site-browser-evidence
           path: browser-results/
-      - name: Check source and data archives and extracted CLI
-        run: python scripts/check_downloads.py
-      - name: Build package
-        run: python -m pip wheel . --no-deps --wheel-dir dist
-      - name: Exercise the installed wheel outside the checkout
-        run: python scripts/check_wheel.py
       - uses: actions/upload-artifact@v4
         with:
           name: complete-reading-site

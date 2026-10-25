@@ -4,7 +4,7 @@ The repository contains a static reading website linked to the same module regis
 
 ## Review the finished site
 
-A successful Learning resource checks run uploads complete-reading-site and site-browser-evidence. Download and extract the site artifact into site/, then run:
+A successful Learning resource checks run uploads complete-reading-site and site-browser-evidence. In a repository checkout, download and extract the site artifact into site/, then run:
 
 ~~~sh
 python scripts/serve_site.py --port 4173
