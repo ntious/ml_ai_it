@@ -1,6 +1,6 @@
 # Repository architecture and file inventory
 
-This document describes the implemented development edition. It is the maintained architecture reference for contributors and adopting instructors. The [review report](REPOSITORY_REVIEW.md) records gaps, corrections, and verification limits.
+This document describes the implemented development edition. It is the maintained architecture reference for contributors and adopting instructors. The [review report](docs/maintenance/reviews/baseline-0.6.0.md) records gaps, corrections, and verification limits.
 
 ## Design goals
 

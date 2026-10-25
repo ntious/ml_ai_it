@@ -33,4 +33,4 @@ Read [status](status.md) and [accessibility limitations](accessibility/index.md)
 
 ## Reuse and maintain
 
-Read the [architecture](../REPOSITORY_STRUCTURE.md), [repository review](../REPOSITORY_REVIEW.md), [model-use summaries](model-cards.md), [AI collaboration guidance](ai-collaboration.md), and [release checklist](release-checklist.md). [Instructor adoption](instructor/index.md) covers linking, pacing, assessment, and alignment limits.
+Read the [architecture](../REPOSITORY_STRUCTURE.md), [repository review](maintenance/reviews/baseline-0.6.0.md), [model-use summaries](model-cards.md), [AI collaboration guidance](ai-collaboration.md), and [release checklist](release-checklist.md). [Instructor adoption](instructor/index.md) covers linking, pacing, assessment, and alignment limits.

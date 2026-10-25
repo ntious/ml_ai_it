@@ -14,3 +14,6 @@ runs/
 .ipynb_checkpoints/
 
 .venv-ml/
+
+# Local institutional source documents and private planning; never publish.
+/documentations/

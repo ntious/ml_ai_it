@@ -2,7 +2,7 @@
 
 Edition 0.7.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
 
-The [architecture](../REPOSITORY_STRUCTURE.md) and [audit record](../REPOSITORY_REVIEW.md) describe the registry-backed inventory, added authoring/adoption resources, and verification limits.
+The [architecture](../REPOSITORY_STRUCTURE.md) and [audit record](maintenance/reviews/baseline-0.6.0.md) describe the registry-backed inventory, added authoring/adoption resources, and verification limits.
 
 ## Real sources and actual computation
 
@@ -22,8 +22,8 @@ The small neural NLP run missed all positives. The initial free-text LLM run fai
 
 Adult results are descriptive audits, not justified decisions about people. Batch replay order is not a measured timeline. A constrained legal tool plan may still misunderstand intent.
 
-Selected scripted browser checks cover skip-link focus, 320-pixel reflow and automated accessibility rules on four reading pages. Human keyboard, screen-reader, real zoom, notebook/app usability, macOS, Windows framework and live hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
+Selected scripted browser checks cover skip-link focus, 320-pixel reflow and automated accessibility rules on five reading pages, including the course overview. Human keyboard, screen-reader, real zoom, notebook/app usability, macOS, Windows framework and live hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
 
 Merging, GitHub Pages publication, and visibility changes remain separate release actions.
 
-See the [enhancement record](enhancement-review.md) for Python preparation, construction practice, authentic IT and current verification scope.
+See the [enhancement record](maintenance/reviews/learning-support-0.7.0.md) for Python preparation, construction practice, authentic IT and current verification scope.

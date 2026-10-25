@@ -1,10 +1,12 @@
-# Repository review and completion record
+# Historical baseline review: edition 0.6.0
 
-Review date: October 25, 2026. Scope: all 159 tracked source files at baseline commit 0b3dbdee92dff0977c68d069cf291cbf87a66c43, plus the changes in this audit. “Modules” is the working interpretation of the request's “Mojo.”
+Archived maintainer evidence. Statements about branches, available tools and test counts describe the historical audit; use [current status](../../status.md) and commit-specific CI for the present edition.
+
+Review date: October 25, 2026. Scope: all 159 tracked source files at baseline commit 0b3dbdee92dff0977c68d069cf291cbf87a66c43, plus the changes in this audit.
 
 ## Evidence and scope
 
-All baseline text/source files were read through GitHub. The local terminal environment was unavailable; execution is performed by the commit-specific GitHub Actions workflow. Earlier private planning attachments could not be independently reread, and personal-context retrieval was unavailable. This is a comprehensive repository and visible-requirements review, not a claim that an inaccessible original design was fully reconciled.
+All baseline text/source files were read through GitHub. The local terminal environment was unavailable; execution is performed by the commit-specific GitHub Actions workflow. Earlier private planning attachments could not be independently reread. This is a comprehensive repository and visible-requirements review, not a claim that an inaccessible original design was fully reconciled.
 
 See the [draft integration review](https://github.com/ntious/ml_ai_it/pull/2) for the current commit and CI evidence. The baseline complete run was [40154906162](https://github.com/ntious/ml_ai_it/actions/runs/40154906162). New checks require the audit commit's own successful run; earlier results do not prove new behavior.
 
@@ -46,7 +48,7 @@ Structure verification requires every module's five pages, notebook, and script;
 
 ## Items still needing human or owner evidence
 
-- Screen-reader, keyboard, zoom/reflow, contrast, rendered chart/notebook/app presentation, and the complete learner journey: NOT RUN in this audit. Use the [manual review log](docs/accessibility/review-log.md); successful code execution cannot substitute.
+- Screen-reader, keyboard, zoom/reflow, contrast, rendered chart/notebook/app presentation, and the complete learner journey: NOT RUN in this audit. Use the [manual review log](../../accessibility/review-log.md); successful code execution cannot substitute.
 - Private accessibility/conduct reporting contact: not configured. Owner must supply an accessible private route before open release.
 - Exact original outcome/course crosswalk and adopted program criteria: owner review required. No official ABET attainment is certified.
 - Learner piloting and pacing validation: pending.
@@ -57,8 +59,8 @@ No additional Canvas assessments were invented. Existing companion practice, sol
 
 ## How to reproduce
 
-Use [development instructions](DEVELOPMENT.md), the workflow at the audited commit, and the [release checklist](docs/release-checklist.md). The local execution outage means the final CI job logs, rather than an unavailable local terminal, are the authoritative runtime evidence for this review.
+Use [development instructions](../../../DEVELOPMENT.md), the workflow at the audited commit, and the [release checklist](../../release-checklist.md). The local execution outage means the final CI job logs, rather than an unavailable local terminal, are the authoritative runtime evidence for this review.
 
 ## Subsequent mixed-background enhancement
 
-The supplied private syllabus/module/project documents were reread locally on October 25, 2026. That resolves the earlier inability to access those sources for this enhancement's scope; institutional approval and unseen current Canvas policies remain separate. Edition 0.7.0 adds the [student routes, construction and engineering improvements](docs/enhancement-review.md). Earlier test/page/file counts above belong to their historical commits and are not the new release inventory. Private source documents remain excluded from Git and downloads.
+The supplied private syllabus/module/project documents were reread locally on October 25, 2026. That resolves the earlier inability to access those sources for this enhancement's scope; institutional approval and unseen current Canvas policies remain separate. Edition 0.7.0 adds the [student routes, construction and engineering improvements](learning-support-0.7.0.md). Earlier test/page/file counts above belong to their historical commits and are not the new release inventory. Private source documents remain excluded from Git and downloads.

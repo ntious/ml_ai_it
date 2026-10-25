@@ -51,7 +51,7 @@ for name in tracked:
     assert allowed, f"Tracked file omitted from source-download policy: {name}"
     if path.suffix == ".py":
         ast.parse((ROOT / path).read_text(encoding="utf-8"), filename=name)
-required = ["REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff",
+required = ["REPOSITORY_STRUCTURE.md", "docs/maintenance/reviews/baseline-0.6.0.md", "CITATION.cff",
             "templates/accessibility-review.md", "templates/lesson.md",
             "docs/instructor/assessment.md", "docs/instructor/canvas-linking.md",
             "docs/accessibility/review-log.md", "docs/release-checklist.md"]
