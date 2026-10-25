@@ -1,0 +1,10 @@
+# Isolated CPU framework environment; Linux CI records execution.
+numpy==2.1.3
+pandas==2.2.3
+matplotlib==3.10.8
+seaborn==0.13.2
+scikit-learn==1.8.0
+tensorflow-cpu==2.19.1
+torch==2.6.0
+transformers==4.46.3
+streamlit==1.44.1

@@ -20,11 +20,11 @@ from sklearn.model_selection import GroupShuffleSplit, train_test_split
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = {
     "wine": {"id": 186, "slug": "wine+quality", "members": ["winequality-red.csv", "winequality.names"],
-             "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.", "sha256": None},
+             "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.", "sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4"},
     "sms": {"id": 228, "slug": "sms+spam+collection", "members": ["SMSSpamCollection", "readme"],
-            "citation": "Almeida, T. & Hidalgo, J. (2012). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.", "sha256": None},
+            "citation": "Almeida, T. & Hidalgo, J. (2012). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.", "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3"},
     "adult": {"id": 2, "slug": "adult", "members": ["adult.data", "adult.test", "adult.names"],
-              "citation": "Becker, B. & Kohavi, R. (1996). Adult. UCI. DOI:10.24432/C5XW20.", "sha256": None},
+              "citation": "Becker, B. & Kohavi, R. (1996). Adult. UCI. DOI:10.24432/C5XW20.", "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"},
 }
 
 

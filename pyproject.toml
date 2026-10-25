@@ -14,6 +14,9 @@ license = {text = "MIT"}
 [project.optional-dependencies]
 visualization = ["matplotlib>=3.10,<4", "seaborn>=0.13.2,<0.14"]
 regression = ["scikit-learn>=1.8,<2"]
+neural = ["tensorflow-cpu>=2.19.1,<2.20"]
+language = ["torch>=2.6,<2.7", "transformers==4.46.3", "safetensors>=0.4", "huggingface-hub>=0.26,<1"]
+deployment = ["streamlit==1.44.1"]
 
 [project.scripts]
 ml-ai-prepare = "practical_ml_ai.data.events:main"
