@@ -1,0 +1,15 @@
+{
+  "title": "UCI Bike Sharing: external daily demand case",
+  "source": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+  "doi": "10.24432/C5W894",
+  "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository.",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "acquisition": "Shared download command retains original ZIP/day.csv/Readme.txt, attribution, retrieval time, and actual SHA-256 digests. Cached CSVs must retain their recorded digest. The initial remote archive digest is recorded, not claimed to be pinned.",
+  "changes": "No changes to cached day.csv. Prepared study selects dteday/cnt, constructs past-only lag features, and separates chronological splits.",
+  "limitations": [
+    "Historical 2011–2012 rental counts; not present-day demand.",
+    "The full public file contains test labels. The workflow's holdout discipline is procedural, not access control.",
+    "Weather observations on the target date, casual/registered totals, and the target itself are excluded from forecast inputs."
+  ]
+}

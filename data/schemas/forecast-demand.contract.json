@@ -1,0 +1,13 @@
+{
+  "description": "Teaching contract documentation, not executable JSON Schema.",
+  "raw": "UCI dteday/cnt or synthetic date/requests. Unique ascending consecutive YYYY-MM-DD dates; integer counts 0..1,000,000,000; at least 42 days.",
+  "features": {
+    "prior_day_requests": "Count on target minus one day; available at origin end-of-day.",
+    "prior_week_requests": "Count on target minus seven days; available before origin."
+  },
+  "target": "Next calendar day's total count, unknown at forecast origin.",
+  "warmup_days": 7,
+  "split": "Earliest examples train; next holdout_days validate; last holdout_days are final test. No shuffle; at least 7 training rows and 7 days per holdout.",
+  "protocol": "Fixed trained parameters with rolling one-day-ahead origins. Past holdout observations may become legitimate features at later origins. No fitting or selection uses final targets.",
+  "inference": "Feature-only file with origin/target one day apart. Predictions remain real-valued without implicit clipping/rounding."
+}
