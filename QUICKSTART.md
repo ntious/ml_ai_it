@@ -125,3 +125,7 @@ For help, retain the command, Python/platform version, error text, and small syn
 ## Modules 6–14
 
 Choose a module from the [curriculum map](docs/modules.md). Modules 6, 7, and 13 use the core environment; Modules 8–12 and 14 use the [isolated CPU framework setup](docs/setup/frameworks.md). Each entry supplies its script, commented notebook, actual source, and evidence requirements. Use fresh output directories and retain verified data/model caches for replay.
+
+## Maintainer verification
+
+To execute the curated notebooks programmatically, install the verification extra in the relevant environment, register its Jupyter kernel, and follow [development verification](DEVELOPMENT.md). A notebook frontend alone is not the complete automated-check setup. The [framework guide](docs/setup/frameworks.md) uses its own environment and kernel. Clean source notebooks and saved executed build copies have different purposes.

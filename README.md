@@ -24,8 +24,8 @@ Install the verification extra and register a matching kernel as described in [d
 
 ~~~sh
 python -m unittest discover -s tests -v
-python scripts/check_notebook.py --group core
-python scripts/check_notebook.py --group frameworks
+python scripts/check_notebook.py --group core --kernel ml-ai-core
+python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
 npm install --ignore-scripts
 npm run build
 npm run check

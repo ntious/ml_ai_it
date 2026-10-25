@@ -13,7 +13,43 @@ from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
 MODULES = json.loads((ROOT / "curriculum/modules.json").read_text(encoding="utf-8"))["modules"]
-VALIDATION = "if number == 1:\n    assert globals()[\"boundary_results\"] == {80: False, 81: True}\n    assert globals()[\"result\"][\"review_needed\"]\nelif number == 2:\n    assert globals()[\"report\"][\"tickets\"][\"total_minutes\"] == 60\n    assert globals()[\"saved_report\"] == globals()[\"report\"]\nelif number == 3:\n    assert globals()[\"result\"].report[\"rows_accepted\"] == 6\n    assert globals()[\"np\"].allclose(globals()[\"solution\"], [3, 2])\nelif number == 4:\n    assert globals()[\"result\"][\"total_requests\"] == 4180\n    assert globals()[\"custom_plot\"].is_file()\nelif number == 5:\n    assert globals()[\"result\"][\"selected\"] == globals()[\"selection\"][\"selected\"] == \"previous_day\"\n    assert globals()[\"result\"][\"test_rows\"] == 110\n    assert abs(globals()[\"result\"][\"scores\"][0][\"mae\"] - 926.5727272727273) < 1e-6\n    assert globals()[\"invalid_example\"][\"invalid_validation_mae\"] < 1e-8\nelse:\n    result = globals()[\"result\"]\n    assert result[\"module\"] == number\n    if number == 6: assert not result[\"split_group_overlap\"]\n    if number == 7: assert not result[\"quality_used_for_fit_or_selection\"]\n    if number in {8, 9}: assert result[\"saved_model_replay_verified\"] and result[\"weight_change_norm\"] > 0\n    if number == 10: assert result[\"real_examples\"] == 8\n    if number == 11: assert result[\"adapter_replay_verified\"] and result[\"adapter_update_norm\"] > 0\n    if number == 12: assert result[\"real_heldout_rows\"] == 243\n    if number == 13: assert not result[\"audited_sex_race_used_for_fitting\"]\n    if number == 14: assert result[\"destructive_request_refused\"]\n    source = globals()[\"run_dir\"]\n    assert (source / \"index.html\").is_file() and (source / \"summary.json\").is_file()\n    destination = ROOT / \"runs/verified\" / f\"module{number:02d}\"\n    if destination.exists():\n        shutil.rmtree(destination)\n    shutil.copytree(source, destination)\n    print(\"VERIFIED_MODULE\", number, json.dumps(result, sort_keys=True))\n"
+# Learning-result checks run inside the notebook kernel after its own cells.
+VALIDATION = r"""if number == 1:
+    assert globals()["boundary_results"] == {80: False, 81: True}
+    assert globals()["result"]["review_needed"]
+elif number == 2:
+    assert globals()["report"]["tickets"]["total_minutes"] == 60
+    assert globals()["saved_report"] == globals()["report"]
+elif number == 3:
+    assert globals()["result"].report["rows_accepted"] == 6
+    assert globals()["np"].allclose(globals()["solution"], [3, 2])
+elif number == 4:
+    assert globals()["result"]["total_requests"] == 4180
+    assert globals()["custom_plot"].is_file()
+elif number == 5:
+    assert globals()["result"]["selected"] == globals()["selection"]["selected"] == "previous_day"
+    assert globals()["result"]["test_rows"] == 110
+    assert abs(globals()["result"]["scores"][0]["mae"] - 926.5727272727273) < 1e-6
+    assert globals()["invalid_example"]["invalid_validation_mae"] < 1e-8
+else:
+    result = globals()["result"]
+    assert result["module"] == number
+    if number == 6: assert not result["split_group_overlap"]
+    if number == 7: assert not result["quality_used_for_fit_or_selection"]
+    if number in {8, 9}: assert result["saved_model_replay_verified"] and result["weight_change_norm"] > 0
+    if number == 10: assert result["real_examples"] == 8
+    if number == 11: assert result["adapter_replay_verified"] and result["adapter_update_norm"] > 0
+    if number == 12: assert result["real_heldout_rows"] == 243
+    if number == 13: assert not result["audited_sex_race_used_for_fitting"]
+    if number == 14: assert result["destructive_request_refused"]
+    source = globals()["run_dir"]
+    assert (source / "index.html").is_file() and (source / "summary.json").is_file()
+    destination = ROOT / "runs/verified" / f"module{number:02d}"
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination)
+    print("VERIFIED_MODULE", number, json.dumps(result, sort_keys=True))
+"""
 
 
 def check(module, kernel):

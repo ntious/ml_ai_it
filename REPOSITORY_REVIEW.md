@@ -28,9 +28,17 @@ See the [draft integration review](https://github.com/ntious/ml_ai_it/pull/2) fo
 | Responsible reuse | Citation, model-use summary, reporting templates absent | Added citation metadata, model limitations, PR/accessibility/bug reporting guidance |
 | Release readiness | No consolidated release decision record | Added checklist separating automated gates from owner/manual decisions |
 
+## Completed first audit run
+
+[Run 40157447112](https://github.com/ntious/ml_ai_it/actions/runs/40157447112) passed all four jobs for commit a208c3506c4a2711a6802fcd4da3824ba9bc8b27. Core Windows/Linux each discovered 64 behavior tests, passed 55, and intentionally skipped nine framework tests. Linux CPU separately passed all nine framework tests. All 14 notebooks/90 teaching cells executed in real kernels.
+
+The build produced 105 reading pages and 11 worked reports; all 116 HTML pages passed the defined structural/link checks. All 186 tested HTTP routes under /ml_ai_it/ responded successfully. The 193-file source archive exactly matched tracked source and bytes; external cache digests/attribution, extracted CLIs, wheel build, and isolated installed-wheel inference passed.
+
+A follow-up adds two direct CLI integration tests for the earlier Module 3/4 scripts, updates the setup/status instructions, and makes notebook validation code easier to maintain. The final commit must pass its own workflow with 194 tracked files and 66 discovered behavior tests; consult the draft review's current commit checks for that evidence. These counts do not turn pending human checks into passes.
+
 ## Verification expectations
 
-The workflow runs 64 discovered behavioral tests in core environments: 55 core checks and nine intentionally skipped framework checks. A separate Linux CPU job runs those nine framework checks, including actual training, generation, adapters, replay, app forms, and server health. Report each scope separately; skipped tests are not passes.
+The workflow runs 66 discovered behavioral tests in core environments: 57 core checks and nine intentionally skipped framework checks. A separate Linux CPU job runs those nine framework checks, including actual training, generation, adapters, replay, app forms, and server health. Report each scope separately; skipped tests are not passes.
 
 All 14 notebooks contain 90 curriculum code cells. Eight core notebooks contain 48; six framework notebooks contain 42. The temporary validation cell is not counted or retained as tutorial content. Each notebook runs in a fresh kernel from the checkout root. Executed copies preserve outputs; source copies remain clean.
 

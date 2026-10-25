@@ -9,7 +9,7 @@ Windows PowerShell (installation route; framework execution is not verified on W
 ~~~powershell
 py -3.12 -m venv .venv-ml
 .\.venv-ml\Scripts\python.exe -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-.\.venv-ml\Scripts\python.exe -m pip install -e ".[regression,visualization,neural,language,deployment]" -c environments/constraints-neural.txt
+.\.venv-ml\Scripts\python.exe -m pip install -e ".[regression,visualization,neural,language,deployment,verification]" -c environments/constraints-neural.txt
 ~~~
 
 Linux:
@@ -17,7 +17,7 @@ Linux:
 ~~~sh
 python3.12 -m venv .venv-ml
 .venv-ml/bin/python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-.venv-ml/bin/python -m pip install -e ".[regression,visualization,neural,language,deployment]" -c environments/constraints-neural.txt
+.venv-ml/bin/python -m pip install -e ".[regression,visualization,neural,language,deployment,verification]" -c environments/constraints-neural.txt
 ~~~
 
 Do not combine this constraint file with the core one. It isolates NumPy 2.1.3/TensorFlow 2.19.1 from core NumPy 2.3.5. Constraints record exercised choices, not the newest release or a full transitive lockfile.
@@ -30,7 +30,8 @@ Here python means your environment executable above if not activated.
 
 ~~~sh
 python examples/wine-neural-network/scripts/run.py --output runs/module08
-python scripts/check_notebook.py --group frameworks
+python -m ipykernel install --user --name ml-ai-frameworks
+python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
 ~~~
 
 An optional local notebook interface can be installed with python -m pip install notebook and launched with python -m notebook. Keep notebooks inside the complete source tree, run in order, save, restart, and run all. The script/text route shares implementation but does not demonstrate notebook-interface operation.
@@ -39,11 +40,13 @@ USE_TF=0 is a Transformers backend setting for the PyTorch language model, not a
 
 ## Reproduce the complete site
 
-Execute both notebook groups in their corresponding environments while retaining runs/verified:
+Execute both notebook groups in their corresponding environments while retaining runs/verified. Install the verification extra in each and run only that profile's commands from that environment; the block below lists the overall sequence, not one combined environment:
 
 ~~~sh
-python scripts/check_notebook.py --group core
-python scripts/check_notebook.py --group frameworks
+python -m ipykernel install --user --name ml-ai-core
+python scripts/check_notebook.py --group core --kernel ml-ai-core
+python -m ipykernel install --user --name ml-ai-frameworks
+python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
 npm install --ignore-scripts
 npm run build
 npm run check

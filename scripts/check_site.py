@@ -72,4 +72,4 @@ for path, page in pages.items():
         elif parsed.fragment and target in pages and unquote(parsed.fragment) not in pages[target].ids:
             problems.append(f"{path.name}: missing fragment {link}")
 assert not problems, "\n".join(problems)
-print(f"Checked {len(pages)} pages: local links/fragments, language, title, main/skip link, heading order, image alternatives. Manual accessibility testing remains required.")
+print(f"Checked {len(pages)} pages: local links/fragments, language, title, main/skip link, heading order, image alternatives, captioned/scoped tables and named table regions. Manual accessibility testing remains required.")

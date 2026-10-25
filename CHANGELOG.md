@@ -4,6 +4,7 @@
 
 - Add canonical module registry, architecture inventory, audit findings, and complete early-module instructor/foundation pages.
 - Add instructor adoption/assessment/pacing/alignment guidance, AI collaboration, model-use summaries, citation, reporting guidance, and reusable authoring/accessibility templates.
+- Exercise the earlier Module 3/4 public CLIs from another working directory, completing entry-point coverage.
 - Validate and execute notebooks with real kernels; retain executed copies outside clean source.
 - Fix installed-package cache placement; test isolated-wheel inference and source-archive completeness.
 - Add captioned/scoped reading tables, project-prefix HTTP tests, and manual-review/release records.

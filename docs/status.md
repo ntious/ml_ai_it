@@ -1,6 +1,8 @@
 # Development status
 
-Edition 0.5.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
+Edition 0.6.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
+
+The [architecture](../REPOSITORY_STRUCTURE.md) and [audit record](../REPOSITORY_REVIEW.md) describe the registry-backed inventory, added authoring/adoption resources, and verification limits.
 
 ## Real sources and actual computation
 
@@ -10,9 +12,9 @@ Actual TensorFlow training/reload, local generation, real adapter gradients/repl
 
 ## Verification scopes
 
-Core tests/notebooks execute on Windows/Linux; framework tests/notebooks execute on Linux CPU. Framework tests skipped in the smaller core environment are explicitly executed in the separate job. Both notebook groups must pass before site assembly.
+Core tests/notebooks execute on Windows/Linux; framework tests/notebooks execute on Linux CPU. Framework tests skipped in the smaller core environment are explicitly executed in the separate job. Both notebook groups execute in fresh Jupyter kernels with saved executed copies and must pass before site assembly.
 
-The final integration run checks actual report artifacts, generated links/structure, source/data ZIPs, extracted CLI execution, and package building. Exact evidence is recorded in DEVELOPMENT.md and commit-specific CI.
+The final integration run checks actual report artifacts, generated links/structure, source/data ZIPs, extracted CLI execution, project-prefix HTTP routes, package building, and isolated installed-wheel inference. Exact evidence is recorded in DEVELOPMENT.md and commit-specific CI.
 
 ## Observed limitations
 
