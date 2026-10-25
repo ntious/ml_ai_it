@@ -29,7 +29,7 @@ try {
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await context.newPage();
   const results = [];
-  for (const route of ['start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html']) {
+  for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html']) {
     const response = await page.goto(base + route);
     if (!response.ok()) throw new Error('Reading page unavailable: ' + route);
     await page.bringToFront();
@@ -44,6 +44,7 @@ try {
     const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: innerWidth }));
     if (widths.document > widths.viewport + 1) throw new Error('Page-level overflow: ' + route + ' ' + JSON.stringify(widths));
     results.push({ route, axeViolations: scan.violations.length, skipFocus: true, widths });
+    if (route === 'overview.html') await page.screenshot({ path: path.join(output, 'readme-mobile.png') });
     if (route === 'start-here.html') await page.screenshot({ path: path.join(output, 'start-mobile.png') });
     await page.setViewportSize({ width: 1280, height: 900 });
     if (route === 'lessons/08-neural-networks/guided.html') {
@@ -56,7 +57,7 @@ try {
   const dark = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   if (dark.violations.length) throw new Error('Dark-mode accessibility-rule violations.');
   const report = { browser: browser.version(), results, darkViolations: dark.violations.length,
-    limits: 'Four reading pages and selected automated rules; no screen-reader, human keyboard, real zoom or hosted notebook/app interface claim.' };
+    limits: 'Five reading pages and selected automated rules; no screen-reader, human keyboard, real zoom or hosted notebook/app interface claim.' };
   await fs.writeFile(path.join(output, 'checks.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report));
 } finally {

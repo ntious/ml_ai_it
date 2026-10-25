@@ -32,3 +32,7 @@ A blocking core task needs repair or a documented, tested equivalent route befor
 ## Scripted browser regression checks added October 25, 2026
 
 scripts/check_browser.mjs checks four reading pages: readiness, Python bridge, neural construction and phishing case. It exercises first-tab skip-link focus, Enter-to-main focus, 320 CSS-pixel page reflow and selected axe WCAG A/AA rules; the readiness page is also scanned in dark mode. A long unbroken dataset hash initially caused page overflow and the stylesheet now permits word wrapping. The repeatable check and screenshots run in CI. This is browser automation, not a human keyboard, real zoom, screen-reader, notebook or app-interface review. The manual status table above remains NOT RUN until those tasks have actual evidence.
+
+## Learner README review
+
+The rewritten README is built as the learner-facing course overview. Browser checks now include this fifth page, alongside readiness, the Python bridge, neural construction and the phishing case. This expands scripted focus, reflow and selected accessibility-rule coverage; the manual testing status remains unchanged.

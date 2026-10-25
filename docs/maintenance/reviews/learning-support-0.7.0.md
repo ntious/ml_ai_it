@@ -1,4 +1,6 @@
-# Mixed-background enhancement and verification record
+# Historical learning-support review: edition 0.7.0
+
+Archived maintainer evidence for [PR 4](https://github.com/ntious/ml_ai_it/pull/4). For learner entry, use [start here](../../start-here.md).
 
 Edition 0.7.0, October 25, 2026. Implemented locally from the integrated 0.6.0 course. Changes address the critical review's ten improvement areas.
 

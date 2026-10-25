@@ -22,8 +22,8 @@ const pages = walk(path.join(root, 'docs')).filter(p => p.endsWith('.md')).map(s
 pages.push({ source: path.join(root, 'QUICKSTART.md'), output: 'setup/quickstart.html' });
 pages.push({ source: path.join(root, 'ACCESSIBILITY.md'), output: 'accessibility/policy.html' });
 pages.push({ source: path.join(root, 'REPOSITORY_STRUCTURE.md'), output: 'maintenance/architecture.html' });
-pages.push({ source: path.join(root, 'REPOSITORY_REVIEW.md'), output: 'maintenance/review.html' });
-for (const name of ['README', 'DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT']) {
+pages.push({ source: path.join(root, 'README.md'), output: 'overview.html' });
+for (const name of ['DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT']) {
   pages.push({ source: path.join(root, name + '.md'), output: 'maintenance/' + name.toLowerCase() + '.html' });
 }
 for (const source of walk(path.join(root, 'templates')).filter(p => p.endsWith('.md'))) {
@@ -65,6 +65,7 @@ for (const page of pages) {
     if (href === 'https://github.com/ntious/ml_ai_it/blob/main/notebooks/cases/phishing.ipynb') return 'href="' + slash(path.relative(path.dirname(page.output), 'downloads/phishing/walkthrough.ipynb')) + '"';
     if (/^(https?:|mailto:|#)/.test(href)) return original;
     const [target, fragment] = href.split('#');
+    if (target === 'CITATION.cff') return 'href="' + slash(path.relative(path.dirname(page.output), 'maintenance/citation.cff')) + '"';
     if (target === 'LICENSE') return 'href="' + slash(path.relative(path.dirname(page.output), 'maintenance/license.txt')) + '"';
     if (!target.endsWith('.md')) return original;
     const mapped = mapping.get(path.resolve(path.dirname(page.source), target));
@@ -73,7 +74,7 @@ for (const page of pages) {
   });
   const relative = target => slash(path.relative(path.dirname(page.output), target)) || 'index.html';
   const navigation = [
-    ['index.html', 'Home'], ['start-here.html', 'Start here'], ['glossary.html', 'Glossary'], ['project.html', 'Project'],
+    ['index.html', 'Home'], ['overview.html', 'Course overview'], ['start-here.html', 'Start here'], ['glossary.html', 'Glossary'], ['project.html', 'Project'],
     ...modules.map(module => [module.lesson.replace(/^docs\//, '').replace(/\.md$/, '.html'), 'Module ' + module.id]),
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']
@@ -93,5 +94,6 @@ for (const page of pages) {
 fs.mkdirSync(path.join(site, 'assets'), { recursive: true });
 fs.copyFileSync(path.join(root, 'docs/assets/site.css'), path.join(site, 'assets/site.css'));
 fs.copyFileSync(path.join(root, 'LICENSE'), path.join(site, 'maintenance/license.txt'));
+fs.copyFileSync(path.join(root, 'CITATION.cff'), path.join(site, 'maintenance/citation.cff'));
 execFileSync(process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3'), [path.join(root, 'scripts/build_downloads.py')], { cwd: root, stdio: 'inherit' });
 console.log(`Built ${pages.length} reading pages. No deployment performed.`);

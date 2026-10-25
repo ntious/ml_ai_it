@@ -2,7 +2,7 @@
 
 ## Increment 0.6.0: repository audit and portability
 
-The audit reads all baseline tracked source files and adds a registry-backed architecture/integrity check, complete early-module teaching pages, reusable authoring and accessibility records, instructor adoption/assessment/pacing guidance, model-use summaries, citation and contribution templates. See REPOSITORY_REVIEW.md for scope and pending original-source reconciliation.
+The audit reads all baseline tracked source files and adds a registry-backed architecture/integrity check, complete early-module teaching pages, reusable authoring and accessibility records, instructor adoption/assessment/pacing guidance, model-use summaries, citation and contribution templates. See docs/maintenance/reviews/baseline-0.6.0.md for scope and pending original-source reconciliation.
 
 Verification now validates notebook format and runs real Jupyter kernels, retaining executed copies separately from clean source. Source-archive membership must equal tracked files. Added HTTP prefix tests and isolated installed-wheel inference exercise packaging and writable cache placement. Reading tables gain captions, scoped headers, and named keyboard-focusable regions.
 
