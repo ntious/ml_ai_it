@@ -4,7 +4,7 @@ This is an evidence register, not a conformance statement. Manual task-based che
 
 ## Automated scope
 
-The commit-specific workflow checks page language/title/main/skip links, heading order, image-alt presence, named code regions, captioned/scoped tables and named scroll regions, local links/fragments, real kernel execution, scripts, app forms, and HTTP routes. These checks cannot judge equivalent descriptions, focus behavior, announcements, contrast, rendered reflow, or actual assistive-technology use.
+The commit-specific workflow checks page language/title/main/skip links, heading order, image-alt presence, named code regions, captioned/scoped tables and named scroll regions, local links/fragments, real kernel execution, scripts, app forms, and HTTP routes. The website also has automated Chromium tests for selected keyboard interactions, native mobile disclosure, optional search/filter behavior, no-JavaScript navigation, selected viewport/text-enlargement bounds, and representative light/dark axe findings. The commit-specific run determines their outcome; this is not a manual task pass. These checks cannot judge equivalent descriptions, focus behavior, announcements, contrast, rendered reflow, or actual assistive-technology use.
 
 ## Manual module status
 

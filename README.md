@@ -38,6 +38,10 @@ See [DEVELOPMENT.md](DEVELOPMENT.md), commit-specific CI, [accessibility policy]
 
 Read the [architecture and inventory](REPOSITORY_STRUCTURE.md), [audit findings](REPOSITORY_REVIEW.md), and [release checklist](docs/release-checklist.md) for the implemented scope and pending human review.
 
+## GitHub Pages website
+
+The website provides a learning-path homepage, searchable reading pages, a module directory, lesson tabs, worked examples, downloads, and links to the exact source revision. [Preview and publishing instructions](docs/publishing.md) explain the tested artifact and manual Pages deployment workflow. GitHub Pages must be enabled in repository settings before a live URL exists.
+
 ## Teach and reuse
 
 The resource's original activities do not require original Canvas tasks. Local grading and AI-use rules remain with adopting instructors. Student records, master documents, institutional branding, and restricted assessments are excluded.

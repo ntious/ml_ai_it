@@ -16,7 +16,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Foundations",
+      "summary": "Frame an AI task, trace a rule, and save your first changed run."
     },
     {
       "id": 2,
@@ -33,7 +35,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Foundations",
+      "summary": "Read files, reuse functions, and debug a repeatable Python workflow."
     },
     {
       "id": 3,
@@ -50,7 +54,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Foundations",
+      "summary": "Validate event records, reconcile rejections, and preserve missing values."
     },
     {
       "id": 4,
@@ -67,7 +73,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Foundations",
+      "summary": "Explore distributions and patterns with charts, tables, and clear explanations."
     },
     {
       "id": 5,
@@ -84,7 +92,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Classical ML",
+      "summary": "Forecast real bike demand with time-aware features and honest baselines."
     },
     {
       "id": 6,
@@ -101,7 +111,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Classical ML",
+      "summary": "Compare classifiers and decision trees without selecting on final-test data."
     },
     {
       "id": 7,
@@ -118,7 +130,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Classical ML",
+      "summary": "Interpret real-data clusters while keeping labels out of unsupervised choices."
     },
     {
       "id": 8,
@@ -135,7 +149,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Neural and language models",
+      "summary": "Train and reload a TensorFlow model; compare it with a simpler reference."
     },
     {
       "id": 9,
@@ -152,7 +168,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Neural and language models",
+      "summary": "Learn from real messages and diagnose what accuracy hides under imbalance."
     },
     {
       "id": 10,
@@ -169,7 +187,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Neural and language models",
+      "summary": "Run a local language model and evaluate actual output-contract failures."
     },
     {
       "id": 11,
@@ -186,7 +206,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Neural and language models",
+      "summary": "Make real adapter updates and distinguish tuning mechanics from useful behavior."
     },
     {
       "id": 12,
@@ -203,7 +225,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Responsible systems",
+      "summary": "Connect checked inference to a local app and monitoring evidence."
     },
     {
       "id": 13,
@@ -220,7 +244,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Responsible systems",
+      "summary": "Audit group denominators, historical labels, and the consequences of decisions."
     },
     {
       "id": 14,
@@ -237,7 +263,9 @@
         "practice.md",
         "feedback.md",
         "instructor.md"
-      ]
+      ],
+      "track": "Responsible systems",
+      "summary": "Inspect a model-selected plan bounded by read-only tools and explicit budgets."
     }
   ]
 }

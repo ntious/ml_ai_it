@@ -98,12 +98,25 @@ jobs:
           node-version: '22'
       - name: Install reading-site tool
         run: npm install --ignore-scripts
+      - name: Check publication provenance boundaries
+        run: npm run check:release
       - name: Assemble site with actual verified reports
+        env:
+          SITE_SOURCE_REF: ${{ github.event.pull_request.head.sha || github.sha }}
         run: npm run build
       - name: Check every generated page and local link
         run: npm run check
       - name: Check project-prefix HTTP routes
         run: python scripts/check_http_routes.py
+      - name: Install Chromium for site browser verification
+        run: npx playwright install --with-deps chromium
+      - name: Exercise browser navigation, search, reflow, and axe checks
+        run: npm run check:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-browser-evidence
+          path: browser-results/
       - name: Check source and data archives and extracted CLI
         run: python scripts/check_downloads.py
       - name: Build package

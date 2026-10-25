@@ -36,6 +36,7 @@ class Page(HTMLParser):
         if tag == "img" and "alt" not in attrs: self.problems.append("image missing alternative")
         if tag == "pre" and (attrs.get("tabindex") != "0" or not attrs.get("aria-label")):
             self.problems.append("code/text example missing a named keyboard-focus target")
+        if tag == "base": return
         for name in ("href", "src"):
             if name in attrs: self.links.append(attrs[name])
 

@@ -54,3 +54,7 @@ For a local reading preview, serve site/ with python -m http.server --directory 
 ## Decision record
 
 Record commit, workflow URL, test counts/skips, kernel/runtime versions, source/model hashes, manual review records, unresolved issues, owner, semester edition, and decision date. Use NOT RUN for missing evidence. A blocked human gate must not be converted into a pass by repeating automated checks.
+
+## Website publication
+
+Use the [GitHub Pages guide](publishing.md) for one-time settings, artifact preview, reviewed-run selection, and the manual publishing workflow. Check the home/module/search/download/404 browser routes and inspect the generated screenshots; passing browser assertions is not human visual review. Publication requires a successful default-branch run and matching embedded manifest.

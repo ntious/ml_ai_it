@@ -18,7 +18,7 @@ Support complete beginners through advanced optional work; let an instructor lin
 | apps/ | Local interactive teaching interface | Public production service |
 | data/ | Contracts, manifests, explicitly labeled earlier teaching fixtures | Downloaded external archives or invented real records |
 | environments/ | Exercised core/framework constraints | A claim of a complete transitive lock |
-| scripts/ | Curriculum, kernel, site, archive, HTTP, and package verification | Unreviewed arbitrary notebook execution |
+| scripts/ | Curriculum, kernel, site, archive, HTTP, package, preview, and release verification | Unreviewed arbitrary notebook execution |
 | tests/ | Behavioral, real-data, framework, replay, CLI, and app checks | Accessibility conformance claims |
 | templates/ | Reusable lesson, case, instructor, provenance, AI, and review records | Completed results invented from a checklist |
 | docs/instructor/ | Adoption, assessment, pacing, and alignment status | Changes to master grading rules |
@@ -69,7 +69,7 @@ Generated runs/, site/, dist/, environment folders, and caches are excluded from
 
 CI checks the registry and Python syntax, behavior on Windows/Linux, actual Linux CPU framework learning/generation, 14 notebooks in real Jupyter kernels, generated page semantics and links, project-prefix HTTP routes, archive completeness/digests, extracted CLIs, and an isolated installed-wheel inference path.
 
-The site is static HTML/CSS without required browser JavaScript. Its build requires verified outputs from both execution profiles; it fails instead of inventing missing results. The complete site artifact is for review. No Pages deployment occurs automatically.
+The site is static HTML/CSS with optional browser-local search and module filtering. Its build requires verified outputs from both execution profiles; it fails instead of inventing missing results. The complete site artifact is for review. A separate manual Pages workflow publishes only a reviewed successful default-branch verification artifact. It is not triggered by pull requests; see [publishing instructions](docs/publishing.md).
 
 Automated checks do not establish screen-reader usability, plot quality, reflow, educational effectiveness, formal course alignment, or production fitness. Follow the [release checklist](docs/release-checklist.md).
 

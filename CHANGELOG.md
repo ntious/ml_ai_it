@@ -1,5 +1,13 @@
 # Changelog
 
+## Website development — GitHub Pages
+
+- Add a responsive learning-path homepage, registry-driven module directory, lesson outline/tabs/pager, worked examples, and download hub.
+- Add optional browser-local search/filtering, native mobile disclosure, source revision links, and project-prefix 404 recovery.
+- Add Chromium/axe interaction and reflow checks, screenshot artifacts, and tested publication provenance boundaries.
+- Add a manual GitHub Pages publishing workflow and activation guide; deployment requires repository Pages settings and a reviewed successful default-branch run.
+
+
 ## 0.6.0 — repository audit and verification
 
 - Add canonical module registry, architecture inventory, audit findings, and complete early-module instructor/foundation pages.

@@ -14,3 +14,7 @@ runs/
 .ipynb_checkpoints/
 
 .venv-ml/
+
+# Browser verification artifacts
+browser-results/
+playwright-report/

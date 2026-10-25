@@ -25,3 +25,7 @@ Adult results are descriptive audits, not justified decisions about people. Batc
 Manual keyboard, screen-reader, zoom/reflow, notebook/app usability, rendered visual review, macOS, Windows framework, and hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
 
 Merging, GitHub Pages publication, and visibility changes remain separate release actions.
+
+## Website experience
+
+The GitHub Pages source now includes a learning-path homepage, all-module directory, lesson outline/tabs/pager, worked examples, download hub, optional local search, and deep-link 404 recovery. Repository links identify the built revision. The [publishing guide](publishing.md) explains preview, private-repository audience considerations, and the manual reviewed-artifact workflow. A live deployment is not claimed until Pages configuration and deployment succeed.
