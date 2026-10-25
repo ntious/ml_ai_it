@@ -133,8 +133,9 @@ jobs:
           name: reading-browser-review
           path: runs/browser-review/
   deploy-pages:
-    # Publish only the checked site from main; pull requests build without deploying.
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    # The owner enables publication explicitly after the release review.
+    # Pull requests always build without deploying.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PUBLISH_READING_SITE == 'true'
     needs: build-site
     runs-on: ubuntu-latest
     permissions:

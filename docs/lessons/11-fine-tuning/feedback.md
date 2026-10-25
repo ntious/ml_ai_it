@@ -21,7 +21,7 @@ A useful recommendation has this structure: “For [declared task], the recorded
 1. **The budget is far too small to change behavior.** Eight steps show only 8 of the 24 training messages, once each, and update one projection in one layer.
 2. **Accuracy cannot move until the format does.** The base model fails the schema on every example (as in Module 10), so a tiny loss improvement cannot appear as correct labels.
 
-**A fair diagnostic experiment.** Treat the step budget as the declared variable: run `--steps 48` (the allowed maximum) in a new output directory and compare **validation** completion loss and validation schema validity, not final scores. Predict what a larger adapter on more layers would change. Explain why format compliance is often the first measurable gain from fine-tuning.
+**A fair diagnostic experiment.** Treat the step budget as the declared variable: run `--steps 48` (the allowed maximum) in a new output directory and compare **validation** completion loss, not final scores. The current script records schema validity only on the final subset in generation_comparison.csv; it does not provide validation schema validity. Adding generation evaluation on validation messages would be a separate extension. Predict what a larger adapter on more layers would change, then explain why completion loss, format compliance and label correctness need separate measurements.
 
 ## Transfer cautiously
 

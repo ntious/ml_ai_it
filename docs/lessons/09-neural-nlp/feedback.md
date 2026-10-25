@@ -18,9 +18,9 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 **Likely causes.**
 
-1. **The scores rank, but the threshold hides it.** A model that always predicts the 12.5% spam rate has a cross-entropy of about 0.377. A validation loss of 0.286 is lower, so the network does separate the classes somewhat; its spam probabilities simply stay below 0.5.
+1. **Check the scores before blaming the representation.** A constant prediction of 12.5% spam has cross-entropy about 0.377 on a split with that prevalence. The recorded validation loss of 0.286 improves on that reference, but loss alone does not establish ranking quality. Inspect validation score distributions and ROC-AUC or precision–recall performance to test whether a different threshold could help. Zero test recall tells us that none of the 30 actual spam messages crossed 0.5; it does not describe every predicted probability.
 2. **Too few updates.** 720 training messages and 3 epochs give about 70 gradient steps. Loss was still falling steeply when training stopped.
-3. **The baseline has the same threshold problem.** Perfect precision with low recall means the logistic scores are cautious, not that lexical features are weak.
+3. **The baseline also needs a threshold check.** Perfect precision with low recall describes a conservative decision rule on this sample. Compare validation thresholds before attributing the missed spam to weak lexical features.
 
 **A fair diagnostic experiment.** Using validation messages only, compare the probability distributions for spam and ham, then choose one threshold rule for both methods. As a separate declared experiment, run `--epochs 20` in a new output directory. Report recall and precision with their denominators; accuracy (87.5% for predicting nothing) would hide the failure.
 

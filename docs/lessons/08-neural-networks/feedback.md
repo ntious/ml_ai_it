@@ -19,7 +19,7 @@ A useful recommendation has this structure: “For [declared task], the recorded
 **Likely causes.**
 
 1. **The threshold, not only the model.** Only about 12% of wines are positive, so most predicted probabilities sit below 0.5. Module 6 chose 0.3 on validation for the same label and reached balanced accuracy 0.757. Comparing a 0.5 network with a 0.3 logistic model would mix up two separate decisions.
-2. **Training stopped early.** The best checkpoint is also the final epoch, so the run cannot show where validation loss starts to rise. The epoch budget, not the data, chose the checkpoint.
+2. **The search ended at its boundary.** Validation loss selected epoch 8 from the eight observed checkpoints. Because the best checkpoint is also the final epoch, a larger budget might find a better checkpoint, but this run cannot establish what happens later. Longer training need not produce a visible rise in validation loss.
 
 **A fair diagnostic experiment.** On validation only, list the predicted probabilities for actual positives and choose a threshold with the rule Module 6 uses. Separately, declare a larger epoch budget (for example `--epochs 30`) in a new output directory and find the epoch where validation loss is lowest. Change one factor at a time, and record both results before you look at final-test counts again. The public final results are already known, so treat any rerun as rehearsal.
 

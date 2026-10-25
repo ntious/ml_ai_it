@@ -102,7 +102,7 @@ All modules include outcomes, a foundation bridge, guided construction, practice
 
 Early modules use clearly labeled original teaching fixtures. Regression and the later modeling modules use attributed public datasets; the phishing case uses real historical security attributes. The [source register](docs/data-sources.md) documents rights, reviewed hashes, transformations and model provenance. Historical benchmark results do not establish current operational performance.
 
-Lesson source is readable directly on GitHub. The [published reading site](https://ntious.github.io/ml_ai_it/) adds the verified reports, executed notebook copies and source/data downloads that CI builds from each checked commit on main; see [reading the reports](docs/setup/student-workspace.md#reading-reports-from-github). You do not need to build the full site to study one module.
+Lesson source is readable directly on GitHub. The [reading-site publication address](https://ntious.github.io/ml_ai_it/) provides verified reports, executed notebook copies and source/data downloads once the owner enables publication and the first deployment succeeds. CI builds the complete site separately from deployment. Until publication, use the site archive supplied for your review or class; see [reading the reports](docs/setup/student-workspace.md#reading-reports-from-github). You do not need to build the full site to study one module.
 
 GenAI assistance is optional. Verify suggestions against code and evidence, protect private data, and follow the [AI collaboration guidance](docs/ai-collaboration.md) and your instructor's disclosure rules. Public feedback supports self-study; it is not a confidential answer key.
 

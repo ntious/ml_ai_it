@@ -1,6 +1,6 @@
 # Obtain and navigate the student workspace
 
-Use the public repository or the complete source archive supplied for your class. No GitHub account is needed to download, read or run the course.
+Use a repository checkout or the complete source archive supplied for your class. Running the downloaded course locally does not require a GitHub account.
 
 ## Download route
 
@@ -40,6 +40,8 @@ Install the core environment and notebook interface using first run. Launch the 
 
 ## Reading reports from GitHub
 
-Open the [published reading site](https://ntious.github.io/ml_ai_it/). It contains every lesson page plus the worked reports, executed notebook copies and the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"), rebuilt by CI from each checked commit on main. Report, notebook and archive links in the lesson source on GitHub open the matching file on that site. Running the public scripts locally produces the same report format from real execution. If the site is temporarily unavailable, maintainers and reviewers can download the complete-reading-site artifact from a successful Learning resource checks run under Actions, extract it and open index.html.
+The [reading-site address](https://ntious.github.io/ml_ai_it/) is the publication target for lesson pages, worked reports, executed notebook copies and the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). These links become available after the owner enables publication and the first deployment succeeds. CI builds the complete site from checked source; building it does not itself publish it.
+
+Before deployment, use the complete site archive supplied for your review or class. Maintainers and reviewers with access can also download the complete-reading-site artifact from a successful Learning resource checks run under Actions, extract it and open index.html. That fallback may require GitHub authentication and artifacts have limited retention. Running the scripts locally produces the same report format from real execution. After deployment, report, notebook and archive links in the lesson source open the matching files on the reading site without an Actions-artifact download.
 
 Do not build the entire site just to study one module. Site assembly is a maintainer workflow requiring both notebook execution profiles. See [troubleshooting](troubleshooting.md) for common errors.

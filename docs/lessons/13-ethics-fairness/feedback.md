@@ -16,7 +16,7 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 **Evidence.** Female and male recall were close (0.61 and 0.63), but selection rates differed (0.20 and 0.31). Recorded race groups differ greatly in size: the Amer-Indian-Eskimo group has 19 actual positives, and its recall is 8/19 = 0.42.
 
-**Uncertainty changes the reading.** 95% Wilson intervals for recall are 0.57–0.64 (female), 0.61–0.64 (male), 0.23–0.64 (Amer-Indian-Eskimo), 0.41–0.77 (Other, 15/25) and 0.61–0.64 (White). The smallest groups' intervals overlap the largest groups'. The data cannot show that recall for those groups is truly lower, and they cannot show that it is equal either.
+**Uncertainty changes the reading.** Approximate 95% Wilson intervals for recall are 0.57–0.64 (female), 0.61–0.64 (male), 0.23–0.64 (Amer-Indian-Eskimo), 0.41–0.77 (Other, 15/25) and 0.61–0.64 (White). Small positive-label denominators give wide intervals. Overlap of separate group intervals is not a significance test of their difference and does not establish equality. A comparison needs an interval for the difference or a suitable predeclared test, with sampling and multiple-comparison assumptions stated. These binomial intervals do not account for dependence or historical sampling bias.
 
 **A fair diagnostic experiment.** Recompute one interval yourself with `wilson_interval(8, 19)`. Then write two sentences: one comparison the evidence supports, and one it does not. Explain why a selection-rate gap can exist even when recall is similar, using the different base rates of the historical income label.
 
