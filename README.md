@@ -33,8 +33,8 @@ These are resource learning goals. The [module outcomes](docs/modules.md) identi
 ## Get your first result
 
 1. **Choose support:** complete [readiness](docs/start-here.md) and any needed Python preparation.
-2. **Get the complete source:** follow [download, extraction and folder instructions](docs/setup/student-workspace.md). If GitHub requests authentication, use an account with repository access. A notebook downloaded alone does not include the shared code and data.
-3. **Run Module 1:** open a terminal in the extracted project folder, where README.md and examples are visible. Python 3.12 is the tested reference; supported Python versions start at 3.11. The first script uses only the standard library.
+2. **Get the complete source:** follow [download, extraction and folder instructions](docs/setup/student-workspace.md). A notebook downloaded alone does not include the shared code and data.
+3. **Run Module 1:** open a terminal in the extracted project folder, where README.md and examples are visible. Python 3.11–3.13 are supported for the core modules; CI checks 3.12 and 3.13. The first script uses only the standard library.
 
 Windows PowerShell:
 
@@ -102,7 +102,7 @@ All modules include outcomes, a foundation bridge, guided construction, practice
 
 Early modules use clearly labeled original teaching fixtures. Regression and the later modeling modules use attributed public datasets; the phishing case uses real historical security attributes. The [source register](docs/data-sources.md) documents rights, reviewed hashes, transformations and model provenance. Historical benchmark results do not establish current operational performance.
 
-Lesson source is readable directly on GitHub. Verified reports, executed notebook copies and source/data downloads are also assembled into a complete reading-site artifact by CI. Use [report and artifact access](docs/setup/student-workspace.md#reading-reports-from-github) to read or download the complete built site. You do not need to build the full site to study one module.
+Lesson source is readable directly on GitHub. The [published reading site](https://ntious.github.io/ml_ai_it/) adds the verified reports, executed notebook copies and source/data downloads that CI builds from each checked commit on main; see [reading the reports](docs/setup/student-workspace.md#reading-reports-from-github). You do not need to build the full site to study one module.
 
 GenAI assistance is optional. Verify suggestions against code and evidence, protect private data, and follow the [AI collaboration guidance](docs/ai-collaboration.md) and your instructor's disclosure rules. Public feedback supports self-study; it is not a confidential answer key.
 

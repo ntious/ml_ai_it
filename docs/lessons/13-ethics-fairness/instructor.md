@@ -26,4 +26,4 @@ Course alignment opportunities: **Supports CLO2, CLO5, CLO6, CLO8; explicit ethi
 
 ## Verification limits
 
-The real-data workflow, public script, and notebook are exercised in Windows/Linux core CI. Exact counts/results are recorded in DEVELOPMENT.md and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.
+The real-data workflow, public script, and notebook are exercised in Windows/Linux core CI. Exact counts/results are in the [verified results table](../../status.md#verified-results) and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.

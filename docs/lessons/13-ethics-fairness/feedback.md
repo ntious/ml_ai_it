@@ -12,6 +12,14 @@ State the purpose, observed unit, allowed input, and fitting/selection boundary.
 
 A useful recommendation has this structure: “For [declared task], the recorded workflow produced [actual evidence]. Compared with [relevant alternative], this suggests [limited interpretation]. The unresolved limitation is [specific issue]. Before use, we would [test or decision with an owner].” Fill the brackets from your run; do not invent a favorable score or causal story.
 
+## Diagnose the verified run
+
+**Evidence.** Female and male recall were close (0.61 and 0.63), but selection rates differed (0.20 and 0.31). Recorded race groups differ greatly in size: the Amer-Indian-Eskimo group has 19 actual positives, and its recall is 8/19 = 0.42.
+
+**Uncertainty changes the reading.** 95% Wilson intervals for recall are 0.57–0.64 (female), 0.61–0.64 (male), 0.23–0.64 (Amer-Indian-Eskimo), 0.41–0.77 (Other, 15/25) and 0.61–0.64 (White). The smallest groups' intervals overlap the largest groups'. The data cannot show that recall for those groups is truly lower, and they cannot show that it is equal either.
+
+**A fair diagnostic experiment.** Recompute one interval yourself with `wilson_interval(8, 19)`. Then write two sentences: one comparison the evidence supports, and one it does not. Explain why a selection-rate gap can exist even when recall is similar, using the different base rates of the historical income label.
+
 ## Transfer cautiously
 
 IT AI governance should examine purpose, access, affected groups, proxy inputs, feedback loops, reporting channels, and authority to stop a system.

@@ -1,6 +1,6 @@
 # Isolated CPU framework environment
 
-Modules 8–12 and 14 use this environment; Modules 6, 7, and 13 use core dependencies. CI verifies **Linux CPU, Python 3.12**. Use this reference environment for framework execution; additional platform and interface coverage is documented in the [support matrix](../status.md).
+Modules 8–12 and 14 use this environment; Modules 6, 7, and 13 use core dependencies. CI verifies **Linux CPU, Python 3.12**. Keep 3.12 here even if your core environment uses 3.13: the pinned TensorFlow 2.19 release does not support Python 3.13. Use this reference environment for framework execution; additional platform and interface coverage is documented in the [support matrix](../status.md).
 
 ## Install separately
 

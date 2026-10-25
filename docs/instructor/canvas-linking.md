@@ -12,13 +12,13 @@ https://github.com/ntious/ml_ai_it/blob/TESTED_COMMIT/docs/lessons/03-data-proce
 
 Replace TESTED_COMMIT with the full approved commit SHA. Test the link with a learner account and confirm any source-access requirements.
 
-If serving the built site under the GitHub Pages project base, the corresponding route is:
+The published reading site uses the GitHub Pages project base, so the corresponding route is:
 
 ~~~text
 https://ntious.github.io/ml_ai_it/lessons/03-data-processing/
 ~~~
 
-Use the actual base URL supplied by the host; the address above illustrates the project-route layout. Check the served route before distributing a link. Prefer a tagged tested edition for a semester so instructions and results remain stable.
+The site follows the latest checked main commit. Check the served route before distributing a link. Prefer a tagged tested edition for a semester so instructions and results remain stable.
 
 ## Add the resource
 

@@ -49,7 +49,7 @@ python scripts/check_wheel.py
 
 Framework tests require the ML_AI_HEAVY=1 environment setting and the dependencies in the framework guide; normal core discovery intentionally skips them. The workflow is the precise executable sequence.
 
-For a local reading preview, serve site/ with python -m http.server --directory site 8000 and open the loopback address. The HTTP prefix checker separately tests /ml_ai_it/. Previewing is not a public deployment. Retrieve complete-reading-site and the verified execution artifacts from the successful workflow, then perform the manual tasks.
+For a local reading preview, serve site/ with python -m http.server --directory site 8000 and open the loopback address. The HTTP prefix checker separately tests /ml_ai_it/. Previewing is not a public deployment; the deploy-pages job publishes main after all checks pass. Retrieve complete-reading-site and the verified execution artifacts from the successful workflow, then perform the manual tasks.
 
 ## Decision record
 

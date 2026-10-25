@@ -39,7 +39,7 @@ For the first program, choose the rule: its behavior is small enough to inspect 
 
 ## Run and save the first example
 
-Download and extract the [complete source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip"), or use your repository checkout. Open a terminal in its `ml_ai_it` folder. Install Python if needed using the [first-run guide](../../../QUICKSTART.md). For Modules 1 and 2, Python's standard library is sufficient; no package installation is needed.
+Download and extract the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"), or use your repository checkout. Open a terminal in its `ml_ai_it` folder. Install Python if needed using the [first-run guide](../../../QUICKSTART.md). For Modules 1 and 2, Python's standard library is sufficient; no package installation is needed.
 
 On Windows PowerShell:
 
@@ -59,14 +59,14 @@ Read `src/practical_ml_ai/foundations.py`. The central expression is `storage_pe
 
 ## Notebook route
 
-The [first-steps notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module01/first_steps.ipynb") calls the same functions. Keep the source archive's folder structure and open `notebooks/lessons/01-foundations/first_steps.ipynb` using the [notebook setup instructions](../../../QUICKSTART.md#notebook-option).
+The [first-steps notebook](https://ntious.github.io/ml_ai_it/downloads/module01/first_steps.ipynb "site-download:module01/first_steps.ipynb") calls the same functions. Keep the source archive's folder structure and open `notebooks/lessons/01-foundations/first_steps.ipynb` using the [notebook setup instructions](../../../QUICKSTART.md#notebook-option).
 
 A notebook contains text cells and code cells. Its kernel is the Python process holding variables. Open the notebook, select the first code cell, and use your interface's Run command. Run subsequent cells in order. Use File → Save (or the interface's documented keyboard command), then close, reopen, restart the kernel, and run all cells to check that saved work does not depend on hidden state. A downloaded notebook is a file, not an installed interface. Installation and screen-reader usability are separate checks; see [current accessibility status](../../accessibility/index.md).
 
 ## Read selectively
 
 - **Core concepts:** [Google's Introduction to ML](https://developers.google.com/machine-learning/intro-to-ml): read the introduction and types of ML sections. No full external course is required.
-- **Setup reference:** [Python downloads](https://www.python.org/downloads/), only if Python is missing. Our recorded checks use Python 3.12; the examples require 3.11 or newer.
+- **Setup reference:** [Python downloads](https://www.python.org/downloads/), only if Python is missing. CI checks the core examples on Python 3.12 and 3.13; they require 3.11 or newer.
 - **Optional foundation support:** [Python foundations OER](https://ntious.github.io/python_foundation/): getting started, variables, and output as needed.
 
 ## Practice and continue
@@ -83,4 +83,4 @@ Use the [foundation bridge](foundation.md) for the rule/model distinction and fi
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
 
-**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.
+**Reading on GitHub?** Report, notebook and archive links open the [published reading site](https://ntious.github.io/ml_ai_it/). Source notebooks are also under notebooks/lessons in the repository; see [workspace and report access](../../setup/student-workspace.md).
