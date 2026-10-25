@@ -99,7 +99,7 @@ jobs:
       - name: Check source and data archives and extracted CLI
         run: python scripts/check_downloads.py
       - name: Build package
-        run: python -m pip wheel . --no-deps --no-build-isolation --wheel-dir dist
+        run: python -m pip wheel . --no-deps --wheel-dir dist
       - uses: actions/upload-artifact@v4
         with:
           name: complete-reading-site

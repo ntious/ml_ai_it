@@ -36,6 +36,8 @@ All new public scripts execute from another working directory. Trained neural mo
 
 Final assembly checks links/semantic structure, original-source ZIP byte matching, external-cache digests/attribution, extracted CLI, and package build. App source is included; external records/model caches remain separate.
 
+The first complete assembly passed notebooks/site/archive checks but its final wheel step failed because a clean Python 3.12 runner lacked setuptools while build isolation was disabled. The step now uses the declared PEP 517 build environment; no offline-build claim is made for this release check.
+
 ## Remaining readiness work
 
 Manual keyboard, screen-reader, zoom/reflow, rendered visual, notebook/app interface, macOS, Windows framework, and hosted routes remain pending. Automated checks are not accessibility conformance or production validation.
