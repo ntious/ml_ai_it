@@ -1,6 +1,8 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
+build/
+dist/
 .venv/
 node_modules/
 site/
@@ -10,3 +12,5 @@ runs/
 !.env.example
 .DS_Store
 .ipynb_checkpoints/
+
+.venv-ml/

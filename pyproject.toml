@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "practical-ml-ai"
+version = "0.6.0"
+description = "Reusable examples for practical machine learning and AI education"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2,<3", "pandas>=2.2,<3"]
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+verification = ["nbformat>=5.10,<6", "nbclient>=0.10,<0.11", "ipykernel>=6.29,<7"]
+visualization = ["matplotlib>=3.10,<4", "seaborn>=0.13.2,<0.14"]
+regression = ["scikit-learn>=1.8,<2"]
+neural = ["tensorflow-cpu>=2.19.1,<2.20"]
+language = ["torch>=2.6,<2.7", "transformers==4.46.3", "safetensors>=0.4", "huggingface-hub>=0.26,<1"]
+deployment = ["streamlit==1.44.1"]
+
+[project.scripts]
+ml-ai-prepare = "practical_ml_ai.data.events:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,33 @@
+{
+  "title": "Original synthetic regression smoke fixture",
+  "license": "CC-BY-4.0",
+  "purpose": "Offline development and unit-test fixture; distinct from the real UCI case.",
+  "construction": "91 days from 2026-10-01; counts = 180 + 2*day_index + weekday_effect + fixed 14-value noise. Add 90 at index 80.",
+  "weekday_effect_monday_first": [
+    25,
+    15,
+    10,
+    5,
+    0,
+    -65,
+    -80
+  ],
+  "noise_cycle": [
+    -7,
+    4,
+    0,
+    9,
+    -5,
+    3,
+    -2,
+    6,
+    -8,
+    1,
+    5,
+    -3,
+    8,
+    -6
+  ],
+  "path": "data/samples/forecast-demand/daily.csv",
+  "limitations": "Deliberately patterned values are not empirical evidence of operational performance."
+}

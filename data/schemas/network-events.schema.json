@@ -1,0 +1,15 @@
+{
+  "contract_version": "1.0",
+  "description": "Teaching data contract; enforced by prepare_events and tests, not a JSON Schema validator.",
+  "format": "CSV with header",
+  "event_key": ["source", "event_id"],
+  "fields": {
+    "event_id": {"type": "string", "required": true, "nonempty": true},
+    "timestamp": {"type": "ISO 8601 datetime", "required": true, "normalized_timezone": "UTC"},
+    "source": {"type": "string", "allowed": ["authentication_gateway", "network_monitor"]},
+    "latency_ms": {"type": "finite number", "minimum": 0, "missing_allowed": true, "unit": "milliseconds"},
+    "bytes_sent": {"type": "finite integer", "minimum": 0, "maximum": 9223372036854775807, "missing_allowed": false, "unit": "bytes"}
+  },
+  "duplicate_policy": "Keep first exact duplicate; reject every conflicting record sharing an event key.",
+  "missing_latency_policy": "Retain missing; no imputation fitted."
+}

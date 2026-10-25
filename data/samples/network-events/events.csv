@@ -1,0 +1,13 @@
+event_id,timestamp,source,latency_ms,bytes_sent
+auth-001,2026-01-01T09:00:00Z,authentication_gateway,12,420
+auth-002,2026-01-01T09:01:00Z,authentication_gateway,18,510
+net-001,2026-01-01T09:02:00Z,network_monitor,25,2048
+net-002,2026-01-01T09:03:00Z,network_monitor,,1024
+net-003,2026-01-01T10:04:00+01:00,network_monitor,45,4096
+auth-003,2026-01-01T09:05:00Z,authentication_gateway,20,600
+auth-001,2026-01-01T09:00:00Z,authentication_gateway,12,420
+net-004,not-a-time,network_monitor,15,100
+auth-004,2026-01-01T09:07:00Z,authentication_gateway,-3,300
+net-005,2026-01-01T09:08:00Z,network_monitor,32,-4
+auth-005,2026-01-01T09:09:00Z,authentication_gateway,22,480
+auth-005,2026-01-01T09:09:00Z,authentication_gateway,44,480

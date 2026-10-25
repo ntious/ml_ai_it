@@ -1,0 +1,29 @@
+# Teach and adapt Module 7
+
+Link the [entry page](index.md) as additional reading/practice. Its planned route is /lessons/07-clustering/ relative to the eventual site base URL. Until publication, link repository Markdown at a tested commit/release.
+
+## Facilitation and access
+
+Use the same outcomes and written evidence for in-person/asynchronous learners. Begin with the foundation bridge, predict-before-run questions, and the shared script/notebook. Discussion has a solo equivalent. Optional depth is skippable, and GenAI is not required.
+
+Interpretation can use named values and exact tables; code/artefacts demonstrate execution or authoring when those are assessed. A screenshot cannot substitute for an explanation, and a script does not prove notebook-interface operation. Verify the learner's actual assistive-technology route and provide private help.
+
+## Adaptation decisions
+
+Device clustering would require real permitted telemetry, host/time boundaries, a distance meaningful for those units, and an operational use that does not mistake clusters for threats.
+
+When changing a dataset, define its license/provenance, observation unit, target if any, availability, split, and limits first. Update preprocessing, inference contracts, examples, feedback, and tests together. Preserve the original source and disclose transformations. Do not label a tiny mechanics check as a credible production evaluation.
+
+## Outcome/evidence alignment
+
+- **M07.1:** Distinguish supervised, unsupervised, and reinforcement learning by the information available.
+- **M07.2:** Fit training-only scaling and k-means without quality labels.
+- **M07.3:** Compare predefined cluster counts using a validation geometry criterion.
+- **M07.4:** Describe clusters through counts and original-unit profiles.
+- **M07.5:** Explain why internal scores and observational data do not validate actions or rewards.
+
+Course alignment opportunities: **CLO1, CLO3, CLO4, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
+
+## Verification limits
+
+The real-data workflow, public script, and notebook are exercised in Windows/Linux core CI. Exact counts/results are recorded in DEVELOPMENT.md and commit-specific CI. Manual keyboard/screen-reader/zoom and notebook/app usability remain pending. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.

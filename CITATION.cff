@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the tested commit or release you used. Dataset and model citations are separate."
+type: software
+title: "Practical Machine Learning and AI Systems"
+authors:
+  - name: "ML_AI_IT contributors"
+repository-code: "https://github.com/ntious/ml_ai_it"
+url: "https://github.com/ntious/ml_ai_it"
+license: MIT
+abstract: "Modular educational source code and companion learning resources for practical machine learning and AI. Original educational prose is separately licensed CC BY 4.0; third-party data and models retain their own rights."

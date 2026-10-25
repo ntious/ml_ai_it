@@ -1,0 +1,26 @@
+date,service,requests,p95_latency_ms
+2027-01-01,authentication_gateway,100,20
+2027-01-01,network_monitor,120,24
+2027-01-02,authentication_gateway,110,22
+2027-01-02,network_monitor,130,26
+2027-01-03,authentication_gateway,120,24
+2027-01-03, Network_Monitor ,140,28
+2027-01-04,authentication_gateway,130,
+2027-01-04,network_monitor,150,30
+2027-01-05,authentication_gateway,140,28
+2027-01-05,network_monitor,160,32
+2027-01-06,authentication_gateway,150,30
+2027-01-06,network_monitor,170,34
+2027-01-07,authentication_gateway,160,32
+2027-01-07,network_monitor,400,160
+2027-01-08,authentication_gateway,170,34
+2027-01-08,network_monitor,190,38
+2027-01-09,authentication_gateway,180,36
+2027-01-09,network_monitor,200,40
+2027-01-10,authentication_gateway,190,38
+2027-01-10,network_monitor,210,42
+2027-01-11,authentication_gateway,200,40
+2027-01-11,network_monitor,220,44
+2027-01-12,authentication_gateway,210,42
+2027-01-12,network_monitor,230,46
+2027-01-01,authentication_gateway,100,20
