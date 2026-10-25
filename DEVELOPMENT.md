@@ -1,5 +1,27 @@
 # Development verification
 
+## Increment 0.6.0: repository audit and portability
+
+The audit reads all baseline tracked source files and adds a registry-backed architecture/integrity check, complete early-module teaching pages, reusable authoring and accessibility records, instructor adoption/assessment/pacing guidance, model-use summaries, citation and contribution templates. See REPOSITORY_REVIEW.md for scope and pending original-source reconciliation.
+
+Verification now validates notebook format and runs real Jupyter kernels, retaining executed copies separately from clean source. Source-archive membership must equal tracked files. Added HTTP prefix tests and isolated installed-wheel inference exercise packaging and writable cache placement. Reading tables gain captions, scoped headers, and named keyboard-focusable regions.
+
+Install the verification extra in the selected environment and register that environment before kernel execution:
+
+~~~sh
+python -m pip install -e ".[visualization,regression,verification]" -c environments/constraints-tested.txt
+python -m ipykernel install --user --name ml-ai-core
+python scripts/check_repository.py
+python scripts/check_notebook.py --group core --kernel ml-ai-core
+~~~
+
+For frameworks use the separate environment and kernel in .github/workflows/checks.yml. Do not mix tested NumPy profiles. The complete workflow gathers actual reports/executed copies before building the site.
+
+Modules 6–14 use checkout runs/ caches by default, an installed-package user cache otherwise, or ML_AI_RUNS_DIR set before import. Existing output-directory arguments remain explicit. The wheel check verifies actual installed inference independently from editable-source imports.
+
+Manual keyboard/screen-reader/zoom, rendered notebook/app/figure review, learner piloting, and authoritative course crosswalk confirmation remain pending. The current local terminal is unavailable; exact-commit GitHub Actions logs are the runtime evidence. Historical entries below describe their own increments, not current missing modules.
+
+
 ## Increment 0.5.0: Modules 6–14
 
 All remaining implementations/teaching packages are present: five pages per module (entry, foundation, practice, feedback, instructor), a commented seven-code-cell notebook, and a public script calling shared behavior. Nine new notebooks add 63 cells to the prior 27. New lessons use actual external records, not created synthetic datasets.
@@ -159,3 +181,7 @@ Next implementation: Module 4, exploration and visual communication, followed by
 ## Increment 0.1.0 history
 
 The initial pilot implemented Module 3, reusable NumPy/pandas data preparation, controlled downloads, eleven reading pages, ten tests, and a four-code-cell notebook. Subsequent work retains that functionality while establishing the beginner sequence.
+
+## Notebook verification references
+
+The kernel execution/checking path follows the [nbclient execution API](https://nbclient.readthedocs.io/en/latest/client.html) and [IPython environment-specific kernel registration](https://ipython.readthedocs.io/en/stable/install/kernel_install.html). Source notebooks are validated with nbformat before execution; saved executed copies are distinct build artifacts. Their visual presentation still needs the manual inspection recorded in the review log.

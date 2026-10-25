@@ -28,3 +28,7 @@ Each module has commented runnable examples, practice, public feedback, optional
 State the task, predict behavior, execute, verify a numerical claim, inspect failures, and explain limits. GenAI is optional; verify suggestions and follow local disclosure rules. All new Modules 6–14 use actual external records. A working pipeline can reveal an ineffective model: weak results and rejected outputs remain visible.
 
 Read [status](status.md) and [accessibility limitations](accessibility/index.md) before selecting an interface.
+
+## Reuse and maintain
+
+Read the [architecture](../REPOSITORY_STRUCTURE.md), [repository review](../REPOSITORY_REVIEW.md), [model-use summaries](model-cards.md), [AI collaboration guidance](ai-collaboration.md), and [release checklist](release-checklist.md). [Instructor adoption](instructor/index.md) covers linking, pacing, assessment, and alignment limits.

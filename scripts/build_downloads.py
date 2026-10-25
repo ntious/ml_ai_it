@@ -1,6 +1,7 @@
 """Publish only original/cleared source paths, never arbitrary workspace files."""
 from pathlib import Path
 import shutil
+import json
 import zipfile
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
@@ -10,9 +11,10 @@ from practical_ml_ai.continuation_data import fetch_source
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
-ROOT_FILES = ["README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
-SOURCE_FOLDERS = ["apps", "src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
-ALLOWED_SUFFIXES = {".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
+MODULES = json.loads((ROOT / "curriculum/modules.json").read_text(encoding="utf-8"))["modules"]
+ROOT_FILES = ["CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
+SOURCE_FOLDERS = ["curriculum", "templates", "apps", "src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
+ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
 
 
 def build():
@@ -21,27 +23,22 @@ def build():
         (ROOT / "data/samples/network-events/events.csv", "events.csv"),
         (ROOT / "data/schemas/network-events.schema.json", "network-events.schema.json"),
         (ROOT / "notebooks/lessons/03-data-processing/complete_walkthrough.ipynb", "complete_walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/01-foundations/first_steps.ipynb", "module01/first_steps.ipynb"),
-        (ROOT / "notebooks/lessons/02-python-workflows/workflow.ipynb", "module02/workflow.ipynb"),
         (ROOT / "data/samples/service-files/tickets.csv", "module02/tickets.csv"),
         (ROOT / "data/samples/service-files/events.json", "module02/events.json"),
-        (ROOT / "notebooks/lessons/04-exploration/exploration.ipynb", "module04/exploration.ipynb"),
         (ROOT / "data/samples/service-workload/daily.csv", "module04/daily.csv"),
-        (ROOT / "notebooks/lessons/05-regression/regression.ipynb", "module05/regression.ipynb"),
         (ROOT / "data/samples/forecast-demand/daily.csv", "module05/synthetic_daily.csv"),
-        (ROOT / "notebooks/lessons/06-classification/walkthrough.ipynb", "module06/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/07-clustering/walkthrough.ipynb", "module07/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/08-neural-networks/walkthrough.ipynb", "module08/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/09-neural-nlp/walkthrough.ipynb", "module09/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/10-llm-workflows/walkthrough.ipynb", "module10/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/11-fine-tuning/walkthrough.ipynb", "module11/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/12-deployment/walkthrough.ipynb", "module12/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/13-ethics-fairness/walkthrough.ipynb", "module13/walkthrough.ipynb"),
-        (ROOT / "notebooks/lessons/14-agents/walkthrough.ipynb", "module14/walkthrough.ipynb"),
     ]:
         target = DESTINATION / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
+    for module in MODULES:
+        target = DESTINATION / module["download"]
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / module["notebook"], target)
+        executed = ROOT / "runs/verified" / f'module{module["id"]:02d}' / "executed.ipynb"
+        if not executed.is_file():
+            raise FileNotFoundError(f"Missing actual kernel execution: {executed}")
+        shutil.copyfile(executed, target.with_name("executed.ipynb"))
     run_exploration(ROOT / "data/samples/service-workload/daily.csv", DESTINATION / "module04/example")
     # External data stay in a separate attributed download, outside original source.
     daily = download_bike_data(ROOT / "runs/datasets/bike-sharing")

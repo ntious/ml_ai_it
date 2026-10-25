@@ -23,7 +23,11 @@ Until publication, link repository Markdown at a tested release/commit. Planned 
 | 13 | [Ethics and fairness across the lifecycle](../lessons/13-ethics-fairness/index.md) | /lessons/13-ethics-fairness/ |
 | 14 | [Bounded agents and AI workflows](../lessons/14-agents/index.md) | /lessons/14-agents/ |
 
-Modules 5–14 have individual instructor pages. [Alignment conventions](../modules.md) distinguish domain-transfer support from direct evidence.
+All 14 modules have individual instructor pages. [Alignment conventions](../modules.md) distinguish domain-transfer support from direct evidence.
+
+## Adoption resources
+
+Use the [Canvas linking guide](canvas-linking.md), [adaptable assessment criteria](assessment.md), [teaching plan](teaching-plan.md), and [alignment status](alignment.md). The [AI collaboration guide](../ai-collaboration.md) supports verified assistance and an equivalent no-assistant route. Reusable authoring and review templates are included in the complete source download and built reading site.
 
 ## Preserve independence and rigor
 
@@ -34,3 +38,7 @@ Public feedback supports self-study; optional depth is skippable and GenAI is no
 Scripts and text/tables support the same underlying technical decisions without a screenshot requirement. They do not establish notebook-interface operation. Manual [accessibility testing](../accessibility/index.md) is still required on actual learner tasks.
 
 Core Windows/Linux execution and Linux CPU framework execution have distinct scopes. Tiny mechanics checks and observed poor model outcomes support critique, not deployment claims. Read [sources](../data-sources.md), [framework setup](../setup/frameworks.md), and the module-specific notes.
+
+## Author and extend
+
+Use the [reusable templates](authoring.md) to build consistent lessons, cases, adoption records, and evidence-based accessibility reviews.

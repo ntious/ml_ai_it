@@ -27,3 +27,7 @@ A module should not be described as ready for accessible independent use while a
 New reports provide named text values, CSV downloads, captioned tables with scoped headers, and named keyboard-focusable table regions. Notebooks explain each stage and share the script implementation. Learning-history tables carry curve information without requiring an image.
 
 AppTest interactions and HTTP health establish execution behavior, not screen-reader usability or WCAG conformance. Manual keyboard, screen-reader, zoom/reflow, notebook/app interface, and rendered visual review remain pending. Reading-only interpretation should not be credited as execution evidence.
+
+## Review evidence
+
+The [task-based review log](review-log.md) distinguishes automated structural/runtime evidence from manual tasks that remain NOT RUN. The source archive includes the reusable accessibility-review template. A private accessible reporting contact must be configured before open release.

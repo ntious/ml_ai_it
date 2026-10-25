@@ -12,6 +12,8 @@ class Page(HTMLParser):
         self.ids, self.links, self.headings = set(), [], []
         self.main, self.language, self.title = False, None, False
         self.problems = []
+        self.tables = []
+        self.region_stack = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -19,6 +21,14 @@ class Page(HTMLParser):
             if attrs["id"] in self.ids:
                 self.problems.append("duplicate ID " + attrs["id"])
             self.ids.add(attrs["id"])
+        if tag == "div":
+            self.region_stack.append(attrs.get("role") == "region" and attrs.get("tabindex") == "0" and bool(attrs.get("aria-label") or attrs.get("aria-labelledby")))
+        if tag == "table":
+            self.tables.append({"caption": False, "region": any(self.region_stack)})
+        if tag == "caption" and self.tables:
+            self.tables[-1]["caption"] = True
+        if tag == "th" and attrs.get("scope") not in {"col", "row", "colgroup", "rowgroup"}:
+            self.problems.append("table header missing valid scope")
         if tag == "html": self.language = attrs.get("lang")
         if tag == "main": self.main = True
         if tag == "title": self.title = True
@@ -28,6 +38,15 @@ class Page(HTMLParser):
             self.problems.append("code/text example missing a named keyboard-focus target")
         for name in ("href", "src"):
             if name in attrs: self.links.append(attrs[name])
+
+
+    def handle_endtag(self, tag):
+        if tag == "div" and self.region_stack:
+            self.region_stack.pop()
+        if tag == "table" and self.tables:
+            table = self.tables.pop()
+            if not table["caption"] or not table["region"]:
+                self.problems.append("table missing caption or named keyboard-focusable region")
 
 
 pages = {}

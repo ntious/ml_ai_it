@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "modules": [
+    {
+      "id": 1,
+      "slug": "01-foundations",
+      "title": "ML and AI foundations for practical decisions",
+      "profile": "core",
+      "lesson": "docs/lessons/01-foundations/index.md",
+      "notebook": "notebooks/lessons/01-foundations/first_steps.ipynb",
+      "script": "examples/first-run/scripts/first_run.py",
+      "download": "module01/first_steps.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "02-python-workflows",
+      "title": "Python for reproducible ML workflows",
+      "profile": "core",
+      "lesson": "docs/lessons/02-python-workflows/index.md",
+      "notebook": "notebooks/lessons/02-python-workflows/workflow.ipynb",
+      "script": "examples/service-files/scripts/summarize.py",
+      "download": "module02/workflow.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "03-data-processing",
+      "title": "Data processing and trustworthy inputs",
+      "profile": "core",
+      "lesson": "docs/lessons/03-data-processing/index.md",
+      "notebook": "notebooks/lessons/03-data-processing/complete_walkthrough.ipynb",
+      "script": "examples/network-events/scripts/prepare.py",
+      "download": "module03/complete_walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "04-exploration",
+      "title": "Exploration and visual communication",
+      "profile": "core",
+      "lesson": "docs/lessons/04-exploration/index.md",
+      "notebook": "notebooks/lessons/04-exploration/exploration.ipynb",
+      "script": "examples/service-workload/scripts/explore.py",
+      "download": "module04/exploration.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "05-regression",
+      "title": "Regression and reliable evaluation",
+      "profile": "core",
+      "lesson": "docs/lessons/05-regression/index.md",
+      "notebook": "notebooks/lessons/05-regression/regression.ipynb",
+      "script": "examples/bike-demand/scripts/study.py",
+      "download": "module05/regression.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "06-classification",
+      "title": "Classification and decision trees",
+      "profile": "core",
+      "lesson": "docs/lessons/06-classification/index.md",
+      "notebook": "notebooks/lessons/06-classification/walkthrough.ipynb",
+      "script": "examples/wine-classification/scripts/run.py",
+      "download": "module06/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "07-clustering",
+      "title": "Clustering and learning paradigms",
+      "profile": "core",
+      "lesson": "docs/lessons/07-clustering/index.md",
+      "notebook": "notebooks/lessons/07-clustering/walkthrough.ipynb",
+      "script": "examples/wine-clustering/scripts/run.py",
+      "download": "module07/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "08-neural-networks",
+      "title": "Neural networks with TensorFlow",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/08-neural-networks/index.md",
+      "notebook": "notebooks/lessons/08-neural-networks/walkthrough.ipynb",
+      "script": "examples/wine-neural-network/scripts/run.py",
+      "download": "module08/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "09-neural-nlp",
+      "title": "Neural NLP for real messages",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/09-neural-nlp/index.md",
+      "notebook": "notebooks/lessons/09-neural-nlp/walkthrough.ipynb",
+      "script": "examples/sms-neural-nlp/scripts/run.py",
+      "download": "module09/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "10-llm-workflows",
+      "title": "LLMs and evaluated generative workflows",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/10-llm-workflows/index.md",
+      "notebook": "notebooks/lessons/10-llm-workflows/walkthrough.ipynb",
+      "script": "examples/sms-llm/scripts/run.py",
+      "download": "module10/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "11-fine-tuning",
+      "title": "Fine-tuning language models responsibly",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/11-fine-tuning/index.md",
+      "notebook": "notebooks/lessons/11-fine-tuning/walkthrough.ipynb",
+      "script": "examples/sms-fine-tuning/scripts/run.py",
+      "download": "module11/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "12-deployment",
+      "title": "Deployment and monitoring",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/12-deployment/index.md",
+      "notebook": "notebooks/lessons/12-deployment/walkthrough.ipynb",
+      "script": "examples/model-service/scripts/run.py",
+      "download": "module12/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "13-ethics-fairness",
+      "title": "Ethics and fairness across the lifecycle",
+      "profile": "core",
+      "lesson": "docs/lessons/13-ethics-fairness/index.md",
+      "notebook": "notebooks/lessons/13-ethics-fairness/walkthrough.ipynb",
+      "script": "examples/income-fairness/scripts/run.py",
+      "download": "module13/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "14-agents",
+      "title": "Bounded agents and AI workflows",
+      "profile": "frameworks",
+      "lesson": "docs/lessons/14-agents/index.md",
+      "notebook": "notebooks/lessons/14-agents/walkthrough.ipynb",
+      "script": "examples/bounded-assistant/scripts/run.py",
+      "download": "module14/walkthrough.ipynb",
+      "pages": [
+        "index.md",
+        "foundation.md",
+        "practice.md",
+        "feedback.md",
+        "instructor.md"
+      ]
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 # Accessibility
 ## Design and verification requirements for the ML and AI resource
 
-Version 1.0 · October 24, 2026 · ML_AI_IT project
+Version 1.1 · October 25, 2026 · ML_AI_IT project
 
 **Accessibility is a core requirement for every module, example, application, and release.** Blind and low-vision learners should be able to enter a module through a direct link, understand its concepts, run and modify code, interpret results, complete practice, and obtain feedback with an effective access route.
 
-This is a development specification. The repository/site and execution routes have not yet been implemented or tested for accessibility. Publish actual test results and known limitations as development proceeds. The design target for the web content we control is **WCAG 2.2 Level AA**; meeting a short checklist or passing an automated scan does not establish conformance. [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+The repository now implements reading pages, scripts, notebooks, text/table reports, and a local app. Automated structural and runtime checks exercise defined properties; manual keyboard, screen-reader, zoom/reflow, and end-to-end learner accessibility review remain pending. Record actual results in the [review log](docs/accessibility/review-log.md). The design target for the web content we control is **WCAG 2.2 Level AA**; meeting a short checklist or passing an automated scan does not establish conformance. [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 ## 1. Reading and navigation
 
@@ -81,4 +81,4 @@ Keep this policy at repository root as `ACCESSIBILITY.md`. Add `docs/accessibili
 
 Apply these requirements across Modules 1–4 and all subsequent modules. Accessibility work is part of implementation and maintenance, not a final visual review after the content is complete.
 
-Sources checked October 24, 2026. The references inform our design; they do not certify this planned resource or replace testing its actual implementation.
+References inform the design and do not certify this resource. The review log separates automated evidence from unperformed manual tasks.

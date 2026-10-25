@@ -21,3 +21,7 @@ th, td { border: 1px solid var(--line); padding: .6rem; text-align: left; }
 footer { border-top: 1px solid var(--line); margin-top: 2rem; }
 @media (prefers-color-scheme: dark) { :root { --bg: #101820; --fg: #f1f5f9; --link: #7dd3fc; --line: #7a8c98; --panel: #1c2a35; } }
 @media (forced-colors: active) { a:focus-visible { outline-color: Highlight; } }
+
+.table-wrap { max-width: 100%; overflow-x: auto; margin-block: 1rem; }
+.table-wrap:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+caption { text-align: left; font-weight: bold; margin-bottom: .5rem; }

@@ -15,11 +15,20 @@ function walk(folder) {
   return fs.readdirSync(folder, { withFileTypes: true }).flatMap(entry => entry.isDirectory()
     ? walk(path.join(folder, entry.name)) : [path.join(folder, entry.name)]);
 }
+const modules = JSON.parse(fs.readFileSync(path.join(root, 'curriculum/modules.json'), 'utf8')).modules;
 const pages = walk(path.join(root, 'docs')).filter(p => p.endsWith('.md')).map(source => ({
   source, output: path.relative(path.join(root, 'docs'), source).replace(/\.md$/, '.html')
 }));
 pages.push({ source: path.join(root, 'QUICKSTART.md'), output: 'setup/quickstart.html' });
 pages.push({ source: path.join(root, 'ACCESSIBILITY.md'), output: 'accessibility/policy.html' });
+pages.push({ source: path.join(root, 'REPOSITORY_STRUCTURE.md'), output: 'maintenance/architecture.html' });
+pages.push({ source: path.join(root, 'REPOSITORY_REVIEW.md'), output: 'maintenance/review.html' });
+for (const name of ['README', 'DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT']) {
+  pages.push({ source: path.join(root, name + '.md'), output: 'maintenance/' + name.toLowerCase() + '.html' });
+}
+for (const source of walk(path.join(root, 'templates')).filter(p => p.endsWith('.md'))) {
+  pages.push({ source, output: 'authoring/' + path.basename(source).replace(/\.md$/, '.html') });
+}
 const mapping = new Map(pages.map(p => [p.source, p.output]));
 // A fixed generated-only directory: remove stale pages before rebuilding.
 fs.rmSync(site, { recursive: true, force: true });
@@ -37,9 +46,18 @@ for (const page of pages) {
     const count = usedIds.get(base) || 0; usedIds.set(base, count + 1);
     return `<h${level} id="${base}${count ? `-${count}` : ''}">${text}</h${level}>`;
   });
+  let tableNumber = 0;
+  body = body.replace(/<table>([\s\S]*?)<\/table>/g, (table, contents, offset) => {
+    const headings = [...body.slice(0, offset).matchAll(/<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/g)];
+    const context = (headings.at(-1)?.[1] || title).replace(/<[^>]+>/g, '');
+    const caption = escape(context + ' — table ' + (++tableNumber));
+    const scoped = contents.replace(/<th>/g, '<th scope="col">');
+    return '<div class="table-wrap" tabindex="0" role="region" aria-label="' + caption + '"><table><caption>' + caption + '</caption>' + scoped + '</table></div>';
+  });
   body = body.replace(/href="([^"]+)"/g, (original, href) => {
     if (/^(https?:|mailto:|#)/.test(href)) return original;
     const [target, fragment] = href.split('#');
+    if (target === 'LICENSE') return 'href="' + slash(path.relative(path.dirname(page.output), 'maintenance/license.txt')) + '"';
     if (!target.endsWith('.md')) return original;
     const mapped = mapping.get(path.resolve(path.dirname(page.source), target));
     if (!mapped) throw new Error(`Unmapped Markdown link: ${href} in ${page.source}`);
@@ -47,19 +65,8 @@ for (const page of pages) {
   });
   const relative = target => slash(path.relative(path.dirname(page.output), target)) || 'index.html';
   const navigation = [
-    ['index.html', 'Home'], ['lessons/01-foundations/index.html', 'Module 1'],
-    ['lessons/02-python-workflows/index.html', 'Module 2'], ['lessons/03-data-processing/index.html', 'Module 3'],
-    ['lessons/04-exploration/index.html', 'Module 4'],
-    ['lessons/05-regression/index.html', 'Module 5'],
-    ['lessons/06-classification/index.html', 'Module 6'],
-    ['lessons/07-clustering/index.html', 'Module 7'],
-    ['lessons/08-neural-networks/index.html', 'Module 8'],
-    ['lessons/09-neural-nlp/index.html', 'Module 9'],
-    ['lessons/10-llm-workflows/index.html', 'Module 10'],
-    ['lessons/11-fine-tuning/index.html', 'Module 11'],
-    ['lessons/12-deployment/index.html', 'Module 12'],
-    ['lessons/13-ethics-fairness/index.html', 'Module 13'],
-    ['lessons/14-agents/index.html', 'Module 14'],
+    ['index.html', 'Home'],
+    ...modules.map(module => [module.lesson.replace(/^docs\//, '').replace(/\.md$/, '.html'), 'Module ' + module.id]),
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']
   ].map(([url, label]) => `<li><a href="${relative(url)}"${url === page.output ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');
@@ -77,5 +84,6 @@ for (const page of pages) {
 }
 fs.mkdirSync(path.join(site, 'assets'), { recursive: true });
 fs.copyFileSync(path.join(root, 'docs/assets/site.css'), path.join(site, 'assets/site.css'));
+fs.copyFileSync(path.join(root, 'LICENSE'), path.join(site, 'maintenance/license.txt'));
 execFileSync(process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3'), [path.join(root, 'scripts/build_downloads.py')], { cwd: root, stdio: 'inherit' });
 console.log(`Built ${pages.length} reading pages. No deployment performed.`);

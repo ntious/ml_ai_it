@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 — repository audit and verification
+
+- Add canonical module registry, architecture inventory, audit findings, and complete early-module instructor/foundation pages.
+- Add instructor adoption/assessment/pacing/alignment guidance, AI collaboration, model-use summaries, citation, reporting guidance, and reusable authoring/accessibility templates.
+- Validate and execute notebooks with real kernels; retain executed copies outside clean source.
+- Fix installed-package cache placement; test isolated-wheel inference and source-archive completeness.
+- Add captioned/scoped reading tables, project-prefix HTTP tests, and manual-review/release records.
+
+
 ## 0.5.0 development
 
 - Complete Modules 6–14 using actual external records, commented notebooks/scripts, original practice/feedback, optional depth, and instructor notes.

@@ -74,3 +74,7 @@ A notebook contains text cells and code cells. Its kernel is the Python process 
 Complete [practice and reflection](practice.md), then use [worked feedback](feedback.md). If using GenAI, ask it to explain why 80 and 81 give different results. Verify the explanation by reading `>` and running both values; you should be able to explain the result yourself. No AI account is required: the feedback supplies a sample explanation.
 
 Next: [Module 2, Python for reproducible ML workflows](../02-python-workflows/index.md). A learner arriving directly at a later module can use this page as a short setup and terminology bridge.
+
+## Support and teaching
+
+Use the [foundation bridge](foundation.md) for the rule/model distinction and first trace. [Instructor guidance](instructor.md) provides adaptation and outcome-evidence notes.

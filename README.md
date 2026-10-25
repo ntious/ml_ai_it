@@ -1,6 +1,6 @@
 # Practical Machine Learning and AI Systems
 
-A modular companion for independent learners and instructors linking lessons from Canvas or another platform. **Development edition 0.5.0 implements Modules 1–14.** Implementation and automated checks do not replace learner piloting, manual accessibility review, or production validation.
+A modular companion for independent learners and instructors linking lessons from Canvas or another platform. **Development edition 0.6.0 implements Modules 1–14.** Implementation and automated checks do not replace learner piloting, manual accessibility review, or production validation.
 
 ## Start and choose a route
 
@@ -20,7 +20,7 @@ First downloads require internet; retain valid caches. Core routes require no pa
 
 ## Verification
 
-In the appropriate profiles:
+Install the verification extra and register a matching kernel as described in [development setup](DEVELOPMENT.md). In the appropriate profiles:
 
 ~~~sh
 python -m unittest discover -s tests -v
@@ -32,9 +32,11 @@ npm run check
 python scripts/check_downloads.py
 ~~~
 
-CI explicitly enables framework tests, actual training/generation, adapter updates/reload, public scripts, app interactions, and HTTP health. Both notebook groups execute. The site assembles their verified reports, checks links/structure, verifies original-source/data archives, exercises extracted source, and builds a package.
+CI explicitly enables framework tests, actual training/generation, adapter updates/reload, public scripts, app interactions, and HTTP health. Both notebook groups execute in fresh Jupyter kernels and retain executed copies. The site assembles their verified reports, checks links/structure, verifies original-source/data archives, exercises extracted source, builds a package, and exercises isolated installed-wheel inference.
 
-See [DEVELOPMENT.md](DEVELOPMENT.md), commit-specific CI, [accessibility policy](ACCESSIBILITY.md), and [remaining limitations](docs/accessibility/index.md). HTML checks do not establish WCAG conformance; code-cell checks do not establish interface usability.
+See [DEVELOPMENT.md](DEVELOPMENT.md), commit-specific CI, [accessibility policy](ACCESSIBILITY.md), and [remaining limitations](docs/accessibility/index.md). HTML checks do not establish WCAG conformance; kernel execution does not establish interface usability.
+
+Read the [architecture and inventory](REPOSITORY_STRUCTURE.md), [audit findings](REPOSITORY_REVIEW.md), and [release checklist](docs/release-checklist.md) for the implemented scope and pending human review.
 
 ## Teach and reuse
 

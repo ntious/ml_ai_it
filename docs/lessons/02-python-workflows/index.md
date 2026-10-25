@@ -89,3 +89,7 @@ Individual files are available as [ticket CSV](../../downloads/module02/tickets.
 Read the named sections as needed; entire documentation sites are not assignments. Current documentation may show features beyond the Python version used here.
 
 Complete [practice](practice.md), then compare [worked feedback](feedback.md). Continue to [Module 3: Data processing](../03-data-processing/index.md).
+
+## Instructor adaptation
+
+See [instructor guidance](instructor.md) for evidence selection, accessible routes, and local adoption.

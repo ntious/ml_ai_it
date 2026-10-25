@@ -6,11 +6,11 @@ Turn raw event records into documented, inspectable inputs for later analysis. T
 
 By completing the core route, you can:
 
-1. Inspect NumPy shapes/types and use a small vector or linear-system calculation.
-2. Read, filter, summarize, and write a pandas dataframe.
-3. Run a repeatable preparation script and explain rejected records.
-4. Identify CSV, JSON, and array representations with their fields and units.
-5. Write a data dictionary and justify a cleaning choice while preserving later train/test boundaries.
+1. **M03.1:** Inspect NumPy shapes/types and use a small vector or linear-system calculation.
+2. **M03.2:** Read, filter, summarize, and write a pandas dataframe.
+3. **M03.3:** Run a repeatable preparation script and explain rejected records.
+4. **M03.4:** Identify CSV, JSON, and array representations with their fields and units.
+5. **M03.5:** Write a data dictionary and justify a cleaning choice while preserving later train/test boundaries.
 
 These are resource learning outcomes. They do not claim course credit or certified program-outcome attainment.
 
@@ -127,3 +127,7 @@ For the complete beginner sequence, start with [Module 1: ML and AI foundations]
 ## Next module
 
 Continue to [Module 4: Exploration and visual communication](../04-exploration/index.md) to investigate workload patterns with plots, underlying tables, and descriptions.
+
+## Instructor adaptation
+
+See [instructor guidance](instructor.md) for evidence selection, accessible routes, and local adoption.

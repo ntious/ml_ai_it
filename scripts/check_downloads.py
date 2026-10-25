@@ -17,6 +17,9 @@ archive_path = ROOT / "site/downloads/ml_ai_it-source.zip"
 with zipfile.ZipFile(archive_path) as archive:
     names = archive.namelist()
     assert len(names) == len(set(names))
+    tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
+    expected = {"ml_ai_it/" + name for name in tracked if name}
+    assert set(names) == expected, {"missing": sorted(expected - set(names)), "extra": sorted(set(names) - expected)}
     for name in names:
         relative = Path(name).relative_to("ml_ai_it")
         assert not relative.is_absolute() and ".." not in relative.parts

@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 from .continuation_data import (
-    ROOT, balanced_real_subset, new_run, publish_report, sms_splits,
+    RUNS_ROOT, balanced_real_subset, new_run, publish_report, sms_splits,
     wine_splits, write_json,
 )
 
@@ -31,7 +31,7 @@ def local_model():
     torch.set_num_threads(2)
     torch.manual_seed(42)
     revision = MODEL_REVISION or HfApi().model_info(MODEL_ID, token=False).sha
-    cache = ROOT / "runs/models"
+    cache = RUNS_ROOT / "models"
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, revision=revision, cache_dir=cache, trust_remote_code=False)
     model = AutoModelForCausalLM.from_pretrained(MODEL_ID, revision=revision, cache_dir=cache,
                                                 trust_remote_code=False, use_safetensors=True,

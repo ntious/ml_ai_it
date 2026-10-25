@@ -24,7 +24,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install core dependencies
-        run: python -m pip install -e ".[visualization,regression]" -c environments/constraints-tested.txt
+        run: python -m pip install -e ".[visualization,regression,verification]" -c environments/constraints-tested.txt
+      - name: Verify curriculum, source structure, and notebook format
+        run: python scripts/check_repository.py
+      - name: Register this environment as a Jupyter kernel
+        run: python -m ipykernel install --user --name ml-ai-core
       - name: Download reviewed bike data through the CLI
         run: python examples/bike-demand/scripts/study.py download --run runs/datasets/bike-sharing
       - name: Check core behavior including real data
@@ -32,7 +36,7 @@ jobs:
           ML_AI_REAL_DATA: '1'
         run: python -m unittest discover -s tests -v
       - name: Execute core notebooks
-        run: python scripts/check_notebook.py --group core
+        run: python scripts/check_notebook.py --group core --kernel ml-ai-core
       - uses: actions/upload-artifact@v4
         with:
           name: verified-core-${{ matrix.os }}
@@ -57,11 +61,13 @@ jobs:
       - name: Install CPU-only PyTorch
         run: python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
       - name: Install isolated framework dependencies
-        run: python -m pip install -e ".[regression,visualization,neural,language,deployment]" -c environments/constraints-neural.txt
+        run: python -m pip install -e ".[regression,visualization,neural,language,deployment,verification]" -c environments/constraints-neural.txt
+      - name: Register the framework Jupyter kernel
+        run: python -m ipykernel install --user --name ml-ai-frameworks
       - name: Exercise actual framework, fine-tuning, CLI, and app behavior
         run: python -m unittest discover -s tests -p test_continuation_heavy.py -v
       - name: Execute framework notebooks
-        run: python scripts/check_notebook.py --group frameworks
+        run: python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
       - uses: actions/upload-artifact@v4
         with:
           name: verified-frameworks
@@ -78,7 +84,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install site and data dependencies
-        run: python -m pip install -e ".[visualization,regression]" -c environments/constraints-tested.txt
+        run: python -m pip install -e ".[visualization,regression,verification]" -c environments/constraints-tested.txt
       - uses: actions/download-artifact@v4
         with:
           name: verified-core-ubuntu-latest
@@ -96,10 +102,14 @@ jobs:
         run: npm run build
       - name: Check every generated page and local link
         run: npm run check
+      - name: Check project-prefix HTTP routes
+        run: python scripts/check_http_routes.py
       - name: Check source and data archives and extracted CLI
         run: python scripts/check_downloads.py
       - name: Build package
         run: python -m pip wheel . --no-deps --wheel-dir dist
+      - name: Exercise the installed wheel outside the checkout
+        run: python scripts/check_wheel.py
       - uses: actions/upload-artifact@v4
         with:
           name: complete-reading-site

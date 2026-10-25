@@ -9,6 +9,7 @@ import hashlib
 from html import escape
 import io
 import json
+import os
 from pathlib import Path
 import urllib.request
 import zipfile
@@ -18,6 +19,21 @@ import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit, train_test_split
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def runtime_directory():
+    """Keep installed-package caches outside package files; allow explicit control."""
+    configured = os.environ.get("ML_AI_RUNS_DIR")
+    if configured:
+        return Path(configured).expanduser().resolve()
+    if (ROOT / "pyproject.toml").is_file() and (ROOT / "src/practical_ml_ai").is_dir():
+        return ROOT / "runs"
+    base = (Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local"))
+            if os.name == "nt" else Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")))
+    return base / "ml-ai-it"
+
+
+RUNS_ROOT = runtime_directory()
 SOURCES = {
     "wine": {"id": 186, "slug": "wine+quality", "members": ["winequality-red.csv", "winequality.names"],
              "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.", "sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4"},
@@ -39,7 +55,7 @@ def write_json(path, value):
 def fetch_source(name):
     """Download once. A changed cached file is an error, not a silent refresh."""
     spec = SOURCES[name]
-    directory = ROOT / "runs/datasets" / name
+    directory = RUNS_ROOT / "datasets" / name
     meta_path = directory / "provenance.json"
     if meta_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
