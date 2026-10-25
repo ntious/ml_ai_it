@@ -25,7 +25,7 @@ Core retains prior Windows/Linux dependencies. The isolated Linux CPU profile us
 | 10 | Actual local generation and strict parsing on eight balanced real messages. Initial schema success 0/8 is retained, not repaired into credited success. |
 | 11 | Eight actual gradient steps; 2,304 rank-2 adapter parameters; prompt masking; real disjoint text IDs; numeric replay. Initial base/adapted final completion loss about 2.5106/2.5081 is mechanics evidence, not validated behavior. |
 | 12 | Shared checked inference, actual-record defaults, two app forms, measured durations, four-batch replay. Source order of 243 real rows is not event time, so no temporal-drift/SLA claim is made. |
-| 13 | Historic benchmark, full-row overlap removal, five numeric inputs, validation threshold, group audit. Income labels/categories do not justify decisions about people or establish fairness. |
+| 13 | Historic benchmark, full-row overlap removal, five numeric inputs including age, validation threshold, group audit. Income labels/categories do not justify decisions about people or establish fairness. |
 | 14 | Actual model scoring over three legal plans, strict read-only tools, one-call budget, outside-model checks, source evidence. Legal plans can still misunderstand intent; unrestricted autonomy is not claimed. |
 
 ## Verification design

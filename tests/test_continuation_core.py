@@ -86,7 +86,7 @@ class ContinuationCoreTests(unittest.TestCase):
 
     def test_fairness_group_denominators_and_scope(self):
         result = self.results[13]
-        self.assertFalse(result["protected_attributes_used_for_fitting"])
+        self.assertFalse(result["audited_sex_race_used_for_fitting"])
         audit = pd.read_csv(self.base / "m13/group_audit.csv")
         for attribute in ["sex", "race"]:
             rows = audit.loc[audit.attribute == attribute]

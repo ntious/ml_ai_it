@@ -150,7 +150,7 @@ def run_fairness(output):
     table = pd.DataFrame(metrics)
     summary = {"module": 13, "dataset": "UCI Adult historic census extract", "train_rows": len(train),
                "validation_rows": len(validation), "test_rows": len(test), "selected_threshold": threshold,
-               "features": features, "protected_attributes_used_for_fitting": False,
+               "features": features, "audited_sex_race_used_for_fitting": False,
                "overall": binary_metrics(target(test), predicted),
                "interpretation": "Descriptive audit of a historical income-label task, not a decision rule for people."}
     write_json(directory / "protocol.json", {"features": features, "threshold_selection": "validation balanced accuracy", "provided_split": "adult.data development; adult.test evaluation after exact full-row overlap removal", "same_person_independence": "not established", "missingness": "Numeric selected fields imputed on training only; unused categorical '?' values are not recoded into numerical values."})

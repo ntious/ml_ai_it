@@ -75,7 +75,7 @@ def check(relative, number):
         if number == 10: assert result["real_examples"] == 8
         if number == 11: assert result["adapter_replay_verified"] and result["adapter_update_norm"] > 0
         if number == 12: assert result["real_heldout_rows"] == 243
-        if number == 13: assert not result["protected_attributes_used_for_fitting"]
+        if number == 13: assert not result["audited_sex_race_used_for_fitting"]
         if number == 14: assert result["destructive_request_refused"]
         source = namespace["run_dir"]
         assert (source / "index.html").is_file() and (source / "summary.json").is_file()

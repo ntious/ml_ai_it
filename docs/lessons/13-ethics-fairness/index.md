@@ -28,6 +28,8 @@ UCI Adult; historical census-income records. Recorded categories and collection 
 
 The provided Adult development/evaluation files are retained. Exact full-row overlaps are removed, without claiming person identity is known. Development is split for validation. Five numeric features feed training-only imputation/scaling/logistic regression; validation selects a threshold by balanced accuracy. Final sex/race columns are used only for aggregate audit, with unavailable rates left undefined.
 
+Age remains a model input. Excluding sex/race does not exclude all sensitive or proxy information, and does not establish fairness.
+
 ## Run and inspect
 
 Download the [complete source](../../downloads/ml_ai_it-source.zip) or use a checkout. Work from its ml_ai_it folder. Use the [core environment instructions](../../../QUICKSTART.md) and install the regression extra. In commands below, **python means your environment executable**; use its full path if not activated.
