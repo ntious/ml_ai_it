@@ -1,5 +1,15 @@
 # Development verification
 
+## Website development: GitHub Pages experience
+
+The site now has a registry-driven module directory, learning-path homepage, lesson tabs and adjacent-module links, worked examples, source/executed notebook downloads, optional browser-local search, a project-prefix custom 404, and source links pinned to the build revision. It retains a usable reading/navigation route without JavaScript.
+
+The site build job runs the release-provenance checks, complete HTML/link and HTTP checks, Chromium interaction/reflow checks, and representative light/dark axe checks before uploading the complete-reading-site artifact. Browser screenshots/traces are separate evidence; human visual and assistive-technology review remains pending. Run npm run check:release and npm run check:browser after assembling the site.
+
+The manual Pages workflow selects a successful default-branch push run, validates its reviewed commit and artifact, and checks the embedded source/run manifest before deployment. Pages is not enabled through this development connector. See docs/publishing.md for exact owner activation steps. A live URL is not claimed before the deployment succeeds.
+
+
+
 ## Increment 0.6.0: repository audit and portability
 
 The audit reads all baseline tracked source files and adds a registry-backed architecture/integrity check, complete early-module teaching pages, reusable authoring and accessibility records, instructor adoption/assessment/pacing guidance, model-use summaries, citation and contribution templates. See REPOSITORY_REVIEW.md for scope and pending original-source reconciliation.

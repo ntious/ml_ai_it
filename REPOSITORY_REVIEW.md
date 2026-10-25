@@ -34,7 +34,7 @@ See the [draft integration review](https://github.com/ntious/ml_ai_it/pull/2) fo
 
 The build produced 105 reading pages and 11 worked reports; all 116 HTML pages passed the defined structural/link checks. All 186 tested HTTP routes under /ml_ai_it/ responded successfully. The 193-file source archive exactly matched tracked source and bytes; external cache digests/attribution, extracted CLIs, wheel build, and isolated installed-wheel inference passed.
 
-A follow-up adds two direct CLI integration tests for the earlier Module 3/4 scripts, updates the setup/status instructions, and makes notebook validation code easier to maintain. The final commit must pass its own workflow with 194 tracked files and 66 discovered behavior tests; consult the draft review's current commit checks for that evidence. These counts do not turn pending human checks into passes.
+A follow-up adds two direct CLI integration tests for the earlier Module 3/4 scripts, updates the setup/status instructions, and makes notebook validation code easier to maintain. That audit follow-up passed [run 40157856267](https://github.com/ntious/ml_ai_it/actions/runs/40157856267) at commit a8131d762050c81e0efde1d3db09bb456ac8c3d1, with 194 tracked files and 66 discovered behavior tests. Later website additions have their own commit-specific checks. These counts do not turn pending human checks into passes.
 
 ## Verification expectations
 
@@ -54,6 +54,14 @@ Structure verification requires every module's five pages, notebook, and script;
 - Complete transitive dependency locks and independent macOS/hosted/framework-Windows support: not supplied or claimed. Tested constraints and pinned model/dataset identities define the exercised scope.
 
 No additional Canvas assessments were invented. Existing companion practice, solo discussion, public feedback, and optional extensions support independent use without altering master assignments. Empty production, slide, and video folders were not added to suggest uncreated assets are complete.
+
+## Subsequent GitHub Pages website development
+
+The website adds a learning-path homepage, module directory/filter, course outline, lesson tabs/pager, real-data worked-example gallery, source/executed notebook downloads, optional browser-local search, and custom 404 recovery. Each page links its exact repository source revision.
+
+New checks exercise Chromium interaction, selected mobile/large-text reflow, no-JavaScript navigation, representative light/dark axe findings, and release provenance. The manual publishing workflow accepts only a reviewed successful default-branch push artifact and validates its embedded manifest; it does not publish draft pull-request content automatically. See [publishing steps](docs/publishing.md).
+
+The current development connection cannot enable the repository's Pages administration setting. The site is developed as a complete build artifact; the intended live address is not reported as deployed before a successful Pages deployment. Manual screen-reader and human rendered-presentation review remain unperformed, regardless of automated browser results.
 
 ## How to reproduce
 

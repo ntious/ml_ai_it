@@ -1,34 +1,58 @@
-# Practical Machine Learning and AI Systems
+# Learn machine learning. Build practical AI.
 
-Follow the sequence or enter one module with its prerequisite support. No Canvas enrollment or paid AI account is required.
+<p class="eyebrow">A practical learning resource · IT7071C companion</p>
 
-## Learning sequence
+<p class="lead">Start with the fundamentals and work toward real implementations. Learn through clear explanations, shared Python code, guided notebooks, and evidence you can inspect.</p>
 
-| Module | Topic |
-| --- | --- |
-| 1 | [ML and AI foundations](lessons/01-foundations/index.md) |
-| 2 | [Python workflows](lessons/02-python-workflows/index.md) |
-| 3 | [Data processing](lessons/03-data-processing/index.md) |
-| 4 | [Exploration and visual communication](lessons/04-exploration/index.md) |
-| 5 | [Regression and reliable evaluation](lessons/05-regression/index.md) |
-| 6 | [Classification and decision trees](lessons/06-classification/index.md) |
-| 7 | [Clustering and learning paradigms](lessons/07-clustering/index.md) |
-| 8 | [Neural networks with TensorFlow](lessons/08-neural-networks/index.md) |
-| 9 | [Neural NLP for real messages](lessons/09-neural-nlp/index.md) |
-| 10 | [LLMs and evaluated generative workflows](lessons/10-llm-workflows/index.md) |
-| 11 | [Fine-tuning language models responsibly](lessons/11-fine-tuning/index.md) |
-| 12 | [Deployment and monitoring](lessons/12-deployment/index.md) |
-| 13 | [Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) |
-| 14 | [Bounded agents and AI workflows](lessons/14-agents/index.md) |
+Follow the full sequence or enter a single module. Every module includes prerequisite support, hands-on practice, worked feedback, teaching notes, and clearly marked optional depth. No Canvas enrollment, paid AI account, or GPU is required for the core routes.
 
-Each module has commented runnable examples, practice, public feedback, optional depth, and instructor guidance. [Curriculum map](modules.md) · [Setup](setup/index.md) · [Sources](data-sources.md) · [Teach and adapt](instructor/index.md).
+<!-- HOME_ACTIONS -->
 
-## Examine evidence
+## Choose your starting point
 
-State the task, predict behavior, execute, verify a numerical claim, inspect failures, and explain limits. GenAI is optional; verify suggestions and follow local disclosure rules. All new Modules 6–14 use actual external records. A working pipeline can reveal an ineffective model: weak results and rejected outputs remain visible.
+<div class="path-grid">
+<section class="path-card">
+<h3>Start from the beginning</h3>
+<p>New to Python or machine learning? Begin with a small decision, run your first script, and build the foundations one step at a time.</p>
+<p><a href="lessons/01-foundations/index.md">Begin Module 1</a> · <a href="../QUICKSTART.md">Set up your first run</a></p>
+</section>
+<section class="path-card">
+<h3>Bring a module into your course</h3>
+<p>Link a single lesson from Canvas or another LMS. Adapt the original practice and public feedback while preserving your course's assessment rules.</p>
+<p><a href="instructor/canvas-linking.md">Link a companion module</a> · <a href="instructor/index.md">Teach and adapt</a></p>
+</section>
+</div>
 
-Read [status](status.md) and [accessibility limitations](accessibility/index.md) before selecting an interface.
+## Follow the learning path
 
-## Reuse and maintain
+Build the foundations, compare classical approaches, explore neural and language models, then connect them to responsible systems. Each module has its own entry point and prerequisite help.
 
-Read the [architecture](../REPOSITORY_STRUCTURE.md), [repository review](../REPOSITORY_REVIEW.md), [model-use summaries](model-cards.md), [AI collaboration guidance](ai-collaboration.md), and [release checklist](release-checklist.md). [Instructor adoption](instructor/index.md) covers linking, pacing, assessment, and alignment limits.
+<!-- LEARNING_STAGES -->
+
+[Browse the complete module directory](modules.md), including the environment needed for each topic.
+
+## Work with evidence from real examples
+
+Forecast historical bike demand. Compare wine-quality classifiers. Diagnose errors in real SMS classification. Audit an income benchmark's limitations. Run actual local language-model generation and small adapter updates.
+
+The examples preserve observed failures as learning evidence. A functioning pipeline can reveal an ineffective model; a fluent answer can still fail its output contract. Earlier introductory fixtures are explicitly labeled separately.
+
+[Explore the worked examples](examples.md) · [Check data and model sources](data-sources.md) · [Download code and notebooks](downloads.md)
+
+## Read, run, change, explain
+
+Predict what a bounded change should do. Run the shared implementation from a script or notebook, inspect named results, and explain what the evidence supports. GenAI can help when permitted; verify suggestions and retain an equivalent no-assistant route.
+
+[Learn with an AI assistant](ai-collaboration.md) · [Inspect model limitations](model-cards.md)
+
+## Access the learning in a useful format
+
+Use the reading pages, selectable code, scripts, text summaries, and numerical tables. Chart descriptions and source data accompany visual evidence. Notebook and app interfaces need their own usability checks.
+
+Read the [access routes and known limitations](accessibility/index.md). Manual screen-reader, keyboard, and zoom/reflow review remains pending; automated checks do not establish conformance.
+
+## Reuse and contribute
+
+Original code uses MIT; original educational content uses CC BY 4.0. External sources retain their own rights. This resource complements a course and also supports independent study; institutional credit and grading remain with adopting instructors.
+
+[Architecture](../REPOSITORY_STRUCTURE.md) · [Development status](status.md) · [Contribution guidance](../CONTRIBUTING.md)

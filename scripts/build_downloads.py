@@ -12,9 +12,9 @@ from practical_ml_ai.continuation_data import fetch_source
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
 MODULES = json.loads((ROOT / "curriculum/modules.json").read_text(encoding="utf-8"))["modules"]
-ROOT_FILES = ["CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
+ROOT_FILES = ["playwright.config.mjs", "CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
 SOURCE_FOLDERS = ["curriculum", "templates", "apps", "src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
-ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
+ALLOWED_SUFFIXES = {".js", ".svg", ".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
 
 
 def build():
