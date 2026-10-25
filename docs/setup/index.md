@@ -1,5 +1,7 @@
 # Setup and execution routes
 
+Begin with [workspace acquisition](student-workspace.md), [Python preparation](python-bridge.md), [environment choices](hosted.md) and [troubleshooting](troubleshooting.md).
+
 Use [first run](../../QUICKSTART.md) for foundational commands. Modules 6, 7, and 13 use core regression dependencies. Modules 8–12 and 14 use the [separate CPU framework environment](frameworks.md).
 
 ## Support and evidence
@@ -10,7 +12,7 @@ Use [first run](../../QUICKSTART.md) for foundational commands. Modules 6, 7, an
 - Hosted routes: included configurations remain experimental. This private repository is not an ordinary public Binder launch; Colab needs authorized source access/upload and installation verification.
 - Reading: static explanations, tables, and actual verified reports; no browser Python execution is implied.
 
-The [original-source ZIP](../downloads/ml_ai_it-source.zip) includes scripts, notebooks, shared implementation, and the app. A notebook alone lacks imports. External data/model caches are separate and retain [provenance](../data-sources.md).
+The [original-source ZIP](student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") includes scripts, notebooks, shared implementation, and the app. A notebook alone lacks imports. External data/model caches are separate and retain [provenance](../data-sources.md).
 
 ## Full site reproduction
 

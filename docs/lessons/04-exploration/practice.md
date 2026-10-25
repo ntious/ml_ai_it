@@ -46,3 +46,9 @@ Change the histogram bin width or create a two-panel service comparison without 
 | Communication, M04.4 | A concise stakeholder memo, useful descriptions, underlying values, and a next question |
 
 Adopting instructors choose local grading weights and submission rules. Public [worked feedback](feedback.md) is available for self-study.
+
+## Required independent construction
+
+Construct one labeled plot from development data and supply its numeric table and a noncausal interpretation. Choose and defend its missing-value policy.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

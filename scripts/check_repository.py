@@ -37,6 +37,12 @@ for module in modules:
     registered_scripts.add(module["script"])
 assert registered_notebooks == {p.relative_to(ROOT).as_posix() for p in (ROOT / "notebooks/lessons").rglob("*.ipynb")}
 assert registered_scripts == {p.relative_to(ROOT).as_posix() for p in (ROOT / "examples").glob("*/scripts/*.py")}
+for case in (ROOT / "notebooks/cases").glob("*.ipynb"):
+    notebook = nbformat.read(case,as_version=4); nbformat.validate(notebook)
+    for cell in notebook.cells:
+        if cell.cell_type == "code":
+            assert cell.execution_count is None and not cell.outputs
+            ast.parse(cell.source)
 tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
 tracked = [name for name in tracked if name]
 for name in tracked:
@@ -50,4 +56,5 @@ required = ["REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff",
             "docs/instructor/assessment.md", "docs/instructor/canvas-linking.md",
             "docs/accessibility/review-log.md", "docs/release-checklist.md"]
 assert all((ROOT / name).is_file() for name in required)
+subprocess.run([sys.executable,str(ROOT/"scripts/check_source_links.py")],check=True)
 print(f"Verified {len(modules)} complete module packages, registered scripts/notebooks, Python syntax, and publication coverage for {len(tracked)} tracked source files.")

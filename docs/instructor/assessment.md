@@ -31,3 +31,7 @@ Accept code plus readable text/CSV or an equivalent effective format. Do not req
 ## Instructor check
 
 Try the task from a clean setup, confirm the public feedback fits the chosen data/version, check the intended outcome against the authoritative syllabus, and pilot the workload. Keep restricted assessments and student submissions outside the open repository.
+
+## Module mastery and independent transfer
+
+Each module's guided page now identifies required changed code, checked evidence, a diagnosed failure and an explanation. Use its specific question and worked feedback to diagnose misconceptions. Public solutions support independent learning; use a changed task or explanation to establish authorship rather than hiding feedback. A diagnostic routes preparation and does not lower the shared outcome standard. Reading-only evidence supports interpretation; implementation requires execution and an explainable modification.

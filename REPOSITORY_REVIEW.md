@@ -58,3 +58,7 @@ No additional Canvas assessments were invented. Existing companion practice, sol
 ## How to reproduce
 
 Use [development instructions](DEVELOPMENT.md), the workflow at the audited commit, and the [release checklist](docs/release-checklist.md). The local execution outage means the final CI job logs, rather than an unavailable local terminal, are the authoritative runtime evidence for this review.
+
+## Subsequent mixed-background enhancement
+
+The supplied private syllabus/module/project documents were reread locally on October 25, 2026. That resolves the earlier inability to access those sources for this enhancement's scope; institutional approval and unseen current Canvas policies remain separate. Edition 0.7.0 adds the [student routes, construction and engineering improvements](docs/enhancement-review.md). Earlier test/page/file counts above belong to their historical commits and are not the new release inventory. Private source documents remain excluded from Git and downloads.

@@ -1,5 +1,7 @@
 # First run
 
+**Before setup:** use [readiness and Python Foundation](docs/start-here.md), [workspace acquisition](docs/setup/student-workspace.md) and [environment choices](docs/setup/hosted.md). Python Foundation is preparation, not a formal admission prerequisite. Our [Python-to-ML bridge](docs/setup/python-bridge.md) adds file and table skills.
+
 Obtain a checkout or extract the complete source archive, then open a terminal in its `ml_ai_it` folder. Use Python 3.11 or newer; development checks use Python 3.12. If Python is missing, use the [official download page](https://www.python.org/downloads/) and your platform's installer instructions. Check your version before proceeding.
 
 Commands below are selectable text. `py` is the usual Windows Python launcher; if it is unavailable but `python --version` reports the intended interpreter, use `python` instead. On macOS/Linux, use `python3`. Report an unavailable command rather than entering unrelated installation commands suggested by an unverified source.

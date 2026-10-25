@@ -51,7 +51,7 @@ with zipfile.ZipFile(ROOT / "site/downloads/module05/bike-sharing-cache.zip") as
 print("Checked the separate attributed public-data cache and source digests.")
 
 # Verify all newly attributed cache members, not merely the presence of a ZIP.
-for source in ["wine", "sms", "adult"]:
+for source in ["wine", "sms", "adult", "phishing"]:
     with zipfile.ZipFile(ROOT / "site/downloads" / (source + "-cache.zip")) as cache:
         metadata = json.loads(cache.read("provenance.json"))
         assert hashlib.sha256(cache.read("original.zip")).hexdigest() == metadata["archive_sha256"]
@@ -59,7 +59,7 @@ for source in ["wine", "sms", "adult"]:
             assert hashlib.sha256(cache.read(member)).hexdigest() == expected
         assert metadata["license"] == "CC-BY-4.0"
         assert cache.read("ATTRIBUTION.txt")
-print("Checked all three additional real-data caches and their attribution/digests.")
+print("Checked all four additional real-data caches and their attribution/digests.")
 with zipfile.ZipFile(archive_path) as archive, tempfile.TemporaryDirectory() as temporary:
     archive.extractall(temporary)
     extracted = Path(temporary) / "ml_ai_it"

@@ -1,5 +1,7 @@
 # Practical Machine Learning and AI Systems
 
+Start with [readiness and Python Foundation](start-here.md), [workspace setup](setup/student-workspace.md), [glossary](glossary.md) and [project companion](project.md).
+
 Follow the sequence or enter one module with its prerequisite support. No Canvas enrollment or paid AI account is required.
 
 ## Learning sequence

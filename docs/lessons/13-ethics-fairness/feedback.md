@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 IT AI governance should examine purpose, access, affected groups, proxy inputs, feedback loops, reporting channels, and authority to stop a system.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Does removing protected columns remove bias?
+
+No. Proxies, historical labels, sampling and deployment decisions can preserve or introduce disparities.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

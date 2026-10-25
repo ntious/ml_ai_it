@@ -31,3 +31,9 @@ Add one reviewed read-only tool with a new schema, evidence contract, and failur
 | M14.5 | Test unsupported/destructive requests and explain remaining limitations. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Trace legitimate, unsupported and adversarial requests. Verify returned values and separately score intent match, schema validity, policy validity and evidence correctness.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

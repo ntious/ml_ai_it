@@ -42,3 +42,9 @@ Allow a new source category through a documented contract change. Identify code,
 This extension is skippable and provides no automatic extra credit. No additional library or paid service is necessary.
 
 [Return to the module](index.md).
+
+## Required independent construction
+
+Inspect a rejected record and explain its policy reason. On a copy, repair one legitimate error and reconcile the changed counts.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

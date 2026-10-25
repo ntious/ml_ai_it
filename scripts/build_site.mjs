@@ -39,6 +39,13 @@ for (const page of pages) {
   if (!title) throw new Error(`Missing page title: ${page.source}`);
   const usedIds = new Map();
   let body = marked.parse(markdown, { gfm: true });
+  // Source links lead to the artifact-access instructions on GitHub. In the
+  // built site their explicit Markdown title selects the actual local download.
+  body = body.replace(/<a href="[^"]+" title="site-download:([^"]+)">/g, (_, name) => {
+    const destination = path.resolve(site, 'downloads', name);
+    if (!destination.startsWith(path.join(site, 'downloads') + path.sep)) throw new Error('Escaping download');
+    return '<a href="' + slash(path.relative(path.dirname(page.output), 'downloads/' + name)) + '">';
+  });
   // Overflowing examples need an explicit keyboard-focus target.
   body = body.replaceAll('<pre>', '<pre tabindex="0" aria-label="Code or text example">');
   body = body.replace(/<h([1-6])>([\s\S]*?)<\/h\1>/g, (_, level, text) => {
@@ -55,6 +62,7 @@ for (const page of pages) {
     return '<div class="table-wrap" tabindex="0" role="region" aria-label="' + caption + '"><table><caption>' + caption + '</caption>' + scoped + '</table></div>';
   });
   body = body.replace(/href="([^"]+)"/g, (original, href) => {
+    if (href === 'https://github.com/ntious/ml_ai_it/blob/main/notebooks/cases/phishing.ipynb') return 'href="' + slash(path.relative(path.dirname(page.output), 'downloads/phishing/walkthrough.ipynb')) + '"';
     if (/^(https?:|mailto:|#)/.test(href)) return original;
     const [target, fragment] = href.split('#');
     if (target === 'LICENSE') return 'href="' + slash(path.relative(path.dirname(page.output), 'maintenance/license.txt')) + '"';
@@ -65,7 +73,7 @@ for (const page of pages) {
   });
   const relative = target => slash(path.relative(path.dirname(page.output), target)) || 'index.html';
   const navigation = [
-    ['index.html', 'Home'],
+    ['index.html', 'Home'], ['start-here.html', 'Start here'], ['glossary.html', 'Glossary'], ['project.html', 'Project'],
     ...modules.map(module => [module.lesson.replace(/^docs\//, '').replace(/\.md$/, '.html'), 'Module ' + module.id]),
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']

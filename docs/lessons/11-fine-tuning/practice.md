@@ -31,3 +31,9 @@ Use a predeclared validation plan for another rank, step budget, or target proje
 | M11.5 | Save/reload adapter arrays with the exact model revision and disclose limits. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Inspect one packed training example and identify prompt/completion masks. Explain a saved adapter shape. Compare base/adapted held-out generation as well as loss; do not select training settings from those final comparisons.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

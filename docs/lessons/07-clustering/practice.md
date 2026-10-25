@@ -31,3 +31,9 @@ Compare another seed or an alternative distance/cluster method using development
 | M07.5 | Explain why internal scores and observational data do not validate actions or rewards. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Fit a predeclared second K using training and compare development geometry and cluster sizes. Explain why quality must not choose an allegedly unsupervised partition.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

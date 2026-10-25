@@ -8,11 +8,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from practical_ml_ai.exploration import run_exploration
 from practical_ml_ai.regression import download_bike_data, run_study
 from practical_ml_ai.continuation_data import fetch_source
+from practical_ml_ai.phishing import prepare, train, validate, evaluate, report
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
 MODULES = json.loads((ROOT / "curriculum/modules.json").read_text(encoding="utf-8"))["modules"]
-ROOT_FILES = ["CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", ".gitignore", ".gitattributes"]
+ROOT_FILES = ["CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "REPOSITORY_REVIEW.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", "package-lock.json", ".gitignore", ".gitattributes"]
 SOURCE_FOLDERS = ["curriculum", "templates", "apps", "src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
 ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
 
@@ -55,7 +56,11 @@ def build():
         if not (source / "summary.json").is_file():
             raise FileNotFoundError(f"Missing verified Module {number} report; run its notebook check before building.")
         shutil.copytree(source, DESTINATION / f"module{number:02d}/example")
-    for name in ["wine", "sms", "adult"]:
+    case = DESTINATION / "phishing/example"
+    for stage in [prepare, train, validate, evaluate, report]: stage(case)
+    shutil.copyfile(ROOT / "notebooks/cases/phishing.ipynb", DESTINATION / "phishing/walkthrough.ipynb")
+    shutil.copyfile(ROOT / "runs/verified/phishing/executed.ipynb", DESTINATION / "phishing/executed.ipynb")
+    for name in ["wine", "sms", "adult", "phishing"]:
         cache = fetch_source(name)
         with zipfile.ZipFile(DESTINATION / (name + "-cache.zip"), "w", compression=zipfile.ZIP_DEFLATED) as archive:
             for member in sorted(cache.iterdir()):

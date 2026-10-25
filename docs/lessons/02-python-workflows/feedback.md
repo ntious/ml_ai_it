@@ -27,3 +27,11 @@ Both entry routes call `run_workflow`, which invokes the same readers and summar
 “I checked an assistant's claim that an empty ticket file should have average zero. The function uses `None` when the count is zero. The output says the average is unavailable. I retained that behavior because a fabricated numerical average would miscommunicate the evidence.”
 
 Continue to [Module 3: Data processing and trustworthy inputs](../03-data-processing/index.md), or return to [Module 2](index.md).
+
+## Construction check and misconception feedback
+
+Question: Why does replacing unknown with zero change the question?
+
+It treats unobserved work as measured absence, changing both meaning and summary.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

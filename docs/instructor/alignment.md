@@ -4,9 +4,11 @@ Each module's entry page states measurable repository learning outcomes. Instruc
 
 ## Authority and limits
 
-The original master syllabus, exact original module-outcome register, and earlier private planning attachments are not available for independent rereading in this audit environment. Their exact wording and completeness have not been certified here. A file reference in prior conversation is not a substitute for the source. Do not invent missing Oxx identifiers or attribute paraphrases as official wording.
+The supplied local syllabus, all 14 module outlines and project-phase/report documents were reviewed on October 25, 2026. Their private text remains outside the published source. The resource's no-programming-entry design, 14-module order, framework topics and four-phase project support were checked against those documents. This source review does not establish institutional approval, accreditation attainment or agreement with unseen current Canvas items.
 
-Modules 4–14 retain their existing original-register references where present. New instructor notes for Modules 1–3 identify repository outcomes and provisional course-domain opportunities without fabricating an original-outcome crosswalk. Confirm each against the authoritative documents before formal assessment or accreditation use.
+Python Foundation is preparation within the supported learning route, not a formal prerequisite. Original outlines include broader prompting/API/literature and framework-agent expectations than the tiny local demonstrations alone establish. The guided work adds prompting/literature and model/tool-loop comparison; live closed-provider API execution and a full agent-framework implementation remain separate adoption choices. Confirm their required scope with Canvas instead of treating local mechanics as proof of every original objective.
+
+A private reconciliation register records source coverage and unresolved assessment/platform items. Instructor contact, ambiguous policy wording and current deadlines require the course owner's authoritative resolution; this OER does not set them.
 
 ## Course-label summaries
 

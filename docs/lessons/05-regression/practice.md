@@ -47,3 +47,9 @@ Starting another directory does not make already viewed final data fresh. A chan
 | Communication, M05.5 | Source/license/versions, concise memo, usable descriptions |
 
 Instructors set local weights and submission rules. Compare [worked feedback](feedback.md) after your attempt.
+
+## Required independent construction
+
+Implement previous-day persistence on development records. Explain input availability at the forecast origin and compare with the provided development baseline.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

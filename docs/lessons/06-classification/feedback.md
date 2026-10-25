@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 A real IT incident triage task needs genuine incident labels, an investigation cost model, repeated-host boundaries, and timestamps. Wine labels are not incident labels.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: If TP=19, FP=30 and FN=10, what are precision and recall?
+
+Precision 19/49 is about .388; recall 19/29 is about .655. They use different denominators.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

@@ -17,3 +17,9 @@ Before running, write what the output would need to show for your interpretation
 Use the documented source and environment, retain the printed run directory, and read the named text results. Keep data/cache originals unchanged. The module's notebook separates setup, source inspection, execution, evidence, and reflection. Run cells in order, then restart and run all; old kernel variables are not evidence of a clean run.
 
 If packages are missing, install the documented extra with the same Python executable used to run the module. If a source hash fails, investigate the version rather than bypassing the check. First downloads need connectivity; later runs can reuse the verified cache. [Setup](../../setup/index.md) records platform limits.
+
+## Worked mental model
+
+In an illustrative group with 20 positives and 15 true positives, TPR is .75. If a second group has 4 positives and 3 true positives, its TPR is also .75 but based on much less evidence. A metric cannot establish that predicting historical income is a legitimate decision.
+
+Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).

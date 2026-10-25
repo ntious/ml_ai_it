@@ -52,7 +52,7 @@ python examples/network-events/scripts/prepare.py --input data/samples/network-e
 
 `python` should refer to the project environment; the setup page provides explicit Windows and Unix executable paths. The script imports `prepare_file` from `src/practical_ml_ai/data/events.py`. The notebook imports that same function. Neither contains a separate copy of the cleaning algorithm.
 
-Download the [sample CSV](../../downloads/events.csv), [data contract](../../downloads/network-events.schema.json), [guided notebook](../../downloads/complete_walkthrough.ipynb), or [complete source archive](../../downloads/ml_ai_it-source.zip). The archive includes setup, data, package, scripts, and tests. Downloading a notebook alone does not install its dependencies or provide the package.
+Download the [sample CSV](../../setup/student-workspace.md#reading-reports-from-github "site-download:events.csv"), [data contract](../../setup/student-workspace.md#reading-reports-from-github "site-download:network-events.schema.json"), [guided notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:complete_walkthrough.ipynb"), or [complete source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip"). The archive includes setup, data, package, scripts, and tests. Downloading a notebook alone does not install its dependencies or provide the package.
 
 ## Inspect the result
 
@@ -131,3 +131,9 @@ Continue to [Module 4: Exploration and visual communication](../04-exploration/i
 ## Instructor adaptation
 
 See [instructor guidance](instructor.md) for evidence selection, accessible routes, and local adoption.
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.

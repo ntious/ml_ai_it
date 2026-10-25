@@ -36,7 +36,7 @@ Missing date/service rows are not inferred to mean zero traffic. Totals describe
 
 ## Setup and run
 
-Obtain a checkout or extract the [complete source archive](../../downloads/ml_ai_it-source.zip). Open a terminal in `ml_ai_it`. Follow the [environment instructions](../../../QUICKSTART.md#module-3-add-the-data-libraries) if you do not yet have `.venv`. Install the additional plotting libraries into that same environment.
+Obtain a checkout or extract the [complete source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip"). Open a terminal in `ml_ai_it`. Follow the [environment instructions](../../../QUICKSTART.md#module-3-add-the-data-libraries) if you do not yet have `.venv`. Install the additional plotting libraries into that same environment.
 
 Windows PowerShell:
 
@@ -54,7 +54,7 @@ macOS or Linux:
 
 The visualization extra adds Matplotlib and Seaborn; NumPy/pandas remain the shared data dependencies. Internet access is normally needed for installation. No dataset download occurs at runtime. Open `runs/module04/index.html` in a browser, or read `summary.txt`, `chart_descriptions.md`, and the paired CSV tables using your preferred editor. Rerunning replaces these generated outputs; use another directory to retain an experiment.
 
-You can also [read the generated worked example](../../downloads/module04/example/index.html) without installing Python. It contains five figures, short alternatives, detailed descriptions, and labeled HTML tables. This is a teaching demonstration, not a restricted assessment answer.
+You can also [read the generated worked example](../../setup/student-workspace.md#reading-reports-from-github "site-download:module04/example/index.html") without installing Python. It contains five figures, short alternatives, detailed descriptions, and labeled HTML tables. This is a teaching demonstration, not a restricted assessment answer.
 
 ## Match the chart to the question
 
@@ -87,7 +87,7 @@ A defensible summary says that the fictional January 7 monitor observation combi
 
 ## Shared code and notebook
 
-The script imports `src/practical_ml_ai/exploration.py`. `read_workload` documents validation/normalization, `summarize_workload` produces numerical evidence and plot tables, and `render_charts` creates labeled figures. `run_exploration` writes the report and returns the summary. The [guided notebook](../../downloads/module04/exploration.ipynb) calls these same functions; keep it within the complete source folder and follow [notebook setup](../../../QUICKSTART.md#notebook-option).
+The script imports `src/practical_ml_ai/exploration.py`. `read_workload` documents validation/normalization, `summarize_workload` produces numerical evidence and plot tables, and `render_charts` creates labeled figures. `run_exploration` writes the report and returns the summary. The [guided notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module04/exploration.ipynb") calls these same functions; keep it within the complete source folder and follow [notebook setup](../../../QUICKSTART.md#notebook-option).
 
 Saved outputs include normalized observations, `summary.json`, named text values, per-chart CSVs/PNGs, descriptions, and an HTML report. HTML tables have captions and column headers. Charts use labels and, where grouping matters, marker shapes as well as colors. These provisions need manual task-based testing; [screen-reader, keyboard, and zoom/reflow verification remains pending](../../accessibility/index.md).
 
@@ -105,3 +105,9 @@ Complete [practice and the operations memo](practice.md), then consult [worked f
 ## Instructor adaptation
 
 See [instructor guidance](instructor.md) for evidence selection, accessible routes, and local adoption.
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.

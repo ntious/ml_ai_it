@@ -30,13 +30,13 @@ The default uses eight actual gradient steps, alternating real ham/spam training
 
 ## Run and inspect
 
-Download the [complete source](../../downloads/ml_ai_it-source.zip) or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). The tested framework route is Linux CPU; Windows/macOS framework execution remains unverified. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
+Download the [complete source](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). The tested framework route is Linux CPU; Windows/macOS framework execution remains unverified. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
 
 ~~~sh
 python examples/sms-fine-tuning/scripts/run.py --output runs/module11
 ~~~
 
-Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module11/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../downloads/module11/example/index.html) without installing an execution interface.
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module11/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../setup/student-workspace.md#reading-reports-from-github "site-download:module11/example/index.html") without installing an execution interface.
 
 Key artifacts:
 
@@ -45,7 +45,7 @@ Key artifacts:
 - adapter_config.json
 - split_manifest.json
 
-The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../downloads/module11/walkthrough.ipynb) call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module11/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
 
 ## Read selectively
 
@@ -58,3 +58,9 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
 
 Next: [Module 12](../12-deployment/index.md).
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.

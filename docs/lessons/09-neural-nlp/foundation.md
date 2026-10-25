@@ -17,3 +17,9 @@ Before running, write what the output would need to show for your interpretation
 Use the documented source and environment, retain the printed run directory, and read the named text results. Keep data/cache originals unchanged. The module's notebook separates setup, source inspection, execution, evidence, and reflection. Run cells in order, then restart and run all; old kernel variables are not evidence of a clean run.
 
 If packages are missing, install the documented extra with the same Python executable used to run the module. If a source hash fails, investigate the version rather than bypassing the check. First downloads need connectivity; later runs can reuse the verified cache. [Setup](../../setup/index.md) records platform limits.
+
+## Worked mental model
+
+A token ID is an index, not an amount. In this hand example 0 is padding, 1 and 2 index vectors [1,0] and [0,2]. The masked mean of [1,2,0] is [.5,1], not [1/3,2/3]. In the real model, training learns vectors; the hand table only explains the operation.
+
+Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).

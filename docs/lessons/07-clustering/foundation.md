@@ -17,3 +17,9 @@ Before running, write what the output would need to show for your interpretation
 Use the documented source and environment, retain the printed run directory, and read the named text results. Keep data/cache originals unchanged. The module's notebook separates setup, source inspection, execution, evidence, and reflection. Run cells in order, then restart and run all; old kernel variables are not evidence of a clean run.
 
 If packages are missing, install the documented extra with the same Python executable used to run the module. If a source hash fails, investigate the version rather than bypassing the check. First downloads need connectivity; later runs can reuse the verified cache. [Setup](../../setup/index.md) records platform limits.
+
+## Worked mental model
+
+Without scaling, a feature measured in thousands can dominate a feature measured in fractions. K-means minimizes squared distance to centers. Its IDs have no inherent order or meaning.
+
+Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).

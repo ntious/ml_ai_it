@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 Ticket text requires genuine permitted records, careful author/customer separation, and confidentiality controls. Spam labels do not become ticket categories.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Why is adapting vocabulary on test text leakage?
+
+It lets the final evaluation influence the learned representation, even without using its labels.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

@@ -31,3 +31,9 @@ Declare a prompt/template or decoding comparison on validation examples. Freeze 
 | M10.5 | Write a source-grounded model-use note with privacy and cost constraints. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Inspect matched_comparison.csv after the real run. Reconcile per-record baseline and LLM outcomes and explain preprocessing, prevalence and sample-size limits. Declare any prompt experiment on validation first.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 For IT telemetry, preserve host/time boundaries and final-test discipline before replacing numeric inputs. More layers do not replace data-quality or availability checks.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Can the lowest training-loss epoch be the wrong checkpoint?
+
+Yes. Training fit can improve while validation degrades. Selection uses validation under the declared rule.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

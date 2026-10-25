@@ -52,3 +52,7 @@
 - Add a separated script and a guided notebook sharing implementation.
 - Add a static reading site, controlled source downloads, and basic semantic/link checks.
 - Add development checks and experimental execution configuration; document unverified accessibility/platform routes.
+
+## 0.7.0 — mixed-background learning support
+
+Added Python Foundation routing, readiness checks, a Python-to-ML file/table bridge, student acquisition/hosted/troubleshooting guidance, glossary and project/pilot support. All 14 modules now include guided construction, executable notebook steps, independent changes and misconception feedback. Added validation calibration tables, sample-size arithmetic, matched real-record lexical/LLM comparison and base/adapted generation checks. Added a real UCI phishing case with separate pipeline stages and a combined notebook. Private source documents remain excluded. Human learner/assistive-technology and live provider testing remain separately recorded limitations.

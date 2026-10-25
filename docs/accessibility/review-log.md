@@ -28,3 +28,7 @@ Initial proposed combinations are NVDA/Firefox on Windows and VoiceOver/Safari o
 A public issue may describe a non-sensitive technical barrier. Do not post disability details, student records, private logs, or personal contact information. A private accessible reporting contact has not yet been configured; the maintainer must supply it before open release. Adopting instructors should provide their established private help route.
 
 A blocking core task needs repair or a documented, tested equivalent route before that module is described as accessible for the affected workflow. Read the [policy](../../ACCESSIBILITY.md) and [release checklist](../release-checklist.md).
+
+## Scripted browser regression checks added October 25, 2026
+
+scripts/check_browser.mjs checks four reading pages: readiness, Python bridge, neural construction and phishing case. It exercises first-tab skip-link focus, Enter-to-main focus, 320 CSS-pixel page reflow and selected axe WCAG A/AA rules; the readiness page is also scanned in dark mode. A long unbroken dataset hash initially caused page overflow and the stylesheet now permits word wrapping. The repeatable check and screenshots run in CI. This is browser automation, not a human keyboard, real zoom, screen-reader, notebook or app-interface review. The manual status table above remains NOT RUN until those tasks have actual evidence.

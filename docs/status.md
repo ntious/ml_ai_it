@@ -1,6 +1,6 @@
 # Development status
 
-Edition 0.6.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
+Edition 0.7.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
 
 The [architecture](../REPOSITORY_STRUCTURE.md) and [audit record](../REPOSITORY_REVIEW.md) describe the registry-backed inventory, added authoring/adoption resources, and verification limits.
 
@@ -18,10 +18,12 @@ The final integration run checks actual report artifacts, generated links/struct
 
 ## Observed limitations
 
-The initial small neural NLP run missed all positives. The initial free-text LLM run failed the exact JSON contract on all eight cases. Those failures remain visible; they are not repaired into credited success. The tiny adapter experiment establishes gradient/replay mechanics, not deployable quality.
+The small neural NLP run missed all positives. The initial free-text LLM run failed the exact JSON contract on all eight cases. Those failures remain visible; they are not repaired into credited success. The tiny adapter experiment establishes gradient/replay mechanics, not deployable quality.
 
 Adult results are descriptive audits, not justified decisions about people. Batch replay order is not a measured timeline. A constrained legal tool plan may still misunderstand intent.
 
-Manual keyboard, screen-reader, zoom/reflow, notebook/app usability, rendered visual review, macOS, Windows framework, and hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
+Selected scripted browser checks cover skip-link focus, 320-pixel reflow and automated accessibility rules on four reading pages. Human keyboard, screen-reader, real zoom, notebook/app usability, macOS, Windows framework and live hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
 
 Merging, GitHub Pages publication, and visibility changes remain separate release actions.
+
+See the [enhancement record](enhancement-review.md) for Python preparation, construction practice, authentic IT and current verification scope.

@@ -1,6 +1,6 @@
 :root { color-scheme: light dark; --bg: #ffffff; --fg: #18232d; --link: #075985; --line: #b8c6cf; --panel: #f1f5f9; }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 1.1rem/1.7 system-ui, sans-serif; }
+body { overflow-wrap: anywhere; margin: 0; background: var(--bg); color: var(--fg); font: 1.1rem/1.7 system-ui, sans-serif; }
 header, main, footer { max-width: 76ch; margin: auto; padding: 1.25rem; }
 header { border-bottom: 1px solid var(--line); }
 nav ul { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; list-style: none; padding: 0; }

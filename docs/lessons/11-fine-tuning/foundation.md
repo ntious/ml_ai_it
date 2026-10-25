@@ -17,3 +17,9 @@ Before running, write what the output would need to show for your interpretation
 Use the documented source and environment, retain the printed run directory, and read the named text results. Keep data/cache originals unchanged. The module's notebook separates setup, source inspection, execution, evidence, and reflection. Run cells in order, then restart and run all; old kernel variables are not evidence of a clean run.
 
 If packages are missing, install the documented extra with the same Python executable used to run the module. If a source hash fails, investigate the version rather than bypassing the check. First downloads need connectivity; later runs can reuse the verified cache. [Setup](../../setup/index.md) records platform limits.
+
+## Worked mental model
+
+If W has output-by-input shape (6,4), it has 24 parameters. A rank-2 A has shape (2,4), B has shape (6,2), and BA has shape (6,4). Their 20 parameters are fewer here; savings become much larger for wide projections. Starting B at zero makes the initial update zero. A frozen base participates in forward computation without optimizer updates. Labels -100 exclude prompt positions from the completion-loss objective; they are a library masking convention.
+
+Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).

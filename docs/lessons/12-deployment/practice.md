@@ -31,3 +31,9 @@ Package a local container or add an authenticated service only under an explicit
 | M12.5 | Propose ownership, escalation, monitoring, and rollback criteria. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Implement one rejected-input test on a copy. Run both app forms and write a monitoring scenario with delayed labels, trigger, owner, investigation and rollback action.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
