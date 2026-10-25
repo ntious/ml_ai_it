@@ -1,4 +1,4 @@
-"""Execute only the four trusted, curated plain-Python notebooks named below.
+"""Execute only the five trusted, curated plain-Python notebooks named below.
 
 Fresh namespaces check code paths, not notebook UI or assistive technology.
 Do not use this executor for untrusted notebooks.
@@ -15,6 +15,7 @@ NOTEBOOKS = [
     "02-python-workflows/workflow.ipynb",
     "03-data-processing/complete_walkthrough.ipynb",
     "04-exploration/exploration.ipynb",
+    "05-regression/regression.ipynb",
 ]
 
 
@@ -53,7 +54,7 @@ def check(relative):
         assert namespace["result"].report["accepted_missing_latency"] == 1
         assert namespace["np"].allclose(namespace["solution"], [3, 2])
         assert "Accepted records: 6" in output.getvalue()
-    else:
+    elif relative.startswith("04-"):
         assert namespace["result"]["total_requests"] == 4180
         assert namespace["result"]["observed_latency"] == 23
         assert len(namespace["result"]["flagged_observations"]) == 1
@@ -61,6 +62,18 @@ def check(relative):
         assert abs(namespace["sensitivity"].mean() - 730 / 22) < 1e-10
         assert namespace["custom_plot"].is_file()
         assert "Total requests: 4180" in output.getvalue()
+    else:
+        assert namespace["DATASET"] == "uci"
+        assert namespace["manifest"]["splits"]["train"]["rows"] == 504
+        assert namespace["result"]["test_rows"] == 110
+        assert namespace["result"]["selected"] == namespace["selection"]["selected"] == "previous_day"
+        assert abs(namespace["hand_mae"] - 12.5) < 1e-12
+        assert namespace["invalid_example"]["invalid_validation_mae"] < 1e-8
+        assert "target_requests" not in namespace["future_features"].columns
+        assert len(namespace["forecast"]) == 1
+        assert namespace["folds"]["last_fit_target"].lt(namespace["folds"]["first_check_target"]).all()
+        selected_mae = namespace["result"]["scores"][0]["mae"]
+        assert abs(selected_mae - 926.5727272727273) < 1e-6
     print(f"Verified {relative}: {count} curated Python cells and expected results.")
     return count
 

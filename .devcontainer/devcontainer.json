@@ -1,7 +1,7 @@
 {
   "name": "Practical ML and AI development",
   "image": "python:3.12-slim",
-  "postCreateCommand": "python -m pip install -e \".[visualization]\" -c environments/constraints-tested.txt",
+  "postCreateCommand": "python -m pip install -e \".[visualization,regression]\" -c environments/constraints-tested.txt",
   "customizations": {
     "vscode": {
       "extensions": [

@@ -5,6 +5,7 @@ import zipfile
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from practical_ml_ai.exploration import run_exploration
+from practical_ml_ai.regression import download_bike_data, run_study
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
@@ -25,11 +26,22 @@ def build():
         (ROOT / "data/samples/service-files/events.json", "module02/events.json"),
         (ROOT / "notebooks/lessons/04-exploration/exploration.ipynb", "module04/exploration.ipynb"),
         (ROOT / "data/samples/service-workload/daily.csv", "module04/daily.csv"),
+        (ROOT / "notebooks/lessons/05-regression/regression.ipynb", "module05/regression.ipynb"),
+        (ROOT / "data/samples/forecast-demand/daily.csv", "module05/synthetic_daily.csv"),
     ]:
         target = DESTINATION / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
     run_exploration(ROOT / "data/samples/service-workload/daily.csv", DESTINATION / "module04/example")
+    # External data stay in a separate attributed download, outside original source.
+    daily = download_bike_data(ROOT / "runs/datasets/bike-sharing")
+    run_study(daily, DESTINATION / "module05/example", holdout_days=110, plots=True,
+              dataset_label="UCI Bike Sharing daily counts, CC BY 4.0")
+    cache_files = ["day.csv", "original.zip", "Readme.txt", "provenance.json", "ATTRIBUTION.txt"]
+    with zipfile.ZipFile(DESTINATION / "module05/bike-sharing-cache.zip", "w", compression=zipfile.ZIP_DEFLATED) as cache:
+        for name in cache_files:
+            cache.write(daily.parent / name, arcname=name)
+    shutil.copyfile(daily.parent / "ATTRIBUTION.txt", DESTINATION / "module05/ATTRIBUTION.txt")
     files = [ROOT / name for name in ROOT_FILES]
     for folder in SOURCE_FOLDERS:
         files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in p.parts))

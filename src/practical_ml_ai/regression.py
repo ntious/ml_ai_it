@@ -31,6 +31,8 @@ MODEL_FEATURES = {"linear_day": ["prior_day_requests"], "linear_week": ["prior_w
 BASELINES = ["training_mean", "previous_day", "previous_week"]
 UCI_URL = "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip"
 UCI_PAGE = "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset"
+# Verified in the initial Windows/Linux real-data CI run; review upstream changes.
+UCI_ARCHIVE_SHA256 = "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401"
 
 
 def digest(path):
@@ -51,8 +53,8 @@ def read_json(path):
 def download_bike_data(output_dir):
     """Fetch the official CC BY 4.0 archive once, retaining attribution/hashes.
 
-    Reuse checks the cached CSV's recorded digest. A new retrieval records its
-    actual archive digest rather than claiming an unverified upstream pin.
+    Reuse checks the cached CSV's recorded digest. New retrievals must match the archive digest verified in this lesson's
+    initial real-data integration run; upstream changes require review.
     """
     output_dir = Path(output_dir)
     daily, provenance = output_dir / "day.csv", output_dir / "provenance.json"
@@ -60,6 +62,8 @@ def download_bike_data(output_dir):
         if not daily.exists() or not provenance.exists():
             raise ValueError("Incomplete data cache; use a new directory or restore its original files.")
         metadata = read_json(provenance)
+        if metadata.get("archive_sha256") != UCI_ARCHIVE_SHA256:
+            raise ValueError("Cached archive provenance differs from the reviewed source version.")
         if digest(daily) != metadata["day_csv_sha256"]:
             raise ValueError("Cached day.csv checksum changed; keep raw data unchanged.")
         return daily
@@ -67,6 +71,8 @@ def download_bike_data(output_dir):
         archive_bytes = response.read(2_000_001)
     if len(archive_bytes) > 2_000_000:
         raise ValueError("Unexpectedly large archive; inspect the upstream source.")
+    if hashlib.sha256(archive_bytes).hexdigest() != UCI_ARCHIVE_SHA256:
+        raise ValueError("Upstream archive checksum changed; review the new source before using it.")
     with zipfile.ZipFile(io.BytesIO(archive_bytes)) as archive:
         daily_bytes = archive.read("day.csv")
         readme_bytes = archive.read("Readme.txt")

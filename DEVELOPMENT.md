@@ -1,5 +1,42 @@
 # Development verification
 
+## Increment 0.4.0: regression and reliable evaluation
+
+Module 5 adds a real-data one-day-ahead forecasting study, a separately labeled synthetic fixture, explicit stage scripts, a commented notebook, foundation support, original practice/feedback, and instructor adaptation/alignment.
+
+The local execution environment was unavailable. Development used GitHub's file/commit APIs and actual Windows/Linux GitHub Actions runs. Do not describe these as local executions. The initial implementation at d62e7b6 passed all 46 tests, including real UCI acquisition and the complete workflow. Scikit-learn 1.8.0 is added to the tested constraints.
+
+## Module 5 decisions and observations
+
+- The forecast is issued after a fully observed day for the next calendar day. Only prior-day/prior-week counts are included. Target-day weather/components/target are unavailable and excluded.
+- UCI Bike Sharing supplies real, historical public data under CC BY 4.0. Original ZIP/CSV/README, attribution, retrieval time, and hashes remain together. The reviewed archive SHA-256 is b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401; original day.csv SHA-256 is a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be.
+- The original attached ZIP's dataset-link document could not be reread through the unavailable terminal in this increment. UCI's live official page was checked directly for source/rights rather than claiming a review of inaccessible attachment contents.
+- The 731 daily records produce 724 examples after warm-up: 504 train, 110 validation, 110 final test. Fixed parameters are evaluated at rolling one-day-ahead origins; newly observed past holdout counts can become later lag features.
+- Training fits only training rows. Validation chooses among dummy mean, daily/weekly persistence, and two simple linear pipelines. A baseline can win; alphabetical tie breaking is explicit. Final evaluation never refits or changes the choice.
+- In the initial actual-data run, validation selected previous-day persistence. Final MAE was 926.572727 rentals/day, versus 2330.675325 for the training mean and 1382.1 for weekly persistence. Mean residual was -46.736364. The synthetic study instead selected weekly linear regression with MAE 17.438715. Neither result is generalized to current operations.
+- The invalid identity/leakage demonstration is isolated from valid candidate selection. Training-only expanding-window folds illustrate where fitting belongs.
+- Numeric JSON exposes the narrow supported model parameters and avoids executable model deserialization. It is not a general model interchange format.
+- Text, captioned/scoped tables, CSV predictions/residuals, and descriptions accompany optional figures. Manual rendered-figure and assistive-technology review are pending, not inferred from remote execution.
+
+## Module 5 outcome evidence
+
+| Outcome | Original alignment | Course alignment | Advisory ABET opportunity | Evidence |
+| --- | --- | --- | --- | --- |
+| M05.1 | O05.1 | CLO1/CLO4 support | A1 | Equation/residual/loss arithmetic |
+| M05.2 | O05.2 | CLO2, CLO4 | A2 | Trained pipeline and baselines |
+| M05.3 | O05.3 | CLO2, CLO4 | A1, A2 | Feature availability and leakage audit |
+| M05.4 | O05.4; explicit evaluation added | CLO4, CLO8 | A1, A2 | Chronological/frozen evaluation |
+| M05.5 | O05.4 | CLO2, CLO8 | A3 | Reproducibility and stakeholder memo |
+
+This follows the separate planning register. Advisory mappings are evidence opportunities, not attainment or accreditation claims.
+
+## Increment 0.4.0 verification record
+
+The final commit's CI must verify all 46 behavior tests (including 15 regression checks), five curated notebooks/27 plain-Python cells, the generated reading/report site, links/structure, and the extracted source CLI. The build records its actual page/archive counts. The initial core implementation already passed Windows/Linux; that does not substitute for checking the final integration commit. No local wheel build or manual figure review is claimed for this increment.
+
+The source archive excludes downloaded external data; a separate attributed cache ZIP supports offline replay. Checks compare every source-archive entry with checked-out bytes, run the extracted CLI, and verify external cache digests. CI runs for pull requests and main updates, avoiding redundant push/PR runs for one branch change.
+
+
 ## Increment 0.3.0: exploration and visual communication
 
 Module 4 is implemented with four measurable outcomes, a foundation bridge, shared script/notebook exploration, original practice/discussion, worked feedback, and adaptable criteria. Modules 1–3 remain available in sequence or by direct link. Module 5 is next; Modules 5–14 remain future work.

@@ -10,6 +10,7 @@ Learn by running, inspecting, changing, and explaining small workflows. Start wi
 | [2: Python workflows](lessons/02-python-workflows/index.md) | A reusable CSV/JSON summary program | Basic values and running Python; foundation bridge included |
 | [3: Data processing](lessons/03-data-processing/index.md) | Validated events and a quality report | Functions and files; NumPy/pandas setup supplied |
 | [4: Exploration and visual communication](lessons/04-exploration/index.md) | Labeled figures, paired data tables, and an operations memo | Dataframes; plotting setup and foundation bridge supplied |
+| [5: Regression and reliable evaluation](lessons/05-regression/index.md) | Trained pipelines, frozen baseline comparison, and one-day-ahead inference | Dataframes/arithmetic; regression setup supplied |
 
 Each has original practice, public worked feedback, adaptable criteria, and a skippable extension. Scripts and notebooks call shared functions. A paid AI account is not required.
 
@@ -24,4 +25,4 @@ Each has original practice, public worked feedback, adaptable criteria, and a sk
 
 Identify a stakeholder's need, predict an example's behavior, run it, test a change, and explain the evidence. If using an AI assistant, inspect its suggestions, verify them with code/data, and follow your instructor's disclosure rules.
 
-Modules 5–14 are planned in sequence, from classical ML through neural networks, NLP, GenAI, deployment, ethics, and bounded agents. Only usable lessons are linked here. The current four modules establish foundations and data preparation; model training and deployment come later.
+Modules 6–14 are planned in sequence, from classification through neural networks, NLP, GenAI, deployment, ethics, and bounded agents. Only usable lessons are linked here. The current five modules cover foundations, data preparation, exploration, and trained regression workflows. Deployment comes later.

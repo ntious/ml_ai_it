@@ -50,6 +50,7 @@ for (const page of pages) {
     ['index.html', 'Home'], ['lessons/01-foundations/index.html', 'Module 1'],
     ['lessons/02-python-workflows/index.html', 'Module 2'], ['lessons/03-data-processing/index.html', 'Module 3'],
     ['lessons/04-exploration/index.html', 'Module 4'],
+    ['lessons/05-regression/index.html', 'Module 5'],
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']
   ].map(([url, label]) => `<li><a href="${relative(url)}"${url === page.output ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');

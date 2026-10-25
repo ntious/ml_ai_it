@@ -100,4 +100,4 @@ Saved outputs include normalized observations, `summary.json`, named text values
 
 Read only the named sections. Current documentation may describe newer versions than the tested environment; the repository records its exercised versions.
 
-Complete [practice and the operations memo](practice.md), then consult [worked feedback](feedback.md). Module 5 will introduce regression and held-out evaluation. When exploration informs model choices, use training/development data and preserve final test data for its planned evaluation; no predictive evaluation is performed here.
+Complete [practice and the operations memo](practice.md), then consult [worked feedback](feedback.md). [Module 5](../05-regression/index.md) introduces regression and held-out evaluation. When exploration informs model choices, use training/development data and preserve final test data for its planned evaluation; no predictive evaluation is performed here.

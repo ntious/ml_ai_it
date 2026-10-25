@@ -1,6 +1,6 @@
 # Teach and adapt
 
-Use the sequence from Module 1, or link one module as additional reading/practice. No original university Canvas assignment is needed. All examples use synthetic data and public worked feedback.
+Use the sequence from Module 1, or link one module as additional reading/practice. No original university Canvas assignment is needed. Modules 1–4 use synthetic data; Module 5 adds attributed real UCI data and an explicitly synthetic offline fixture. Public worked feedback supports independent study.
 
 ## Direct module links
 
@@ -12,6 +12,9 @@ The routes below are relative to the eventual site base URL. The reading site is
 | [2](../lessons/02-python-workflows/index.md) | Python structures/functions, CSV/JSON summary, debugging evidence | `/lessons/02-python-workflows/` |
 | [3](../lessons/03-data-processing/index.md) | Data validation, quality report, explained cleaning decisions | `/lessons/03-data-processing/` |
 | [4](../lessons/04-exploration/index.md) | Justified preprocessing, labeled figures/tables, chart descriptions, and a stakeholder memo | `/lessons/04-exploration/` |
+| [5](../lessons/05-regression/index.md) | Forecast contract, trained pipeline, validation selection, held-out errors, and reproducibility | `/lessons/05-regression/` |
+
+[Module 5 adaptation and alignment](../lessons/05-regression/instructor.md) includes dataset substitution, notebook/script evidence, and advisory outcome mapping.
 
 Suggested LMS description, adapted for the module you select:
 

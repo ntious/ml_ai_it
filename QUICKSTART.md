@@ -78,6 +78,26 @@ On macOS/Linux:
 
 Expect 24 distinct observations, 4,180 requests, 23 observed latencies and one unavailable latency. Open `runs/module04/index.html` for the five figures with actual tables/descriptions, or use its plain-text/CSV evidence. See [Module 4](docs/lessons/04-exploration/index.md) for preprocessing and interpretation. No display server is required for generating figures.
 
+## Module 5: regression and real public data
+
+After creating the environment, add the regression/visualization extras, download the attributed UCI data, and run a fresh study. Windows PowerShell:
+
+~~~powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[regression,visualization]" -c environments/constraints-tested.txt
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py download --run runs/datasets/bike-sharing
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py all --input runs/datasets/bike-sharing/day.csv --run runs/module05 --holdout-days 110 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+~~~
+
+macOS/Linux:
+
+~~~sh
+.venv/bin/python -m pip install -e ".[regression,visualization]" -c environments/constraints-tested.txt
+.venv/bin/python examples/bike-demand/scripts/study.py download --run runs/datasets/bike-sharing
+.venv/bin/python examples/bike-demand/scripts/study.py all --input runs/datasets/bike-sharing/day.csv --run runs/module05 --holdout-days 110 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+~~~
+
+Expect 504 training, 110 validation, and 110 final-test examples after seven warm-up days. Open runs/module05/index.html or its text/CSV evidence. Use a new study directory for a replay. [Module 5](docs/lessons/05-regression/index.md) explains separate stages, the forecast origin, source/license, and the clearly synthetic offline alternative. The first real-data download needs internet, while later runs reuse a checksum-verified cache.
+
 ## Notebook option
 
 Notebooks are optional execution companions. To operate one locally, create a project environment as above and install an interface into that environment:

@@ -1,24 +1,24 @@
 # Development status
 
-Development edition 0.3.0 implements Modules 1–4. It is not the complete 14-module course.
+Development edition 0.4.0 implements Modules 1–5. It is not the complete 14-module course.
 
 ## Implemented
 
-- Module 1: terminology, method choice, first Python run, and saved rule output.
-- Module 2: Python structures/functions, CSV/JSON processing, and debugging.
+- Modules 1–2: concepts, first Python execution, reusable functions, CSV/JSON processing, and debugging.
 - Module 3: NumPy/pandas preparation, accepted/rejected records, and quality reporting.
-- Module 4: exploratory preprocessing, Matplotlib/pandas/Seaborn plots, underlying tables/descriptions, sensitivity analysis, and a stakeholder memo.
-- Each module has original practice, discussion/solo reflection, public worked feedback, and an optional extension.
-- Shared scripts/notebooks, original synthetic data and provenance, static reading pages, controlled downloads, and Windows/Linux CI.
+- Module 4: exploration, labeled plots, underlying tables/descriptions, and a stakeholder memo.
+- Module 5: real public-data acquisition, forecast-time features, scikit-learn pipelines/baselines, chronological splits, frozen selection, final evaluation, and target-free inference.
+- Each module includes prerequisite support, original practice, public worked feedback, adaptable criteria, solo discussion, and optional depth.
+- Scripts and commented notebooks share implementation. Original synthetic fixtures and attributed external data are distinguished.
 
 ## Verification boundaries
 
-Exact local results and instructional decisions are recorded in `DEVELOPMENT.md` in the repository. Remote CI is separate evidence for each commit. Earlier increments passed Windows/Linux; the expanded Module 4 increment requires its own result. macOS has not been exercised.
+Commit-specific Windows/Linux CI is the execution evidence for Module 5; the local terminal was unavailable during this increment. The initial implementation passed 46 tests including actual UCI retrieval and an end-to-end real-data study. Final notebook/site/archive results are recorded after inspecting the current commit's CI.
 
-Notebook code checks do not test notebook UI. HTML/link checks and reviewed figure files do not establish WCAG conformance. Browser/keyboard, screen-reader, visual/zoom/reflow review, and hosted execution routes remain pending. The report supplies numerical/text evidence alongside every figure; actual task-based usability still needs verification.
+Notebook code checks do not test notebook UI. HTML/link checks do not establish WCAG conformance. Manual keyboard, screen-reader, zoom/reflow, rendered Module 5 figures, macOS, and hosted routes remain pending.
 
 ## Next development
 
-Develop Module 5, regression and reliable evaluation, with a simple baseline, training/development/final-test boundaries, and error interpretation. Continue in order through Module 14. Each increment needs a usable example, prerequisite support, original practice, feedback, and verification. Accessibility piloting continues across modules.
+Module 6 introduces classification and decision trees. Continue in order through Module 14 with usable examples, prerequisite support, original practice, feedback, and verification. Accessibility piloting remains part of development.
 
-GitHub Pages publication and repository visibility changes are separate release actions, not performed by this increment.
+GitHub Pages publication, visibility changes, and merging are separate release actions.

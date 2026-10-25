@@ -5,11 +5,13 @@
   "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository.",
   "license": "CC-BY-4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "acquisition": "Shared download command retains original ZIP/day.csv/Readme.txt, attribution, retrieval time, and actual SHA-256 digests. Cached CSVs must retain their recorded digest. The initial remote archive digest is recorded, not claimed to be pinned.",
+  "acquisition": "Download retains original ZIP/day.csv/Readme.txt, attribution, retrieval time, and hashes. New archives must match the SHA-256 verified by the initial real-data CI run; cached CSVs must match recorded provenance.",
   "changes": "No changes to cached day.csv. Prepared study selects dteday/cnt, constructs past-only lag features, and separates chronological splits.",
   "limitations": [
     "Historical 2011–2012 rental counts; not present-day demand.",
     "The full public file contains test labels. The workflow's holdout discipline is procedural, not access control.",
     "Weather observations on the target date, casual/registered totals, and the target itself are excluded from forecast inputs."
-  ]
+  ],
+  "archive_sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+  "day_csv_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be"
 }

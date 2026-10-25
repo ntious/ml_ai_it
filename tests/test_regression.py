@@ -14,7 +14,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from practical_ml_ai.regression import (
-    FEATURES, TARGET, build_examples, digest, download_bike_data,
+    FEATURES, TARGET, UCI_ARCHIVE_SHA256, build_examples, digest, download_bike_data,
     evaluate_study, fit_linear, infer_study, leakage_demo, load_split,
     predict_artifact, prepare_study, read_daily, report_study, run_study,
     train_study, training_cv, validate_study,
@@ -193,11 +193,23 @@ class RegressionTests(unittest.TestCase):
             self.assertEqual(process.returncode, 0, process.stderr)
             self.assertTrue((run / "forecast.csv").exists())
             self.assertIn("Selected final MAE", process.stdout)
+            staged = Path(directory) / "staged"
+            commands = [
+                ["prepare", "--input", str(SMOKE)],
+                ["train"], ["validate"], ["evaluate"], ["predict"], ["report"],
+            ]
+            for args in commands:
+                completed = subprocess.run(
+                    [sys.executable, str(ROOT / "examples/bike-demand/scripts/study.py"), *args, "--run", str(staged)],
+                    cwd=directory, capture_output=True, text=True,
+                )
+                self.assertEqual(completed.returncode, 0, completed.stderr)
+            self.assertTrue((staged / "index.html").is_file())
 
     def test_cached_external_data_must_match_its_provenance(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "day.csv"; path.write_bytes(b"changed")
-            (Path(directory) / "provenance.json").write_text(json.dumps({"day_csv_sha256": "wrong"}))
+            (Path(directory) / "provenance.json").write_text(json.dumps({"day_csv_sha256": "wrong", "archive_sha256": UCI_ARCHIVE_SHA256}))
             with patch("urllib.request.urlopen") as network, self.assertRaisesRegex(ValueError, "checksum changed"):
                 download_bike_data(directory)
             network.assert_not_called()
