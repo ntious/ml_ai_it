@@ -1,6 +1,6 @@
 # Learner pilot, workload and support record
 
-Status: NOT RUN. The implementation supplies instruments, not fabricated learner results. Recruit consenting learners with no programming, programming without ML and prior ML experience. Use institutional processes; keep identities and submissions private.
+This instrument supports independent review and course adoption. No learner-study results are recorded in this edition. Recruit consenting learners with no programming, programming without ML and prior ML experience. Use institutional processes; keep identities and submissions private.
 
 For each route, observe acquisition, first output, one guided construction, a broken example and an independent transfer. Record preparation time, reading time, setup/download time, execution time, practice time, help requests, stopping point, misconception and successful independent explanation. Distinguish elapsed downloads from active study. Ask what instructions were missing and which terms needed explanation.
 

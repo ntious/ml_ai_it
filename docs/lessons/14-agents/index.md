@@ -30,7 +30,7 @@ The actual small LLM ranks summary, alcohol-feature summary, or refusal plans. E
 
 ## Run and inspect
 
-Download the [complete source](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). The tested framework route is Linux CPU; Windows/macOS framework execution remains unverified. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
+Download the [complete source](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
 
 ~~~sh
 python examples/bounded-assistant/scripts/run.py --output runs/module14
@@ -43,7 +43,7 @@ Key artifacts:
 - request_trace.csv
 - tool_trace.json
 
-The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module14/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module14/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. For interface choices and test coverage, see the [accessibility guide](../../accessibility/index.md).
 
 ## Read selectively
 

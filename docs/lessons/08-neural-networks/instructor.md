@@ -1,6 +1,6 @@
 # Teach and adapt Module 8
 
-Link the [entry page](index.md) as additional reading/practice. Its planned route is /lessons/08-neural-networks/ relative to the eventual site base URL. Until publication, link repository Markdown at a tested commit/release.
+Link the [entry page](index.md) as additional reading/practice. Its reading-site route is /lessons/08-neural-networks/ relative to the served site base. For a repository link, select a tested commit or release.
 
 ## Facilitation and access
 
@@ -26,4 +26,4 @@ Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome
 
 ## Verification limits
 
-Actual framework training/inference, the public script, and notebook are exercised in the Linux CPU job. Windows/macOS framework execution is not inferred from that run. Exact counts/results are recorded in DEVELOPMENT.md and commit-specific CI. Manual keyboard/screen-reader/zoom and notebook/app usability remain pending. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.
+Actual framework training/inference, the public script, and notebook are exercised in the Linux CPU job. Windows/macOS framework execution is not inferred from that run. Exact counts/results are recorded in DEVELOPMENT.md and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.

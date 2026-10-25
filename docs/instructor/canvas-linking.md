@@ -4,21 +4,21 @@ An instructor covering Module 3 can add a clearly labeled external resource link
 
 ## Choose a stable destination
 
-Before publication, use a repository link at a tested commit:
+For a stable repository destination, use a tested commit:
 
 ~~~text
 https://github.com/ntious/ml_ai_it/blob/TESTED_COMMIT/docs/lessons/03-data-processing/index.md
 ~~~
 
-Replace TESTED_COMMIT with the full approved commit SHA. This private repository requires repository access; test the link with a learner account. A private development URL is not an open educational release.
+Replace TESTED_COMMIT with the full approved commit SHA. Test the link with a learner account and confirm any source-access requirements.
 
-After approved site publication, the corresponding project route would be:
+If serving the built site under the GitHub Pages project base, the corresponding route is:
 
 ~~~text
 https://ntious.github.io/ml_ai_it/lessons/03-data-processing/
 ~~~
 
-This is a planned URL, not a claim that the site is deployed. Preview a built artifact through a local HTTP server and test the project prefix. Test publication and access before giving students the URL. Prefer a tagged tested edition for a semester; a moving development branch may change instructions or results.
+Use the actual base URL supplied by the host; the address above illustrates the project-route layout. Check the served route before distributing a link. Prefer a tagged tested edition for a semester so instructions and results remain stable.
 
 ## Add the resource
 

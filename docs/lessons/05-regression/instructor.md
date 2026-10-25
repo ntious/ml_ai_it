@@ -1,6 +1,6 @@
 # Teach and adapt Module 5
 
-Link the [entry page](index.md) directly. Its planned route is /lessons/05-regression/, relative to the eventual site base URL. Until site publication, use repository Markdown at a tested commit/release.
+Link the [entry page](index.md) directly. Its reading-site route is /lessons/05-regression/ relative to the served site base. For repository links, select a tested commit or release.
 
 ## Support independent learners
 
@@ -30,4 +30,4 @@ These labels follow the separate curriculum planning register, not universal cou
 
 CI exercises real-data download/workflow, synthetic behavior tests, notebook code, and site/report generation. Consult DEVELOPMENT.md and commit-specific results. Notebook code checks are not interface usability tests.
 
-Reports supply named values, scoped/captioned tables, CSV/text evidence, and descriptions alongside optional plots. Manual screen-reader, keyboard, zoom/reflow, notebook-interface, and rendered-figure review remain pending for this increment. Provide a private help route and test actual learner tasks before requiring an interface.
+Reports supply named values, scoped/captioned tables, CSV/text evidence, and descriptions alongside optional plots. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Provide a private help route and test actual learner tasks before requiring an interface.

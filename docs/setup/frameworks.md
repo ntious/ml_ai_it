@@ -1,10 +1,10 @@
 # Isolated CPU framework environment
 
-Modules 8–12 and 14 use this environment; Modules 6, 7, and 13 use core dependencies. CI verifies **Linux CPU, Python 3.12**. Other framework platforms, GPUs, and hosted notebook interfaces remain unverified.
+Modules 8–12 and 14 use this environment; Modules 6, 7, and 13 use core dependencies. CI verifies **Linux CPU, Python 3.12**. Use this reference environment for framework execution; additional platform and interface coverage is documented in the [support matrix](../status.md).
 
 ## Install separately
 
-Windows PowerShell (installation route; framework execution is not verified on Windows):
+Windows PowerShell installation recipe (the execution reference below is Linux CPU):
 
 ~~~powershell
 py -3.12 -m venv .venv-ml
@@ -53,10 +53,10 @@ npm run check
 python scripts/check_downloads.py
 ~~~
 
-The builder requires actual verified reports and fails rather than inventing missing evidence. CI assembles complete-reading-site automatically. It does not publish or change visibility.
+The builder requires actual verified reports and fails rather than inventing missing evidence. CI assembles complete-reading-site automatically. The resulting site artifact can be read locally or served by the chosen host.
 
 ## Troubleshoot and interpret
 
 Retain exact commands, versions, and error text. A changed-source hash requires review. Use the [source register](../data-sources.md) for attribution, cache layout, and privacy limits. Do not disclose credentials in issues.
 
-The short neural NLP model can miss positives, and free-text LLM output can fail its schema. Module 11's eight actual gradient steps are a mechanics check. Successful execution is separate from useful/safe model behavior. Manual screen-reader, keyboard, zoom/reflow, notebook/app interface, and rendered visual review remain pending.
+The short neural NLP model can miss positives, and free-text LLM output can fail its schema. Module 11's eight actual gradient steps are a mechanics check. Successful execution is separate from useful/safe model behavior. See the [accessibility evidence](../accessibility/review-log.md) for interface test scope.

@@ -4,7 +4,7 @@ Use this record for an exact commit. A green workflow is necessary for technical
 
 ## Automated gates
 
-- Registry covers 14 ordered modules; each has five teaching pages, one notebook, and one example script.
+- Registry covers 14 ordered modules; each has six teaching pages, one notebook, and one example script.
 - All tracked Python parses; source notebooks validate and contain no saved execution state.
 - Core Windows/Linux behavior passes; framework skips are reported separately.
 - Linux CPU framework tests pass with actual learning, generation, adapter updates/replay, app forms, and health checks.
@@ -23,7 +23,7 @@ Use the exact check names in the workflow. Constraints record exercised direct p
 - Inspect executed notebooks, report figures, tables, app errors/results, and downloadable outputs at reading size. Repair clipped labels, unreadable output, and unsupported conclusions.
 - Pilot core work with learners; confirm prerequisites, pacing, feedback, and optional depth.
 - Confirm the authoritative course-outcome crosswalk and locally adopted program criteria before formal assessment claims.
-- Configure a private accessible reporting contact and document moderation responsibility.
+- Confirm the accessibility contact ([ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu)) and the conduct reporting process remain current.
 - Check original/third-party rights and attribution; retain source and model identities.
 - Select an approved semester edition and test learner permissions and direct links.
 - Review current dependency advisories and updates through the institution's maintenance process; no security audit is implied by this educational review.
@@ -38,7 +38,7 @@ python scripts/check_repository.py
 python -m unittest discover -s tests -v
 python scripts/check_notebook.py --group core --kernel ml-ai-core
 python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
-npm install --ignore-scripts
+npm ci --ignore-scripts
 npm run build
 npm run check
 python scripts/check_http_routes.py

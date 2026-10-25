@@ -8,7 +8,7 @@ Review date: October 25, 2026. Scope: all 159 tracked source files at baseline c
 
 All baseline text/source files were read through GitHub. The local terminal environment was unavailable; execution is performed by the commit-specific GitHub Actions workflow. Earlier private planning attachments could not be independently reread. This is a comprehensive repository and visible-requirements review, not a claim that an inaccessible original design was fully reconciled.
 
-See the [draft integration review](https://github.com/ntious/ml_ai_it/pull/2) for the current commit and CI evidence. The baseline complete run was [40154906162](https://github.com/ntious/ml_ai_it/actions/runs/40154906162). New checks require the audit commit's own successful run; earlier results do not prove new behavior.
+See the [completed baseline integration review](https://github.com/ntious/ml_ai_it/pull/2) for the current commit and CI evidence. The baseline complete run was [40154906162](https://github.com/ntious/ml_ai_it/actions/runs/40154906162). New checks require the audit commit's own successful run; earlier results do not prove new behavior.
 
 ## Findings and changes
 
@@ -49,10 +49,10 @@ Structure verification requires every module's five pages, notebook, and script;
 ## Items still needing human or owner evidence
 
 - Screen-reader, keyboard, zoom/reflow, contrast, rendered chart/notebook/app presentation, and the complete learner journey: NOT RUN in this audit. Use the [manual review log](../../accessibility/review-log.md); successful code execution cannot substitute.
-- Private accessibility/conduct reporting contact: not configured. Owner must supply an accessible private route before open release.
+- At the baseline audit, a dedicated accessibility contact was not recorded. The [current reporting guide](../../accessibility/index.md) supplies the maintained accessibility route; conduct concerns follow the current conduct policy.
 - Exact original outcome/course crosswalk and adopted program criteria: owner review required. No official ABET attainment is certified.
 - Learner piloting and pacing validation: pending.
-- Public release, visibility, semester edition, and Pages deployment: separate owner actions. Current material remains on the draft development branch.
+- Public release, visibility, semester edition, and Pages deployment: separate owner actions. At that audit, the material was on a development branch; subsequent integrations are recorded in the repository history.
 - Complete transitive dependency locks and independent macOS/hosted/framework-Windows support: not supplied or claimed. Tested constraints and pinned model/dataset identities define the exercised scope.
 
 No additional Canvas assessments were invented. Existing companion practice, solo discussion, public feedback, and optional extensions support independent use without altering master assignments. Empty production, slide, and video folders were not added to suggest uncreated assets are complete.

@@ -1,6 +1,6 @@
 # Repository architecture and file inventory
 
-This document describes the implemented development edition. It is the maintained architecture reference for contributors and adopting instructors. The [review report](docs/maintenance/reviews/baseline-0.6.0.md) records gaps, corrections, and verification limits.
+This document describes the implemented edition. It is the maintained architecture reference for contributors and adopting instructors. The [review report](docs/maintenance/reviews/baseline-0.6.0.md) records gaps, corrections, and verification limits.
 
 ## Design goals
 
@@ -11,7 +11,7 @@ Support complete beginners through advanced optional work; let an instructor lin
 | Path | Responsibility | What belongs elsewhere |
 | --- | --- | --- |
 | curriculum/modules.json | Canonical 14-module paths, profiles, titles, and required pages | Official syllabus wording is owner-verified, not inferred |
-| docs/lessons/ | Five-page teaching package per module | Restricted Canvas tasks and submissions |
+| docs/lessons/ | Six-page teaching package per module | Restricted Canvas tasks and submissions |
 | src/practical_ml_ai/ | Shared validation, analysis, learning, inference, and reporting behavior | Duplicated algorithms in notebooks |
 | examples/ | Thin, commented script entry points | Copied model implementations |
 | notebooks/lessons/ | Clean, commented, independently executable tutorials | Generated execution state in source control |
@@ -26,7 +26,7 @@ Support complete beginners through advanced optional work; let an instructor lin
 | .github/ | CI and contribution/reporting templates | Automatic public deployment |
 | .binder/ and .devcontainer/ | Optional environment definitions | Verified hosted accessibility or universal support |
 
-Root files provide setup, contribution guidance, change history, licensing, citation, architecture, and the audit report. All authored tracked files belong in the source archive; generated outputs and private planning sources do not.
+Root files provide setup, contribution guidance, change history, licensing, citation and architecture. Historical audits are archived under docs/maintenance/reviews. All authored tracked files belong in the source archive; generated outputs and private planning sources do not.
 
 ## One implementation, several routes
 
@@ -36,7 +36,7 @@ The registry drives site navigation, notebook execution selection, notebook down
 
 ## Module inventory
 
-Every row requires entry, foundation, practice, feedback, instructor notes, one registered notebook, and one public example script. The verifier rejects missing or unregistered lesson notebooks/scripts.
+Every row requires entry, foundation, guided construction, practice, feedback, instructor notes, one registered notebook, and one public example script. The verifier rejects missing or unregistered lesson notebooks/scripts.
 
 | Module | Title and entry | Profile |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Every row requires entry, foundation, practice, feedback, instructor notes, one 
 | 13 | [Ethics and fairness across the lifecycle](docs/lessons/13-ethics-fairness/index.md) | core |
 | 14 | [Bounded agents and AI workflows](docs/lessons/14-agents/index.md) | frameworks |
 
-Core and framework profiles are separate environments. Framework execution is currently checked on Linux CPU. Core behavior and kernels are checked on Windows and Linux. macOS, hosted environments, and manual interface operation remain unverified.
+Core and framework profiles are separate environments. Framework execution is currently checked on Linux CPU. Core behavior and kernels are checked on Windows and Linux. Additional platform and human-interface coverage is specified in the [support matrix](docs/status.md).
 
 ## Data and generated artifacts
 
@@ -69,7 +69,7 @@ Generated runs/, site/, dist/, environment folders, and caches are excluded from
 
 CI checks the registry and Python syntax, behavior on Windows/Linux, actual Linux CPU framework learning/generation, 14 notebooks in real Jupyter kernels, generated page semantics and links, project-prefix HTTP routes, archive completeness/digests, extracted CLIs, and an isolated installed-wheel inference path.
 
-The site is static HTML/CSS without required browser JavaScript. Its build requires verified outputs from both execution profiles; it fails instead of inventing missing results. The complete site artifact is for review. No Pages deployment occurs automatically.
+The site is static HTML/CSS without required browser JavaScript. Its build requires verified outputs from both execution profiles; it fails instead of inventing missing results. The complete site artifact supports reading, review and hosting through the chosen distribution process.
 
 Automated checks do not establish screen-reader usability, plot quality, reflow, educational effectiveness, formal course alignment, or production fitness. Follow the [release checklist](docs/release-checklist.md).
 
@@ -77,7 +77,7 @@ Automated checks do not establish screen-reader usability, plot quality, reflow,
 
 Update registry, teaching pages, examples, tests, and provenance together. Check core and framework dependencies independently before a version change. Retain observed failures in worked examples. Keep optional depth optional, preserve a no-GenAI route, and test the actual learner task.
 
-No empty slide/video/production folders are created to imply missing material exists. Record future work with acceptance criteria; add its files when authored. Original private planning attachments remain outside the open source archive. The formal alignment owner must reconcile them before institutional assessment claims.
+No empty slide/video/production folders are created to imply missing material exists. Record future work with acceptance criteria; add its files when authored. Original private planning attachments remain outside the open source archive. Institutional assessment mappings are maintained by the adopting course owner.
 
 ## Learning-support extension
 

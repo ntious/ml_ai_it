@@ -5,7 +5,7 @@ Version 1.1 · October 25, 2026 · ML_AI_IT project
 
 **Accessibility is a core requirement for every module, example, application, and release.** Blind and low-vision learners should be able to enter a module through a direct link, understand its concepts, run and modify code, interpret results, complete practice, and obtain feedback with an effective access route.
 
-The repository now implements reading pages, scripts, notebooks, text/table reports, and a local app. Automated structural and runtime checks exercise defined properties; manual keyboard, screen-reader, zoom/reflow, and end-to-end learner accessibility review remain pending. Record actual results in the [review log](docs/accessibility/review-log.md). The design target for the web content we control is **WCAG 2.2 Level AA**; meeting a short checklist or passing an automated scan does not establish conformance. [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+The repository now implements reading pages, scripts, notebooks, text/table reports, and a local app. Automated structural and runtime checks exercise defined properties; human keyboard, screen-reader, real-zoom and end-to-end learner sessions are recorded separately in the evidence log. Record actual results in the [review log](docs/accessibility/review-log.md). The design target for the web content we control is **WCAG 2.2 Level AA**; meeting a short checklist or passing an automated scan does not establish conformance. [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 ## 1. Reading and navigation
 
@@ -82,3 +82,7 @@ Keep this policy at repository root as `ACCESSIBILITY.md`. Add `docs/accessibili
 Apply these requirements across Modules 1–4 and all subsequent modules. Accessibility work is part of implementation and maintenance, not a final visual review after the content is complete.
 
 References inform the design and do not certify this resource. The review log separates automated evidence from unperformed manual tasks.
+
+## Report an accessibility barrier
+
+Email accessibility issues to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu). Anyone may use this address so maintainers can investigate and address barriers. Include the task, module/link, version and observed problem; a diagnosis or student record is unnecessary. See the [reporting guide](docs/accessibility/index.md) for details.

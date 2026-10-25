@@ -27,6 +27,6 @@ Source Markdown and generated HTML links are checked separately. Generated site,
 
 ## Teaching limits still requiring observation or ownership
 
-Learner piloting and workload validation, human assistive-technology/real-zoom/notebook-interface checks, live Codespaces/Colab/Binder sessions, institutional outcome approval, current Canvas policies and an accessible private support contact need actual owner/human evidence. The provided instruments and configurations are not reported as completed learner studies or live provider verification. Python Foundation supports the no-programming-entry design and does not create a formal prerequisite or silently replace an institutionally assigned resource.
+Learner piloting and workload validation, human assistive-technology/real-zoom/notebook-interface checks, live Codespaces/Colab/Binder sessions, institutional outcome approval, current Canvas policies need actual owner/human evidence. The provided instruments and configurations are not reported as completed learner studies or live provider verification. Python Foundation supports the no-programming-entry design and does not create a formal prerequisite or silently replace an institutionally assigned resource.
 
 Local prompts and authentic benchmark implementations do not establish every broader original objective: closed-provider API execution and full agent-framework implementation remain explicit adoption decisions. No production, accreditation or WCAG-conformance claim is made. Publication/visibility changes are separate from source integration.

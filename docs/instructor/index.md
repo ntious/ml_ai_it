@@ -6,9 +6,9 @@ Use an individual module or the sequence. Original companion practice does not d
 
 ## Direct links
 
-Until publication, link repository Markdown at a tested release/commit. Planned site routes are relative to its eventual base URL.
+Link repository Markdown at a tested release/commit, or use the routes below relative to the base URL of the served reading site.
 
-| Module | Entry | Planned route |
+| Module | Entry | Reading-site route |
 | --- | --- | --- |
 | 1 | [ML and AI foundations](../lessons/01-foundations/index.md) | /lessons/01-foundations/ |
 | 2 | [Python workflows](../lessons/02-python-workflows/index.md) | /lessons/02-python-workflows/ |

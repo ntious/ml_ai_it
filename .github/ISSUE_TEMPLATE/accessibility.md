@@ -6,7 +6,7 @@ labels: ""
 assignees: ""
 ---
 
-Do not disclose a diagnosis, student records, or personal contact details. A private accessible reporting route must be configured before open release; current course support should use the instructor's established channel.
+You may email accessibility reports to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu) instead of posting an issue. Anyone may report a barrier so maintainers can address it. Do not include a diagnosis, student record or credentials; describe the task and observed problem.
 
 ## Task and version
 

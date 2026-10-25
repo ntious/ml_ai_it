@@ -7,9 +7,9 @@ Use [first run](../../QUICKSTART.md) for foundational commands. Modules 6, 7, an
 ## Support and evidence
 
 - Core execution: Python 3.12 on Windows/Linux.
-- Framework execution: isolated Linux CPU actual training/inference/app checks. Other framework platforms and GPU routes remain unverified.
+- Framework execution: isolated Linux CPU actual training/inference/app checks. Use the Linux CPU reference for framework work.
 - Notebooks: curated cells execute in fresh namespaces; interface and assistive-technology behavior need separate manual checks.
-- Hosted routes: included configurations remain experimental. This private repository is not an ordinary public Binder launch; Colab needs authorized source access/upload and installation verification.
+- Hosted routes: choose a provider that can access the complete source and supplies a matching runtime. Validate the selected module in that session; provider execution is outside the recorded CI platform scope.
 - Reading: static explanations, tables, and actual verified reports; no browser Python execution is implied.
 
 The [original-source ZIP](student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") includes scripts, notebooks, shared implementation, and the app. A notebook alone lacks imports. External data/model caches are separate and retain [provenance](../data-sources.md).
@@ -18,4 +18,4 @@ The [original-source ZIP](student-workspace.md#reading-reports-from-github "site
 
 The build requires reports from both notebook groups, retained in runs/verified. It fails rather than inventing missing results. Follow [framework setup](frameworks.md) for the full sequence.
 
-CI assembles complete-reading-site only after core/framework execution succeeds, then checks links, structure, archives, extracted source, and package building. It does not publish or change visibility. Review [accessibility status](../accessibility/index.md) before requiring an interface.
+CI assembles complete-reading-site only after core/framework execution succeeds, then checks links, structure, archives, extracted source, and package building. Use the resulting artifact directly or serve it through your chosen hosting process. Review [accessibility status](../accessibility/index.md) before requiring an interface.

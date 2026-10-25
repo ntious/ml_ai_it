@@ -36,7 +36,7 @@ These patterns were deliberately constructed in a small synthetic fixture. They 
 
 If an assistant recommends dropping every outlier, ask what would be lost and what evidence establishes an error. If it says “the overall p95 is 38.70 ms,” correct the quantity: this is the mean of supplied daily service p95 values. If it calls 4,180 a request rate, ask for the denominator and units.
 
-Return to [Module 4](index.md). Regression and reliable evaluation are the next planned module.
+Return to [Module 4](index.md). Continue with regression and reliable evaluation in Module 5.
 
 ## Construction check and misconception feedback
 

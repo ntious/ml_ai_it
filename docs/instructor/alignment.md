@@ -8,7 +8,7 @@ The supplied local syllabus, all 14 module outlines and project-phase/report doc
 
 Python Foundation is preparation within the supported learning route, not a formal prerequisite. Original outlines include broader prompting/API/literature and framework-agent expectations than the tiny local demonstrations alone establish. The guided work adds prompting/literature and model/tool-loop comparison; live closed-provider API execution and a full agent-framework implementation remain separate adoption choices. Confirm their required scope with Canvas instead of treating local mechanics as proof of every original objective.
 
-A private reconciliation register records source coverage and unresolved assessment/platform items. Instructor contact, ambiguous policy wording and current deadlines require the course owner's authoritative resolution; this OER does not set them.
+For adoption, maintain a course-owned alignment register connecting the resource outcomes to approved assessment artifacts. The adopting instructor supplies current contact details, policies and deadlines; this resource does not set institutional rules.
 
 ## Course-label summaries
 

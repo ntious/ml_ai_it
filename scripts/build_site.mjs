@@ -83,7 +83,7 @@ for (const page of pages) {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escape(title)} | Practical ML and AI</title><link rel="stylesheet" href="${relative('assets/site.css')}"></head>
 <body><a class="skip-link" href="#main">Skip to main content</a>
-<header><p>Practical Machine Learning and AI Systems · Development edition</p><nav aria-label="Main navigation"><ul>${navigation}</ul></nav></header>
+<header><p>Practical Machine Learning and AI Systems · Learning companion</p><nav aria-label="Main navigation"><ul>${navigation}</ul></nav></header>
 <main id="main" tabindex="-1">${body}</main>
 <footer><p>Original code: MIT. Original educational content: CC BY 4.0. <a href="${relative('accessibility/index.html')}">Accessibility status and limitations</a>.</p></footer>
 </body></html>\n`;

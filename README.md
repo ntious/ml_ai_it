@@ -4,7 +4,7 @@ Learn to frame a useful problem, work with data, build and evaluate models, and 
 
 **Start with [the readiness check and learning routes](docs/start-here.md).** If you have never programmed, begin with [Python Foundation](https://ntious.github.io/python_foundation/), then return for our [Python-to-ML bridge](docs/setup/python-bridge.md). You can learn through this resource independently or use it alongside an instructor's course.
 
-Development edition 0.7.0. [Current status and tested scope](docs/status.md).
+Edition 0.7.0. [Current status and tested scope](docs/status.md).
 
 ## Who this is for
 
@@ -33,7 +33,7 @@ These are resource learning goals. The [module outcomes](docs/modules.md) identi
 ## Get your first result
 
 1. **Choose support:** complete [readiness](docs/start-here.md) and any needed Python preparation.
-2. **Get the complete source:** follow [download, extraction and folder instructions](docs/setup/student-workspace.md). While this GitHub repository is private, you need access from its owner. A notebook downloaded alone does not include the shared code and data.
+2. **Get the complete source:** follow [download, extraction and folder instructions](docs/setup/student-workspace.md). If GitHub requests authentication, use an account with repository access. A notebook downloaded alone does not include the shared code and data.
 3. **Run Module 1:** open a terminal in the extracted project folder, where README.md and examples are visible. Python 3.12 is the tested reference; supported Python versions start at 3.11. The first script uses only the standard library.
 
 Windows PowerShell:
@@ -60,9 +60,9 @@ Continue with [Module 1](docs/lessons/01-foundations/index.md) and [first-run se
 | Script | Run the public script from the complete source folder with the matching environment | Same shared implementation; text/CSV/HTML evidence |
 | Reading | Use the lesson pages and verified worked reports | Interpretation practice; implementation outcomes still need execution |
 
-Core execution is checked on Windows and Linux. Framework modules 8–12 and 14 use a separate **Linux CPU** environment for TensorFlow, PyTorch/Transformers and Streamlit. Local macOS and Windows framework execution remain unverified. First installation and data/model downloads need connectivity; keep valid caches for later replay. Framework work needs additional disk and memory; see the [framework requirements](docs/setup/frameworks.md).
+Core execution is checked on Windows and Linux. Framework modules 8–12 and 14 use a separate **Linux CPU** environment for TensorFlow, PyTorch/Transformers and Streamlit. For framework work on other platforms, use the Linux CPU reference environment. First installation and data/model downloads need connectivity; keep valid caches for later replay. Framework work needs additional disk and memory; see the [framework requirements](docs/setup/frameworks.md).
 
-[Environment choices](docs/setup/hosted.md) explains Codespaces, Colab, Binder and local setup, including access, saving and verification limits. Hosted configurations do not guarantee a working live session. Ordinary public Binder launches cannot access this private repository. Use an instructor's verified workspace when available.
+[Environment choices](docs/setup/hosted.md) explains Codespaces, Colab, Binder and local setup, including access, saving and verification limits. Select a service that can access the complete source and meets the documented environment requirements. Use an instructor's verified workspace when available.
 
 ## Module map
 
@@ -102,7 +102,7 @@ All modules include outcomes, a foundation bridge, guided construction, practice
 
 Early modules use clearly labeled original teaching fixtures. Regression and the later modeling modules use attributed public datasets; the phishing case uses real historical security attributes. The [source register](docs/data-sources.md) documents rights, reviewed hashes, transformations and model provenance. Historical benchmark results do not establish current operational performance.
 
-Lesson source is readable directly on GitHub. Verified reports, executed notebook copies and source/data downloads are also assembled into a complete reading-site artifact by CI. Follow [report and artifact access](docs/setup/student-workspace.md#reading-reports-from-github); do not assume a public ML course website has been deployed. You do not need to build the full site to study one module.
+Lesson source is readable directly on GitHub. Verified reports, executed notebook copies and source/data downloads are also assembled into a complete reading-site artifact by CI. Use [report and artifact access](docs/setup/student-workspace.md#reading-reports-from-github) to read or download the complete built site. You do not need to build the full site to study one module.
 
 GenAI assistance is optional. Verify suggestions against code and evidence, protect private data, and follow the [AI collaboration guidance](docs/ai-collaboration.md) and your instructor's disclosure rules. Public feedback supports self-study; it is not a confidential answer key.
 
@@ -126,9 +126,9 @@ Generated site files, runtime results, environment folders, credentials, student
 
 ## Instructors, contributors and help
 
-Start with [teach and adapt](docs/instructor/index.md), [assessment guidance](docs/instructor/assessment.md) and [pacing](docs/instructor/teaching-plan.md). The resource does not replace Canvas grading, deadlines, accommodations or official course policies. Pilot preparation and workload with your actual learners. Text/table and script routes support access; [accessibility status](docs/accessibility/index.md) records remaining human testing.
+Independent reviewers can use the [review guide](docs/review-guide.md). Start with [teach and adapt](docs/instructor/index.md), [assessment guidance](docs/instructor/assessment.md) and [pacing](docs/instructor/teaching-plan.md). The resource does not replace Canvas grading, deadlines, accommodations or official course policies. Pilot preparation and workload with your actual learners. Text/table and script routes support access; [accessibility status](docs/accessibility/index.md) records remaining human testing.
 
-For a nonsensitive reproducible software problem, [open an issue](https://github.com/ntious/ml_ai_it/issues) with the module, environment, command and error text. Use the instructor's private route for assessment, disability or personal-data questions.
+For a nonsensitive reproducible software problem, [open an issue](https://github.com/ntious/ml_ai_it/issues) with the module, environment, command and error text. Report accessibility barriers to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu); see the [reporting guide](docs/accessibility/index.md). Use the institution's established channels for course assessment or accommodation decisions.
 
 Maintainers should use [DEVELOPMENT.md](DEVELOPMENT.md) for the separate core/framework test profiles, notebook verification, site assembly, archive checks and browser checks. Read [CONTRIBUTING.md](CONTRIBUTING.md), the [architecture](REPOSITORY_STRUCTURE.md) and [release checklist](docs/release-checklist.md) before extending the course. Students do not need the maintainer toolchain for their first lesson.
 

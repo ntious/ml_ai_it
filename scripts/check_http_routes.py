@@ -59,4 +59,4 @@ with tempfile.TemporaryDirectory() as temporary:
         server.shutdown()
         server.server_close()
         thread.join(timeout=5)
-print(f"Verified {len(routes)} served HTTP routes under /ml_ai_it/ including downloads. Browser and assistive-technology review remains pending.")
+print(f"Verified {len(routes)} served HTTP routes under /ml_ai_it/ including downloads. Run the browser checks separately; human interface evidence is recorded in the accessibility log.")
