@@ -101,6 +101,7 @@ jobs:
       - name: Check publication provenance boundaries
         run: npm run check:release
       - name: Assemble site with actual verified reports
+        id: assemble
         env:
           SITE_SOURCE_REF: ${{ github.event.pull_request.head.sha || github.sha }}
         run: npm run build
@@ -115,8 +116,11 @@ jobs:
       - name: Exercise the installed wheel outside the checkout
         run: python scripts/check_wheel.py
       - name: Install Chromium for site browser verification
+        id: browser_install
+        if: ${{ !cancelled() && steps.assemble.outcome == 'success' }}
         run: npx playwright install --with-deps chromium
       - name: Exercise browser navigation, search, reflow, and axe checks
+        if: ${{ !cancelled() && steps.assemble.outcome == 'success' && steps.browser_install.outcome == 'success' }}
         run: npm run check:browser
       - uses: actions/upload-artifact@v4
         if: always()
@@ -127,3 +131,4 @@ jobs:
         with:
           name: complete-reading-site
           path: site/
+          include-hidden-files: true

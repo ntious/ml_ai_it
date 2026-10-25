@@ -23,7 +23,10 @@ with zipfile.ZipFile(archive_path) as archive:
     for name in names:
         relative = Path(name).relative_to("ml_ai_it")
         assert not relative.is_absolute() and ".." not in relative.parts
-        assert not set(relative.parts) & {"runs", "site", "analysis", "project_sources", "project_resources", "__pycache__"}
+        # Only repository-root output/private folders are excluded. A tracked
+        # nested folder such as tests/site contains authored source, not a build.
+        assert relative.parts[0] not in {"runs", "site", "analysis", "project_sources", "project_resources"}, name
+        assert "__pycache__" not in relative.parts, name
         assert archive.read(name) == (ROOT / relative).read_bytes(), name
     with tempfile.TemporaryDirectory() as temporary:
         archive.extractall(temporary)
