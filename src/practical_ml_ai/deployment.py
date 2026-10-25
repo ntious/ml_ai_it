@@ -33,7 +33,8 @@ def run_monitoring(output):
     features = bundle["features"]
     training = bundle["split"]["train"][features]
     rows, batches = [], []
-    for batch_id, part in enumerate(np.array_split(test, 4), start=1):
+    for batch_id, positions in enumerate(np.array_split(np.arange(len(test)), 4), start=1):
+        part = test.iloc[positions]
         estimates, durations = [], []
         for _, record in part.iterrows():
             result = checked_predict(bundle, {name: float(record[name]) for name in features})
