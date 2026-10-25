@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M12.4:** Distinguish batch diagnostics from genuine time drift and production service guarantees.
 - **M12.5:** Propose ownership, escalation, monitoring, and rollback criteria.
 
-Course alignment opportunities: **CLO2, CLO5, CLO6, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **CLO2, CLO5, CLO6, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 

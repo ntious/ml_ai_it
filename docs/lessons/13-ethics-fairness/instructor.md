@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M13.4:** Explain metric trade-offs, proxy effects, and uncertainty without causal/legal claims.
 - **M13.5:** Write a governance recommendation, including reasons not to deploy.
 
-Course alignment opportunities: **Supports CLO2, CLO5, CLO6, CLO8; explicit ethics is a curriculum extension**. Advisory computing-outcome opportunities from the planning register: **A1, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **Supports CLO2, CLO5, CLO6, CLO8; explicit ethics is a curriculum extension**. Advisory computing-outcome opportunities from the planning register: **A1, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 

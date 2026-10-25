@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M10.4:** Compare task fit, latency, and limitations with simpler NLP.
 - **M10.5:** Write a source-grounded model-use note with privacy and cost constraints.
 
-Course alignment opportunities: **CLO5, CLO7, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **CLO5, CLO7, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 

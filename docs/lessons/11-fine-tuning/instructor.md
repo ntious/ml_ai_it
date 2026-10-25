@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M11.4:** Compare predeclared base/adapted held-out completion losses without promising improvement.
 - **M11.5:** Save/reload adapter arrays with the exact model revision and disclose limits.
 
-Course alignment opportunities: **CLO4, CLO5, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **CLO4, CLO5, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3, A4**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 

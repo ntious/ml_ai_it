@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M08.4:** Compare held-out errors with a logistic baseline.
 - **M08.5:** Save/reload a trained model and document compute and limitations.
 
-Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 

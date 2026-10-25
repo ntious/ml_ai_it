@@ -23,6 +23,6 @@ All 14 modules support direct entry with prerequisites, shared-code examples, or
 
 CLO1 concerns learning paradigms; CLO2 applies ML/AI to IT operations; CLO3 interprets network data; CLO4 uses frameworks/evaluation; CLO5 integrates GenAI/LLMs; CLO6 covers deployment/monitoring; CLO7 data representations; CLO8 communication. Domain-transfer activities support IT outcomes but do not by themselves prove application to genuine IT records.
 
-The original-module crosswalk remains in previously prepared planning resources. The offline local workspace prevented rereading its attached sources during this increment; no unseen original outcome wording is invented. Confirm authoritative outcomes before formal assessment use.
+The original-module crosswalk remains in previously prepared planning resources. Confirm authoritative outcomes before formal assessment use.
 
 Advisory A1/A2/A3/A4 labels in instructor notes identify analysis, solution evaluation, communication, and professional/ethical judgment opportunities under the planning register. They do not prove master's-level attainment or ABET compliance. Individual work does not establish teamwork/leadership. Ethics explicitly extends the original CLO list's identified gap.

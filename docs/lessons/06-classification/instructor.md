@@ -22,7 +22,7 @@ When changing a dataset, define its license/provenance, observation unit, target
 - **M06.4:** Justify group boundaries and a decision threshold before final evaluation.
 - **M06.5:** Communicate error trade-offs and limits of the chosen label.
 
-Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources; no unseen original outcome wording is invented here. Confirm adopted program criteria before formal use.
+Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome opportunities from the planning register: **A1, A2, A3**. These are opportunities for evidence, not proof of master's-level attainment or accreditation compliance. The original-module crosswalk remains in the previously prepared planning resources. Confirm adopted program criteria before formal use.
 
 ## Verification limits
 
