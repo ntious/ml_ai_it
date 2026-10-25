@@ -89,7 +89,7 @@ A defensible summary says that the fictional January 7 monitor observation combi
 
 The script imports `src/practical_ml_ai/exploration.py`. `read_workload` documents validation/normalization, `summarize_workload` produces numerical evidence and plot tables, and `render_charts` creates labeled figures. `run_exploration` writes the report and returns the summary. The [guided notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module04/exploration.ipynb") calls these same functions; keep it within the complete source folder and follow [notebook setup](../../../QUICKSTART.md#notebook-option).
 
-Saved outputs include normalized observations, `summary.json`, named text values, per-chart CSVs/PNGs, descriptions, and an HTML report. HTML tables have captions and column headers. Charts use labels and, where grouping matters, marker shapes as well as colors. These provisions need manual task-based testing; [screen-reader, keyboard, and zoom/reflow verification remains pending](../../accessibility/index.md).
+Saved outputs include normalized observations, `summary.json`, named text values, per-chart CSVs/PNGs, descriptions, and an HTML report. HTML tables have captions and column headers. Charts use labels and, where grouping matters, marker shapes as well as colors. These provisions need manual task-based testing; [interface test coverage and effective routes](../../accessibility/index.md).
 
 ## Read selectively
 

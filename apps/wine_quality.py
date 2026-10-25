@@ -54,4 +54,4 @@ else:
         st.write("Model revision:", revision)
         st.write("Generation seconds:", round(seconds, 3))
         st.write("Model response (untrusted text):", response)
-st.caption("UCI data retain CC BY 4.0 attribution. Manual accessibility review is pending; use the CLI/text route as needed.")
+st.caption("UCI data retain CC BY 4.0 attribution. The CLI/text route provides the same inference workflow; consult the course accessibility guide for interface test scope.")

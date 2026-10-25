@@ -1,10 +1,10 @@
 # Accessibility review log
 
-This is an evidence register, not a conformance statement. Manual task-based checks have not been performed in this audit. Do not infer a pass from an HTML checker, a successful kernel, or a launch configuration.
+This evidence register separates automated checks from human task-based sessions. It records no human assistive-technology sessions for this edition; software/browser checks retain their own named scope.
 
 ## Automated scope
 
-The commit-specific workflow checks page language/title/main/skip links, heading order, image-alt presence, named code regions, captioned/scoped tables and named scroll regions, local links/fragments, real kernel execution, scripts, app forms, and HTTP routes. These checks cannot judge equivalent descriptions, focus behavior, announcements, contrast, rendered reflow, or actual assistive-technology use.
+The commit-specific workflow checks page language/title/main/skip links, heading order, image-alt presence, named code regions, captioned/scoped tables and named scroll regions, local links/fragments, real kernel execution, scripts, app forms, and HTTP routes. The additional browser checks below exercise selected focus, reflow and accessibility-rule properties. Human description quality, announcements and actual assistive-technology task completion require separately recorded sessions.
 
 ## Manual module status
 
@@ -15,7 +15,7 @@ The commit-specific workflow checks page language/title/main/skip links, heading
 | 8–11 | NOT RUN | NOT RUN | NOT RUN | NOT RUN |
 | 12–14 | NOT RUN | NOT RUN | NOT RUN | NOT RUN |
 
-No platform/browser/assistive-technology version or tester is recorded because those tasks have not run. Record each module separately when tested; grouping here is only a compact view of identical pending status.
+The NOT RUN entries refer specifically to human task-based review. Automated keyboard-focus and narrow-screen checks are recorded below. Add the actual tester/environment/task when a human session takes place; do not infer human results from browser automation.
 
 ## Run the journey
 
@@ -25,7 +25,7 @@ Initial proposed combinations are NVDA/Firefox on Windows and VoiceOver/Safari o
 
 ## Reporting and release gate
 
-A public issue may describe a non-sensitive technical barrier. Do not post disability details, student records, private logs, or personal contact information. A private accessible reporting contact has not yet been configured; the maintainer must supply it before open release. Adopting instructors should provide their established private help route.
+A public issue may describe a non-sensitive technical barrier. Do not post disability details, student records, private logs, or personal contact information. Email accessibility barriers to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu). Anyone may report an accessibility issue so maintainers can address it. Course-specific accommodation requests use the institution's established route.
 
 A blocking core task needs repair or a documented, tested equivalent route before that module is described as accessible for the affected workflow. Read the [policy](../../ACCESSIBILITY.md) and [release checklist](../release-checklist.md).
 

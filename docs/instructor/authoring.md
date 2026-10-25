@@ -13,4 +13,4 @@ Copy a template, replace all placeholders, and record actual evidence. Templates
 | [Model card](../../templates/model-card.md) | Intended use, identity, observed results, failures, limitations |
 | [AI assistance note](../../templates/ai-assistance-log.md) | Bounded assistance and independent verification |
 
-Keep shared behavior in the package. Register new module paths and profiles in curriculum/modules.json. Preserve source rights and meaningful test coverage. The [architecture](../../REPOSITORY_STRUCTURE.md) explains the maintenance boundaries; the [release checklist](../release-checklist.md) separates runtime evidence from pending human review.
+Keep shared behavior in the package. Register new module paths and profiles in curriculum/modules.json. Preserve source rights and meaningful test coverage. The [architecture](../../REPOSITORY_STRUCTURE.md) explains the maintenance boundaries; the [release checklist](../release-checklist.md) separates automated evidence from human task-based review.

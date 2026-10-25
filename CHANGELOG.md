@@ -1,5 +1,6 @@
 # Changelog
 
+Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.
 ## 0.6.0 — repository audit and verification
 
 - Add canonical module registry, architecture inventory, audit findings, and complete early-module instructor/foundation pages.

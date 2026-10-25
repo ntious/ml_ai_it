@@ -116,7 +116,7 @@ Open runs/module05/index.html, or read summary.txt and the CSV/JSON files. The [
 
 Residuals are **actual minus predicted**: positive means underprediction. MAE loses direction; inspect mean residual, largest errors, and date-ordered values too. Isolated errors and persistent underprediction may warrant different investigations. MAE also does not express unequal operational costs.
 
-Optional actual/predicted and residual figures include alternatives, numerical descriptions, and a table of every selected prediction. Line style distinguishes the two series. Manual screen-reader, keyboard, zoom/reflow, and rendered-figure review remain pending for this increment.
+Optional actual/predicted and residual figures include alternatives, numerical descriptions, and a table of every selected prediction. Line style distinguishes the two series. Interface and figure review scope is recorded in the [accessibility evidence log](../../accessibility/review-log.md).
 
 Forecast.csv predicts the next day after the last observed day, without an actual target. It is historical inference practice, not an evaluated prediction or current demand forecast. Negative/fractional predictions are reported without hidden clipping/rounding; applications need explicit policies.
 

@@ -4,7 +4,7 @@ Compare this with your [practice](practice.md) after attempting it. Exact curren
 
 ## A reasoned interpretation
 
-The replay uses real measurements and measured durations, not invented telemetry. It explicitly labels the offline batch order. AppTest interactions and HTTP health are checked, but manual keyboard/screen-reader and production readiness remain unverified. An uncalibrated probability is not guaranteed confidence.
+The replay uses real measurements and measured durations, not invented telemetry. It explicitly labels the offline batch order. AppTest interactions and HTTP health cover software behavior; the [accessibility guide](../../accessibility/index.md) records human interface-review scope. Operational suitability needs task-specific evidence. An uncalibrated probability is not guaranteed confidence.
 
 ## What a good explanation contains
 

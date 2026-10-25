@@ -111,7 +111,7 @@ python -m notebook
 
 Here `python` means the environment executable: `.\.venv\Scripts\python.exe` on Windows or `.venv/bin/python` on macOS/Linux if you have not activated it. The interface is an additional dependency even though Modules 1 and 2 themselves need only the standard library. Module 3 also needs the local package and its dependencies installed.
 
-From the opened interface, open the module's notebook under `notebooks/lessons/`. Select and run code cells in order. Save with the interface's File → Save command, restart the kernel, and run all cells. The notebook imports shared source from the complete repository folder; downloading a notebook alone is insufficient. Notebook UI and assistive-technology compatibility remain unverified. See [setup and accessibility status](docs/setup/index.md).
+From the opened interface, open the module's notebook under `notebooks/lessons/`. Select and run code cells in order. Save with the interface's File → Save command, restart the kernel, and run all cells. The notebook imports shared source from the complete repository folder; downloading a notebook alone is insufficient. Use the documented script/text route when it better fits your interface needs; the accessibility guide records interface testing scope. See [setup and accessibility status](docs/setup/index.md).
 
 ## Save and troubleshoot
 
