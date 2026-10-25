@@ -18,7 +18,7 @@ from .continuation_data import (
 )
 
 MODEL_ID = "HuggingFaceTB/SmolLM2-135M-Instruct"
-MODEL_REVISION = None  # Replaced by the reviewed commit after the first real run.
+MODEL_REVISION = "12fd25f77366fa6b3b4b768ec3050bf629380bac"  # Verified real-model integration snapshot.
 
 
 @lru_cache(maxsize=1)
@@ -66,7 +66,7 @@ def parse_label(text):
         value = json.loads(text)
     except (ValueError, TypeError):
         return None
-    if not isinstance(value, dict) or set(value) != {"label"} or value["label"] not in {"ham", "spam"}:
+    if not isinstance(value, dict) or set(value) != {"label"} or not isinstance(value["label"], str) or value["label"] not in {"ham", "spam"}:
         return None
     return int(value["label"] == "spam")
 

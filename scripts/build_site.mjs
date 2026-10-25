@@ -51,6 +51,15 @@ for (const page of pages) {
     ['lessons/02-python-workflows/index.html', 'Module 2'], ['lessons/03-data-processing/index.html', 'Module 3'],
     ['lessons/04-exploration/index.html', 'Module 4'],
     ['lessons/05-regression/index.html', 'Module 5'],
+    ['lessons/06-classification/index.html', 'Module 6'],
+    ['lessons/07-clustering/index.html', 'Module 7'],
+    ['lessons/08-neural-networks/index.html', 'Module 8'],
+    ['lessons/09-neural-nlp/index.html', 'Module 9'],
+    ['lessons/10-llm-workflows/index.html', 'Module 10'],
+    ['lessons/11-fine-tuning/index.html', 'Module 11'],
+    ['lessons/12-deployment/index.html', 'Module 12'],
+    ['lessons/13-ethics-fairness/index.html', 'Module 13'],
+    ['lessons/14-agents/index.html', 'Module 14'],
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']
   ].map(([url, label]) => `<li><a href="${relative(url)}"${url === page.output ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');

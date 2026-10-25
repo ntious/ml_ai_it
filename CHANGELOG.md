@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.0 development
+
+- Complete Modules 6–14 using actual external records, commented notebooks/scripts, original practice/feedback, optional depth, and instructor notes.
+- Add classification/clustering/fairness, TensorFlow training/reload, local LLM evaluation, actual adapter updates/replay, checked deployment/monitoring, and bounded read-only model routing.
+- Preserve observed weak-model/schema failures as evidence; no synthetic dataset or mocked model is substituted.
+- Separate core Windows/Linux and framework Linux CPU verification, both notebook groups, actual report assembly, archive checks, extracted CLI, and package build.
+- Record rights, reviewed source/model versions, platform scopes, and pending manual accessibility checks.
+
+
 ## 0.4.0 development
 
 - Add Module 5 with commented notebook, stage scripts, core/optional learning routes, original practice, worked feedback, and instructor alignment notes.

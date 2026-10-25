@@ -36,5 +36,5 @@ def main(number):
     options = {key: value for key, value in vars(args).items() if key != "output"}
     try:
         run_module(number, args.output, **options)
-    except (ValueError, OSError, KeyError) as error:
+    except (ValueError, OSError, KeyError, ImportError) as error:
         parser.exit(2, f"Module {number} failed: {error}\n")

@@ -1,0 +1,61 @@
+# Module 8: Neural networks with TensorFlow
+
+Train a small real neural classifier, select a checkpoint on validation, and test saved-model replay against a simpler baseline.
+
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
+
+## Learning outcomes
+
+- **M08.1:** Explain input, hidden activation, output probability, loss, and gradient updates.
+- **M08.2:** Fit training-only numeric preprocessing and a TensorFlow network.
+- **M08.3:** Select a checkpoint using validation loss without fitting to final labels.
+- **M08.4:** Compare held-out errors with a logistic baseline.
+- **M08.5:** Save/reload a trained model and document compute and limitations.
+
+## Entry support and topics
+
+Use the [foundation bridge](foundation.md) if these concepts are new. Basic Python/functions/files and the train/validation/test distinction are assumed with support from [Module 2](../02-python-workflows/index.md) and [Module 5](../05-regression/index.md).
+
+A dense layer combines inputs with learned weights and a bias; ReLU supplies a nonlinear hidden activation. A sigmoid output lies between zero and one. Binary cross-entropy supplies the gradient objective; a low training loss does not establish held-out performance.
+
+## Real data and its limits
+
+UCI Wine Quality; real red-wine chemistry and human ratings. See the central source register for citation, rights, archive hash, and limitations.
+
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+
+## The complete workflow
+
+Training-only scaling feeds eleven numeric inputs, a 16-unit ReLU layer, and one sigmoid output. An explicit minibatch GradientTape loop updates weights. The best validation-loss epoch among a fixed small budget is restored before final predictions. Threshold 0.5 is fixed, not tuned on test. A logistic baseline and actual save/reload check accompany the neural result.
+
+## Run and inspect
+
+Download the [complete source](../../downloads/ml_ai_it-source.zip) or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). The tested framework route is Linux CPU; Windows/macOS framework execution remains unverified. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
+
+~~~sh
+python examples/wine-neural-network/scripts/run.py --output runs/module08
+~~~
+
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module08/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../downloads/module08/example/index.html) without installing an execution interface.
+
+Key artifacts:
+
+- learning_history.csv
+- comparison.csv
+- test_predictions.csv
+- numeric_preprocessing.json
+- model.keras
+
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../downloads/module08/walkthrough.ipynb) call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
+
+## Read selectively
+
+- **Core concept/reference:** [TensorFlow Sequential models](https://www.tensorflow.org/guide/keras/sequential_model) — layer construction, input shape, and training state. Read these named sections, not an entire external course.
+- **Source/model context:** [central source register](../../data-sources.md), including the relevant official card and license.
+- **Optional depth:** Declare another width, epoch budget, or class-weight policy as a development experiment. Explain parameter count and resource effects; do not require a GPU or treat the extension as necessary for core completion.
+
+## Practice and continue
+
+Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+
+Next: [Module 9](../09-neural-nlp/index.md).

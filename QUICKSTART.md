@@ -121,3 +121,7 @@ Use different output names/directories for experiments; rerunning replaces gener
 - Missing NumPy/pandas: install with the same environment executable used to run Module 3.
 
 For help, retain the command, Python/platform version, error text, and small synthetic input. Screenshots are not required. Keep credentials and personal information out of public issues.
+
+## Modules 6–14
+
+Choose a module from the [curriculum map](docs/modules.md). Modules 6, 7, and 13 use the core environment; Modules 8–12 and 14 use the [isolated CPU framework setup](docs/setup/frameworks.md). Each entry supplies its script, commented notebook, actual source, and evidence requirements. Use fresh output directories and retain verified data/model caches for replay.

@@ -1,0 +1,55 @@
+{
+  "datasets": {
+    "wine": {
+      "archive_sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "changes": "Original archived files unchanged; each module documents its derived selection/transformation.",
+      "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.",
+      "dataset": "wine",
+      "files": {
+        "winequality-red.csv": "4a402cf041b025d4566d954c3b9ba8635a3a8a01e039005d97d6a710278cf05e",
+        "winequality.names": "15d215e73b39105952380fd487e4ce1bf5a6b83a425abb285c2ec55193d3ca92"
+      },
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_utc": "2026-10-25T01:53:33.608386+00:00",
+      "source": "https://archive.ics.uci.edu/dataset/186/wine+quality"
+    },
+    "adult": {
+      "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+      "changes": "Original archived files unchanged; each module documents its derived selection/transformation.",
+      "citation": "Becker, B. & Kohavi, R. (1996). Adult. UCI. DOI:10.24432/C5XW20.",
+      "dataset": "adult",
+      "files": {
+        "adult.data": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+        "adult.names": "c248284c0b5de30c9e1958d6cdd168a34a654758b620e68f46aefa83fc0a576a",
+        "adult.test": "a2a9044bc167a35b2361efbabec64e89d69ce82d9790d2980119aac5fd7e9c05"
+      },
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_utc": "2026-10-25T01:53:34.498877+00:00",
+      "source": "https://archive.ics.uci.edu/dataset/2/adult"
+    },
+    "sms": {
+      "archive_sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "changes": "Original archived files unchanged; each module documents its derived selection/transformation.",
+      "citation": "Almeida, T. & Hidalgo, J. (2011). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.",
+      "dataset": "sms",
+      "files": {
+        "SMSSpamCollection": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+        "readme": "8753cd2d3cab68f80c8257851b8c2037778c267f55accb6fd1b5a2e32d36a84e"
+      },
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_utc": "2026-10-25T01:53:40.163613+00:00",
+      "source": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection"
+    }
+  },
+  "model": {
+    "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "license": "Apache-2.0",
+    "device": "cpu",
+    "source": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct"
+  },
+  "policy": "Modules 6–14 use actual external records/human labels. Test control-input mutations are not training datasets. Preserve original bytes and declared transformations."
+}

@@ -22,7 +22,7 @@ SOURCES = {
     "wine": {"id": 186, "slug": "wine+quality", "members": ["winequality-red.csv", "winequality.names"],
              "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.", "sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4"},
     "sms": {"id": 228, "slug": "sms+spam+collection", "members": ["SMSSpamCollection", "readme"],
-            "citation": "Almeida, T. & Hidalgo, J. (2012). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.", "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3"},
+            "citation": "Almeida, T. & Hidalgo, J. (2011). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.", "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3"},
     "adult": {"id": 2, "slug": "adult", "members": ["adult.data", "adult.test", "adult.names"],
               "citation": "Becker, B. & Kohavi, R. (1996). Adult. UCI. DOI:10.24432/C5XW20.", "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"},
 }
@@ -45,6 +45,10 @@ def fetch_source(name):
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
         if spec["sha256"] and meta["archive_sha256"] != spec["sha256"]:
             raise ValueError("Cache differs from the reviewed archive; use the reviewed source.")
+        if set(meta["files"]) != set(spec["members"]):
+            raise ValueError("Cached member schema changed.")
+        if sha_bytes((directory / "original.zip").read_bytes()) != meta["archive_sha256"]:
+            raise ValueError("Cached original archive changed.")
         for member, expected in meta["files"].items():
             if sha_bytes((directory / member).read_bytes()) != expected:
                 raise ValueError("Cached source changed: " + member)

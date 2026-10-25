@@ -11,3 +11,7 @@ Only contribute material you are authorized to share. This notice grants rights 
 ## External dataset in Module 5
 
 UCI Bike Sharing retains its own CC BY 4.0 attribution: Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894. The downloader preserves the original archive/CSV/README, source, license link, retrieval time, and hashes. Derived preparation selects fields and creates lag features/splits. These data are credited to their source, not represented as original ML_AI_IT synthetic contributions.
+
+## Sources in Modules 6–14
+
+UCI Wine Quality, SMS Spam Collection, and Adult retain their CC BY 4.0 source attribution and reviewed original bytes. The central source register and cache attribution identify creators/DOI, rights, and transformations. SmolLM2 retains its Apache-2.0 model-card terms and exact revision. Adapter configuration identifies the base dependency. External records/weights are not represented as original ML_AI_IT contributions. See docs/data-sources.md.

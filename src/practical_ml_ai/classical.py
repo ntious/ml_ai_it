@@ -59,6 +59,7 @@ def run_classification(output):
     return publish_report(directory, "Module 6: classification and decision trees", summary,
                           {"validation_scores": bundle["validation_scores"], "test_scores": pd.DataFrame(test_scores),
                            "test_predictions": predictions,
+                           "tree_rules": pd.DataFrame({"rule": export_text(tree, feature_names=features).splitlines()}),
                            "tree_importance": pd.DataFrame({"feature": features, "importance": tree.feature_importances_})},
                           ["Chemistry-identical rows stay in one split. No physical sample IDs exist; independence cannot be guaranteed.",
                            "Quality >=7 is a declared classroom label, not a safety/quality certification. Thresholds are selected on validation only.",

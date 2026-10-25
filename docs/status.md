@@ -1,24 +1,25 @@
 # Development status
 
-Development edition 0.4.0 implements Modules 1–5. It is not the complete 14-module course.
+Edition 0.5.0 implements all 14 modules with original teaching content, commented notebooks, shared scripts, practice/feedback, optional depth, and instructor guidance. Learner piloting and manual accessibility review remain necessary.
 
-## Implemented
+## Real sources and actual computation
 
-- Modules 1–2: concepts, first Python execution, reusable functions, CSV/JSON processing, and debugging.
-- Module 3: NumPy/pandas preparation, accepted/rejected records, and quality reporting.
-- Module 4: exploration, labeled plots, underlying tables/descriptions, and a stakeholder memo.
-- Module 5: real public-data acquisition, forecast-time features, scikit-learn pipelines/baselines, chronological splits, frozen selection, final evaluation, and target-free inference.
-- Each module includes prerequisite support, original practice, public worked feedback, adaptable criteria, solo discussion, and optional depth.
-- Scripts and commented notebooks share implementation. Original synthetic fixtures and attributed external data are distinguished.
+New Modules 6–14 use UCI Wine Quality, SMS Spam Collection, and Adult. Original files, attribution, reviewed archive hashes, transformations, and a fixed local-model revision are documented. Earlier foundation fixtures remain labeled separately.
 
-## Verification boundaries
+Actual TensorFlow training/reload, local generation, real adapter gradients/replay, app interactions/server health, and bounded model-based tool routing are implemented. No mocked model output or invented training records substitute for those demonstrations.
 
-Commit-specific Windows/Linux CI is the execution evidence for Module 5; the local terminal was unavailable during this increment. The initial implementation passed 46 tests including actual UCI retrieval and an end-to-end real-data study. Final notebook/site/archive results are recorded after inspecting the current commit's CI.
+## Verification scopes
 
-Notebook code checks do not test notebook UI. HTML/link checks do not establish WCAG conformance. Manual keyboard, screen-reader, zoom/reflow, rendered Module 5 figures, macOS, and hosted routes remain pending.
+Core tests/notebooks execute on Windows/Linux; framework tests/notebooks execute on Linux CPU. Framework tests skipped in the smaller core environment are explicitly executed in the separate job. Both notebook groups must pass before site assembly.
 
-## Next development
+The final integration run checks actual report artifacts, generated links/structure, source/data ZIPs, extracted CLI execution, and package building. Exact evidence is recorded in DEVELOPMENT.md and commit-specific CI.
 
-Module 6 introduces classification and decision trees. Continue in order through Module 14 with usable examples, prerequisite support, original practice, feedback, and verification. Accessibility piloting remains part of development.
+## Observed limitations
 
-GitHub Pages publication, visibility changes, and merging are separate release actions.
+The initial small neural NLP run missed all positives. The initial free-text LLM run failed the exact JSON contract on all eight cases. Those failures remain visible; they are not repaired into credited success. The tiny adapter experiment establishes gradient/replay mechanics, not deployable quality.
+
+Adult results are descriptive audits, not justified decisions about people. Batch replay order is not a measured timeline. A constrained legal tool plan may still misunderstand intent.
+
+Manual keyboard, screen-reader, zoom/reflow, notebook/app usability, rendered visual review, macOS, Windows framework, and hosted routes remain pending. Automated execution does not certify accessibility or production readiness.
+
+Merging, GitHub Pages publication, and visibility changes remain separate release actions.

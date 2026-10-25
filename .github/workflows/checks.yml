@@ -23,32 +23,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install tested data and visualization dependencies
+      - name: Install core dependencies
         run: python -m pip install -e ".[visualization,regression]" -c environments/constraints-tested.txt
-      - name: Download reviewed public data through the CLI
+      - name: Download reviewed bike data through the CLI
         run: python examples/bike-demand/scripts/study.py download --run runs/datasets/bike-sharing
-      - name: Check data and regression behavior
+      - name: Check core behavior including real data
         env:
           ML_AI_REAL_DATA: '1'
         run: python -m unittest discover -s tests -v
-      - name: Check notebook code
-        run: python scripts/check_notebook.py
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Install reading-site tool
-        run: npm install --ignore-scripts
-      - name: Build reading site and controlled downloads
-        run: npm run build
-      - name: Check generated links and structure
-        run: npm run check
-      - name: Check source archive and extracted CLI
-        run: python scripts/check_downloads.py
+      - name: Execute core notebooks
+        run: python scripts/check_notebook.py --group core
       - uses: actions/upload-artifact@v4
         with:
-          name: reading-site-${{ matrix.os }}
-          path: site/
-
+          name: verified-core-${{ matrix.os }}
+          path: runs/verified/
   framework-checks:
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -70,11 +58,49 @@ jobs:
         run: python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
       - name: Install isolated framework dependencies
         run: python -m pip install -e ".[regression,visualization,neural,language,deployment]" -c environments/constraints-neural.txt
-      - name: Exercise actual neural, language, fine-tuning, and app workflows
+      - name: Exercise actual framework, fine-tuning, CLI, and app behavior
         run: python -m unittest discover -s tests -p test_continuation_heavy.py -v
+      - name: Execute framework notebooks
+        run: python scripts/check_notebook.py --group frameworks
       - uses: actions/upload-artifact@v4
-        if: always()
         with:
-          name: framework-evidence
-          path: |
-            runs/datasets/*/provenance.json
+          name: verified-frameworks
+          path: runs/verified/
+  build-site:
+    needs: [verify, framework-checks]
+    runs-on: ubuntu-latest
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install site and data dependencies
+        run: python -m pip install -e ".[visualization,regression]" -c environments/constraints-tested.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-core-ubuntu-latest
+          path: runs/verified/
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-frameworks
+          path: runs/verified/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install reading-site tool
+        run: npm install --ignore-scripts
+      - name: Assemble site with actual verified reports
+        run: npm run build
+      - name: Check every generated page and local link
+        run: npm run check
+      - name: Check source and data archives and extracted CLI
+        run: python scripts/check_downloads.py
+      - name: Build package
+        run: python -m pip wheel . --no-deps --no-build-isolation --wheel-dir dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: complete-reading-site
+          path: site/

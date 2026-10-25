@@ -1,5 +1,47 @@
 # Development verification
 
+## Increment 0.5.0: Modules 6–14
+
+All remaining implementations/teaching packages are present: five pages per module (entry, foundation, practice, feedback, instructor), a commented seven-code-cell notebook, and a public script calling shared behavior. Nine new notebooks add 63 cells to the prior 27. New lessons use actual external records, not created synthetic datasets.
+
+The local terminal remained unavailable. Initial classical integration passed 55 tests on Windows/Linux. Initial Linux CPU framework integration passed nine actual-framework tests, including all six additional scripts, training/reload, local generation, adapter gradients/replay, app forms, and HTTP health. Final notebook/site/archive integration must pass its own commit-specific run.
+
+## Sources and profiles
+
+Reviewed dataset hashes/attribution are recorded in the source registry. The official SMS citation is 2011, distinct from its 2012 donation date. The attached link document could not be reread through the unavailable terminal; live official sources were checked directly rather than claiming an inaccessible attachment review.
+
+The local model is HuggingFaceTB/SmolLM2-135M-Instruct, revision 12fd25f77366fa6b3b4b768ec3050bf629380bac (Apache-2.0 card/license). Safetensors and disabled remote code are used. No paid API/token is required.
+
+Core retains prior Windows/Linux dependencies. The isolated Linux CPU profile uses NumPy 2.1.3, pandas 2.2.3, scikit-learn 1.8.0, TensorFlow CPU 2.19.1, PyTorch CPU 2.6.0, Transformers 4.46.3, and Streamlit 1.44.1. These are exercised choices, not a full transitive lock or latest-version claim. Other framework platforms are not inferred.
+
+## Module decisions and initial observations
+
+| Module | Evidence and limits |
+| --- | --- |
+| 6 | Grouped real chemistry profiles; baseline/logistic/trees; validation-only choice. Logistic at threshold 0.3 initially gave TP19/FP30/FN10/TN184 and balanced accuracy about 0.7575 on 243 final rows. Classroom label, not certification. |
+| 7 | Training scaling, predefined K, validation silhouette, original-unit profiles. Initially K=2. Quality excluded; cluster IDs are not ranks. Static observations do not validate an RL policy. |
+| 8 | Actual TensorFlow training/checkpoint/reload. Initial neural balanced accuracy about 0.5927 versus 0.6295 for the fixed-threshold linear reference; more complexity is not presumed better. |
+| 9 | Training vocabulary, embedding/pooling, lexical reference. Initial neural model missed all 30 positives: balanced accuracy 0.5 despite 87.5% accuracy. Lexical reference recovered six positives. |
+| 10 | Actual local generation and strict parsing on eight balanced real messages. Initial schema success 0/8 is retained, not repaired into credited success. |
+| 11 | Eight actual gradient steps; 2,304 rank-2 adapter parameters; prompt masking; real disjoint text IDs; numeric replay. Initial base/adapted final completion loss about 2.5106/2.5081 is mechanics evidence, not validated behavior. |
+| 12 | Shared checked inference, actual-record defaults, two app forms, measured durations, four-batch replay. Source order of 243 real rows is not event time, so no temporal-drift/SLA claim is made. |
+| 13 | Historic benchmark, full-row overlap removal, five numeric inputs, validation threshold, group audit. Income labels/categories do not justify decisions about people or establish fairness. |
+| 14 | Actual model scoring over three legal plans, strict read-only tools, one-call budget, outside-model checks, source evidence. Legal plans can still misunderstand intent; unrestricted autonomy is not claimed. |
+
+## Verification design
+
+Both curated notebook groups execute in fresh namespaces. Their actual reports are copied to generated folders. Site assembly depends on both jobs and fails if evidence is missing; no placeholder result files are invented.
+
+All new public scripts execute from another working directory. Trained neural models and adapters replay after save/load. AppTest exercises both forms; a separate server must return HTTP health. Error controls mutate actual records or authored requests, not training datasets.
+
+Final assembly checks links/semantic structure, original-source ZIP byte matching, external-cache digests/attribution, extracted CLI, and package build. App source is included; external records/model caches remain separate.
+
+## Remaining readiness work
+
+Manual keyboard, screen-reader, zoom/reflow, rendered visual, notebook/app interface, macOS, Windows framework, and hosted routes remain pending. Automated checks are not accessibility conformance or production validation.
+
+Domain transfer does not by itself demonstrate genuine IT-record application. Instructor mappings are evidence opportunities; no unseen original wording or master's-level ABET attainment is invented. Learner piloting, formal assessment review, merging, publication, and visibility changes remain separate.
+
 ## Increment 0.4.0: regression and reliable evaluation
 
 Module 5 adds a real-data one-day-ahead forecasting study, a separately labeled synthetic fixture, explicit stage scripts, a commented notebook, foundation support, original practice/feedback, and instructor adaptation/alignment.

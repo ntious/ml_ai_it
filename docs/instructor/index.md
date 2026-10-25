@@ -1,39 +1,36 @@
 # Teach and adapt
 
-Use the sequence from Module 1, or link one module as additional reading/practice. No original university Canvas assignment is needed. Modules 1–4 use synthetic data; Module 5 adds attributed real UCI data and an explicitly synthetic offline fixture. Public worked feedback supports independent study.
+Use an individual module or the sequence. Original companion practice does not depend on Canvas assignments. Preserve local grading/AI-use rules and a private accessible help route.
 
-## Direct module links
+## Direct links
 
-The routes below are relative to the eventual site base URL. The reading site is buildable but has not been published. Until publication, link repository Markdown at an appropriate release or commit.
+Until publication, link repository Markdown at a tested release/commit. Planned site routes are relative to its eventual base URL.
 
-| Module | Topic and evidence | Entry route |
+| Module | Entry | Planned route |
 | --- | --- | --- |
-| [1](../lessons/01-foundations/index.md) | Concepts, problem brief, first executed/saved Python result | `/lessons/01-foundations/` |
-| [2](../lessons/02-python-workflows/index.md) | Python structures/functions, CSV/JSON summary, debugging evidence | `/lessons/02-python-workflows/` |
-| [3](../lessons/03-data-processing/index.md) | Data validation, quality report, explained cleaning decisions | `/lessons/03-data-processing/` |
-| [4](../lessons/04-exploration/index.md) | Justified preprocessing, labeled figures/tables, chart descriptions, and a stakeholder memo | `/lessons/04-exploration/` |
-| [5](../lessons/05-regression/index.md) | Forecast contract, trained pipeline, validation selection, held-out errors, and reproducibility | `/lessons/05-regression/` |
+| 1 | [ML and AI foundations](../lessons/01-foundations/index.md) | /lessons/01-foundations/ |
+| 2 | [Python workflows](../lessons/02-python-workflows/index.md) | /lessons/02-python-workflows/ |
+| 3 | [Data processing](../lessons/03-data-processing/index.md) | /lessons/03-data-processing/ |
+| 4 | [Exploration and visual communication](../lessons/04-exploration/index.md) | /lessons/04-exploration/ |
+| 5 | [Regression and reliable evaluation](../lessons/05-regression/index.md) | /lessons/05-regression/ |
+| 6 | [Classification and decision trees](../lessons/06-classification/index.md) | /lessons/06-classification/ |
+| 7 | [Clustering and learning paradigms](../lessons/07-clustering/index.md) | /lessons/07-clustering/ |
+| 8 | [Neural networks with TensorFlow](../lessons/08-neural-networks/index.md) | /lessons/08-neural-networks/ |
+| 9 | [Neural NLP for real messages](../lessons/09-neural-nlp/index.md) | /lessons/09-neural-nlp/ |
+| 10 | [LLMs and evaluated generative workflows](../lessons/10-llm-workflows/index.md) | /lessons/10-llm-workflows/ |
+| 11 | [Fine-tuning language models responsibly](../lessons/11-fine-tuning/index.md) | /lessons/11-fine-tuning/ |
+| 12 | [Deployment and monitoring](../lessons/12-deployment/index.md) | /lessons/12-deployment/ |
+| 13 | [Ethics and fairness across the lifecycle](../lessons/13-ethics-fairness/index.md) | /lessons/13-ethics-fairness/ |
+| 14 | [Bounded agents and AI workflows](../lessons/14-agents/index.md) | /lessons/14-agents/ |
 
-[Module 5 adaptation and alignment](../lessons/05-regression/instructor.md) includes dataset substitution, notebook/script evidence, and advisory outcome mapping.
+Modules 5–14 have individual instructor pages. [Alignment conventions](../modules.md) distinguish domain-transfer support from direct evidence.
 
-Suggested LMS description, adapted for the module you select:
+## Preserve independence and rigor
 
-> Additional resource: work through this module's explanation and runnable example. Use its foundation support as needed. Optional extensions are for further exploration. Follow our course's assignment and AI-use instructions for submitted work.
+Public feedback supports self-study; optional depth is skippable and GenAI is not required. Discussion has a solo route. If grading, publish weights/submission rules. Retain source rights, unit, availability, split, and limitations when adapting. Restricted assessments/student work stay outside a public repository.
 
-Module numbering need not match another course. Select by topic and learning outcomes. Prefer a tested release for stable teaching links. Time estimates are provisional and need learner piloting.
+## Access and verification
 
-## Assessment and alignment
+Scripts and text/tables support the same underlying technical decisions without a screenshot requirement. They do not establish notebook-interface operation. Manual [accessibility testing](../accessibility/index.md) is still required on actual learner tasks.
 
-Original companion practice and public worked feedback support independent learning. If grading an activity, publish local weights, submission requirements, and assistance rules. Keep restricted assessment keys and student work outside a public repository. Each practice page maps evidence to the module's measurable outcomes.
-
-The course-specific outcome crosswalk is an adoption aid maintained separately from public learning content. The sequence preserves the planned topic progression: introductory concepts/runtime, Python programming/files, then data processing. Operating a notebook interface is a specific skill; a script run alone does not demonstrate it. Arrange an accessible supported route when that operation is an explicit local requirement.
-
-Introductory artifacts are evidence opportunities, not proof of ABET master's-level attainment. Formal program mapping and accreditation claims require the program's adopted criteria and assessment review; none are claimed by these pages.
-
-## AI collaboration and access
-
-Learners predict, inspect, test, explain, and disclose assistance under local policy. Every AI-assisted suggestion has a no-account alternative using supplied cases and feedback. Optional depth is skippable. Use the same learning goals and written evidence expectations for classroom and asynchronous learners; discussion prompts include solo reflection.
-
-## Accessibility before assigning
-
-Review [accessibility status](../accessibility/index.md) and verify the actual learner route. Avoid screenshots as the only evidence: command/output text and source files can demonstrate the decisions. A script route is implemented, but its real usability with assistive technology still needs task-based testing. Provide a private local help/reporting channel.
+Core Windows/Linux execution and Linux CPU framework execution have distinct scopes. Tiny mechanics checks and observed poor model outcomes support critique, not deployment claims. Read [sources](../data-sources.md), [framework setup](../setup/frameworks.md), and the module-specific notes.

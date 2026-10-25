@@ -46,3 +46,26 @@ with zipfile.ZipFile(ROOT / "site/downloads/module05/bike-sharing-cache.zip") as
     assert metadata["license"] == "CC-BY-4.0"
     assert "Fanaee-T" in cache.read("ATTRIBUTION.txt").decode()
 print("Checked the separate attributed public-data cache and source digests.")
+
+# Verify all newly attributed cache members, not merely the presence of a ZIP.
+for source in ["wine", "sms", "adult"]:
+    with zipfile.ZipFile(ROOT / "site/downloads" / (source + "-cache.zip")) as cache:
+        metadata = json.loads(cache.read("provenance.json"))
+        assert hashlib.sha256(cache.read("original.zip")).hexdigest() == metadata["archive_sha256"]
+        for member, expected in metadata["files"].items():
+            assert hashlib.sha256(cache.read(member)).hexdigest() == expected
+        assert metadata["license"] == "CC-BY-4.0"
+        assert cache.read("ATTRIBUTION.txt")
+print("Checked all three additional real-data caches and their attribution/digests.")
+with zipfile.ZipFile(archive_path) as archive, tempfile.TemporaryDirectory() as temporary:
+    archive.extractall(temporary)
+    extracted = Path(temporary) / "ml_ai_it"
+    process = subprocess.run(
+        [sys.executable, str(extracted / "examples/wine-classification/scripts/run.py"),
+         "--output", str(Path(temporary) / "classifier")],
+        cwd=temporary, capture_output=True, text=True,
+    )
+    assert process.returncode == 0, process.stderr
+    assert (Path(temporary) / "classifier/summary.json").is_file()
+    assert (extracted / "apps/wine_quality.py").is_file()
+print("Checked the extracted new-module CLI and included app source.")
