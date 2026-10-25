@@ -1,5 +1,7 @@
 # Teach and adapt
 
+Use the [learner pilot instrument](pilot.md) to validate pacing and independent transfer. The [project companion](../project.md) supports existing assessments without setting institutional rules.
+
 Use an individual module or the sequence. Original companion practice does not depend on Canvas assignments. Preserve local grading/AI-use rules and a private accessible help route.
 
 ## Direct links

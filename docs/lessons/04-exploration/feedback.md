@@ -37,3 +37,11 @@ These patterns were deliberately constructed in a small synthetic fixture. They 
 If an assistant recommends dropping every outlier, ask what would be lost and what evidence establishes an error. If it says “the overall p95 is 38.70 ms,” correct the quantity: this is the mean of supplied daily service p95 values. If it calls 4,180 a request rate, ask for the denominator and units.
 
 Return to [Module 4](index.md). Regression and reliable evaluation are the next planned module.
+
+## Construction check and misconception feedback
+
+Question: Does a rising scatter pattern establish causation?
+
+No. Confounding, measurement changes and selection can produce association.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

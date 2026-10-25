@@ -31,3 +31,9 @@ Study a CNN/recurrent encoder, a larger vocabulary, or a length change with a pr
 | M09.5 | Document privacy, prevalence, vocabulary limits, and reproducibility. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Inspect the training-fitted real vocabulary. Demonstrate an unknown token and truncation on a training example, then explain what information is unavailable to the classifier.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

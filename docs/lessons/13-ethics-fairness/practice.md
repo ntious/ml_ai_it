@@ -31,3 +31,9 @@ Study uncertainty intervals or a validation-only mitigation proposal with stakeh
 | M13.5 | Write a governance recommendation, including reasons not to deploy. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Reconcile two real group rates and denominators. Explain the historical label and an intersectional limitation. Demonstrate uncertainty arithmetic while stating dependence and sampling assumptions.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

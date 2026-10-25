@@ -47,3 +47,11 @@ Then add a supported limitation and next action: historical coverage, changing c
 Reject a random shuffle that defeats the forecast-time question, full-dataset median fitting that includes holdouts, or a final-test-based change to the frozen choice. Check actual code and artifacts rather than confidence of wording.
 
 Return to [Module 5](index.md) or the [instructor notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Can an imputer fitted on all dates leak information?
+
+Yes. Its learned value can incorporate future observations. Fit preprocessing inside training boundaries.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

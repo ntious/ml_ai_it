@@ -36,3 +36,9 @@ Write a function that summarizes events from a new fictional source, without cha
 | Judgment | No fabricated average; explicit handling of invalid records |
 
 These are adaptable criteria, not official university grading rules. Compare [worked feedback](feedback.md) after your attempt.
+
+## Required independent construction
+
+Write an explicit loop version independently. Add one record on a copy and reconcile both totals. Demonstrate one rejected value.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

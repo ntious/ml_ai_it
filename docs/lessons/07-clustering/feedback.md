@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 Device clustering would require real permitted telemetry, host/time boundaries, a distance meaningful for those units, and an operational use that does not mistake clusters for threats.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Is silhouette a classification accuracy?
+
+No. It measures separation/cohesion in the chosen geometry; there are no true cluster labels in that calculation.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

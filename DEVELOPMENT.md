@@ -185,3 +185,11 @@ The initial pilot implemented Module 3, reusable NumPy/pandas data preparation, 
 ## Notebook verification references
 
 The kernel execution/checking path follows the [nbclient execution API](https://nbclient.readthedocs.io/en/latest/client.html) and [IPython environment-specific kernel registration](https://ipython.readthedocs.io/en/stable/install/kernel_install.html). Source notebooks are validated with nbformat before execution; saved executed copies are distinct build artifacts. Their visual presentation still needs the manual inspection recorded in the review log.
+
+## Mixed-background enhancement verification
+
+Use Python 3.12 with separate core/framework environments. Start with scripts/preflight.py. scripts/check_repository.py also checks source Markdown links. Execute both registered notebook groups with scripts/check_notebook.py; the core group includes the independent phishing case. All new construction cells execute in those kernels. The phishing CLI supports separate prepare/train/validate/evaluate/report stages and an all command.
+
+Run core tests with ML_AI_REAL_DATA=1; run test_continuation_heavy.py with ML_AI_HEAVY=1 in the framework environment. Source/data hashes remain required. Build the site after both notebook groups. Install the pinned Node toolchain with npm ci --ignore-scripts; install Chromium with npx playwright install --with-deps chromium; run node scripts/check_browser.mjs after site generation. It writes selected automated browser evidence to runs/browser-review. A Linux host needs Chromium shared libraries; CI installs them. Screen-reader and live hosted-service checks remain separate.
+
+The site builder recognizes Markdown link titles beginning site-download:. On GitHub those source links point to artifact-access instructions; in generated HTML the title maps to the actual local download. Validate both representations with check_source_links.py and check_site.py. Do not replace one check with the other.

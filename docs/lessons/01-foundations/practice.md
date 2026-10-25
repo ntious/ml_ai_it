@@ -35,3 +35,9 @@ Transfer the problem brief to an agriculture sensor alert. Describe how missing 
 | Reflection | A checked suggestion or a reasoned independent comparison |
 
 Adopting instructors can set their own weights and submission rules. See [worked feedback](feedback.md); self-study does not require an instructor to unlock it.
+
+## Required independent construction
+
+Change the threshold to 90. Predict 90 and 91 before running. Explain what data a learned alternative would need.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

@@ -49,6 +49,19 @@ class FrameworkWorkflowTests(unittest.TestCase):
             self.assertIsNone(parse_label(value))
         self.assertEqual(parse_label('{"label":"ham"}'), 0)
 
+    def test_matched_generation_evidence_uses_same_ids(self):
+        import pandas as pd
+        table=pd.read_csv(self.base/"m10/matched_comparison.csv")
+        generation=pd.read_csv(self.base/"m10/generation_evaluation.csv")
+        self.assertEqual(table.text_id.tolist(),generation.text_id.tolist())
+        self.assertEqual(table.actual.tolist(),generation.actual.tolist())
+        self.assertEqual(len(table),8)
+        self.assertAlmostEqual(float(table.baseline_correct.mean()),self.results[10]["matched_baseline_accuracy"])
+        tuned=pd.read_csv(self.base/"m11/generation_comparison.csv")
+        self.assertEqual(len(tuned),8)
+        self.assertAlmostEqual(float(tuned.base_correct.mean()),self.results[11]["base_generation_accuracy"])
+        self.assertAlmostEqual(float(tuned.adapted_correct.mean()),self.results[11]["adapted_generation_accuracy"])
+
     def test_actual_adapter_updates_and_replay(self):
         result = self.results[11]
         self.assertGreater(result["adapter_update_norm"], 0)

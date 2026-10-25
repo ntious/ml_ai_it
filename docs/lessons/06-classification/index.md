@@ -30,13 +30,13 @@ The target is quality score at least seven, a classroom choice. Identical chemis
 
 ## Run and inspect
 
-Download the [complete source](../../downloads/ml_ai_it-source.zip) or use a checkout. Work from its ml_ai_it folder. Use the [core environment instructions](../../../QUICKSTART.md) and install the regression extra. In commands below, **python means your environment executable**; use its full path if not activated.
+Download the [complete source](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the [core environment instructions](../../../QUICKSTART.md) and install the regression extra. In commands below, **python means your environment executable**; use its full path if not activated.
 
 ~~~sh
 python examples/wine-classification/scripts/run.py --output runs/module06
 ~~~
 
-Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module06/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../downloads/module06/example/index.html) without installing an execution interface.
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module06/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../setup/student-workspace.md#reading-reports-from-github "site-download:module06/example/index.html") without installing an execution interface.
 
 Key artifacts:
 
@@ -46,7 +46,7 @@ Key artifacts:
 - tree_importance.csv
 - tree_rules.txt
 
-The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../downloads/module06/walkthrough.ipynb) call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module06/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. Operating a notebook/app interface is a separate skill; manual screen-reader, keyboard, zoom/reflow, and interface usability remain pending.
 
 ## Read selectively
 
@@ -59,3 +59,9 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
 
 Next: [Module 7](../07-clustering/index.md).
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.

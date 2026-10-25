@@ -1,6 +1,8 @@
 # Practical Machine Learning and AI Systems
 
-A modular companion for independent learners and instructors linking lessons from Canvas or another platform. **Development edition 0.6.0 implements Modules 1–14.** Implementation and automated checks do not replace learner piloting, manual accessibility review, or production validation.
+**New to Python?** Start with [Python Foundation](https://ntious.github.io/python_foundation/), then our [readiness check and learning routes](docs/start-here.md). [Workspace acquisition](docs/setup/student-workspace.md) explains downloading, terminals and generated reports.
+
+A modular companion for independent learners and instructors linking lessons from Canvas or another platform. **Development edition 0.7.0 implements Modules 1–14.** Implementation and automated checks do not replace learner piloting, manual accessibility review, or production validation.
 
 ## Start and choose a route
 

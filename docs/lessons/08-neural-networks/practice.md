@@ -31,3 +31,9 @@ Declare another width, epoch budget, or class-weight policy as a development exp
 | M08.5 | Save/reload a trained model and document compute and limitations. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+In a separate development cell construct the 11-input/16-hidden/1-output TensorFlow model. Print and explain every shape and parameter count; make one declared width change before final evaluation.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

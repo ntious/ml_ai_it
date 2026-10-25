@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 Before real IT deployment, add suitable access controls, data governance, observability, failure recovery, and prospectively measured service objectives.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Does an input mean shift prove concept drift?
+
+No. It signals distribution differences; changing outcome relationships requires additional evidence.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

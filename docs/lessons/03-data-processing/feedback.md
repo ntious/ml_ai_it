@@ -25,3 +25,11 @@ Removing a record may be justified if a required field makes it unusable for the
 A passing validator confirms compliance with a specified contract. It does not establish source accuracy, representativeness, fairness, a causal relationship, or suitability for every model. Future training must still handle splits and learned preprocessing correctly.
 
 [Return to the module](index.md).
+
+## Construction check and misconception feedback
+
+Question: Should a missing latency be replaced by zero?
+
+Only under an explicit defensible measurement contract; normally missing and measured zero differ.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

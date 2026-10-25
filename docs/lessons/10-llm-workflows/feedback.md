@@ -17,3 +17,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 A structured support summary needs actual permitted text, a precise output contract, factual checks, and a human escalation path. Do not present message classification as an implemented summarizer.
 
 If GenAI calls a result “accurate,” “fair,” or “safe,” ask for the actual metric, population, decision rule, and supporting evidence. Reject claims not supported by this study. Return to the [lesson](index.md) or [adaptation notes](instructor.md).
+
+## Construction check and misconception feedback
+
+Question: Can 100 percent valid JSON establish a useful classifier?
+
+No. Labels may all be wrong; schema validity, correctness, cost and latency are separate evidence.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

@@ -31,3 +31,9 @@ Declare a class-weight or tree-depth alternative before final evaluation. Use tr
 | M06.5 | Communicate error trade-offs and limits of the chosen label. |
 
 Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+
+## Required independent construction
+
+Reconstruct the confusion counts and explain a threshold choice using validation. Implement one predefined alternative on development data; freeze before a planned final evaluation.
+
+Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.

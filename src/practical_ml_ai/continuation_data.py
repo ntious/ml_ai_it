@@ -35,6 +35,9 @@ def runtime_directory():
 
 RUNS_ROOT = runtime_directory()
 SOURCES = {
+    "phishing": {"id":327,"slug":"phishing+websites","members":["Training Dataset.arff"],
+        "citation":"Mohammad, R. & McCluskey, L. (2012). Phishing Websites. UCI. DOI:10.24432/C51W2X.",
+        "sha256":"514f582cb44cba17251baf1d59f64cddff16efa2b644d091ce8d2a1e8d492940"},
     "wine": {"id": 186, "slug": "wine+quality", "members": ["winequality-red.csv", "winequality.names"],
              "citation": "Cortez, P., et al. (2009). Wine Quality. UCI. DOI:10.24432/C56S3T.", "sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4"},
     "sms": {"id": 228, "slug": "sms+spam+collection", "members": ["SMSSpamCollection", "readme"],

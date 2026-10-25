@@ -32,7 +32,7 @@ Derived processing hashes normalized text, removes duplicate/conflicting texts, 
 
 Original archives, named original members, provenance.json, and ATTRIBUTION.txt remain under runs/datasets/name. New archives must match the reviewed digest; cached member hashes are verified. Source changes require review rather than bypassing the check.
 
-Separate attributed caches are available for [wine](downloads/wine-cache.zip), [SMS](downloads/sms-cache.zip), and [Adult](downloads/adult-cache.zip). Extract each into its named runs/datasets directory, preserving all files. External records stay outside the original-source ZIP. Worked reports can be read without executing a dataset or model.
+Separate attributed caches are available for [wine](setup/student-workspace.md#reading-reports-from-github "site-download:wine-cache.zip"), [SMS](setup/student-workspace.md#reading-reports-from-github "site-download:sms-cache.zip"), and [Adult](setup/student-workspace.md#reading-reports-from-github "site-download:adult-cache.zip"). Extract each into its named runs/datasets directory, preserving all files. External records stay outside the original-source ZIP. Worked reports can be read without executing a dataset or model.
 
 ## Pretrained model
 
@@ -43,3 +43,7 @@ First use downloads several hundred MB; retain runs/models for replay. Base weig
 ## Use limits
 
 Data rights and model licenses are distinct. Preserve credits and disclose transformations. Public access does not prove representative sampling, privacy, causal validity, consent for every new purpose, or operational suitability. The reports retain weak-model and format failures.
+
+## Authentic IT extension: website phishing
+
+[UCI Phishing Websites](https://archive.ics.uci.edu/dataset/327/phishing+websites), Mohammad & McCluskey (2012), DOI 10.24432/C51W2X; UCI lists CC BY 4.0. The selected Training Dataset.arff contains 11,055 records and 30 encoded attributes. Archive SHA-256: 514f582cb44cba17251baf1d59f64cddff16efa2b644d091ce8d2a1e8d492940. Raw files remain unchanged; the case documents label recoding, ambiguous-profile exclusions and grouped splits. No live URLs are visited. [Case workflow and limits](cases/phishing.md).

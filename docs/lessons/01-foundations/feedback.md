@@ -25,3 +25,11 @@ A simple storage alert has an explicit, inspectable condition. An LLM adds expen
 If an assistant called the threshold a “trained model,” reject that claim: there is no training step. Your verification is stronger when it cites the function and the two boundary runs.
 
 Return to [Module 1](index.md), or continue to [Module 2](../02-python-workflows/index.md).
+
+## Construction check and misconception feedback
+
+Question: Why is changing 80 to 90 not training?
+
+No parameter was estimated from examples; a person edited the decision rule.
+
+A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.

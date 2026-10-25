@@ -31,7 +31,7 @@ The checked-in fixtures are original synthetic data, licensed CC BY 4.0, with ch
 
 ## Run the complete example
 
-Download and extract the [source archive](../../downloads/ml_ai_it-source.zip) or use a checkout. Run from its `ml_ai_it` folder. Python 3.11 or newer is sufficient; Modules 1 and 2 need no `pip install` step.
+Download and extract the [source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Run from its `ml_ai_it` folder. Python 3.11 or newer is sufficient; Modules 1 and 2 need no `pip install` step.
 
 Windows PowerShell:
 
@@ -75,9 +75,9 @@ For no tickets, the total is zero but the average is `None` in Python and `null`
 
 ## Notebook and downloads
 
-The [workflow notebook](../../downloads/module02/workflow.ipynb) imports the same shared functions. Use [notebook setup](../../../QUICKSTART.md#notebook-option), keep the source structure, and run cells in order. Compare its returned report with the script's JSON output: both should give the values above. Restart and run all cells before saving. Notebook UI and screen-reader compatibility still need verification; the script/text route covers the same file-processing behavior.
+The [workflow notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module02/workflow.ipynb") imports the same shared functions. Use [notebook setup](../../../QUICKSTART.md#notebook-option), keep the source structure, and run cells in order. Compare its returned report with the script's JSON output: both should give the values above. Restart and run all cells before saving. Notebook UI and screen-reader compatibility still need verification; the script/text route covers the same file-processing behavior.
 
-Individual files are available as [ticket CSV](../../downloads/module02/tickets.csv) and [event JSON](../../downloads/module02/events.json). Downloading only a notebook or data file does not supply the shared code; use the complete source archive for execution.
+Individual files are available as [ticket CSV](../../setup/student-workspace.md#reading-reports-from-github "site-download:module02/tickets.csv") and [event JSON](../../setup/student-workspace.md#reading-reports-from-github "site-download:module02/events.json"). Downloading only a notebook or data file does not supply the shared code; use the complete source archive for execution.
 
 ## Read selectively
 
@@ -93,3 +93,9 @@ Complete [practice](practice.md), then compare [worked feedback](feedback.md). C
 ## Instructor adaptation
 
 See [instructor guidance](instructor.md) for evidence selection, accessible routes, and local adoption.
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.

@@ -84,4 +84,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
     selected = [m for m in MODULES if args.group == "all" or m["profile"] == args.group]
     total = sum(check(module, args.kernel) for module in selected)
+    if args.group in {"core", "all"}:
+        source = ROOT / "notebooks/cases/phishing.ipynb"
+        notebook = nbformat.read(source,as_version=4)
+        nbformat.validate(notebook)
+        NotebookClient(notebook,timeout=900,kernel_name=args.kernel,resources={"metadata":{"path":str(ROOT)}}).execute()
+        destination = ROOT / "runs/verified/phishing"
+        destination.mkdir(parents=True,exist_ok=True)
+        nbformat.write(notebook,destination / "executed.ipynb")
+        print("Verified independent phishing case in a fresh kernel.")
     print(f"Verified {len(selected)} notebooks, {total} code cells; group={args.group}. Manual interface review remains separate.")

@@ -78,3 +78,7 @@ Automated checks do not establish screen-reader usability, plot quality, reflow,
 Update registry, teaching pages, examples, tests, and provenance together. Check core and framework dependencies independently before a version change. Retain observed failures in worked examples. Keep optional depth optional, preserve a no-GenAI route, and test the actual learner task.
 
 No empty slide/video/production folders are created to imply missing material exists. Record future work with acceptance criteria; add its files when authored. Original private planning attachments remain outside the open source archive. The formal alignment owner must reconcile them before institutional assessment claims.
+
+## Learning-support extension
+
+Student entry: docs/start-here.md; preparation: docs/setup/python-bridge.md; workspace/hosted/troubleshooting pages explain acquisition and platform boundaries. Each module adds guided.md and a runnable construction cell. scripts/preflight.py reports dependencies/resources; scripts/bootstrap.py installs explicit profiles. learning.py exposes uncertainty/calibration arithmetic. The independent phishing case lives in phishing.py, scripts/phishing_study.py, notebooks/cases/phishing.ipynb and docs/cases/phishing.md. Its stages separate preparation, fitting, validation selection, final evaluation and reporting. docs/project.md and docs/instructor/pilot.md support cumulative work and actual learner validation.
