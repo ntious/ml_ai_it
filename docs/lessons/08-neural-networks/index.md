@@ -26,7 +26,7 @@ UCI Wine Quality; real red-wine chemistry and human ratings. See the central sou
 
 ## The complete workflow
 
-Training-only scaling feeds eleven numeric inputs, a 16-unit ReLU layer, and one sigmoid output. An explicit minibatch GradientTape loop updates weights. The best validation-loss epoch among a fixed small budget is restored before final predictions. Threshold 0.5 is fixed, not tuned on test. A logistic baseline and actual save/reload check accompany the neural result.
+Training-only scaling feeds eleven numeric inputs, a 16-unit ReLU layer and one sigmoid output. An explicit minibatch GradientTape loop updates weights for at most 40 epochs, stopping after five epochs without a new minimum validation loss. The best observed checkpoint is restored. Neural and logistic thresholds are selected separately on validation balanced accuracy over 0.05–0.95 in steps of 0.05. Final labels select neither weights nor thresholds. Saved-model replay checks the trained network.
 
 ## Run and inspect
 

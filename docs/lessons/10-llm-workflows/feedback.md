@@ -4,7 +4,7 @@ Compare this with your [practice](practice.md) after attempting it. Exact curren
 
 ## A reasoned interpretation
 
-Format-valid and correct are different conditions. A result can be valid JSON with the wrong label or invalid despite containing the word spam. No fallback classifier is credited as LLM success. Eight balanced examples cannot establish reliability, calibration, or deployed class prevalence. The initial fixed prompt/model run produced 0 valid schemas out of 8. The service therefore rejects those outputs. The lesson preserves that failure instead of stripping prose/fences and crediting repaired outputs as model success.
+Compare the current run below with the [archived under-trained/failed baseline](../../maintenance/reviews/framework-baseline-0.7.0.md). The archive records earlier settings; it is not the current protocol. A working mechanism and a useful task model require different evidence.
 
 ## What a good explanation contains
 
@@ -14,14 +14,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 ## Diagnose the verified run
 
-**Evidence.** None of the 8 responses matched the required schema: seven repeated the message back inside its `<sms>` wrapper, and one answered an unrelated grammar question. The TF-IDF/logistic baseline was correct on 5 of the same 8 messages. With only 8 examples, a 95% Wilson interval for 0/8 runs from 0 to 0.32, and for 5/8 from 0.31 to 0.86, so this run cannot rank the methods precisely.
+**Recorded evidence.** On 100 matched final messages, free generation produces valid JSON 99% of the time but correct labels only 39% of the time. Candidate likelihood with a validation-selected threshold of 0.85 has accuracy 85%. The lexical baseline reaches 97%, while always predicting the training-majority label reaches 88%.
 
-**Likely causes.**
+**Explain the difference.** Few-shot examples can improve output format without fixing semantic classification. Candidate scoring returns a legal label by construction; that is not evidence of learned JSON compliance. Read confusion_counts.csv before declaring an accuracy improvement useful: a classifier can recover spam while scoring below majority accuracy. The selected relative likelihood score is not calibrated confidence.
 
-1. **A 135-million-parameter model follows instructions weakly.** It continues the pattern it sees, including the tags, instead of obeying the system message.
-2. **Free generation is the hardest way to classify.** The strict parser correctly rejects near misses, so every format slip counts as an error.
-
-**A fair diagnostic experiment.** Keep the strict parser, and separately score the two legal answers. Compute the model's log-likelihood of `{"label":"ham"}` and of `{"label":"spam"}` for each message and choose the higher; Module 14 already uses this method to rank plans. Run it on validation messages first. Report schema validity for free generation and accuracy for scoring as separate results, never as one combined success rate. Use more than 8 messages before comparing methods.
+**Check uncertainty.** Read the successes, observations and Wilson intervals in rate_intervals.csv. These are intervals for individual rates, not a paired significance test of method differences. Use llm_validation_predictions.csv to investigate errors; do not choose a prompt from final-test outcomes.
 
 ## Transfer cautiously
 

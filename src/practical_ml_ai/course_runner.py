@@ -29,9 +29,13 @@ def main(number):
     parser = argparse.ArgumentParser(description=f"Run the real-data Module {number} example.")
     parser.add_argument("--output", type=Path, required=True, help="A new directory for evidence; existing runs are not overwritten.")
     if number in {8, 9}:
-        parser.add_argument("--epochs", type=int, default=8 if number == 8 else 3)
+        parser.add_argument("--epochs", type=int, default=40 if number == 8 else 25)
+    if number == 9:
+        parser.add_argument("--sample-limit", type=int, default=None, help="Optional training-study sample cap; default uses the full deduplicated SMS corpus.")
+    if number == 10:
+        parser.add_argument("--examples", type=int, default=100)
     if number == 11:
-        parser.add_argument("--steps", type=int, default=8)
+        parser.add_argument("--steps", type=int, default=200)
     args = parser.parse_args()
     options = {key: value for key, value in vars(args).items() if key != "output"}
     try:

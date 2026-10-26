@@ -4,7 +4,7 @@ Compare this with your [practice](practice.md) after attempting it. Exact curren
 
 ## A reasoned interpretation
 
-A vocabulary file and nonzero weight updates confirm actual training, but do not guarantee usefulness. The same final rows support both methods. Public SMS may contain personal details; public access and a license do not remove the need for restraint. Report a baseline win rather than assuming neural NLP must be superior. In the first default run, the neural model predicted no spam: TP 0, FN 30, TN 210, FP 0. Its 87.5% accuracy would conceal zero positive recall and balanced accuracy 0.5. The lexical baseline recovered 6 of 30 positives. This is an explicit failure case for diagnosis, not a deployable filter.
+Compare the current run below with the [archived under-trained/failed baseline](../../maintenance/reviews/framework-baseline-0.7.0.md). The archive records earlier settings; it is not the current protocol. A working mechanism and a useful task model require different evidence.
 
 ## What a good explanation contains
 
@@ -14,15 +14,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 ## Diagnose the verified run
 
-**Evidence.** The neural model flagged no spam (TP 0, FN 30 among 240 test messages). Validation loss fell at every epoch (0.428, 0.338, 0.286), and the best epoch was 3, the last allowed. The TF-IDF/logistic baseline flagged 6 messages, all correct (precision 1.00, recall 0.20).
+**Recorded evidence.** Of 128 actual positives among 1032 final records, the network finds 118 and misses 10, with 30 false alarms. Its recall is 0.922, precision 0.797 and balanced accuracy 0.944. The simpler baseline has recall 0.906, precision 0.899 and balanced accuracy 0.946.
 
-**Likely causes.**
+**Explain the decision.** Validation loss selected checkpoint 7 within a 25-epoch maximum. Validation balanced accuracy selected thresholds 0.15 (neural) and 0.50 (baseline). Recall alone hides the false-alarm cost; compare both confusion tables and the threshold-free ranking metrics. Neither the baseline nor the neural model is required to win.
 
-1. **Check the scores before blaming the representation.** A constant prediction of 12.5% spam has cross-entropy about 0.377 on a split with that prevalence. The recorded validation loss of 0.286 improves on that reference, but loss alone does not establish ranking quality. Inspect validation score distributions and ROC-AUC or precision–recall performance to test whether a different threshold could help. Zero test recall tells us that none of the 30 actual spam messages crossed 0.5; it does not describe every predicted probability.
-2. **Too few updates.** 720 training messages and 3 epochs give about 70 gradient steps. Loss was still falling steeply when training stopped.
-3. **The baseline also needs a threshold check.** Perfect precision with low recall describes a conservative decision rule on this sample. Compare validation thresholds before attributing the missed spam to weak lexical features.
-
-**A fair diagnostic experiment.** Using validation messages only, compare the probability distributions for spam and ham, then choose one threshold rule for both methods. As a separate declared experiment, run `--epochs 20` in a new output directory. Report recall and precision with their denominators; accuracy (87.5% for predicting nothing) would hide the failure.
+**Try a validation-only investigation.** Read validation_predictions.csv and validation_thresholds.csv. Explain one threshold tradeoff without changing a setting in response to final-test scores. For an imbalanced dataset, why would accuracy alone be misleading?
 
 ## Transfer cautiously
 

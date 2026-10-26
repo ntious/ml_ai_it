@@ -26,14 +26,16 @@ UCI SMS Spam Collection; real human-labeled messages. Public messages may contai
 
 ## The complete workflow
 
-Eight actual held-out SMS records (four per class) are sent to a CPU-local 135M instruct model. The prompt requests exactly one label field. Contact-string masking is an explicit transformation, not a privacy guarantee. Invalid JSON, extra keys, and unknown labels count as failures. The class-balanced tiny sample is an engineering check, not a population benchmark.
+Compare conditional label likelihood, strict free generation and a TF-IDF/logistic baseline on the same 100 final SMS messages. The four few-shot examples are real training records. A separate seeded 100-message validation subset selects the likelihood decision threshold; the lexical threshold uses its validation predictions. Both LLM methods see the same contact-masked first 240 characters and demonstrations. Free-generated JSON is parsed without repair. Report format validity, accuracy, confusion counts, latency and Wilson intervals separately. The final sample preserves the historical split prevalence approximately; it is not a current deployment population.
+
+The reported likelihood score is relative to the two candidate completions, not calibrated confidence. A legal label is guaranteed by the candidate set; a correct label is not. Compare against the training-majority classifier as well as the learned lexical baseline.
 
 ## Run and inspect
 
 Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
 
 ~~~sh
-python examples/sms-llm/scripts/run.py --output runs/module10
+python examples/sms-llm/scripts/run.py --output runs/module10 --examples 100
 ~~~
 
 Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module10/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module10/example/index.html "site-download:module10/example/index.html") without installing an execution interface.

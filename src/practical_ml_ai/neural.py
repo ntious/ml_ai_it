@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -27,7 +28,7 @@ def tensorflow_runtime():
     return tf
 
 
-def train_network(model, inputs, labels, validation, validation_labels, epochs):
+def train_network(model, inputs, labels, validation, validation_labels, epochs, patience=5):
     """Only validation loss selects a checkpoint. Final labels are not arguments."""
     tf = tensorflow_runtime()
     loss_function = tf.keras.losses.BinaryCrossentropy()
@@ -50,18 +51,30 @@ def train_network(model, inputs, labels, validation, validation_labels, epochs):
             weighted_loss += float(loss) * len(ids)
         val_probability = model(validation, training=False)
         val_loss = float(loss_function(validation_labels.reshape(-1, 1), val_probability))
+        if not np.isfinite(val_loss) or not np.isfinite(weighted_loss):
+            raise ValueError("Nonfinite training loss; inspect empty-token inputs before comparing models.")
         history.append({"epoch": epoch + 1, "training_loss": weighted_loss / len(labels), "validation_loss": val_loss})
         if val_loss < best_loss:
             best_loss, best_epoch = val_loss, epoch + 1
             best_weights = [value.copy() for value in model.get_weights()]
+        if epoch + 1 - best_epoch >= patience:
+            break
     model.set_weights(best_weights)
     change = float(np.sqrt(sum(float(np.square(a - b).sum()) for a, b in zip(initial, model.get_weights()))))
     return pd.DataFrame(history), best_epoch, change
 
 
-def run_neural(number, output, epochs=None):
-    epochs = epochs if epochs is not None else (8 if number == 8 else 3)
-    if not isinstance(epochs, int) or not 1 <= epochs <= 50:
+def select_threshold(actual, probability):
+    """Validation-only balanced accuracy; smallest threshold breaks exact ties."""
+    rows = [{"threshold": round(float(t), 2), **binary_metrics(actual, probability >= round(float(t), 2))}
+            for t in np.linspace(.05, .95, 19)]
+    rows.sort(key=lambda row: (-row["balanced_accuracy"], row["threshold"]))
+    return rows[0]["threshold"], pd.DataFrame(rows)
+
+
+def run_neural(number, output, epochs=None, sample_limit=None):
+    epochs = epochs if epochs is not None else (40 if number == 8 else 25)
+    if isinstance(epochs, bool) or not isinstance(epochs, int) or not 1 <= epochs <= 50:
         raise ValueError("Choose 1–50 epochs before final evaluation.")
     directory = new_run(output)
     tf = tensorflow_runtime()
@@ -74,15 +87,18 @@ def run_neural(number, output, epochs=None):
                                      tf.keras.layers.Dense(1, activation="sigmoid")])
         baseline = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000, random_state=42))
         baseline.fit(split["train"][features], split["train"].label)
+        baseline_validation = baseline.predict_proba(split["validation"][features])[:, 1]
         baseline_probability = baseline.predict_proba(split["test"][features])[:, 1]
         identifiers = split["test"].record_id
         preprocessing = {"features": features, "training_mean": scaler.mean_.tolist(), "training_scale": scaler.scale_.tolist()}
         write_json(directory / "numeric_preprocessing.json", preprocessing)
         vocabulary = None
     elif number == 9:
-        split, manifest = sms_splits()
+        split, manifest = sms_splits(limit=sample_limit)
         # Adapt exclusively on training text. Validation/test never build vocabulary.
-        vectorizer = tf.keras.layers.TextVectorization(max_tokens=1500, output_sequence_length=64)
+        # Preserve punctuation: an emoticon-only real SMS must not become an
+        # all-padding sequence (masked mean pooling would have denominator zero).
+        vectorizer = tf.keras.layers.TextVectorization(max_tokens=6000, output_sequence_length=96, standardize="lower")
         data = tf.data.Dataset.from_tensor_slices(split["train"].text.tolist()).batch(32)
         options = tf.data.Options(); options.threading.private_threadpool_size = 1
         vectorizer.adapt(data.with_options(options))
@@ -91,8 +107,9 @@ def run_neural(number, output, epochs=None):
                                      tf.keras.layers.Embedding(len(vectorizer.get_vocabulary()), 16, mask_zero=True),
                                      tf.keras.layers.GlobalAveragePooling1D(),
                                      tf.keras.layers.Dense(1, activation="sigmoid")])
-        baseline = make_pipeline(TfidfVectorizer(min_df=2, ngram_range=(1, 2)), LogisticRegression(max_iter=1000, random_state=42))
+        baseline = make_pipeline(TfidfVectorizer(min_df=2, ngram_range=(1, 2)), LogisticRegression(max_iter=1000, class_weight="balanced", random_state=42))
         baseline.fit(split["train"].text, split["train"].label)
+        baseline_validation = baseline.predict_proba(split["validation"].text)[:, 1]
         baseline_probability = baseline.predict_proba(split["test"].text)[:, 1]
         identifiers = split["test"].text_id
         vocabulary = vectorizer.get_vocabulary()
@@ -101,10 +118,16 @@ def run_neural(number, output, epochs=None):
         raise ValueError("Neural module must be 8 or 9.")
     y = {name: part.label.to_numpy(dtype="float32") for name, part in split.items()}
     history, best_epoch, change = train_network(model, x["train"], y["train"], x["validation"], y["validation"], epochs)
+    validation_probability = model(x["validation"], training=False).numpy().ravel()
+    threshold, neural_thresholds = select_threshold(y["validation"], validation_probability)
+    baseline_threshold, baseline_thresholds = select_threshold(y["validation"], baseline_validation)
+    # All model/checkpoint/threshold decisions are frozen before final prediction.
     probability = model(x["test"], training=False).numpy().ravel()
-    prediction = (probability >= .5).astype(int)
+    prediction = (probability >= threshold).astype(int)
     metrics = binary_metrics(y["test"], prediction)
-    baseline_metrics = binary_metrics(y["test"], baseline_probability >= .5)
+    baseline_metrics = binary_metrics(y["test"], baseline_probability >= baseline_threshold)
+    for result, scores in [(metrics, probability), (baseline_metrics, baseline_probability)]:
+        result.update(roc_auc=float(roc_auc_score(y["test"], scores)), pr_auc_average_precision=float(average_precision_score(y["test"], scores)))
     # Round-trip actual trained weights/architecture, including text vocabulary.
     model_path = directory / "model.keras"
     model.save(model_path)
@@ -114,15 +137,20 @@ def run_neural(number, output, epochs=None):
     write_json(directory / "split_manifest.json", manifest)
     summary = {"module": number, "framework": "TensorFlow " + tf.__version__, "dataset": manifest["source"],
                "epochs_requested": epochs, "best_validation_epoch": best_epoch, "weight_change_norm": change,
-               "threshold": .5, "test": metrics, "linear_baseline": baseline_metrics,
+               "threshold": threshold, "baseline_threshold": baseline_threshold,
+               "selection": "validation loss checkpoint; validation balanced accuracy threshold; patience 5",
+               "sample_rows": sum(len(part) for part in split.values()),
+               "test": metrics, "linear_baseline": baseline_metrics,
                "saved_model_replay_verified": True, "vocabulary_fitted_on": "training only" if number == 9 else None}
     tables = {"learning_history": history,
+              "validation_thresholds": pd.concat([neural_thresholds.assign(method="neural"), baseline_thresholds.assign(method="linear_baseline")], ignore_index=True),
+              "validation_predictions": pd.DataFrame({"actual": y["validation"], "neural_probability": validation_probability, "baseline_probability": baseline_validation}),
               "comparison": pd.DataFrame([{"method": "neural", **metrics}, {"method": "linear_baseline", **baseline_metrics}]),
               "test_predictions": pd.DataFrame({"record_id": identifiers, "actual": y["test"], "probability": probability, "predicted": prediction})}
     if vocabulary:
         tables["vocabulary_preview"] = pd.DataFrame({"token_index": range(min(30, len(vocabulary))), "token": vocabulary[:30]})
     return publish_report(directory, f"Module {number}: " + ("neural networks with TensorFlow" if number == 8 else "neural NLP for real messages"), summary, tables,
-                          ["Checkpoint selection uses validation loss; final labels are evaluated only after weights are frozen. The fixed 0.5 threshold is not chosen using final scores.",
+                          ["Checkpoint selection uses validation loss with patience 5; each method selects its own threshold by validation balanced accuracy. Final labels never select weights or thresholds.",
                            "The learning-history table is the numerical alternative to a curve: compare training/validation loss and identify divergence without relying on a plotted line.",
                            "A small network may underperform the simpler baseline. These finite historical samples and small epoch budgets do not establish production readiness.",
                            "For NLP, text IDs replace raw messages in reports. Public messages can still contain personal content; processing is local."])

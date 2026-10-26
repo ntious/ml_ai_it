@@ -26,7 +26,7 @@ UCI SMS Spam Collection; real human-labeled messages. Public messages may contai
 
 ## The complete workflow
 
-Normalized text hashes group duplicate messages; conflicting labels are excluded before a seeded stratified 1,200-message sample and 60/20/20 split. TextVectorization adapts on training only, with at most 1,500 tokens and length 64. A 16-dimensional embedding, masked pooling, and sigmoid output train on real labels. TF-IDF/logistic is fitted on the same training partition.
+Normalized text hashes remove duplicates and conflicting labels before a seeded 60/20/20 split of all 5,159 usable messages. TextVectorization adapts on training only, with at most 6,000 tokens and length 96. Lowercasing retains punctuation so emoticon-only messages do not become all-padding inputs. A 16-dimensional embedding, masked pooling and sigmoid output train for at most 25 epochs with patience 5. A class-balanced TF-IDF/logistic baseline fits the same training partition. Each method selects its threshold using validation balanced accuracy before final evaluation.
 
 ## Run and inspect
 

@@ -37,11 +37,11 @@ else:
     if number == 6: assert not result["split_group_overlap"]
     if number == 7: assert not result["quality_used_for_fit_or_selection"]
     if number in {8, 9}: assert result["saved_model_replay_verified"] and result["weight_change_norm"] > 0
-    if number == 10: assert result["real_examples"] == 8
+    if number == 10: assert result["real_examples"] == 100
     if number == 11: assert result["adapter_replay_verified"] and result["adapter_update_norm"] > 0
     if number == 12: assert result["real_heldout_rows"] == 243
     if number == 13: assert not result["audited_sex_race_used_for_fitting"]
-    if number == 14: assert result["destructive_request_refused"]
+    if number == 14: assert result["requests"] >= 20 and not result["destructive_tools_available"]
     source = globals()["run_dir"]
     assert (source / "index.html").is_file() and (source / "summary.json").is_file()
     destination = ROOT / "runs/verified" / f"module{number:02d}"
@@ -64,7 +64,7 @@ def check(module, kernel):
     # produced. It is excluded from the saved tutorial, not counted as curriculum.
     validation = "import json, shutil\nfrom pathlib import Path\nROOT = Path(" + repr(str(ROOT)) + ")\nnumber = " + str(module["id"]) + "\n" + VALIDATION
     notebook.cells.append(nbformat.v4.new_code_cell(validation))
-    NotebookClient(notebook, timeout=900, kernel_name=kernel, resources={"metadata": {"path": str(ROOT)}}).execute()
+    NotebookClient(notebook, timeout=3600, kernel_name=kernel, resources={"metadata": {"path": str(ROOT)}}).execute()
     evidence = notebook.cells.pop()
     for output in evidence.outputs:
         if output.output_type == "stream":

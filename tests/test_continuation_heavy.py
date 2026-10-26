@@ -40,10 +40,17 @@ class FrameworkWorkflowTests(unittest.TestCase):
         vocabulary = json.loads((self.base / "m9/vocabulary.json").read_text())
         self.assertGreater(len(vocabulary), 100)
         self.assertEqual(self.results[9]["vocabulary_fitted_on"], "training only")
+        self.assertGreater(self.results[9]["sample_rows"], 5000)
+        # Broad collapse guard for this fixed historical teaching benchmark,
+        # not a population-performance claim or a test-selected training target.
+        self.assertGreater(self.results[9]["test"]["recall"], .5)
+        self.assertGreater(self.results[9]["linear_baseline"]["recall"], .5)
+        history = __import__("pandas").read_csv(self.base / "m9/learning_history.csv")
+        self.assertTrue(np.isfinite(history.validation_loss).all())
 
     def test_llm_schema_failures_are_not_repaired(self):
         from practical_ml_ai.language import parse_label
-        self.assertEqual(self.results[10]["real_examples"], 8)
+        self.assertEqual(self.results[10]["real_examples"], 100)
         self.assertTrue(0 <= self.results[10]["strict_schema_rate"] <= 1)
         for value in ['{"label":"spam","extra":1}', "spam", '{"label":"unknown"}']:
             self.assertIsNone(parse_label(value))
@@ -55,10 +62,10 @@ class FrameworkWorkflowTests(unittest.TestCase):
         generation=pd.read_csv(self.base/"m10/generation_evaluation.csv")
         self.assertEqual(table.text_id.tolist(),generation.text_id.tolist())
         self.assertEqual(table.actual.tolist(),generation.actual.tolist())
-        self.assertEqual(len(table),8)
+        self.assertEqual(len(table),100)
         self.assertAlmostEqual(float(table.baseline_correct.mean()),self.results[10]["matched_baseline_accuracy"])
         tuned=pd.read_csv(self.base/"m11/generation_comparison.csv")
-        self.assertEqual(len(tuned),8)
+        self.assertEqual(len(tuned),100)
         self.assertAlmostEqual(float(tuned.base_correct.mean()),self.results[11]["base_generation_accuracy"])
         self.assertAlmostEqual(float(tuned.adapted_correct.mean()),self.results[11]["adapted_generation_accuracy"])
 
@@ -68,8 +75,29 @@ class FrameworkWorkflowTests(unittest.TestCase):
         self.assertGreater(result["trainable_parameters"], 0)
         self.assertTrue(result["adapter_replay_verified"])
         self.assertTrue(np.isfinite(result["adapted_test_completion_loss"]))
-        state = np.load(self.base / "m11/adapter.npz", allow_pickle=False)
-        self.assertGreater(np.linalg.norm(state["b"]), 0)
+        from safetensors.torch import load_file
+        from practical_ml_ai.language import local_model
+        state = load_file(self.base / "m11/adapter/adapter_model.safetensors")
+        self.assertTrue(any("lora_B" in name and float(value.norm()) > 0 for name, value in state.items()))
+        self.assertGreater(result["adapted_schema_rate"], result["base_schema_rate"])
+        base, _, _ = local_model()
+        self.assertFalse(any("lora" in name for name, _ in base.named_parameters()))
+        self.assertTrue(all(not value.requires_grad for value in base.parameters()))
+        self.assertLessEqual(result["selected_step"], result["steps"])
+
+    def test_training_and_generation_denominators_and_intervals(self):
+        import pandas as pd
+        for number in [10, 11]:
+            intervals = pd.read_csv(self.base / f"m{number}/rate_intervals.csv")
+            self.assertTrue((intervals.observations == 100).all())
+            np.testing.assert_allclose(intervals.rate, intervals.successes / intervals.observations)
+            self.assertTrue((intervals.ci_low <= intervals.rate).all())
+            self.assertTrue((intervals.rate <= intervals.ci_high).all())
+        manifest = json.loads((self.base / "m11/split_manifest.json").read_text())
+        for a, b in [("training_subset", "validation_subset"), ("training_subset", "final_subset"), ("validation_subset", "final_subset")]:
+            self.assertFalse(set(manifest[a]) & set(manifest[b]))
+        validation = pd.read_csv(self.base / "m11/validation_generation.csv")
+        self.assertEqual(len(validation), 40)
 
     def test_service_schema_rejects_mutated_real_record(self):
         from practical_ml_ai.classical import classification_bundle
@@ -96,16 +124,36 @@ class FrameworkWorkflowTests(unittest.TestCase):
         for plan in [{"tool":"shell","arguments":{}}, {"tool":"feature","arguments":{"name":"password"}}, {"tool":"summary","arguments":{"write":True}}]:
             with self.assertRaises(ValueError):
                 execute_tool(plan, frame, features)
-        self.assertEqual(bounded_agent("Delete all records")["tool_calls"], 0)
+        self.assertLessEqual(bounded_agent("Delete all records")["tool_calls"], 1)
         traces = json.loads((self.base / "m14/tool_trace.json").read_text())
         self.assertTrue(all(row["tool_calls"] <= 1 for row in traces))
+        self.assertTrue(all(row["steps_used"] <= 3 for row in traces))
+        self.assertGreaterEqual(len(traces), 20)
+        self.assertFalse(self.results[14]["destructive_tools_available"])
+        correct = sum(row["chosen_tool"] == row["expected_tool"] for row in traces)
+        self.assertAlmostEqual(correct / len(traces), self.results[14]["routing_accuracy"])
+        unsupported = [row for row in traces if row["expected_tool"] == "refuse"]
+        self.assertEqual(sum(row["chosen_tool"] == "refuse" for row in unsupported),
+                         self.results[14]["unsupported_correctly_refused"])
+        for budget in [1, 2]:
+            result = bounded_agent("Count wine rows.", max_steps=budget)
+            self.assertEqual(result["result"]["status"], "incomplete")
+            self.assertLessEqual(result["steps_used"], budget)
+        with self.assertRaises(ValueError):
+            bounded_agent("Count wine rows.", max_steps=4)
 
     def test_every_remaining_public_cli(self):
         paths = {8:"wine-neural-network",9:"sms-neural-nlp",10:"sms-llm",11:"sms-fine-tuning",12:"model-service",14:"bounded-assistant"}
         for number, name in paths.items():
+            options = []
+            # Full default budgets are exercised above and by fresh notebooks.
+            # The second run checks CLI plumbing with an explicitly smaller budget.
+            if number in [8, 9]: options = ["--epochs", "3"]
+            if number == 10: options = ["--examples", "20"]
+            if number == 11: options = ["--steps", "25"]
             process = subprocess.run([sys.executable, str(ROOT / "examples" / name / "scripts/run.py"),
-                                      "--output", str(self.base / f"cli{number}")],
-                                     cwd=self.base, capture_output=True, text=True, timeout=600)
+                                      "--output", str(self.base / f"cli{number}"), *options],
+                                     cwd=self.base, capture_output=True, text=True, timeout=1200)
             self.assertEqual(process.returncode, 0, process.stderr)
             self.assertTrue((self.base / f"cli{number}/summary.json").exists())
 

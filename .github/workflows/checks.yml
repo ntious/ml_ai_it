@@ -50,7 +50,7 @@ jobs:
           path: runs/verified/
   framework-checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 90
     env:
       ML_AI_HEAVY: '1'
       USE_TF: '0'
