@@ -52,7 +52,7 @@ python examples/network-events/scripts/prepare.py --input data/samples/network-e
 
 `python` should refer to the project environment; the setup page provides explicit Windows and Unix executable paths. The script imports `prepare_file` from `src/practical_ml_ai/data/events.py`. The notebook imports that same function. Neither contains a separate copy of the cleaning algorithm.
 
-Download the [sample CSV](../../setup/student-workspace.md#reading-reports-from-github "site-download:events.csv"), [data contract](../../setup/student-workspace.md#reading-reports-from-github "site-download:network-events.schema.json"), [guided notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:complete_walkthrough.ipynb"), or [complete source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip"). The archive includes setup, data, package, scripts, and tests. Downloading a notebook alone does not install its dependencies or provide the package.
+Download the [sample CSV](https://ntious.github.io/ml_ai_it/downloads/events.csv "site-download:events.csv"), [data contract](https://ntious.github.io/ml_ai_it/downloads/network-events.schema.json "site-download:network-events.schema.json"), [guided notebook](https://ntious.github.io/ml_ai_it/downloads/complete_walkthrough.ipynb "site-download:complete_walkthrough.ipynb"), or [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). The archive includes setup, data, package, scripts, and tests. Downloading a notebook alone does not install its dependencies or provide the package.
 
 ## Inspect the result
 
@@ -136,4 +136,4 @@ See [instructor guidance](instructor.md) for evidence selection, accessible rout
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
 
-**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.
+**Reading on GitHub?** Report, notebook and archive links open the [published reading site](https://ntious.github.io/ml_ai_it/). Source notebooks are also under notebooks/lessons in the repository; see [workspace and report access](../../setup/student-workspace.md).

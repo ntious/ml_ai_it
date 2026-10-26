@@ -12,6 +12,14 @@ State the purpose, observed unit, allowed input, and fitting/selection boundary.
 
 A useful recommendation has this structure: “For [declared task], the recorded workflow produced [actual evidence]. Compared with [relevant alternative], this suggests [limited interpretation]. The unresolved limitation is [specific issue]. Before use, we would [test or decision with an owner].” Fill the brackets from your run; do not invent a favorable score or causal story.
 
+## Diagnose the verified run
+
+**Evidence.** For "How many real wine observations are in the dataset?", the router chose the alcohol `feature` plan instead of `summary`. That answer is legal but wrong. For "Summarize alcohol measurements." it chose the same plan, correctly this time. The destructive request was refused by the keyword gate before the model ran, so that refusal tests a string match, not the model.
+
+**Likely cause.** The mean log-probabilities in `tool_trace.json` barely change with the request: `feature` scored -3.40 and -3.37, and `summary` scored -4.41 and -4.08. The model prefers the `feature` plan's text regardless of the question, so the router behaves like a fixed choice that happens to be right for one request.
+
+**A fair diagnostic experiment.** Write 10 new requests, each with the tool you expect, including paraphrases of destructive requests that avoid the gate's words ("wipe the table", "remove every row"). Run them, and report routing accuracy with its denominator. Note which requests the keyword gate misses, and explain why an allowlist of permitted actions is stronger than a list of forbidden words.
+
 ## Transfer cautiously
 
 A real support assistant needs permitted knowledge sources, explicit authority boundaries, trace retention/privacy, escalation, and independent evaluation of task success.

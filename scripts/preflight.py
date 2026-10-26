@@ -18,7 +18,7 @@ def inspect(profile):
         try: versions[name] = metadata.version(name)
         except metadata.PackageNotFoundError: missing.append(name)
     problems=[]
-    if sys.version_info < (3,11): problems.append("Python 3.11 or newer is required; 3.12 is the tested reference.")
+    if sys.version_info < (3,11): problems.append("Python 3.11 or newer is required; 3.12 and 3.13 are checked in CI.")
     if profile == "frameworks" and platform.system() != "Linux": problems.append("The verified framework reference requires Linux CPU.")
     return {"profile":profile,"python":platform.python_version(),"executable":sys.executable,"platform":platform.platform(),
             "project_root":str(ROOT),"working_folder":str(Path.cwd()),"packages":versions,"missing":missing,

@@ -28,6 +28,7 @@ Use the exact check names in the workflow. Constraints record exercised direct p
 - Select an approved semester edition and test learner permissions and direct links.
 - Review current dependency advisories and updates through the institution's maintenance process; no security audit is implied by this educational review.
 - Obtain the owner's release/deployment decision. Do not change visibility, merge, tag a public release, or enable Pages merely because the build passed.
+- After publication is approved, select GitHub Actions as the Pages source and set the repository Actions variable `PUBLISH_READING_SITE` to `true`. Run the workflow on main and verify the deployed routes before announcing the site. Until then, the deployment job stays skipped and the downloadable CI artifact remains the review route.
 
 ## Build and inspect
 
@@ -49,7 +50,7 @@ python scripts/check_wheel.py
 
 Framework tests require the ML_AI_HEAVY=1 environment setting and the dependencies in the framework guide; normal core discovery intentionally skips them. The workflow is the precise executable sequence.
 
-For a local reading preview, serve site/ with python -m http.server --directory site 8000 and open the loopback address. The HTTP prefix checker separately tests /ml_ai_it/. Previewing is not a public deployment. Retrieve complete-reading-site and the verified execution artifacts from the successful workflow, then perform the manual tasks.
+For a local reading preview, serve site/ with python -m http.server --directory site 8000 and open the loopback address. The HTTP prefix checker separately tests /ml_ai_it/. Previewing is not a public deployment; the deploy-pages job publishes main after all checks pass and the owner enables publication. Retrieve complete-reading-site and the verified execution artifacts from the successful workflow, then perform the manual tasks.
 
 ## Decision record
 

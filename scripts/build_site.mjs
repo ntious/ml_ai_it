@@ -39,8 +39,8 @@ for (const page of pages) {
   if (!title) throw new Error(`Missing page title: ${page.source}`);
   const usedIds = new Map();
   let body = marked.parse(markdown, { gfm: true });
-  // Source links lead to the artifact-access instructions on GitHub. In the
-  // built site their explicit Markdown title selects the actual local download.
+  // Source links use the published GitHub Pages URL. In the built site their
+  // explicit Markdown title selects the actual local download instead.
   body = body.replace(/<a href="[^"]+" title="site-download:([^"]+)">/g, (_, name) => {
     const destination = path.resolve(site, 'downloads', name);
     if (!destination.startsWith(path.join(site, 'downloads') + path.sep)) throw new Error('Escaping download');

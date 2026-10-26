@@ -32,7 +32,7 @@ Derived processing hashes normalized text, removes duplicate/conflicting texts, 
 
 Original archives, named original members, provenance.json, and ATTRIBUTION.txt remain under runs/datasets/name. New archives must match the reviewed digest; cached member hashes are verified. Source changes require review rather than bypassing the check.
 
-Separate attributed caches are available for [wine](setup/student-workspace.md#reading-reports-from-github "site-download:wine-cache.zip"), [SMS](setup/student-workspace.md#reading-reports-from-github "site-download:sms-cache.zip"), and [Adult](setup/student-workspace.md#reading-reports-from-github "site-download:adult-cache.zip"). Extract each into its named runs/datasets directory, preserving all files. External records stay outside the original-source ZIP. Worked reports can be read without executing a dataset or model.
+Separate attributed caches are available for [wine](https://ntious.github.io/ml_ai_it/downloads/wine-cache.zip "site-download:wine-cache.zip"), [SMS](https://ntious.github.io/ml_ai_it/downloads/sms-cache.zip "site-download:sms-cache.zip"), and [Adult](https://ntious.github.io/ml_ai_it/downloads/adult-cache.zip "site-download:adult-cache.zip"). Extract each into its named runs/datasets directory, preserving all files. External records stay outside the original-source ZIP. Worked reports can be read without executing a dataset or model.
 
 ## Pretrained model
 

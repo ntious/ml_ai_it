@@ -51,7 +51,7 @@ node scripts/check_browser.mjs
 .venv/bin/python scripts/check_wheel.py
 ```
 
-The archive check requires a Git checkout and compares source membership and bytes against tracked files. Stage new authored files before checking a local source archive. The builder recognizes Markdown link titles beginning site-download:; source links lead to artifact-access instructions, while generated HTML links to actual downloads. Validate both representations. Do not commit site, runs, installed environments or source/model caches.
+The archive check requires a Git checkout and compares source membership and bytes against tracked files. Stage new authored files before checking a local source archive. The builder recognizes Markdown link titles beginning site-download:; source links use the published https://ntious.github.io/ml_ai_it/downloads/ URL, while generated HTML links to the local download. check_source_links.py enforces that form. Validate both representations. Do not commit site, runs, installed environments or source/model caches.
 
 Browser checks serve the built site on an automatically assigned loopback port and save evidence under runs/browser-review. They cover five reading pages, selected axe rules, skip-link focus and 320px reflow; the readiness page also has a dark-mode scan. Use the [accessibility evidence log](docs/accessibility/review-log.md) for human task-based review.
 
@@ -61,4 +61,4 @@ Checkout dataset/model caches default to runs. Installed packages use a user cac
 
 Update curriculum/modules.json when paths/profiles change. Each module has six teaching pages, a clean notebook and a public script. Change shared code, teaching explanations, feedback, tests and provenance together. The staged phishing CLI separates prepare, train, validate, evaluate and report; its combined notebook calls those same functions.
 
-The [release/adoption checklist](docs/release-checklist.md) records evidence and owner decisions for a tested commit. CI produces reviewable artifacts; hosting and repository administration are controlled through the owner's chosen release process. Earlier implementation details are retained in the [historical notes](docs/maintenance/reviews/implementation-history.md).
+The [release/adoption checklist](docs/release-checklist.md) records evidence and owner decisions for a tested commit. CI produces reviewable artifacts. After the owner approves publication, select GitHub Actions as the Pages source and set the repository Actions variable `PUBLISH_READING_SITE` to `true`. The deploy-pages job then publishes complete-reading-site only from main after every check passes. Without that variable, deployment stays skipped. Earlier implementation details are retained in the [historical notes](docs/maintenance/reviews/implementation-history.md).

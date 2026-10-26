@@ -13,7 +13,7 @@ The default executable reference is Linux CPU, Python 3.12. Core workflows also 
 
 ## Codespaces
 
-With repository access, choose Code, Codespaces, Create codespace. The checked-in devcontainer installs the core dependencies and notebook kernel. Open the desired notebook and select the installed Python. Run `python scripts/preflight.py --profile core`. To use frameworks in the Linux terminal, run `python scripts/bootstrap.py --profile frameworks`, then select the ml-ai-frameworks kernel. This installs several large packages; review your provider's available resources first.
+Signed in to GitHub, choose Code, Codespaces, Create codespace. The checked-in devcontainer installs the core dependencies and notebook kernel. Open the desired notebook and select the installed Python. Run `python scripts/preflight.py --profile core`. To use frameworks in the Linux terminal, run `python scripts/bootstrap.py --profile frameworks`, then select the ml-ai-frameworks kernel. This installs several large packages; review your provider's available resources first.
 
 ## Colab
 

@@ -13,7 +13,7 @@ Keep a copy of your work before changing environments. Use exact text errors and
 | Incomplete source cache | Inspect original.zip and provenance | Preserve the incomplete cache for diagnosis and use a clean explicit cache location |
 | Kernel dies or memory runs out | Stop other kernels and inspect resources | Use the Linux CPU workspace, smaller documented mechanics budget, or instructor support |
 | Model download fails | Check connectivity and available disk | Retry the documented source; keep complete verified caches |
-| Report link fails on GitHub | Check whether its path contains downloads | Use the built reading artifact described in workspace setup |
+| Report or download link fails | Check that it opens https://ntious.github.io/ml_ai_it/ | Retry later, or run the module script locally to regenerate the same report |
 | Binder session disappears | Check your downloaded files | Restore saved notebook/source; hosted sessions are temporary |
 
 Run `python scripts/preflight.py --profile core` from the project root with the environment's interpreter. Choose frameworks for the Linux CPU environment. Save its version report with your work. Free disk warnings are planning guidance, not measured resource guarantees.

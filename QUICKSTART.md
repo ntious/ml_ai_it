@@ -2,7 +2,7 @@
 
 **Before setup:** use [readiness and Python Foundation](docs/start-here.md), [workspace acquisition](docs/setup/student-workspace.md) and [environment choices](docs/setup/hosted.md). Python Foundation is preparation, not a formal admission prerequisite. Our [Python-to-ML bridge](docs/setup/python-bridge.md) adds file and table skills.
 
-Obtain a checkout or extract the complete source archive, then open a terminal in its `ml_ai_it` folder. Use Python 3.11 or newer; development checks use Python 3.12. If Python is missing, use the [official download page](https://www.python.org/downloads/) and your platform's installer instructions. Check your version before proceeding.
+Obtain a checkout or extract the complete source archive, then open a terminal in its `ml_ai_it` folder. Use Python 3.11, 3.12 or 3.13; CI checks the core modules on 3.12 (Windows and Linux) and 3.13 (Windows). If Python is missing, use the [official download page](https://www.python.org/downloads/) and your platform's installer instructions. Check your version before proceeding.
 
 Commands below are selectable text. `py` is the usual Windows Python launcher; if it is unavailable but `python --version` reports the intended interpreter, use `python` instead. On macOS/Linux, use `python3`. Report an unavailable command rather than entering unrelated installation commands suggested by an unverified source.
 
@@ -47,7 +47,7 @@ Create an isolated environment and install the local package. Calling the enviro
 Windows PowerShell:
 
 ```powershell
-py -3.12 -m venv .venv
+py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e . -c environments/constraints-tested.txt
 .\.venv\Scripts\python.exe examples/network-events/scripts/prepare.py --input data/samples/network-events/events.csv --output runs/module03
 ```
@@ -60,7 +60,7 @@ python3 -m venv .venv
 .venv/bin/python examples/network-events/scripts/prepare.py --input data/samples/network-events/events.csv --output runs/module03
 ```
 
-If Python 3.12 is unavailable, use a supported installed version and record it when reporting an issue. Expect 12 input records, 6 accepted, 6 rejected, and 1 accepted record retaining missing latency. Observed latency mean/median are 24/20 milliseconds. See [Module 3](docs/lessons/03-data-processing/index.md).
+`py -m venv` uses your default Python; run `py --list` if you have several versions, and record the version when reporting an issue. Expect 12 input records, 6 accepted, 6 rejected, and 1 accepted record retaining missing latency. Observed latency mean/median are 24/20 milliseconds. See [Module 3](docs/lessons/03-data-processing/index.md).
 
 ## Module 4: add plotting libraries
 

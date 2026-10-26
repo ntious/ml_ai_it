@@ -33,13 +33,13 @@ Credit: Fanaee-T, H. (2013). *Bike Sharing* [Dataset]. UCI Machine Learning Repo
 
 The downloader saves attribution, license, retrieval time, and actual archive/CSV SHA-256 digests. It checks the cached CSV before reuse. New archives must match the SHA-256 verified in the initial real-data CI run. If upstream bytes change, the downloader stops for source review rather than silently changing the teaching dataset. Retain that cache and provenance for exact replay.
 
-The site also provides a [complete attributed data-cache ZIP](../../setup/student-workspace.md#reading-reports-from-github "site-download:module05/bike-sharing-cache.zip"). Extract its contents into runs/datasets/bike-sharing for a no-network replay; retain [attribution](../../setup/student-workspace.md#reading-reports-from-github "site-download:module05/ATTRIBUTION.txt"). The original-source ZIP keeps external downloaded data separate.
+The site also provides a [complete attributed data-cache ZIP](https://ntious.github.io/ml_ai_it/downloads/module05/bike-sharing-cache.zip "site-download:module05/bike-sharing-cache.zip"). Extract its contents into runs/datasets/bike-sharing for a no-network replay; retain [attribution](https://ntious.github.io/ml_ai_it/downloads/module05/ATTRIBUTION.txt "site-download:module05/ATTRIBUTION.txt"). The original-source ZIP keeps external downloaded data separate.
 
 A separately labeled original synthetic fixture supports offline practice/tests. Its deliberately patterned values are not evidence of real operational performance.
 
 ## Install and download
 
-Obtain a checkout or the [complete source archive](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip"). Work in its ml_ai_it folder. Create the environment using [first run](../../../QUICKSTART.md), then install the extra dependencies.
+Obtain a checkout or the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). Work in its ml_ai_it folder. Create the environment using [first run](../../../QUICKSTART.md), then install the extra dependencies.
 
 Windows PowerShell:
 
@@ -112,7 +112,7 @@ Saved numeric JSON exposes features, fill values, coefficients, and intercepts. 
 
 ## Interpret the evidence
 
-Open runs/module05/index.html, or read summary.txt and the CSV/JSON files. The [generated worked report](../../setup/student-workspace.md#reading-reports-from-github "site-download:module05/example/index.html") supports reading without installation.
+Open runs/module05/index.html, or read summary.txt and the CSV/JSON files. The [generated worked report](https://ntious.github.io/ml_ai_it/downloads/module05/example/index.html "site-download:module05/example/index.html") supports reading without installation.
 
 Residuals are **actual minus predicted**: positive means underprediction. MAE loses direction; inspect mean residual, largest errors, and date-ordered values too. Isolated errors and persistent underprediction may warrant different investigations. MAE also does not express unequal operational costs.
 
@@ -127,10 +127,10 @@ Forecast.csv predicts the next day after the last observed day, without an actua
 - **Reference:** [MAE](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html): units and aggregation.
 - **Optional:** [TimeSeriesSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html): expanding windows.
 
-Read named sections; current docs may describe newer versions than the tested constraints. Use the [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module05/regression.ipynb") inside the complete source folder, complete [practice](practice.md), then compare [worked feedback](feedback.md). [Instructor adaptation notes](instructor.md) explain alignment and alternatives. [Module 6](../06-classification/index.md) introduces classification and decision trees.
+Read named sections; current docs may describe newer versions than the tested constraints. Use the [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module05/regression.ipynb "site-download:module05/regression.ipynb") inside the complete source folder, complete [practice](practice.md), then compare [worked feedback](feedback.md). [Instructor adaptation notes](instructor.md) explain alignment and alternatives. [Module 6](../06-classification/index.md) introduces classification and decision trees.
 
 ## Build understanding step by step
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
 
-**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.
+**Reading on GitHub?** Report, notebook and archive links open the [published reading site](https://ntious.github.io/ml_ai_it/). Source notebooks are also under notebooks/lessons in the repository; see [workspace and report access](../../setup/student-workspace.md).

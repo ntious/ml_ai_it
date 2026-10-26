@@ -1,6 +1,6 @@
 # Module 9: Neural NLP for real messages
 
-Build a training-only vocabulary and neural text classifier on human-labeled messages, with a strong lexical baseline.
+Build a training-only vocabulary and neural text classifier on human-labeled messages, and compare it with a TF-IDF/logistic baseline.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
 
@@ -30,13 +30,13 @@ Normalized text hashes group duplicate messages; conflicting labels are excluded
 
 ## Run and inspect
 
-Download the [complete source](../../setup/student-workspace.md#reading-reports-from-github "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated.
 
 ~~~sh
 python examples/sms-neural-nlp/scripts/run.py --output runs/module09
 ~~~
 
-Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module09/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](../../setup/student-workspace.md#reading-reports-from-github "site-download:module09/example/index.html") without installing an execution interface.
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module09/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module09/example/index.html "site-download:module09/example/index.html") without installing an execution interface.
 
 Key artifacts:
 
@@ -47,7 +47,7 @@ Key artifacts:
 - vocabulary_preview.csv
 - model.keras
 
-The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](../../setup/student-workspace.md#reading-reports-from-github "site-download:module09/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. For interface choices and test coverage, see the [accessibility guide](../../accessibility/index.md).
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module09/walkthrough.ipynb "site-download:module09/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. For interface choices and test coverage, see the [accessibility guide](../../accessibility/index.md).
 
 ## Read selectively
 
@@ -65,4 +65,4 @@ Next: [Module 10](../10-llm-workflows/index.md).
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
 
-**Reading on GitHub?** Generated downloads/report links require the built reading artifact. Use [workspace and report access](../../setup/student-workspace.md); source notebooks are under notebooks/lessons in the repository.
+**Reading on GitHub?** Report, notebook and archive links open the [published reading site](https://ntious.github.io/ml_ai_it/). Source notebooks are also under notebooks/lessons in the repository; see [workspace and report access](../../setup/student-workspace.md).
