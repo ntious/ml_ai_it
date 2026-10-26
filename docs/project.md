@@ -26,4 +26,4 @@ Meets: “The frozen method improved the declared validation criterion over pers
 
 Extends: Predeclare a robustness or calibration study, investigate a specific failure slice and explain the resource/error tradeoff. Use development data for choosing the response. Complexity and model count alone do not establish graduate-level reasoning.
 
-The [authentic phishing case](cases/phishing.md) provides a bounded IT example. It is a historical benchmark with known limits, not a complete final project or a deployment recommendation.
+The [authentic phishing case](cases/phishing.md) provides a shorter bounded IT example. For the full sequence, use the separate optional [completed capstone exemplar](../projects/phishing-triage/README.md), its annotated report and [advanced investigations](advanced/index.md). It combines grouped tuning, multi-seed stability, frozen evaluation, inference, monitoring rehearsal and a written decision. The 14 modules remain independent; the worked report is a model of reasoning and evidence, not a submission to copy or a recommendation to deploy a historical benchmark.

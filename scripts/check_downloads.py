@@ -23,7 +23,10 @@ with zipfile.ZipFile(archive_path) as archive:
     for name in names:
         relative = Path(name).relative_to("ml_ai_it")
         assert not relative.is_absolute() and ".." not in relative.parts
-        assert not set(relative.parts) & {"runs", "site", "analysis", "project_sources", "project_resources", "__pycache__"}
+        # Only repository-root output/private folders are excluded. A tracked
+        # nested folder such as tests/site contains authored source, not a build.
+        assert relative.parts[0] not in {"runs", "site", "analysis", "project_sources", "project_resources"}, name
+        assert "__pycache__" not in relative.parts, name
         assert archive.read(name) == (ROOT / relative).read_bytes(), name
     with tempfile.TemporaryDirectory() as temporary:
         archive.extractall(temporary)
@@ -72,3 +75,17 @@ with zipfile.ZipFile(archive_path) as archive, tempfile.TemporaryDirectory() as 
     assert (Path(temporary) / "classifier/summary.json").is_file()
     assert (extracted / "apps/wine_quality.py").is_file()
 print("Checked the extracted new-module CLI and included app source.")
+
+# The optional project must survive a complete source-archive download too.
+with zipfile.ZipFile(archive_path) as archive, tempfile.TemporaryDirectory() as temporary:
+    archive.extractall(temporary)
+    extracted = Path(temporary) / "ml_ai_it"
+    project = extracted / "projects/phishing-triage/scripts/run.py"
+    evidence = ROOT / "site/downloads/capstone/example"
+    for stage, options in [("verify", []), ("predict", ["--input", str(evidence / "example_request.json")])]:
+        process = subprocess.run([sys.executable, str(project), stage, "--run", str(evidence), *options],
+                                 cwd=temporary, text=True, capture_output=True)
+        assert process.returncode == 0, process.stderr
+    prediction = json.loads(process.stdout)
+    assert 0 <= prediction["probability"] <= 1
+print("Checked the extracted capstone CLI, complete evidence ledger and frozen bundle inference.")

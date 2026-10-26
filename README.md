@@ -1,5 +1,9 @@
 # Practical Machine Learning and AI Systems
 
+**[Course website on GitHub Pages](https://ntious.github.io/ml_ai_it/)** · [Start here](docs/start-here.md) · [Course outline](docs/modules.md)
+
+The website address is the publication target; until its first successful deployment, use the lessons and notebooks in this repository.
+
 Learn to frame a useful problem, work with data, build and evaluate models, and explain whether an AI system should be used. This open educational resource combines short lessons, runnable Python examples, guided notebooks, independent practice and worked feedback across 14 modules.
 
 **Start with [the readiness check and learning routes](docs/start-here.md).** If you have never programmed, begin with [Python Foundation](https://ntious.github.io/python_foundation/), then return for our [Python-to-ML bridge](docs/setup/python-bridge.md). You can learn through this resource independently or use it alongside an instructor's course.
@@ -86,6 +90,8 @@ Core execution is checked on Windows and Linux. Framework modules 8–12 and 14 
 The [historical phishing-detection case](docs/cases/phishing.md) adds an authentic IT security example with separate preparation, training, validation, evaluation and reporting stages, plus a combined notebook. The [project companion](docs/project.md) helps you connect concepts across an existing course project or independent study.
 
 ## A repeatable learning workflow
+
+For an optional view of the entire lifecycle, use the [complete capstone exemplar](projects/phishing-triage/README.md): a separate CPU project with grouped tuning, multi-seed and split-sensitivity experiments, frozen evaluation, a numeric inference bundle, monitoring rehearsal and an annotated completed report. The [advanced route](docs/advanced/index.md) explains these investigations and distinguishes implemented experiments from further extensions. The existing 14 modules and their commands remain independently usable.
 
 1. Read the outcomes and decide what evidence you need to produce.
 2. Review the foundation bridge; use the [glossary](docs/glossary.md) for unfamiliar terms.

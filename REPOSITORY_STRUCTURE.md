@@ -15,6 +15,8 @@ Support complete beginners through advanced optional work; let an instructor lin
 | src/practical_ml_ai/ | Shared validation, analysis, learning, inference, and reporting behavior | Duplicated algorithms in notebooks |
 | examples/ | Thin, commented script entry points | Copied model implementations |
 | notebooks/lessons/ | Clean, commented, independently executable tutorials | Generated execution state in source control |
+| projects/phishing-triage/ | Separate optional capstone configuration, CLI, notebook and annotated report | Generated runs, downloaded data or mandatory module prerequisites |
+| docs/advanced/ | Optional tuning, stability, evaluation and assessment investigations | Claims that proposed extensions were already executed |
 | apps/ | Local interactive teaching interface | Public production service |
 | data/ | Contracts, manifests, explicitly labeled earlier teaching fixtures | Downloaded external archives or invented real records |
 | environments/ | Exercised core/framework constraints | A claim of a complete transitive lock |
@@ -67,7 +69,7 @@ Generated runs/, site/, dist/, environment folders, and caches are excluded from
 
 ## Build and verification boundaries
 
-CI checks the registry and Python syntax, behavior on Windows/Linux, actual Linux CPU framework learning/generation, 14 notebooks in real Jupyter kernels, generated page semantics and links, project-prefix HTTP routes, archive completeness/digests, extracted CLIs, and an isolated installed-wheel inference path.
+CI checks the registry and Python syntax, behavior on Windows/Linux, actual Linux CPU framework learning/generation, 14 module notebooks plus the shorter phishing case and separate capstone notebook in real Jupyter kernels, generated page semantics and links, project-prefix HTTP routes, archive completeness/digests, extracted CLIs, and an isolated installed-wheel inference path. The optional project uses its own checker and adds no new mandatory module to the registry.
 
 The site is static HTML/CSS without required browser JavaScript. Its build requires verified outputs from both execution profiles; it fails instead of inventing missing results. The complete site artifact supports reading, review and hosting through the chosen distribution process.
 

@@ -1,9 +1,10 @@
-# Curriculum and evidence map
+# Explore the modules
 
 Choose a [learning route](start-here.md) before selecting modules. Every module now links a guided construction and mastery check; advanced depth follows the common core evidence.
 
 All 14 modules support direct entry with prerequisites, shared-code examples, original practice, public feedback, optional depth, and instructor guidance. Implementation includes recorded automated execution; learner piloting and manual accessibility review remain necessary.
 
+<!-- MODULE_DIRECTORY_START -->
 | Module | Entry |
 | --- | --- |
 | 1 | [ML and AI foundations](lessons/01-foundations/index.md) |
@@ -20,6 +21,8 @@ All 14 modules support direct entry with prerequisites, shared-code examples, or
 | 12 | [Deployment and monitoring](lessons/12-deployment/index.md) |
 | 13 | [Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) |
 | 14 | [Bounded agents and AI workflows](lessons/14-agents/index.md) |
+
+<!-- MODULE_DIRECTORY_END -->
 
 ## Alignment conventions
 

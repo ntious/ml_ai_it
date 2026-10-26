@@ -36,6 +36,8 @@ These checks train actual models, evaluate generation, update/reload adapters, e
 
 ## Build and inspect the reading site
 
+The separate optional capstone has its own core-profile notebook check. Before building the complete reading site, run `python scripts/check_capstone.py --kernel ml-ai-core`. After intentionally updating its protocol, use `python scripts/refresh_capstone_report.py` to refresh the source report from verified execution and inspect the change. Existing module notebook checks remain separate. CI executes the project on the core Windows/Linux matrix and publishes its verified artifacts with the core results.
+
 Execute both notebook groups first so runs/verified contains their reports. Install the pinned Node dependencies with npm ci. Activate the core environment for Python subprocesses used by the builder, or set PYTHON to its executable.
 
 ```sh
@@ -53,7 +55,7 @@ node scripts/check_browser.mjs
 
 The archive check requires a Git checkout and compares source membership and bytes against tracked files. Stage new authored files before checking a local source archive. The builder recognizes Markdown link titles beginning site-download:; source links use the published https://ntious.github.io/ml_ai_it/downloads/ URL, while generated HTML links to the local download. check_source_links.py enforces that form. Validate both representations. Do not commit site, runs, installed environments or source/model caches.
 
-Browser checks serve the built site on an automatically assigned loopback port and save evidence under runs/browser-review. They cover five reading pages, selected axe rules, skip-link focus and 320px reflow; the readiness page also has a dark-mode scan. Use the [accessibility evidence log](docs/accessibility/review-log.md) for human task-based review.
+Browser checks serve the built site on an automatically assigned loopback port and save evidence under runs/browser-review. They cover selected core, capstone and advanced reading pages, selected axe rules, skip-link focus and 320px reflow; the readiness page also has a dark-mode scan. Use the [accessibility evidence log](docs/accessibility/review-log.md) for human task-based review.
 
 ## Runtime and source maintenance
 

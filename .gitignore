@@ -17,3 +17,7 @@ runs/
 
 # Local institutional source documents and private planning; never publish.
 /documentations/
+
+# Generated browser verification artifacts
+browser-results/
+playwright-report/

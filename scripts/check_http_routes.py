@@ -22,6 +22,7 @@ class Links(HTMLParser):
         self.values = []
 
     def handle_starttag(self, tag, attrs):
+        if tag == "base": return
         for name, value in attrs:
             if name in {"href", "src"}:
                 self.values.append(value)

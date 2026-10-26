@@ -13,9 +13,9 @@ from practical_ml_ai.phishing import prepare, train, validate, evaluate, report
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "site/downloads"
 MODULES = json.loads((ROOT / "curriculum/modules.json").read_text(encoding="utf-8"))["modules"]
-ROOT_FILES = ["CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", "package-lock.json", ".gitignore", ".gitattributes"]
-SOURCE_FOLDERS = ["curriculum", "templates", "apps", "src", "examples", "data", "notebooks", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
-ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".mjs", ".yml", ".yaml"}
+ROOT_FILES = ["playwright.config.mjs", "CODE_OF_CONDUCT.md", "REPOSITORY_STRUCTURE.md", "CITATION.cff", "README.md", "QUICKSTART.md", "ACCESSIBILITY.md", "LICENSE", "OER_LICENSE.md", "CONTRIBUTING.md", "DEVELOPMENT.md", "CHANGELOG.md", "pyproject.toml", "package.json", "package-lock.json", ".gitignore", ".gitattributes"]
+SOURCE_FOLDERS = ["curriculum", "templates", "apps", "src", "examples", "data", "notebooks", "projects", "docs", "scripts", "tests", "environments", ".devcontainer", ".binder", ".github"]
+ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ipynb", ".css", ".js", ".svg", ".mjs", ".yml", ".yaml"}
 
 
 def build():
@@ -60,6 +60,14 @@ def build():
     for stage in [prepare, train, validate, evaluate, report]: stage(case)
     shutil.copyfile(ROOT / "notebooks/cases/phishing.ipynb", DESTINATION / "phishing/walkthrough.ipynb")
     shutil.copyfile(ROOT / "runs/verified/phishing/executed.ipynb", DESTINATION / "phishing/executed.ipynb")
+    capstone = ROOT / "runs/verified/capstone"
+    if not (capstone / "report.done.json").is_file():
+        raise FileNotFoundError("Missing capstone execution; run scripts/check_capstone.py in the core environment.")
+    from practical_ml_ai.capstone import verify as verify_capstone
+    verify_capstone(capstone, "report")
+    shutil.copytree(capstone, DESTINATION / "capstone/example")
+    shutil.copyfile(ROOT / "projects/phishing-triage/notebooks/complete-study.ipynb", DESTINATION / "capstone/walkthrough.ipynb")
+    shutil.copyfile(capstone / "executed.ipynb", DESTINATION / "capstone/executed.ipynb")
     for name in ["wine", "sms", "adult", "phishing"]:
         cache = fetch_source(name)
         with zipfile.ZipFile(DESTINATION / (name + "-cache.zip"), "w", compression=zipfile.ZIP_DEFLATED) as archive:
