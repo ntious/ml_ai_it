@@ -59,6 +59,12 @@ def evaluation_subset(frame, count):
         raise ValueError(f"Choose 20–{len(frame)} examples before evaluation.")
     if count == len(frame):
         return frame.copy().reset_index(drop=True)
+    if len(frame) - count < frame.label.nunique():
+        # A one-row remainder cannot itself be stratified. Drop one seeded row
+        # from the majority class, retaining both labels in the near-full set.
+        majority = frame.label.mode().iloc[0]
+        drop = frame.loc[frame.label == majority].sample(n=len(frame) - count, random_state=45).index
+        return frame.drop(index=drop).sort_values("text_id").reset_index(drop=True)
     chosen, _ = train_test_split(frame, train_size=count, stratify=frame.label, random_state=45)
     return chosen.sort_values("text_id").reset_index(drop=True)
 

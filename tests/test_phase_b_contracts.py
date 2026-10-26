@@ -1,6 +1,9 @@
 """Selection-boundary and statistical contracts that need no heavy model."""
 from pathlib import Path
+import shutil
 import sys
+import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -24,6 +27,11 @@ class PhaseBContracts(unittest.TestCase):
         self.assertEqual(sum(map(len, split.values())), manifest["sample_rows"])
         with self.assertRaises(ValueError):
             sms_splits(limit=True)
+        for invalid in [20, 39]:
+            with self.assertRaisesRegex(ValueError, "at least 40"):
+                sms_splits(limit=invalid)
+        smallest, _ = sms_splits(limit=40)
+        self.assertTrue(all(part.label.nunique() == 2 for part in smallest.values()))
 
     def test_subset_does_not_invent_rows_or_change_labels(self):
         split, _ = sms_splits(limit=None)
@@ -32,6 +40,9 @@ class PhaseBContracts(unittest.TestCase):
         self.assertEqual(len(chosen), 100)
         self.assertEqual(chosen.label.tolist(), lookup.loc[chosen.text_id].tolist())
         self.assertEqual(chosen.text_id.tolist(), evaluation_subset(split["test"], 100).text_id.tolist())
+        nearly_all = evaluation_subset(split["test"], len(split["test"]) - 1)
+        self.assertEqual(len(nearly_all), len(split["test"]) - 1)
+        self.assertEqual(nearly_all.label.nunique(), 2)
         for invalid in [True, 0, 8, 100000]:
             with self.assertRaises(ValueError):
                 evaluation_subset(split["test"], invalid)
@@ -82,6 +93,29 @@ class PhaseBContracts(unittest.TestCase):
             with self.assertRaises(ValueError):
                 bounded_agent("")
             model.assert_not_called()
+
+    def test_user_install_data_prefix_is_searched(self):
+        import practical_ml_ai.agent_study as agent
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            destination = root / "user/share/ml_ai_it/agent-requests.csv"
+            destination.parent.mkdir(parents=True)
+            shutil.copyfile(ROOT / "data/samples/agent-requests.csv", destination)
+            with patch.object(agent, "ROOT", root / "absent"), patch.object(agent.sys, "prefix", str(root / "venv")), patch.object(agent.sysconfig, "get_path", return_value=str(root / "user")):
+                self.assertIn(destination, agent.request_paths())
+                self.assertEqual(int((agent.requests_frame().split == "test").sum()), 26)
+
+    def test_long_prompt_preserves_assistant_boundary_and_loss_mask(self):
+        from practical_ml_ai.language import packed_example
+        tokenizer = SimpleNamespace(encode=lambda text, **kwargs: list(range(300)) if text == "complete chat prompt" else [7, 8], eos_token_id=9)
+        # Exercise packing without making torch a core-profile dependency.
+        tensor_api = SimpleNamespace(tensor=lambda value, **kwargs: value, long="long")
+        with patch.dict(sys.modules, {"torch": tensor_api}), patch("practical_ml_ai.language.sms_prompt", return_value="complete chat prompt"):
+            inputs, labels = packed_example(tokenizer, SimpleNamespace(text="long SMS", label=1))
+        self.assertEqual(inputs[0][:300], list(range(300)))
+        self.assertEqual(labels[0][:300], [-100] * 300)
+        self.assertEqual(inputs[0][300:], [7, 8, 9])
+        self.assertEqual(labels[0][300:], [7, 8, 9])
 
 
 if __name__ == "__main__":

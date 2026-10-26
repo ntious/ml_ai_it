@@ -69,6 +69,23 @@ to tracked source. CI artifacts provide the complete review site before publicat
 
 ## Questions for independent review
 
+Local verification completed: all 15 module/case notebooks executed in fresh
+kernels; the full framework suite passed all 11 tests, including default training,
+public CLIs and app checks. The core suite and eight lightweight Phase B contract
+tests cover the split, selection, uncertainty and execution-boundary behavior.
+The complete site, served routes, source/data archives, browser checks and
+isolated installed-wheel inference were also exercised. Use the pull request's
+matching CI run for the final Windows/Linux integration result.
+
+Automated review additionally identified four edge cases, now covered: standard
+user-data install prefixes; SMS caps too small for both stratified split stages;
+a near-full evaluation subset with a one-row remainder; and long prompts losing
+their assistant-turn boundary. Prompt packing now keeps the complete formatted
+prompt. The declared LoRA study's longest train/validation/final prompts contain
+129/120/137 tokens respectively, so that correction changes none of its recorded
+inputs or scores. The long-prompt regression separately exercises 300 prompt
+tokens and verifies that only completion tokens receive loss labels.
+
 1. Confirm the final labels never select checkpoints, thresholds, demonstrations
    or routing offsets. Mutate final labels and inspect whether selections change.
 2. Reconcile every reported success/rate with the raw CSV counts and denominators.

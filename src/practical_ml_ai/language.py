@@ -105,7 +105,9 @@ def score_label(model, tokenizer, text, examples=None):
 def packed_example(tokenizer, row):
     """Mask prompt tokens: the loss trains only the real annotated completion."""
     import torch
-    prompt_ids = tokenizer.encode(sms_prompt(tokenizer, row.text), add_special_tokens=False)[:192]
+    # The SMS is already bounded before formatting. Keep the complete chat
+    # prompt, especially the assistant-turn marker used at inference time.
+    prompt_ids = tokenizer.encode(sms_prompt(tokenizer, row.text), add_special_tokens=False)
     answer = json.dumps({"label": "spam" if row.label else "ham"}, separators=(",", ":"))
     completion = tokenizer.encode(answer, add_special_tokens=False) + [tokenizer.eos_token_id]
     inputs = torch.tensor([prompt_ids + completion], dtype=torch.long)

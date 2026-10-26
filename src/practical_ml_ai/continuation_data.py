@@ -153,8 +153,8 @@ def sms_splits(limit=1200):
     counts = frame.groupby("text_id")["label"].nunique()
     conflicts = set(counts[counts > 1].index)
     frame = frame.loc[~frame.text_id.isin(conflicts)].drop_duplicates("text_id").reset_index(drop=True)
-    if limit is not None and (isinstance(limit, bool) or not isinstance(limit, int) or limit < 20):
-        raise ValueError("SMS sample limit must be None or a whole number of at least 20.")
+    if limit is not None and (isinstance(limit, bool) or not isinstance(limit, int) or limit < 40):
+        raise ValueError("SMS sample limit must be None or a whole number of at least 40 so both split stages retain both labels.")
     if limit is not None and len(frame) > limit:
         chosen, _ = train_test_split(frame, train_size=limit, stratify=frame.label, random_state=42)
         frame = chosen.sort_values("text_id").reset_index(drop=True)

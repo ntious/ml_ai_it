@@ -7,6 +7,7 @@ from functools import lru_cache
 import json
 from pathlib import Path
 import sys
+import sysconfig
 
 import numpy as np
 import pandas as pd
@@ -17,13 +18,16 @@ from .language_studies import completion_scores, rate_record
 
 TOOLS = ("summary", "feature", "refuse")
 ROUTE_LABELS = ("count", "alcohol", "refuse")
-REQUEST_PATHS = [ROOT / "data/samples/agent-requests.csv",
-                 Path(__file__).resolve().parents[1] / "share/ml_ai_it/agent-requests.csv",
-                 Path(sys.prefix) / "share/ml_ai_it/agent-requests.csv"]
+def request_paths():
+    user_data = Path(sysconfig.get_path("data", scheme=sysconfig.get_preferred_scheme("user")))
+    return [ROOT / "data/samples/agent-requests.csv",
+            Path(__file__).resolve().parents[1] / "share/ml_ai_it/agent-requests.csv",
+            Path(sys.prefix) / "share/ml_ai_it/agent-requests.csv",
+            user_data / "share/ml_ai_it/agent-requests.csv"]
 
 
 def requests_frame():
-    source = next((path for path in REQUEST_PATHS if path.is_file()), None)
+    source = next((path for path in request_paths() if path.is_file()), None)
     if source is None:
         raise FileNotFoundError("Install the complete wheel or use the complete course source; agent controls are missing.")
     frame = pd.read_csv(source)
