@@ -124,6 +124,11 @@ class CapstoneTests(unittest.TestCase):
         self.assertEqual(set(rows.training_seed), {17})
 
     def test_changed_data_models_or_optional_evidence_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            copied = Path(temporary) / "study"; shutil.copytree(self.directory, copied)
+            (copied / "split-study.done.json").unlink()
+            with self.assertRaises(OSError):
+                c.verify(copied, "freeze")
         for filename in ["train.csv", "selection.json", "split_sensitivity.csv"]:
             with self.subTest(filename=filename), tempfile.TemporaryDirectory() as temporary:
                 copied = Path(temporary) / "study"; shutil.copytree(self.directory, copied)

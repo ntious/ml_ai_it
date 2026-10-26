@@ -80,7 +80,8 @@ def begin(run, stage):
 def finish(run, stage, files, started):
     run = Path(run)
     parents = list(PARENTS[stage])
-    if stage == "report" and (run / "split-study.done.json").exists():
+    if stage in {"freeze", "report"} and (run / "split-study.done.json").exists():
+        verify(run, "split-study")
         parents.append("split-study")
     save(run / (stage + ".done.json"), {
         "stage": stage, "completed_utc": datetime.now(timezone.utc).isoformat(),

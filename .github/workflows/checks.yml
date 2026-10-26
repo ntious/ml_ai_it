@@ -109,6 +109,8 @@ jobs:
           node-version: '22'
       - name: Install reading-site tool
         run: npm ci --ignore-scripts
+      - name: Check publication provenance boundaries
+        run: npm run check:release
       - name: Assemble site with actual verified reports
         run: npm run build
       - name: Check every generated page and local link
@@ -129,6 +131,14 @@ jobs:
         with:
           name: complete-reading-site
           path: site/
+          include-hidden-files: true
+      - name: Exercise site navigation and search
+        run: npm run check:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-browser-evidence
+          path: browser-results/
 
       - uses: actions/upload-artifact@v4
         with:

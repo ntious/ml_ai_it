@@ -1,0 +1,8 @@
+{
+  "title": "Practical ML & AI",
+  "subtitle": "Learn the concepts. Build the systems.",
+  "repository": "https://github.com/ntious/ml_ai_it",
+  "base_path": "/ml_ai_it/",
+  "edition": "Development edition",
+  "description": "A practical machine learning and AI learning resource: 14 modules, shared Python implementations, guided notebooks, real-data examples, and adaptable teaching materials."
+}
