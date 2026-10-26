@@ -9,7 +9,7 @@ Edition 0.7.0 contains all 14 modules, six teaching pages per module, public scr
 | Core processing/modeling | Windows and Linux CI, Python 3.12; Windows CI, Python 3.13 | Scripts, behavioral tests and fresh-kernel notebooks |
 | Frameworks | Linux CPU CI, Python 3.12 | TensorFlow learning/reload, local LLM generation, adapters, app forms and health |
 | Notebook execution | All 14 module notebooks and the phishing notebook | Clean-kernel execution; interface usability is a separate question |
-| Reading site | Source/generated links, HTML structure, HTTP routes and downloads | Five pages also receive scripted focus, 320px reflow and selected axe checks |
+| Reading site | Source/generated links, HTML structure, HTTP routes and downloads | Selected core, optional-project and advanced pages also receive scripted focus, 320px reflow and selected axe checks |
 | Distribution | Tracked-source archive integrity, attributed data caches and installed-wheel inference | Source/provenance/schema/cache behavior |
 
 Use the [successful workflow runs](https://github.com/ntious/ml_ai_it/actions/workflows/checks.yml) for exact commit-specific results. The [maintainer guide](../DEVELOPMENT.md) gives reproduction commands. macOS, Windows framework execution and live hosted-provider sessions are outside the demonstrated platform scope; use the Linux CPU reference for framework work.

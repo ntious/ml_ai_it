@@ -87,6 +87,8 @@ The [historical phishing-detection case](docs/cases/phishing.md) adds an authent
 
 ## A repeatable learning workflow
 
+For an optional view of the entire lifecycle, use the [complete capstone exemplar](projects/phishing-triage/README.md): a separate CPU project with grouped tuning, multi-seed and split-sensitivity experiments, frozen evaluation, a numeric inference bundle, monitoring rehearsal and an annotated completed report. The [advanced route](docs/advanced/index.md) explains these investigations and distinguishes implemented experiments from further extensions. The existing 14 modules and their commands remain independently usable.
+
 1. Read the outcomes and decide what evidence you need to produce.
 2. Review the foundation bridge; use the [glossary](docs/glossary.md) for unfamiliar terms.
 3. Predict the result of the guided construction before running it.

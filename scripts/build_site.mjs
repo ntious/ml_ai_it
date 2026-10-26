@@ -23,6 +23,10 @@ pages.push({ source: path.join(root, 'QUICKSTART.md'), output: 'setup/quickstart
 pages.push({ source: path.join(root, 'ACCESSIBILITY.md'), output: 'accessibility/policy.html' });
 pages.push({ source: path.join(root, 'REPOSITORY_STRUCTURE.md'), output: 'maintenance/architecture.html' });
 pages.push({ source: path.join(root, 'README.md'), output: 'overview.html' });
+for (const source of walk(path.join(root, 'projects')).filter(p => p.endsWith('.md'))) {
+  const relative = path.relative(path.join(root, 'projects'), source);
+  pages.push({ source, output: 'projects/' + slash(relative).replace(/README\.md$/, 'index.html').replace(/\.md$/, '.html') });
+}
 for (const name of ['DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT']) {
   pages.push({ source: path.join(root, name + '.md'), output: 'maintenance/' + name.toLowerCase() + '.html' });
 }
@@ -76,6 +80,7 @@ for (const page of pages) {
   const navigation = [
     ['index.html', 'Home'], ['overview.html', 'Course overview'], ['start-here.html', 'Start here'], ['glossary.html', 'Glossary'], ['project.html', 'Project'],
     ...modules.map(module => [module.lesson.replace(/^docs\//, '').replace(/\.md$/, '.html'), 'Module ' + module.id]),
+    ['projects/phishing-triage/index.html', 'Complete project (optional)'], ['advanced/index.html', 'Advanced (optional)'],
     ['setup/index.html', 'Setup'], ['accessibility/index.html', 'Accessibility'],
     ['instructor/index.html', 'Teach and adapt']
   ].map(([url, label]) => `<li><a href="${relative(url)}"${url === page.output ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');

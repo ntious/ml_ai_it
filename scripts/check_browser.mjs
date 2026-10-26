@@ -29,7 +29,9 @@ try {
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await context.newPage();
   const results = [];
-  for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html']) {
+  for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html',
+    'projects/phishing-triage/index.html', 'projects/phishing-triage/reports/annotated-report.html',
+    'advanced/index.html', 'advanced/tuning.html', 'advanced/stability.html', 'advanced/evaluation.html']) {
     const response = await page.goto(base + route);
     if (!response.ok()) throw new Error('Reading page unavailable: ' + route);
     await page.bringToFront();
@@ -46,18 +48,20 @@ try {
     results.push({ route, axeViolations: scan.violations.length, skipFocus: true, widths });
     if (route === 'overview.html') await page.screenshot({ path: path.join(output, 'readme-mobile.png') });
     if (route === 'start-here.html') await page.screenshot({ path: path.join(output, 'start-mobile.png') });
+    if (route === 'projects/phishing-triage/reports/annotated-report.html') await page.screenshot({ path: path.join(output, 'capstone-report-mobile.png') });
     await page.setViewportSize({ width: 1280, height: 900 });
     if (route === 'lessons/08-neural-networks/guided.html') {
       await page.locator('main').scrollIntoViewIfNeeded();
       await page.screenshot({ path: path.join(output, 'guided-desktop.png') });
     }
+    if (route === 'projects/phishing-triage/index.html') await page.screenshot({ path: path.join(output, 'capstone-desktop.png') });
   }
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto(base + 'start-here.html');
   const dark = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   if (dark.violations.length) throw new Error('Dark-mode accessibility-rule violations.');
   const report = { browser: browser.version(), results, darkViolations: dark.violations.length,
-    limits: 'Five reading pages and selected automated rules; no screen-reader, human keyboard, real zoom or hosted notebook/app interface claim.' };
+    limits: `${results.length} reading pages and selected automated rules; no screen-reader, human keyboard, real zoom or hosted notebook/app interface claim.` };
   await fs.writeFile(path.join(output, 'checks.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report));
 } finally {

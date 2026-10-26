@@ -4,7 +4,7 @@ import re
 from urllib.parse import unquote,urlsplit
 ROOT=Path(__file__).resolve().parents[1]
 PAGES_DOWNLOADS='https://ntious.github.io/ml_ai_it/downloads/'
-files=[*ROOT.glob('*.md'),*(ROOT/'docs').rglob('*.md'),*(ROOT/'templates').rglob('*.md')]
+files=[*ROOT.glob('*.md'),*(ROOT/'docs').rglob('*.md'),*(ROOT/'templates').rglob('*.md'),*(ROOT/'projects').rglob('*.md')]
 problems=[];count=0
 for source in files:
     text=source.read_text(encoding='utf-8')

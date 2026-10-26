@@ -43,6 +43,14 @@ for case in (ROOT / "notebooks/cases").glob("*.ipynb"):
         if cell.cell_type == "code":
             assert cell.execution_count is None and not cell.outputs
             ast.parse(cell.source)
+for project in (ROOT / "projects").glob("*"):
+    assert (project / "README.md").is_file()
+    for source in (project / "notebooks").glob("*.ipynb"):
+        notebook = nbformat.read(source, as_version=4); nbformat.validate(notebook)
+        for cell in notebook.cells:
+            if cell.cell_type == "code":
+                assert cell.execution_count is None and not cell.outputs
+                ast.parse(cell.source)
 tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
 tracked = [name for name in tracked if name]
 for name in tracked:
