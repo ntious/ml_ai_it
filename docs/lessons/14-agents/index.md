@@ -26,7 +26,9 @@ UCI Wine Quality; real red-wine chemistry and human ratings. See the central sou
 
 ## The complete workflow
 
-The actual small LLM ranks summary, alcohol-feature summary, or refusal plans. Exact schemas and allowed feature names are enforced before execution. Returned evidence comes from actual wine records. Destructive control requests are refused; no shell, upload, credential, or write tool exists. The final response displays tool values rather than inventing unsupported generated facts.
+The authored request file separates six demonstrations, six validation controls and 26 labelled test requests. A real local LLM scores count/alcohol/refuse labels; these map to summary/feature/refuse plans. Class-score offsets are chosen using validation controls only. The executor supplies an exact allowlisted argument schema. A bounded plan → observe → answer workflow uses at most three steps and one read-only call. The answer displays returned source values. Measure routing accuracy, missed refusals and the confusion table separately from the permission boundary: no destructive, shell, upload or credential tool exists.
+
+The request controls are authored examples, not a representative sample of real users. A model can choose an irrelevant read tool for an unsafe request; that counts as a routing error even though no unsafe operation can execute.
 
 ## Run and inspect
 

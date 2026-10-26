@@ -25,7 +25,11 @@ import practical_ml_ai
 from practical_ml_ai.continuation_data import RUNS_ROOT, runtime_directory
 from practical_ml_ai.classical import classification_bundle
 from practical_ml_ai.deployment import checked_predict
+from practical_ml_ai.agent_study import requests_frame
 assert Path(practical_ml_ai.__file__).is_relative_to(target)
+controls = requests_frame()
+assert (controls.split == "test").sum() == 26
+assert not controls.request.duplicated().any()
 assert RUNS_ROOT == Path(os.environ["ML_AI_RUNS_DIR"])
 bundle = classification_bundle()
 row = bundle["split"]["test"].iloc[0]

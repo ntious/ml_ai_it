@@ -22,7 +22,7 @@ Adult results are descriptive audits, batch replay is not a measured timeline, a
 
 ## Verified results
 
-These are the actual results of the verified runs used to build edition 0.7.0. The worked reports on the [reading site](https://ntious.github.io/ml_ai_it/) contain every count. Several framework results are weak or failed; each module's feedback page explains why in **Diagnose the verified run**. Rates on 8 examples cannot estimate population performance.
+The table below preserves the earlier edition 0.7.0 snapshot. **For the revised framework protocols and current measured results, use [Phase B results](framework-results.md).** The worked reports on the [reading site](https://ntious.github.io/ml_ai_it/) contain every count. Earlier weak framework runs are archived for diagnosis; current module feedback discusses the revised runs. Rates on 8 examples cannot estimate population performance.
 
 | Module | Data and split | Selected method | Verified final result | Comparison |
 | --- | --- | --- | --- | --- |

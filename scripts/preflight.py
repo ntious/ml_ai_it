@@ -9,7 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 CORE = ["numpy","pandas","scikit-learn","matplotlib","seaborn","nbformat","nbclient","ipykernel"]
-FRAMEWORKS = ["tensorflow-cpu","torch","transformers","streamlit"]
+FRAMEWORKS = ["tensorflow-cpu","torch","transformers","peft","accelerate","streamlit"]
 
 
 def inspect(profile):

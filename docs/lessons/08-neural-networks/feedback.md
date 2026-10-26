@@ -14,14 +14,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 ## Diagnose the verified run
 
-**Evidence.** The [verified run](../../status.md#verified-results) found 7 of 29 higher-rated wines (recall 0.24, balanced accuracy 0.593). Logistic regression on the same rows at the same 0.5 threshold found 9 of 29 (balanced accuracy 0.629). The best validation epoch was 8, the last allowed: validation loss was still falling (0.3111 at epoch 6, 0.3021 at epoch 8).
+**Recorded evidence.** Of 29 actual positives among 243 final records, the network finds 29 and misses 0, with 90 false alarms. Its recall is 1.000, precision 0.244 and balanced accuracy 0.790. The simpler baseline has recall 0.897, precision 0.338 and balanced accuracy 0.829.
 
-**Likely causes.**
+**Explain the decision.** Validation loss selected checkpoint 12 within a 40-epoch maximum. Validation balanced accuracy selected thresholds 0.05 (neural) and 0.15 (baseline). Recall alone hides the false-alarm cost; compare both confusion tables and the threshold-free ranking metrics. Neither the baseline nor the neural model is required to win.
 
-1. **The threshold, not only the model.** Only about 12% of wines are positive, so most predicted probabilities sit below 0.5. Module 6 chose 0.3 on validation for the same label and reached balanced accuracy 0.757. Comparing a 0.5 network with a 0.3 logistic model would mix up two separate decisions.
-2. **The search ended at its boundary.** Validation loss selected epoch 8 from the eight observed checkpoints. Because the best checkpoint is also the final epoch, a larger budget might find a better checkpoint, but this run cannot establish what happens later. Longer training need not produce a visible rise in validation loss.
-
-**A fair diagnostic experiment.** On validation only, list the predicted probabilities for actual positives and choose a threshold with the rule Module 6 uses. Separately, declare a larger epoch budget (for example `--epochs 30`) in a new output directory and find the epoch where validation loss is lowest. Change one factor at a time, and record both results before you look at final-test counts again. The public final results are already known, so treat any rerun as rehearsal.
+**Try a validation-only investigation.** Read validation_predictions.csv and validation_thresholds.csv. Explain one threshold tradeoff without changing a setting in response to final-test scores. For an imbalanced dataset, why would accuracy alone be misleading?
 
 ## Transfer cautiously
 

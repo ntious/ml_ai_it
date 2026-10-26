@@ -4,7 +4,7 @@ Return to the [lesson](index.md) after this short preparation. You can use expla
 
 ## Essential idea
 
-LoRA adds a low-rank update to a frozen linear projection. Here a rank-2 pair targets one query projection; this is a deliberately small adaptation, not full-model retraining. Masking prompt labels with -100 prevents the objective from training on every instruction token.
+LoRA adds a low-rank update to a frozen linear projection. The rank-2 hand construction illustrates one projection; the full study uses rank-8 PEFT adapters in every query/value projection. Masking prompt labels with -100 prevents the objective from training on every instruction token.
 
 ## Work through the evidence
 

@@ -47,3 +47,7 @@ Data rights and model licenses are distinct. Preserve credits and disclose trans
 ## Authentic IT extension: website phishing
 
 [UCI Phishing Websites](https://archive.ics.uci.edu/dataset/327/phishing+websites), Mohammad & McCluskey (2012), DOI 10.24432/C51W2X; UCI lists CC BY 4.0. The selected Training Dataset.arff contains 11,055 records and 30 encoded attributes. Archive SHA-256: 514f582cb44cba17251baf1d59f64cddff16efa2b644d091ce8d2a1e8d492940. Raw files remain unchanged; the case documents label recoding, ambiguous-profile exclusions and grouped splits. No live URLs are visited. [Case workflow and limits](cases/phishing.md).
+
+## Authored agent controls
+
+`data/samples/agent-requests.csv` is original teaching material: labelled demonstration, validation and test requests. It contains no real user interactions and is not an external dataset. Module 14 returns statistics from the attributed UCI wine records; keep that evidence separate from the authored routing controls.

@@ -14,14 +14,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 ## Diagnose the verified run
 
-**Evidence.** The adapter has 2,304 trainable parameters and took 8 single-example steps. Validation completion loss moved from 1.9836 to 1.9809, a 0.14% change. Generated accuracy stayed at 0 of 8 for both the base and adapted model, because neither produced the required JSON.
+**Recorded evidence.** The selected all-layer adapter has 460,800 trainable parameters. Validation completion loss moves from 1.5358 to 0.0030; validation loss selects step 200 within the 200-step maximum. On 100 balanced final messages, JSON validity changes from 0% to 100%, and label accuracy from 0% to 94%.
 
-**Likely causes.**
+**Explain the improvement.** This study updates rank-8 adapters in every query/value layer, rather than eight updates to a single rank-2 projection. More training capacity and examples can change completion behavior. The checkpoint uses validation loss only; the final comparison cannot choose steps. The rank-2 hand construction remains useful for understanding the matrix operation.
 
-1. **The budget is far too small to change behavior.** Eight steps show only 8 of the 24 training messages, once each, and update one projection in one layer.
-2. **Accuracy cannot move until the format does.** The base model fails the schema on every example (as in Module 10), so a tiny loss improvement cannot appear as correct labels.
-
-**A fair diagnostic experiment.** Treat the step budget as the declared variable: run `--steps 48` (the allowed maximum) in a new output directory and compare **validation** completion loss, not final scores. The current script records schema validity only on the final subset in generation_comparison.csv; it does not provide validation schema validity. Adding generation evaluation on validation messages would be a separate extension. Predict what a larger adapter on more layers would change, then explain why completion loss, format compliance and label correctness need separate measurements.
+**Check what each output establishes.** validation_generation.csv provides development format/label checks; generation_comparison.csv provides the frozen final comparison. Safetensors replay checks serialization, not quality. Valid JSON can still be wrong, the balanced sample changes prevalence, and the interval does not correct historical sampling bias. If the last checkpoint wins, later training behavior is unknown.
 
 ## Transfer cautiously
 

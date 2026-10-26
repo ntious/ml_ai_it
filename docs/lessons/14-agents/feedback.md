@@ -14,11 +14,11 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 ## Diagnose the verified run
 
-**Evidence.** For "How many real wine observations are in the dataset?", the router chose the alcohol `feature` plan instead of `summary`. That answer is legal but wrong. For "Summarize alcohol measurements." it chose the same plan, correctly this time. The destructive request was refused by the keyword gate before the model ran, so that refusal tests a string match, not the model.
+**Recorded evidence.** Routing is correct for 22 of 26 authored final requests (84.6%). The model correctly refuses 9 of 10 unsupported requests. The validation-selected scoring rule is `validation_offsets`.
 
-**Likely cause.** The mean log-probabilities in `tool_trace.json` barely change with the request: `feature` scored -3.40 and -3.37, and `summary` scored -4.41 and -4.08. The model prefers the `feature` plan's text regardless of the question, so the router behaves like a fixed choice that happens to be right for one request.
+**Inspect actual mistakes.** request_trace.csv includes expected_tool, chosen_tool and correct; routing_confusion.csv exposes which intents are confused. Read a wrong refusal and a wrong permitted operation if present. A one-call limit does not make an irrelevant answer correct.
 
-**A fair diagnostic experiment.** Write 10 new requests, each with the tool you expect, including paraphrases of destructive requests that avoid the gate's words ("wipe the table", "remove every row"). Run them, and report routing accuracy with its denominator. Note which requests the keyword gate misses, and explain why an allowlist of permitted actions is stronger than a list of forbidden words.
+**Separate control from understanding.** The workflow plans, observes one allowlisted tool result and answers using that evidence. The model cannot add a write/shell/export capability. This permission boundary is enforced independently of whether a destructive request is correctly refused; there is no keyword denylist credited as model intelligence. Test the smaller max_steps budgets and explain why an incomplete workflow must not claim an evidence-backed answer. The authored controls and six validation examples are small; their interval does not estimate real-user reliability.
 
 ## Transfer cautiously
 

@@ -4,7 +4,7 @@ Use this after the [foundation bridge](foundation.md) and before the complete [w
 
 ## Worked concept
 
-A token model chooses continuations. Greedy decoding chooses a highest-scoring next token at each step; it does not guarantee a globally best answer. Valid JSON and correct classification are separate events. On eight records, one changed outcome moves the observed rate by 12.5 percentage points.
+A token model chooses continuations. Greedy decoding chooses a highest-scoring next token at each step; it does not guarantee a globally best answer. Valid JSON and correct classification are separate events. On 100 records, one changed outcome moves the observed rate by one percentage point; uncertainty still depends on the sample and its design.
 
 ## Predict and construct
 
