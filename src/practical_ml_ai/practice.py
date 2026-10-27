@@ -34,6 +34,7 @@ def _regression(function):
     train = np.array([[1.], [3.], [np.nan], [5.]])
     model, predicted = function(train.copy(), np.array([2., 6., 6., 10.]), np.array([[np.nan], [100.]]))
     assert isinstance(model, Pipeline), 'Return a fitted sklearn Pipeline and its predictions.'
+    assert model.named_steps['imputer'].strategy == 'median', 'Use median imputation explicitly; a matching training mean in this fixture is not the requested strategy.'
     _close(model.named_steps['imputer'].statistics_, [3.], 'Fit the imputer on training only; new inputs must not change its median.')
     _close(predicted, [6., 200.], 'Apply the fitted transformation/model to new inputs, without refitting.')
 
@@ -60,6 +61,8 @@ def _classifier(function):
     assert isinstance(model, Pipeline), 'Return the fitted scaler/classifier Pipeline and positive-class probabilities.'
     _close(model.named_steps['scaler'].mean_, [3.], 'The scaler must learn its mean from training only.')
     assert np.shape(probability) == (2,), 'Return one positive-class probability per new row, not both class columns.'
+    expected = model.predict_proba(np.array([[-2.], [100.]]))[:, list(model.classes_).index(1)]
+    _close(probability, expected, 'Return class-1 predict_proba values, not hard labels from predict; thresholds need the scores.')
     assert 0 <= probability[0] < .5 < probability[1] <= 1, 'Find the probability column corresponding to class 1.'
 
 

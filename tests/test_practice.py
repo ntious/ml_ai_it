@@ -51,6 +51,33 @@ class FormativeFeedbackTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unknown practice check'):
             check('m99_missing', lambda: None)
 
+    def test_matching_mean_does_not_satisfy_median_contract(self):
+        from sklearn.pipeline import Pipeline
+        from sklearn.impute import SimpleImputer
+        from sklearn.linear_model import LinearRegression
+        def wrong(train_x, train_y, new_x):
+            model = Pipeline([('imputer', SimpleImputer()), ('model', LinearRegression())]).fit(train_x, train_y)
+            return model, model.predict(new_x)
+        result = check('m05_pipeline', wrong)
+        self.assertEqual(result['state'], 'needs_revision')
+        self.assertIn('median imputation', result['feedback'])
+
+    def test_hard_labels_are_not_probability_scores(self):
+        from sklearn.pipeline import Pipeline
+        from sklearn.preprocessing import StandardScaler
+        from sklearn.linear_model import LogisticRegression
+        def wrong(train_x, train_y, new_x):
+            model = Pipeline([('scaler', StandardScaler()), ('model', LogisticRegression())]).fit(train_x, train_y)
+            return model, model.predict(new_x)
+        result = check('m06_pipeline', wrong)
+        self.assertEqual(result['state'], 'needs_revision')
+        self.assertIn('predict_proba', result['feedback'])
+
+    def test_list_based_checkpoint_implementation_is_valid(self):
+        def valid(train, validation):
+            return validation.index(min(validation)) + 1
+        self.assertEqual(check('m08_checkpoint', valid)['state'], 'passed')
+
 
 if __name__ == '__main__':
     unittest.main()
