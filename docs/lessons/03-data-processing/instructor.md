@@ -29,3 +29,7 @@ Use the [adaptable assessment guide](../../instructor/assessment.md) for local c
 ## Accessibility and verification
 
 Use readable code, named outputs, text explanations, and equivalent numerical evidence. Record direct-link reading, execution, modification, saving, and feedback tasks in the [review log](../../accessibility/review-log.md). Automated syntax/behavior/kernel checks do not establish keyboard, screen-reader, zoom, or interface usability.
+
+## Continue the learning route
+
+Use the [course review and pilot protocol](../../instructor/teaching-prototype-pilot.md). Review a changed-case explanation, not only passing visible checks. Preparation and activity times need observation with actual learners.

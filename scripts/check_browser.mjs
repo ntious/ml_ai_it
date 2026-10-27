@@ -34,7 +34,7 @@ try {
   for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html',
     'projects/phishing-triage/index.html', 'projects/phishing-triage/reports/annotated-report.html',
     'advanced/index.html', 'advanced/tuning.html', 'advanced/stability.html', 'advanced/evaluation.html',
-    ...['05-regression', '06-classification', '08-neural-networks'].flatMap(slug =>
+    ...JSON.parse(await fs.readFile(path.join(root, 'curriculum/modules.json'), 'utf8')).modules.flatMap(({ slug }) =>
       ['concepts', 'practice', 'solutions'].map(page => `lessons/${slug}/${page}.html`)),
     'instructor/teaching-prototype-pilot.html']) {
     const response = await page.goto(base + route);

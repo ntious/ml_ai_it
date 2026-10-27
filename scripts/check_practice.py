@@ -1,4 +1,4 @@
-"""Execute only the six registered, trusted practice/solution notebooks.
+"""Execute only the registered, trusted practice/solution notebooks.
 
 Starter feedback must remain unfinished; solutions must pass their visible
 checks and actual development sandbox. These are separate evidence claims.
@@ -16,14 +16,17 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = json.loads((ROOT / 'curriculum/practice.json').read_text())['modules']
 
 
+def checks_digest():
+    return hashlib.sha256(b''.join((ROOT / 'src/practical_ml_ai' / name).read_bytes() for name in ['practice.py', 'practice_cases.py'])).hexdigest()
+
 def validate_sources():
     from practical_ml_ai.practice import CHECKS
     registered = set()
-    assert [entry['id'] for entry in REGISTRY] == [5, 6, 8]
+    assert [entry['id'] for entry in REGISTRY] == list(range(1, 15))
     for entry in REGISTRY:
         lesson = ROOT / 'docs/lessons' / entry['slug'] / 'index.md'
-        outcomes = re.search(r'## Learning outcomes\n(.*?)(?=\n## )', lesson.read_text(), re.S)[1].strip()
-        assert hashlib.sha256(outcomes.encode()).hexdigest() == entry['outcomes_sha256'], 'Prototype must preserve the learning outcomes: ' + str(lesson)
+        outcomes = re.search(r'## (?:Learning outcomes|What you will learn)\n(.*?)(?=\n## )', lesson.read_text(), re.S)[1].strip()
+        assert hashlib.sha256(outcomes.encode()).hexdigest() == entry['outcomes_sha256'], 'Practice must preserve the learning outcomes: ' + str(lesson)
         assert len(entry['checks']) == 3 and set(entry['checks']) <= CHECKS.keys()
         for kind in ['practice', 'solutions']:
             source = ROOT / entry[kind]; registered.add(source.resolve())
@@ -38,14 +41,14 @@ def validate_sources():
                     ast.parse(cell.source)
                     assert cell.execution_count is None and not cell.outputs
     assert registered == {p.resolve() for p in (ROOT / 'notebooks/practice').glob('*.ipynb')}
-    print('Checked six clean practice/solution notebooks and unchanged outcomes in Modules 5, 6 and 8.')
+    print(f'Checked {2*len(REGISTRY)} clean practice/solution notebooks and unchanged outcomes in all 14 modules.')
 
 
 def execute(entry, kernel):
     destination = ROOT / 'runs/verified/practice' / f"module{entry['id']:02d}"
     destination.mkdir(parents=True, exist_ok=True)
     summary = {'module': entry['id'], 'kernel': kernel, 'human_pilot': 'NOT RUN',
-               'checks_sha256': hashlib.sha256((ROOT / 'src/practical_ml_ai/practice.py').read_bytes()).hexdigest(), 'notebooks': {}}
+               'checks_sha256': checks_digest(), 'notebooks': {}}
     for kind in ['practice', 'solutions']:
         source = ROOT / entry[kind]
         notebook = nbformat.read(source, as_version=4)
@@ -72,8 +75,8 @@ print("PRACTICE_EVIDENCE", {kind!r}, {entry['id']}, {expected!r})'''
         runtime = json.loads(next(line.removeprefix('PRACTICE_RUNTIME ') for line in streams.splitlines() if line.startswith('PRACTICE_RUNTIME ')))
         nbformat.write(notebook, destination / f'{kind}-executed.ipynb')
         summary['notebooks'][kind] = {'source': entry[kind], 'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-                                      'state': expected, 'checks': 3, 'runtime': runtime, 'real_development_sandbox_executed': kind == 'solutions'}
-        print(f"Module {entry['id']} {kind}: three checks {expected}; development sandbox {'executed' if kind == 'solutions' else 'skipped as intended'}.")
+                                      'state': expected, 'checks': 3, 'runtime': runtime, 'real_development_sandbox_executed': kind == 'solutions' and entry.get('sandbox') != 'authored_operation', 'worked_operation_executed': kind == 'solutions'}
+        print(f"Module {entry['id']} {kind}: three checks {expected}; {entry.get('sandbox', 'real_development_sandbox')} {'executed' if kind == 'solutions' else 'skipped as intended'}.")
     (destination / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
 
 

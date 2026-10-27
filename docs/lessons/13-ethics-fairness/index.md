@@ -12,6 +12,10 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M13.4:** Explain metric trade-offs, proxy effects, and uncertainty without causal/legal claims.
 - **M13.5:** Write a governance recommendation, including reasons not to deploy.
 
+## Learning route
+
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+
 ## Entry support and topics
 
 Use the [foundation bridge](foundation.md) if these concepts are new. Basic Python/functions/files and the train/validation/test distinction are assumed with support from [Module 2](../02-python-workflows/index.md) and [Module 5](../05-regression/index.md).

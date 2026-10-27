@@ -20,14 +20,14 @@ ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ip
 
 def build():
     DESTINATION.mkdir(parents=True, exist_ok=True)
-    from check_practice import validate_sources as validate_practice_sources
+    from check_practice import validate_sources as validate_practice_sources, checks_digest
     import hashlib
     validate_practice_sources()
     practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
     for entry in practice_registry:
         verified = ROOT / "runs/verified/practice" / f'module{entry["id"]:02d}'
         summary = json.loads((verified / "summary.json").read_text())
-        assert summary["checks_sha256"] == hashlib.sha256((ROOT / "src/practical_ml_ai/practice.py").read_bytes()).hexdigest(), "Practice checks changed; rerun scripts/check_practice.py"
+        assert summary["checks_sha256"] == checks_digest(), "Practice checks changed; rerun scripts/check_practice.py"
         target = DESTINATION / f'module{entry["id"]:02d}'
         target.mkdir(parents=True, exist_ok=True)
         for kind in ["practice", "solutions"]:

@@ -93,6 +93,30 @@ CHECKS = {'m05_residuals': _residuals, 'm05_persistence': _persistence, 'm05_pip
           'm08_dense': _dense, 'm08_checkpoint': _checkpoint, 'm08_network': _network}
 
 
+def _fixture_check(specification):
+    from copy import deepcopy
+    import math
+
+    def equivalent(actual, expected):
+        if expected is None or isinstance(expected, (str, bool)):
+            return type(actual) is type(expected) and actual == expected
+        if isinstance(expected, dict):
+            return isinstance(actual, dict) and actual.keys() == expected.keys() and all(equivalent(actual[k], v) for k, v in expected.items())
+        if isinstance(expected, list):
+            return isinstance(actual, (list, tuple)) and len(actual) == len(expected) and all(equivalent(a, b) for a, b in zip(actual, expected))
+        return not isinstance(actual, bool) and math.isclose(float(actual), expected, rel_tol=1e-6, abs_tol=1e-7)
+
+    def verify(function):
+        for arguments, expected in specification['cases']:
+            actual = function(*deepcopy(arguments))
+            assert equivalent(actual, expected), specification['feedback'] + f" Input: {arguments!r}; observed: {actual!r}."
+    return verify
+
+
+from .practice_cases import CASES
+CHECKS.update({name: _fixture_check(specification) for name, specification in CASES.items()})
+
+
 def check(name, function):
     """Return readable formative feedback; unfinished work stays visibly unfinished."""
     if name not in CHECKS:

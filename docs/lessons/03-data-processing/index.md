@@ -14,11 +14,15 @@ By completing the core route, you can:
 
 These are resource learning outcomes. They do not claim course credit or certified program-outcome attainment.
 
+## Learning route
+
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+
 ## Prerequisite help
 
 You need to run a Python command and recognize a function, list/dictionary, and file path. Use the [short foundation bridge](foundation.md) if these are new. [Setup](../../setup/index.md) explains installing dependencies and saving outputs. You may use the script route or the guided notebook.
 
-The core reading and demonstration are designed as a bounded introduction, with a provisional 45–75 minutes for practice plus setup. These times require learner piloting. [Optional extensions](practice.md#optional-extension) can be skipped.
+The core reading and demonstration are designed as a bounded introduction, with a provisional 45–75 minutes for practice plus setup. These times require learner piloting. [Optional extensions](practice.md#transfer-to-an-it-decision) can be skipped.
 
 ## Operational problem
 

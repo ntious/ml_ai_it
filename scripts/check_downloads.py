@@ -54,7 +54,7 @@ for entry in practice:
         assert (target / (kind + ".ipynb")).read_bytes() == source.read_bytes()
         assert hashlib.sha256(source.read_bytes()).hexdigest() == evidence["notebooks"][kind]["sha256"]
         assert (target / (kind + "-executed.ipynb")).is_file()
-print("Checked six separate practice/solution sources, matching execution identities and downloadable executed copies.")
+print("Checked 28 separate practice/solution sources, matching execution identities and downloadable executed copies.")
 
 with zipfile.ZipFile(ROOT / "site/downloads/module05/bike-sharing-cache.zip") as cache:
     metadata = json.loads(cache.read("provenance.json"))

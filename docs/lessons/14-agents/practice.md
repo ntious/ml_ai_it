@@ -1,39 +1,50 @@
-# Module 14 practice and reflection
+# Module 14: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module14/practice.ipynb "site-download:module14/practice.ipynb"). In a source checkout open `notebooks/practice/module14-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P14
+## Construct `route_intent`
 
-Trace two legitimate requests and one refused control request. Check the selected plan against intent and verify one returned statistic from the real data. Explain the one-call limit, argument allowlist, and why the policy does not depend on the LLM obeying a warning.
+Return count_rows for count, mean_alcohol for alcohol; otherwise None. Predict the result on `['count']`, implement it and call `m14_route_intent` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for route_intent</summary>
 
-## Discussion or solo equivalent
+An unsupported intent must not fall through to an unrelated answer.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `allowed_call`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Allow only count_rows with no arguments, or mean_alcohol with no arguments. Predict the result on `['count_rows', {}]`, implement it and call `m14_allowed_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for allowed_call</summary>
 
-Add one reviewed read-only tool with a new schema, evidence contract, and failure tests. Broader planning or external write actions require a separate authorization and evaluation design; they are not necessary for the core.
+Validate tool and argument contract, not just words in a prompt.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M14.1 | Distinguish a fixed workflow, constrained LLM routing, and autonomous planning. |
-| M14.2 | Define tool/argument schemas and a bounded execution budget. |
-| M14.3 | Run actual model-based plan ranking against real dataset tools. |
-| M14.4 | Inspect traces for intent match, refusals, and source-grounded answers. |
-| M14.5 | Test unsupported/destructive requests and explain remaining limitations. |
+## Construct `can_call`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Return True for nonnegative whole-number used/budget and used < budget; reject bool. Predict the result on `[0, 1]`, implement it and call `m14_can_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for can_call</summary>
 
-Trace legitimate, unsupported and adversarial requests. Verify returned values and separately score intent match, schema validity, policy validity and evidence correctness.
+Stop before exceeding the budget and reject malformed limits.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Trace an unsupported destructive request and a valid count question. Identify which control enforces each boundary. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M14.1:** Distinguish a fixed workflow, constrained LLM routing, and autonomous planning.
+- **M14.2:** Define tool/argument schemas and a bounded execution budget.
+- **M14.3:** Run actual model-based plan ranking against real dataset tools.
+- **M14.4:** Inspect traces for intent match, refusals, and source-grounded answers.
+- **M14.5:** Test unsupported/destructive requests and explain remaining limitations.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

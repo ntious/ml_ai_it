@@ -28,3 +28,7 @@ Write the expected outputs for inputs 79, 80, and 81. Run the supplied script, c
 Explain why replacing 80 with 90 is rule editing. Name information a trained alert model would need and one way that information could leak the answer. The module's prediction sketches are design comparisons, not trained services.
 
 Read [practice](practice.md), attempt a response, then consult [feedback](feedback.md). Further mathematics is optional at this stage.
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

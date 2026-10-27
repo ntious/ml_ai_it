@@ -11,6 +11,10 @@ Explore a service-workload table, choose useful charts, and communicate what the
 
 You need basic functions, file paths, and dataframe selection/grouping. Use the [foundation bridge](foundation.md), [Module 2](../02-python-workflows/index.md), or [Module 3](../03-data-processing/index.md) as needed. You may enter here directly with the complete source archive and setup below.
 
+## Learning route
+
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+
 ## A question before a chart
 
 A fictional operations lead asks: “How do request totals differ between two services, and which daily observations deserve investigation?” The unit of observation is **one service on one UTC calendar date**, not an individual request. The fixture covers January 1–12, 2027; these are invented dates and values, not measured future operations.

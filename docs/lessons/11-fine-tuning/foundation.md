@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 If W has output-by-input shape (6,4), it has 24 parameters. A rank-2 A has shape (2,4), B has shape (6,2), and BA has shape (6,4). Their 20 parameters are fewer here; savings become much larger for wide projections. Starting B at zero makes the initial update zero. A frozen base participates in forward computation without optimizer updates. Labels -100 exclude prompt positions from the completion-loss objective; they are a library masking convention.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

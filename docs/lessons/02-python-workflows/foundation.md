@@ -46,3 +46,7 @@ print(input_path.exists())
 Do not paste an unfamiliar command into a terminal merely because an assistant suggests it. For this lesson, inspect file paths, the CSV header, and the failing value. A small synthetic copy of the input makes a safer debugging example than a real service record.
 
 Return to the [workflow](index.md). The notebook includes a runnable version of the values/function example above.
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

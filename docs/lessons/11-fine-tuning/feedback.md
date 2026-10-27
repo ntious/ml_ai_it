@@ -33,3 +33,7 @@ Question: Does a nonzero adapter update establish better labels?
 No. It establishes changed parameters. Lower completion loss also does not establish better generated decisions.
 
 A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.
+
+## Continue the learning route
+
+For feedback on your own functions, use [construction solutions](solutions.md). The results here describe the separate complete reference.
