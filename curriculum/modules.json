@@ -93,10 +93,12 @@
       "pages": [
         "index.md",
         "foundation.md",
+        "concepts.md",
+        "guided.md",
         "practice.md",
+        "solutions.md",
         "feedback.md",
-        "instructor.md",
-        "guided.md"
+        "instructor.md"
       ],
       "track": "Classical ML",
       "summary": "Forecast real bike demand with time-aware features and honest baselines."
@@ -113,10 +115,12 @@
       "pages": [
         "index.md",
         "foundation.md",
+        "concepts.md",
+        "guided.md",
         "practice.md",
+        "solutions.md",
         "feedback.md",
-        "instructor.md",
-        "guided.md"
+        "instructor.md"
       ],
       "track": "Classical ML",
       "summary": "Compare classifiers and decision trees without selecting on final-test data."
@@ -153,10 +157,12 @@
       "pages": [
         "index.md",
         "foundation.md",
+        "concepts.md",
+        "guided.md",
         "practice.md",
+        "solutions.md",
         "feedback.md",
-        "instructor.md",
-        "guided.md"
+        "instructor.md"
       ],
       "track": "Neural and language models",
       "summary": "Train and reload a TensorFlow model; compare it with a simpler reference."

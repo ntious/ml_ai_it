@@ -4,6 +4,21 @@ const require = createRequire(import.meta.url);
 const axePath = require.resolve('axe-core/axe.min.js');
 const module3 = 'lessons/03-data-processing/index.html';
 
+test('prototype practice hints work by keyboard and solutions stay a separate page', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  for (const slug of ['05-regression', '06-classification', '08-neural-networks']) {
+    await page.goto(`lessons/${slug}/practice.html`);
+    const hint = page.locator('main details').first();
+    await expect(hint).toHaveJSProperty('open', false);
+    await hint.locator('summary').focus();
+    await page.keyboard.press('Enter');
+    await expect(hint).toHaveJSProperty('open', true);
+    await page.locator('main a[href="solutions.html"]').last().click();
+    await expect(page).toHaveURL(new RegExp(`${slug}/solutions.html$`));
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('practice solutions');
+  }
+});
+
 test('home connects learning paths, all modules, and the exact repository revision', async ({ page }) => {
   await page.goto('');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Learn machine learning. Build practical AI.');

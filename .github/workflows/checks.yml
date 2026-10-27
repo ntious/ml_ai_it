@@ -44,6 +44,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Execute core notebooks
         run: python scripts/check_notebook.py --group core --kernel ml-ai-core
+      - name: Check core teaching practice and solutions separately
+        run: python scripts/check_practice.py --group core --kernel ml-ai-core
       - name: Execute the separate optional capstone exemplar
         run: python scripts/check_capstone.py --kernel ml-ai-core
       - uses: actions/upload-artifact@v4
@@ -79,6 +81,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_continuation_heavy.py -v
       - name: Execute framework notebooks
         run: python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
+      - name: Check the neural teaching practice and solution separately
+        run: python scripts/check_practice.py --group frameworks --kernel ml-ai-frameworks
       - uses: actions/upload-artifact@v4
         with:
           name: verified-frameworks

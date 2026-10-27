@@ -37,6 +37,8 @@ for module in modules:
     registered_scripts.add(module["script"])
 assert registered_notebooks == {p.relative_to(ROOT).as_posix() for p in (ROOT / "notebooks/lessons").rglob("*.ipynb")}
 assert registered_scripts == {p.relative_to(ROOT).as_posix() for p in (ROOT / "examples").glob("*/scripts/*.py")}
+from check_practice import validate_sources as validate_practice_sources
+validate_practice_sources()
 for case in (ROOT / "notebooks/cases").glob("*.ipynb"):
     notebook = nbformat.read(case,as_version=4); nbformat.validate(notebook)
     for cell in notebook.cells:

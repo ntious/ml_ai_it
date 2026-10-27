@@ -17,7 +17,9 @@ const server = http.createServer(async (request, response) => {
     if (target !== site && !target.startsWith(site + path.sep)) throw new Error('Outside site');
     if ((await fs.stat(target)).isDirectory()) target = path.join(target, 'index.html');
     const content = await fs.readFile(target);
-    response.writeHead(200, { 'Content-Type': target.endsWith('.css') ? 'text/css' : 'text/html; charset=utf-8' });
+    const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript',
+      '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.ipynb': 'application/json' };
+    response.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream' });
     response.end(content);
   } catch { response.writeHead(404); response.end('Not found'); }
 });
@@ -31,9 +33,15 @@ try {
   const results = [];
   for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html',
     'projects/phishing-triage/index.html', 'projects/phishing-triage/reports/annotated-report.html',
-    'advanced/index.html', 'advanced/tuning.html', 'advanced/stability.html', 'advanced/evaluation.html']) {
+    'advanced/index.html', 'advanced/tuning.html', 'advanced/stability.html', 'advanced/evaluation.html',
+    ...['05-regression', '06-classification', '08-neural-networks'].flatMap(slug =>
+      ['concepts', 'practice', 'solutions'].map(page => `lessons/${slug}/${page}.html`)),
+    'instructor/teaching-prototype-pilot.html']) {
     const response = await page.goto(base + route);
     if (!response.ok()) throw new Error('Reading page unavailable: ' + route);
+    if (!await page.locator('main img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0))) {
+      throw new Error('Teaching image did not render: ' + route);
+    }
     await page.bringToFront();
     await page.keyboard.press('Tab');
     const firstHref = await page.evaluate(() => document.activeElement?.getAttribute('href'));

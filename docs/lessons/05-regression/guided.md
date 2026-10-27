@@ -1,42 +1,38 @@
 # Module 5: guided construction and mastery
 
-Use this after the [foundation bridge](foundation.md) and before the complete [walkthrough](index.md). Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
+Start with the [foundation bridge](foundation.md) and [applied concept sequence](concepts.md). This is the worked stage; the next stage removes implementation support. Use the existing environment for this module.
 
-## Worked concept
+## Predict before running
 
-For prediction 20 + 0.8*x, x=150 gives 140. If actual is 125, residual actual-minus-predicted is -15: overprediction. Squared training loss and absolute-error evaluation answer different optimization questions.
+Which training rows determine the missing-value fill? Predict whether adding 100 as a new input should change it. Explain why predicting a missing input is different from knowing its unknown target.
 
-## Predict and construct
-
-Predict the printed values, shape or rejection before running. Use the documented environment. The notebook contains this same runnable construction cell.
+## Follow a small worked implementation
 
 ```python
+from sklearn.pipeline import make_pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LinearRegression
 import numpy as np
-learning_x = np.array([100., 150.])
-learning_prediction = 20 + .8 * learning_x
-learning_actual = np.array([110.,125.])
-learning_residual = learning_actual - learning_prediction
-print("prediction", learning_prediction, "residual", learning_residual)
-print("MAE", np.abs(learning_residual).mean())
-assert np.abs(learning_residual).mean() == 12.5
+train_x = np.array([[1.], [3.], [np.nan], [5.]])
+train_y = np.array([2., 6., 6., 10.])
+model = make_pipeline(SimpleImputer(strategy="median"), LinearRegression())
+model.fit(train_x, train_y)
+print("Training median:", model[0].statistics_)
+print("Predictions:", model.predict([[np.nan], [100.]]))
 ```
 
-## Complete with less support
+## Change one thing and explain
 
-Implement previous-day persistence on development records. Explain input availability at the forecast origin and compare with the provided development baseline.
+Change one training input, refit on training only, and explain whether its median or fitted predictions change. Restore the example before starting your independent implementation.
 
-Cover the worked code, implement the central step again, and explain its inputs, outputs and boundary. Keep development experiments separate from final evaluation. Having already viewed a public final report, treat a rerun as rehearsal; a fresh generalization claim needs a new evaluation design.
+Record the prediction, actual output and explanation. If they differ, identify the line or assumption responsible instead of simply replacing your answer.
 
-## Debug a plausible misconception
+## Reconstruct with less support
 
-Can an imputer fitted on all dates leak information? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Open [independent practice](practice.md). Implement the three functions in its starter notebook. Visible checks give actionable feedback; solutions are separate. Preserve your attempted code and reasoning before inspecting a solution.
 
-## Independent transfer
+## Connect to the complete study
 
-Design a forecast in another domain and distinguish rolling daily decisions from a batch forecast.
+After practice, use the [complete reference walkthrough](index.md). Its real-data protocol, baseline comparison, final evaluation and artifacts remain the module reference. The small sandbox is development practice and does not replace that evidence.
 
-## Minimum mastery evidence
-
-Submit or retain your changed executable code, one independently checked numerical claim, expected versus observed output, one diagnosed failure and a short decision/limitation explanation. Name the module outcomes each artifact supports. Interpretation-only work can demonstrate reasoning, but implementation outcomes require an executed and explained modification. A screenshot or copied report alone is insufficient.
-
-Developing: expected report reproduced but the central operation cannot be explained or changed. Meets: an independently explained change, reconciled evidence and preserved evaluation boundary. Extends: a predeclared experiment or transfer with measured tradeoffs; extra complexity alone is insufficient.
+Use [practice solutions](solutions.md) for misconception-specific feedback and [recorded-study feedback](feedback.md) to interpret the complete study. The [pilot guide](../../instructor/teaching-prototype-pilot.md) distinguishes technical verification from observed learner mastery.

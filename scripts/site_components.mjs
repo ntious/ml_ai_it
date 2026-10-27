@@ -37,7 +37,7 @@ export function courseOutline(modules, current, relative) {
 }
 
 export function moduleTabs(module, output, relative) {
-  const labels = {'guided.md': 'Guided construction', 'index.md': 'Overview', 'foundation.md': 'Foundation', 'practice.md': 'Practice', 'feedback.md': 'Feedback', 'instructor.md': 'Teaching notes'};
+  const labels = {'concepts.md': 'Applied concepts', 'solutions.md': 'Practice solutions', 'guided.md': 'Guided construction', 'index.md': 'Overview', 'foundation.md': 'Foundation', 'practice.md': 'Practice', 'feedback.md': 'Feedback', 'instructor.md': 'Teaching notes'};
   return '<nav class="lesson-tabs" aria-label="Module pages"><ul>' + module.pages.map(name => {
     const target = module.lesson.replace(/index\.md$/, name).replace(/^docs\//, '').replace(/\.md$/, '.html');
     return '<li><a href="' + escape(relative(target)) + '"' + (output === target ? ' aria-current="page"' : '') + '>' + labels[name] + '</a></li>';

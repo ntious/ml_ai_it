@@ -20,6 +20,24 @@ ALLOWED_SUFFIXES = {".cff", ".py", ".md", ".json", ".toml", ".csv", ".txt", ".ip
 
 def build():
     DESTINATION.mkdir(parents=True, exist_ok=True)
+    from check_practice import validate_sources as validate_practice_sources
+    import hashlib
+    validate_practice_sources()
+    practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
+    for entry in practice_registry:
+        verified = ROOT / "runs/verified/practice" / f'module{entry["id"]:02d}'
+        summary = json.loads((verified / "summary.json").read_text())
+        assert summary["checks_sha256"] == hashlib.sha256((ROOT / "src/practical_ml_ai/practice.py").read_bytes()).hexdigest(), "Practice checks changed; rerun scripts/check_practice.py"
+        target = DESTINATION / f'module{entry["id"]:02d}'
+        target.mkdir(parents=True, exist_ok=True)
+        for kind in ["practice", "solutions"]:
+            source = ROOT / entry[kind]
+            evidence = summary["notebooks"][kind]
+            assert evidence["sha256"] == hashlib.sha256(source.read_bytes()).hexdigest(), "Practice evidence is stale; rerun scripts/check_practice.py"
+            assert evidence["state"] == ("not_attempted" if kind == "practice" else "passed")
+            shutil.copyfile(source, target / (kind + ".ipynb"))
+            shutil.copyfile(verified / (kind + "-executed.ipynb"), target / (kind + "-executed.ipynb"))
+        shutil.copyfile(verified / "summary.json", target / "practice-verification.json")
     for source, name in [
         (ROOT / "data/samples/network-events/events.csv", "events.csv"),
         (ROOT / "data/schemas/network-events.schema.json", "network-events.schema.json"),

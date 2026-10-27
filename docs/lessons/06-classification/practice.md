@@ -1,39 +1,69 @@
-# Module 6 practice and reflection
+# Module 6: independent implementation practice
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Use [concepts](concepts.md) and [guided construction](guided.md) first. Work in the existing module environment. These tasks support the same outcomes as the complete reference; your instructor's assessment requirements remain authoritative.
 
-## Core task P06
+## Start with the clean practice notebook
 
-Compare the validation candidates and explain the frozen threshold. Trace one actual held-out record through the shallow tree rules. Reconcile every confusion count with the final prediction table, then write a review recommendation that distinguishes a taste-rating label from a certification.
+- [Practice notebook](https://ntious.github.io/ml_ai_it/downloads/module06/practice.ipynb "site-download:module06/practice.ipynb") — complete three function bodies and record predictions.
+- In a source checkout: `notebooks/practice/module06-practice.ipynb`.
+- The notebook must stay inside the complete source tree and use its installed package/kernel. It does not install dependencies for you.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+Run Setup, then define a function and run its check. `not_attempted` means the placeholder remains; `needs_revision` supplies feedback; `passed` covers the visible cases. Repeating a check replaces its earlier state. When all three pass, run the supplied real-development sandbox. Partial work deliberately skips that sandbox rather than pretending it ran.
 
-## Discussion or solo equivalent
+## Implement, check and explain
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+### Task 1: Confusion counts
 
-## Work with GenAI
+Implement `confusion_counts(actual, probability, threshold)` using the declared inclusive threshold. Return integer tp/fp/fn/tn.
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
 
-## Optional extension
+<details><summary>Hint if stuck on task 1</summary><p>Trace each actual-label/decision pair; four mutually exclusive counts must sum to the record count.</p></details>
 
-Declare a class-weight or tree-depth alternative before final evaluation. Use training-only cross-validation, then the same validation rule. Additional tuning is optional and needs fresh evaluation planning once the public final data have been viewed.
+### Task 2: Cost-sensitive threshold
 
-## Self-check and adaptable criteria
+Implement `choose_threshold(...)` using validation labels, all declared candidates and the minimum-cost rule. Equal costs choose the smallest threshold.
 
-| Outcome | Evidence to check |
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
+
+<details><summary>Hint if stuck on task 2</summary><p>Keep `(cost, threshold)` pairs so a stable ordering expresses both decisions.</p></details>
+
+### Task 3: Training-only classifier
+
+Implement `fit_classifier(train_x, train_y, new_x)`. Return the fitted `scaler`/`model` pipeline and one class-1 probability per new row.
+
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
+
+<details><summary>Hint if stuck on task 3</summary><p>Fit the scaler only on training. Locate class 1 in the fitted class ordering before selecting its probability column.</p></details>
+
+## Transfer with less support
+
+Consider these authored alert records, not measured operational evidence:
+
+| Host | Day | Score | Investigation label availability |
+| --- | --- | --- | --- |
+| A | Monday | 0.7 | Wednesday |
+| A | Tuesday | 0.8 | Thursday |
+| B | Tuesday | 0.4 | Thursday |
+
+You must decide on Tuesday. Identify labels unavailable for training that day, explain a repeated-host leakage risk and specify the additional records needed for a credible evaluation. Explain why these three rows cannot establish operational accuracy. Propose one false-alert workload question for the investigator.
+
+After the complete reference study, trace one row through the exported shallow-tree rules. Explain each branch and why a predictive feature is not automatically causal.
+
+## Evidence for the unchanged outcomes
+
+| Outcome | Evidence to retain |
 | --- | --- |
-| M06.1 | Define the positive class and explain confusion counts, precision, recall, and balanced accuracy. |
-| M06.2 | Fit and compare a dummy classifier, logistic model, and depth-limited trees using validation only. |
-| M06.3 | Explain a tree path and distinguish predictive importance from causation. |
-| M06.4 | Justify group boundaries and a decision threshold before final evaluation. |
-| M06.5 | Communicate error trade-offs and limits of the chosen label. |
+| M06.1 | Confusion function, total reconciliation and independently calculated precision/recall |
+| M06.2 | Pipeline, fair training-prior comparison and complete-reference dummy/logistic/tree comparison |
+| M06.3 | One explained path through the exported shallow tree; importance-versus-causation statement |
+| M06.4 | Validation-only threshold choice, group/time rationale and final-freeze explanation |
+| M06.5 | Decision memo with misses, false alarms, label meaning and a concrete limitation |
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Keep your changed code, one hand-checked numerical claim, expected versus observed output, one diagnosed failure and a short decision memo. Record source/environment/command evidence when using real data. Interpretive reading alone does not replace an implementation outcome.
 
-## Required independent construction
+## Get feedback, then revisit
 
-Reconstruct the confusion counts and explain a threshold choice using validation. Implement one predefined alternative on development data; freeze before a planned final evaluation.
+Open [practice solutions](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use [recorded-study feedback](feedback.md) after the complete reference run.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+If using GenAI, keep a short disclosure of the help used and what you verified. Be able to explain and change the code independently; an equivalent no-assistant route uses the same hints and feedback. Never upload student records or credentials.

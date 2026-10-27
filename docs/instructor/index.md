@@ -44,3 +44,7 @@ Core Windows/Linux execution and Linux CPU framework execution have distinct sco
 ## Author and extend
 
 Use the [reusable templates](authoring.md) to build consistent lessons, cases, adoption records, and evidence-based accessibility reviews.
+
+## Observe the applied teaching prototype
+
+Use the [pilot protocol](teaching-prototype-pilot.md) and [owner/independent-review handoff](../maintenance/reviews/applied-teaching-prototype-handoff.md) for Modules 5, 6 and 8. Their outcome text is unchanged. Technical solution execution is recorded separately from human learner evidence; the human pilot remains pending.

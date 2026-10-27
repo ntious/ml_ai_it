@@ -12,6 +12,12 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M06.4:** Justify group boundaries and a decision threshold before final evaluation.
 - **M06.5:** Communicate error trade-offs and limits of the chosen label.
 
+## Learning sequence for this module
+
+Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
+
+The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract. Human learner piloting of this prototype is pending.
+
 ## Entry support and topics
 
 Use the [foundation bridge](foundation.md) if these concepts are new. Basic Python/functions/files and the train/validation/test distinction are assumed with support from [Module 2](../02-python-workflows/index.md) and [Module 5](../05-regression/index.md).

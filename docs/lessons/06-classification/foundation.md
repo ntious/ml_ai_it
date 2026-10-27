@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 X is rows by chemistry inputs. y is the declared rating threshold. Fit the scaler and logistic parameters on training only. A score needs a decision threshold; changing it affects both false positives and false negatives.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue at an applied pace
+
+Use the [concept sequence](concepts.md) for the intermediate explanation before [guided construction](guided.md). Optional open readings are selected there; mathematical proofs are not an added core requirement.

@@ -1,45 +1,38 @@
 # Module 8: guided construction and mastery
 
-Use this after the [foundation bridge](foundation.md) and before the complete [walkthrough](index.md). Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
+Start with the [foundation bridge](foundation.md) and [applied concept sequence](concepts.md). This is the worked stage; the next stage removes implementation support. Use the existing environment for this module.
 
-## Worked concept
+## Predict before running
 
-For x=[1,2], w=[.5,-1] and bias .5, the weighted sum is -1 and ReLU returns 0. A sigmoid maps a number into 0–1. A batch of 32 wine observations has shape (32,11), hidden values (32,16), and output (32,1). The network has 11*16+16+16+1=209 parameters. An epoch visits training examples; a batch drives one update.
+The actual label is 1. Predict whether this small update raises or lowers its probability and loss. Write what each array dimension represents. This demonstrates one logistic-output update; the hidden-layer derivatives are computed by the framework.
 
-## Predict and construct
-
-Predict the printed values, shape or rejection before running. Use the documented environment. The notebook contains this same runnable construction cell.
+## Follow a small worked implementation
 
 ```python
 import numpy as np
-learning_x = np.array([[1.,2.]])
-learning_w = np.array([[.5],[-1.]])
-learning_z = learning_x @ learning_w + .5
-print("weighted sum", learning_z, "ReLU", np.maximum(0,learning_z))
-learning_p = 1/(1+np.exp(-learning_z))
-print("sigmoid", learning_p)
-assert learning_z.shape == (1,1) and learning_z.item() == -1
-learning_gradient = (learning_p - 1) * learning_x
-learning_updated = learning_w - .1 * learning_gradient.T
-print("weights after one illustrative logistic-loss update", learning_updated)
+x = np.array([[1., 2.]])
+w = np.array([[.5], [-1.]])
+bias = .5
+before = 1 / (1 + np.exp(-(x @ w + bias)))
+gradient = (before - 1) * x   # one positive label; illustrative output-layer gradient
+updated = w - .1 * gradient.T
+after = 1 / (1 + np.exp(-(x @ updated + bias)))
+print("Probability before/after:", before.item(), after.item())
+print("Positive-label loss before/after:", -np.log(before.item()), -np.log(after.item()))
 ```
 
-## Complete with less support
+## Change one thing and explain
 
-In a separate development cell construct the 11-input/16-hidden/1-output TensorFlow model. Print and explain every shape and parameter count; make one declared width change before final evaluation.
+Use a negative label instead: replace the target 1 by 0 in the gradient, then compare the negative-label loss `-log(1-p)` before and after. Reset before independent practice. Explain why a very large step might behave differently.
 
-Cover the worked code, implement the central step again, and explain its inputs, outputs and boundary. Keep development experiments separate from final evaluation. Having already viewed a public final report, treat a rerun as rehearsal; a fresh generalization claim needs a new evaluation design.
+Record the prediction, actual output and explanation. If they differ, identify the line or assumption responsible instead of simply replacing your answer.
 
-## Debug a plausible misconception
+## Reconstruct with less support
 
-Can the lowest training-loss epoch be the wrong checkpoint? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Open [independent practice](practice.md). Implement the three functions in its starter notebook. Visible checks give actionable feedback; solutions are separate. Preserve your attempted code and reasoning before inspecting a solution.
 
-## Independent transfer
+## Connect to the complete study
 
-Explain when a simple linear model is preferable to a larger network despite its smaller capacity.
+After practice, use the [complete reference walkthrough](index.md). Its real-data protocol, baseline comparison, final evaluation and artifacts remain the module reference. The small sandbox is development practice and does not replace that evidence.
 
-## Minimum mastery evidence
-
-Submit or retain your changed executable code, one independently checked numerical claim, expected versus observed output, one diagnosed failure and a short decision/limitation explanation. Name the module outcomes each artifact supports. Interpretation-only work can demonstrate reasoning, but implementation outcomes require an executed and explained modification. A screenshot or copied report alone is insufficient.
-
-Developing: expected report reproduced but the central operation cannot be explained or changed. Meets: an independently explained change, reconciled evidence and preserved evaluation boundary. Extends: a predeclared experiment or transfer with measured tradeoffs; extra complexity alone is insufficient.
+Use [practice solutions](solutions.md) for misconception-specific feedback and [recorded-study feedback](feedback.md) to interpret the complete study. The [pilot guide](../../instructor/teaching-prototype-pilot.md) distinguishes technical verification from observed learner mastery.

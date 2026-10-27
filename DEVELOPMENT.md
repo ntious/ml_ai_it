@@ -4,6 +4,10 @@ Use this guide to reproduce edition 0.7.0 and validate changes. Learners should 
 
 ## Keep two environments
 
+The applied teaching prototype adds separate practice/solution notebooks for Modules 5, 6 and 8. Run `python scripts/check_practice.py --group core --kernel ml-ai-core` in the core environment and `python scripts/check_practice.py --group frameworks --kernel ml-ai-frameworks` in the framework environment before building the reading site. The checker preserves clean source, verifies unchanged outcome hashes and records unfinished starter feedback separately from completed solution/sandbox execution. The site build rejects stale practice source identities. Regenerate the original explanatory SVGs with `python scripts/build_teaching_figures.py`; exact-value tables remain in the lessons.
+
+Use the [pilot protocol](docs/instructor/teaching-prototype-pilot.md) for human observation and the [prototype review handoff](docs/maintenance/reviews/applied-teaching-prototype-handoff.md) for implementation review. These are verification procedures, not claims that a human pilot has occurred.
+
 Use Python 3.12 for the reference profiles. From the complete checkout, scripts/bootstrap.py installs either core or frameworks. Framework execution uses Linux CPU. Do not combine the core and framework constraint files: they exercise different NumPy/TensorFlow combinations. The Windows core job in the workflow provides its exact Windows commands.
 
 ```sh

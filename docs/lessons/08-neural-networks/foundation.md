@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 For x=[1,2], w=[.5,-1] and bias .5, the weighted sum is -1 and ReLU returns 0. A sigmoid maps a number into 0–1. A batch of 32 wine observations has shape (32,11), hidden values (32,16), and output (32,1). The network has 11*16+16+16+1=209 parameters. An epoch visits training examples; a batch drives one update.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue at an applied pace
+
+Use the [concept sequence](concepts.md) for the intermediate explanation before [guided construction](guided.md). Optional open readings are selected there; mathematical proofs are not an added core requirement.

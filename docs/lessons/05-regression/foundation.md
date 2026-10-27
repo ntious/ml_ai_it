@@ -29,3 +29,7 @@ A pipeline keeps learned preprocessing and the estimator together. Training lear
 A pipeline cannot repair an unavailable feature or a badly designed time split. You still need a forecast origin, a feature-availability audit, and a split rationale.
 
 Return to [Module 5](index.md), or review [Python structures and paths](../02-python-workflows/foundation.md).
+
+## Continue at an applied pace
+
+Use the [concept sequence](concepts.md) for the intermediate explanation before [guided construction](guided.md). Optional open readings are selected there; mathematical proofs are not an added core requirement.

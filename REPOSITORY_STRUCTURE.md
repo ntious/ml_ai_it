@@ -11,10 +11,11 @@ Support complete beginners through advanced optional work; let an instructor lin
 | Path | Responsibility | What belongs elsewhere |
 | --- | --- | --- |
 | curriculum/modules.json | Canonical 14-module paths, profiles, titles, and required pages | Official syllabus wording is owner-verified, not inferred |
-| docs/lessons/ | Six-page teaching package per module | Restricted Canvas tasks and submissions |
+| docs/lessons/ | Registered teaching pages; Modules 5, 6 and 8 add applied concepts and separate practice feedback | Restricted Canvas tasks and submissions |
 | src/practical_ml_ai/ | Shared validation, analysis, learning, inference, and reporting behavior | Duplicated algorithms in notebooks |
 | examples/ | Thin, commented script entry points | Copied model implementations |
 | notebooks/lessons/ | Clean, commented, independently executable tutorials | Generated execution state in source control |
+| notebooks/practice/ and curriculum/practice.json | Separate starter/solution notebooks, visible task contracts and preserved-outcome identities for the teaching prototype | Claims that reference-solution execution establishes learner mastery |
 | projects/phishing-triage/ | Separate optional capstone configuration, CLI, notebook and annotated report | Generated runs, downloaded data or mandatory module prerequisites |
 | docs/advanced/ | Optional tuning, stability, evaluation and assessment investigations | Claims that proposed extensions were already executed |
 | apps/ | Local interactive teaching interface | Public production service |

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "modules": [
+    {
+      "id": 5,
+      "slug": "05-regression",
+      "profile": "core",
+      "practice": "notebooks/practice/module05-practice.ipynb",
+      "solutions": "notebooks/practice/module05-solutions.ipynb",
+      "checks": [
+        "m05_residuals",
+        "m05_persistence",
+        "m05_pipeline"
+      ],
+      "outcomes_sha256": "11b2d8ea05a23ef44104d9358a43c1e2f2478b0bfe3594632719d8e422199c00"
+    },
+    {
+      "id": 6,
+      "slug": "06-classification",
+      "profile": "core",
+      "practice": "notebooks/practice/module06-practice.ipynb",
+      "solutions": "notebooks/practice/module06-solutions.ipynb",
+      "checks": [
+        "m06_confusion",
+        "m06_threshold",
+        "m06_pipeline"
+      ],
+      "outcomes_sha256": "63465598da3a4261215909bd9c497c55f587b097dcdd3c74d651ad17ba04056d"
+    },
+    {
+      "id": 8,
+      "slug": "08-neural-networks",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module08-practice.ipynb",
+      "solutions": "notebooks/practice/module08-solutions.ipynb",
+      "checks": [
+        "m08_dense",
+        "m08_checkpoint",
+        "m08_network"
+      ],
+      "outcomes_sha256": "c6943249084f77c399436980a66036708956dde073edcf012079632ca5147a0c"
+    }
+  ]
+}

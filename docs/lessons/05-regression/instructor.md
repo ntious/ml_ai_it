@@ -31,3 +31,7 @@ These labels follow the separate curriculum planning register, not universal cou
 CI exercises real-data download/workflow, synthetic behavior tests, notebook code, and site/report generation. Consult DEVELOPMENT.md and commit-specific results. Notebook code checks are not interface usability tests.
 
 Reports supply named values, scoped/captioned tables, CSV/text evidence, and descriptions alongside optional plots. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Provide a private help route and test actual learner tasks before requiring an interface.
+
+## Teaching prototype: explanation, practice and feedback
+
+This module now has an intermediate concepts page and three independently completed functions. Use the [pilot protocol](../../instructor/teaching-prototype-pilot.md) to observe understanding and support needs. Map learner artifacts with the [practice evidence table](practice.md#evidence-for-the-unchanged-outcomes). Visible code checks and solution execution are technical evidence; review the learner's reasoning and transfer separately. Preserve the existing outcomes and official assessment rules.
