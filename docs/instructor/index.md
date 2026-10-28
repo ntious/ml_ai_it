@@ -47,4 +47,4 @@ Use the [reusable templates](authoring.md) to build consistent lessons, cases, a
 
 ## Observe the applied teaching prototype
 
-Use the [pilot protocol](teaching-prototype-pilot.md) and [owner/independent-review handoff](../maintenance/reviews/applied-teaching-prototype-handoff.md) for Modules 5, 6 and 8. Their outcome text is unchanged. Technical solution execution is recorded separately from human learner evidence; the human pilot remains pending.
+Use the [pilot protocol](teaching-prototype-pilot.md) and [owner/independent-review handoff](../maintenance/reviews/applied-teaching-prototype-handoff.md) for Modules 5, 6 and 8, which add concept figures and a real-data sandbox. The other modules have practice and solution notebooks with authored checks; the same protocol applies to them. Outcome text is unchanged. Technical solution execution is recorded separately from human learner evidence; the human pilot remains pending.

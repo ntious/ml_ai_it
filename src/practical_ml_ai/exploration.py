@@ -185,8 +185,13 @@ def render_charts(frame: pd.DataFrame, tables: dict[str, pd.DataFrame], output_d
         save(fig, "axis_comparison")
 
 
+def _one_decimal(value):
+    # Text summaries round for reading; summary.json keeps full precision.
+    return "unavailable" if value is None else f"{value:.1f}"
+
+
 def describe_summary(summary: dict) -> str:
-    lines = ["Synthetic workload exploration", f"Input rows: {summary['input_rows']}", f"Distinct observations: {summary['observations']}", f"Exact duplicates removed: {summary['exact_duplicates_removed']}", f"Labels normalized: {summary['labels_normalized']}", f"Total requests: {summary['total_requests']}", f"Observed latency values: {summary['observed_latency']}", f"Unavailable latency values: {summary['missing_latency']}", f"Mean daily service p95 (ms): {summary['mean_daily_service_p95_ms']}", f"Median daily service p95 (ms): {summary['median_daily_service_p95_ms']}", f"IQR investigation flags retained: {len(summary['flagged_observations'])}", "Descriptive synthetic evidence; no causal, production, or model-performance claim."]
+    lines = ["Synthetic workload exploration", f"Input rows: {summary['input_rows']}", f"Distinct observations: {summary['observations']}", f"Exact duplicates removed: {summary['exact_duplicates_removed']}", f"Labels normalized: {summary['labels_normalized']}", f"Total requests: {summary['total_requests']}", f"Observed latency values: {summary['observed_latency']}", f"Unavailable latency values: {summary['missing_latency']}", f"Mean daily service p95 (ms): {_one_decimal(summary['mean_daily_service_p95_ms'])}", f"Median daily service p95 (ms): {_one_decimal(summary['median_daily_service_p95_ms'])}", f"IQR investigation flags retained: {len(summary['flagged_observations'])}", "Descriptive synthetic evidence; no causal, production, or model-performance claim."]
     return "\n".join(lines) + "\n"
 
 

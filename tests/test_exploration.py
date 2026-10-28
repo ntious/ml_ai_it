@@ -166,6 +166,14 @@ class ExplorationTests(unittest.TestCase):
                 run_exploration(path, directory)
             self.assertEqual(path.read_bytes(), SAMPLE.read_bytes())
 
+    def test_text_summary_rounds_for_reading_while_json_keeps_precision(self):
+        from practical_ml_ai.exploration import describe_summary
+        summary, _ = summarize_workload(*read_workload(SAMPLE))
+        text = describe_summary(summary)
+        self.assertIn("Mean daily service p95 (ms): 38.7\n", text)
+        self.assertNotIn("38.695", text)
+        self.assertAlmostEqual(summary["mean_daily_service_p95_ms"], 38.69565217391305)
+
 
 if __name__ == "__main__":
     unittest.main()

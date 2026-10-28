@@ -30,7 +30,7 @@ Use the module's foundation page for worked arithmetic and guided construction f
 
 | Term | Meaning and example | Continue |
 | --- | --- | --- |
-| Kernel | The Python process executing notebook cells; restart clears its variables | [Setup](../QUICKSTART.md) |
+| Kernel | The Python process executing notebook cells; restart clears its variables. Course notebooks use **Python (course core)** or **Python (course frameworks)** | [Notebook setup](../QUICKSTART.md#notebook-option) |
 | Boolean | True or False, such as `85 > 80` | [Module 1](lessons/01-foundations/index.md) |
 | JSON | A text format for structured values, such as `{"label":"spam"}` | [Module 2](lessons/02-python-workflows/index.md) |
 | Pipeline | Ordered transformations and a model fitted together on training data | [Module 5](lessons/05-regression/concepts.md) |

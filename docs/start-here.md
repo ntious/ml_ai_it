@@ -12,7 +12,7 @@ That course teaches notebook use, values, decisions, loops, lists, functions and
 
 1. Find a downloaded folder and identify its README. Explain what folder a relative path starts from.
 2. In Python, predict `int("12") + 3` and explain why `"12" + "3"` differs.
-3. Trace `total = 0;` followed by a loop adding values from `[2, 4, 6]`.
+3. Trace `total = 0` followed by a `for` loop that adds each value from `[2, 4, 6]` to `total`.
 4. Write a function that returns twice an input; call it on 5. Explain return versus print.
 5. Retrieve the minutes from `{"minutes": 15}` and explain how a list of these records differs from one dictionary.
 6. Calculate the mean and median of `[2, 3, 10]`. Does a missing observation equal zero?
