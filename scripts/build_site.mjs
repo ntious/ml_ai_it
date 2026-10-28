@@ -34,7 +34,8 @@ const MAINTAINER_ONLY = ['maintainers.html', 'review-guide.html', 'release-check
   'maintenance/development.html', 'maintenance/architecture.html'];
 const maintainerOnly = output => MAINTAINER_ONLY.some(prefix => output === prefix || (prefix.endsWith('/') && output.startsWith(prefix)));
 const pages = walk(path.join(root, 'docs')).filter(p => p.endsWith('.md')).map(source => ({
-  source, output: path.relative(path.join(root, 'docs'), source).replace(/\.md$/, '.html')
+  // Output paths are URLs, so use forward slashes on every platform.
+  source, output: slash(path.relative(path.join(root, 'docs'), source)).replace(/\.md$/, '.html')
 }));
 pages.push({ source: path.join(root, 'QUICKSTART.md'), output: 'setup/quickstart.html' });
 pages.push({ source: path.join(root, 'ACCESSIBILITY.md'), output: 'accessibility/policy.html' });
