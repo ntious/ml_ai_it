@@ -21,7 +21,7 @@ jobs:
               'development/github-pages', 'development/module-03-foundation',
               'docs/independent-review-wording', 'docs/learner-readme-and-hygiene',
               'feature/capstone-exemplar', 'improvement/mixed-background-learning',
-              'improvement/phase-a-publication', 'improvement/phase-b-frameworks'
+              'improvement/applied-teaching-prototype', 'improvement/phase-a-publication', 'improvement/phase-b-frameworks'
             ];
             const rows = [];
             for (const branch of allowed) {
