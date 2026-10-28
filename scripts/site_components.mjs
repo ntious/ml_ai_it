@@ -30,17 +30,18 @@ export function notebookDownloads(modules, relative) {
 
 export function courseOutline(modules, current, relative) {
   return '<aside class="course-sidebar"><details class="course-outline" data-course-outline><summary>Course outline</summary><nav aria-label="Course outline"><ol>' +
-    modules.map(module => '<li><a href="' + escape(relative(lessonURL(module))) + '"' +
+    modules.map(module => '<li><a href="' + escape(relative(lessonURL(module))) + '" data-progress-module="' + escape(lessonURL(module).replace(/index\.html$/, '')) + '"' +
       (current?.id === module.id ? ' aria-current="location" class="current-module"' : '') +
-      '><span class="module-number" aria-hidden="true">' + String(module.id).padStart(2, '0') + '</span><span><span class="visually-hidden">Module ' + module.id + ': </span>' + escape(module.title) + '</span></a></li>').join('') +
+      '><span class="module-number" aria-hidden="true">' + String(module.id).padStart(2, '0') + '</span><span><span class="visually-hidden">Module ' + module.id + ': </span>' + escape(module.title) + '</span><span class="outline-progress" data-progress-count hidden></span></a></li>').join('') +
     '</ol></nav></details><p class="sidebar-help">' + link(relative('setup/index.html'), 'Setup and troubleshooting') + '<br>' + link(relative('accessibility/index.html'), 'Access routes and support') + '</p></aside>';
 }
 
 export function moduleTabs(module, output, relative) {
-  const labels = {'concepts.md': 'Applied concepts', 'solutions.md': 'Practice solutions', 'guided.md': 'Guided construction', 'index.md': 'Overview', 'foundation.md': 'Foundation', 'practice.md': 'Practice', 'feedback.md': 'Feedback', 'instructor.md': 'Teaching notes'};
+  // Short labels keep all eight pages on one row at desktop widths.
+  const labels = {'concepts.md': 'Concepts', 'solutions.md': 'Solutions', 'guided.md': 'Guided', 'index.md': 'Overview', 'foundation.md': 'Foundation', 'practice.md': 'Practice', 'feedback.md': 'Feedback', 'instructor.md': 'Teaching notes'};
   return '<nav class="lesson-tabs" aria-label="Module pages"><ul>' + module.pages.map(name => {
     const target = module.lesson.replace(/index\.md$/, name).replace(/^docs\//, '').replace(/\.md$/, '.html');
-    return '<li><a href="' + escape(relative(target)) + '"' + (output === target ? ' aria-current="page"' : '') + '>' + labels[name] + '</a></li>';
+    return '<li><a href="' + escape(relative(target)) + '" data-progress-page="' + escape(target) + '"' + (output === target ? ' aria-current="page"' : '') + '>' + labels[name] + '</a></li>';
   }).join('') + '</ul></nav>';
 }
 
@@ -51,4 +52,21 @@ export function modulePager(modules, current, relative) {
     (previous ? link(relative(lessonURL(previous)), 'Previous: Module ' + previous.id + ' — ' + previous.title) : '<span></span>') +
     (next ? link(relative(lessonURL(next)), 'Next: Module ' + next.id + ' — ' + next.title) : link(relative('examples.html'), 'Continue with worked examples')) +
     '</nav>';
+}
+
+// Original diagram of the evaluation loop the course teaches; colours follow the site theme.
+export function heroFigure() {
+  const steps = [['1', 'Decide', 'task, user and error costs'], ['2', 'Baseline', 'a simple method first'],
+                 ['3', 'Validate', 'choose on development data'], ['4', 'Test once', 'report the locked choice']];
+  const cards = steps.map(([number, title, note], index) => {
+    const y = 18 + index * 74;
+    return '<g class="hero-step" transform="translate(0 ' + y + ')"><rect x="22" y="0" width="300" height="58" rx="12"/>' +
+      '<circle class="hero-badge" cx="54" cy="29" r="15"/><text class="hero-number" x="54" y="34" text-anchor="middle">' + number + '</text>' +
+      '<text class="hero-title" x="84" y="25">' + title + '</text><text class="hero-note" x="84" y="45">' + note + '</text></g>' +
+      (index < steps.length - 1 ? '<path class="hero-arrow" d="M172 ' + (y + 60) + 'v12"/>' : '');
+  }).join('');
+  return '<figure class="hero-figure"><svg viewBox="0 0 344 330" role="img" aria-labelledby="hero-figure-title hero-figure-desc">' +
+    '<title id="hero-figure-title">How every result in the course is checked</title>' +
+    '<desc id="hero-figure-desc">Four steps: decide the task and error costs, try a simple baseline first, choose settings on development data, then test the locked choice once. Poor results stay visible.</desc>' +
+    cards + '<text class="hero-foot" x="172" y="322" text-anchor="middle">Poor results stay visible.</text></svg></figure>';
 }
