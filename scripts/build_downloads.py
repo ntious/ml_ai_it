@@ -106,25 +106,41 @@ def publishable(relative):
             and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in path.parts))
 
 
-def source_members(root=ROOT):
-    """Archive members: tracked files in a Git checkout, so untracked notes or outputs never ship.
+class SourceListUnavailable(RuntimeError):
+    """The tracked-file list cannot be verified, so no archive is written."""
 
-    An extracted archive has no Git metadata; it falls back to the allowlist walk.
+
+def _git(root, *arguments):
+    return subprocess.run(["git", *arguments], cwd=root, capture_output=True, check=True).stdout.decode()
+
+
+def source_members(root=ROOT):
+    """Archive members: tracked files in this course's own Git checkout, so untracked notes or outputs never ship.
+
+    Without a verifiable tracked-file list there is no safe way to tell course source from local
+    files, so this refuses rather than scanning directories.
     """
-    root = Path(root)
+    root = Path(root).resolve()
+    advice = "Build the source archive from a Git checkout of the course (for example, a fresh clone)."
     try:
-        listed = subprocess.run(["git", "ls-files", "-z"], cwd=root, capture_output=True, check=True).stdout.decode()
-        names = [name for name in listed.split(chr(0)) if name]
-    except (OSError, subprocess.CalledProcessError):
-        names = [name for name in ROOT_FILES if (root / name).is_file()]
-        for folder in SOURCE_FOLDERS:
-            names.extend(p.relative_to(root).as_posix() for p in (root / folder).rglob("*") if p.is_file())
-    return sorted(root / name for name in set(names) if publishable(name))
+        top = Path(_git(root, "rev-parse", "--show-toplevel").strip()).resolve()
+        listed = _git(root, "ls-files", "-z")
+    except OSError as error:
+        raise SourceListUnavailable(f"Git could not be run ({error}). {advice}") from error
+    except subprocess.CalledProcessError as error:
+        raise SourceListUnavailable(f"{root} is not a Git checkout, or Git failed. {advice}") from error
+    if top != root:
+        # An extracted copy placed inside another repository would otherwise list that repository's files.
+        raise SourceListUnavailable(f"{root} is inside another repository ({top}), not the course's own checkout. {advice}")
+    names = {name for name in listed.split(chr(0)) if name}
+    if "README.md" not in names or "pyproject.toml" not in names:
+        raise SourceListUnavailable(f"The tracked files in {root} do not include the course's README.md and pyproject.toml. {advice}")
+    return sorted(root / name for name in names if publishable(name))
 
 
 def build_source_archive(path):
     """Write the complete course source from the publication allowlist; no runs or caches."""
-    files = source_members()
+    files = source_members(ROOT)
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for source in sorted(set(files)):
@@ -137,12 +153,19 @@ def build_source_archive(path):
     return Path(path)
 
 
-if __name__ == "__main__":
+def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description="Build reading-site downloads, or only the course source archive.")
     parser.add_argument("--source-only", metavar="ZIP", help="Write just the source archive (for an instructor to share when the site is unavailable).")
-    arguments = parser.parse_args()
+    arguments = parser.parse_args(argv)
     if arguments.source_only:
-        print("Wrote", build_source_archive(arguments.source_only))
+        try:
+            print("Wrote", build_source_archive(arguments.source_only))
+        except SourceListUnavailable as error:
+            raise SystemExit(f"No archive written: {error}")
     else:
         build()
+
+
+if __name__ == "__main__":
+    main()
