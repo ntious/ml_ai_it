@@ -12,7 +12,7 @@ For an authored rule that escalates priority at least 3, priorities 2, 3 and 4 p
 
 ## Separate development from the final question
 
-Training fits parameters; validation supports choices; a final test estimates the locked procedure on held-out examples. Once you use the final answer to select a threshold, that answer has become development evidence. A new random seed does not erase that reuse. Save the original question, the decision and the evidence needed to contradict it.
+This is a preview: [Module 5](../05-regression/index.md) builds these split roles with a real dataset. Training fits parameters; validation supports choices; a final test estimates the locked procedure on held-out examples. Once you use the final answer to select a threshold, that answer has become development evidence. A new random seed does not erase that reuse. Save the original question, the decision and the evidence needed to contradict it.
 
 ## Trace a small case
 

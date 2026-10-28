@@ -15,7 +15,7 @@ Use an inclusive boundary; do not return the priority itself.
 
 ## Construct `partition_role`
 
-Return fit, choose or evaluate for train, validation or test. Predict the result on `partition_role('train')`, implement it and call `m01_partition_role` through the notebook check. Then add a changed case and explain which assumption it tests.
+This task previews the split roles that [Module 5](../05-regression/index.md) develops with real data; it supports reasoning about evidence rather than a separate Module 1 outcome. Return fit, choose or evaluate for train, validation or test. Predict the result on `partition_role('train')`, implement it and call `m01_partition_role` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for partition_role</summary>
