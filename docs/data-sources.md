@@ -51,3 +51,11 @@ Data rights and model licenses are distinct. Preserve credits and disclose trans
 ## Authored agent controls
 
 `data/samples/agent-requests.csv` is original teaching material: labelled demonstration, validation and test requests. It contains no real user interactions and is not an external dataset. Module 14 returns statistics from the attributed UCI wine records; keep that evidence separate from the authored routing controls.
+
+## RT-IoT2022 completed-flow transfer
+
+S., B. & Nagapadma, R. (2023). RT-IoT2022 [Dataset]. UCI Machine Learning Repository. [DOI](https://doi.org/10.24432/C5P338). [Official source](https://archive.ics.uci.edu/dataset/942/rt-iot2022), CC BY 4.0.
+
+The inspected archive contains 123,117 records and 12 labels. Reviewed archive SHA-256: `bcaa24d62abbb1215be576d5cf9c02dfcb0bb7c4c2f5a00e03055afaa1ed109e`. The study selects five completed-flow inputs, excludes the unnamed index and derives a binary attack target. Identical selected-input profiles remain together; capture-session, device and temporal independence cannot be established from the supplied fields.
+
+[Run and download instructions](../projects/rt-iot-triage/README.md) cover the fixed archive and optional `ucimlrepo` export. Both download from UCI into ignored local storage. The client export records its own retrieval metadata and hashes; it is not silently substituted for the fixed archive. No RT-IoT records belong in Git.

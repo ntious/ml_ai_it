@@ -143,3 +143,7 @@ Maintainers should use [DEVELOPMENT.md](DEVELOPMENT.md) for the separate core/fr
 ## Maintainer and license
 
 Maintained by [Isaac K. Nti](https://github.com/ntious). Code is licensed under [MIT](LICENSE); original educational content is [CC BY 4.0 with component boundaries](OER_LICENSE.md). External datasets and models retain their own rights. Use [citation metadata](CITATION.cff) and cite the datasets/models used in your work.
+
+## Authorship and course relationship
+
+Isaac K. Nti developed these supplementary instructional materials for students in the University of Cincinnati course he teaches. The original explanations, activities, worked examples, code and supporting materials are distinguished from the university’s official course description, course learning outcomes and module learning outcomes, which he does not claim as his own. The resource supports those requirements; it does not replace the official syllabus. See [licensing and institutional boundaries](OER_LICENSE.md).
