@@ -31,7 +31,17 @@ MQTT_Publish, Thing_Speak and Wipro_bulb are the normal labels in the inspected 
 
 ## Evaluation and decisions
 
-Identical selected-feature profiles stay in one partition. A fixed split targeting 60/20/20 of unique input groups (row proportions differ when group sizes differ) supplies training, validation and final evaluation. Preprocessing is fitted on training only. Validation selects among four thresholds under an explicitly assumed 5:1 missed-attack/false-alert cost. Final evaluation compares logistic regression with always-review and never-review policies and reports the alert workload.
+Identical selected-feature profiles stay in one partition. A fixed split targeting 60/20/20 of unique input groups (row proportions differ when group sizes differ) supplies training, validation and final evaluation. Preprocessing is fitted on training only.
+
+Most flows in this capture are attacks, so reviewing every flow is a serious competitor. Validation therefore compares logistic regression at thresholds 0.05–0.95 (steps of 0.05, as in Module 8) with always-review and never-review policies, under an explicitly assumed 5:1 missed-attack/false-alert cost. The lowest validation cost is recommended; ties prefer fewer alerts. Validation also fixes the logistic threshold, so the model is still evaluated when a constant policy is recommended. Final evaluation reports all three frozen policies, their alert workload and assumed cost. summary.json records attack prevalence per partition and whether the chosen threshold lies at the edge of the candidate grid.
+
+## Recorded result and interpretation
+
+On the pinned archive, attacks are 89% of training, 87% of validation and 93% of final-test flows. Validation selected logistic regression at threshold 0.05, the lowest candidate: assumed cost 2,082 versus 2,542 for always-review. At the earlier fixed threshold of 0.2 the model missed 3,416 validation attacks (cost 17,118), which is why constant policies must be compared before a threshold is trusted.
+
+On the 32,742 final-test flows, the frozen logistic policy cost 63.9 per 1,000 flows, always-review 73.0 and never-review 4,635.2. The model still flags 954 of every 1,000 flows and 46% of normal flows, so it saves little analyst workload relative to reviewing everything. Because the selected threshold is at the grid edge, a lower threshold might cost less; investigate that with validation data only, not by revisiting these final results. High average precision (0.999) reflects ranking within this capture and does not settle the review decision.
+
+Use your own run's summary.json and evaluation.csv as evidence, and explain the comparison with always-review before recommending the model.
 
 The file supplies no explicit capture-session, device identity or timestamp suitable for independent grouping. Profile grouping prevents identical-input overlap but cannot remove shared-capture dependence. Results describe this retrospective partition; they cannot establish future-device or future-attack performance. Full-flow features are unavailable at connection start. Source scenario labels are not analyst-confirmed future incident outcomes.
 
