@@ -3,6 +3,7 @@
 Only explicitly selected trusted course notebooks call these checks. Each case
 uses small authored examples; passing does not establish independent mastery.
 """
+from pathlib import PurePath, PureWindowsPath
 import numpy as np
 
 
@@ -105,15 +106,22 @@ def _fixture_check(specification):
             return isinstance(actual, dict) and actual.keys() == expected.keys() and all(equivalent(actual[k], v) for k, v in expected.items())
         if isinstance(expected, list):
             return isinstance(actual, (list, tuple)) and len(actual) == len(expected) and all(equivalent(a, b) for a, b in zip(actual, expected))
-        return not isinstance(actual, bool) and math.isclose(float(actual), expected, rel_tol=1e-6, abs_tol=1e-7)
+        if isinstance(actual, bool) or not isinstance(actual, (int, float, np.integer, np.floating)):
+            return False
+        return math.isclose(float(actual), expected, rel_tol=1e-6, abs_tol=1e-7)
+
+    def normalize(actual):
+        # Windows and POSIX spellings of the same relative path are equivalent.
+        if specification.get('normalize') == 'posix_path' and isinstance(actual, (str, PurePath)):
+            return PureWindowsPath(actual).as_posix()
+        return actual
 
     def verify(function):
+        name = getattr(function, '__name__', '<lambda>')
         for arguments, expected in specification['cases']:
-            actual = function(*deepcopy(arguments))
-            if specification is CASES.get('m02_output_path'):
-                from pathlib import PureWindowsPath
-                actual = PureWindowsPath(actual).as_posix()
-            assert equivalent(actual, expected), specification['feedback'] + f" Input: {arguments!r}; observed: {actual!r}; expected: {expected!r}."
+            actual = normalize(function(*deepcopy(arguments)))
+            call = f"{name if name != '<lambda>' else 'function'}({', '.join(map(repr, arguments))})"
+            assert equivalent(actual, expected), specification['feedback'] + f" Call: {call}; observed: {actual!r}; expected: {expected!r}."
     return verify
 
 

@@ -95,6 +95,49 @@ class FormativeFeedbackTests(unittest.TestCase):
     def test_visible_feedback_includes_expected_value(self):
         self.assertIn('expected:', check('m01_partition_role', lambda name: 'Fit')['feedback'])
 
+    def test_posix_spellings_pass_and_wrong_or_missing_paths_are_explained(self):
+        from pathlib import Path, PurePosixPath
+        for function in [lambda root, run: (Path(root)/'runs'/run/'summary.json').as_posix(),
+                         lambda root, run: PurePosixPath(root, 'runs', run, 'summary.json')]:
+            self.assertEqual(check('m02_output_path', function)['state'], 'passed')
+        hardcoded = check('m02_output_path', lambda root, run: 'course/runs/trial-2/summary.json')
+        self.assertEqual(hardcoded['state'], 'needs_revision')
+        self.assertIn("expected: 'class/runs/baseline/summary.json'", hardcoded['feedback'])
+        self.assertEqual(check('m02_output_path', lambda root, run: None)['state'], 'needs_revision')
+
+    def test_feedback_names_the_failing_call(self):
+        def partition_role(name):
+            return 'Fit'
+        self.assertIn("Call: partition_role('train')", check('m01_partition_role', partition_role)['feedback'])
+
+    def test_non_numeric_result_gets_case_feedback_not_a_type_error(self):
+        feedback = check('m04_error_rate', lambda errors, requests: f'{errors}/{requests}')['feedback']
+        self.assertIn('zero denominator', feedback)
+        self.assertNotIn('float()', feedback)
+
+    def test_zero_first_lag_is_not_unavailable(self):
+        self.assertEqual(check('m05_persistence', lambda values: [0] + list(values[:-1]))['state'], 'needs_revision')
+
+    def test_generated_pipeline_step_names_are_explained(self):
+        from sklearn.impute import SimpleImputer
+        from sklearn.linear_model import LinearRegression
+        from sklearn.pipeline import make_pipeline
+        def unnamed(train_x, train_y, new_x):
+            model = make_pipeline(SimpleImputer(strategy='median'), LinearRegression()).fit(train_x, train_y)
+            return model, model.predict(new_x)
+        result = check('m05_pipeline', unnamed)
+        self.assertEqual(result['state'], 'needs_revision')
+        self.assertIn('make_pipeline', result['feedback'])
+
+    def test_authoring_record_matches_visible_cases(self):
+        import json
+        from pathlib import Path
+        from practical_ml_ai.practice_cases import CASES
+        record = json.loads((Path(__file__).resolve().parents[1] / 'curriculum/exercises.json').read_text(encoding='utf-8'))
+        self.assertEqual(set(record), set(CASES))
+        for name, case in CASES.items():
+            self.assertEqual((record[name]['cases'], record[name]['feedback']), (case['cases'], case['feedback']), name)
+
 
 if __name__ == '__main__':
     unittest.main()

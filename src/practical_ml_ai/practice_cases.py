@@ -1,6 +1,8 @@
 """Authored visible cases for course practice; no dataset or grading secrets."""
 CASES = {'m01_error_counts': {'cases': [[[[False, True, True], [True, False, True]], [1, 1]],
-                                [[[False, False], [False, False]], [0, 0]]],
+                                [[[False, False], [False, False]], [0, 0]],
+                                # Asymmetric errors distinguish false alerts from misses.
+                                [[[False, False, True], [True, True, True]], [2, 0]]],
                       'feedback': 'Count errors by their consequences, not only total accuracy.'},
  'm01_partition_role': {'cases': [[['train'], 'fit'],
                                   [['validation'], 'choose'],
@@ -10,8 +12,10 @@ CASES = {'m01_error_counts': {'cases': [[[[False, True, True], [True, False, Tru
                'feedback': 'Use an inclusive boundary; do not return the priority itself.'},
  'm02_observed_mean': {'cases': [[[[10, None, 20]], 15], [[[0, None]], 0], [[[None]], None]],
                        'feedback': 'Missing is not zero; zero is still observed.'},
- 'm02_output_path': {'cases': [[['course', 'trial-2'], 'course/runs/trial-2/summary.json']],
-                     'feedback': 'Keep run names separate from the source file.'},
+ 'm02_output_path': {'cases': [[['course', 'trial-2'], 'course/runs/trial-2/summary.json'],
+                               [['class', 'baseline'], 'class/runs/baseline/summary.json']],
+                     'normalize': 'posix_path',
+                     'feedback': 'Join root, runs, the run name and summary.json; keep outputs separate from source files.'},
  'm02_status_counts': {'cases': [[[[{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}]],
                                   {'closed': 1, 'open': 2}],
                                  [[[]], {}]],
@@ -98,6 +102,3 @@ CASES = {'m01_error_counts': {'cases': [[[[False, True, True], [True, False, Tru
                                 [['delete'], None]],
                       'feedback': 'An unsupported intent must not fall through to an unrelated '
                                   'answer.'}}
-
-# Asymmetric errors distinguish false alerts from misses.
-CASES["m01_error_counts"]["cases"].append([[[False, False, True], [True, True, True]], [2, 0]])

@@ -197,9 +197,16 @@
           "trial-2"
         ],
         "course/runs/trial-2/summary.json"
+      ],
+      [
+        [
+          "class",
+          "baseline"
+        ],
+        "class/runs/baseline/summary.json"
       ]
     ],
-    "feedback": "Keep run names separate from the source file."
+    "feedback": "Join root, runs, the run name and summary.json; keep outputs separate from source files."
   },
   "m03_parse_latency": {
     "name": "parse_latency",

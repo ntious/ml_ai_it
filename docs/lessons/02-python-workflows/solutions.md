@@ -1,6 +1,6 @@
 # Module 2: construction feedback
 
-Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module02/solutions.ipynb "site-download:module02/solutions.ipynb") or open `notebooks/practice/module02-solutions.ipynb` in the complete source tree.
+Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module02/solutions.ipynb "site-download:module02/solutions.ipynb") or open `notebooks/practice/module02-solutions.ipynb` in the complete source tree. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## `status_counts`
 
@@ -26,7 +26,7 @@ def observed_mean(values):
 
 ## `output_path`
 
-Keep run names separate from the source file. For `output_path('course', 'trial-2')`, the expected result is `'course/runs/trial-2/summary.json'`.
+Join root, runs, the run name and summary.json; keep outputs separate from source files. For `output_path('course', 'trial-2')`, the expected result is `'course/runs/trial-2/summary.json'`.
 
 ```python
 def output_path(root, run_name):
