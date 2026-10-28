@@ -102,8 +102,8 @@ The independent review of `fdd5a70` (October 28, 2026) reported findings F1–F1
 
 | ID | Observation | Status | Owner decision |
 | --- | --- | --- | --- |
-| N1 | `deployment.py` reports a zero-variance feature's shift as 0, while the practice `shift_score` returns unavailable | Documented in the Module 12 concepts page; code unchanged | Decide whether the service should report the shift as unavailable; this needs a framework run |
-| N2 | `curriculum/exercises.json` is an authoring record that no script reads | Kept; a test now keeps its cases and feedback equal to `practice_cases.py` | Decide whether to generate one from the other |
+| N1 | `deployment.py` reported a zero-variance feature's shift as 0, while the practice `shift_score` returns unavailable | Owner decision: report the standardized shift as unavailable with a reason, and the raw difference separately. Implemented as `mean_shift`; `batch_monitoring.csv` adds `standardized_shift_unavailable` | `tests/test_deployment_monitoring.py`; the Module 12 replay reproduces the recorded results | None |
+| N2 | `curriculum/exercises.json` is an authoring record that no script reads | Owner decision: keep the synchronization test for this correction cycle | `tests/test_practice.py` | Future refactor: one declarative source for shared exercise contracts, generating the duplicated material |
 | N3 | A deep extraction folder can exceed the Windows 260-character path limit while installing notebook dependencies | Reproduced in the reviewer's environment; the troubleshooting page advises a short folder | None beyond the existing note |
 
 Human learner piloting, workload measurement and assistive-technology testing have not been performed. Do not approve student delivery from these technical results alone.

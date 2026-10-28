@@ -8,6 +8,7 @@
 - RT-IoT transfer: validation compares the model with always-review and never-review over a wider fixed grid; prevalence and workload are reported (F4).
 - Setup: one kernel name per profile, ordered notebook steps, and a WSL Ubuntu 24.04 route for framework modules on Windows (F6).
 - Teaching pages: module-specific explanations, descriptive links and reasoning tasks for Modules 1–4, 7 and 9–14; a located worked research comparison; glossary, status and scope corrections (F5, F7, F8, F11–F14).
+- Module 12 monitoring reports a zero-variance feature's standardized shift as unavailable, with its raw mean difference, instead of 0.
 - Learning outcomes are unchanged. Merge, a passing CI run on the merged revision, and the owner and human-pilot actions in the owner review guide are required before release.
 
 Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.

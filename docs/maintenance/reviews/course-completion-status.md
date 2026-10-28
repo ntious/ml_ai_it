@@ -32,5 +32,5 @@ Each finding's disposition, evidence and remaining action is in section M of the
 ## Owner actions before student delivery
 
 1. Decide repository visibility and publication; then complete section J of the owner review guide from a signed-out browser.
-2. Decide items N1 and N2 in section M.
+2. Plan the future single-source refactor for exercise contracts (item N2 in section M).
 3. Run the learner pilot and accessibility sessions, and revise workload estimates from observed evidence.
