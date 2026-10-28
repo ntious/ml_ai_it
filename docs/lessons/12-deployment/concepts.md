@@ -16,12 +16,12 @@ Measure latency with its percentile definition, sample count and environment. A 
 
 ## Trace a small case
 
-The first operation is **valid_request**: Return True for exactly the expected keys, finite int/float values; reject bool. On authored arguments `valid_request({'x': 2}, ['x'])`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `valid_request({'x': 2}, ['x'])`, `valid_request({'x': True}, ['x'])` and `valid_request({'extra': 1, 'x': 2}, ['x'])` before running. Only the first meets the contract: a boolean is not a measurement, and extra fields are rejected rather than ignored. Then predict `shift_score(12, 10, 2)`: an absolute standardized difference of 1. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/model-service/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/model-service/scripts/run.py`. `service_contract.json` records the expected features and numeric bounds that `valid_request` enforces in miniature. `batch_monitoring.csv` reports each batch's largest standardized mean shift, using the training standard deviation as a fixed scale, as `shift_score` does. It also reports the mean prediction time, not a percentile. Apply your `nearest_rank` to the per-request `prediction_seconds` in `prediction_log.csv` to compare the two summaries. One difference to notice: for a feature with zero training variance, your function returns `None`, while the complete script reports a shift of 0 (`src/practical_ml_ai/deployment.py`). No wine feature has zero variance, so the recorded results are unaffected, but the two policies differ. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Further reading: deployment](https://developers.google.com/machine-learning/guides/rules-of-ml) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Google: Rules of Machine Learning](https://developers.google.com/machine-learning/guides/rules-of-ml), the rules on monitoring and on training–serving skew, explains why a deployed model needs checked inputs and an owner for alerts. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

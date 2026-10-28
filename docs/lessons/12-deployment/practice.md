@@ -35,6 +35,10 @@ Name the percentile convention and retain the tail request.
 
 </details>
 
+## Reason beyond the visible checks
+
+Compute `nearest_rank([0.010, 0.011, 0.012, 0.250], 0.95)` and the mean of the same four durations. Which summary would alert an owner to the slow request? How many requests do you need before the 95th percentile is no longer simply the maximum? The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Write a service response policy for an invalid request, a model outage and an alert without outcome labels. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

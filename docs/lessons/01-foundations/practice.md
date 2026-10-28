@@ -35,6 +35,10 @@ Count errors by their consequences, not only total accuracy.
 
 </details>
 
+## Reason beyond the visible checks
+
+Construct two prediction lists for the actual labels `[True, False, False]` that both have accuracy 2/3 but different error counts. Use `error_counts` to show the difference, then say which list you would prefer for a storage alert and why. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

@@ -31,10 +31,14 @@ def nearest_rank(values, percentile):
     return sorted(values)[math.ceil(percentile*len(values))-1]
 ```
 
+## Reasoning task feedback
+
+The 95th percentile is the value at position ceil(0.95 × 4) = 4, which is 0.250 s, while the mean is about 0.071 s and hides the slow request. Below 20 requests, ceil(0.95 × n) equals n, so the 95th percentile is the maximum. With 20 requests it is the second largest. Report the sample count with any percentile.
+
 ## Judge the explanation
 
 **Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
 
 ## Transfer feedback
 
-Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response rejects the invalid request with a reason, routes outages to the human fallback, and treats an input-shift alert as an investigation until delayed labels arrive. It names the owner and the rollback trigger. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.

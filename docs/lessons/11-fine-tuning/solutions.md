@@ -29,10 +29,14 @@ def changed_tensors(before, after):
     return [i for i,(a,b) in enumerate(zip(before,after)) if a != b]
 ```
 
+## Reasoning task feedback
+
+The adapter has 16 trainable values, the same as the frozen 4 × 4 matrix, so there is no saving at this size. The saving appears when the rank is much smaller than the layer dimensions: the course model's 576-wide query projection with rank 8 needs 9,216 values instead of 331,776. A changed tensor shows that training ran. Only held-out evaluation shows whether answers improved.
+
 ## Judge the explanation
 
 **Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
 
 ## Transfer feedback
 
-Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. A defensible response separates evidence that weights changed (update norm, changed tensors) from evidence about held-out quality. It proposes a validation-only comparison, such as another rank or step budget, declared before any new final evaluation. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.

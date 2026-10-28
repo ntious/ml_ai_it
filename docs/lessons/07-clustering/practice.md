@@ -35,6 +35,10 @@ Describe both support and feature level; IDs have no rank.
 
 </details>
 
+## Reason beyond the visible checks
+
+Write candidate inertia and silhouette values for K = 2, 3 and 4 for which "smallest inertia" and "highest validation silhouette" select different K. Explain why inertia alone tends to favour the largest K you allow. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

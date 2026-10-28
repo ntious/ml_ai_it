@@ -35,6 +35,10 @@ Do not condition accuracy on the outputs the parser accepted.
 
 </details>
 
+## Reason beyond the visible checks
+
+Three messages are all actually spam. The model returns `'{"label":"spam"}'`, `'spam'` and `'{"label":"ham"}'`. Compute `valid_fraction`, `end_to_end_accuracy`, and the accuracy you would report if you silently dropped malformed outputs. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Evaluate three changed message outputs including one malformed response. Explain why structural validity alone cannot justify automation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

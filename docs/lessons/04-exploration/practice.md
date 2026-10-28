@@ -35,6 +35,10 @@ Do not average daily percentages with unequal denominators.
 
 </details>
 
+## Reason beyond the visible checks
+
+Choose daily counts `[errors, requests]` for two days so that the average of the daily error rates differs from `weighted_rate`. Explain which number answers "what fraction of all requests failed?" The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

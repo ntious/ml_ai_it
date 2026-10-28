@@ -34,10 +34,14 @@ def output_path(root, run_name):
     return (Path(root)/"runs"/run_name/"summary.json").as_posix()
 ```
 
+## Reasoning task feedback
+
+The first is 0: one value was observed and it was zero. The second is `None`: nothing was observed. Printing 0 for the second would claim a measured average of zero minutes. A good report prints "no observed values" instead and keeps the count of observations beside every mean.
+
 ## Judge the explanation
 
 **Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
 
 ## Transfer feedback
 
-Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. A defensible response shows the unknown status appearing as its own key with count 1, all other counts unchanged and `tickets.csv` untouched. The new summary goes to a new run folder, so the original result stays comparable. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.

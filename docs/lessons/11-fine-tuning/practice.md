@@ -35,6 +35,10 @@ Demonstrate an actual parameter change; a new loss string is insufficient.
 
 </details>
 
+## Reason beyond the visible checks
+
+A rank-2 adapter on a 4 × 4 projection has matrices of shape 2 × 4 and 4 × 2. Use `trainable_count([[16, False], [8, True], [8, True]])` and compare the result with the frozen matrix. Explain when LoRA actually saves parameters, and why `changed_tensors` returning `[1]` does not show that fine-tuning helped. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

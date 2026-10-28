@@ -35,6 +35,10 @@ Join root, runs, the run name and summary.json; keep outputs separate from sourc
 
 </details>
 
+## Reason beyond the visible checks
+
+Predict `observed_mean([0, None])` and `observed_mean([None])`. For each, write what a report should print, and explain why printing 0 for the second case would mislead a reader. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

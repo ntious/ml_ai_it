@@ -35,6 +35,10 @@ Every source row needs one accounted-for outcome.
 
 </details>
 
+## Reason beyond the visible checks
+
+Construct two records where deduplicating by the whole row keeps both but deduplicating by `event_id` keeps one. Then write the `reconcile` call that accounts for them, and explain what the complete script would do with the same pair. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

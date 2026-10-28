@@ -35,6 +35,10 @@ Use actual positives, not total messages or predicted positives.
 
 </details>
 
+## Reason beyond the visible checks
+
+With `vocab = vocabulary(['FREE offer', 'offer now'])`, predict `encode('Offer FREE prize now', vocab, 3)`. Which word is lost, which becomes unknown, and what would a length of 2 also lose? The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

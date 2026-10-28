@@ -35,6 +35,10 @@ State the conditional independent-binomial assumption before interpreting the in
 
 </details>
 
+## Reason beyond the visible checks
+
+Construct confusion counts for a group with no actual positives, and another group with recall 1.0. For each, give the selection rate and the result of `safe_rate` for recall, and explain why "recall unavailable" is not evidence that the groups are treated equally. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
+
 ## Transfer to an IT decision
 
 Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.

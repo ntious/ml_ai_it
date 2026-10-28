@@ -16,12 +16,12 @@ Choose prompts and decoding settings using development messages. Lock the prompt
 
 ## Trace a small case
 
-The first operation is **parse_label**: Return ham/spam only for an exact one-key JSON object; otherwise return None. On authored arguments `parse_label('{"label":"spam"}')`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `parse_label('{"label":"spam"}')`, `parse_label('spam')` and `parse_label('{"label":"ham","why":"x"}')` before running. Only the first meets the exact one-key contract; prose and extra keys are rejected even when the label inside them looks right. Then predict `valid_fraction(['spam', None, 'ham'])`: the malformed output stays in the denominator, giving 2/3. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/sms-llm/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/sms-llm/scripts/run.py`. `generation_evaluation.csv` records each free generation, whether it parsed and whether the parsed label was correct. `summary.json` reports validity and accuracy over all 100 final messages, not only the ones that parsed. `rate_intervals.csv` attaches uncertainty to both rates. The recorded run had free-generation validity 0.99 but accuracy 0.39: format compliance and correctness are separate measurements. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Further reading: llm workflows](https://huggingface.co/docs/transformers/main/en/generation_strategies) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Hugging Face Transformers: Generation strategies](https://huggingface.co/docs/transformers/main/en/generation_strategies), the greedy-search and token-limit sections, explains the decoding settings that this module holds fixed. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

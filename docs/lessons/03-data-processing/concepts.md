@@ -16,12 +16,12 @@ Schema checks describe what is allowed; learned transformations estimate propert
 
 ## Trace a small case
 
-The first operation is **parse_latency**: Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. On authored arguments `parse_latency('')`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `parse_latency('')`, `parse_latency('0')` and `parse_latency('12.5')` before running: missing, measured zero and a measured value are three different results. Then predict `reconcile(10, 7, 2, 1)` and `reconcile(10, 8, 2, 1)`: only the first accounts for every source row exactly once. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/network-events/scripts/prepare.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/network-events/scripts/prepare.py`. Its `quality_report.json` and `summary.txt` reconcile 12 input rows into 6 accepted and 6 rejected, and keep one accepted record with missing latency. The script's duplicate policy is stricter than the practice `deduplicate`. An exact repeat is rejected as `exact_duplicate` and the first copy kept. Two rows with the same `event_id` but different values are both rejected as `conflicting_event_key`, because neither can be trusted. Find both cases in `rejected_events.csv`. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Further reading: data processing](https://scikit-learn.org/stable/common_pitfalls.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[scikit-learn: Common pitfalls and recommended practices](https://scikit-learn.org/stable/common_pitfalls.html), sections on inconsistent preprocessing and data leakage, explains why cleaning rules must be fixed before they meet evaluation data. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

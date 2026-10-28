@@ -29,10 +29,14 @@ def can_call(used, budget):
     return type(used) is int and type(budget) is int and 0 <= used < budget
 ```
 
+## Reasoning task feedback
+
+"Delete the dataset" has no supported intent: `route_intent('delete')` is `None`, and no destructive tool exists to call. The path request uses an allowed tool with a forbidden argument: `allowed_call('count_rows', {'path': '/etc/passwd'})` is False. The second call exceeds the budget: `can_call(1, 1)` is False. Each boundary is enforced by code outside the model.
+
 ## Judge the explanation
 
 **Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
 
 ## Transfer feedback
 
-Trace an unsupported destructive request and a valid count question. Identify which control enforces each boundary. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Trace an unsupported destructive request and a valid count question. Identify which control enforces each boundary. A defensible response shows the destructive request refused because no such tool exists and its intent route returns `None`, and the count question passing the argument allowlist and budget. It names which control enforced each boundary. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
