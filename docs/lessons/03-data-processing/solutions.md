@@ -48,6 +48,12 @@ def reconcile(input_rows, accepted, rejected, duplicates):
 
 For example, `{'event_id': 'a', 'v': 1}` and `{'event_id': 'a', 'v': 2}`: the rows differ, so whole-row deduplication keeps both, but there is one identity. With one accepted and one duplicate, `reconcile(2, 1, 0, 1)` is True. The complete script treats this pair as conflicting and rejects both, because it cannot tell which value is correct. State which policy you chose and why.
 
+## Applied extension feedback: represent categories
+
+In the recorded run (October 28, 2026), validation balanced accuracy was 0.932 for codes as numbers (30 inputs), 0.949 for one-hot (68 inputs) and 0.949 for one-hot plus the count (69 inputs); false-positive rates were 0.049, 0.037 and 0.037. One-hot creates 68 columns rather than 90 because many attributes use only two of the three codes.
+
+The count adds nothing because its assumption fails: -1 goes with the higher training phishing rate in only 22 of the 30 attributes, so counting -1 codes mixes signals that point in opposite directions. An engineered feature needs a reason that holds in the training data. Carrying one-hot forward is reasonable on this evidence, but the 0.017 gain is on one validation split; confirm it is not split noise (compare the Module 6 stability exercise) before treating it as settled, and keep the final test for the locked choice.
+
 ## Judge the explanation
 
 Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.

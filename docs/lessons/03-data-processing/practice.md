@@ -47,6 +47,24 @@ Construct two records where deduplicating by the whole row keeps both but dedupl
 
 Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
+## Applied extension: represent categories
+
+The historical phishing attributes are coded -1, 0 and 1. These codes are categories, not measurements, so treating them as numbers assumes an order and equal spacing that may not exist. This extension compares three representations of the same records, fitting every transformation on training records and scoring on validation only. It needs the regression extra (`pip install -e ".[regression]"`) and downloads the attributed UCI data on first use.
+
+```sh
+python -m practical_ml_ai.encoding --output runs/module03-encoding
+```
+
+- **codes_as_numbers:** the 30 codes, scaled, as numeric inputs.
+- **one_hot:** one indicator column per observed code of each attribute. Codes not seen in training are ignored, and the script reports any it meets.
+- **one_hot_plus_count:** one-hot columns plus an engineered feature counting how many attributes are -1.
+
+Predict which representation scores best and whether the count helps. Then answer from `summary.txt`:
+
+1. How many model inputs does one-hot encoding create, and why that number rather than 90?
+2. Does the engineered count improve validation performance? Use the reported direction check to explain why or why not.
+3. Which choice would you carry forward, and what evidence would you need before using it on the final test?
+
 ## Evidence and feedback
 
 By completing the core route, you can:
