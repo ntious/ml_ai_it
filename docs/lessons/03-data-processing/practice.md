@@ -86,3 +86,9 @@ Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md)
 The reconciliation exercise uses three disjoint categories: accepted, rejected for other reasons, and duplicates. The complete preparation script includes duplicates within its rejected count. Subtract duplicate rejections before translating its report into this exercise; never count the same row twice.
 
 For the RT-IoT transfer, inspect the validation policy comparison and the selected policy before reading final metrics. A model can have high recall while requiring almost every flow to be reviewed. Compare assumed error cost and analyst workload separately; do not lower the threshold after inspecting final results. The project README records the protocol and its qualifications.
+
+## Evidence activity: Audit row accounting
+
+Use your processing report and source events. Trace an accepted record, a rejected record and a duplicate where present. Reconcile the reported input/output counts under the script’s actual processing order; explain how duplicate identity differs from identical rows. If a category is absent, record zero rather than inventing an example.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

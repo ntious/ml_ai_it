@@ -112,3 +112,11 @@ If using GenAI, keep a short disclosure of the help used and what you verified. 
 Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.
 
 For the RT-IoT transfer, inspect the validation policy comparison and the selected policy before reading final metrics. A model can have high recall while requiring almost every flow to be reviewed. Compare assumed error cost and analyst workload separately; do not lower the threshold after inspecting final results. The project README records the protocol and its qualifications.
+
+## Evidence activity: Audit a classification decision
+
+Use test_predictions.csv and the recorded selected threshold. Recompute TP, FP, FN, TN and recall, checking that the counts sum to the number of records. Compare with test_scores.csv. Explain how choosing a new threshold after this audit would reuse test evidence. Then complete the small stability bridge linked below when assigned.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+Continue with the [small core stability experiment](../../advanced/core-stability.md), which uses the core environment and keeps the final test untouched.

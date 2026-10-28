@@ -46,3 +46,7 @@ execution by one person.
 | Final defense | Revised report, reproducible commands and revision log | Explain a changed-case decision independently and identify remaining deployment evidence. |
 
 Use [the revision log](../../templates/project-revision.md) at every checkpoint. A solo learner should take a separate review pass against the same criteria and explicitly record self-review. In teams, record each contributor's implementation, review and explanation; running the shared notebook alone does not demonstrate everyone's understanding. Official weights and deadlines remain with the adopting instructor.
+
+## Reproduction and justified-use assessment
+
+Use the [evidence rubric](../instructor/evidence-assessment.md) and [reproduction worksheet](../../templates/evidence-review.md) to require an independently recalculated result, a reconstruction attempt and a bounded use decision. Preserve failed attempts and distinguish calculation audits from independent-environment reproduction.

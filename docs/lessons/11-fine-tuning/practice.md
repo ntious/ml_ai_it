@@ -56,3 +56,9 @@ Explain a run where adapter weights change but held-out validity does not. Propo
 - **M11.5:** Save/reload adapter arrays with the exact model revision and disclose limits.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Check the adaptation claim
+
+Use the saved base/adapted outputs and evaluation results. Recompute the change in one task metric on the same held-out examples and compare it with the reported training loss change. Explain why decreasing loss alone does not establish improved task performance.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
