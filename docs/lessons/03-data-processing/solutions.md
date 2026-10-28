@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `parse_latency`
 
-Preserve measured zero and missingness separately. For `['']`, the expected result is `None`.
+Preserve measured zero and missingness separately. For `parse_latency('')`, the expected result is `None`.
 
 ```python
 def parse_latency(value):
@@ -18,7 +18,7 @@ def parse_latency(value):
 
 ## `deduplicate`
 
-Deduplicate by identity, not the entire row. For `[[{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}]]`, the expected result is `[{'event_id': 'a', 'v': 1}, {'event_id': 'b', 'v': 3}]`.
+Deduplicate by identity, not the entire row. For `deduplicate([{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}])`, the expected result is `[{'event_id': 'a', 'v': 1}, {'event_id': 'b', 'v': 3}]`.
 
 ```python
 def deduplicate(records):
@@ -33,7 +33,7 @@ def deduplicate(records):
 
 ## `reconcile`
 
-Every source row needs one accounted-for outcome. For `[10, 7, 2, 1]`, the expected result is `True`.
+Every source row needs one accounted-for outcome. For `reconcile(10, 7, 2, 1)`, the expected result is `True`.
 
 ```python
 def reconcile(input_rows, accepted, rejected, duplicates):

@@ -1,6 +1,6 @@
 # Module 7: guided construction and mastery
 
-Use this after the [foundation bridge](foundation.md) and before the complete [walkthrough](index.md). Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
+Use this after the [foundation bridge](foundation.md) and before attempting independent practice; return to the [module run instructions](index.md) afterward. Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
 
 ## Worked concept
 
@@ -26,7 +26,6 @@ assert learning_clusterer.cluster_centers_.shape == (2,len(learning_features))
 
 Fit a predeclared second K using training and compare development geometry and cluster sizes. Explain why quality must not choose an allegedly unsupervised partition.
 
-Cover the worked code, implement the central step again, and explain its inputs, outputs and boundary. Keep development experiments separate from final evaluation. Having already viewed a public final report, treat a rerun as rehearsal; a fresh generalization claim needs a new evaluation design.
 
 ## Debug a plausible misconception
 

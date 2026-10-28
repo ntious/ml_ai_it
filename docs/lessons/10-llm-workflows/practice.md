@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `parse_label`
 
-Return ham/spam only for an exact one-key JSON object; otherwise return None. Predict the result on `['{"label":"spam"}']`, implement it and call `m10_parse_label` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return ham/spam only for an exact one-key JSON object; otherwise return None. Predict the result on `parse_label('{"label":"spam"}')`, implement it and call `m10_parse_label` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for parse_label</summary>
@@ -15,7 +15,7 @@ Reject prose and extra keys; parsing is separate from correctness.
 
 ## Construct `valid_fraction`
 
-Input parsed labels or None. Return valid/total, or None for empty input. Predict the result on `[['spam', None, 'ham']]`, implement it and call `m10_valid_fraction` through the notebook check. Then add a changed case and explain which assumption it tests.
+Input parsed labels or None. Return valid/total, or None for empty input. Predict the result on `valid_fraction(['spam', None, 'ham'])`, implement it and call `m10_valid_fraction` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for valid_fraction</summary>
@@ -26,7 +26,7 @@ Count malformed outputs in the denominator.
 
 ## Construct `end_to_end_accuracy`
 
-Return exact matches / all cases, counting None as wrong; None for no cases. Predict the result on `[['spam', 'ham'], ['spam', None]]`, implement it and call `m10_end_to_end_accuracy` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return exact matches / all cases, counting None as wrong; None for no cases. Predict the result on `end_to_end_accuracy(['spam', 'ham'], ['spam', None])`, implement it and call `m10_end_to_end_accuracy` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for end_to_end_accuracy</summary>

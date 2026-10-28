@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `status_counts`
 
-Return a dictionary counting the status string in each record. Predict the result on `[[{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}]]`, implement it and call `m02_status_counts` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return a dictionary counting the status string in each record. Predict the result on `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}])`, implement it and call `m02_status_counts` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for status_counts</summary>
@@ -15,7 +15,7 @@ Initialize unseen statuses and handle an empty file.
 
 ## Construct `observed_mean`
 
-Return the mean excluding None; return None if no values are observed. Predict the result on `[[10, None, 20]]`, implement it and call `m02_observed_mean` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return the mean excluding None; return None if no values are observed. Predict the result on `observed_mean([10, None, 20])`, implement it and call `m02_observed_mean` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for observed_mean</summary>
@@ -26,7 +26,7 @@ Missing is not zero; zero is still observed.
 
 ## Construct `output_path`
 
-Return the string path root/runs/run_name/summary.json using pathlib. Predict the result on `['course', 'trial-2']`, implement it and call `m02_output_path` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return the string path root/runs/run_name/summary.json using pathlib. Predict the result on `output_path('course', 'trial-2')`, implement it and call `m02_output_path` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for output_path</summary>

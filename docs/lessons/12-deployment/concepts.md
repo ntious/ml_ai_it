@@ -16,7 +16,7 @@ Measure latency with its percentile definition, sample count and environment. A 
 
 ## Trace a small case
 
-The first operation is **valid_request**: Return True for exactly the expected keys, finite int/float values; reject bool. On authored arguments `[{'x': 2}, ['x']]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **valid_request**: Return True for exactly the expected keys, finite int/float values; reject bool. On authored arguments `valid_request({'x': 2}, ['x'])`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/model-service/scripts/run.py`. Identify
 
 ## Optional reading
 
-[Primary explanation](https://developers.google.com/machine-learning/guides/rules-of-ml) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: deployment](https://developers.google.com/machine-learning/guides/rules-of-ml) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

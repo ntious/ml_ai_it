@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `valid_request`
 
-Return True for exactly the expected keys, finite int/float values; reject bool. Predict the result on `[{'x': 2}, ['x']]`, implement it and call `m12_valid_request` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return True for exactly the expected keys, finite int/float values; reject bool. Predict the result on `valid_request({'x': 2}, ['x'])`, implement it and call `m12_valid_request` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for valid_request</summary>
@@ -15,7 +15,7 @@ Booleans are not numerical measurements in this contract; reject extras.
 
 ## Construct `shift_score`
 
-Return absolute standardized difference, or None for a nonpositive training scale. Predict the result on `[12, 10, 2]`, implement it and call `m12_shift_score` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return absolute standardized difference, or None for a nonpositive training scale. Predict the result on `shift_score(12, 10, 2)`, implement it and call `m12_shift_score` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for shift_score</summary>
@@ -26,7 +26,7 @@ Use the fixed training scale, not a scale fitted on new requests.
 
 ## Construct `nearest_rank`
 
-Return sorted values at ceil(percentile*n)-1 for 0 < percentile <= 1. Predict the result on `[[1, 2, 3, 100], 0.95]`, implement it and call `m12_nearest_rank` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return sorted values at ceil(percentile*n)-1 for 0 < percentile <= 1. Predict the result on `nearest_rank([1, 2, 3, 100], 0.95)`, implement it and call `m12_nearest_rank` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for nearest_rank</summary>
@@ -52,3 +52,5 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 ## Operational-data connection
 
 Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.
+
+For the RT-IoT transfer, inspect the validation policy comparison and the selected policy before reading final metrics. A model can have high recall while requiring almost every flow to be reviewed. Compare assumed error cost and analyst workload separately; do not lower the threshold after inspecting final results. The project README records the protocol and its qualifications.

@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `error_rate`
 
-Return errors/requests; None when requests is zero. Predict the result on `[3, 10]`, implement it and call `m04_error_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return errors/requests; None when requests is zero. Predict the result on `error_rate(3, 10)`, implement it and call `m04_error_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for error_rate</summary>
@@ -15,7 +15,7 @@ A zero denominator is unavailable, not zero percent.
 
 ## Construct `median`
 
-Return the median of a nonempty numerical list, without changing the input. Predict the result on `[[1, 2, 3, 100]]`, implement it and call `m04_median` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return the median of a nonempty numerical list, without changing the input. Predict the result on `median([1, 2, 3, 100])`, implement it and call `m04_median` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for median</summary>
@@ -26,7 +26,7 @@ Average the two middle observations for an even count.
 
 ## Construct `weighted_rate`
 
-Input pairs [errors, requests]. Return total errors / total requests, or None. Predict the result on `[[[1, 2], [1, 8]]]`, implement it and call `m04_weighted_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
+Input pairs [errors, requests]. Return total errors / total requests, or None. Predict the result on `weighted_rate([[1, 2], [1, 8]])`, implement it and call `m04_weighted_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for weighted_rate</summary>

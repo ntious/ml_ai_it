@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `error_rate`
 
-A zero denominator is unavailable, not zero percent. For `[3, 10]`, the expected result is `0.3`.
+A zero denominator is unavailable, not zero percent. For `error_rate(3, 10)`, the expected result is `0.3`.
 
 ```python
 def error_rate(errors, requests):
@@ -13,7 +13,7 @@ def error_rate(errors, requests):
 
 ## `median`
 
-Average the two middle observations for an even count. For `[[1, 2, 3, 100]]`, the expected result is `2.5`.
+Average the two middle observations for an even count. For `median([1, 2, 3, 100])`, the expected result is `2.5`.
 
 ```python
 def median(values):
@@ -24,7 +24,7 @@ def median(values):
 
 ## `weighted_rate`
 
-Do not average daily percentages with unequal denominators. For `[[[1, 2], [1, 8]]]`, the expected result is `0.2`.
+Do not average daily percentages with unequal denominators. For `weighted_rate([[1, 2], [1, 8]])`, the expected result is `0.2`.
 
 ```python
 def weighted_rate(counts):

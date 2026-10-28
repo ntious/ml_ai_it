@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `squared_distance`
 
-Square coordinate differences; do not compare signed sums. For `[[2, 4], [1, 2]]`, the expected result is `5`.
+Square coordinate differences; do not compare signed sums. For `squared_distance([2, 4], [1, 2])`, the expected result is `5`.
 
 ```python
 def squared_distance(point, center):
@@ -13,7 +13,7 @@ def squared_distance(point, center):
 
 ## `select_k`
 
-Use validation geometry and a declared tie-break, not smallest inertia. For `[[[2, 0.4], [3, 0.5], [4, 0.45]]]`, the expected result is `3`.
+Use validation geometry and a declared tie-break, not smallest inertia. For `select_k([[2, 0.4], [3, 0.5], [4, 0.45]])`, the expected result is `3`.
 
 ```python
 def select_k(candidates):
@@ -22,7 +22,7 @@ def select_k(candidates):
 
 ## `profile`
 
-Describe both support and feature level; IDs have no rank. For `[[2, 4, 10], [0, 0, 1]]`, the expected result is `{'0': {'count': 2, 'mean': 3}, '1': {'count': 1, 'mean': 10}}`.
+Describe both support and feature level; IDs have no rank. For `profile([2, 4, 10], [0, 0, 1])`, the expected result is `{'0': {'count': 2, 'mean': 3}, '1': {'count': 1, 'mean': 10}}`.
 
 ```python
 def profile(values, labels):

@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `parse_latency`
 
-Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. Predict the result on `['']`, implement it and call `m03_parse_latency` through the notebook check. Then add a changed case and explain which assumption it tests.
+Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. Predict the result on `parse_latency('')`, implement it and call `m03_parse_latency` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for parse_latency</summary>
@@ -15,7 +15,7 @@ Preserve measured zero and missingness separately.
 
 ## Construct `deduplicate`
 
-Keep the first record for each event_id, preserving input order. Predict the result on `[[{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}]]`, implement it and call `m03_deduplicate` through the notebook check. Then add a changed case and explain which assumption it tests.
+Keep the first record for each event_id, preserving input order. Predict the result on `deduplicate([{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}])`, implement it and call `m03_deduplicate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for deduplicate</summary>
@@ -26,7 +26,7 @@ Deduplicate by identity, not the entire row.
 
 ## Construct `reconcile`
 
-Return True exactly when nonnegative counts reconcile. Predict the result on `[10, 7, 2, 1]`, implement it and call `m03_reconcile` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return True exactly when nonnegative counts reconcile. Predict the result on `reconcile(10, 7, 2, 1)`, implement it and call `m03_reconcile` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for reconcile</summary>
@@ -58,3 +58,5 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.
 
 The reconciliation exercise uses three disjoint categories: accepted, rejected for other reasons, and duplicates. The complete preparation script includes duplicates within its rejected count. Subtract duplicate rejections before translating its report into this exercise; never count the same row twice.
+
+For the RT-IoT transfer, inspect the validation policy comparison and the selected policy before reading final metrics. A model can have high recall while requiring almost every flow to be reviewed. Compare assumed error cost and analyst workload separately; do not lower the threshold after inspecting final results. The project README records the protocol and its qualifications.

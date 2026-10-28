@@ -16,15 +16,15 @@ Training fits parameters; validation supports choices; a final test estimates th
 
 ## Trace a small case
 
-The first operation is **route**: Return a bool: priority >= threshold. On authored arguments `[2]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **route**: Return a bool: priority >= threshold. On authored arguments `route(2)`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/first-run/scripts/first_run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module still uses `examples/first-run/scripts/first_run.py`. Compare the practice priority rule (`>= 3`) with the complete script’s storage rule (`> 80`). They use different inputs and intentionally different boundaries; do not search for the priority rule inside the storage script. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
 
 ## Optional reading
 
-[Primary explanation](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: foundations](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
 
 ## Three names to recognize
 

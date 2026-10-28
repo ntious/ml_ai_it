@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `squared_distance`
 
-Return sum of squared coordinate differences for equal-length vectors. Predict the result on `[[2, 4], [1, 2]]`, implement it and call `m07_squared_distance` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return sum of squared coordinate differences for equal-length vectors. Predict the result on `squared_distance([2, 4], [1, 2])`, implement it and call `m07_squared_distance` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for squared_distance</summary>
@@ -15,7 +15,7 @@ Square coordinate differences; do not compare signed sums.
 
 ## Construct `select_k`
 
-Input pairs [K, validation_silhouette]; maximize score, smallest K breaks ties. Predict the result on `[[[2, 0.4], [3, 0.5], [4, 0.45]]]`, implement it and call `m07_select_k` through the notebook check. Then add a changed case and explain which assumption it tests.
+Input pairs [K, validation_silhouette]; maximize score, smallest K breaks ties. Predict the result on `select_k([[2, 0.4], [3, 0.5], [4, 0.45]])`, implement it and call `m07_select_k` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for select_k</summary>
@@ -26,7 +26,7 @@ Use validation geometry and a declared tie-break, not smallest inertia.
 
 ## Construct `profile`
 
-Return string cluster IDs mapped to count and mean of a single original-unit feature. Predict the result on `[[2, 4, 10], [0, 0, 1]]`, implement it and call `m07_profile` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return string cluster IDs mapped to count and mean of a single original-unit feature. Predict the result on `profile([2, 4, 10], [0, 0, 1])`, implement it and call `m07_profile` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for profile</summary>

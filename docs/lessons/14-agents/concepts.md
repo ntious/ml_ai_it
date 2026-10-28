@@ -16,7 +16,7 @@ A call budget limits repeated execution and cost. Validate it before running a t
 
 ## Trace a small case
 
-The first operation is **route_intent**: Return count_rows for count, mean_alcohol for alcohol; otherwise None. On authored arguments `['count']`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **route_intent**: Return count_rows for count, mean_alcohol for alcohol; otherwise None. On authored arguments `route_intent('count')`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/bounded-assistant/scripts/run.py`. Iden
 
 ## Optional reading
 
-[Primary explanation](https://www.anthropic.com/engineering/building-effective-agents) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: agents](https://www.anthropic.com/engineering/building-effective-agents) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

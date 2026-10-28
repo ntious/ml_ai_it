@@ -98,3 +98,6 @@ CASES = {'m01_error_counts': {'cases': [[[[False, True, True], [True, False, Tru
                                 [['delete'], None]],
                       'feedback': 'An unsupported intent must not fall through to an unrelated '
                                   'answer.'}}
+
+# Asymmetric errors distinguish false alerts from misses.
+CASES["m01_error_counts"]["cases"].append([[[False, False, True], [True, True, True]], [2, 0]])

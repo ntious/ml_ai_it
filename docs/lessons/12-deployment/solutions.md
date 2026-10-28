@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `valid_request`
 
-Booleans are not numerical measurements in this contract; reject extras. For `[{'x': 2}, ['x']]`, the expected result is `True`.
+Booleans are not numerical measurements in this contract; reject extras. For `valid_request({'x': 2}, ['x'])`, the expected result is `True`.
 
 ```python
 def valid_request(record, expected):
@@ -14,7 +14,7 @@ def valid_request(record, expected):
 
 ## `shift_score`
 
-Use the fixed training scale, not a scale fitted on new requests. For `[12, 10, 2]`, the expected result is `1`.
+Use the fixed training scale, not a scale fitted on new requests. For `shift_score(12, 10, 2)`, the expected result is `1`.
 
 ```python
 def shift_score(current_mean, training_mean, training_scale):
@@ -23,7 +23,7 @@ def shift_score(current_mean, training_mean, training_scale):
 
 ## `nearest_rank`
 
-Name the percentile convention and retain the tail request. For `[[1, 2, 3, 100], 0.95]`, the expected result is `100`.
+Name the percentile convention and retain the tail request. For `nearest_rank([1, 2, 3, 100], 0.95)`, the expected result is `100`.
 
 ```python
 def nearest_rank(values, percentile):

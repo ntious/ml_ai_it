@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `route`
 
-Use an inclusive boundary; do not return the priority itself. For `[2]`, the expected result is `False`.
+Use an inclusive boundary; do not return the priority itself. For `route(2)`, the expected result is `False`.
 
 ```python
 def route(priority, threshold=3):
@@ -13,7 +13,7 @@ def route(priority, threshold=3):
 
 ## `partition_role`
 
-The final test must not choose a model. For `['train']`, the expected result is `'fit'`.
+The final test must not choose a model. For `partition_role('train')`, the expected result is `'fit'`.
 
 ```python
 def partition_role(name):
@@ -22,7 +22,7 @@ def partition_role(name):
 
 ## `error_counts`
 
-Count errors by their consequences, not only total accuracy. For `[[False, True, True], [True, False, True]]`, the expected result is `[1, 1]`.
+Count errors by their consequences, not only total accuracy. For `error_counts([False, True, True], [True, False, True])`, the expected result is `[1, 1]`.
 
 ```python
 def error_counts(actual, predicted):

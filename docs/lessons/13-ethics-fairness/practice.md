@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `recall_denominator`
 
-Return the actual-positive count. Predict the result on `[8, 2, 11, 30]`, implement it and call `m13_recall_denominator` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return the actual-positive count. Predict the result on `recall_denominator(8, 2, 11, 30)`, implement it and call `m13_recall_denominator` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for recall_denominator</summary>
@@ -15,7 +15,7 @@ Recall conditions on actual positives, not predictions.
 
 ## Construct `safe_rate`
 
-Return numerator/denominator, or None for zero denominator. Predict the result on `[8, 19]`, implement it and call `m13_safe_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return numerator/denominator, or None for zero denominator. Predict the result on `safe_rate(8, 19)`, implement it and call `m13_safe_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for safe_rate</summary>
@@ -26,7 +26,7 @@ Unavailable is not evidence of parity.
 
 ## Construct `wilson`
 
-Return a two-number 95% illustrative Wilson interval using learning.wilson_interval. Predict the result on `[8, 10]`, implement it and call `m13_wilson` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return a two-number 95% illustrative Wilson interval using learning.wilson_interval. Predict the result on `wilson(8, 10)`, implement it and call `m13_wilson` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for wilson</summary>

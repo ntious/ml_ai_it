@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — independent-review corrections
+
+- Correct learner path checks, diagnostic feedback, kernel setup, glossary and practice instructions; retain the existing module outcomes.
+- Separate historical framework results from revision-specific verification status.
+- PR #11 proposes explicit UTF-8 file I/O, independent platform failure reporting and separate framework test/notebook jobs (F2).
+- PR #11 proposes validation-based RT-IoT policy comparison including constant policies, a broader fixed threshold grid and workload interpretation (F4). These entries describe proposed corrections; merge and complete CI evidence are required before release.
+
+
 Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.
 ## 0.6.0 — repository audit and verification
 

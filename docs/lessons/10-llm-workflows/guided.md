@@ -1,6 +1,6 @@
 # Module 10: guided construction and mastery
 
-Use this after the [foundation bridge](foundation.md) and before the complete [walkthrough](index.md). Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
+Use this after the [foundation bridge](foundation.md) and before attempting independent practice; return to the [module run instructions](index.md) afterward. Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
 
 ## Worked concept
 
@@ -22,7 +22,6 @@ assert learning_parsed == [0,None,None]
 
 Inspect matched_comparison.csv after the real run. Reconcile per-record baseline and LLM outcomes and explain preprocessing, prevalence and sample-size limits. Declare any prompt experiment on validation first.
 
-Cover the worked code, implement the central step again, and explain its inputs, outputs and boundary. Keep development experiments separate from final evaluation. Having already viewed a public final report, treat a rerun as rehearsal; a fresh generalization claim needs a new evaluation design.
 
 ## Debug a plausible misconception
 

@@ -16,7 +16,7 @@ Choose prompts and decoding settings using development messages. Lock the prompt
 
 ## Trace a small case
 
-The first operation is **parse_label**: Return ham/spam only for an exact one-key JSON object; otherwise return None. On authored arguments `['{"label":"spam"}']`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **parse_label**: Return ham/spam only for an exact one-key JSON object; otherwise return None. On authored arguments `parse_label('{"label":"spam"}')`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/sms-llm/scripts/run.py`. Identify the s
 
 ## Optional reading
 
-[Primary explanation](https://huggingface.co/docs/transformers/main/en/generation_strategies) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: llm workflows](https://huggingface.co/docs/transformers/main/en/generation_strategies) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

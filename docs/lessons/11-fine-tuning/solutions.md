@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `trainable_count`
 
-Count scalars in trainable tensors, not the number of tensors. For `[[[100, False], [8, True], [2, True]]]`, the expected result is `10`.
+Count scalars in trainable tensors, not the number of tensors. For `trainable_count([[100, False], [8, True], [2, True]])`, the expected result is `10`.
 
 ```python
 def trainable_count(parameters):
@@ -13,7 +13,7 @@ def trainable_count(parameters):
 
 ## `completion_labels`
 
-Mask both prompt and padding, while retaining completion tokens. For `[[5, 6, 7, 0], 2, [1, 1, 1, 0]]`, the expected result is `[-100, -100, 7, -100]`.
+Mask both prompt and padding, while retaining completion tokens. For `completion_labels([5, 6, 7, 0], 2, [1, 1, 1, 0])`, the expected result is `[-100, -100, 7, -100]`.
 
 ```python
 def completion_labels(ids, prompt_length, attention_mask):
@@ -22,7 +22,7 @@ def completion_labels(ids, prompt_length, attention_mask):
 
 ## `changed_tensors`
 
-Demonstrate an actual parameter change; a new loss string is insufficient. For `[[[1, 2], [3]], [[1, 2], [4]]]`, the expected result is `[1]`.
+Demonstrate an actual parameter change; a new loss string is insufficient. For `changed_tensors([[1, 2], [3]], [[1, 2], [4]])`, the expected result is `[1]`.
 
 ```python
 def changed_tensors(before, after):

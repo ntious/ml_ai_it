@@ -78,6 +78,23 @@ class FormativeFeedbackTests(unittest.TestCase):
             return validation.index(min(validation)) + 1
         self.assertEqual(check('m08_checkpoint', valid)['state'], 'passed')
 
+    def test_windows_and_path_objects_are_accepted(self):
+        from pathlib import PureWindowsPath
+        for function in [lambda root, run: str(PureWindowsPath(root)/'runs'/run/'summary.json'),
+                         lambda root, run: PureWindowsPath(root)/'runs'/run/'summary.json']:
+            self.assertEqual(check('m02_output_path', function)['state'], 'passed')
+
+    def test_swapped_error_counts_are_rejected(self):
+        def swapped(actual, predicted):
+            return [sum(a and not p for a,p in zip(actual,predicted)), sum(not a and p for a,p in zip(actual,predicted))]
+        self.assertEqual(check('m01_error_counts', swapped)['state'], 'needs_revision')
+
+    def test_nan_lag_is_unavailable(self):
+        self.assertEqual(check('m05_persistence', lambda values: [float('nan')]+values[:-1])['state'], 'passed')
+
+    def test_visible_feedback_includes_expected_value(self):
+        self.assertIn('expected:', check('m01_partition_role', lambda name: 'Fit')['feedback'])
+
 
 if __name__ == '__main__':
     unittest.main()

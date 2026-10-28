@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `status_counts`
 
-Initialize unseen statuses and handle an empty file. For `[[{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}]]`, the expected result is `{'open': 2, 'closed': 1}`.
+Initialize unseen statuses and handle an empty file. For `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}])`, the expected result is `{'open': 2, 'closed': 1}`.
 
 ```python
 def status_counts(records):
@@ -16,7 +16,7 @@ def status_counts(records):
 
 ## `observed_mean`
 
-Missing is not zero; zero is still observed. For `[[10, None, 20]]`, the expected result is `15`.
+Missing is not zero; zero is still observed. For `observed_mean([10, None, 20])`, the expected result is `15`.
 
 ```python
 def observed_mean(values):
@@ -26,7 +26,7 @@ def observed_mean(values):
 
 ## `output_path`
 
-Keep run names separate from the source file. For `['course', 'trial-2']`, the expected result is `'course/runs/trial-2/summary.json'`.
+Keep run names separate from the source file. For `output_path('course', 'trial-2')`, the expected result is `'course/runs/trial-2/summary.json'`.
 
 ```python
 def output_path(root, run_name):

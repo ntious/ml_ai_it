@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `vocabulary`
 
-Fit only training text and reserve unknown/padding separately. For `[['FREE offer', 'offer now']]`, the expected result is `{'free': 2, 'now': 3, 'offer': 4}`.
+Fit only training text and reserve unknown/padding separately. For `vocabulary(['FREE offer', 'offer now'])`, the expected result is `{'free': 2, 'now': 3, 'offer': 4}`.
 
 ```python
 def vocabulary(training_texts):
@@ -14,7 +14,7 @@ def vocabulary(training_texts):
 
 ## `encode`
 
-Unknown is not padding; declare truncation direction. For `['NEW offer', {'offer': 2}, 4]`, the expected result is `[1, 2, 0, 0]`.
+Unknown is not padding; declare truncation direction. For `encode('NEW offer', {'offer': 2}, 4)`, the expected result is `[1, 2, 0, 0]`.
 
 ```python
 def encode(text, vocabulary, length):
@@ -24,7 +24,7 @@ def encode(text, vocabulary, length):
 
 ## `recall`
 
-Use actual positives, not total messages or predicted positives. For `[0, 10]`, the expected result is `0`.
+Use actual positives, not total messages or predicted positives. For `recall(0, 10)`, the expected result is `0`.
 
 ```python
 def recall(tp, fn):

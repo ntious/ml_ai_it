@@ -16,7 +16,7 @@ If only 10 of 100 messages are spam, predicting ham every time has 90% accuracy 
 
 ## Trace a small case
 
-The first operation is **vocabulary**: Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. On authored arguments `[['FREE offer', 'offer now']]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **vocabulary**: Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. On authored arguments `vocabulary(['FREE offer', 'offer now'])`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/sms-neural-nlp/scripts/run.py`. Identif
 
 ## Optional reading
 
-[Primary explanation](https://www.tensorflow.org/text/guide/word_embeddings) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: neural nlp](https://www.tensorflow.org/text/guide/word_embeddings) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

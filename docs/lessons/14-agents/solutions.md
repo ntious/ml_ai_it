@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `route_intent`
 
-An unsupported intent must not fall through to an unrelated answer. For `['count']`, the expected result is `'count_rows'`.
+An unsupported intent must not fall through to an unrelated answer. For `route_intent('count')`, the expected result is `'count_rows'`.
 
 ```python
 def route_intent(intent):
@@ -13,7 +13,7 @@ def route_intent(intent):
 
 ## `allowed_call`
 
-Validate tool and argument contract, not just words in a prompt. For `['count_rows', {}]`, the expected result is `True`.
+Validate tool and argument contract, not just words in a prompt. For `allowed_call('count_rows', {})`, the expected result is `True`.
 
 ```python
 def allowed_call(tool, arguments):
@@ -22,7 +22,7 @@ def allowed_call(tool, arguments):
 
 ## `can_call`
 
-Stop before exceeding the budget and reject malformed limits. For `[0, 1]`, the expected result is `True`.
+Stop before exceeding the budget and reject malformed limits. For `can_call(0, 1)`, the expected result is `True`.
 
 ```python
 def can_call(used, budget):

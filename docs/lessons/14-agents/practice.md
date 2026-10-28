@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `route_intent`
 
-Return count_rows for count, mean_alcohol for alcohol; otherwise None. Predict the result on `['count']`, implement it and call `m14_route_intent` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return count_rows for count, mean_alcohol for alcohol; otherwise None. Predict the result on `route_intent('count')`, implement it and call `m14_route_intent` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for route_intent</summary>
@@ -15,7 +15,7 @@ An unsupported intent must not fall through to an unrelated answer.
 
 ## Construct `allowed_call`
 
-Allow only count_rows with no arguments, or mean_alcohol with no arguments. Predict the result on `['count_rows', {}]`, implement it and call `m14_allowed_call` through the notebook check. Then add a changed case and explain which assumption it tests.
+Allow only count_rows with no arguments, or mean_alcohol with no arguments. Predict the result on `allowed_call('count_rows', {})`, implement it and call `m14_allowed_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for allowed_call</summary>
@@ -26,7 +26,7 @@ Validate tool and argument contract, not just words in a prompt.
 
 ## Construct `can_call`
 
-Return True for nonnegative whole-number used/budget and used < budget; reject bool. Predict the result on `[0, 1]`, implement it and call `m14_can_call` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return True for nonnegative whole-number used/budget and used < budget; reject bool. Predict the result on `can_call(0, 1)`, implement it and call `m14_can_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for can_call</summary>

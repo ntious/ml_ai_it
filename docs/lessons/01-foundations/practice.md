@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `route`
 
-Return a bool: priority >= threshold. Predict the result on `[2]`, implement it and call `m01_route` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return a bool: priority >= threshold. Predict the result on `route(2)`, implement it and call `m01_route` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for route</summary>
@@ -15,7 +15,7 @@ Use an inclusive boundary; do not return the priority itself.
 
 ## Construct `partition_role`
 
-Return fit, choose or evaluate for train, validation or test. Predict the result on `['train']`, implement it and call `m01_partition_role` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return fit, choose or evaluate for train, validation or test. Predict the result on `partition_role('train')`, implement it and call `m01_partition_role` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for partition_role</summary>
@@ -26,7 +26,7 @@ The final test must not choose a model.
 
 ## Construct `error_counts`
 
-Return [false_alerts, misses] for equally sized boolean lists. Predict the result on `[[False, True, True], [True, False, True]]`, implement it and call `m01_error_counts` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return [false_alerts, misses] for equally sized boolean lists. Predict the result on `error_counts([False, True, True], [True, False, True])`, implement it and call `m01_error_counts` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for error_counts</summary>

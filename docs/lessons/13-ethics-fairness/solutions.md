@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `recall_denominator`
 
-Recall conditions on actual positives, not predictions. For `[8, 2, 11, 30]`, the expected result is `19`.
+Recall conditions on actual positives, not predictions. For `recall_denominator(8, 2, 11, 30)`, the expected result is `19`.
 
 ```python
 def recall_denominator(tp, fp, fn, tn):
@@ -13,7 +13,7 @@ def recall_denominator(tp, fp, fn, tn):
 
 ## `safe_rate`
 
-Unavailable is not evidence of parity. For `[8, 19]`, the expected result is `0.42105263157894735`.
+Unavailable is not evidence of parity. For `safe_rate(8, 19)`, the expected result is `0.42105263157894735`.
 
 ```python
 def safe_rate(numerator, denominator):
@@ -22,7 +22,7 @@ def safe_rate(numerator, denominator):
 
 ## `wilson`
 
-State the conditional independent-binomial assumption before interpreting the interval. For `[8, 10]`, the expected result is `[0.49016247153664183, 0.9433178485456247]`.
+State the conditional independent-binomial assumption before interpreting the interval. For `wilson(8, 10)`, the expected result is `[0.49016247153664183, 0.9433178485456247]`.
 
 ```python
 def wilson(successes, observations):

@@ -16,7 +16,7 @@ Schema checks describe what is allowed; learned transformations estimate propert
 
 ## Trace a small case
 
-The first operation is **parse_latency**: Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. On authored arguments `['']`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **parse_latency**: Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. On authored arguments `parse_latency('')`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/network-events/scripts/prepare.py`. Ide
 
 ## Optional reading
 
-[Primary explanation](https://scikit-learn.org/stable/common_pitfalls.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: data processing](https://scikit-learn.org/stable/common_pitfalls.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

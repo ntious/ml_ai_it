@@ -16,7 +16,7 @@ A weekday pattern might reflect traffic volume, maintenance or data collection. 
 
 ## Trace a small case
 
-The first operation is **error_rate**: Return errors/requests; None when requests is zero. On authored arguments `[3, 10]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **error_rate**: Return errors/requests; None when requests is zero. On authored arguments `error_rate(3, 10)`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/service-workload/scripts/explore.py`. I
 
 ## Optional reading
 
-[Primary explanation](https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: exploration](https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

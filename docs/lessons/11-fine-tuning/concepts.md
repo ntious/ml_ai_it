@@ -16,7 +16,7 @@ A model can memorize the adaptation set and still fail the output contract on he
 
 ## Trace a small case
 
-The first operation is **trainable_count**: Input [size, trainable] pairs; return number of trainable scalar values. On authored arguments `[[[100, False], [8, True], [2, True]]]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+The first operation is **trainable_count**: Input [size, trainable] pairs; return number of trainable scalar values. On authored arguments `trainable_count([[100, False], [8, True], [2, True]])`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
 
 ## Connect this to the full experiment
 
@@ -24,4 +24,4 @@ The complete module still uses `examples/sms-fine-tuning/scripts/run.py`. Identi
 
 ## Optional reading
 
-[Primary explanation](https://arxiv.org/abs/2106.09685) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Further reading: fine tuning](https://arxiv.org/abs/2106.09685) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

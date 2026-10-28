@@ -4,7 +4,7 @@ Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious
 
 ## Construct `vocabulary`
 
-Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. Predict the result on `[['FREE offer', 'offer now']]`, implement it and call `m09_vocabulary` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. Predict the result on `vocabulary(['FREE offer', 'offer now'])`, implement it and call `m09_vocabulary` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for vocabulary</summary>
@@ -15,7 +15,7 @@ Fit only training text and reserve unknown/padding separately.
 
 ## Construct `encode`
 
-Lowercase/split, map unknown to 1, keep first length tokens and pad with 0. Predict the result on `['NEW offer', {'offer': 2}, 4]`, implement it and call `m09_encode` through the notebook check. Then add a changed case and explain which assumption it tests.
+Lowercase/split, map unknown to 1, keep first length tokens and pad with 0. Predict the result on `encode('NEW offer', {'offer': 2}, 4)`, implement it and call `m09_encode` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for encode</summary>
@@ -26,7 +26,7 @@ Unknown is not padding; declare truncation direction.
 
 ## Construct `recall`
 
-Return TP/(TP+FN); None when there are no actual positives. Predict the result on `[0, 10]`, implement it and call `m09_recall` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return TP/(TP+FN); None when there are no actual positives. Predict the result on `recall(0, 10)`, implement it and call `m09_recall` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for recall</summary>

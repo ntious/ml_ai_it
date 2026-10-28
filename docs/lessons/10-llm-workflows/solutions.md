@@ -4,7 +4,7 @@ Try [practice](practice.md) before reading the worked notebook. [Download soluti
 
 ## `parse_label`
 
-Reject prose and extra keys; parsing is separate from correctness. For `['{"label":"spam"}']`, the expected result is `'spam'`.
+Reject prose and extra keys; parsing is separate from correctness. For `parse_label('{"label":"spam"}')`, the expected result is `'spam'`.
 
 ```python
 def parse_label(text):
@@ -18,7 +18,7 @@ def parse_label(text):
 
 ## `valid_fraction`
 
-Count malformed outputs in the denominator. For `[['spam', None, 'ham']]`, the expected result is `0.6666666666666666`.
+Count malformed outputs in the denominator. For `valid_fraction(['spam', None, 'ham'])`, the expected result is `0.6666666666666666`.
 
 ```python
 def valid_fraction(labels):
@@ -27,7 +27,7 @@ def valid_fraction(labels):
 
 ## `end_to_end_accuracy`
 
-Do not condition accuracy on the outputs the parser accepted. For `[['spam', 'ham'], ['spam', None]]`, the expected result is `0.5`.
+Do not condition accuracy on the outputs the parser accepted. For `end_to_end_accuracy(['spam', 'ham'], ['spam', None])`, the expected result is `0.5`.
 
 ```python
 def end_to_end_accuracy(actual, parsed):
