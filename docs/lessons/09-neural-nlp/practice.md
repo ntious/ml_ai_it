@@ -1,10 +1,10 @@
 # Module 9: implement, explain and transfer
 
-Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module09/practice.ipynb "site-download:module09/practice.ipynb"). In a source checkout open `notebooks/practice/module09-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module09/practice.ipynb "site-download:module09/practice.ipynb"). In a source checkout open `notebooks/practice/module09-practice.ipynb`. Use the [framework environment and kernel](../../setup/frameworks.md). Three unfinished functions report **not_attempted**, not a pass. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Construct `vocabulary`
 
-Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. Predict the result on `[['FREE offer', 'offer now']]`, implement it and call `m09_vocabulary` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. Predict the result on `vocabulary(['FREE offer', 'offer now'])`, implement it and call `m09_vocabulary` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for vocabulary</summary>
@@ -15,7 +15,7 @@ Fit only training text and reserve unknown/padding separately.
 
 ## Construct `encode`
 
-Lowercase/split, map unknown to 1, keep first length tokens and pad with 0. Predict the result on `['NEW offer', {'offer': 2}, 4]`, implement it and call `m09_encode` through the notebook check. Then add a changed case and explain which assumption it tests.
+Lowercase/split, map unknown to 1, keep first length tokens and pad with 0. Predict the result on `encode('NEW offer', {'offer': 2}, 4)`, implement it and call `m09_encode` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for encode</summary>
@@ -26,7 +26,7 @@ Unknown is not padding; declare truncation direction.
 
 ## Construct `recall`
 
-Return TP/(TP+FN); None when there are no actual positives. Predict the result on `[0, 10]`, implement it and call `m09_recall` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return TP/(TP+FN); None when there are no actual positives. Predict the result on `recall(0, 10)`, implement it and call `m09_recall` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for recall</summary>
@@ -34,6 +34,10 @@ Return TP/(TP+FN); None when there are no actual positives. Predict the result o
 Use actual positives, not total messages or predicted positives.
 
 </details>
+
+## Reason beyond the visible checks
+
+With `vocab = vocabulary(['FREE offer', 'offer now'])`, predict `encode('Offer FREE prize now', vocab, 3)`. Which word is lost, which becomes unknown, and what would a length of 2 also lose? The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
 
 ## Transfer to an IT decision
 

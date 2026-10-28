@@ -37,7 +37,7 @@ The checked-in fixtures are original synthetic data, licensed CC BY 4.0, with ch
 
 ## Run the complete example
 
-Download and extract the [source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Run from its `ml_ai_it` folder. Python 3.11 or newer is sufficient; Modules 1 and 2 need no `pip install` step.
+Download and extract the [source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Run from its `ml_ai_it` folder. Python 3.11 or newer is sufficient; Modules 1 and 2 need no `pip install` step. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 Windows PowerShell:
 

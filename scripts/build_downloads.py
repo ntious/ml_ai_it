@@ -23,10 +23,10 @@ def build():
     from check_practice import validate_sources as validate_practice_sources, checks_digest
     import hashlib
     validate_practice_sources()
-    practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
+    practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text(encoding="utf-8"))["modules"]
     for entry in practice_registry:
         verified = ROOT / "runs/verified/practice" / f'module{entry["id"]:02d}'
-        summary = json.loads((verified / "summary.json").read_text())
+        summary = json.loads((verified / "summary.json").read_text(encoding="utf-8"))
         assert summary["checks_sha256"] == checks_digest(), "Practice checks changed; rerun scripts/check_practice.py"
         target = DESTINATION / f'module{entry["id"]:02d}'
         target.mkdir(parents=True, exist_ok=True)
@@ -92,10 +92,17 @@ def build():
             for member in sorted(cache.iterdir()):
                 if member.is_file():
                     archive.write(member, arcname=member.name)
+    build_source_archive(DESTINATION / "ml_ai_it-source.zip")
+    print("Built source, notebook, contract, and sample downloads from the publication allowlist.")
+
+
+def build_source_archive(path):
+    """Write the complete course source from the publication allowlist; no runs or caches."""
     files = [ROOT / name for name in ROOT_FILES]
     for folder in SOURCE_FOLDERS:
         files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in p.parts))
-    with zipfile.ZipFile(DESTINATION / "ml_ai_it-source.zip", "w", compression=zipfile.ZIP_DEFLATED) as archive:
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for source in sorted(set(files)):
             if not source.is_file():
                 raise FileNotFoundError(source)
@@ -103,8 +110,15 @@ def build():
             info = zipfile.ZipInfo(name, date_time=(2026, 10, 24, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(info, source.read_bytes())
-    print("Built source, notebook, contract, and sample downloads from the publication allowlist.")
+    return Path(path)
 
 
 if __name__ == "__main__":
-    build()
+    import argparse
+    parser = argparse.ArgumentParser(description="Build reading-site downloads, or only the course source archive.")
+    parser.add_argument("--source-only", metavar="ZIP", help="Write just the source archive (for an instructor to share when the site is unavailable).")
+    arguments = parser.parse_args()
+    if arguments.source_only:
+        print("Wrote", build_source_archive(arguments.source_only))
+    else:
+        build()

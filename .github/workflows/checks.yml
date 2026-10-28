@@ -15,6 +15,8 @@ jobs:
       OMP_NUM_THREADS: '2'
       OPENBLAS_NUM_THREADS: '2'
     strategy:
+      # Report every platform; one failure must not hide another's result.
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         python: ['3.12']
@@ -53,6 +55,13 @@ jobs:
           name: verified-core-${{ matrix.os }}-py${{ matrix.python }}
           path: runs/verified/
   framework-checks:
+    # Behavior tests and notebook execution each take most of an hour on CPU,
+    # so they run as parallel jobs with separate time limits.
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [tests, notebooks]
+    name: framework-checks (${{ matrix.part }})
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
@@ -78,15 +87,25 @@ jobs:
       - name: Register the framework Jupyter kernel
         run: python -m ipykernel install --user --name ml-ai-frameworks
       - name: Exercise actual framework, fine-tuning, CLI, and app behavior
+        if: matrix.part == 'tests'
         run: python -m unittest discover -s tests -p test_continuation_heavy.py -v
       - name: Execute framework notebooks
+        if: matrix.part == 'notebooks'
         run: python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
       - name: Check the neural teaching practice and solution separately
+        if: matrix.part == 'notebooks'
         run: python scripts/check_practice.py --group frameworks --kernel ml-ai-frameworks
       - uses: actions/upload-artifact@v4
+        if: matrix.part == 'notebooks'
         with:
           name: verified-frameworks
           path: runs/verified/
+      - name: Record framework resource use
+        # Evidence for the documented learner disk and memory allowance.
+        if: always()
+        run: |
+          echo "cpus=$(nproc)"; free -m; df -h .
+          du -sh "$(python -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])')" ~/.cache/huggingface ~/.cache/pip runs 2>/dev/null || true
   build-site:
     needs: [verify, framework-checks]
     runs-on: ubuntu-latest

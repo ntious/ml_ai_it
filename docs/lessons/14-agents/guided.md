@@ -1,6 +1,6 @@
 # Module 14: guided construction and mastery
 
-Use this after the [foundation bridge](foundation.md) and before the complete [walkthrough](index.md). Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
+Use this after the [foundation bridge](foundation.md) and before attempting independent practice; return to the [module run instructions](index.md) afterward. Read, predict, run, change, and explain. The shared runner remains the complete reference; these small steps expose its ideas.
 
 ## Worked concept
 
@@ -27,7 +27,6 @@ else:
 
 Trace legitimate, unsupported and adversarial requests. Verify returned values and separately score intent match, schema validity, policy validity and evidence correctness.
 
-Cover the worked code, implement the central step again, and explain its inputs, outputs and boundary. Keep development experiments separate from final evaluation. Having already viewed a public final report, treat a rerun as rehearsal; a fresh generalization claim needs a new evaluation design.
 
 ## Debug a plausible misconception
 

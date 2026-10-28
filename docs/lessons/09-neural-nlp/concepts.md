@@ -16,12 +16,12 @@ If only 10 of 100 messages are spam, predicting ham every time has 90% accuracy 
 
 ## Trace a small case
 
-The first operation is **vocabulary**: Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. On authored arguments `[['FREE offer', 'offer now']]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `vocabulary(['FREE offer', 'offer now'])` before running: lowercase tokens in alphabetical order from ID 2 give `{'free': 2, 'now': 3, 'offer': 4}`, with 0 reserved for padding and 1 for unknown words. Then predict `encode('NEW offer', {'offer': 2}, 4)`: `new` is unknown (1), `offer` is 2, and two padding zeros fill the length, giving `[1, 2, 0, 0]`. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/sms-neural-nlp/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/sms-neural-nlp/scripts/run.py`. Its Keras `TextVectorization` layer adapts on training messages only, with at most 6,000 tokens and length 96. It reserves the same two IDs (0 padding, 1 unknown), but orders words by training frequency rather than alphabetically. `vocabulary.json` and `vocabulary_preview.csv` record the result. Recall in `comparison.csv` uses actual positives as its denominator, exactly like your `recall` function. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://www.tensorflow.org/text/guide/word_embeddings) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[TensorFlow guide: Word embeddings](https://www.tensorflow.org/text/guide/word_embeddings) shows how integer token IDs become learned vectors and how `TextVectorization` pads and truncates sequences. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

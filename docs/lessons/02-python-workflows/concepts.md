@@ -16,12 +16,12 @@ A relative path starts at the process working directory, not automatically at th
 
 ## Trace a small case
 
-The first operation is **status_counts**: Return a dictionary counting the status string in each record. On authored arguments `[[{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}]]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}])` and `status_counts([])` before running. The empty file must return an empty dictionary, not raise an error. Then predict `observed_mean([0, None])`: zero is an observed value, so the mean is 0. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/service-files/scripts/summarize.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/service-files/scripts/summarize.py`. Its `category_summary.csv` counts tickets per category the way `status_counts` counts statuses, and `summary.txt` reports the average handling minutes (15.0 for the fixture). It writes into the `--output` folder you choose, which is the job `output_path` does in miniature. Compare one count in `category_summary.csv` with a count you make by hand from `tickets.csv`. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://docs.python.org/3/tutorial/errors.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Python tutorial: Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) explains tracebacks, `try`/`except` and raising errors: the tools for diagnosing the path and type errors in outcome M02.4. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

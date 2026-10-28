@@ -16,12 +16,12 @@ A cluster ID is an arbitrary identifier. Swapping 0 and 1 preserves the partitio
 
 ## Trace a small case
 
-The first operation is **squared_distance**: Return sum of squared coordinate differences for equal-length vectors. On authored arguments `[[2, 4], [1, 2]]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `squared_distance([2, 4], [1, 2])` before running: (2−1)² + (4−2)² = 5. Signed differences would sum to 3 and could cancel. Then predict `select_k([[4, 0.5], [2, 0.5]])`: the scores tie, so the declared rule chooses the smaller K, 2. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/wine-clustering/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/wine-clustering/scripts/run.py`. `k_comparison.csv` lists the validation silhouette for each K (0.206 for K = 2, 0.184 for K = 3, 0.162 for K = 4), and selecting K from it is the job of `select_k`. `cluster_profiles.csv` and `cluster_counts.csv` describe clusters by size and original-unit features, which is what `profile` produces. Wine quality is never used to fit or select clusters, so a cluster number is not a quality grade. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://scikit-learn.org/stable/modules/clustering.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[scikit-learn user guide: Clustering](https://scikit-learn.org/stable/modules/clustering.html), the K-means and silhouette sections, explains the inertia objective and why the number of clusters must be chosen by a separate criterion. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

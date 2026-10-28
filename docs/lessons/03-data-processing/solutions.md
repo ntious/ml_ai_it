@@ -1,10 +1,10 @@
 # Module 3: construction feedback
 
-Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module03/solutions.ipynb "site-download:module03/solutions.ipynb") or open `notebooks/practice/module03-solutions.ipynb` in the complete source tree.
+Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module03/solutions.ipynb "site-download:module03/solutions.ipynb") or open `notebooks/practice/module03-solutions.ipynb` in the complete source tree. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## `parse_latency`
 
-Preserve measured zero and missingness separately. For `['']`, the expected result is `None`.
+Preserve measured zero and missingness separately. For `parse_latency('')`, the expected result is `None`.
 
 ```python
 def parse_latency(value):
@@ -18,7 +18,7 @@ def parse_latency(value):
 
 ## `deduplicate`
 
-Deduplicate by identity, not the entire row. For `[[{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}]]`, the expected result is `[{'event_id': 'a', 'v': 1}, {'event_id': 'b', 'v': 3}]`.
+Deduplicate by identity, not the entire row. For `deduplicate([{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}])`, the expected result is `[{'event_id': 'a', 'v': 1}, {'event_id': 'b', 'v': 3}]`.
 
 ```python
 def deduplicate(records):
@@ -33,12 +33,16 @@ def deduplicate(records):
 
 ## `reconcile`
 
-Every source row needs one accounted-for outcome. For `[10, 7, 2, 1]`, the expected result is `True`.
+Every source row needs one accounted-for outcome. For `reconcile(10, 7, 2, 1)`, the expected result is `True`.
 
 ```python
 def reconcile(input_rows, accepted, rejected, duplicates):
     return all(x >= 0 for x in [input_rows,accepted,rejected,duplicates]) and input_rows == accepted+rejected+duplicates
 ```
+
+## Reasoning task feedback
+
+For example, `{'event_id': 'a', 'v': 1}` and `{'event_id': 'a', 'v': 2}`: the rows differ, so whole-row deduplication keeps both, but there is one identity. With one accepted and one duplicate, `reconcile(2, 1, 0, 1)` is True. The complete script treats this pair as conflicting and rejects both, because it cannot tell which value is correct. State which policy you chose and why.
 
 ## Judge the explanation
 
@@ -46,4 +50,4 @@ def reconcile(input_rows, accepted, rejected, duplicates):
 
 ## Transfer feedback
 
-Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. A defensible response keeps the first record for the repeated `event_id` under the practice policy, or explains the complete script's conflict rejection. It keeps the missing latency as missing rather than zero, and shows input rows = accepted + rejected + duplicates. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.

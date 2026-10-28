@@ -1,10 +1,10 @@
 # Module 14: implement, explain and transfer
 
-Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module14/practice.ipynb "site-download:module14/practice.ipynb"). In a source checkout open `notebooks/practice/module14-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module14/practice.ipynb "site-download:module14/practice.ipynb"). In a source checkout open `notebooks/practice/module14-practice.ipynb`. Use the [framework environment and kernel](../../setup/frameworks.md). Three unfinished functions report **not_attempted**, not a pass. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Construct `route_intent`
 
-Return count_rows for count, mean_alcohol for alcohol; otherwise None. Predict the result on `['count']`, implement it and call `m14_route_intent` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return count_rows for count, mean_alcohol for alcohol; otherwise None. Predict the result on `route_intent('count')`, implement it and call `m14_route_intent` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for route_intent</summary>
@@ -15,7 +15,7 @@ An unsupported intent must not fall through to an unrelated answer.
 
 ## Construct `allowed_call`
 
-Allow only count_rows with no arguments, or mean_alcohol with no arguments. Predict the result on `['count_rows', {}]`, implement it and call `m14_allowed_call` through the notebook check. Then add a changed case and explain which assumption it tests.
+Allow only count_rows with no arguments, or mean_alcohol with no arguments. Predict the result on `allowed_call('count_rows', {})`, implement it and call `m14_allowed_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for allowed_call</summary>
@@ -26,7 +26,7 @@ Validate tool and argument contract, not just words in a prompt.
 
 ## Construct `can_call`
 
-Return True for nonnegative whole-number used/budget and used < budget; reject bool. Predict the result on `[0, 1]`, implement it and call `m14_can_call` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return True for nonnegative whole-number used/budget and used < budget; reject bool. Predict the result on `can_call(0, 1)`, implement it and call `m14_can_call` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for can_call</summary>
@@ -34,6 +34,10 @@ Return True for nonnegative whole-number used/budget and used < budget; reject b
 Stop before exceeding the budget and reject malformed limits.
 
 </details>
+
+## Reason beyond the visible checks
+
+For each request, name the control that stops it and the function call that shows it: "delete the dataset", "count the rows in /etc/passwd", and a second tool call after the first has been used with a budget of 1. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
 
 ## Transfer to an IT decision
 

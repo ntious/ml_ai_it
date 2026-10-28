@@ -1,10 +1,10 @@
 # Module 10: implement, explain and transfer
 
-Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module10/practice.ipynb "site-download:module10/practice.ipynb"). In a source checkout open `notebooks/practice/module10-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module10/practice.ipynb "site-download:module10/practice.ipynb"). In a source checkout open `notebooks/practice/module10-practice.ipynb`. Use the [framework environment and kernel](../../setup/frameworks.md). Three unfinished functions report **not_attempted**, not a pass. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Construct `parse_label`
 
-Return ham/spam only for an exact one-key JSON object; otherwise return None. Predict the result on `['{"label":"spam"}']`, implement it and call `m10_parse_label` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return ham/spam only for an exact one-key JSON object; otherwise return None. Predict the result on `parse_label('{"label":"spam"}')`, implement it and call `m10_parse_label` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for parse_label</summary>
@@ -15,7 +15,7 @@ Reject prose and extra keys; parsing is separate from correctness.
 
 ## Construct `valid_fraction`
 
-Input parsed labels or None. Return valid/total, or None for empty input. Predict the result on `[['spam', None, 'ham']]`, implement it and call `m10_valid_fraction` through the notebook check. Then add a changed case and explain which assumption it tests.
+Input parsed labels or None. Return valid/total, or None for empty input. Predict the result on `valid_fraction(['spam', None, 'ham'])`, implement it and call `m10_valid_fraction` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for valid_fraction</summary>
@@ -26,7 +26,7 @@ Count malformed outputs in the denominator.
 
 ## Construct `end_to_end_accuracy`
 
-Return exact matches / all cases, counting None as wrong; None for no cases. Predict the result on `[['spam', 'ham'], ['spam', None]]`, implement it and call `m10_end_to_end_accuracy` through the notebook check. Then add a changed case and explain which assumption it tests.
+Return exact matches / all cases, counting None as wrong; None for no cases. Predict the result on `end_to_end_accuracy(['spam', 'ham'], ['spam', None])`, implement it and call `m10_end_to_end_accuracy` through the notebook check. Then add a changed case and explain which assumption it tests.
 
 <details>
 <summary>Hint for end_to_end_accuracy</summary>
@@ -34,6 +34,10 @@ Return exact matches / all cases, counting None as wrong; None for no cases. Pre
 Do not condition accuracy on the outputs the parser accepted.
 
 </details>
+
+## Reason beyond the visible checks
+
+Three messages are all actually spam. The model returns `'{"label":"spam"}'`, `'spam'` and `'{"label":"ham"}'`. Compute `valid_fraction`, `end_to_end_accuracy`, and the accuracy you would report if you silently dropped malformed outputs. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
 
 ## Transfer to an IT decision
 

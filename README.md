@@ -2,7 +2,7 @@
 
 **[Course website on GitHub Pages](https://ntious.github.io/ml_ai_it/)** · [Start here](docs/start-here.md) · [Course outline](docs/modules.md)
 
-If repository or download links return 404, request the complete course archive from your instructor. Keep its folder structure intact. Public access requires a successful site deployment and repository access.
+If repository or download links return 404, request the complete course archive from your instructor and follow the [offline access route](docs/setup/student-workspace.md#if-a-download-link-does-not-open). Keep its folder structure intact. Public access requires a successful site deployment and repository access.
 
 Learn to frame a useful problem, work with data, build and evaluate models, and explain whether an AI system should be used. This open educational resource combines short lessons, runnable Python examples, guided notebooks, independent practice and worked feedback across 14 modules.
 
@@ -10,7 +10,7 @@ Learn to frame a useful problem, work with data, build and evaluate models, and 
 
 Edition 0.7.0. [Current status and tested scope](docs/status.md).
 
-Modules [5](docs/lessons/05-regression/index.md), [6](docs/lessons/06-classification/index.md) and [8](docs/lessons/08-neural-networks/index.md) now offer an applied explanation–practice–feedback prototype with separate learner notebooks and worked solutions. Start with the concept sequence, attempt the functions, then use the complete reference study. [Human pilot and review guide](docs/instructor/teaching-prototype-pilot.md).
+All 14 modules include separate practice and solution notebooks. Attempt practice before consulting solutions; connect the small operations to the complete study and transfer task.
 
 ## Who this is for
 

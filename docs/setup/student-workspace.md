@@ -2,7 +2,29 @@
 
 Use a repository checkout or the complete source archive supplied for your class. Running the downloaded course locally does not require a GitHub account.
 
+## If a download link does not open
+
+Lesson pages link to downloads on the reading site. Until the site is published, those links return "404 Not Found". The GitHub repository is also visible only to people the owner has given access to. Nothing is wrong with your computer; use the route below.
+
+1. **Get the complete course source.** Ask your instructor for the course source archive, `ml_ai_it-source.zip`, through the course's usual file channel (for example Canvas). If you have been given repository access, the download route below gives the same files. Extract the archive and keep its folder structure.
+2. **Use the in-source copy of each download.**
+
+| Link on a lesson page | Where it is in the source, or how to produce it |
+| --- | --- |
+| Complete source archive | The archive from step 1 |
+| Module notebook | `notebooks/lessons/<module folder>/`, for example `notebooks/lessons/05-regression/regression.ipynb` |
+| Practice or solutions notebook | `notebooks/practice/moduleNN-practice.ipynb` and `moduleNN-solutions.ipynb` |
+| Worked report (`example/index.html`) | Run the module's command; open `index.html` in the output folder you named |
+| Executed notebook copy | Open the source notebook, restart the kernel and run all cells |
+| Sample data and schemas | `data/samples/` and `data/schemas/` |
+| Attributed data cache | The module's download command saves the same files under `runs/datasets/` and checks them against the reviewed checksums |
+| Capstone notebook or report | `projects/phishing-triage/notebooks/complete-study.ipynb`; run it to produce the report |
+
+Instructors can build the archive from a checkout with `python scripts/build_downloads.py --source-only ml_ai_it-source.zip`. It contains only the published source allowlist, with no run outputs, caches or environments.
+
 ## Download route
+
+Use this route only if you have been given access to the repository.
 
 1. Open [the repository](https://github.com/ntious/ml_ai_it).
 2. Choose Code, then Download ZIP. Extract the archive; opening the compressed view is insufficient.
@@ -32,7 +54,7 @@ Expected result: Review storage. Find runs/module01/first-run.txt in the same ex
 
 ## Git route
 
-If you already use Git, clone https://github.com/ntious/ml_ai_it.git, then change into ml_ai_it. Downloaded archives do not have Git history and do not require Git for learning.
+If you already use Git and have repository access, clone https://github.com/ntious/ml_ai_it.git, then change into ml_ai_it. Downloaded archives do not have Git history and do not require Git for learning.
 
 ## Open a notebook
 

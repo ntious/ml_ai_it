@@ -1,6 +1,6 @@
 # Pilot the applied teaching prototype
 
-Modules [5](../lessons/05-regression/index.md), [6](../lessons/06-classification/index.md) and [8](../lessons/08-neural-networks/index.md) prototype a fuller explanation → worked construction → independent code → diagnostic feedback → real-data sandbox → complete reference sequence. Their learning outcomes are unchanged. Mathematical depth is optional open reading; the core remains applied.
+Modules [5](../lessons/05-regression/index.md), [6](../lessons/06-classification/index.md) and [8](../lessons/08-neural-networks/index.md) prototype a fuller explanation → worked construction → independent code → diagnostic feedback → real-data sandbox → complete reference sequence. Their learning outcomes are unchanged. The other 11 modules have practice and solution notebooks with authored checks and a reasoning task, but no real-data sandbox; this protocol can be used for them too. Mathematical depth is optional open reading; the core remains applied.
 
 ## What is ready and what is not yet measured
 

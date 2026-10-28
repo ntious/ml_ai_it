@@ -129,7 +129,7 @@ class RegressionTests(unittest.TestCase):
                 train_study(run)
             path.write_bytes(original)
             train_study(run); validate_study(run)
-            (run / "candidates.json").write_text((run / "candidates.json").read_text() + "\n")
+            (run / "candidates.json").write_text((run / "candidates.json").read_text(encoding="utf-8") + "\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "changed after selection"):
                 evaluate_study(run)
 
@@ -174,15 +174,15 @@ class RegressionTests(unittest.TestCase):
                 records = predictions.loc[predictions.model == score["model"]]
                 np.testing.assert_allclose(records.residual, records.actual_requests - records.predicted_requests)
                 self.assertAlmostEqual(score["mae"], records.residual.abs().mean())
-            selection = json.loads((run / "selection.json").read_text())
+            selection = json.loads((run / "selection.json").read_text(encoding="utf-8"))
             self.assertEqual(result["selected"], selection["selected"])
             self.assertEqual(set(predictions.model), {result["selected"], "training_mean", "previous_day", "previous_week"})
-            html = (run / "index.html").read_text()
+            html = (run / "index.html").read_text(encoding="utf-8")
             self.assertIn('scope="col"', html)
             self.assertIn('aria-describedby="residuals-description"', html)
             for name in ["forecast.png", "residuals.png"]:
                 self.assertEqual((run / name).read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
-            self.assertIn("positive means underprediction", (run / "summary.txt").read_text())
+            self.assertIn("positive means underprediction", (run / "summary.txt").read_text(encoding="utf-8"))
             print("SMOKE_STUDY", json.dumps(result, sort_keys=True))
         self.assertEqual(SMOKE.read_bytes(), before)
 
@@ -209,7 +209,7 @@ class RegressionTests(unittest.TestCase):
     def test_cached_external_data_must_match_its_provenance(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "day.csv"; path.write_bytes(b"changed")
-            (Path(directory) / "provenance.json").write_text(json.dumps({"day_csv_sha256": "wrong", "archive_sha256": UCI_ARCHIVE_SHA256}))
+            (Path(directory) / "provenance.json").write_text(json.dumps({"day_csv_sha256": "wrong", "archive_sha256": UCI_ARCHIVE_SHA256}), encoding="utf-8")
             with patch("urllib.request.urlopen") as network, self.assertRaisesRegex(ValueError, "checksum changed"):
                 download_bike_data(directory)
             network.assert_not_called()
@@ -222,12 +222,12 @@ class RegressionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             run = Path(directory) / "uci"
             result = run_study(path, run, holdout_days=110, plots=True, dataset_label="UCI Bike Sharing daily counts, CC BY 4.0")
-            manifest = json.loads((run / "split_manifest.json").read_text())
+            manifest = json.loads((run / "split_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual([manifest["splits"][name]["rows"] for name in ["train", "validation", "final_test"]], [504, 110, 110])
             self.assertEqual(result["test_rows"], 110)
             self.assertTrue(np.isfinite([row["mae"] for row in result["scores"]]).all())
             print("REAL_UCI_STUDY", json.dumps(result, sort_keys=True))
-            print("REAL_UCI_PROVENANCE", (path.parent / "provenance.json").read_text())
+            print("REAL_UCI_PROVENANCE", (path.parent / "provenance.json").read_text(encoding="utf-8"))
         self.assertEqual(path.read_bytes(), raw)
 
 

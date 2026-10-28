@@ -1,6 +1,6 @@
 # Module 5: practice solutions and diagnostic feedback
 
-Attempt the [practice](practice.md) before opening the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module05/solutions.ipynb "site-download:module05/solutions.ipynb"). The notebook executes the three functions and a real-data development comparison. Reading it is useful feedback, not evidence of independent implementation.
+Attempt the [practice](practice.md) before opening the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module05/solutions.ipynb "site-download:module05/solutions.ipynb"). The notebook executes the three functions and a real-data development comparison. Reading it is useful feedback, not evidence of independent implementation. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Residuals: direction and magnitude answer different questions
 
@@ -10,7 +10,7 @@ For the changed example `[1,4,10]` versus `[3,4,4]`, residuals are `[-2,0,6]`; M
 
 ## Persistence: a missing lag is not zero
 
-Counts `[10,13,9]` become predictions `[None,10,13]`. The first preceding count was not supplied. For `[4,0,7,2]`, predictions are `[None,4,0,7]`: the observed zero remains a valid value. Copying the target-day count yields a perfect-looking but invalid forecast.
+Counts `[10,13,9]` become predictions `[None,10,13]`. The first preceding count was not supplied. For `previous_day([4, 0, 7, 2])`, predictions are `[None, 4, 0, 7]`: the observed zero remains a valid value. Copying the target-day count yields a perfect-looking but invalid forecast.
 
 Explain the origin: when forecasting a later day in a rolling protocol, a previously evaluated day's finalized count may now be available. It would not be available in a single batch issued before all target days. Naming the split without naming that protocol leaves the leakage question incomplete.
 

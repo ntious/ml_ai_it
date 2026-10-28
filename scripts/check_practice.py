@@ -13,7 +13,7 @@ import nbformat
 from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRY = json.loads((ROOT / 'curriculum/practice.json').read_text())['modules']
+REGISTRY = json.loads((ROOT / 'curriculum/practice.json').read_text(encoding='utf-8'))['modules']
 
 
 def checks_digest():
@@ -25,7 +25,7 @@ def validate_sources():
     assert [entry['id'] for entry in REGISTRY] == list(range(1, 15))
     for entry in REGISTRY:
         lesson = ROOT / 'docs/lessons' / entry['slug'] / 'index.md'
-        outcomes = re.search(r'## (?:Learning outcomes|What you will learn)\n(.*?)(?=\n## )', lesson.read_text(), re.S)[1].strip()
+        outcomes = re.search(r'## (?:Learning outcomes|What you will learn)\n(.*?)(?=\n## )', lesson.read_text(encoding='utf-8'), re.S)[1].strip()
         assert hashlib.sha256(outcomes.encode()).hexdigest() == entry['outcomes_sha256'], 'Practice must preserve the learning outcomes: ' + str(lesson)
         assert len(entry['checks']) == 3 and set(entry['checks']) <= CHECKS.keys()
         for kind in ['practice', 'solutions']:
@@ -77,7 +77,7 @@ print("PRACTICE_EVIDENCE", {kind!r}, {entry['id']}, {expected!r})'''
         summary['notebooks'][kind] = {'source': entry[kind], 'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                                       'state': expected, 'checks': 3, 'runtime': runtime, 'real_development_sandbox_executed': kind == 'solutions' and entry.get('sandbox') != 'authored_operation', 'worked_operation_executed': kind == 'solutions'}
         print(f"Module {entry['id']} {kind}: three checks {expected}; {entry.get('sandbox', 'real_development_sandbox')} {'executed' if kind == 'solutions' else 'skipped as intended'}.")
-    (destination / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+    (destination / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

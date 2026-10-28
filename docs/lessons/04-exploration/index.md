@@ -42,7 +42,7 @@ Missing date/service rows are not inferred to mean zero traffic. Totals describe
 
 ## Setup and run
 
-Obtain a checkout or extract the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). Open a terminal in `ml_ai_it`. Follow the [environment instructions](../../../QUICKSTART.md#module-3-add-the-data-libraries) if you do not yet have `.venv`. Install the additional plotting libraries into that same environment.
+Obtain a checkout or extract the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). Open a terminal in `ml_ai_it`. Follow the [environment instructions](../../../QUICKSTART.md#module-3-add-the-data-libraries) if you do not yet have `.venv`. Install the additional plotting libraries into that same environment. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 Windows PowerShell:
 

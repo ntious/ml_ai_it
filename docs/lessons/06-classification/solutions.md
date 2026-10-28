@@ -1,6 +1,6 @@
 # Module 6: practice solutions and diagnostic feedback
 
-Try the [practice](practice.md), then compare the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module06/solutions.ipynb "site-download:module06/solutions.ipynb"). Use the notebook to inspect a completed approach; assess your understanding with changed inputs and an independent explanation.
+Try the [practice](practice.md), then compare the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module06/solutions.ipynb "site-download:module06/solutions.ipynb"). Use the notebook to inspect a completed approach; assess your understanding with changed inputs and an independent explanation. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Confusion counts: trace a boundary case
 

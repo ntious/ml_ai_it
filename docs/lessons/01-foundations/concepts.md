@@ -12,20 +12,16 @@ For an authored rule that escalates priority at least 3, priorities 2, 3 and 4 p
 
 ## Separate development from the final question
 
-Training fits parameters; validation supports choices; a final test estimates the locked procedure on held-out examples. Once you use the final answer to select a threshold, that answer has become development evidence. A new random seed does not erase that reuse. Save the original question, the decision and the evidence needed to contradict it.
+This is a preview: [Module 5](../05-regression/index.md) builds these split roles with a real dataset. Training fits parameters; validation supports choices; a final test estimates the locked procedure on held-out examples. Once you use the final answer to select a threshold, that answer has become development evidence. A new random seed does not erase that reuse. Save the original question, the decision and the evidence needed to contradict it.
 
 ## Trace a small case
 
-The first operation is **route**: Return a bool: priority >= threshold. On authored arguments `[2]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `route(2)`, `route(3)` and `route(4, threshold=5)` before running. The first two sit on either side of the inclusive boundary; the third checks that your function uses its `threshold` argument rather than a fixed 3. Then predict `error_counts([False, False, True], [True, True, True])`: the two actual negatives were flagged, so there are two false alerts and no misses. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/first-run/scripts/first_run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/first-run/scripts/first_run.py`, whose storage rule is strict (`storage_percent > 80`). The practice priority rule is inclusive (`priority >= 3`). They are deliberately different rules on different inputs, so do not look for the priority rule inside the storage script. Run the script with `--storage-percent 80` and `81`, open each saved `first-run.txt`, and explain which comparison operator produces each decision. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
-
-## Three names to recognize
-
-Training examples teach the model; validation examples help choose between candidate settings; test examples check the chosen procedure afterward. Module 5 develops this distinction in a full experiment. For the first human-written rule, no model training or data split is performed. See the [glossary](../../glossary.md) when these terms recur.
+[Google's Introduction to Machine Learning: supervised learning](https://developers.google.com/machine-learning/intro-to-ml/supervised) defines features, labels, training and inference: the terms this module uses to separate a written rule from a learned model. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

@@ -25,3 +25,26 @@
 | Tool / plan | An implemented operation and a proposed invocation; a legal plan can still misunderstand intent |
 
 Use the module's foundation page for worked arithmetic and guided construction for execution. Units and available information remain part of every definition.
+
+## Terms used in the exercises
+
+| Term | Meaning and example | Continue |
+| --- | --- | --- |
+| Kernel | The Python process executing notebook cells; restart clears its variables. Course notebooks use **Python (course core)** or **Python (course frameworks)** | [Notebook setup](../QUICKSTART.md#notebook-option) |
+| Boolean | True or False, such as `85 > 80` | [Module 1](lessons/01-foundations/index.md) |
+| JSON | A text format for structured values, such as `{"label":"spam"}` | [Module 2](lessons/02-python-workflows/index.md) |
+| Pipeline | Ordered transformations and a model fitted together on training data | [Module 5](lessons/05-regression/concepts.md) |
+| Imputation | Replacing missing inputs using a declared rule, such as a training median | [Module 5](lessons/05-regression/concepts.md) |
+| MAE | Mean absolute error: errors −2 and 4 give MAE 3 in target units | [Module 5](lessons/05-regression/concepts.md) |
+| Scaler | A fitted transformation of numerical units; learn its statistics on training | [Module 6](lessons/06-classification/concepts.md) |
+| Threshold | Cutoff converting a score into a decision; this course uses score ≥ cutoff | [Module 6](lessons/06-classification/concepts.md) |
+| Confusion matrix | Counts of TP, FP, FN and TN comparing predictions with actual labels | [Module 6](lessons/06-classification/concepts.md) |
+| False positive / FP | A positive prediction for an actual negative; a false alert | [Module 6](lessons/06-classification/concepts.md) |
+| False negative / FN | A negative prediction for an actual positive; a missed case | [Module 6](lessons/06-classification/concepts.md) |
+| Balanced accuracy | Average of recall and specificity; gives both actual classes equal weight | [Module 6](lessons/06-classification/concepts.md) |
+| Silhouette | Compares within-cluster closeness with separation from other clusters | [Module 7](lessons/07-clustering/concepts.md) |
+| ReLU | Activation `max(0,x)`; −2 becomes 0, while 3 stays 3 | [Module 8](lessons/08-neural-networks/concepts.md) |
+| Sigmoid | Maps a real number into 0–1; zero maps to 0.5 | [Module 8](lessons/08-neural-networks/concepts.md) |
+| Prompt | Instructions and context supplied to a language model | [Module 10](lessons/10-llm-workflows/concepts.md) |
+| Adapter / LoRA | A small trainable update alongside frozen base weights; LoRA uses low-rank matrices | [Module 11](lessons/11-fine-tuning/concepts.md) |
+| Wilson interval | A binomial uncertainty calculation conditional on suitable sampling assumptions; not a correction for biased data | [Module 13](lessons/13-ethics-fairness/concepts.md) |

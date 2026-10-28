@@ -16,12 +16,12 @@ A model can memorize the adaptation set and still fail the output contract on he
 
 ## Trace a small case
 
-The first operation is **trainable_count**: Input [size, trainable] pairs; return number of trainable scalar values. On authored arguments `[[[100, False], [8, True], [2, True]]]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `trainable_count([[100, False], [8, True], [2, True]])` before running: only trainable tensors count, and you count their scalar values, giving 10. Then predict `completion_labels([5, 6, 7, 0], 2, [1, 1, 1, 0])`: the two prompt positions and the padding position become -100, giving `[-100, -100, 7, -100]`. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/sms-fine-tuning/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/sms-fine-tuning/scripts/run.py`. It trains rank-8 LoRA adapters on every `q_proj` and `v_proj` of SmolLM2-135M with prompt and padding labels masked to -100, which is your `completion_labels` at scale. `summary.json` reports `trainable_parameters` (460,800 in the recorded run) and an adapter update norm, which check that parameters actually changed. `generation_comparison.csv` then measures whether held-out answers improved: a separate question. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://arxiv.org/abs/2106.09685) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[LoRA: Low-Rank Adaptation of Large Language Models (Hu et al., 2021)](https://arxiv.org/abs/2106.09685), Section 4 (the method), explains why a low-rank update to a frozen weight needs few trainable values. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

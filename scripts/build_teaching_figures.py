@@ -44,7 +44,7 @@ def build():
     for name, fig in figures:
         fig.savefig(DESTINATION / (name+'.svg'), metadata={'Date': None})
         source = DESTINATION / (name+'.svg')
-        source.write_text('\n'.join(line.rstrip() for line in source.read_text().splitlines()) + '\n')
+        source.write_text('\n'.join(line.rstrip() for line in source.read_text(encoding='utf-8').splitlines()) + '\n', encoding='utf-8')
         # Local review PNGs are generated evidence, not additional source assets.
         evidence = ROOT / 'runs/teaching-review'; evidence.mkdir(parents=True, exist_ok=True)
         fig.savefig(evidence / (name+'.png'), dpi=140)

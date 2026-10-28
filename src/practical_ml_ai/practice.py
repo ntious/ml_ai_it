@@ -3,6 +3,7 @@
 Only explicitly selected trusted course notebooks call these checks. Each case
 uses small authored examples; passing does not establish independent mastery.
 """
+from pathlib import PurePath, PureWindowsPath
 import numpy as np
 
 
@@ -25,7 +26,7 @@ def _residuals(function):
 def _persistence(function):
     for counts, expected in [([10, 13, 9], [None, 10, 13]), ([4, 0, 7, 2], [None, 4, 0, 7])]:
         result = list(function(counts))
-        assert len(result) == len(counts) and result[0] is None, 'Keep one row per day; the first lag is unavailable, not zero.'
+        assert len(result) == len(counts) and (result[0] is None or (isinstance(result[0], (float, np.floating)) and np.isnan(result[0]))), 'Keep one row per day; the first lag is unavailable, not zero.'
         _close(result[1:], expected[1:], 'Use the preceding count, never the target-day or following count.')
 
 
@@ -34,6 +35,7 @@ def _regression(function):
     train = np.array([[1.], [3.], [np.nan], [5.]])
     model, predicted = function(train.copy(), np.array([2., 6., 6., 10.]), np.array([[np.nan], [100.]]))
     assert isinstance(model, Pipeline), 'Return a fitted sklearn Pipeline and its predictions.'
+    assert "imputer" in model.named_steps and "model" in model.named_steps, "Name the Pipeline steps imputer and model; make_pipeline generates different names."
     assert model.named_steps['imputer'].strategy == 'median', 'Use median imputation explicitly; a matching training mean in this fixture is not the requested strategy.'
     _close(model.named_steps['imputer'].statistics_, [3.], 'Fit the imputer on training only; new inputs must not change its median.')
     _close(predicted, [6., 200.], 'Apply the fitted transformation/model to new inputs, without refitting.')
@@ -104,15 +106,22 @@ def _fixture_check(specification):
             return isinstance(actual, dict) and actual.keys() == expected.keys() and all(equivalent(actual[k], v) for k, v in expected.items())
         if isinstance(expected, list):
             return isinstance(actual, (list, tuple)) and len(actual) == len(expected) and all(equivalent(a, b) for a, b in zip(actual, expected))
-        return not isinstance(actual, bool) and math.isclose(float(actual), expected, rel_tol=1e-6, abs_tol=1e-7)
+        if isinstance(actual, bool) or not isinstance(actual, (int, float, np.integer, np.floating)):
+            return False
+        return math.isclose(float(actual), expected, rel_tol=1e-6, abs_tol=1e-7)
+
+    def normalize(actual):
+        # Windows and POSIX spellings of the same relative path are equivalent.
+        if specification.get('normalize') == 'posix_path' and isinstance(actual, (str, PurePath)):
+            return PureWindowsPath(actual).as_posix()
+        return actual
 
     def verify(function):
+        name = getattr(function, '__name__', '<lambda>')
         for arguments, expected in specification['cases']:
-            actual = function(*deepcopy(arguments))
-            if specification is CASES.get('m02_output_path'):
-                from pathlib import PureWindowsPath
-                actual = PureWindowsPath(actual).as_posix()
-            assert equivalent(actual, expected), specification['feedback'] + f" Input: {arguments!r}; observed: {actual!r}; expected: {expected!r}."
+            actual = normalize(function(*deepcopy(arguments)))
+            call = f"{name if name != '<lambda>' else 'function'}({', '.join(map(repr, arguments))})"
+            assert equivalent(actual, expected), specification['feedback'] + f" Call: {call}; observed: {actual!r}; expected: {expected!r}."
     return verify
 
 
@@ -132,5 +141,5 @@ def check(name, function):
         result = {'check': name, 'state': 'needs_revision', 'feedback': str(error) or type(error).__name__}
     else:
         result = {'check': name, 'state': 'passed', 'feedback': 'These visible cases pass. Explain why, try changed inputs, and complete the transfer task.'}
-    print(f"{result['check']}: {result['state']} — {result['feedback']}")
+    print(f"{result['check']}: {result['state']} - {result['feedback']}")
     return result

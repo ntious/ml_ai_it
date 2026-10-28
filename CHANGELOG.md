@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased — independent-review corrections (PR #11, not yet merged)
+
+- Offline access: a learner route for when site downloads or the private repository return 404, a source-only archive build for instructors, and a link check that requires the route on every page with downloads (F1).
+- CI: explicit UTF-8 file I/O, independent platform results, and framework tests and notebooks as parallel jobs (F2).
+- Practice checks: Windows path spellings, asymmetric error counts, missing lag values, named pipeline steps, call-notation feedback and non-numeric results, with regression tests (F3, F9, F10).
+- RT-IoT transfer: validation compares the model with always-review and never-review over a wider fixed grid; prevalence and workload are reported (F4).
+- Setup: one kernel name per profile, ordered notebook steps, and a WSL Ubuntu 24.04 route for framework modules on Windows (F6).
+- Teaching pages: module-specific explanations, descriptive links and reasoning tasks for Modules 1–4, 7 and 9–14; a located worked research comparison; glossary, status and scope corrections (F5, F7, F8, F11–F14).
+- Module 12 monitoring reports a zero-variance feature's standardized shift as unavailable, with its raw mean difference, instead of 0.
+- Learning outcomes are unchanged. Merge, a passing CI run on the merged revision, and the owner and human-pilot actions in the owner review guide are required before release.
+
 Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.
 ## 0.6.0 — repository audit and verification
 

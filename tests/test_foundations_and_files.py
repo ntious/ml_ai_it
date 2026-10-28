@@ -28,7 +28,7 @@ class FoundationTests(unittest.TestCase):
             output = Path(temporary) / "first.txt"
             result = subprocess.run([sys.executable, "-S", str(ROOT / "examples/first-run/scripts/first_run.py"), "--storage-percent", "80", "--output", str(output)], cwd=temporary, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertIn("Within the chosen threshold", output.read_text())
+            self.assertIn("Within the chosen threshold", output.read_text(encoding="utf-8"))
             self.assertIn("no model was trained", result.stdout)
 
 
@@ -44,7 +44,7 @@ class FileWorkflowTests(unittest.TestCase):
             self.assertEqual(report["tickets"]["average_minutes"], 15)
             self.assertEqual(report["tickets"]["by_category"]["network"], {"ticket_count": 2, "total_minutes": 25})
             self.assertEqual(report["events"]["by_severity"], {"info": 2, "warning": 1, "critical": 0})
-            self.assertEqual(json.loads((Path(temporary) / "report.json").read_text()), report)
+            self.assertEqual(json.loads((Path(temporary) / "report.json").read_text(encoding="utf-8")), report)
         self.assertEqual(before, [tickets.read_bytes(), events.read_bytes()])
 
     def test_empty_tickets_has_no_fabricated_average(self):
@@ -56,17 +56,17 @@ class FileWorkflowTests(unittest.TestCase):
     def test_missing_header_and_bad_minutes_have_actionable_errors(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "tickets.csv"
-            path.write_text("ticket_id,category\na,network\n")
+            path.write_text("ticket_id,category\na,network\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "needs.*minutes"):
                 read_tickets(path)
-            path.write_text("ticket_id,category,minutes\na,network,unknown\n")
+            path.write_text("ticket_id,category,minutes\na,network,unknown\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "line 2.*whole number"):
                 read_tickets(path)
 
     def test_duplicate_ids_are_not_silently_counted_twice(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "tickets.csv"
-            path.write_text("ticket_id,category,minutes\na,network,5\na,network,5\n")
+            path.write_text("ticket_id,category,minutes\na,network,5\na,network,5\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "duplicate ticket_id"):
                 read_tickets(path)
 
@@ -74,7 +74,7 @@ class FileWorkflowTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "events.json"
             for value in [{"event_id": "a"}, [{"event_id": "a", "source": "test", "severity": "urgent"}], [None]]:
-                path.write_text(json.dumps(value))
+                path.write_text(json.dumps(value), encoding="utf-8")
                 with self.subTest(value=value), self.assertRaises(ValueError):
                     read_events(path)
 
@@ -87,7 +87,7 @@ class FileWorkflowTests(unittest.TestCase):
     def test_generated_output_cannot_replace_raw_input(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "report.json"
-            path.write_text("[]")
+            path.write_text("[]", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "separate"):
                 run_workflow(ROOT / "data/samples/service-files/tickets.csv", path, temporary)
 

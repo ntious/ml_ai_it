@@ -27,8 +27,9 @@ def main():
     constraint="constraints-neural.txt" if args.profile == "frameworks" else "constraints-tested.txt"
     run("-m","pip","install","-e",f".[{extras}]","-c",str(ROOT/"environments"/constraint))
     kernel="ml-ai-frameworks" if args.profile == "frameworks" else "ml-ai-core"
-    run("-m","ipykernel","install","--user","--name",kernel)
+    label="Python (course frameworks)" if args.profile == "frameworks" else "Python (course core)"
+    run("-m","ipykernel","install","--user","--name",kernel,"--display-name",label)
     run(str(ROOT/"scripts/preflight.py"),"--profile",args.profile)
-    print("Select kernel",kernel,"and save work before an ephemeral session ends.")
+    print(f"Select the kernel {label!r} ({kernel}) and save work before an ephemeral session ends.")
 
 if __name__ == "__main__": main()

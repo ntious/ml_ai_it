@@ -4,6 +4,8 @@ Use [concepts](concepts.md) and [guided construction](guided.md) first. Work in 
 
 ## Start with the clean practice notebook
 
+If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
 - [Practice notebook](https://ntious.github.io/ml_ai_it/downloads/module06/practice.ipynb "site-download:module06/practice.ipynb") — complete three function bodies and record predictions.
 - In a source checkout: `notebooks/practice/module06-practice.ipynb`.
 - The notebook must stay inside the complete source tree and use its installed package/kernel. It does not install dependencies for you.
@@ -71,3 +73,5 @@ If using GenAI, keep a short disclosure of the help used and what you verified. 
 ## Operational-data connection
 
 Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.
+
+For the RT-IoT transfer, inspect the validation policy comparison and the selected policy before reading final metrics. A model can have high recall while requiring almost every flow to be reviewed. Compare assumed error cost and analyst workload separately; do not lower the threshold after inspecting final results. The project README records the protocol and its qualifications.

@@ -1,10 +1,10 @@
 # Module 4: construction feedback
 
-Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module04/solutions.ipynb "site-download:module04/solutions.ipynb") or open `notebooks/practice/module04-solutions.ipynb` in the complete source tree.
+Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module04/solutions.ipynb "site-download:module04/solutions.ipynb") or open `notebooks/practice/module04-solutions.ipynb` in the complete source tree. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## `error_rate`
 
-A zero denominator is unavailable, not zero percent. For `[3, 10]`, the expected result is `0.3`.
+A zero denominator is unavailable, not zero percent. For `error_rate(3, 10)`, the expected result is `0.3`.
 
 ```python
 def error_rate(errors, requests):
@@ -13,7 +13,7 @@ def error_rate(errors, requests):
 
 ## `median`
 
-Average the two middle observations for an even count. For `[[1, 2, 3, 100]]`, the expected result is `2.5`.
+Average the two middle observations for an even count. For `median([1, 2, 3, 100])`, the expected result is `2.5`.
 
 ```python
 def median(values):
@@ -24,7 +24,7 @@ def median(values):
 
 ## `weighted_rate`
 
-Do not average daily percentages with unequal denominators. For `[[[1, 2], [1, 8]]]`, the expected result is `0.2`.
+Do not average daily percentages with unequal denominators. For `weighted_rate([[1, 2], [1, 8]])`, the expected result is `0.2`.
 
 ```python
 def weighted_rate(counts):
@@ -32,10 +32,14 @@ def weighted_rate(counts):
     return sum(row[0] for row in counts)/denominator if denominator else None
 ```
 
+## Reasoning task feedback
+
+For example, `[[1, 2], [1, 8]]` gives daily rates 0.5 and 0.125, whose average is 0.3125, but `weighted_rate` is 2/10 = 0.2. The weighted rate answers the question about all requests. The plain average gives a two-request day the same weight as an eight-request day.
+
 ## Judge the explanation
 
 **Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
 
 ## Transfer feedback
 
-Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. A defensible response names a decision time, affected stakeholder, evidence source and human fallback. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. A defensible response reports counts beside rates, uses the weighted rate for each service, and captions the chart so a high rate on a low-volume service is not read as a ranking. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.

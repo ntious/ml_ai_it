@@ -16,12 +16,12 @@ A call budget limits repeated execution and cost. Validate it before running a t
 
 ## Trace a small case
 
-The first operation is **route_intent**: Return count_rows for count, mean_alcohol for alcohol; otherwise None. On authored arguments `['count']`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `route_intent('count')`, `route_intent('alcohol')` and `route_intent('delete')` before running. An unsupported intent must return `None` rather than fall through to an unrelated tool. Then predict `allowed_call('count_rows', {'path': 'secret'})`: the tool name is allowed, but arguments are not, so the call is refused. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/bounded-assistant/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/bounded-assistant/scripts/run.py`. A local model ranks three plans: count, alcohol and refuse. The executor then enforces the same kinds of checks as your functions: an allowlisted tool, exact arguments, and a budget of one tool call within at most three workflow steps (`bounded_agent(max_calls=1, max_steps=3)`). `tool_trace.json` and `request_trace.csv` show each decision, and `routing_confusion.csv` counts routing errors separately from the permission boundary. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://www.anthropic.com/engineering/building-effective-agents) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Anthropic: Building effective AI agents](https://www.anthropic.com/research/building-effective-agents) distinguishes fixed workflows from agents and recommends the simplest structure that meets the need, which is the design choice this module makes. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

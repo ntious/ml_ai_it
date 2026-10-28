@@ -16,12 +16,12 @@ A weekday pattern might reflect traffic volume, maintenance or data collection. 
 
 ## Trace a small case
 
-The first operation is **error_rate**: Return errors/requests; None when requests is zero. On authored arguments `[3, 10]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `error_rate(3, 10)` and `error_rate(0, 0)` before running. A zero denominator means no requests were observed, so the rate is unavailable (`None`), not 0%. Then predict `median([1, 2, 3, 100])`: with an even count, average the two middle values (2.5). The outlier 100 does not move it. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/service-workload/scripts/explore.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/service-workload/scripts/explore.py`. `summary.txt` reports 24 distinct observations, 23 observed latencies and one unavailable latency, and a median daily service p95 of 34.0 ms: the same median rule as your `median`, applied to real columns. The workload fixture records requests and p95 latency but no error counts, so `error_rate` and `weighted_rate` have no direct counterpart in this study. Use them for the transfer task, and use `service_comparison.csv` (1,860 versus 2,320 requests) to see why unequal volumes matter before comparing any rate. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[NIST/SEMATECH e-Handbook of Statistical Methods: What is EDA?](https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm) describes exploratory analysis as looking at data before assuming a model, which is the stance of this module's figures and tables. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

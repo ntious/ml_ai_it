@@ -6,6 +6,22 @@ from .classical import classification_bundle
 from .continuation_data import binary_metrics, new_run, publish_report, write_json
 
 
+def mean_shift(training, current):
+    """Absolute batch-mean shift per feature, standardized by the fixed training scale.
+
+    A feature with zero training variance has no scale, so its standardized shift is
+    unavailable rather than 0; its raw mean difference is reported instead.
+    """
+    scale = training.std(ddof=0)
+    raw = (current.mean() - training.mean()).abs()
+    defined = scale > 0
+    standardized = raw[defined] / scale[defined]
+    unavailable = "; ".join(f"{name}: zero training variance, raw mean difference {raw[name]:.6g}"
+                            for name in raw.index[~defined])
+    return {"largest_standardized": float(standardized.max()) if defined.any() else None,
+            "unavailable": unavailable}
+
+
 def checked_predict(bundle, record):
     """Use exactly the trained feature schema, without coercion or target input."""
     features = bundle["features"]
@@ -42,10 +58,10 @@ def run_monitoring(output):
             rows.append({"record_id": int(record.record_id), "batch": batch_id, "actual": int(record.label),
                          "predicted": result["predicted"], "probability": result["probability"],
                          "prediction_seconds": result["prediction_seconds"]})
-        scale = training.std(ddof=0).replace(0, np.nan)
-        shift = ((part[features].mean() - training.mean()) / scale).abs().fillna(0)
+        shift = mean_shift(training, part[features])
         batches.append({"batch": batch_id, "rows": len(part), "mean_prediction_seconds": float(np.mean(durations)),
-                        "largest_standardized_mean_shift": float(shift.max()),
+                        "largest_standardized_mean_shift": shift["largest_standardized"],
+                        "standardized_shift_unavailable": shift["unavailable"],
                         **binary_metrics(part.label, estimates)})
     write_json(directory / "service_contract.json", {"features": features, "numeric_bounds": [0, 1000000],
                "selected_model": bundle["selection"]["model"], "threshold": bundle["selection"]["threshold"],

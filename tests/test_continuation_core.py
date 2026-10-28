@@ -34,7 +34,7 @@ class ContinuationCoreTests(unittest.TestCase):
     def test_real_sources_and_retained_provenance(self):
         for name in ["wine", "sms", "adult"]:
             folder = fetch_source(name)
-            meta = json.loads((folder / "provenance.json").read_text())
+            meta = json.loads((folder / "provenance.json").read_text(encoding="utf-8"))
             self.assertEqual(meta["license"], "CC-BY-4.0")
             self.assertEqual(len(meta["archive_sha256"]), 64)
             self.assertTrue((folder / "original.zip").is_file())
@@ -63,7 +63,7 @@ class ContinuationCoreTests(unittest.TestCase):
         result = self.results[6]["test"]
         self.assertEqual(result["n"], result["tp"] + result["tn"] + result["fp"] + result["fn"])
         self.assertTrue(0 <= result["balanced_accuracy"] <= 1)
-        self.assertTrue((self.base / "m6/tree_rules.txt").read_text().strip())
+        self.assertTrue((self.base / "m6/tree_rules.txt").read_text(encoding="utf-8").strip())
         predictions = pd.read_csv(self.base / "m6/test_predictions.csv")
         self.assertTrue(predictions.probability.between(0, 1).all())
 
@@ -97,7 +97,7 @@ class ContinuationCoreTests(unittest.TestCase):
 
     def test_reports_have_named_values_and_scoped_tables(self):
         for number in [6, 7, 13]:
-            html = (self.base / f"m{number}/index.html").read_text()
+            html = (self.base / f"m{number}/index.html").read_text(encoding="utf-8")
             self.assertIn('scope="col"', html)
             self.assertIn('href="#main"', html)
             self.assertIn('tabindex="0"', html)
@@ -108,7 +108,7 @@ class ContinuationCoreTests(unittest.TestCase):
             output = self.base / f"cli{number}"
             process = subprocess.run([sys.executable, str(ROOT / "examples" / path / "scripts/run.py"), "--output", str(output)], cwd=self.base, capture_output=True, text=True)
             self.assertEqual(process.returncode, 0, process.stderr)
-            self.assertEqual(json.loads((output / "summary.json").read_text())["module"], number)
+            self.assertEqual(json.loads((output / "summary.json").read_text(encoding="utf-8"))["module"], number)
 
 
 if __name__ == "__main__":

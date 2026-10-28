@@ -16,12 +16,12 @@ Historical income labels reflect past social conditions; predicting them accurat
 
 ## Trace a small case
 
-The first operation is **recall_denominator**: Return the actual-positive count. On authored arguments `[8, 2, 11, 30]`, first predict the answer on paper. Change one boundary value, explain what should change, then use the practice notebook to test your reasoning. The [separate solutions](solutions.md) explain common errors after your attempt.
+Predict `recall_denominator(8, 2, 11, 30)` before running: recall conditions on actual positives, TP + FN = 19, not on predictions. Then predict `safe_rate(0, 0)` and `safe_rate(0, 10)`: no actual positives means the rate is unavailable (`None`), while 0 of 10 is a measured 0. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 
-The complete module still uses `examples/income-fairness/scripts/run.py`. Identify the step that performs your small operation and trace its output into one actual table or decision. Explain the difference in scale and assumptions. The [practice](practice.md) includes an IT transfer case; success on an authored fixture does not establish performance on that service.
+The complete module runs `examples/income-fairness/scripts/run.py`. `group_audit.csv` lists, for each recorded group, the numerator and denominator behind recall, false-positive rate and selection rate. It also lists their illustrative Wilson intervals and a small-denominator flag. For example, female recall is 357 of 590 actual positives. Recompute one row's recall with `safe_rate` and its interval with `wilson`, and check that the flag follows the recall denominator, not the group size. Success on an authored fixture does not establish performance on a real service.
 
 ## Optional reading
 
-[Primary explanation](https://fairlearn.org/main/user_guide/assessment/index.html) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+[Fairlearn user guide: Assessment](https://fairlearn.org/main/user_guide/assessment/index.html) explains disaggregated metrics by group and why a single fairness number cannot settle whether a system is appropriate. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

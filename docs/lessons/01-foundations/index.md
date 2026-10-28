@@ -45,7 +45,7 @@ For the first program, choose the rule: its behavior is small enough to inspect 
 
 ## Run and save the first example
 
-Download and extract the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"), or use your repository checkout. Open a terminal in its `ml_ai_it` folder. Install Python if needed using the [first-run guide](../../../QUICKSTART.md). For Modules 1 and 2, Python's standard library is sufficient; no package installation is needed.
+Download and extract the [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"), or use your repository checkout. Open a terminal in its `ml_ai_it` folder. Install Python if needed using the [first-run guide](../../../QUICKSTART.md). For Modules 1 and 2, Python's standard library is sufficient; no package installation is needed. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 On Windows PowerShell:
 
