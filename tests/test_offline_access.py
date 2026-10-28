@@ -33,6 +33,30 @@ class OfflineAccessTests(unittest.TestCase):
         top_level = tuple("ml_ai_it/" + folder for folder in ["runs/", "site/", ".venv", "node_modules/", "documentations/", "dist/", "build/"])
         self.assertEqual([name for name in names if name.startswith(top_level) or "__pycache__/" in name], [])
 
+    def test_untracked_files_in_a_checkout_never_enter_the_archive(self):
+        from build_downloads import source_members
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "docs").mkdir()
+            (root / "README.md").write_text("course\n", encoding="utf-8")
+            (root / "docs/lesson.md").write_text("tracked\n", encoding="utf-8")
+            run = lambda *arguments: subprocess.run(["git", *arguments], cwd=root, check=True, capture_output=True)
+            run("init", "-q"); run("add", "README.md", "docs/lesson.md")
+            (root / "docs/private-notes.md").write_text("untracked draft\n", encoding="utf-8")
+            members = {path.relative_to(root).as_posix() for path in source_members(root)}
+        self.assertEqual(members, {"README.md", "docs/lesson.md"})
+
+    def test_extracted_archive_without_git_uses_the_allowlist(self):
+        from build_downloads import source_members
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / "ml_ai_it"
+            (root / "docs").mkdir(parents=True)
+            (root / "README.md").write_text("course\n", encoding="utf-8")
+            (root / "docs/lesson.md").write_text("lesson\n", encoding="utf-8")
+            (root / "docs/figure.png").write_bytes(b"not allowlisted")
+            members = {path.relative_to(root).as_posix() for path in source_members(root)}
+        self.assertEqual(members, {"README.md", "docs/lesson.md"})
+
     def test_every_page_with_site_downloads_links_the_offline_route(self):
         result = subprocess.run([sys.executable, str(ROOT / "scripts/check_source_links.py")],
                                 capture_output=True, text=True, encoding="utf-8", errors="replace")

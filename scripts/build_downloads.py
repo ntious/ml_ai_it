@@ -2,6 +2,7 @@
 from pathlib import Path
 import shutil
 import json
+import subprocess
 import zipfile
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
@@ -96,11 +97,34 @@ def build():
     print("Built source, notebook, contract, and sample downloads from the publication allowlist.")
 
 
+def publishable(relative):
+    """Apply the publication allowlist to one repository-relative path."""
+    path = Path(relative)
+    if relative in ROOT_FILES:
+        return True
+    return (path.parts[0] in SOURCE_FOLDERS and path.suffix in ALLOWED_SUFFIXES
+            and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in path.parts))
+
+
+def source_members(root=ROOT):
+    """Archive members: tracked files in a Git checkout, so untracked notes or outputs never ship.
+
+    An extracted archive has no Git metadata; it falls back to the allowlist walk.
+    """
+    root = Path(root)
+    try:
+        listed = subprocess.run(["git", "ls-files", "-z"], cwd=root, capture_output=True, check=True).stdout.decode()
+        names = [name for name in listed.split(chr(0)) if name]
+    except (OSError, subprocess.CalledProcessError):
+        names = [name for name in ROOT_FILES if (root / name).is_file()]
+        for folder in SOURCE_FOLDERS:
+            names.extend(p.relative_to(root).as_posix() for p in (root / folder).rglob("*") if p.is_file())
+    return sorted(root / name for name in set(names) if publishable(name))
+
+
 def build_source_archive(path):
     """Write the complete course source from the publication allowlist; no runs or caches."""
-    files = [ROOT / name for name in ROOT_FILES]
-    for folder in SOURCE_FOLDERS:
-        files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(part in {"__pycache__", ".ipynb_checkpoints"} or part.endswith(".egg-info") for part in p.parts))
+    files = source_members()
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for source in sorted(set(files)):

@@ -60,7 +60,7 @@ Verification scope: steps 4–6 are the commands the Linux CPU CI job runs. The 
 
 ### Resource requirements
 
-Allow at least 10 GB of free disk and 8 GB of RAM; this is a starting allowance, not a measured guarantee. No paid API or GPU is required. First package/data/model downloads need connectivity; later valid caches support replay.
+Allow at least 10 GB of free disk and 8 GB of RAM. On the reference CI machine (2 CPU cores, 7.9 GB RAM), the installed framework packages take 3.0 GB, the pip download cache 0.7 GB and the data and model caches about 0.3 GB; the framework tests take about 70 minutes and the notebooks about 50. Peak memory has not been measured, so close large applications during training. No paid API or GPU is required. First package/data/model downloads need connectivity; later valid caches support replay.
 
 Do not combine this constraint file with the core one. It isolates NumPy 2.1.3/TensorFlow 2.19.1 from core NumPy 2.3.5. Constraints record exercised choices, not the newest release or a full transitive lockfile.
 
