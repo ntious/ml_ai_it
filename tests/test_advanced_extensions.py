@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+import socket
 import sys
 import tempfile
 import threading
@@ -88,6 +89,56 @@ class ApiTests(unittest.TestCase):
             self.assertTrue(body["error"])
         self.assertEqual(self.call("/predict", b"{not json")[0], 400)
         self.assertEqual(self.call("/other")[0], 404)
+
+
+def raw_request(port, head, body=b"", close_write=False):
+    """Send exact request bytes and return (status, JSON body); urllib cannot send malformed headers."""
+    with socket.create_connection(("127.0.0.1", port), timeout=15) as connection:
+        connection.sendall(b"POST /predict HTTP/1.1\r\nHost: localhost\r\n" + head + b"\r\n" + body)
+        if close_write:
+            connection.shutdown(socket.SHUT_WR)
+        response = b""
+        while chunk := connection.recv(4096):
+            response += chunk
+    status = int(response.split(b" ", 2)[1])
+    return status, json.loads(response.split(b"\r\n\r\n", 1)[1])
+
+
+class ApiRequestLengthTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.server = api.create_server(fake_bundle(), port=0, timeout=1)
+        cls.port = cls.server.server_address[1]
+        threading.Thread(target=cls.server.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.shutdown(); cls.server.server_close()
+
+    def test_malformed_negative_missing_and_oversized_lengths_get_responses(self):
+        cases = [(b"Content-Length: invalid\r\n", 400), (b"Content-Length: -5\r\n", 400), (b"Content-Length: 1.5\r\n", 400),
+                 (b"Content-Length: \r\n", 400), (b"Content-Length: 10\r\nContent-Length: 12\r\n", 400),
+                 (b"", 411), (b"Transfer-Encoding: chunked\r\n", 411),
+                 (f"Content-Length: {api.MAX_BODY_BYTES + 1}\r\n".encode(), 413)]
+        for head, expected in cases:
+            with self.subTest(head=head):
+                status, body = raw_request(self.port, head)
+                self.assertEqual(status, expected)
+                self.assertTrue(body["error"])
+
+    def test_body_shorter_than_its_length_is_rejected(self):
+        status, body = raw_request(self.port, b"Content-Length: 50\r\n", b'{"a": 1}', close_write=True)
+        self.assertEqual(status, 400)
+        self.assertIn("shorter", body["error"])
+
+    def test_stalled_body_times_out_with_a_response(self):
+        status, body = raw_request(self.port, b"Content-Length: 50\r\n", b'{"a": 1}')
+        self.assertEqual(status, 408)
+
+    def test_valid_length_still_predicts(self):
+        payload = json.dumps({"a": 2.0, "b": 0.0}).encode()
+        status, body = raw_request(self.port, f"Content-Length: {len(payload)}\r\n".encode(), payload)
+        self.assertEqual((status, body["predicted"]), (200, 1))
 
 
 class TrackingTests(unittest.TestCase):

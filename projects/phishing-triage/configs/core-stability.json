@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "cv_folds": 3,
+  "cv_seed": 29,
+  "search_seed": 17,
+  "training_seeds": [
+    11,
+    23,
+    37
+  ],
+  "split_seeds": [
+    101,
+    202,
+    303
+  ],
+  "thresholds": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "false_negative_cost": 5,
+  "false_positive_cost": 1,
+  "bootstrap_repetitions": 200,
+  "bootstrap_seed": 907,
+  "max_cv_fits": 9,
+  "search": {
+    "logistic": {
+      "C": [
+        1.0
+      ]
+    },
+    "tree": {
+      "max_depth": [
+        3
+      ]
+    },
+    "forest": {
+      "max_depth": [
+        6
+      ],
+      "min_samples_leaf": [
+        3
+      ],
+      "n_estimators": [
+        20
+      ]
+    }
+  }
+}

@@ -61,3 +61,9 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 ## Before opening the notebook
 
 Follow the notebook setup in [QUICKSTART](../../../QUICKSTART.md). The standard-library-only claim applies to the first script; notebook practice requires the core environment and a Jupyter kernel. The practice rule intentionally uses `>=`, unlike the first storage example’s strict `>`. At the threshold, these rules make different decisions.
+
+## Evidence activity: Trace one decision
+
+Use your first-run output and its input records. Recompute one rule decision, including the exact threshold boundary. Identify what a wrong decision would mean and explain why agreement with the rule is not measured predictive accuracy.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

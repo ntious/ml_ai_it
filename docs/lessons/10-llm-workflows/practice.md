@@ -70,3 +70,9 @@ Validation questions choose the TF-IDF settings and an abstention threshold: bel
 - **M10.5:** Write a source-grounded model-use note with privacy and cost constraints.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Separate validity from correctness
+
+Use saved LLM outputs and their evaluated labels. Independently count valid responses and correct responses under the recorded scoring rule. State the denominator for each reported rate; explain how a syntactically valid answer can still be wrong.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

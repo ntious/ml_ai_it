@@ -15,10 +15,36 @@ from .deployment import checked_predict
 MAX_BODY_BYTES = 10_000
 
 
-def create_server(bundle, host="127.0.0.1", port=8000):
-    """Return an HTTP server bound to host:port; port 0 chooses a free port."""
+def request_length(headers):
+    """Return (length, None) for a usable Content-Length, or (None, (status, body)) explaining the problem."""
+    values = headers.get_all("Content-Length") or []
+    if not values:
+        # Chunked or unsized bodies are not accepted; the client must declare the length.
+        return None, (411, {"error": "Send a Content-Length header with the JSON body."})
+    if len(set(value.strip() for value in values)) > 1:
+        return None, (400, {"error": "Conflicting Content-Length headers."})
+    value = values[0].strip()
+    if not value.isascii() or not value.isdigit():
+        return None, (400, {"error": "Content-Length must be a non-negative whole number of bytes."})
+    length = int(value)
+    if length > MAX_BODY_BYTES:
+        return None, (413, {"error": f"Request body is too large; the limit is {MAX_BODY_BYTES} bytes."})
+    return length, None
+
+
+def create_server(bundle, host="127.0.0.1", port=8000, timeout=10):
+    """Return an HTTP server bound to host:port; port 0 chooses a free port.
+
+    `timeout` bounds how long one connection may take to send its request, so a
+    client that declares more bytes than it sends cannot hold a thread forever.
+    """
+
+    connection_timeout = timeout
 
     class Handler(BaseHTTPRequestHandler):
+        # Applied to the connection's socket; a slow or short body raises TimeoutError on read.
+        timeout = connection_timeout
+
         def _send(self, status, body):
             payload = (json.dumps(body) + "\n").encode("utf-8")
             self.send_response(status)
@@ -36,11 +62,17 @@ def create_server(bundle, host="127.0.0.1", port=8000):
         def do_POST(self):
             if self.path != "/predict":
                 return self._send(404, {"error": "Unknown path. Use GET /health or POST /predict."})
-            length = int(self.headers.get("Content-Length") or 0)
-            if length > MAX_BODY_BYTES:
-                return self._send(413, {"error": "Request body is too large."})
+            length, problem = request_length(self.headers)
+            if problem:
+                return self._send(*problem)
             try:
-                record = json.loads(self.rfile.read(length) or b"null")
+                body = self.rfile.read(length)
+            except TimeoutError:
+                return self._send(408, {"error": "The request body did not arrive within the time limit."})
+            if len(body) < length:
+                return self._send(400, {"error": "The request body is shorter than its Content-Length."})
+            try:
+                record = json.loads(body)
             except (json.JSONDecodeError, UnicodeDecodeError):
                 return self._send(400, {"error": "Send one JSON object of feature values."})
             try:
