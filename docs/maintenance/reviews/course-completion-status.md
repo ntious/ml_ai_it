@@ -1,22 +1,36 @@
 # Course completion work record
 
-This work extends the three-module teaching prototype to all 14 modules for owner review, independent review and subsequent student testing. Learning outcomes remain unchanged.
+This work extends the three-module teaching prototype to all 14 modules and applies the October 2026 independent-review corrections (F1–F14). Learning outcomes remain unchanged; the practice checker verifies their text for all 14 modules.
 
-## Implemented locally
+## Implemented
 
-- Separate concepts, starter notebooks, solutions and diagnostic checks for every module.
-- 28 practice/solution notebooks; core and framework execution completed locally.
-- Shared study/recovery guidance and a graduate research-comparison activity.
-- Capstone checkpoint criteria and a revision-record template.
+- Separate concepts, starter notebooks, solutions and diagnostic checks for every module. Modules 1–4, 7 and 9–14 have module-specific explanations and reasoning tasks; Modules 5, 6 and 8 keep the fuller prototype with real-data sandboxes.
+- An offline access route and a source-only archive build for when the reading site or the private repository is unavailable.
+- One kernel name per profile, ordered notebook setup steps and a WSL route for framework modules on Windows.
+- A validation-based RT-IoT policy comparison, including constant review policies.
+- A worked primary-study comparison in the research guide.
 - Fairness report interval columns with rate-specific denominators, small-denominator flags and explicit conditional assumptions.
 
-## Verification and implementation still required
+Each finding's disposition, evidence and remaining action is in section M of the [owner review guide](owner-review-guide.md).
 
-- Finish full regression, source-link, site/download and browser checks.
-- Review exercise quality and outcome coverage, including direct-entry instructions and existing cross-links.
-- Complete the authentic operational-data transfer workflow and its verification.
-- Expand primary-study comparison into a worked evidence table.
-- Reconcile all benchmark findings with final artifacts and update the reviewer handoff.
-- Push the verified final change to the remote review branch.
+## Verification evidence (October 28, 2026)
 
-Human learning, workload and assistive-technology testing follow implementation and independent review. They have not been performed by these technical checks.
+| Check | Environment | Result |
+| --- | --- | --- |
+| Full CI run at `12e49bb` | GitHub Actions: Linux 3.12, Windows 3.12 and 3.13, Linux framework | All jobs pass, including the site build, 200 page checks, 349 HTTP routes, download and archive checks, the installed wheel and 10 browser tests |
+| Unit tests at the branch head | Windows 11, Python 3.13, UTF-8 mode off | 132 OK, 11 skipped (framework tests; not a pass) |
+| Repository, practice (16 core notebooks), lesson notebooks, phishing case, capstone | Same, fresh learner venv with the `ml-ai-core` kernel | Pass |
+| Encoding regression | Same | Fails on unfixed `main`; passes on the branch |
+| Full CI at the branch head | GitHub Actions | See PR #11; a later commit is verified only by its own run |
+
+## Not verified
+
+- WSL installation steps on a real Windows machine; macOS; native Windows framework execution (unsupported).
+- Public availability of the site and downloads: the site is unpublished and the repository is private. Verify anonymously after the owner enables publication.
+- Human learning, workload, notebook-interface usability and assistive-technology testing. These have not been performed by any technical check.
+
+## Owner actions before student delivery
+
+1. Decide repository visibility and publication; then complete section J of the owner review guide from a signed-out browser.
+2. Decide items N1 and N2 in section M.
+3. Run the learner pilot and accessibility sessions, and revise workload estimates from observed evidence.

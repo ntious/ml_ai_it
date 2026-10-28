@@ -4,14 +4,14 @@ Edition 0.7.0 contains all 14 modules, eight teaching pages per module, public s
 
 ## Revision-specific verification
 
-At the October 28, 2026 review, main revision `fdd5a70` had failed Windows encoding checks and a framework timeout. PR #11 (`12e49bb`) corrects these paths; its three core CI jobs pass, while framework and downstream site verification were still pending when this note was written. A proposed fix is not evidence that main is verified. Consult the exact workflow revision before adopting a release.
+At the October 28, 2026 review, `main` revision `fdd5a70` had failed Windows encoding checks and a framework timeout. PR #11 corrects these. Its run at `12e49bb` passed every job: three core jobs, the framework tests (57 minutes) and notebooks (48 minutes) as separate jobs, and the complete site, download and browser checks. Later commits on the branch need their own passing run. A proposed fix is not evidence that `main` is verified; check the exact workflow revision before adopting a release.
 
 ## Reference environments and evidence
 
 | Area | Evidence for this edition | Scope |
 | --- | --- | --- |
-| Core processing/modeling | PR #11 core jobs pass on Linux 3.12 and Windows 3.12/3.13; main requires the fixes | Scripts, behavioral tests and fresh-kernel notebooks |
-| Frameworks | Linux CPU Python 3.12 reference; current PR jobs pending | TensorFlow learning/reload, local LLM generation, adapters, app forms and health |
+| Core processing/modeling | PR #11 core jobs pass on Linux 3.12 and Windows 3.12/3.13; `main` needs the fixes | Scripts, behavioral tests and fresh-kernel notebooks |
+| Frameworks | Linux CPU Python 3.12; PR #11 framework jobs pass | TensorFlow learning/reload, local LLM generation, adapters, app forms and health |
 | Notebook execution | All 14 module notebooks and the phishing notebook | Clean-kernel execution; interface usability is a separate question |
 | Reading site | Source/generated links, HTML structure, HTTP routes and downloads | Selected core, optional-project and advanced pages also receive scripted focus, 320px reflow and selected axe checks |
 | Distribution | Tracked-source archive integrity, attributed data caches and installed-wheel inference | Source/provenance/schema/cache behavior |

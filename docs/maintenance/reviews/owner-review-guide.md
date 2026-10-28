@@ -76,3 +76,34 @@ Consult DEVELOPMENT.md for environment variables and the complete execution sequ
 ## L. Return findings and decide the next step
 
 Use one row per finding: ID, location, reproduction, impact, recommended correction, owner and retest evidence. Prioritize broken learner paths and incorrect scientific claims, then missing explanation and feedback. After corrections, retest affected tasks. Approve the implementation for student piloting only after owner and independent review; use observed pilot evidence to revise workload and teaching claims before Spring 2027 delivery.
+
+## M. Independent review dispositions, October 2026
+
+The independent review of `fdd5a70` (October 28, 2026) reported findings F1–F14. PR #11 addresses them on branch `fix/ci-encoding-and-rt-iot-baselines`. "Implemented" means changed and checked by the evidence named; it does not mean a learner has used it. The final CI result for the branch head is recorded in the [completion record](course-completion-status.md).
+
+| ID | Finding | Disposition | Evidence | Remaining owner or human action |
+| --- | --- | --- | --- | --- |
+| F1 | Site downloads return 404; the repository is private | Implemented: offline access route, `build_downloads.py --source-only`, offline link required before the first site download on every page | `tests/test_offline_access.py`; `check_source_links.py` rule tested against a removed link | Owner decides visibility and publication. Then verify the site and downloads from a signed-out browser (section J) |
+| F2 | CI failed: Windows default encoding; framework timeout | Implemented: explicit UTF-8 I/O; framework tests and notebooks as parallel jobs; fail-fast off | `tests/test_text_encoding.py` fails on unfixed `main` and passes on the branch; PR CI core jobs pass on Linux 3.12 and Windows 3.12/3.13 | Confirm the framework jobs stay within 90 minutes on later runs |
+| F3 | Windows `pathlib` answers failed the Module 2 path check | Implemented: declared POSIX normalization; second case | `tests/test_practice.py` | None |
+| F4 | RT-IoT model lost to always-review under its own cost rule | Implemented: constant policies compete on validation; wider fixed grid; prevalence and interpretation recorded | `tests/test_rt_iot_triage.py` (synthetic plus real archive) | Owner review of the README interpretation |
+| F5 | Status page contradicted current results | Implemented: verified-results table limited to re-executed core rows; framework rows point to current results | Core rows re-executed on October 28, 2026 | None |
+| F6 | Kernel not registered in the learner route; no Windows framework route | Implemented: one kernel name and display name per profile; ordered QUICKSTART steps; WSL Ubuntu 24.04 route | Windows learner route executed in a fresh venv; notebooks found `ml-ai-core` from metadata | Test the WSL steps 1–3 on a real Windows machine; review the measured resource allowance |
+| F7 | Template text, argument-list notation, generic links | Implemented for Modules 1–4, 7 and 9–14: module-specific trace and connection text, descriptive links, reasoning tasks with feedback | `tests/test_course_pages.py`; worked values checked against authored solutions; outcome hashes unchanged | Instructor review of explanation quality; learner pilot |
+| F8 | Glossary lacked core terms | Implemented (local changes, reviewed) plus kernel link | Entries checked against lesson definitions | None |
+| F9 | Swapped false alerts and misses passed | Implemented: asymmetric case | `tests/test_practice.py` | None |
+| F10 | Misleading or cryptic feedback | Implemented: NaN lag accepted, pipeline step names explained, call notation, non-numeric results | `tests/test_practice.py` | None |
+| F11 | Module 1 boundary contrast and split-role scope | Implemented: contrast signposted; split roles labelled as a Module 5 preview | Outcome hashes unchanged | None |
+| F12 | Stale three-module scope statements | Implemented | Repository search | None |
+| F13 | No worked research comparison | Implemented: located comparison with Bouthillier et al. (2021) | `tests/test_course_pages.py`; locations read from arXiv:2103.03098 v1 | Instructor review of the course decision |
+| F14 | Output formatting and notebook artifacts | Implemented: Module 4 rounding, `N != 8` artifact, console dash, readiness semicolon | `tests/test_exploration.py` | None |
+
+### New items found while correcting
+
+| ID | Observation | Status | Owner decision |
+| --- | --- | --- | --- |
+| N1 | `deployment.py` reports a zero-variance feature's shift as 0, while the practice `shift_score` returns unavailable | Documented in the Module 12 concepts page; code unchanged | Decide whether the service should report the shift as unavailable; this needs a framework run |
+| N2 | `curriculum/exercises.json` is an authoring record that no script reads | Kept; a test now keeps its cases and feedback equal to `practice_cases.py` | Decide whether to generate one from the other |
+| N3 | A deep extraction folder can exceed the Windows 260-character path limit while installing notebook dependencies | Reproduced in the reviewer's environment; the troubleshooting page advises a short folder | None beyond the existing note |
+
+Human learner piloting, workload measurement and assistive-technology testing have not been performed. Do not approve student delivery from these technical results alone.
