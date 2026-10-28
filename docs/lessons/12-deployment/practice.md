@@ -85,3 +85,7 @@ For the RT-IoT transfer, inspect the validation policy comparison and the select
 Use the saved batch predictions and batch summary. Recompute one batch’s error rate and identify its denominator. Explain why source-order batches do not demonstrate temporal drift; specify what timestamp and delayed-label evidence a live monitor would require.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Optional chronological anomaly extension
+
+Use [unusual days and review workload](../../advanced/anomaly-detection.md) to compare a detector with a simple baseline on dated observations. This extension reports flags and distribution context, not verified incident accuracy.

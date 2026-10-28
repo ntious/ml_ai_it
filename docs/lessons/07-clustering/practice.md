@@ -62,3 +62,7 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use test_assignments.csv to recompute each cluster size and reconcile with cluster_counts.csv. Interpret one original-unit feature mean in cluster_profiles.csv. Explain why cluster IDs can change between runs without defining new classes, and why agreement with a class label is not the objective used to choose K.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Optional chronological anomaly extension
+
+Use [unusual days and review workload](../../advanced/anomaly-detection.md) to compare a detector with a simple baseline on dated observations. This extension reports flags and distribution context, not verified incident accuracy.
