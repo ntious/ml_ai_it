@@ -42,6 +42,12 @@ In the verified CI run 40697234797 (October 28, 2026), 99 of 100 outputs are sch
 
 The parsed labels are `spam`, `None` and `ham`, so `valid_fraction` is 2/3. End-to-end accuracy is 1/3: only the first is correct, and `None` counts as wrong. Dropping the malformed output gives 1/2, which rewards the model for failing to answer.
 
+## Advanced extension feedback: retrieval
+
+In the recorded run (October 28, 2026), validation chose single-word TF-IDF with sublinear term frequency and an abstention threshold of 0.15. On the 12 answerable test questions, recall@3 and MRR were both 1.0: the right runbook ranked first every time. Overall, 14 of 16 test decisions were correct.
+
+Two of the four unanswerable test questions were not refused. "What is the budget approval process for new furniture?" and "How do I train a new machine learning model for sales?" both retrieved the new-employee laptop runbook at similarity 0.247, mainly through the shared word "new". A generator grounded in that passage would give a confident, irrelevant answer. The threshold was chosen on only four unanswerable validation questions, so it is weak evidence about unfamiliar questions. Changing it now would be tuning on the test; a new set of validation questions, including near-miss wording, is the honest next step.
+
 ## Judge the explanation
 
 Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.

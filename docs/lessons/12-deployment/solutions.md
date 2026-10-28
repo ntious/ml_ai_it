@@ -39,6 +39,12 @@ In the verified CI run 40697234797 (October 28, 2026), the four batches had 95th
 
 The 95th percentile is the value at position ceil(0.95 × 4) = 4, which is 0.250 s, while the mean is about 0.071 s and hides the slow request. Below 20 requests, ceil(0.95 × n) equals n, so the 95th percentile is the maximum. With 20 requests it is the second largest. Report the sample count with any percentile.
 
+## Advanced extension feedback: JSON API
+
+A complete record returns 200 with the probability, the decision at the frozen 0.3 threshold and any features outside the training range. The extra `quality` field returns 422 with "Supply exactly the eleven chemistry features; no quality/label/extra fields."; `"alcohol": true` returns 422 with "alcohol must be numeric."; and invalid JSON returns 400. Rejecting with a reason makes errors visible to the caller; silently dropping a field or treating `true` as 1 would hide a broken client and could feed the model meaningless inputs.
+
+A local server demonstrates the contract, not a deployment. Exposing it would need authentication, rate limits, a logging policy that avoids storing inputs unnecessarily, the monitoring from this module, and a named owner with a rollback plan.
+
 ## Judge the explanation
 
 Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.

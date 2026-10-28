@@ -50,4 +50,7 @@ Use the module's foundation page for worked arithmetic and guided construction f
 | One-hot encoding | One indicator column per category, so categories carry no implied order; fit the categories on training data | [Module 3](lessons/03-data-processing/practice.md) |
 | Cross-validation | Repeatedly fitting on part of the training data and scoring on the rest, to choose settings without touching validation or test | [Module 6](lessons/06-classification/practice.md) |
 | Gradient boosting | An ensemble that adds small trees one at a time, each correcting the errors of the previous ones; common for tabular data | [Module 6](lessons/06-classification/practice.md) |
+| Retrieval-augmented generation (RAG) | Answering from passages retrieved for each question; evaluate the retrieval and the decision to abstain, not only the fluency of the answer | [Module 10](lessons/10-llm-workflows/practice.md) |
+| Recall@k / MRR | Whether a relevant passage appears in the top k results, and the average of 1 / rank of the first relevant passage | [Module 10](lessons/10-llm-workflows/practice.md) |
+| API | A defined way for programs to call a service, such as sending JSON to a prediction endpoint and receiving a status code and result | [Module 12](lessons/12-deployment/practice.md) |
 | Wilson interval | A binomial uncertainty calculation conditional on suitable sampling assumptions; not a correction for biased data | [Module 13](lessons/13-ethics-fairness/concepts.md) |

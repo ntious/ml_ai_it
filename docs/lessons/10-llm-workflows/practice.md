@@ -47,6 +47,20 @@ Three messages are all actually spam. The model returns `'{"label":"spam"}'`, `'
 
 Evaluate three changed message outputs including one malformed response. Explain why structural validity alone cannot justify automation. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
+## Advanced extension: evaluate retrieval before generation
+
+Retrieval-augmented generation (RAG) answers from retrieved passages, so its answers can only be as good as what retrieval returns. This extension evaluates that step on 12 original, fictional IT runbooks and 32 authored questions, eight of which the runbooks cannot answer. It runs in the core environment with the regression extra; no language model is needed.
+
+```sh
+python -m practical_ml_ai.retrieval --output runs/module10-retrieval
+```
+
+Validation questions choose the TF-IDF settings and an abstention threshold: below that similarity the system should say it has no grounded answer. Test questions then evaluate the locked choice once. Before running, predict whether the threshold will refuse every unanswerable test question. Then use `summary.txt` and `test_decisions.csv`:
+
+1. What are recall@3 and mean reciprocal rank on the answerable test questions?
+2. Which unanswerable test questions were answered anyway, which passage did they retrieve, and why did it match?
+3. A language model given that passage would produce a fluent answer. What should the system do instead, and what evidence would justify a different threshold?
+
 ## Evidence and feedback
 
 - **M10.1:** Explain token generation and distinguish instructions from untrusted message data.

@@ -52,6 +52,10 @@ Data rights and model licenses are distinct. Preserve credits and disclose trans
 
 `data/samples/agent-requests.csv` is original teaching material: labelled demonstration, validation and test requests. It contains no real user interactions and is not an external dataset. Module 14 returns statistics from the attributed UCI wine records; keep that evidence separate from the authored routing controls.
 
+## Original runbook retrieval fixture
+
+`data/samples/runbooks/` holds 12 original, fictional IT runbook passages and 32 authored questions for the Module 10 retrieval extension, released under CC BY 4.0 with the course content. They describe no real organization or system and are not operational guidance. Question labels were written by the course author; the corpus is small, so its scores illustrate the evaluation method, not retrieval quality on real documentation.
+
 ## RT-IoT2022 completed-flow transfer
 
 S., B. & Nagapadma, R. (2023). RT-IoT2022 [Dataset]. UCI Machine Learning Repository. [DOI](https://doi.org/10.24432/C5P338). [Official source](https://archive.ics.uci.edu/dataset/942/rt-iot2022), CC BY 4.0.

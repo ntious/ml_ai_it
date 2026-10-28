@@ -28,6 +28,10 @@ A failed check identifies a case to investigate. Trace the input by hand, change
 
 Ask for a critique of your reasoning or a hint about a failing case. Verify suggestions against actual artifacts. Record material assistance and what you accepted or rejected according to your instructor’s policy. Keep personal records and secrets out of prompts. A solo alternative is to write the strongest counterargument to your own interpretation.
 
+## Track your experiments (optional)
+
+When you compare runs, record each one the same way. The stability, tuning, encoding and retrieval exercises accept `--track runs/experiments.jsonl`, which appends one JSON line with the settings, metrics, Python and package versions and the input files' SHA-256 hashes. List the runs with `python -m practical_ml_ai.tracking runs/experiments.jsonl`. Experiment trackers such as MLflow add a server and a user interface on top of the same idea.
+
 ## Prepare for review
 
 Explain one design choice, one observed limitation and one development-only next investigation. Keep final-test evidence out of model selection. Official deadlines, submission formats and grading weights belong to the adopting instructor.
