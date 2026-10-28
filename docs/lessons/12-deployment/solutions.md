@@ -31,6 +31,10 @@ def nearest_rank(values, percentile):
     return sorted(values)[math.ceil(percentile*len(values))-1]
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the four batches had 95th percentiles of 1.37, 1.10, 1.09 and 1.12 ms against means of 1.20, 1.06, 1.06 and 1.06 ms. With about 61 requests per batch, the 95th percentile is the 58th or 59th value, so it reflects the slower tail that a mean smooths away. Local CPU timings are not production latency.
+
 ## Reasoning task feedback
 
 The 95th percentile is the value at position ceil(0.95 × 4) = 4, which is 0.250 s, while the mean is about 0.071 s and hides the slow request. Below 20 requests, ceil(0.95 × n) equals n, so the 95th percentile is the maximum. With 20 requests it is the second largest. Report the sample count with any percentile.

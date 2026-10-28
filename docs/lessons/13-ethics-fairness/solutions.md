@@ -30,6 +30,10 @@ def wilson(successes, observations):
     return list(wilson_interval(successes,observations))
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the group has TP 8 and FN 11: recall 8/19 = 0.42, with an illustrative Wilson interval of about 0.23–0.64 (flagged as a small denominator). The female group's interval is about 0.57–0.64 on 590 actual positives. The small group's interval is wide; overlap is not a test of equal treatment, and the intervals assume a sampling model the Adult extract does not establish.
+
 ## Reasoning task feedback
 
 A group with TP = 0, FN = 0, FP = 0 and TN = 5 has selection rate 0/5 = 0, but recall's denominator is 0, so `safe_rate(0, 0)` is `None`. A group with TP = 3, FN = 0 has recall 1.0. Nothing about the first group's misses was measured, so comparing the two recalls is impossible, not a finding of parity.

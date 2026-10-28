@@ -29,6 +29,10 @@ def error_counts(actual, predicted):
     return [sum((not a) and p for a,p in zip(actual,predicted)), sum(a and not p for a,p in zip(actual,predicted))]
 ```
 
+## Complete-study results feedback
+
+80 gives `Within the chosen threshold` (80 > 80 is false); 81 and 100 give `Review storage`; 100.5 is rejected with "storage_percent must be a finite number from 0 through 100". The rule decides only valid inputs; the input check runs first and stops impossible percentages. These values come from running the script during the October 28, 2026 review.
+
 ## Reasoning task feedback
 
 For example, `[False, False, False]` gives `[0, 1]` (one miss) and `[True, True, False]` gives `[1, 0]` (one false alert); both are 2/3 accurate. The preferred list depends on which error costs more. A missed storage problem can cause an outage, while a false alert costs a review. Accuracy alone cannot express that choice.

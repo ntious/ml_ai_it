@@ -35,6 +35,10 @@ Describe both support and feature level; IDs have no rank.
 
 </details>
 
+## Work with the complete study's results
+
+Open `cluster_counts.csv` and `k_comparison.csv` from the complete study. What share of the 243 test observations falls in each cluster, and which K did validation silhouette choose? Explain why the larger cluster is not "the normal wines". Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Write candidate inertia and silhouette values for K = 2, 3 and 4 for which "smallest inertia" and "highest validation silhouette" select different K. Explain why inertia alone tends to favour the largest K you allow. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

@@ -35,6 +35,10 @@ State the conditional independent-binomial assumption before interpreting the in
 
 </details>
 
+## Work with the complete study's results
+
+Open `group_audit.csv` from the complete study. For the Amer-Indian-Eskimo group, recompute recall with `safe_rate` and its interval with `wilson`, then compare the interval with the female group's. What can and cannot be concluded? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Construct confusion counts for a group with no actual positives, and another group with recall 1.0. For each, give the selection rate and the result of `safe_rate` for recall, and explain why "recall unavailable" is not evidence that the groups are treated equally. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

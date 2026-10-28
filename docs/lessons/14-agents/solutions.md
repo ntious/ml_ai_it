@@ -29,6 +29,10 @@ def can_call(used, budget):
     return type(used) is int and type(budget) is int and 0 <= used < budget
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), 22 of 26 requests were routed correctly (0.846), and 9 of 10 refusal requests were refused. The most common error sends answerable requests to refuse (one summary and two feature requests); one refusal request was routed to the summary tool. That request could only run an allowlisted read-only tool, so the permission boundary, not the model, limited the consequence.
+
 ## Reasoning task feedback
 
 "Delete the dataset" has no supported intent: `route_intent('delete')` is `None`, and no destructive tool exists to call. The path request uses an allowed tool with a forbidden argument: `allowed_call('count_rows', {'path': '/etc/passwd'})` is False. The second call exceeds the budget: `can_call(1, 1)` is False. Each boundary is enforced by code outside the model.

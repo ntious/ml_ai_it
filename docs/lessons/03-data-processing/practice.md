@@ -35,6 +35,10 @@ Every source row needs one accounted-for outcome.
 
 </details>
 
+## Work with the complete study's results
+
+Run the Module 3 preparation and open `cleaned_events.csv` and `quality_report.json`. Check that input rows equal accepted plus rejected rows, then recompute the mean and median latency from the accepted records yourself. Which accepted record must you leave out, and why? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Construct two records where deduplicating by the whole row keeps both but deduplicating by `event_id` keeps one. Then write the `reconcile` call that accounts for them, and explain what the complete script would do with the same pair. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

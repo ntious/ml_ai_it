@@ -35,6 +35,10 @@ Demonstrate an actual parameter change; a new loss string is insufficient.
 
 </details>
 
+## Work with the complete study's results
+
+Open `generation_comparison.csv` and `summary.json` from the complete study. Count schema-valid and correct answers for the base and adapted models, and check `trainable_parameters` against the LoRA formula: rank 8 on every `q_proj` (576 → 576) and `v_proj` (576 → 192) in 30 layers. Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 A rank-2 adapter on a 4 × 4 projection has matrices of shape 2 × 4 and 4 × 2. Use `trainable_count([[16, False], [8, True], [8, True]])` and compare the result with the frozen matrix. Explain when LoRA actually saves parameters, and why `changed_tensors` returning `[1]` does not show that fine-tuning helped. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

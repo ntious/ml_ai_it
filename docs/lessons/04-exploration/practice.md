@@ -35,6 +35,10 @@ Do not average daily percentages with unequal denominators.
 
 </details>
 
+## Work with the complete study's results
+
+Run the Module 4 exploration and open `request_latency.csv`. Apply your `median` to the observed `p95_latency_ms` values, leaving out the unavailable one. Compare your result with "Median daily service p95" in `summary.txt`, and explain why the mean in the same file is higher. Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Choose daily counts `[errors, requests]` for two days so that the average of the daily error rates differs from `weighted_rate`. Explain which number answers "what fraction of all requests failed?" The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

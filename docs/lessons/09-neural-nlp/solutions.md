@@ -31,6 +31,10 @@ def recall(tp, fn):
     return tp/(tp+fn) if tp+fn else None
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the neural model has TP 118, FN 10, FP 30: recall 118/128 = 0.922, precision 118/148 = 0.797. The baseline has TP 116, FN 12, FP 13: recall 0.906, precision 116/129 = 0.899. The neural model finds two more spam messages at the cost of 17 more false alarms.
+
 ## Reasoning task feedback
 
 Tokens are `offer, free, prize, now`, giving IDs `[4, 2, 1, 3]`. Keeping the first three gives `[4, 2, 1]`: `prize` becomes unknown (1) and `now` is truncated. At length 2 the result is `[4, 2]`, and even the marker that an unseen word appeared is gone. The complete study's length of 96 makes truncation rare but not impossible.

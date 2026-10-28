@@ -35,6 +35,10 @@ Do not condition accuracy on the outputs the parser accepted.
 
 </details>
 
+## Work with the complete study's results
+
+Open `generation_evaluation.csv` from the complete study. Count the schema-valid outputs and the correct outputs, then compute `valid_fraction` and end-to-end accuracy. What accuracy would you report if you silently dropped the invalid output? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Three messages are all actually spam. The model returns `'{"label":"spam"}'`, `'spam'` and `'{"label":"ham"}'`. Compute `valid_fraction`, `end_to_end_accuracy`, and the accuracy you would report if you silently dropped malformed outputs. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

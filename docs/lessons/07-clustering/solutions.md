@@ -33,6 +33,10 @@ def profile(values, labels):
     return result
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), cluster 0 holds 90 test observations (37%) and cluster 1 holds 153 (63%); validation silhouette chose K = 2 (0.206, against 0.184 for K = 3 and 0.162 for K = 4). Size does not make a cluster normal: the IDs are arbitrary, quality was not used, and the grouping reflects chemistry geometry only.
+
 ## Reasoning task feedback
 
 Inertia sums squared distances to the nearest centre. Adding centres can only shorten those distances for an optimal solution, so inertia generally falls as K grows and "smallest inertia" picks the largest candidate. The validation silhouette can peak at a small K, as in the recorded study, where K = 2 scored 0.206. Choose K by a declared criterion, not by inertia.

@@ -32,6 +32,10 @@ def weighted_rate(counts):
     return sum(row[0] for row in counts)/denominator if denominator else None
 ```
 
+## Complete-study results feedback
+
+There are 23 observed values and their median is 34.0 ms, matching `summary.txt`. The mean (38.7 ms) is higher because a few high-latency days pull it up, while the median depends only on the middle value. These values come from the fixture run during the October 28, 2026 review.
+
 ## Reasoning task feedback
 
 For example, `[[1, 2], [1, 8]]` gives daily rates 0.5 and 0.125, whose average is 0.3125, but `weighted_rate` is 2/10 = 0.2. The weighted rate answers the question about all requests. The plain average gives a two-request day the same weight as an eight-request day.

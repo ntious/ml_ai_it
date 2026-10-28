@@ -35,6 +35,10 @@ Stop before exceeding the budget and reject malformed limits.
 
 </details>
 
+## Work with the complete study's results
+
+Open `routing_confusion.csv` from the complete study. Compute routing accuracy over the 26 test requests and the share of refusal requests that were refused. Which kind of mistake is most common, and which control limits its consequences? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 For each request, name the control that stops it and the function call that shows it: "delete the dataset", "count the rows in /etc/passwd", and a second tool call after the first has been used with a budget of 1. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

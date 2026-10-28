@@ -35,6 +35,10 @@ Count errors by their consequences, not only total accuracy.
 
 </details>
 
+## Work with the complete study's results
+
+Run the first-run script with `--storage-percent` values 80, 81, 100 and 100.5, each to its own output file. Predict each decision first. Which inputs give `Review storage`, which give `Within the chosen threshold`, and which is rejected? Relate each result to `storage_percent > 80` and to the script's input check. Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Construct two prediction lists for the actual labels `[True, False, False]` that both have accuracy 2/3 but different error counts. Use `error_counts` to show the difference, then say which list you would prefer for a storage alert and why. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

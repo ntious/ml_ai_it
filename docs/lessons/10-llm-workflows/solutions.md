@@ -34,6 +34,10 @@ def end_to_end_accuracy(actual, parsed):
     return sum(a==p for a,p in zip(actual,parsed))/len(actual) if actual else None
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), 99 of 100 outputs are schema-valid and 39 are correct: validity 0.99 and end-to-end accuracy 0.39. Dropping the invalid output gives 39/99, about 0.394; here the difference is small, but the rule matters whenever many outputs fail. High validity with low accuracy shows that format compliance and correctness are separate.
+
 ## Reasoning task feedback
 
 The parsed labels are `spam`, `None` and `ham`, so `valid_fraction` is 2/3. End-to-end accuracy is 1/3: only the first is correct, and `None` counts as wrong. Dropping the malformed output gives 1/2, which rewards the model for failing to answer.

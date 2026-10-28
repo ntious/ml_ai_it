@@ -34,6 +34,10 @@ def output_path(root, run_name):
     return (Path(root)/"runs"/run_name/"summary.json").as_posix()
 ```
 
+## Complete-study results feedback
+
+The network category has 2 tickets (T001 and T003) and 25 total minutes, so its mean is 12.5 minutes; `category_summary.csv` records `network,2,25`. Counting categories is the same operation as counting statuses, applied to a different field. These values come from the fixture run during the October 28, 2026 review.
+
 ## Reasoning task feedback
 
 The first is 0: one value was observed and it was zero. The second is `None`: nothing was observed. Printing 0 for the second would claim a measured average of zero minutes. A good report prints "no observed values" instead and keeps the count of observations beside every mean.

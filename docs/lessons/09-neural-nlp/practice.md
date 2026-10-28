@@ -35,6 +35,10 @@ Use actual positives, not total messages or predicted positives.
 
 </details>
 
+## Work with the complete study's results
+
+Open `comparison.csv` from the complete study. Recompute recall and precision for the neural model and the lexical baseline from their TP, FN and FP counts. Which finds more spam, and what does it cost in false alarms? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 With `vocab = vocabulary(['FREE offer', 'offer now'])`, predict `encode('Offer FREE prize now', vocab, 3)`. Which word is lost, which becomes unknown, and what would a length of 2 also lose? The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).

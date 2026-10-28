@@ -29,6 +29,10 @@ def changed_tensors(before, after):
     return [i for i,(a,b) in enumerate(zip(before,after)) if a != b]
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the base model is valid and correct on 0 of 100 messages; the adapted model is valid on 100 and correct on 94. Each layer adds 8 × (576 + 576) + 8 × (576 + 192) = 15,360 trainable values, and 30 layers give 460,800, matching `trainable_parameters`. The adapter changed held-out behaviour here, but this is one historical, class-balanced sample.
+
 ## Reasoning task feedback
 
 The adapter has 16 trainable values, the same as the frozen 4 × 4 matrix, so there is no saving at this size. The saving appears when the rank is much smaller than the layer dimensions: the course model's 576-wide query projection with rank 8 needs 9,216 values instead of 331,776. A changed tensor shows that training ran. Only held-out evaluation shows whether answers improved.
