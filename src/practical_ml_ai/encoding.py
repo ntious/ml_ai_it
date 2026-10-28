@@ -62,7 +62,9 @@ def load():
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--output", required=True, help="A new directory for this exercise's evidence.")
-    output = Path(parser.parse_args(argv).output)
+    parser.add_argument("--track", help="Optional JSON-lines experiment log to append this run to.")
+    args = parser.parse_args(argv)
+    output = Path(args.output)
     if output.exists():
         raise SystemExit(f"Choose a new output directory: {output}")
     training, validation, features = load()
@@ -78,6 +80,10 @@ def main(argv=None):
     lines.append("Final-test rows used: 0.")
     (output / "summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
+    if args.track:
+        from .tracking import record
+        record(args.track, "module03-encoding", {"representations": table.representation.tolist()},
+               {row.representation + "_validation_balanced_accuracy": float(row.balanced_accuracy) for row in table.itertuples()})
 
 
 if __name__ == "__main__":

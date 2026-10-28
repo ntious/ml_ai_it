@@ -29,6 +29,16 @@ Each finding's disposition, evidence and remaining action is in section M of the
 - Public availability of the site and downloads: the site is unpublished and the repository is private. Verify anonymously after the owner enables publication.
 - Human learning, workload, notebook-interface usability and assistive-technology testing. These have not been performed by any technical check.
 
+## Further improvements (stacked PRs, October 28, 2026)
+
+| PR | Scope | Local verification |
+| --- | --- | --- |
+| #12 | Archive built from tracked files; learner-first navigation and maintainer hub; shared rubric in the study workflow; self-checks; core stability exercise; complete-study exercises; Windows site-build path fix | 144 tests; site build, page, route, download and all 10 browser checks |
+| #13 | Module 3 categorical encoding and Module 6 bounded tuning with gradient boosting | 150 tests; site build, page and download checks |
+| #14 | Module 10 evaluated retrieval, Module 12 JSON API, experiment tracking, learning paths, IT case thread, what's new and community pages | Recorded in PR #14 |
+
+Each PR's own CI run is the authoritative check. Deferred until learner evidence exists, as agreed: consolidating to one deep-learning framework, making hosted notebooks the default, and restructuring module pages.
+
 ## Owner actions before student delivery
 
 1. Decide repository visibility and publication; then complete section J of the owner review guide from a signed-out browser.

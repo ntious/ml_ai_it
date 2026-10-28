@@ -60,7 +60,9 @@ def compare_variation(split=None, features=None):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--output", required=True, help="A new directory for this exercise's evidence.")
-    output = Path(parser.parse_args(argv).output)
+    parser.add_argument("--track", help="Optional JSON-lines experiment log to append this run to.")
+    args = parser.parse_args(argv)
+    output = Path(args.output)
     if output.exists():
         raise SystemExit(f"Choose a new output directory: {output}")
     table, spreads, boundary = compare_variation()
@@ -76,6 +78,10 @@ def main(argv=None):
     lines.append(f"Final-test rows used: 0 of {boundary['excluded_final_test_rows']}.")
     (output / "summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
+    if args.track:
+        from .tracking import record
+        record(args.track, "module06-stability", {"training_seeds": list(TRAINING_SEEDS), "split_seeds": list(SPLIT_SEEDS)},
+               {name.split(":")[0] + "_balanced_accuracy_sd": metrics["balanced_accuracy"]["sd"] for name, metrics in spreads.items()})
 
 
 if __name__ == "__main__":

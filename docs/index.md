@@ -17,6 +17,11 @@ Follow the full sequence or enter a single module. Every module includes prerequ
 <p><a href="lessons/01-foundations/index.md">Begin Module 1</a> · <a href="../QUICKSTART.md">Set up your first run</a></p>
 </section>
 <section class="path-card">
+<h3>Follow a guided path</h3>
+<p>Choose practical foundations, IT operations or evaluation-focused practice, and follow the recurring IT cases through the course.</p>
+<p><a href="paths.md">See the learning paths</a> · <a href="whats-new.md">What's new</a></p>
+</section>
+<section class="path-card">
 <h3>Bring a module into your course</h3>
 <p>Link a single lesson from Canvas or another LMS. Adapt the original practice and public feedback while preserving your course's assessment rules.</p>
 <p><a href="instructor/canvas-linking.md">Link a companion module</a> · <a href="instructor/index.md">Teach and adapt</a></p>
@@ -50,6 +55,12 @@ Predict what a bounded change should do. Run the shared implementation from a sc
 Use the reading pages, selectable code, scripts, text summaries, and numerical tables. Chart descriptions and source data accompany visual evidence. Notebook and app interfaces need their own usability checks.
 
 Read the [access routes and known limitations](accessibility/index.md). Manual screen-reader, keyboard, and zoom/reflow review remains pending; automated checks do not establish conformance.
+
+## What sets this course apart
+
+Every result in the course is checked the way a careful practitioner would check it: a stated decision, a simple baseline that is allowed to win, settings chosen on development data, and a final test used once. Poor model results stay in the reports so you can learn from them. You can run every core exercise on an ordinary laptop, without a paid account or GPU.
+
+[Ask a question or share your work](community.md) · [Learning paths](paths.md)
 
 ## Reuse and contribute
 

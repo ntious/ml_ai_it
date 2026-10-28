@@ -6,7 +6,7 @@ If repository or download links return 404, request the complete course archive 
 
 Learn to frame a useful problem, work with data, build and evaluate models, and explain whether an AI system should be used. This open educational resource combines short lessons, runnable Python examples, guided notebooks, independent practice and worked feedback across 14 modules.
 
-**Start with [the readiness check and learning routes](docs/start-here.md).** If you have never programmed, begin with [Python Foundation](https://ntious.github.io/python_foundation/), then return for our [Python-to-ML bridge](docs/setup/python-bridge.md). You can learn through this resource independently or use it alongside an instructor's course.
+**Start with [the readiness check and learning routes](docs/start-here.md)**, or pick one of the [learning paths](docs/paths.md). If you have never programmed, begin with [Python Foundation](https://ntious.github.io/python_foundation/), then return for our [Python-to-ML bridge](docs/setup/python-bridge.md). You can learn through this resource independently or use it alongside an instructor's course.
 
 Edition 0.7.0. [Current status and tested scope](docs/status.md).
 

@@ -9,6 +9,7 @@
 - Setup: one kernel name per profile, ordered notebook steps, and a WSL Ubuntu 24.04 route for framework modules on Windows (F6).
 - Teaching pages: module-specific explanations, descriptive links and reasoning tasks for Modules 1–4, 7 and 9–14; a located worked research comparison; glossary, status and scope corrections (F5, F7, F8, F11–F14).
 - Module 12 monitoring reports a zero-variance feature's standardized shift as unavailable, with its raw mean difference, instead of 0.
+- Further improvements (stacked PRs #12–#14): tracked-file source archives; learner-first navigation; consolidated rubric; concept self-checks; core stability, tuning (with gradient boosting) and encoding exercises; complete-study exercises; evaluated retrieval, a JSON API and experiment tracking; learning paths, an IT case thread, what's new and community pages.
 - Learning outcomes are unchanged. Merge, a passing CI run on the merged revision, and the owner and human-pilot actions in the owner review guide are required before release.
 
 Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.

@@ -65,7 +65,9 @@ def tune(split=None, features=None):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--output", required=True, help="A new directory for this exercise's evidence.")
-    output = Path(parser.parse_args(argv).output)
+    parser.add_argument("--track", help="Optional JSON-lines experiment log to append this run to.")
+    args = parser.parse_args(argv)
+    output = Path(args.output)
     if output.exists():
         raise SystemExit(f"Choose a new output directory: {output}")
     trials, chosen, boundary = tune()
@@ -80,6 +82,10 @@ def main(argv=None):
     lines.append("Final-test rows used: 0.")
     (output / "summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
+    if args.track:
+        from .tracking import record
+        record(args.track, "module06-tuning", {"configurations": boundary["configurations"], "folds": FOLDS},
+               {row.family + "_validation_balanced_accuracy": float(row.validation_balanced_accuracy) for row in chosen.itertuples()})
 
 
 if __name__ == "__main__":

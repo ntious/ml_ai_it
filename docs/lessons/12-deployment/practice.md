@@ -47,6 +47,23 @@ Compute `nearest_rank([0.010, 0.011, 0.012, 0.250], 0.95)` and the mean of the s
 
 Write a service response policy for an invalid request, a model outage and an alert without outcome labels. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
+## Advanced extension: serve the model as a JSON API
+
+A web form is one interface; services usually call a model through an API. This extension serves the Module 6 model, the same one the replay monitors, with the same checked input contract, using only Python's standard library. It needs the core environment with the regression extra.
+
+```sh
+python -m practical_ml_ai.api --port 8000
+```
+
+In a second terminal, send a request, for example with `curl -s localhost:8000/health`, or from Python with `urllib.request`. Then try each case and record the status code and message:
+
+1. A complete record of the eleven chemistry features.
+2. The same record with an extra `quality` field.
+3. A record where `alcohol` is `true`.
+4. A body that is not valid JSON.
+
+Explain why the service rejects cases 2–4 instead of guessing, which status code each receives, and what is still missing before this could be exposed beyond your own computer (authentication, rate limits, logging policy, monitoring and an owner). Frameworks such as FastAPI provide request schemas and documentation; the contract is the part to keep.
+
 ## Evidence and feedback
 
 - **M12.1:** Define an input/output contract and reject invalid requests.
