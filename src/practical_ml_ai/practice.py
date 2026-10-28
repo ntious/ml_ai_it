@@ -109,7 +109,10 @@ def _fixture_check(specification):
     def verify(function):
         for arguments, expected in specification['cases']:
             actual = function(*deepcopy(arguments))
-            assert equivalent(actual, expected), specification['feedback'] + f" Input: {arguments!r}; observed: {actual!r}."
+            if specification is CASES.get('m02_output_path'):
+                from pathlib import PureWindowsPath
+                actual = PureWindowsPath(actual).as_posix()
+            assert equivalent(actual, expected), specification['feedback'] + f" Input: {arguments!r}; observed: {actual!r}; expected: {expected!r}."
     return verify
 
 

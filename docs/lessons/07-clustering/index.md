@@ -1,5 +1,7 @@
 # Module 7: Clustering and learning paradigms
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Discover and describe chemistry groups without pretending that clusters are known classes or quality ranks.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 90–150 minutes plus practice. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

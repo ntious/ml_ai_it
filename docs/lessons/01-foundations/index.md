@@ -1,5 +1,7 @@
 # Module 1: ML and AI foundations for practical decisions
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Begin here if you are new to ML, AI, or Python. You will compare ways to solve a service problem, run a small program, change its input, and save an explained result. No prior programming, paid account, GPU, or AI service is required. Estimated effort: 60–90 minutes plus installation; this estimate needs learner piloting.
 
 ## Learning outcomes

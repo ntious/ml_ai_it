@@ -19,3 +19,7 @@ Keep a copy of your work before changing environments. Use exact text errors and
 Run `python scripts/preflight.py --profile core` from the project root with the environment's interpreter. Choose frameworks for the Linux CPU environment. Save its version report with your work. Free disk warnings are planning guidance, not measured resource guarantees.
 
 When requesting help, provide the module, route, OS, Python executable/version, exact command, expected result, actual error and one attempted fix. State whether the task is blocked. For an enrolled class, use Canvas's instructor/support contact and its stated response expectations. Independent learners can report nonsensitive reproducible software problems through repository issues. Assessment, disability and personal-data questions need a private institutional route.
+
+## Windows launcher and long paths
+
+If `py` is not recognized, try `python --version` and use `python` for core commands. A Python 3.13 executable does not become 3.12 by changing the command spelling. Framework modules require the separate reference environment. For installation errors mentioning Windows long-path support, extract the source into a short writable folder such as `C:\ml_ai_it` and create a fresh environment there. Keep the failed environment until you have recovered any personal work.

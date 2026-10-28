@@ -2,7 +2,7 @@
 
 **[Course website on GitHub Pages](https://ntious.github.io/ml_ai_it/)** · [Start here](docs/start-here.md) · [Course outline](docs/modules.md)
 
-The website address is the publication target; until its first successful deployment, use the lessons and notebooks in this repository.
+If repository or download links return 404, request the complete course archive from your instructor. Keep its folder structure intact. Public access requires a successful site deployment and repository access.
 
 Learn to frame a useful problem, work with data, build and evaluate models, and explain whether an AI system should be used. This open educational resource combines short lessons, runnable Python examples, guided notebooks, independent practice and worked feedback across 14 modules.
 
@@ -47,6 +47,8 @@ Windows PowerShell:
 ```powershell
 py examples/first-run/scripts/first_run.py --storage-percent 85 --output runs/module01/first-run.txt
 ```
+
+If `py` is unavailable, use `python` in the command above.
 
 Linux or macOS:
 

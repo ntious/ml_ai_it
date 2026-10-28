@@ -1,5 +1,7 @@
 # Module 4: Exploration and visual communication
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Explore a service-workload table, choose useful charts, and communicate what the data support. You will run a repeatable analysis that produces figures, their actual data tables, and written descriptions. This is descriptive exploration, with no model training. No paid AI account, GPU, earlier notebook state, or Canvas assignment is required. Allow 90–120 minutes plus setup and practice; this estimate needs learner piloting.
 
 ## Learning outcomes

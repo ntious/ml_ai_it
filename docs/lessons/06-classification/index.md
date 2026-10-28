@@ -1,5 +1,7 @@
 # Module 6: Classification and decision trees
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Classify a declared human-rating threshold from real chemistry measurements, then explain the mistakes and decision threshold.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 90–150 minutes plus practice. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

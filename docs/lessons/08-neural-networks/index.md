@@ -1,5 +1,7 @@
 # Module 8: Neural networks with TensorFlow
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Train a small real neural classifier, select a checkpoint on validation, and test saved-model replay against a simpler baseline.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

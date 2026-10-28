@@ -1,5 +1,7 @@
 # Module 2: Python for reproducible ML workflows
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Build a small service-file processing program before adding ML libraries. You will read CSV tickets and JSON events, use functions to summarize them, and save labeled results. This is descriptive processing, not model training. No paid account, third-party package, or earlier notebook state is needed. Estimated effort: 90–120 minutes plus practice; pilot this estimate with learners.
 
 ## Learning outcomes

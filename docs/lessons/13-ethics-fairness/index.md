@@ -1,5 +1,7 @@
 # Module 13: Ethics and fairness across the lifecycle
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Audit group error/selection rates on historical census-income data while questioning whether the target and task are justified.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 90–150 minutes plus practice. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

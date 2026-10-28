@@ -1,5 +1,7 @@
 # Module 9: Neural NLP for real messages
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Build a training-only vocabulary and neural text classifier on human-labeled messages, and compare it with a TF-IDF/logistic baseline.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

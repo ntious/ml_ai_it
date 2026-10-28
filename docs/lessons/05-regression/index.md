@@ -1,5 +1,7 @@
 # Module 5: Regression and reliable evaluation
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Train a first ML model and ask whether it improves on a simple baseline. The real-data case forecasts tomorrow's bike rentals for a digitally operated sharing service. Its historical counts are not network traffic; an optional transfer question connects the workflow to IT demand.
 
 No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Allow 2–3 hours plus practice; this estimate needs piloting. Use the [foundation bridge](foundation.md), [Module 3](../03-data-processing/index.md), and [Module 4](../04-exploration/index.md) as needed.

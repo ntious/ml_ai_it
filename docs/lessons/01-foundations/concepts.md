@@ -25,3 +25,7 @@ The complete module still uses `examples/first-run/scripts/first_run.py`. Identi
 ## Optional reading
 
 [Primary explanation](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology) offers additional detail on this module’s mechanism. Read the named topic after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
+
+## Three names to recognize
+
+Training examples teach the model; validation examples help choose between candidate settings; test examples check the chosen procedure afterward. Module 5 develops this distinction in a full experiment. For the first human-written rule, no model training or data split is performed. See the [glossary](../../glossary.md) when these terms recur.

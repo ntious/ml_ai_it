@@ -56,3 +56,5 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 ## Operational-data connection
 
 Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.
+
+The reconciliation exercise uses three disjoint categories: accepted, rejected for other reasons, and duplicates. The complete preparation script includes duplicates within its rejected count. Subtract duplicate rejections before translating its report into this exercise; never count the same row twice.

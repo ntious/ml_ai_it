@@ -1,5 +1,7 @@
 # Module 3 Data processing
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Turn raw event records into documented, inspectable inputs for later analysis. This module works independently: its small sample, setup, explanations, and practice are available from this page. No earlier notebook state or Canvas assignment is required.
 
 ## What you will learn

@@ -1,5 +1,7 @@
 # Module 11: Fine-tuning language models responsibly
 
+Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+
 Perform real parameter-efficient gradient updates on annotated messages, preserve the base model, and audit held-out loss and replay.
 
 This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads; the default CPU training study can take 15–30 minutes depending on hardware. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.

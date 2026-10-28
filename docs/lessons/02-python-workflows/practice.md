@@ -50,3 +50,5 @@ Summarize ticket status with an unknown status added. Explain which output chang
 Start with the [Python foundation bridge](foundation.md) if variables, loops, functions, or paths are unfamiliar. [Module 1](../01-foundations/index.md) supplies the first-run route. You may enter here directly by obtaining the complete source and following the commands below.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+Windows paths normally use backslashes; Linux paths use forward slashes. The path check accepts either representation. `Path(...).as_posix()` explicitly produces forward slashes when a portable display string is desired.
