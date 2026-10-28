@@ -39,6 +39,12 @@ Experiment B's validation sets contain between 27 and 42 actual positives, so re
 
 A good answer separates the two sources: seed spread describes training randomness, while split spread describes sensitivity to the particular records. Neither is an estimate of performance on future data, and neither justifies looking at the final test to pick a seed. The threshold here is fixed at 0.5, so recall is low; tuning it would be a separate, validation-only decision.
 
+## Applied extension feedback: bounded tuning
+
+In the recorded run (October 28, 2026), cross-validation chose C = 0.1 for logistic regression (CV balanced accuracy 0.790), depth 3 for the tree (0.743) and learning rate 0.05 with depth 2 for gradient boosting (0.775). On validation, logistic regression scored 0.811, the tree 0.784 and gradient boosting 0.723. Gradient boosting did not win here, and that is a valid result: a more flexible model needs enough data and signal to pay off.
+
+The three logistic settings differ by less than their cross-validation standard deviations (about 0.03–0.04), so the choice among them is not meaningful. CV and validation agree on the best family here; if they disagreed, the honest response is to report both and treat the choice as uncertain, not to pick whichever looks better. Selecting by validation score and then reporting that same score reuses the evidence that made the choice, which biases it upwards; that is why the final test stays untouched.
+
 ## Compare the quality of explanations
 
 **Developing:** “Recall is higher, so deploy.” The false-alert workload and label meaning are unexplained.

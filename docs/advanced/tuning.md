@@ -5,6 +5,8 @@ fitting works. Choosing tree depth after looking at final errors is still tuning
 even if it happens manually. The [capstone exemplar](../../projects/phishing-triage/README.md)
 puts that choice inside a declared, inspectable development experiment.
 
+A smaller version runs in the core route as the [Module 6 tuning extension](../lessons/06-classification/practice.md#applied-extension-bounded-tuning-including-gradient-boosting), which adds gradient boosting as a candidate.
+
 ## Predict, run and inspect
 
 Before execution, name the family, parameter space, scoring rule, fold boundary,

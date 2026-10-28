@@ -73,6 +73,22 @@ Before running, predict which experiment will spread more. Then open `summary.tx
 
 A random forest is used because its result depends on the seed; logistic regression with this solver does not, so its seed spread would be zero by construction. The [capstone stability investigation](../../advanced/stability.md) runs the fuller version of both experiments.
 
+## Applied extension: bounded tuning, including gradient boosting
+
+Choosing settings is part of fitting, so it must stay inside the development data. This extension searches a fixed budget of 12 configurations across three model families using grouped 3-fold cross-validation on the Module 6 training records only, then scores each family's chosen configuration once on validation. Gradient boosting (scikit-learn's `HistGradientBoostingClassifier`, widely used for tabular data) is one candidate, not an assumed winner. The final test is never used.
+
+```sh
+python -m practical_ml_ai.tuning --output runs/module06-tuning
+```
+
+Before running, predict which family will score best. Then open `cv_trials.csv` and `validation_choices.csv` and answer:
+
+1. Which configuration did each family choose, and are the differences between configurations larger than their cross-validation standard deviations?
+2. Does the family with the best cross-validation score also have the best validation score? What would you do if they disagreed?
+3. Why would choosing the configuration with the best validation score, and then reporting that same score, overstate performance?
+
+All three families use balanced class weights and a 0.5 threshold, so their scores are not the Module 6 reference results, which select a threshold on validation.
+
 ## Evidence for the unchanged outcomes
 
 | Outcome | Evidence to retain |
