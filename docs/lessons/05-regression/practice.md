@@ -61,3 +61,9 @@ Keep your changed code, one hand-checked numerical claim, expected versus observ
 Open [practice solutions](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use [recorded-study feedback](feedback.md) after the complete reference run.
 
 If using GenAI, keep a short disclosure of the help used and what you verified. Be able to explain and change the code independently; an equivalent no-assistant route uses the same hints and feedback. Never upload student records or credentials.
+
+## Evidence activity: Rebuild a forecast error
+
+Use the saved final predictions and selected-model record. Recompute MAE from absolute residuals, compare the selected method with persistence, and explain why signed errors can cancel. Preserve the chronological boundary; a poor final result is not permission to select a new method on those same days.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

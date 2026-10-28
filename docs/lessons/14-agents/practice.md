@@ -52,3 +52,9 @@ Trace an unsupported destructive request and a valid count question. Identify wh
 - **M14.5:** Test unsupported/destructive requests and explain remaining limitations.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Separate routing from permission
+
+Use the recorded requests, selected plans and execution/refusal outcomes. Trace one routing result and one blocked request, identifying which component made each decision. Explain why correct tool authorization does not guarantee correct intent interpretation, and propose a new permitted test before running it.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

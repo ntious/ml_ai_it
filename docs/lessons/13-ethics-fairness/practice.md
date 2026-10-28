@@ -52,3 +52,9 @@ Compare two groups with equal rates and unequal counts. Explain why this does no
 - **M13.5:** Write a governance recommendation, including reasons not to deploy.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Audit a group comparison
+
+Use group_audit.csv to recompute one group recall from its TP and FN counts and reconcile its denominator. Compare its interval and sample size with another group, then describe a plausible harm and missing contextual evidence. Do not treat overlapping intervals as proof of fairness or use final labels to choose a mitigation.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

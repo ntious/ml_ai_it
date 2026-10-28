@@ -52,3 +52,9 @@ Cluster service workload profiles on development data. State why a cluster alone
 - **M07.5:** Explain why internal scores and observational data do not validate actions or rewards.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Interpret cluster evidence
+
+Use test_assignments.csv to recompute each cluster size and reconcile with cluster_counts.csv. Interpret one original-unit feature mean in cluster_profiles.csv. Explain why cluster IDs can change between runs without defining new classes, and why agreement with a class label is not the objective used to choose K.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

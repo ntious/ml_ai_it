@@ -52,3 +52,9 @@ Add a message with unseen words and a suspicious suffix beyond the length limit.
 - **M09.5:** Document privacy, prevalence, vocabulary limits, and reproducibility.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Evidence activity: Compare on the same messages
+
+Use saved neural and lexical-baseline results. Recompute recall from confusion counts and compare their evaluation denominators before interpreting a difference. Trace one false negative when present; distinguish an observed error from a claim about all future spam.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.

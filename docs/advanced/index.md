@@ -29,3 +29,7 @@ Choose an extension because it answers a research or operational question. A
 larger model, paid infrastructure or another metric does not automatically make
 the work more advanced. Every extension should name its question, boundary,
 expected evidence, compute budget and failure interpretation.
+
+## Bridge from the core route
+
+Use the [small stability experiment](core-stability.md) after Module 6, and the [evidence activity](../evidence-practice.md) alongside each module.

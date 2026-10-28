@@ -56,3 +56,9 @@ Start with the [Python foundation bridge](foundation.md) if variables, loops, fu
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 Windows paths normally use backslashes; Linux paths use forward slashes. The path check accepts either representation. `Path(...).as_posix()` explicitly produces forward slashes when a portable display string is desired.
+
+## Evidence activity: Reconcile file processing
+
+Use your service-file summary and original CSV/JSON inputs. Independently count one status and recompute one observed-value mean, excluding missing values rather than treating them as zero. Give a peer the exact input and output paths; explain why a changed path or input can change a reproducibility claim.
+
+Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
