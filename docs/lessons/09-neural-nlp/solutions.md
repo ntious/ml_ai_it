@@ -37,8 +37,8 @@ Tokens are `offer, free, prize, now`, giving IDs `[4, 2, 1, 3]`. Keeping the fir
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. A defensible response shows unseen words mapping to the unknown ID and the suffix beyond the length limit being truncated, so the model never sees it. It proposes a length or vocabulary-coverage check on validation data, not on the final test. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. A defensible response shows unseen words mapping to the unknown ID and the suffix beyond the length limit being truncated, so the model never sees it. It proposes a length or vocabulary-coverage check on validation data, not on the final test.

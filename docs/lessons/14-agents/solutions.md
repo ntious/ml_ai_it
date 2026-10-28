@@ -35,8 +35,8 @@ def can_call(used, budget):
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Trace an unsupported destructive request and a valid count question. Identify which control enforces each boundary. A defensible response shows the destructive request refused because no such tool exists and its intent route returns `None`, and the count question passing the argument allowlist and budget. It names which control enforced each boundary. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Trace an unsupported destructive request and a valid count question. Identify which control enforces each boundary. A defensible response shows the destructive request refused because no such tool exists and its intent route returns `None`, and the count question passing the argument allowlist and budget. It names which control enforced each boundary.

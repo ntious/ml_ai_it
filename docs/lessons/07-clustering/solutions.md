@@ -39,8 +39,8 @@ Inertia sums squared distances to the nearest centre. Adding centres can only sh
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. A defensible response describes each cluster by size and original-unit profile, and notes that a cluster ID has no rank. Throttling a service needs an owner, a defined outcome and evidence about consequences; cluster membership alone is not that evidence. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. A defensible response describes each cluster by size and original-unit profile, and notes that a cluster ID has no rank. Throttling a service needs an owner, a defined outcome and evidence about consequences; cluster membership alone is not that evidence.

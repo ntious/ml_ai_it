@@ -24,7 +24,7 @@ Question: If TP=19, FP=30 and FN=10, what are precision and recall?
 
 Precision 19/49 is about .388; recall 19/29 is about .655. They use different denominators.
 
-A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.
+Judge your answer with the [study workflow criteria](../../study-workflow.md#how-explanations-are-judged). If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.
 
 ## Feedback for your own implementation
 

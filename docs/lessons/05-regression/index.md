@@ -141,8 +141,6 @@ Read named sections; current docs may describe newer versions than the tested co
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
 
-**Reading on GitHub?** Report, notebook and archive links open the [published reading site](https://ntious.github.io/ml_ai_it/). Source notebooks are also under notebooks/lessons in the repository; see [workspace and report access](../../setup/student-workspace.md).
-
 ## Optional project connection
 
 For a complete worked lifecycle beyond this bounded regression study, use the [optional capstone exemplar](../../../projects/phishing-triage/README.md). The [tuning investigation](../../advanced/tuning.md) separates search, validation and final evaluation.

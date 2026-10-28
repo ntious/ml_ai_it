@@ -41,7 +41,7 @@ Write candidate inertia and silhouette values for K = 2, 3 and 4 for which "smal
 
 ## Transfer to an IT decision
 
-Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

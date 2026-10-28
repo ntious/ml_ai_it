@@ -41,7 +41,7 @@ Compute `nearest_rank([0.010, 0.011, 0.012, 0.250], 0.95)` and the mean of the s
 
 ## Transfer to an IT decision
 
-Write a service response policy for an invalid request, a model outage and an alert without outcome labels. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Write a service response policy for an invalid request, a model outage and an alert without outcome labels. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

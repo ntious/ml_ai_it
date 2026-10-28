@@ -41,7 +41,7 @@ Construct confusion counts for a group with no actual positives, and another gro
 
 ## Transfer to an IT decision
 
-Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

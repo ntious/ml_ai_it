@@ -35,8 +35,8 @@ The adapter has 16 trainable values, the same as the frozen 4 × 4 matrix, so th
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. A defensible response separates evidence that weights changed (update norm, changed tensors) from evidence about held-out quality. It proposes a validation-only comparison, such as another rank or step budget, declared before any new final evaluation. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. A defensible response separates evidence that weights changed (update norm, changed tensors) from evidence about held-out quality. It proposes a validation-only comparison, such as another rank or step budget, declared before any new final evaluation.

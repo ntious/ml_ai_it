@@ -41,7 +41,7 @@ Construct two records where deduplicating by the whole row keeps both but dedupl
 
 ## Transfer to an IT decision
 
-Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

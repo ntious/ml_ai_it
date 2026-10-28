@@ -37,8 +37,8 @@ The 95th percentile is the value at position ceil(0.95 × 4) = 4, which is 0.250
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response rejects the invalid request with a reason, routes outages to the human fallback, and treats an input-shift alert as an investigation until delayed labels arrive. It names the owner and the rollback trigger. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response rejects the invalid request with a reason, routes outages to the human fallback, and treats an input-shift alert as an investigation until delayed labels arrive. It names the owner and the rollback trigger.

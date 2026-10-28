@@ -41,7 +41,7 @@ Choose daily counts `[errors, requests]` for two days so that the average of the
 
 ## Transfer to an IT decision
 
-Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

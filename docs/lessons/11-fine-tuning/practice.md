@@ -41,7 +41,7 @@ A rank-2 adapter on a 4 × 4 projection has matrices of shape 2 × 4 and 4 × 2.
 
 ## Transfer to an IT decision
 
-Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

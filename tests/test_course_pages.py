@@ -35,6 +35,14 @@ class CoursePageTests(unittest.TestCase):
                 module = next(m for m in MODULES if m["id"] == entry["id"])
                 self.assertIn(module["script"], (folder / "concepts.md").read_text(encoding="utf-8"))
 
+    def test_shared_rubric_lives_in_the_study_workflow_only(self):
+        workflow = (ROOT / "docs/study-workflow.md").read_text(encoding="utf-8")
+        self.assertIn("## How explanations are judged", workflow)
+        copies = [page.relative_to(ROOT).as_posix() for page in (ROOT / "docs/lessons").rglob("*.md")
+                  if "A satisfactory response includes" in page.read_text(encoding="utf-8")
+                  or "Submit or retain your changed executable code" in page.read_text(encoding="utf-8")]
+        self.assertEqual(copies, [])
+
     def test_research_guide_includes_a_located_worked_comparison(self):
         page = (ROOT / "docs/advanced/research-comparison.md").read_text(encoding="utf-8")
         worked = page[page.index("## Worked example"):page.index("## Practice a methodological comparison")]

@@ -40,8 +40,8 @@ The first is 0: one value was observed and it was zero. The second is `None`: no
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. A defensible response shows the unknown status appearing as its own key with count 1, all other counts unchanged and `tickets.csv` untouched. The new summary goes to a new run folder, so the original result stays comparable. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. A defensible response shows the unknown status appearing as its own key with count 1, all other counts unchanged and `tickets.csv` untouched. The new summary goes to a new run folder, so the original result stays comparable.

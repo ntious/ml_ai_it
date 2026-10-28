@@ -38,8 +38,8 @@ For example, `[[1, 2], [1, 8]]` gives daily rates 0.5 and 0.125, whose average i
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. A defensible response reports counts beside rates, uses the weighted rate for each service, and captions the chart so a high rate on a low-volume service is not read as a ranking. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. A defensible response reports counts beside rates, uses the weighted rate for each service, and captions the chart so a high rate on a low-volume service is not read as a ranking.

@@ -41,7 +41,7 @@ Predict `observed_mean([0, None])` and `observed_mean([None])`. For each, write 
 
 ## Transfer to an IT decision
 
-Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

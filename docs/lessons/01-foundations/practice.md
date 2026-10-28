@@ -41,7 +41,7 @@ Construct two prediction lists for the actual labels `[True, False, False]` that
 
 ## Transfer to an IT decision
 
-Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 
