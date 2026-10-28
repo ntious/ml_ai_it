@@ -56,3 +56,7 @@ Cluster service workload profiles on development data. State why a cluster alone
 - **M07.5:** Explain why internal scores and observational data do not validate actions or rewards.
 
 Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Optional chronological anomaly extension
+
+Use [unusual days and review workload](../../advanced/anomaly-detection.md) to compare a detector with a simple baseline on dated observations. This extension reports flags and distribution context, not verified incident accuracy.

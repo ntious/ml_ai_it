@@ -21,3 +21,5 @@ This page collects material for maintainers and reviewers. Learners do not need 
 - Historical reviews: [0.6.0 baseline](maintenance/reviews/baseline-0.6.0.md), [0.7.0 critical review](maintenance/reviews/critical-review-0.7.0.md), [framework baseline](maintenance/reviews/framework-baseline-0.7.0.md), [learning support](maintenance/reviews/learning-support-0.7.0.md), [Phase B handoff](maintenance/reviews/phase-b-reviewer-handoff.md), [applied teaching prototype handoff](maintenance/reviews/applied-teaching-prototype-handoff.md) and [implementation history](maintenance/reviews/implementation-history.md).
 
 These pages are excluded from the learner site search so that search results stay focused on learning material.
+
+See [weekly external-resource maintenance](maintenance/external-health.md) for link checks, fresh source checksums and failure triage.
