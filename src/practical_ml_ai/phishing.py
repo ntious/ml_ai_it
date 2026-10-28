@@ -48,7 +48,7 @@ def prepare(output):
 def train(output):
     directory=Path(output)
     if (directory/"trained.json").exists(): raise ValueError("Training already completed; use a fresh study.")
-    protocol=json.loads((directory/"protocol.json").read_text());features=protocol["features"]
+    protocol=json.loads((directory/"protocol.json").read_text(encoding="utf-8"));features=protocol["features"]
     training=pd.read_csv(directory/"train.csv")
     models={"dummy":DummyClassifier(strategy="prior"),
         "logistic":make_pipeline(StandardScaler(),LogisticRegression(max_iter=1000,random_state=42)),
@@ -69,7 +69,7 @@ def validate(output):
     directory=Path(output)
     if (directory/"selection.json").exists(): raise ValueError("Selection already frozen.")
     actual=pd.read_csv(directory/"validation.csv").set_index("record_id").label
-    models=json.loads((directory/"trained.json").read_text())["models"]
+    models=json.loads((directory/"trained.json").read_text(encoding="utf-8"))["models"]
     scores=[]
     for name in models:
         prediction=pd.read_csv(directory/("validation_"+name+".csv")).set_index("record_id")
@@ -82,7 +82,7 @@ def validate(output):
 def evaluate(output):
     directory=Path(output)
     if (directory/"evaluation.json").exists(): raise ValueError("Final evaluation already completed.")
-    chosen=json.loads((directory/"selection.json").read_text())["model"]
+    chosen=json.loads((directory/"selection.json").read_text(encoding="utf-8"))["model"]
     actual=pd.read_csv(directory/"test.csv").set_index("record_id").label
     scores=[]
     for name in sorted({chosen,"dummy"}):
@@ -93,8 +93,8 @@ def evaluate(output):
 
 def report(output):
     directory=Path(output)
-    protocol=json.loads((directory/"protocol.json").read_text())
-    result=json.loads((directory/"evaluation.json").read_text())
+    protocol=json.loads((directory/"protocol.json").read_text(encoding="utf-8"))
+    result=json.loads((directory/"evaluation.json").read_text(encoding="utf-8"))
     return publish_report(directory,"IT case: historical website phishing",{**protocol,**result},
         {"validation_scores":pd.read_csv(directory/"validation_scores.csv"),"test_scores":pd.DataFrame(result["test_scores"])},
         ["Encoded historical URL/host/content attributes are not raw network packets or live reputation data.",

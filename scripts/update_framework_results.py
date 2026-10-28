@@ -13,7 +13,7 @@ NAMES = {8: "08-neural-networks", 9: "09-neural-nlp", 10: "10-llm-workflows",
 
 
 def refresh(runs):
-    results = {n: json.loads((runs / f"module{n:02d}/summary.json").read_text()) for n in NAMES}
+    results = {n: json.loads((runs / f"module{n:02d}/summary.json").read_text(encoding="utf-8")) for n in NAMES}
     for n, result in results.items():
         if result["module"] != n:
             raise ValueError(f"Wrong report for Module {n}.")
@@ -104,7 +104,7 @@ def refresh(runs):
     )
     for n, name in NAMES.items():
         path = ROOT / 'docs/lessons' / name / 'feedback.md'
-        source = path.read_text()
+        source = path.read_text(encoding="utf-8")
         start = source.index('## Diagnose the verified run\n') + len('## Diagnose the verified run\n')
         end = source.index('\n## Transfer cautiously', start)
         source = source[:start] + '\n' + diagnoses[n] + '\n' + source[end:]
@@ -112,7 +112,7 @@ def refresh(runs):
             start = source.index('## A reasoned interpretation\n') + len('## A reasoned interpretation\n')
             end = source.index('\n## What a good explanation contains', start)
             source = source[:start] + '\nCompare the current run below with the [archived under-trained/failed baseline](../../maintenance/reviews/framework-baseline-0.7.0.md). The archive records earlier settings; it is not the current protocol. A working mechanism and a useful task model require different evidence.\n' + source[end:]
-        path.write_text(source)
+        path.write_text(source, encoding="utf-8")
     heading = '# Recorded Phase B framework results\n\n'
     context = ('Generated from actual `runs/verified/moduleNN/summary.json` files using '
                '`python scripts/update_framework_results.py`. Regenerate after changing the protocol; '
@@ -126,12 +126,12 @@ def refresh(runs):
     for n, name in NAMES.items():
         links += f'- [Module {n} workflow](lessons/{name}/index.md) and [feedback](lessons/{name}/feedback.md).\n'
     links += '\nThe [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md) retains the earlier failure cases. Consult each report’s rate_intervals.csv where provided. Remaining repository-wide uncertainty work belongs to Phase C.\n'
-    (ROOT / 'docs/framework-results.md').write_text(heading + context + table + links)
+    (ROOT / 'docs/framework-results.md').write_text(heading + context + table + links, encoding="utf-8")
     path = ROOT / 'docs/status.md'
-    source = path.read_text()
+    source = path.read_text(encoding="utf-8")
     source = source.replace('These are the actual results of the verified runs used to build edition 0.7.0.', 'The table below preserves the earlier edition 0.7.0 snapshot. **For the revised framework protocols and current measured results, use [Phase B results](framework-results.md).**')
     source = source.replace('Several framework results are weak or failed; each module\'s feedback page explains why in **Diagnose the verified run**.', 'Earlier weak framework runs are archived for diagnosis; current module feedback discusses the revised runs.')
-    path.write_text(source)
+    path.write_text(source, encoding="utf-8")
     print('Updated five feedback pages and the source-backed framework-results page.')
 
 

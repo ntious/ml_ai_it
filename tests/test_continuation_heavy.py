@@ -37,7 +37,7 @@ class FrameworkWorkflowTests(unittest.TestCase):
             self.assertTrue(0 <= result["test"]["balanced_accuracy"] <= 1)
 
     def test_real_training_vocabulary_is_recorded(self):
-        vocabulary = json.loads((self.base / "m9/vocabulary.json").read_text())
+        vocabulary = json.loads((self.base / "m9/vocabulary.json").read_text(encoding="utf-8"))
         self.assertGreater(len(vocabulary), 100)
         self.assertEqual(self.results[9]["vocabulary_fitted_on"], "training only")
         self.assertGreater(self.results[9]["sample_rows"], 5000)
@@ -93,7 +93,7 @@ class FrameworkWorkflowTests(unittest.TestCase):
             np.testing.assert_allclose(intervals.rate, intervals.successes / intervals.observations)
             self.assertTrue((intervals.ci_low <= intervals.rate).all())
             self.assertTrue((intervals.rate <= intervals.ci_high).all())
-        manifest = json.loads((self.base / "m11/split_manifest.json").read_text())
+        manifest = json.loads((self.base / "m11/split_manifest.json").read_text(encoding="utf-8"))
         for a, b in [("training_subset", "validation_subset"), ("training_subset", "final_subset"), ("validation_subset", "final_subset")]:
             self.assertFalse(set(manifest[a]) & set(manifest[b]))
         validation = pd.read_csv(self.base / "m11/validation_generation.csv")
@@ -125,7 +125,7 @@ class FrameworkWorkflowTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 execute_tool(plan, frame, features)
         self.assertLessEqual(bounded_agent("Delete all records")["tool_calls"], 1)
-        traces = json.loads((self.base / "m14/tool_trace.json").read_text())
+        traces = json.loads((self.base / "m14/tool_trace.json").read_text(encoding="utf-8"))
         self.assertTrue(all(row["tool_calls"] <= 1 for row in traces))
         self.assertTrue(all(row["steps_used"] <= 3 for row in traces))
         self.assertGreaterEqual(len(traces), 20)

@@ -77,11 +77,11 @@ class PhishingBoundaryTests(unittest.TestCase):
         from practical_ml_ai.phishing import validate,evaluate,report,train
         with tempfile.TemporaryDirectory() as folder:
             target=Path(folder)/"study";shutil.copytree(self.directory,target)
-            validate(target);original=json.loads((target/"selection.json").read_text())
+            validate(target);original=json.loads((target/"selection.json").read_text(encoding="utf-8"))
             (target/"selection.json").unlink()
             test=pd.read_csv(target/"test.csv");test["label"]=1-test.label;test.to_csv(target/"test.csv",index=False)
             validate(target)
-            self.assertEqual(json.loads((target/"selection.json").read_text()),original)
+            self.assertEqual(json.loads((target/"selection.json").read_text(encoding="utf-8")),original)
             with self.assertRaises(ValueError):validate(target)
             with self.assertRaises(ValueError):train(target)
             evaluate(target);result=report(target)

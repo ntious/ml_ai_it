@@ -71,7 +71,7 @@ def run(output, cache):
     pd.DataFrame({"source_row":test,"actual":actual[test],"probability":probability,"label":frame.iloc[test].Attack_type.to_numpy()}).to_csv(output/"predictions.csv",index=False)
     frame.Attack_type.value_counts().rename_axis("label").to_csv(output/"label_counts.csv")
     summary={"source":URL,"sha256":DIGEST,"rows":len(frame),"features":FEATURES,"train":len(train),"validation":len(validation),"test":len(test),"threshold":threshold,"average_precision":float(average_precision_score(actual[test],probability)),"group_overlap":False,"decision_time":"completed flow","scope":"Retrospective within-capture exercise; device/session/time independence is unavailable.","cost_assumption":"miss=5, false alert=1; illustrative, not measured operational costs"}
-    (output/"summary.json").write_text(json.dumps(summary,indent=2)+"\n")
+    (output/"summary.json").write_text(json.dumps(summary,indent=2)+"\n", encoding="utf-8")
     print(json.dumps(summary,indent=2))
 
 if __name__ == "__main__":

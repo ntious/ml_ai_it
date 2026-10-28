@@ -39,16 +39,16 @@ with zipfile.ZipFile(archive_path) as archive:
             cwd=temporary, capture_output=True, text=True,
         )
         assert process.returncode == 0, process.stderr
-        result = json.loads((output / "final_evaluation.json").read_text())
+        result = json.loads((output / "final_evaluation.json").read_text(encoding="utf-8"))
         assert result["test_rows"] == 14
         assert result["selected"] == "linear_week"
         assert (output / "forecast.csv").is_file()
 print(f"Checked {len(names)} byte-matched original-source files and the extracted regression CLI.")
 
-practice = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
+practice = json.loads((ROOT / "curriculum/practice.json").read_text(encoding="utf-8"))["modules"]
 for entry in practice:
     target = ROOT / "site/downloads" / f'module{entry["id"]:02d}'
-    evidence = json.loads((target / "practice-verification.json").read_text())
+    evidence = json.loads((target / "practice-verification.json").read_text(encoding="utf-8"))
     for kind in ["practice", "solutions"]:
         source = ROOT / entry[kind]
         assert (target / (kind + ".ipynb")).read_bytes() == source.read_bytes()

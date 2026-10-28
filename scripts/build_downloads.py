@@ -23,10 +23,10 @@ def build():
     from check_practice import validate_sources as validate_practice_sources, checks_digest
     import hashlib
     validate_practice_sources()
-    practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
+    practice_registry = json.loads((ROOT / "curriculum/practice.json").read_text(encoding="utf-8"))["modules"]
     for entry in practice_registry:
         verified = ROOT / "runs/verified/practice" / f'module{entry["id"]:02d}'
-        summary = json.loads((verified / "summary.json").read_text())
+        summary = json.loads((verified / "summary.json").read_text(encoding="utf-8"))
         assert summary["checks_sha256"] == checks_digest(), "Practice checks changed; rerun scripts/check_practice.py"
         target = DESTINATION / f'module{entry["id"]:02d}'
         target.mkdir(parents=True, exist_ok=True)
