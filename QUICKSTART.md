@@ -102,18 +102,31 @@ Expect 504 training, 110 validation, and 110 final-test examples after seven war
 
 ## Notebook option
 
-Notebooks are optional execution companions. To operate one locally, create a project environment as above and install an interface into that environment:
+Notebooks are optional execution companions. Every course notebook, including the Module 1 and 2 practice notebooks, needs the core environment: the practice checks use NumPy even though the Module 1 and 2 scripts do not. Do these steps once, from the `ml_ai_it` folder.
 
-```sh
-python -m pip install notebook
-python -m notebook
+1. Create `.venv` and install the package with the Module 3 commands above.
+2. Install a notebook interface into that environment and register it as the course kernel.
+3. Launch the interface from the same folder.
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install notebook ipykernel
+.\.venv\Scripts\python.exe -m ipykernel install --user --name ml-ai-core --display-name "Python (course core)"
+.\.venv\Scripts\python.exe -m notebook
 ```
 
-Here `python` means the environment executable: `.\.venv\Scripts\python.exe` on Windows or `.venv/bin/python` on macOS/Linux if you have not activated it. The interface is an additional dependency even though Modules 1 and 2 themselves need only the standard library. Module 3 also needs the local package and its dependencies installed.
+macOS or Linux:
 
-Register the core environment once with `python -m ipykernel install --user --name ml-ai-core --display-name "ML AI core"`. In the notebook interface select **ML AI core**. Framework notebooks use the separate **ml-ai-frameworks** kernel described in the framework guide.
+```sh
+.venv/bin/python -m pip install notebook ipykernel
+.venv/bin/python -m ipykernel install --user --name ml-ai-core --display-name "Python (course core)"
+.venv/bin/python -m notebook
+```
 
-From the opened interface, open the module's notebook under `notebooks/lessons/`. Select and run code cells in order. Save with the interface's File → Save command, restart the kernel, and run all cells. The notebook imports shared source from the complete repository folder; downloading a notebook alone is insufficient. Use the documented script/text route when it better fits your interface needs; the accessibility guide records interface testing scope. See [setup and accessibility status](docs/setup/index.md).
+Course notebooks request the kernel named **Python (course core)**. If the interface asks you to choose a kernel, or reports that `ml-ai-core` is missing, choose **Python (course core)** (Kernel → Change kernel), or rerun the registration command. Framework notebooks (Modules 8–12 and 14) request **Python (course frameworks)**, registered by the [framework setup](docs/setup/frameworks.md).
+
+From the opened interface, open the module's notebook under `notebooks/lessons/`, or its practice notebook under `notebooks/practice/`. Select and run code cells in order. Save with the interface's File → Save command, restart the kernel, and run all cells. The notebook imports shared source from the complete repository folder; downloading a notebook alone is insufficient. Use the documented script/text route when it better fits your interface needs; the accessibility guide records interface testing scope. See [setup and accessibility status](docs/setup/index.md).
 
 ## Save and troubleshoot
 

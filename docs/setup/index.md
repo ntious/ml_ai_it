@@ -12,7 +12,7 @@ Use [first run](../../QUICKSTART.md) for foundational commands. Modules 6, 7, an
 - Hosted routes: choose a provider that can access the complete source and supplies a matching runtime. Validate the selected module in that session; provider execution is outside the recorded CI platform scope.
 - Reading: static explanations, tables, and actual verified reports; no browser Python execution is implied.
 
-The [original-source ZIP](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") includes scripts, notebooks, shared implementation, and the app. A notebook alone lacks imports. External data/model caches are separate and retain [provenance](../data-sources.md).
+The [original-source ZIP](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") includes scripts, notebooks, shared implementation, and the app. A notebook alone lacks imports. External data/model caches are separate and retain [provenance](../data-sources.md). If a download link does not open, use the [offline access route](student-workspace.md#if-a-download-link-does-not-open).
 
 ## Full site reproduction
 

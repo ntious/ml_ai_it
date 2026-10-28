@@ -4,25 +4,65 @@ Modules 8–12 and 14 use this environment; Modules 6, 7, and 13 use core depend
 
 ## Install separately
 
-Windows PowerShell installation recipe (the execution reference below is Linux CPU):
-
-~~~powershell
-py -3.12 -m venv .venv-ml
-.\.venv-ml\Scripts\python.exe -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-.\.venv-ml\Scripts\python.exe -m pip install -e ".[regression,visualization,neural,language,deployment,verification]" -c environments/constraints-neural.txt
-~~~
-
-Linux:
+### Linux
 
 ~~~sh
 python3.12 -m venv .venv-ml
 .venv-ml/bin/python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 .venv-ml/bin/python -m pip install -e ".[regression,visualization,neural,language,deployment,verification]" -c environments/constraints-neural.txt
+.venv-ml/bin/python -m ipykernel install --user --name ml-ai-frameworks --display-name "Python (course frameworks)"
 ~~~
 
-Do not combine this constraint file with the core one. It isolates NumPy 2.1.3/TensorFlow 2.19.1 from core NumPy 2.3.5. Constraints record exercised choices, not the newest release or a full transitive lockfile.
+`python3 scripts/bootstrap.py --profile frameworks` performs the same steps, registers the kernel and runs the preflight check.
 
-Allow several GB of disk and sufficient memory; 8 GB RAM is a starting allowance, not a guarantee. No paid API or GPU is required. First package/data/model downloads need connectivity; later valid caches support replay.
+### Windows: use WSL with Ubuntu 24.04
+
+Native Windows framework installs are not verified, and `scripts/bootstrap.py` refuses them. On Windows, run the Linux route inside the Windows Subsystem for Linux (WSL). Ubuntu 24.04 provides Python 3.12 by default.
+
+**Prerequisites**
+
+- Windows 11, or Windows 10 version 22H2. Administrator rights are needed once, to install WSL.
+- Hardware virtualization enabled in the firmware settings. `wsl --install` reports it if it is disabled.
+- Internet access for the first installation and for model and data downloads.
+- Resources: see [Resource requirements](#resource-requirements) below. Close large applications during training.
+
+**Steps**
+
+1. In PowerShell opened as administrator, run `wsl --install -d Ubuntu-24.04`. Restart Windows if prompted, then open **Ubuntu 24.04** from the Start menu and create a Linux user name and password.
+2. In the Ubuntu terminal, install the system packages:
+
+   ~~~sh
+   sudo apt update && sudo apt install -y python3.12-venv unzip
+   python3 --version
+   ~~~
+
+   The version check should report Python 3.12.
+3. Copy the course source into your Linux home folder. Working under `/mnt/c` is slow and can break file permissions. Replace `YOUR-WINDOWS-NAME` with your Windows user folder name:
+
+   ~~~sh
+   mkdir -p ~/courses && cd ~/courses
+   cp /mnt/c/Users/YOUR-WINDOWS-NAME/Downloads/ml_ai_it-source.zip .
+   unzip ml_ai_it-source.zip && cd ml_ai_it
+   ~~~
+
+4. Create the framework environment, register its kernel and run the preflight check:
+
+   ~~~sh
+   python3 scripts/bootstrap.py --profile frameworks
+   ~~~
+
+5. Run a module script, for example `.venv-ml/bin/python examples/wine-neural-network/scripts/run.py --output runs/module08`.
+6. For notebooks, run `.venv-ml/bin/python -m pip install notebook` and then `.venv-ml/bin/python -m notebook --no-browser`. Open the printed `http://localhost:8888/...` address in your Windows browser and choose the kernel **Python (course frameworks)**.
+
+Windows File Explorer shows your results at `\\wsl$\Ubuntu-24.04\home\<linux-user>\courses\ml_ai_it\runs`. Copy anything you need to keep to a Windows folder before removing the distribution.
+
+Verification scope: steps 4–6 are the commands the Linux CPU CI job runs. The WSL installation itself (steps 1–3) has not been tested by the maintainers; report problems with the exact command and message.
+
+### Resource requirements
+
+Allow at least 10 GB of free disk and 8 GB of RAM; this is a starting allowance, not a measured guarantee. No paid API or GPU is required. First package/data/model downloads need connectivity; later valid caches support replay.
+
+Do not combine this constraint file with the core one. It isolates NumPy 2.1.3/TensorFlow 2.19.1 from core NumPy 2.3.5. Constraints record exercised choices, not the newest release or a full transitive lockfile.
 
 ## Run and save
 
@@ -30,7 +70,7 @@ Here python means your environment executable above if not activated.
 
 ~~~sh
 python examples/wine-neural-network/scripts/run.py --output runs/module08
-python -m ipykernel install --user --name ml-ai-frameworks
+python -m ipykernel install --user --name ml-ai-frameworks --display-name "Python (course frameworks)"
 python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
 ~~~
 
@@ -43,9 +83,9 @@ USE_TF=0 is a Transformers backend setting for the PyTorch language model, not a
 Execute both notebook groups in their corresponding environments while retaining runs/verified. Install the verification extra in each and run only that profile's commands from that environment; the block below lists the overall sequence, not one combined environment:
 
 ~~~sh
-python -m ipykernel install --user --name ml-ai-core
+python -m ipykernel install --user --name ml-ai-core --display-name "Python (course core)"
 python scripts/check_notebook.py --group core --kernel ml-ai-core
-python -m ipykernel install --user --name ml-ai-frameworks
+python -m ipykernel install --user --name ml-ai-frameworks --display-name "Python (course frameworks)"
 python scripts/check_notebook.py --group frameworks --kernel ml-ai-frameworks
 npm install --ignore-scripts
 npm run build

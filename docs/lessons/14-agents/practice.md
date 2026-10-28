@@ -1,6 +1,6 @@
 # Module 14: implement, explain and transfer
 
-Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module14/practice.ipynb "site-download:module14/practice.ipynb"). In a source checkout open `notebooks/practice/module14-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module14/practice.ipynb "site-download:module14/practice.ipynb"). In a source checkout open `notebooks/practice/module14-practice.ipynb`. Use the [framework environment and kernel](../../setup/frameworks.md). Three unfinished functions report **not_attempted**, not a pass. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Construct `route_intent`
 

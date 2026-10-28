@@ -1,6 +1,6 @@
 # Module 13: implement, explain and transfer
 
-Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module13/practice.ipynb "site-download:module13/practice.ipynb"). In a source checkout open `notebooks/practice/module13-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module13/practice.ipynb "site-download:module13/practice.ipynb"). In a source checkout open `notebooks/practice/module13-practice.ipynb`. Use the [core environment and kernel](../../../QUICKSTART.md#notebook-option); the practice checks need NumPy even where the module script does not. Three unfinished functions report **not_attempted**, not a pass. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Construct `recall_denominator`
 

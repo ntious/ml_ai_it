@@ -1,6 +1,6 @@
 # Module 5: practice solutions and diagnostic feedback
 
-Attempt the [practice](practice.md) before opening the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module05/solutions.ipynb "site-download:module05/solutions.ipynb"). The notebook executes the three functions and a real-data development comparison. Reading it is useful feedback, not evidence of independent implementation.
+Attempt the [practice](practice.md) before opening the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module05/solutions.ipynb "site-download:module05/solutions.ipynb"). The notebook executes the three functions and a real-data development comparison. Reading it is useful feedback, not evidence of independent implementation. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Residuals: direction and magnitude answer different questions
 

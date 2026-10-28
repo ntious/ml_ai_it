@@ -4,6 +4,8 @@ Use [concepts](concepts.md) and [guided construction](guided.md) first. Work in 
 
 ## Start with the clean practice notebook
 
+If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
 - [Practice notebook](https://ntious.github.io/ml_ai_it/downloads/module06/practice.ipynb "site-download:module06/practice.ipynb") — complete three function bodies and record predictions.
 - In a source checkout: `notebooks/practice/module06-practice.ipynb`.
 - The notebook must stay inside the complete source tree and use its installed package/kernel. It does not install dependencies for you.

@@ -2,6 +2,8 @@
 
 These cases connect a question, a reviewed source, shared code, evaluation, and a readable result. Run them from the complete source or inspect the generated report first. All examples below use actual external records.
 
+Report links open the published reading site. If a download link does not open, use the [offline access route](setup/student-workspace.md#if-a-download-link-does-not-open): run the module command and open the `index.html` it writes.
+
 ## Forecast historical bike demand
 
 Ask what information is available when tomorrow's forecast is issued. Compare persistence and trained baselines without using future weather or target components as inputs.

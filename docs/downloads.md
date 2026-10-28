@@ -4,7 +4,7 @@ Choose the complete source when you want to run or adapt the course. A notebook 
 
 ## Complete project
 
-[Download the complete source ZIP](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). Extract it, keep its folder structure, and follow [first-run setup](../QUICKSTART.md). It includes the Python package, all module scripts/notebooks, teaching pages, contracts, fixtures, tests, and authoring templates.
+[Download the complete source ZIP](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). Extract it, keep its folder structure, and follow [first-run setup](../QUICKSTART.md). It includes the Python package, all module scripts/notebooks, teaching pages, contracts, fixtures, tests, and authoring templates. If a download link does not open, use the [offline access route](setup/student-workspace.md#if-a-download-link-does-not-open).
 
 The GitHub links on each reading page identify its exact source revision. Use a tested commit or semester edition when adapting.
 

@@ -1,6 +1,6 @@
 # Module 8: practice solutions and diagnostic feedback
 
-Attempt the [practice](practice.md), then open the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module08/solutions.ipynb "site-download:module08/solutions.ipynb"). These solutions expose the mechanism; they do not replace an independently explained change or the complete module's baseline comparison.
+Attempt the [practice](practice.md), then open the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module08/solutions.ipynb "site-download:module08/solutions.ipynb"). These solutions expose the mechanism; they do not replace an independently explained change or the complete module's baseline comparison. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Dense layer: preserve observations as rows
 

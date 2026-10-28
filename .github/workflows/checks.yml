@@ -100,6 +100,12 @@ jobs:
         with:
           name: verified-frameworks
           path: runs/verified/
+      - name: Record framework resource use
+        # Evidence for the documented learner disk and memory allowance.
+        if: always()
+        run: |
+          echo "cpus=$(nproc)"; free -m; df -h .
+          du -sh "$(python -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])')" ~/.cache/huggingface ~/.cache/pip runs 2>/dev/null || true
   build-site:
     needs: [verify, framework-checks]
     runs-on: ubuntu-latest

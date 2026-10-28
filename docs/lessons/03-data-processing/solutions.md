@@ -1,6 +1,6 @@
 # Module 3: construction feedback
 
-Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module03/solutions.ipynb "site-download:module03/solutions.ipynb") or open `notebooks/practice/module03-solutions.ipynb` in the complete source tree.
+Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module03/solutions.ipynb "site-download:module03/solutions.ipynb") or open `notebooks/practice/module03-solutions.ipynb` in the complete source tree. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## `parse_latency`
 

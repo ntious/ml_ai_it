@@ -24,9 +24,20 @@ Early fixtures are labeled teaching data. Later modeling uses attributed public 
 
 Adult results are descriptive audits, batch replay is not a measured timeline, and a legal tool plan may misunderstand intent. Historical benchmark performance and successful execution do not establish operational suitability.
 
-## Recorded results
+## Verified results
 
-Use [the current framework results](framework-results.md) for Modules 8–11 and 14. The [archived framework baseline](maintenance/reviews/framework-baseline-0.7.0.md) describes earlier weak configurations and is not the current result. Core module feedback and actual generated reports retain their own measured results.
+**Modules 8–11 and 14:** use [the current framework results](framework-results.md). The [archived framework baseline](maintenance/reviews/framework-baseline-0.7.0.md) describes earlier weak configurations and is not the current result.
+
+The core rows below were re-executed from the pinned sources during the October 28, 2026 review (Windows, Python 3.13). Module 12 is quoted from its worked feedback; its framework run is covered by the Linux framework CI job.
+
+| Module | Data and split | Selected method | Final result | Comparison |
+| --- | --- | --- | --- | --- |
+| 5 | UCI Bike Sharing; 504/110/110 days | `previous_day` persistence (validation MAE 733.3) | MAE 926.6 rentals/day; largest residual 4,470 on 2012-10-31 | Both linear candidates lost to persistence on validation (888.5 and 1,102.9) |
+| 6 | UCI red wine, quality ≥ 7; 243 test | Logistic regression, threshold 0.3 | TP 19, FP 30, FN 10, TN 184; recall 0.66, balanced accuracy 0.757 | Dummy predicts no positives |
+| 7 | UCI red wine chemistry; 243 test | k = 2 (validation silhouette 0.206) | Cluster IDs are not quality classes | k = 3: 0.184; k = 4: 0.162 |
+| 12 | Module 6 model replayed on 243 held-out records in 4 batches | Logistic, threshold 0.3 | Batch recall 0.40–0.73; batch 3 selection rate 0.41 vs 0.10–0.16 | Batches follow record order, not time |
+| 13 | UCI Adult; 16,253 test | Logistic on 5 numeric fields, threshold 0.3 | Recall 0.62, balanced accuracy 0.729 | Selection rate: female 0.20, male 0.31; smallest group n = 135 |
+| Phishing | UCI Phishing Websites; 2,107 test | Random forest, threshold 0.5 | TP 844, FN 60, FP 58; recall 0.934, balanced accuracy 0.943 | Dummy predicts no phishing |
 
 Recorded development executions and current CI status are separate evidence. Check the exact commit in Actions: a failed, cancelled or timed-out job does not verify that revision. Human pilot and accessibility tasks remain pending.
 

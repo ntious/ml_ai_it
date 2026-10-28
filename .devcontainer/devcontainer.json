@@ -1,7 +1,7 @@
 {
   "name": "Practical ML and AI development",
   "image": "python:3.12-slim",
-  "postCreateCommand": "python -m pip install -e \".[visualization,regression,verification]\" -c environments/constraints-tested.txt && python -m ipykernel install --user --name ml-ai-core && python scripts/preflight.py --profile core",
+  "postCreateCommand": "python -m pip install -e \".[visualization,regression,verification]\" -c environments/constraints-tested.txt && python -m ipykernel install --user --name ml-ai-core --display-name \"Python (course core)\" && python scripts/preflight.py --profile core",
   "customizations": {
     "vscode": {
       "extensions": [

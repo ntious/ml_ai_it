@@ -41,7 +41,7 @@ Credit: Fanaee-T, H. (2013). *Bike Sharing* [Dataset]. UCI Machine Learning Repo
 
 The downloader saves attribution, license, retrieval time, and actual archive/CSV SHA-256 digests. It checks the cached CSV before reuse. New archives must match the SHA-256 verified in the initial real-data CI run. If upstream bytes change, the downloader stops for source review rather than silently changing the teaching dataset. Retain that cache and provenance for exact replay.
 
-The site also provides a [complete attributed data-cache ZIP](https://ntious.github.io/ml_ai_it/downloads/module05/bike-sharing-cache.zip "site-download:module05/bike-sharing-cache.zip"). Extract its contents into runs/datasets/bike-sharing for a no-network replay; retain [attribution](https://ntious.github.io/ml_ai_it/downloads/module05/ATTRIBUTION.txt "site-download:module05/ATTRIBUTION.txt"). The original-source ZIP keeps external downloaded data separate.
+The site also provides a [complete attributed data-cache ZIP](https://ntious.github.io/ml_ai_it/downloads/module05/bike-sharing-cache.zip "site-download:module05/bike-sharing-cache.zip"). Extract its contents into runs/datasets/bike-sharing for a no-network replay; retain [attribution](https://ntious.github.io/ml_ai_it/downloads/module05/ATTRIBUTION.txt "site-download:module05/ATTRIBUTION.txt"). The original-source ZIP keeps external downloaded data separate. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
 A separately labeled original synthetic fixture supports offline practice/tests. Its deliberately patterned values are not evidence of real operational performance.
 

@@ -62,7 +62,7 @@ The [commented notebook](https://ntious.github.io/ml_ai_it/downloads/capstone/wa
 calls these same stages. Keep it inside the complete source tree. The
 [worked report](https://ntious.github.io/ml_ai_it/downloads/capstone/example/index.html "site-download:capstone/example/index.html")
 is included in the complete CI reading-site artifact before public deployment.
-Publication-target links work after the owner enables and completes deployment.
+Publication-target links work after the owner enables and completes deployment. If a download link does not open, use the [offline access route](../../docs/setup/student-workspace.md#if-a-download-link-does-not-open).
 
 ## Inspect or resume individual stages
 
