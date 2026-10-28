@@ -22,6 +22,31 @@ Predict `trainable_count([[100, False], [8, True], [2, True]])` before running: 
 
 The complete module runs `examples/sms-fine-tuning/scripts/run.py`. It trains rank-8 LoRA adapters on every `q_proj` and `v_proj` of SmolLM2-135M with prompt and padding labels masked to -100, which is your `completion_labels` at scale. `summary.json` reports `trainable_parameters` (460,800 in the recorded run) and an adapter update norm, which check that parameters actually changed. `generation_comparison.csv` then measures whether held-out answers improved: a separate question. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. What is the difference between changing a prompt and fine-tuning?</summary>
+
+A prompt changes the input and updates no weights. Fine-tuning changes selected weights using task examples; adapters train a small set while the base weights stay frozen.
+
+</details>
+
+<details>
+<summary>2. For IDs `[5, 6, 7, 0]`, a two-token prompt and mask `[1, 1, 1, 0]`, what are the training labels?</summary>
+
+`[-100, -100, 7, -100]`: prompt and padding positions are ignored and only the completion token is supervised.
+
+</details>
+
+<details>
+<summary>3. Training loss dropped sharply but held-out output validity did not improve. Was fine-tuning successful?</summary>
+
+Not by that evidence. Lower training loss checks the mechanism; the model may have memorized the adaptation set. The held-out comparison is the result.
+
+</details>
+
 ## Optional reading
 
 [LoRA: Low-Rank Adaptation of Large Language Models (Hu et al., 2021)](https://arxiv.org/abs/2106.09685), Section 4 (the method), explains why a low-rank update to a frozen weight needs few trainable values. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

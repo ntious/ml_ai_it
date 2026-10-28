@@ -22,6 +22,31 @@ Predict `parse_label('{"label":"spam"}')`, `parse_label('spam')` and `parse_labe
 
 The complete module runs `examples/sms-llm/scripts/run.py`. `generation_evaluation.csv` records each free generation, whether it parsed and whether the parsed label was correct. `summary.json` reports validity and accuracy over all 100 final messages, not only the ones that parsed. `rate_intervals.csv` attaches uncertainty to both rates. The recorded run had free-generation validity 0.99 but accuracy 0.39: format compliance and correctness are separate measurements. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. The model replies `Label: spam`. Is that a valid output under the exact JSON contract?</summary>
+
+No. The contract requires a one-key JSON object, so this is invalid even though the label looks plausible.
+
+</details>
+
+<details>
+<summary>2. Of 100 messages, 90 outputs parse and 80 of those are correct. What is the end-to-end accuracy?</summary>
+
+0.80 (80 of 100). Reporting 80/90 would reward the model for failing to answer the other 10.
+
+</details>
+
+<details>
+<summary>3. Can you choose the prompt by comparing results on the final test messages?</summary>
+
+No. Choose prompts and decoding settings on development messages, lock them, then evaluate once on the final set.
+
+</details>
+
 ## Optional reading
 
 [Hugging Face Transformers: Generation strategies](https://huggingface.co/docs/transformers/main/en/generation_strategies), the greedy-search and token-limit sections, explains the decoding settings that this module holds fixed. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

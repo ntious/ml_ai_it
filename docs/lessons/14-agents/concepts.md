@@ -22,6 +22,31 @@ Predict `route_intent('count')`, `route_intent('alcohol')` and `route_intent('de
 
 The complete module runs `examples/bounded-assistant/scripts/run.py`. A local model ranks three plans: count, alcohol and refuse. The executor then enforces the same kinds of checks as your functions: an allowlisted tool, exact arguments, and a budget of one tool call within at most three workflow steps (`bounded_agent(max_calls=1, max_steps=3)`). `tool_trace.json` and `request_trace.csv` show each decision, and `routing_confusion.csv` counts routing errors separately from the permission boundary. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. The model proposes calling a `delete_file` tool. What decides whether that happens?</summary>
+
+The program's allowlist, not the model. A suggestion carries no authority, and no destructive tool exists in this lesson.
+
+</details>
+
+<details>
+<summary>2. A count question is answered with an alcohol mean returned by a valid tool. Is that a success?</summary>
+
+No. It is a routing failure: the tool ran correctly but answered a different question.
+
+</details>
+
+<details>
+<summary>3. The call budget of one has been used. What should the workflow do next?</summary>
+
+Stop before making another call and report that the budget is exhausted. A budget limits behaviour; it does not make an answer correct.
+
+</details>
+
 ## Optional reading
 
 [Anthropic: Building effective AI agents](https://www.anthropic.com/research/building-effective-agents) distinguishes fixed workflows from agents and recommends the simplest structure that meets the need, which is the design choice this module makes. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

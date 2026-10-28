@@ -35,6 +35,15 @@ class CoursePageTests(unittest.TestCase):
                 module = next(m for m in MODULES if m["id"] == entry["id"])
                 self.assertIn(module["script"], (folder / "concepts.md").read_text(encoding="utf-8"))
 
+    def test_every_concepts_page_has_a_three_question_self_check(self):
+        for module in MODULES:
+            page = (ROOT / module["lesson"]).with_name("concepts.md").read_text(encoding="utf-8")
+            with self.subTest(module=module["id"]):
+                section = page[page.index("## Check yourself"):]
+                section = section[:section.index("\n## ", 1)]
+                self.assertEqual(section.count("<details>"), 3)
+                self.assertEqual(section.count("</details>"), 3)
+
     def test_shared_rubric_lives_in_the_study_workflow_only(self):
         workflow = (ROOT / "docs/study-workflow.md").read_text(encoding="utf-8")
         self.assertIn("## How explanations are judged", workflow)

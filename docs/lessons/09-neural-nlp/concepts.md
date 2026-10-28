@@ -22,6 +22,31 @@ Predict `vocabulary(['FREE offer', 'offer now'])` before running: lowercase toke
 
 The complete module runs `examples/sms-neural-nlp/scripts/run.py`. Its Keras `TextVectorization` layer adapts on training messages only, with at most 6,000 tokens and length 96. It reserves the same two IDs (0 padding, 1 unknown), but orders words by training frequency rather than alphabetically. `vocabulary.json` and `vocabulary_preview.csv` record the result. Recall in `comparison.csv` uses actual positives as its denominator, exactly like your `recall` function. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. If 10 of 100 messages are spam and a model predicts ham every time, what are its accuracy and spam recall?</summary>
+
+Accuracy is 90% and recall is 0: it finds no spam.
+
+</details>
+
+<details>
+<summary>2. Why must the vocabulary be fitted on training messages only?</summary>
+
+Building it from validation or test text lets future messages shape the representation, which leaks information into evaluation.
+
+</details>
+
+<details>
+<summary>3. A suspicious link appears at word 120 of a message, and the model keeps the first 96 tokens. Can the model use it?</summary>
+
+No: it is truncated. State the truncation rule and check on validation data how often long messages lose information.
+
+</details>
+
 ## Optional reading
 
 [TensorFlow guide: Word embeddings](https://www.tensorflow.org/text/guide/word_embeddings) shows how integer token IDs become learned vectors and how `TextVectorization` pads and truncates sequences. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).
