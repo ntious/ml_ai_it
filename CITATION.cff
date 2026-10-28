@@ -3,7 +3,8 @@ message: "Please cite the tested commit or release you used. Dataset and model c
 type: software
 title: "Practical Machine Learning and AI Systems"
 authors:
-  - name: "ML_AI_IT contributors"
+  - family-names: "Nti"
+    given-names: "Isaac K."
 repository-code: "https://github.com/ntious/ml_ai_it"
 url: "https://github.com/ntious/ml_ai_it"
 license: MIT

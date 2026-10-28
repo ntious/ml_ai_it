@@ -1,7 +1,7 @@
 {
   "dataset_id": "synthetic-network-events",
   "version": "1.0",
-  "creator": "ML_AI_IT contributors",
+  "creator": "Isaac K. Nti",
   "origin": "Original hand-authored synthetic teaching fixture. No real records used.",
   "purpose": "Demonstrate validation, missingness, duplicate/conflict handling, and documented preparation.",
   "license": "CC BY 4.0 for original sample data; see OER_LICENSE.md",

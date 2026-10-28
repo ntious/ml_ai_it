@@ -26,7 +26,7 @@ Each finding's disposition, evidence and remaining action is in section M of the
 ## Not verified
 
 - WSL installation steps on a real Windows machine; macOS; native Windows framework execution (unsupported).
-- Public availability of the site and downloads: the site is unpublished and the repository is private. Verify anonymously after the owner enables publication.
+- Public availability of the site and downloads: verify from a signed-out browser after the repository is made public and the site is deployed.
 - Human learning, workload, notebook-interface usability and assistive-technology testing. These have not been performed by any technical check.
 
 ## Further improvements (stacked PRs, October 28, 2026)
@@ -38,6 +38,16 @@ Each finding's disposition, evidence and remaining action is in section M of the
 | #14 | Module 10 evaluated retrieval, Module 12 JSON API, experiment tracking, learning paths, IT case thread, what's new and community pages | Recorded in PR #14 |
 
 Each PR's own CI run is the authoritative check. Deferred until learner evidence exists, as agreed: consolidating to one deep-learning framework, making hosted notebooks the default, and restructuring module pages.
+
+## Public-readiness security review (October 28, 2026)
+
+Scope: all 78 commits including the 17 retained pull-request refs (1,409 file versions), every PR description and review comment, repository settings, workflows, pinned dependencies and code patterns.
+
+- No secrets, tokens, keys or passwords in any file version; all commits use the GitHub no-reply address.
+- No institutional material: the private `documentations/` folder was never committed, and none of its syllabus, module texts or final-project documents shares a 10-word passage with any committed file.
+- Workflows: no `pull_request_target`, read-only default token, write scopes limited to deploy, branch cleanup and issue creation; the release workflow validates its inputs.
+- Dependencies: core and site tooling have no known advisories. The framework pins (`transformers 4.46.3`, `torch 2.6.0`, `streamlit 1.44.1`) have advisories of low exploitability for the course's pinned, local use; documented in `SECURITY.md`, upgrade planned.
+- Hardened: a data source without a reviewed checksum, or a model without a pinned revision, is now refused instead of being used unverified.
 
 ## Owner actions before student delivery
 

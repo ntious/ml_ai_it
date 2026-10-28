@@ -4,7 +4,7 @@ Read the overview and learning outcomes here, then follow the learning route. Re
 
 Classify a declared human-rating threshold from real chemistry measurements, then explain the mistakes and decision threshold.
 
-This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 90–150 minutes plus practice. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 90–150 minutes plus practice. Small CPU runs demonstrate mechanisms, not production readiness.
 
 ## Learning outcomes
 
@@ -18,7 +18,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
-The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract. Human learner piloting of this prototype is pending.
+The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
 ## Entry support and topics
 

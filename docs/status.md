@@ -2,16 +2,16 @@
 
 Edition 0.7.0 contains all 14 modules, eight teaching pages per module, public scripts, clean notebooks, worked feedback, instructor guidance and the independent phishing case. Begin with [readiness and learning routes](start-here.md). Reviewers should use the [independent-review guide](review-guide.md).
 
-## Revision-specific verification
+## How this edition is verified
 
-At the October 28, 2026 review, `main` revision `fdd5a70` had failed Windows encoding checks and a framework timeout. PR #11 corrects these. Its run at `f23e804` (workflow run 40697234797) passed every job: three core jobs, the framework tests (71 minutes) and notebooks (48 minutes) as separate jobs, and the complete site, download and browser checks. Any later commit needs its own passing run. A proposed fix is not evidence that `main` is verified; check the exact workflow revision before adopting a release.
+Every change to `main` runs the full workflow: core checks on Linux (Python 3.12) and Windows (Python 3.12 and 3.13), framework tests and notebooks on Linux CPU, and the complete site, download and browser checks. Check the [workflow results](https://github.com/ntious/ml_ai_it/actions/workflows/checks.yml) for the exact commit you use; a failed, cancelled or timed-out run does not verify that revision.
 
 ## Reference environments and evidence
 
 | Area | Evidence for this edition | Scope |
 | --- | --- | --- |
-| Core processing/modeling | PR #11 core jobs pass on Linux 3.12 and Windows 3.12/3.13; `main` needs the fixes | Scripts, behavioral tests and fresh-kernel notebooks |
-| Frameworks | Linux CPU Python 3.12; PR #11 framework jobs pass | TensorFlow learning/reload, local LLM generation, adapters, app forms and health |
+| Core processing/modeling | Linux CI, Python 3.12; Windows CI, Python 3.12 and 3.13 | Scripts, behavioral tests and fresh-kernel notebooks |
+| Frameworks | Linux CPU CI, Python 3.12 | TensorFlow learning/reload, local LLM generation, adapters, app forms and health |
 | Notebook execution | All 14 module notebooks and the phishing notebook | Clean-kernel execution; interface usability is a separate question |
 | Reading site | Source/generated links, HTML structure, HTTP routes and downloads | Selected core, optional-project and advanced pages also receive scripted focus, 320px reflow and selected axe checks |
 | Distribution | Tracked-source archive integrity, attributed data caches and installed-wheel inference | Source/provenance/schema/cache behavior |
@@ -39,7 +39,7 @@ The core rows below were re-executed from the pinned sources during the October 
 | 13 | UCI Adult; 16,253 test | Logistic on 5 numeric fields, threshold 0.3 | Recall 0.62, balanced accuracy 0.729 | Selection rate: female 0.20, male 0.31; smallest group n = 135 |
 | Phishing | UCI Phishing Websites; 2,107 test | Random forest, threshold 0.5 | TP 844, FN 60, FP 58; recall 0.934, balanced accuracy 0.943 | Dummy predicts no phishing |
 
-Recorded development executions and current CI status are separate evidence. Check the exact commit in Actions: a failed, cancelled or timed-out job does not verify that revision. Human pilot and accessibility tasks remain pending.
+Recorded development executions and current CI status are separate evidence. Check the exact commit in Actions: a failed, cancelled or timed-out job does not verify that revision. A learner pilot and human accessibility reviews have not yet been carried out; see below.
 
 ## Independent-review questions
 

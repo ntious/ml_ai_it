@@ -4,7 +4,7 @@ Read the overview and learning outcomes here, then follow the learning route. Re
 
 Connect a real local LLM router to narrowly allowed read-only tools, with exact evidence and enforceable limits.
 
-This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Small CPU runs demonstrate mechanisms, not production readiness.
 
 ## Learning outcomes
 

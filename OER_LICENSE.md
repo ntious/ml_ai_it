@@ -28,7 +28,7 @@ Author affiliation is biographical. These notices grant no institutional brandin
 
 Code examples embedded in Markdown, like notebook code cells, use MIT for original code; surrounding original instructional prose uses CC BY 4.0. Preserve the required notices and third-party credits.
 
-Suggested attribution: “Adapted from Practical Machine Learning and AI Systems by Isaac K. Nti and contributors, repository/version [identifier]. Original educational content: CC BY 4.0; original code: MIT. Changes: [description].” This is an example, not an extra license condition.
+Suggested attribution: “Adapted from Practical Machine Learning and AI Systems by Isaac K. Nti, repository/version [identifier]. Original educational content: CC BY 4.0; original code: MIT. Changes: [description].” This is an example, not an extra license condition.
 
 ## History and corrections
 

@@ -3,7 +3,7 @@
 ## Ask a question
 
 - **Enrolled in a course that uses this resource:** use your instructor's support channel first. Your instructor sets the rules for collaboration and AI use.
-- **Studying independently:** open a "Learning question" issue on the [repository](https://github.com/ntious/ml_ai_it/issues) if you have access. Include the module, the command or notebook cell, the full error text, your Python version and what you expected. Never include passwords, personal data or student records.
+- **Studying independently:** ask in [GitHub Discussions](https://github.com/ntious/ml_ai_it/discussions), or open a "Learning question" [issue](https://github.com/ntious/ml_ai_it/issues/new/choose) for a problem with a lesson or exercise. Include the module, the command or notebook cell, the full error text, your Python version and what you expected. Never include passwords, personal data or student records.
 - **Accessibility barrier:** use the [accessibility reporting guide](accessibility/index.md).
 
 Questions that several learners share become improvements to the lessons, so asking helps the next person too.

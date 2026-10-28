@@ -45,7 +45,7 @@ for (const source of walk(path.join(root, 'projects')).filter(p => p.endsWith('.
   const relative = path.relative(path.join(root, 'projects'), source);
   pages.push({ source, output: 'projects/' + slash(relative).replace(/README\.md$/, 'index.html').replace(/\.md$/, '.html') });
 }
-for (const name of ['DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT']) {
+for (const name of ['DEVELOPMENT', 'CONTRIBUTING', 'CHANGELOG', 'OER_LICENSE', 'CODE_OF_CONDUCT', 'SECURITY']) {
   pages.push({ source: path.join(root, name + '.md'), output: 'maintenance/' + name.toLowerCase() + '.html' });
 }
 for (const source of walk(path.join(root, 'templates')).filter(p => p.endsWith('.md'))) {

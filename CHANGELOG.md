@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased — independent-review corrections (PR #11, not yet merged)
+## October 2026 — independent-review corrections and additions
 
-- Offline access: a learner route for when site downloads or the private repository return 404, a source-only archive build for instructors, and a link check that requires the route on every page with downloads (F1).
+- Offline access: a learner route for when site downloads do not open, a source-only archive build for instructors, and a link check that requires the route on every page with downloads (F1).
 - CI: explicit UTF-8 file I/O, independent platform results, and framework tests and notebooks as parallel jobs (F2).
 - Practice checks: Windows path spellings, asymmetric error counts, missing lag values, named pipeline steps, call-notation feedback and non-numeric results, with regression tests (F3, F9, F10).
 - RT-IoT transfer: validation compares the model with always-review and never-review over a wider fixed grid; prevalence and workload are reported (F4).
@@ -10,7 +10,7 @@
 - Teaching pages: module-specific explanations, descriptive links and reasoning tasks for Modules 1–4, 7 and 9–14; a located worked research comparison; glossary, status and scope corrections (F5, F7, F8, F11–F14).
 - Module 12 monitoring reports a zero-variance feature's standardized shift as unavailable, with its raw mean difference, instead of 0.
 - Further improvements (stacked PRs #12–#14): tracked-file source archives; learner-first navigation; consolidated rubric; concept self-checks; core stability, tuning (with gradient boosting) and encoding exercises; complete-study exercises; evaluated retrieval, a JSON API and experiment tracking; learning paths, an IT case thread, what's new and community pages.
-- Learning outcomes are unchanged. Merge, a passing CI run on the merged revision, and the owner and human-pilot actions in the owner review guide are required before release.
+- Learning outcomes are unchanged. A learner pilot and human accessibility reviews are still to come; see the owner review guide.
 
 Entries describe their historical editions. Use [current verification scope](docs/status.md) and [maintainer instructions](DEVELOPMENT.md) for the present edition.
 ## 0.6.0 — repository audit and verification

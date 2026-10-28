@@ -1,6 +1,6 @@
 # Learning paths
 
-Every module can be entered on its own, but a path gives you an order and a reason for it. Each path keeps the course's core habit: decide what evidence a result needs before you trust it. Time estimates are on each module page and still need learner piloting.
+Every module can be entered on its own, but a path gives you an order and a reason for it. Each path keeps the course's core habit: decide what evidence a result needs before you trust it. Time estimates on each module page are the author's estimates; measured learner times will replace them after piloting.
 
 ## Practical foundations: new to programming or machine learning
 

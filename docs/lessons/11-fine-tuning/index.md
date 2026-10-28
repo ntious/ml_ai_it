@@ -4,7 +4,7 @@ Read the overview and learning outcomes here, then follow the learning route. Re
 
 Perform real parameter-efficient gradient updates on annotated messages, preserve the base model, and audit held-out loss and replay.
 
-This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads; the default CPU training study can take 15–30 minutes depending on hardware. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads; the default CPU training study can take 15–30 minutes depending on hardware. Small CPU runs demonstrate mechanisms, not production readiness.
 
 ## Learning outcomes
 

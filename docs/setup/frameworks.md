@@ -101,6 +101,6 @@ Retain exact commands, versions, and error text. A changed-source hash requires 
 
 The short neural NLP model can miss positives, and free-text LLM output can fail its schema. Module 11 now trains all-layer rank-8 PEFT LoRA for up to 200 steps, with batches of 8 and validation-only checkpoint selection; allow additional CPU time (roughly 15–30 minutes on the reference-sized setup, hardware dependent). The rank-2 hand example remains a construction aid. Successful execution is separate from useful/safe model behavior. See the [accessibility evidence](../accessibility/review-log.md) for interface test scope.
 
-## Phase B study controls
+## Study controls
 
 Module 9 defaults to the full deduplicated corpus and a 25-epoch maximum; `--epochs 3 --sample-limit 1200` provides a deliberately smaller diagnostic variant. It is not byte-identical to the archived run because tokenization and threshold selection were corrected. Module 10 accepts `--examples N` (20 through the final-partition size; default 100). Module 11 accepts `--steps N` (1–300; default 200). Smaller budgets exercise the software interface without promising the default study quality. Keep outputs in new directories and declare settings before inspecting final results.
