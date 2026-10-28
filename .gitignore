@@ -5,7 +5,7 @@ build/
 dist/
 .venv/
 node_modules/
-site/
+/site/
 runs/
 .env
 .env.*
@@ -21,3 +21,17 @@ runs/
 # Generated browser verification artifacts
 browser-results/
 playwright-report/
+
+# Local credentials, editor state and confidential working material
+/.aws/
+/.ssh/
+/.local/
+/private/
+/review-notes/
+/student-records/
+/pilot-records/
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json

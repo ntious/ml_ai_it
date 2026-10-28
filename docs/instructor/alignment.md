@@ -32,3 +32,7 @@ A1 analysis, A2 solution evaluation, A3 communication, and A4 professional/ethic
 ## Complete the formal crosswalk
 
 For each repository outcome, record the exact authoritative original outcome and source location, the course outcome, the assessed artifact, the applicable adopted program criterion, the assessor, and the review date. Mark a relationship as direct evidence, supporting practice, or no mapping. Leave a source-unknown field explicitly unverified until the document owner checks it. No invented official alignment is needed for independent use of these lessons.
+
+## Wording and rights review
+
+Keep institutional descriptions, module outlines and official outcomes distinct from the resource’s instructional content. Do not relabel an institutional quotation as original content by making small wording changes. The owner should confirm each public outcome’s provenance and any applicable permission against the authoritative source. Record exact source locations and rights decisions in the private alignment register; publish only cleared text and an appropriate attribution. See [licensing and institutional boundaries](../../OER_LICENSE.md). This review preserves the existing learning outcomes and does not assert institutional approval.

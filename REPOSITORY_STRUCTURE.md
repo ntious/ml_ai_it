@@ -11,10 +11,11 @@ Support complete beginners through advanced optional work; let an instructor lin
 | Path | Responsibility | What belongs elsewhere |
 | --- | --- | --- |
 | curriculum/modules.json | Canonical 14-module paths, profiles, titles, and required pages | Official syllabus wording is owner-verified, not inferred |
-| docs/lessons/ | Six-page teaching package per module | Restricted Canvas tasks and submissions |
+| docs/lessons/ | Registered teaching pages; all 14 modules include concepts and separate practice feedback | Restricted Canvas tasks and submissions |
 | src/practical_ml_ai/ | Shared validation, analysis, learning, inference, and reporting behavior | Duplicated algorithms in notebooks |
 | examples/ | Thin, commented script entry points | Copied model implementations |
 | notebooks/lessons/ | Clean, commented, independently executable tutorials | Generated execution state in source control |
+| notebooks/practice/ and curriculum/practice.json | Separate starter/solution notebooks, visible task contracts and preserved-outcome identities for all 14 modules | Claims that reference-solution execution establishes learner mastery |
 | projects/phishing-triage/ | Separate optional capstone configuration, CLI, notebook and annotated report | Generated runs, downloaded data or mandatory module prerequisites |
 | docs/advanced/ | Optional tuning, stability, evaluation and assessment investigations | Claims that proposed extensions were already executed |
 | apps/ | Local interactive teaching interface | Public production service |
@@ -84,3 +85,7 @@ No empty slide/video/production folders are created to imply missing material ex
 ## Learning-support extension
 
 Student entry: docs/start-here.md; preparation: docs/setup/python-bridge.md; workspace/hosted/troubleshooting pages explain acquisition and platform boundaries. Each module adds guided.md and a runnable construction cell. scripts/preflight.py reports dependencies/resources; scripts/bootstrap.py installs explicit profiles. learning.py exposes uncertainty/calibration arithmetic. The independent phishing case lives in phishing.py, scripts/phishing_study.py, notebooks/cases/phishing.ipynb and docs/cases/phishing.md. Its stages separate preparation, fitting, validation selection, final evaluation and reporting. docs/project.md and docs/instructor/pilot.md support cumulative work and actual learner validation.
+
+## Publication and review documentation
+
+See [publication boundaries](docs/maintenance/publication-boundaries.md) for confidential notes, student/pilot records and archive checks. The [owner review guide](docs/maintenance/reviews/owner-review-guide.md) supplies the A-to-Z verification route. The [RT-IoT transfer](projects/rt-iot-triage/README.md) documents direct UCI acquisition and completed-flow evaluation.

@@ -28,3 +28,7 @@ Use neutral, descriptive names for repository folders and branches. Prefer topic
 ## Consistency and review
 
 Update curriculum/modules.json when a module path/profile changes. All modules need entry, foundation, guided construction, practice, feedback, instructor guidance, one registered notebook, and one public script. Use templates/ for authoring and record actual accessibility tasks; do not turn NOT RUN into a pass. Read [architecture](REPOSITORY_STRUCTURE.md), [review findings](docs/maintenance/reviews/baseline-0.6.0.md), and [community conduct](CODE_OF_CONDUCT.md). CI checks tracked-source publication coverage; new files must be included in the explicit download policy. Keep private sources, student data, credentials, caches, and generated outputs outside tracked source.
+
+## Publication boundaries
+
+Read [what belongs in the public repository](docs/maintenance/publication-boundaries.md) before adding data, completed review records or student work. Use the ignored root folders for confidential material.

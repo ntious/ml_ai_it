@@ -12,6 +12,12 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 - **M05.4:** Justify train/validation/test boundaries and interpret MAE and residuals.
 - **M05.5:** Report an operational interpretation, limitations, and reproducibility evidence.
 
+## Learning sequence for this module
+
+Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
+
+The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract. Human learner piloting of this prototype is pending.
+
 ## Define the forecast
 
 At the end of a fully observed day, predict the following day's total rentals. The unit is one calendar day. We assume today's finalized count is available at issue time; a real system must establish its count-finalization time and time zone.

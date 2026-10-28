@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 In an illustrative group with 20 positives and 15 true positives, TPR is .75. If a second group has 4 positives and 3 true positives, its TPR is also .75 but based on much less evidence. A metric cannot establish that predicting historical income is a legitimate decision.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

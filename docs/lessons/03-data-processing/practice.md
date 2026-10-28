@@ -1,50 +1,58 @@
-# Module 3 practice and discussion
+# Module 3: implement, explain and transfer
 
-These original activities work for independent learning or instructor adaptation. They are not copied Canvas assignments. Complete the core work before choosing an optional extension. No external AI account is required.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module03/practice.ipynb "site-download:module03/practice.ipynb"). In a source checkout open `notebooks/practice/module03-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core exercise
+## Construct `parse_latency`
 
-1. Run the sample through the preparation script. Record the accepted/rejected counts and one rejected record's explanation.
-2. Make a copy of the raw CSV in a separate working folder. Add one valid event with a new key, positive whole-byte count, and missing latency. Predict how the accepted count and observed-latency count will change, then run it into a new output directory.
-3. Create a second copy where one existing key has two different valid latency values. Predict the conflict policy and inspect the rejected-record reasons. Do not alter the checked-in original sample.
-4. Write a five-field data dictionary in your own words. Explain the difference between missing latency and zero latency.
-5. Run the small NumPy example in the lesson or notebook and verify the resource-unit solution by substitution.
+Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives. Predict the result on `['']`, implement it and call `m03_parse_latency` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Keep your modified inputs, command, report, and explanation together. Explain any AI assistance according to your instructor's policy; an independent learner can use the same disclosure/reflection habit.
+<details>
+<summary>Hint for parse_latency</summary>
 
-## Self-check
+Preserve measured zero and missingness separately.
 
-- Can input count be reconciled with accepted plus rejected count?
-- Were raw input bytes preserved?
-- Does each rejected record have an understandable reason?
-- Did your added missing latency remain missing?
-- Did you inspect the output before describing it as clean or high quality?
+</details>
 
-## Discussion or individual reflection
+## Construct `deduplicate`
 
-An analyst proposes deleting every record with a missing value so the table looks complete. Give a reason that might support removal in one context and a reason it might distort this analysis. What additional information about the collection process would you want?
+Keep the first record for each event_id, preserving input order. Predict the result on `[[{'event_id': 'a', 'v': 1}, {'event_id': 'a', 'v': 2}, {'event_id': 'b', 'v': 3}]]`, implement it and call `m03_deduplicate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-If discussing with peers, compare assumptions rather than ranking whose answer sounds more technical. A short individual reflection addresses the same concept. [Worked feedback](feedback.md) provides an example argument rather than a unique answer to memorize.
+<details>
+<summary>Hint for deduplicate</summary>
 
-## Adaptable rubric
+Deduplicate by identity, not the entire row.
 
-An instructor may adapt these criteria to local policy. No weights or passing threshold are imposed by the resource.
+</details>
 
-- Execution and traceability: identifies the input/configuration, command, and output; counts reconcile.
-- Data decisions: distinguishes missingness, invalid values, exact duplicates, and conflicting keys.
-- Explanation: uses fields/units correctly and supports claims with observed evidence.
-- Testing and revision: predicts a change, checks the result, and explains any unexpected behavior.
+## Construct `reconcile`
 
-## Optional extension
+Return True exactly when nonnegative counts reconcile. Predict the result on `[10, 7, 2, 1]`, implement it and call `m03_reconcile` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Allow a new source category through a documented contract change. Identify code, data dictionary, tests, and assumptions that need updating; do not merely disable validation. Or investigate whether interpreting timezone-naive timestamps as UTC is appropriate for another source.
+<details>
+<summary>Hint for reconcile</summary>
 
-This extension is skippable and provides no automatic extra credit. No additional library or paid service is necessary.
+Every source row needs one accounted-for outcome.
 
-[Return to the module](index.md).
+</details>
 
-## Required independent construction
+## Transfer to an IT decision
 
-Inspect a rejected record and explain its policy reason. On a copy, repair one legitimate error and reconcile the changed counts.
+Add a repeated event with a changed annotation and a missing latency. Explain the retained record and reconciliation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+## Evidence and feedback
+
+By completing the core route, you can:
+
+1. **M03.1:** Inspect NumPy shapes/types and use a small vector or linear-system calculation.
+2. **M03.2:** Read, filter, summarize, and write a pandas dataframe.
+3. **M03.3:** Run a repeatable preparation script and explain rejected records.
+4. **M03.4:** Identify CSV, JSON, and array representations with their fields and units.
+5. **M03.5:** Write a data dictionary and justify a cleaning choice while preserving later train/test boundaries.
+
+These are resource learning outcomes. They do not claim course credit or certified program-outcome attainment.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+
+## Operational-data connection
+
+Use the [RT-IoT completed-flow study](../../../projects/rt-iot-triage/README.md) to apply this module to captured network activity. Trace input availability, grouped evaluation, alert workload and the human review policy.

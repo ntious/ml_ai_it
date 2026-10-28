@@ -27,3 +27,7 @@ Course alignment opportunities: **Supports CLO2, CLO5, CLO6, CLO8; explicit ethi
 ## Verification limits
 
 The real-data workflow, public script, and notebook are exercised in Windows/Linux core CI. Exact counts/results are in the [verified results table](../../status.md#verified-results) and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.
+
+## Continue the learning route
+
+Use the [course review and pilot protocol](../../instructor/teaching-prototype-pilot.md). Review a changed-case explanation, not only passing visible checks. Preparation and activity times need observation with actual learners.

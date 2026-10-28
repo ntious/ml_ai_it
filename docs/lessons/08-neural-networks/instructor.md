@@ -27,3 +27,7 @@ Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome
 ## Verification limits
 
 Actual framework training/inference, the public script, and notebook are exercised in the Linux CPU job. Windows/macOS framework execution is not inferred from that run. Exact counts/results are in the [verified results table](../../status.md#verified-results) and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.
+
+## Teaching prototype: explanation, practice and feedback
+
+This module now has an intermediate concepts page and three independently completed functions. Use the [pilot protocol](../../instructor/teaching-prototype-pilot.md) to observe understanding and support needs. Map learner artifacts with the [practice evidence table](practice.md#evidence-for-the-unchanged-outcomes). Visible code checks and solution execution are technical evidence; review the learner's reasoning and transfer separately. Preserve the existing outcomes and official assessment rules.

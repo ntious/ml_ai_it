@@ -11,6 +11,10 @@ Begin here if you are new to ML, AI, or Python. You will compare ways to solve a
 
 The script route supplies the same programming evidence when a notebook interface is a barrier. It does not demonstrate notebook-interface operation. An instructor assessing that particular skill should arrange an accessible interface and support with the learner.
 
+## Learning route
+
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+
 ## Understand the methods
 
 **Artificial intelligence (AI)** is a broad field of systems that perform tasks associated with intelligence, such as reasoning, perception, or language use. **Machine learning (ML)** develops models using patterns in data. **Deep learning** is ML using neural networks with multiple layers. **Generative AI** produces content such as text, images, or code; many current generative systems use deep learning. These terms describe different aspects of systems and are not four interchangeable labels.

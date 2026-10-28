@@ -45,6 +45,17 @@ with zipfile.ZipFile(archive_path) as archive:
         assert (output / "forecast.csv").is_file()
 print(f"Checked {len(names)} byte-matched original-source files and the extracted regression CLI.")
 
+practice = json.loads((ROOT / "curriculum/practice.json").read_text())["modules"]
+for entry in practice:
+    target = ROOT / "site/downloads" / f'module{entry["id"]:02d}'
+    evidence = json.loads((target / "practice-verification.json").read_text())
+    for kind in ["practice", "solutions"]:
+        source = ROOT / entry[kind]
+        assert (target / (kind + ".ipynb")).read_bytes() == source.read_bytes()
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == evidence["notebooks"][kind]["sha256"]
+        assert (target / (kind + "-executed.ipynb")).is_file()
+print("Checked 28 separate practice/solution sources, matching execution identities and downloadable executed copies.")
+
 with zipfile.ZipFile(ROOT / "site/downloads/module05/bike-sharing-cache.zip") as cache:
     metadata = json.loads(cache.read("provenance.json"))
     assert hashlib.sha256(cache.read("day.csv")).hexdigest() == metadata["day_csv_sha256"]

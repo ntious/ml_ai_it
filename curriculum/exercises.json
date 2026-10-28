@@ -1,0 +1,1095 @@
+{
+  "m01_route": {
+    "name": "route",
+    "args": "priority, threshold=3",
+    "contract": "Return a bool: priority >= threshold.",
+    "solution": "return priority >= threshold",
+    "cases": [
+      [
+        [
+          2
+        ],
+        false
+      ],
+      [
+        [
+          3
+        ],
+        true
+      ],
+      [
+        [
+          4,
+          5
+        ],
+        false
+      ]
+    ],
+    "feedback": "Use an inclusive boundary; do not return the priority itself."
+  },
+  "m01_partition_role": {
+    "name": "partition_role",
+    "args": "name",
+    "contract": "Return fit, choose or evaluate for train, validation or test.",
+    "solution": "return {\"train\":\"fit\",\"validation\":\"choose\",\"test\":\"evaluate\"}[name]",
+    "cases": [
+      [
+        [
+          "train"
+        ],
+        "fit"
+      ],
+      [
+        [
+          "validation"
+        ],
+        "choose"
+      ],
+      [
+        [
+          "test"
+        ],
+        "evaluate"
+      ]
+    ],
+    "feedback": "The final test must not choose a model."
+  },
+  "m01_error_counts": {
+    "name": "error_counts",
+    "args": "actual, predicted",
+    "contract": "Return [false_alerts, misses] for equally sized boolean lists.",
+    "solution": "return [sum((not a) and p for a,p in zip(actual,predicted)), sum(a and not p for a,p in zip(actual,predicted))]",
+    "cases": [
+      [
+        [
+          [
+            false,
+            true,
+            true
+          ],
+          [
+            true,
+            false,
+            true
+          ]
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          [
+            false,
+            false
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "feedback": "Count errors by their consequences, not only total accuracy."
+  },
+  "m02_status_counts": {
+    "name": "status_counts",
+    "args": "records",
+    "contract": "Return a dictionary counting the status string in each record.",
+    "solution": "counts = {}\nfor row in records:\n    counts[row[\"status\"]] = counts.get(row[\"status\"], 0) + 1\nreturn counts",
+    "cases": [
+      [
+        [
+          [
+            {
+              "status": "open"
+            },
+            {
+              "status": "closed"
+            },
+            {
+              "status": "open"
+            }
+          ]
+        ],
+        {
+          "open": 2,
+          "closed": 1
+        }
+      ],
+      [
+        [
+          []
+        ],
+        {}
+      ]
+    ],
+    "feedback": "Initialize unseen statuses and handle an empty file."
+  },
+  "m02_observed_mean": {
+    "name": "observed_mean",
+    "args": "values",
+    "contract": "Return the mean excluding None; return None if no values are observed.",
+    "solution": "observed = [x for x in values if x is not None]\nreturn sum(observed)/len(observed) if observed else None",
+    "cases": [
+      [
+        [
+          [
+            10,
+            null,
+            20
+          ]
+        ],
+        15
+      ],
+      [
+        [
+          [
+            0,
+            null
+          ]
+        ],
+        0
+      ],
+      [
+        [
+          [
+            null
+          ]
+        ],
+        null
+      ]
+    ],
+    "feedback": "Missing is not zero; zero is still observed."
+  },
+  "m02_output_path": {
+    "name": "output_path",
+    "args": "root, run_name",
+    "contract": "Return the string path root/runs/run_name/summary.json using pathlib.",
+    "solution": "from pathlib import Path\nreturn (Path(root)/\"runs\"/run_name/\"summary.json\").as_posix()",
+    "cases": [
+      [
+        [
+          "course",
+          "trial-2"
+        ],
+        "course/runs/trial-2/summary.json"
+      ]
+    ],
+    "feedback": "Keep run names separate from the source file."
+  },
+  "m03_parse_latency": {
+    "name": "parse_latency",
+    "args": "value",
+    "contract": "Parse blank/None as None; otherwise return a nonnegative float, raising ValueError for negatives.",
+    "solution": "if value is None or value == \"\":\n    return None\nnumber = float(value)\nif number < 0:\n    raise ValueError(\"negative latency\")\nreturn number",
+    "cases": [
+      [
+        [
+          ""
+        ],
+        null
+      ],
+      [
+        [
+          null
+        ],
+        null
+      ],
+      [
+        [
+          "0"
+        ],
+        0
+      ],
+      [
+        [
+          "12.5"
+        ],
+        12.5
+      ]
+    ],
+    "feedback": "Preserve measured zero and missingness separately."
+  },
+  "m03_deduplicate": {
+    "name": "deduplicate",
+    "args": "records",
+    "contract": "Keep the first record for each event_id, preserving input order.",
+    "solution": "seen = set()\nkept = []\nfor row in records:\n    if row[\"event_id\"] not in seen:\n        kept.append(row)\n        seen.add(row[\"event_id\"])\nreturn kept",
+    "cases": [
+      [
+        [
+          [
+            {
+              "event_id": "a",
+              "v": 1
+            },
+            {
+              "event_id": "a",
+              "v": 2
+            },
+            {
+              "event_id": "b",
+              "v": 3
+            }
+          ]
+        ],
+        [
+          {
+            "event_id": "a",
+            "v": 1
+          },
+          {
+            "event_id": "b",
+            "v": 3
+          }
+        ]
+      ]
+    ],
+    "feedback": "Deduplicate by identity, not the entire row."
+  },
+  "m03_reconcile": {
+    "name": "reconcile",
+    "args": "input_rows, accepted, rejected, duplicates",
+    "contract": "Return True exactly when nonnegative counts reconcile.",
+    "solution": "return all(x >= 0 for x in [input_rows,accepted,rejected,duplicates]) and input_rows == accepted+rejected+duplicates",
+    "cases": [
+      [
+        [
+          10,
+          7,
+          2,
+          1
+        ],
+        true
+      ],
+      [
+        [
+          10,
+          8,
+          2,
+          1
+        ],
+        false
+      ],
+      [
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        false
+      ]
+    ],
+    "feedback": "Every source row needs one accounted-for outcome."
+  },
+  "m04_error_rate": {
+    "name": "error_rate",
+    "args": "errors, requests",
+    "contract": "Return errors/requests; None when requests is zero.",
+    "solution": "return errors/requests if requests else None",
+    "cases": [
+      [
+        [
+          3,
+          10
+        ],
+        0.3
+      ],
+      [
+        [
+          3,
+          100
+        ],
+        0.03
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        null
+      ]
+    ],
+    "feedback": "A zero denominator is unavailable, not zero percent."
+  },
+  "m04_median": {
+    "name": "median",
+    "args": "values",
+    "contract": "Return the median of a nonempty numerical list, without changing the input.",
+    "solution": "ordered = sorted(values)\nn = len(ordered)\nreturn ordered[n//2] if n%2 else (ordered[n//2-1]+ordered[n//2])/2",
+    "cases": [
+      [
+        [
+          [
+            1,
+            2,
+            3,
+            100
+          ]
+        ],
+        2.5
+      ],
+      [
+        [
+          [
+            9,
+            1,
+            4
+          ]
+        ],
+        4
+      ]
+    ],
+    "feedback": "Average the two middle observations for an even count."
+  },
+  "m04_weighted_rate": {
+    "name": "weighted_rate",
+    "args": "counts",
+    "contract": "Input pairs [errors, requests]. Return total errors / total requests, or None.",
+    "solution": "denominator = sum(row[1] for row in counts)\nreturn sum(row[0] for row in counts)/denominator if denominator else None",
+    "cases": [
+      [
+        [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        ],
+        0.2
+      ],
+      [
+        [
+          [
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        null
+      ]
+    ],
+    "feedback": "Do not average daily percentages with unequal denominators."
+  },
+  "m07_squared_distance": {
+    "name": "squared_distance",
+    "args": "point, center",
+    "contract": "Return sum of squared coordinate differences for equal-length vectors.",
+    "solution": "return sum((a-b)**2 for a,b in zip(point,center))",
+    "cases": [
+      [
+        [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        5
+      ],
+      [
+        [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        4
+      ]
+    ],
+    "feedback": "Square coordinate differences; do not compare signed sums."
+  },
+  "m07_select_k": {
+    "name": "select_k",
+    "args": "candidates",
+    "contract": "Input pairs [K, validation_silhouette]; maximize score, smallest K breaks ties.",
+    "solution": "return min(candidates, key=lambda row:(-row[1],row[0]))[0]",
+    "cases": [
+      [
+        [
+          [
+            [
+              2,
+              0.4
+            ],
+            [
+              3,
+              0.5
+            ],
+            [
+              4,
+              0.45
+            ]
+          ]
+        ],
+        3
+      ],
+      [
+        [
+          [
+            [
+              4,
+              0.5
+            ],
+            [
+              2,
+              0.5
+            ]
+          ]
+        ],
+        2
+      ]
+    ],
+    "feedback": "Use validation geometry and a declared tie-break, not smallest inertia."
+  },
+  "m07_profile": {
+    "name": "profile",
+    "args": "values, labels",
+    "contract": "Return string cluster IDs mapped to count and mean of a single original-unit feature.",
+    "solution": "result = {}\nfor label in sorted(set(labels)):\n    subset = [v for v,k in zip(values,labels) if k == label]\n    result[str(label)] = {\"count\":len(subset),\"mean\":sum(subset)/len(subset)}\nreturn result",
+    "cases": [
+      [
+        [
+          [
+            2,
+            4,
+            10
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        {
+          "0": {
+            "count": 2,
+            "mean": 3
+          },
+          "1": {
+            "count": 1,
+            "mean": 10
+          }
+        }
+      ]
+    ],
+    "feedback": "Describe both support and feature level; IDs have no rank."
+  },
+  "m09_vocabulary": {
+    "name": "vocabulary",
+    "args": "training_texts",
+    "contract": "Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown.",
+    "solution": "tokens = sorted({token for text in training_texts for token in text.lower().split()})\nreturn {word:i+2 for i,word in enumerate(tokens)}",
+    "cases": [
+      [
+        [
+          [
+            "FREE offer",
+            "offer now"
+          ]
+        ],
+        {
+          "free": 2,
+          "now": 3,
+          "offer": 4
+        }
+      ]
+    ],
+    "feedback": "Fit only training text and reserve unknown/padding separately."
+  },
+  "m09_encode": {
+    "name": "encode",
+    "args": "text, vocabulary, length",
+    "contract": "Lowercase/split, map unknown to 1, keep first length tokens and pad with 0.",
+    "solution": "ids = [vocabulary.get(token,1) for token in text.lower().split()][:length]\nreturn ids + [0]*(length-len(ids))",
+    "cases": [
+      [
+        [
+          "NEW offer",
+          {
+            "offer": 2
+          },
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          "a b c",
+          {
+            "a": 2,
+            "b": 3,
+            "c": 4
+          },
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    ],
+    "feedback": "Unknown is not padding; declare truncation direction."
+  },
+  "m09_recall": {
+    "name": "recall",
+    "args": "tp, fn",
+    "contract": "Return TP/(TP+FN); None when there are no actual positives.",
+    "solution": "return tp/(tp+fn) if tp+fn else None",
+    "cases": [
+      [
+        [
+          0,
+          10
+        ],
+        0
+      ],
+      [
+        [
+          8,
+          2
+        ],
+        0.8
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        null
+      ]
+    ],
+    "feedback": "Use actual positives, not total messages or predicted positives."
+  },
+  "m10_parse_label": {
+    "name": "parse_label",
+    "args": "text",
+    "contract": "Return ham/spam only for an exact one-key JSON object; otherwise return None.",
+    "solution": "import json\ntry:\n    value = json.loads(text)\nexcept (ValueError,TypeError):\n    return None\nreturn value[\"label\"] if isinstance(value,dict) and set(value)=={\"label\"} and value[\"label\"] in [\"ham\",\"spam\"] else None",
+    "cases": [
+      [
+        [
+          "{\"label\":\"spam\"}"
+        ],
+        "spam"
+      ],
+      [
+        [
+          "spam"
+        ],
+        null
+      ],
+      [
+        [
+          "{\"label\":\"ham\",\"why\":\"x\"}"
+        ],
+        null
+      ],
+      [
+        [
+          "[]"
+        ],
+        null
+      ]
+    ],
+    "feedback": "Reject prose and extra keys; parsing is separate from correctness."
+  },
+  "m10_valid_fraction": {
+    "name": "valid_fraction",
+    "args": "labels",
+    "contract": "Input parsed labels or None. Return valid/total, or None for empty input.",
+    "solution": "return sum(x in [\"ham\",\"spam\"] for x in labels)/len(labels) if labels else None",
+    "cases": [
+      [
+        [
+          [
+            "spam",
+            null,
+            "ham"
+          ]
+        ],
+        0.6666666666666666
+      ],
+      [
+        [
+          []
+        ],
+        null
+      ]
+    ],
+    "feedback": "Count malformed outputs in the denominator."
+  },
+  "m10_end_to_end_accuracy": {
+    "name": "end_to_end_accuracy",
+    "args": "actual, parsed",
+    "contract": "Return exact matches / all cases, counting None as wrong; None for no cases.",
+    "solution": "return sum(a==p for a,p in zip(actual,parsed))/len(actual) if actual else None",
+    "cases": [
+      [
+        [
+          [
+            "spam",
+            "ham"
+          ],
+          [
+            "spam",
+            null
+          ]
+        ],
+        0.5
+      ],
+      [
+        [
+          [],
+          []
+        ],
+        null
+      ]
+    ],
+    "feedback": "Do not condition accuracy on the outputs the parser accepted."
+  },
+  "m11_trainable_count": {
+    "name": "trainable_count",
+    "args": "parameters",
+    "contract": "Input [size, trainable] pairs; return number of trainable scalar values.",
+    "solution": "return sum(size for size,trainable in parameters if trainable)",
+    "cases": [
+      [
+        [
+          [
+            [
+              100,
+              false
+            ],
+            [
+              8,
+              true
+            ],
+            [
+              2,
+              true
+            ]
+          ]
+        ],
+        10
+      ],
+      [
+        [
+          [
+            [
+              9,
+              false
+            ]
+          ]
+        ],
+        0
+      ]
+    ],
+    "feedback": "Count scalars in trainable tensors, not the number of tensors."
+  },
+  "m11_completion_labels": {
+    "name": "completion_labels",
+    "args": "ids, prompt_length, attention_mask",
+    "contract": "Return ids with prompt and padding positions replaced by -100.",
+    "solution": "return [token if i>=prompt_length and attention_mask[i] else -100 for i,token in enumerate(ids)]",
+    "cases": [
+      [
+        [
+          [
+            5,
+            6,
+            7,
+            0
+          ],
+          2,
+          [
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        [
+          -100,
+          -100,
+          7,
+          -100
+        ]
+      ],
+      [
+        [
+          [
+            5,
+            6
+          ],
+          0,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    ],
+    "feedback": "Mask both prompt and padding, while retaining completion tokens."
+  },
+  "m11_changed_tensors": {
+    "name": "changed_tensors",
+    "args": "before, after",
+    "contract": "Input equally sized lists of scalar lists. Return indices of tensors with any changed value.",
+    "solution": "return [i for i,(a,b) in enumerate(zip(before,after)) if a != b]",
+    "cases": [
+      [
+        [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          [
+            [
+              1,
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        [
+          1
+        ]
+      ],
+      [
+        [
+          [
+            [
+              1
+            ]
+          ],
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        []
+      ]
+    ],
+    "feedback": "Demonstrate an actual parameter change; a new loss string is insufficient."
+  },
+  "m12_valid_request": {
+    "name": "valid_request",
+    "args": "record, expected",
+    "contract": "Return True for exactly the expected keys, finite int/float values; reject bool.",
+    "solution": "import math\nreturn set(record)==set(expected) and all(type(record[k]) in [int,float] and math.isfinite(record[k]) for k in expected)",
+    "cases": [
+      [
+        [
+          {
+            "x": 2
+          },
+          [
+            "x"
+          ]
+        ],
+        true
+      ],
+      [
+        [
+          {
+            "x": true
+          },
+          [
+            "x"
+          ]
+        ],
+        false
+      ],
+      [
+        [
+          {
+            "x": 2,
+            "extra": 1
+          },
+          [
+            "x"
+          ]
+        ],
+        false
+      ]
+    ],
+    "feedback": "Booleans are not numerical measurements in this contract; reject extras."
+  },
+  "m12_shift_score": {
+    "name": "shift_score",
+    "args": "current_mean, training_mean, training_scale",
+    "contract": "Return absolute standardized difference, or None for a nonpositive training scale.",
+    "solution": "return abs(current_mean-training_mean)/training_scale if training_scale>0 else None",
+    "cases": [
+      [
+        [
+          12,
+          10,
+          2
+        ],
+        1
+      ],
+      [
+        [
+          9,
+          10,
+          0
+        ],
+        null
+      ]
+    ],
+    "feedback": "Use the fixed training scale, not a scale fitted on new requests."
+  },
+  "m12_nearest_rank": {
+    "name": "nearest_rank",
+    "args": "values, percentile",
+    "contract": "Return sorted values at ceil(percentile*n)-1 for 0 < percentile <= 1.",
+    "solution": "import math\nreturn sorted(values)[math.ceil(percentile*len(values))-1]",
+    "cases": [
+      [
+        [
+          [
+            1,
+            2,
+            3,
+            100
+          ],
+          0.95
+        ],
+        100
+      ],
+      [
+        [
+          [
+            9,
+            1,
+            4
+          ],
+          0.5
+        ],
+        4
+      ]
+    ],
+    "feedback": "Name the percentile convention and retain the tail request."
+  },
+  "m13_recall_denominator": {
+    "name": "recall_denominator",
+    "args": "tp, fp, fn, tn",
+    "contract": "Return the actual-positive count.",
+    "solution": "return tp+fn",
+    "cases": [
+      [
+        [
+          8,
+          2,
+          11,
+          30
+        ],
+        19
+      ],
+      [
+        [
+          0,
+          3,
+          0,
+          8
+        ],
+        0
+      ]
+    ],
+    "feedback": "Recall conditions on actual positives, not predictions."
+  },
+  "m13_safe_rate": {
+    "name": "safe_rate",
+    "args": "numerator, denominator",
+    "contract": "Return numerator/denominator, or None for zero denominator.",
+    "solution": "return numerator/denominator if denominator else None",
+    "cases": [
+      [
+        [
+          8,
+          19
+        ],
+        0.42105263157894735
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        null
+      ],
+      [
+        [
+          0,
+          10
+        ],
+        0
+      ]
+    ],
+    "feedback": "Unavailable is not evidence of parity."
+  },
+  "m13_wilson": {
+    "name": "wilson",
+    "args": "successes, observations",
+    "contract": "Return a two-number 95% illustrative Wilson interval using learning.wilson_interval.",
+    "solution": "from practical_ml_ai.learning import wilson_interval\nreturn list(wilson_interval(successes,observations))",
+    "cases": [
+      [
+        [
+          8,
+          10
+        ],
+        [
+          0.49016247153664183,
+          0.9433178485456247
+        ]
+      ],
+      [
+        [
+          80,
+          100
+        ],
+        [
+          0.7111708344068411,
+          0.8666330666689676
+        ]
+      ]
+    ],
+    "feedback": "State the conditional independent-binomial assumption before interpreting the interval."
+  },
+  "m14_route_intent": {
+    "name": "route_intent",
+    "args": "intent",
+    "contract": "Return count_rows for count, mean_alcohol for alcohol; otherwise None.",
+    "solution": "return {\"count\":\"count_rows\",\"alcohol\":\"mean_alcohol\"}.get(intent)",
+    "cases": [
+      [
+        [
+          "count"
+        ],
+        "count_rows"
+      ],
+      [
+        [
+          "alcohol"
+        ],
+        "mean_alcohol"
+      ],
+      [
+        [
+          "delete"
+        ],
+        null
+      ]
+    ],
+    "feedback": "An unsupported intent must not fall through to an unrelated answer."
+  },
+  "m14_allowed_call": {
+    "name": "allowed_call",
+    "args": "tool, arguments",
+    "contract": "Allow only count_rows with no arguments, or mean_alcohol with no arguments.",
+    "solution": "return tool in {\"count_rows\",\"mean_alcohol\"} and arguments == {}",
+    "cases": [
+      [
+        [
+          "count_rows",
+          {}
+        ],
+        true
+      ],
+      [
+        [
+          "delete",
+          {}
+        ],
+        false
+      ],
+      [
+        [
+          "count_rows",
+          {
+            "path": "secret"
+          }
+        ],
+        false
+      ]
+    ],
+    "feedback": "Validate tool and argument contract, not just words in a prompt."
+  },
+  "m14_can_call": {
+    "name": "can_call",
+    "args": "used, budget",
+    "contract": "Return True for nonnegative whole-number used/budget and used < budget; reject bool.",
+    "solution": "return type(used) is int and type(budget) is int and 0 <= used < budget",
+    "cases": [
+      [
+        [
+          0,
+          1
+        ],
+        true
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        false
+      ],
+      [
+        [
+          true,
+          3
+        ],
+        false
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        false
+      ]
+    ],
+    "feedback": "Stop before exceeding the budget and reject malformed limits."
+  }
+}

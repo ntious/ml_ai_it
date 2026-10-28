@@ -1,39 +1,50 @@
-# Module 7 practice and reflection
+# Module 7: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module07/practice.ipynb "site-download:module07/practice.ipynb"). In a source checkout open `notebooks/practice/module07-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P07
+## Construct `squared_distance`
 
-Justify the scaling and K-selection rule. Compare at least two profile features and cluster sizes using exact values. Explain why the labels are not ordered taste categories. Classify three real problem descriptions as supervised, unsupervised, or reinforcement learning and identify the needed feedback.
+Return sum of squared coordinate differences for equal-length vectors. Predict the result on `[[2, 4], [1, 2]]`, implement it and call `m07_squared_distance` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for squared_distance</summary>
 
-## Discussion or solo equivalent
+Square coordinate differences; do not compare signed sums.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `select_k`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Input pairs [K, validation_silhouette]; maximize score, smallest K breaks ties. Predict the result on `[[[2, 0.4], [3, 0.5], [4, 0.45]]]`, implement it and call `m07_select_k` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for select_k</summary>
 
-Compare another seed or an alternative distance/cluster method using development data. Discuss stability and non-spherical structure. Do not repeatedly pick a method because its held-out partition looks appealing.
+Use validation geometry and a declared tie-break, not smallest inertia.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M07.1 | Distinguish supervised, unsupervised, and reinforcement learning by the information available. |
-| M07.2 | Fit training-only scaling and k-means without quality labels. |
-| M07.3 | Compare predefined cluster counts using a validation geometry criterion. |
-| M07.4 | Describe clusters through counts and original-unit profiles. |
-| M07.5 | Explain why internal scores and observational data do not validate actions or rewards. |
+## Construct `profile`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Return string cluster IDs mapped to count and mean of a single original-unit feature. Predict the result on `[[2, 4, 10], [0, 0, 1]]`, implement it and call `m07_profile` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for profile</summary>
 
-Fit a predeclared second K using training and compare development geometry and cluster sizes. Explain why quality must not choose an allegedly unsupervised partition.
+Describe both support and feature level; IDs have no rank.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M07.1:** Distinguish supervised, unsupervised, and reinforcement learning by the information available.
+- **M07.2:** Fit training-only scaling and k-means without quality labels.
+- **M07.3:** Compare predefined cluster counts using a validation geometry criterion.
+- **M07.4:** Describe clusters through counts and original-unit profiles.
+- **M07.5:** Explain why internal scores and observational data do not validate actions or rewards.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

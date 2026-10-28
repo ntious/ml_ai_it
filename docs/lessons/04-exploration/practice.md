@@ -1,54 +1,51 @@
-# Module 4 practice: three figures and an operations memo
+# Module 4: implement, explain and transfer
 
-This is independently authored companion practice, not an official Canvas assignment. Complete the [walkthrough](index.md) first. Allow 45–75 minutes. Use synthetic copies and a new directory under `runs/module04-practice/` to preserve the raw sample and earlier results.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module04/practice.ipynb "site-download:module04/practice.ipynb"). In a source checkout open `notebooks/practice/module04-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P04
+## Construct `error_rate`
 
-1. State the operations question and observation unit. Explain the duplicate, missing-latency, and outlier policies before interpreting a chart.
-2. Run the supplied analysis. Select three figures: one distribution, one comparison, and one time or relationship view. For each, justify the chart type, name axes/units and scales, supply its underlying table, and write a short alternative plus a detailed description. Use the shared plotting code as a starting point. Make and explain at least one purposeful chart change, such as a horizontal comparison; the notebook supplies a runnable variation. Preserve or update its matching table/description. Keep your code and regenerated artifact.
-3. Identify one pattern or anomaly using at least two exact values. Name one limitation and a next investigation question. Distinguish descriptive association from a causal explanation.
-4. Create a copy of the raw CSV. Remove only the row with unavailable latency, retaining the other raw rows. Predict which totals/counts will change, run using a new output directory, and explain why the reduced workload total answers a different question.
-5. In a separate sensitivity analysis, use the normalized observations and exclude the flagged 160 ms observation. Recompute the latency mean and median. Label this as an analytical comparison, not a justified cleaning decision. Explain what information removal loses.
-6. Write a 150–250-word memo for the fictional operations lead. Include the question, numerical finding, preprocessing rationale, limitation, and next action. A figure with its table or an equivalent text/table account may support the memo. Do not require a sight-dependent screenshot as evidence.
+Return errors/requests; None when requests is zero. Predict the result on `[3, 10]`, implement it and call `m04_error_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-You can reuse this notebook pattern for the sensitivity analysis:
+<details>
+<summary>Hint for error_rate</summary>
 
-```python
-observed = frame.dropna(subset=["p95_latency_ms"])
-sensitivity = observed.loc[observed["p95_latency_ms"] != 160, "p95_latency_ms"]
-print("Sensitivity mean (ms):", sensitivity.mean())
-print("Sensitivity median (ms):", sensitivity.median())
-```
+A zero denominator is unavailable, not zero percent.
 
-For this known fixture, 160 identifies the single flagged observation. For other datasets, identify the actual date/service key and investigate it; do not turn “remove 160” into a general cleaning rule.
+</details>
 
-If your workflow evaluates chart-authoring skill, retain the code and generated figure artifacts. Blind learners can author those figures through code and verify them through labels, tables, and descriptions; the interpretation task uses the same numerical evidence. Where you cannot run an interface, use the generated worked example and explain that your evidence demonstrates interpretation rather than program execution.
+## Construct `median`
 
-## Discussion or solo reflection
+Return the median of a nonempty numerical list, without changing the input. Predict the result on `[[1, 2, 3, 100]]`, implement it and call `m04_median` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-A stakeholder requests “a chart proving that traffic caused the spike.” Explain why the scatter plot cannot provide that proof and propose evidence that could help investigate. In class, compare explanations; independently, write and critique one alternative explanation. Also compare the zero-baseline and cropped-baseline bars: what changed, and what did not?
+<details>
+<summary>Hint for median</summary>
 
-## Work with GenAI
+Average the two middle observations for an even count.
 
-Optional prompt: “Critique this memo against the supplied table. Flag any causal claim, missing denominator, unsupported extrapolation, or confusion between daily p95 and overall p95.” Verify each suggestion yourself. Keep a short record of the suggestion, evidence checked, and your final decision. Without an assistant, apply those same four checks using the supplied feedback. Do not upload real service records to an unapproved service.
+</details>
 
-## Optional extension
+## Construct `weighted_rate`
 
-Change the histogram bin width or create a two-panel service comparison without changing observations. Explain which impressions change and which statistics remain fixed. Alternatively, frame an agriculture or education-support question and identify the analogous observation unit and coverage risk; new data collection is not required. These are skippable extensions, not implied extra credit.
+Input pairs [errors, requests]. Return total errors / total requests, or None. Predict the result on `[[[1, 2], [1, 8]]]`, implement it and call `m04_weighted_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Self-check and adaptable criteria
+<details>
+<summary>Hint for weighted_rate</summary>
 
-| Criterion | Evidence of a satisfactory result |
-| --- | --- |
-| Preprocessing, M04.1 | Explicit policies, changed-row accounting, and a justified distinction between a flag and an error |
-| Chart authoring, M04.2 | Three appropriate plots, reproducible code, labels/units/scales, and matching tables |
-| Interpretation, M04.3 | An exact evidence-based finding, limitation, and no unsupported causal claim |
-| Communication, M04.4 | A concise stakeholder memo, useful descriptions, underlying values, and a next question |
+Do not average daily percentages with unequal denominators.
 
-Adopting instructors choose local grading weights and submission rules. Public [worked feedback](feedback.md) is available for self-study.
+</details>
 
-## Required independent construction
+## Transfer to an IT decision
 
-Construct one labeled plot from development data and supply its numeric table and a noncausal interpretation. Choose and defend its missing-value policy.
+Compare request counts and error rates for two services with unequal volume. Write a caption that prevents a misleading ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+## Evidence and feedback
+
+- **M04.1:** Justify a preprocessing choice for an exploratory question and explain what information it may remove.
+- **M04.2:** Create labeled distribution, comparison, and relationship/time plots with appropriate scales and units.
+- **M04.3:** Explain a pattern or anomaly with numerical evidence while distinguishing association from causation.
+- **M04.4:** Write a stakeholder summary with chart descriptions, underlying values, and limitations.
+
+You need basic functions, file paths, and dataframe selection/grouping. Use the [foundation bridge](foundation.md), [Module 2](../02-python-workflows/index.md), or [Module 3](../03-data-processing/index.md) as needed. You may enter here directly with the complete source archive and setup below.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

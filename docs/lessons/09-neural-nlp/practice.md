@@ -1,39 +1,50 @@
-# Module 9 practice and reflection
+# Module 9: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module09/practice.ipynb "site-download:module09/practice.ipynb"). In a source checkout open `notebooks/practice/module09-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P09
+## Construct `vocabulary`
 
-Audit the text-hash boundaries and vocabulary fitting scope. Compare neural and lexical baseline precision/recall and identify a limitation from length/vocabulary. Inspect raw messages locally only as needed; report IDs and aggregate findings rather than publishing personal contact strings.
+Return alphabetical lowercase whitespace tokens with IDs starting at 2; 0=padding,1=unknown. Predict the result on `[['FREE offer', 'offer now']]`, implement it and call `m09_vocabulary` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for vocabulary</summary>
 
-## Discussion or solo equivalent
+Fit only training text and reserve unknown/padding separately.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `encode`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Lowercase/split, map unknown to 1, keep first length tokens and pad with 0. Predict the result on `['NEW offer', {'offer': 2}, 4]`, implement it and call `m09_encode` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for encode</summary>
 
-Study a CNN/recurrent encoder, a larger vocabulary, or a length change with a predefined development protocol. Measure compute and errors. A different encoder is optional, not an entrance requirement.
+Unknown is not padding; declare truncation direction.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M09.1 | Explain tokenization, vocabulary, padding, embeddings, and pooling. |
-| M09.2 | Deduplicate real texts before a declared sample/split. |
-| M09.3 | Adapt text preprocessing only on training and train a TensorFlow text model. |
-| M09.4 | Compare neural errors with TF-IDF/logistic regression. |
-| M09.5 | Document privacy, prevalence, vocabulary limits, and reproducibility. |
+## Construct `recall`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Return TP/(TP+FN); None when there are no actual positives. Predict the result on `[0, 10]`, implement it and call `m09_recall` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for recall</summary>
 
-Inspect the training-fitted real vocabulary. Demonstrate an unknown token and truncation on a training example, then explain what information is unavailable to the classifier.
+Use actual positives, not total messages or predicted positives.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M09.1:** Explain tokenization, vocabulary, padding, embeddings, and pooling.
+- **M09.2:** Deduplicate real texts before a declared sample/split.
+- **M09.3:** Adapt text preprocessing only on training and train a TensorFlow text model.
+- **M09.4:** Compare neural errors with TF-IDF/logistic regression.
+- **M09.5:** Document privacy, prevalence, vocabulary limits, and reproducibility.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

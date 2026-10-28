@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 A service accepts a declared set of features and applies fixed preprocessing, parameters and threshold. Rejecting invalid schemas protects an input contract, while a value within a broad numeric bound may still be unlike training data. Four historical batches are not a measured time stream.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

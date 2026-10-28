@@ -1,39 +1,50 @@
-# Module 13 practice and reflection
+# Module 13: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module13/practice.ipynb "site-download:module13/practice.ipynb"). In a source checkout open `notebooks/practice/module13-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P13
+## Construct `recall_denominator`
 
-Write a stakeholder/target critique before viewing scores. Verify group counts and rate denominators, compare two groups, and name an unmeasured/intersectional limitation. Explain why omitting sex/race from fitting does not establish fairness. Recommend governance or nondeployment with reasons.
+Return the actual-positive count. Predict the result on `[8, 2, 11, 30]`, implement it and call `m13_recall_denominator` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for recall_denominator</summary>
 
-## Discussion or solo equivalent
+Recall conditions on actual positives, not predictions.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `safe_rate`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Return numerator/denominator, or None for zero denominator. Predict the result on `[8, 19]`, implement it and call `m13_safe_rate` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for safe_rate</summary>
 
-Study uncertainty intervals or a validation-only mitigation proposal with stakeholder justification and explicit error trade-offs. Do not optimize a fairness number using final labels or claim that a numerical mitigation resolves legitimacy.
+Unavailable is not evidence of parity.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M13.1 | Identify stakeholders, historical label limitations, and inappropriate uses. |
-| M13.2 | Fit a declared training pipeline without protected audit columns. |
-| M13.3 | Report group counts, confusion denominators, selection rates, TPR, and FPR. |
-| M13.4 | Explain metric trade-offs, proxy effects, and uncertainty without causal/legal claims. |
-| M13.5 | Write a governance recommendation, including reasons not to deploy. |
+## Construct `wilson`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Return a two-number 95% illustrative Wilson interval using learning.wilson_interval. Predict the result on `[8, 10]`, implement it and call `m13_wilson` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for wilson</summary>
 
-Reconcile two real group rates and denominators. Explain the historical label and an intersectional limitation. Demonstrate uncertainty arithmetic while stating dependence and sampling assumptions.
+State the conditional independent-binomial assumption before interpreting the interval.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M13.1:** Identify stakeholders, historical label limitations, and inappropriate uses.
+- **M13.2:** Fit a declared training pipeline without protected audit columns.
+- **M13.3:** Report group counts, confusion denominators, selection rates, TPR, and FPR.
+- **M13.4:** Explain metric trade-offs, proxy effects, and uncertainty without causal/legal claims.
+- **M13.5:** Write a governance recommendation, including reasons not to deploy.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

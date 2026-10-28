@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "modules": [
+    {
+      "id": 1,
+      "slug": "01-foundations",
+      "profile": "core",
+      "practice": "notebooks/practice/module01-practice.ipynb",
+      "solutions": "notebooks/practice/module01-solutions.ipynb",
+      "checks": [
+        "m01_route",
+        "m01_partition_role",
+        "m01_error_counts"
+      ],
+      "outcomes_sha256": "aa912b2f184beec02ba5a886192ca45abc3ccf7f3fecfe55930a69c8c89bcbaa",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 2,
+      "slug": "02-python-workflows",
+      "profile": "core",
+      "practice": "notebooks/practice/module02-practice.ipynb",
+      "solutions": "notebooks/practice/module02-solutions.ipynb",
+      "checks": [
+        "m02_status_counts",
+        "m02_observed_mean",
+        "m02_output_path"
+      ],
+      "outcomes_sha256": "1d9d2c3638d04eb8218970a1298754d8a0f06d20df66079d40863e6790ea3145",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 3,
+      "slug": "03-data-processing",
+      "profile": "core",
+      "practice": "notebooks/practice/module03-practice.ipynb",
+      "solutions": "notebooks/practice/module03-solutions.ipynb",
+      "checks": [
+        "m03_parse_latency",
+        "m03_deduplicate",
+        "m03_reconcile"
+      ],
+      "outcomes_sha256": "624aff52989bb5bf1bdcf4ac2ef4246522b8030404f4f58f9a3ccd53be27f205",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 4,
+      "slug": "04-exploration",
+      "profile": "core",
+      "practice": "notebooks/practice/module04-practice.ipynb",
+      "solutions": "notebooks/practice/module04-solutions.ipynb",
+      "checks": [
+        "m04_error_rate",
+        "m04_median",
+        "m04_weighted_rate"
+      ],
+      "outcomes_sha256": "b04e0ef57eca6307e1720c7b212544990521ad233629aed8725b94baf186fea9",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 5,
+      "slug": "05-regression",
+      "profile": "core",
+      "practice": "notebooks/practice/module05-practice.ipynb",
+      "solutions": "notebooks/practice/module05-solutions.ipynb",
+      "checks": [
+        "m05_residuals",
+        "m05_persistence",
+        "m05_pipeline"
+      ],
+      "outcomes_sha256": "11b2d8ea05a23ef44104d9358a43c1e2f2478b0bfe3594632719d8e422199c00"
+    },
+    {
+      "id": 6,
+      "slug": "06-classification",
+      "profile": "core",
+      "practice": "notebooks/practice/module06-practice.ipynb",
+      "solutions": "notebooks/practice/module06-solutions.ipynb",
+      "checks": [
+        "m06_confusion",
+        "m06_threshold",
+        "m06_pipeline"
+      ],
+      "outcomes_sha256": "63465598da3a4261215909bd9c497c55f587b097dcdd3c74d651ad17ba04056d"
+    },
+    {
+      "id": 7,
+      "slug": "07-clustering",
+      "profile": "core",
+      "practice": "notebooks/practice/module07-practice.ipynb",
+      "solutions": "notebooks/practice/module07-solutions.ipynb",
+      "checks": [
+        "m07_squared_distance",
+        "m07_select_k",
+        "m07_profile"
+      ],
+      "outcomes_sha256": "d8f023387337ff5d19eb2954995ab7f22a0e9e01c71eea1d47f50a059145bccb",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 8,
+      "slug": "08-neural-networks",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module08-practice.ipynb",
+      "solutions": "notebooks/practice/module08-solutions.ipynb",
+      "checks": [
+        "m08_dense",
+        "m08_checkpoint",
+        "m08_network"
+      ],
+      "outcomes_sha256": "c6943249084f77c399436980a66036708956dde073edcf012079632ca5147a0c"
+    },
+    {
+      "id": 9,
+      "slug": "09-neural-nlp",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module09-practice.ipynb",
+      "solutions": "notebooks/practice/module09-solutions.ipynb",
+      "checks": [
+        "m09_vocabulary",
+        "m09_encode",
+        "m09_recall"
+      ],
+      "outcomes_sha256": "d24b153b5de01a774b9d67087d317fb1b1bd1d9365d217d65379f5d70fec1beb",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 10,
+      "slug": "10-llm-workflows",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module10-practice.ipynb",
+      "solutions": "notebooks/practice/module10-solutions.ipynb",
+      "checks": [
+        "m10_parse_label",
+        "m10_valid_fraction",
+        "m10_end_to_end_accuracy"
+      ],
+      "outcomes_sha256": "1bc3df4aee8e9b3736994dcb81305a6a01ca8b87cd4f79a4c4f7dc1e483cde8a",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 11,
+      "slug": "11-fine-tuning",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module11-practice.ipynb",
+      "solutions": "notebooks/practice/module11-solutions.ipynb",
+      "checks": [
+        "m11_trainable_count",
+        "m11_completion_labels",
+        "m11_changed_tensors"
+      ],
+      "outcomes_sha256": "7cf972dc6f43c2fe7ee0df7c765e636704784045c453de995680832cdb20ceb1",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 12,
+      "slug": "12-deployment",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module12-practice.ipynb",
+      "solutions": "notebooks/practice/module12-solutions.ipynb",
+      "checks": [
+        "m12_valid_request",
+        "m12_shift_score",
+        "m12_nearest_rank"
+      ],
+      "outcomes_sha256": "f3135f23dbc1a9bee9d588128c0f57eb0bb58cfb8053298c7ccf7d767ce4921a",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 13,
+      "slug": "13-ethics-fairness",
+      "profile": "core",
+      "practice": "notebooks/practice/module13-practice.ipynb",
+      "solutions": "notebooks/practice/module13-solutions.ipynb",
+      "checks": [
+        "m13_recall_denominator",
+        "m13_safe_rate",
+        "m13_wilson"
+      ],
+      "outcomes_sha256": "6b827219637511db8408f8003c72199830c101fe58a076fab961dfbfced0b2c6",
+      "sandbox": "authored_operation"
+    },
+    {
+      "id": 14,
+      "slug": "14-agents",
+      "profile": "frameworks",
+      "practice": "notebooks/practice/module14-practice.ipynb",
+      "solutions": "notebooks/practice/module14-solutions.ipynb",
+      "checks": [
+        "m14_route_intent",
+        "m14_allowed_call",
+        "m14_can_call"
+      ],
+      "outcomes_sha256": "6d5221678a4129bdc08eafec6e12cacac57e03c3b168ac9776af3e79860f5541",
+      "sandbox": "authored_operation"
+    }
+  ]
+}

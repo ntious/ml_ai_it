@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 Without scaling, a feature measured in thousands can dominate a feature measured in fractions. K-means minimizes squared distance to centers. Its IDs have no inherent order or meaning.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

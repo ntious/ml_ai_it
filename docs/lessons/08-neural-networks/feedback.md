@@ -33,3 +33,7 @@ Question: Can the lowest training-loss epoch be the wrong checkpoint?
 Yes. Training fit can improve while validation degrades. Selection uses validation under the declared rule.
 
 A satisfactory response includes the calculation or concrete counterexample, the fitting/decision boundary, your actual changed code and one limitation. Compare the [mastery criteria](guided.md) with your work. If you cannot reproduce the central operation, return to the worked step and try changed inputs before reading the answer again.
+
+## Feedback for your own implementation
+
+Use the separate [practice solutions and diagnostic feedback](solutions.md) to investigate function-level mistakes and compare developing, meeting and extending explanations. This page retains the complete reference study's results.

@@ -12,6 +12,10 @@ Build a small service-file processing program before adding ML libraries. You wi
 
 Start with the [Python foundation bridge](foundation.md) if variables, loops, functions, or paths are unfamiliar. [Module 1](../01-foundations/index.md) supplies the first-run route. You may enter here directly by obtaining the complete source and following the commands below.
 
+## Learning route
+
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+
 ## The service-file problem
 
 A fictional service lead asks how much handling time the sample tickets represent and how the sample events are labeled. Answer only about these supplied records. A four-ticket fixture cannot justify staffing forecasts or real-world incident-rate claims.

@@ -27,3 +27,7 @@ Course alignment opportunities: **CLO2, CLO4, CLO8**. Advisory computing-outcome
 ## Verification limits
 
 The real-data workflow, public script, and notebook are exercised in Windows/Linux core CI. Exact counts/results are in the [verified results table](../../status.md#verified-results) and commit-specific CI. Consult the [accessibility evidence log](../../accessibility/review-log.md) for human interface-review coverage. Public feedback is for self-study; local grading/AI-use rules remain the adopting instructor's responsibility.
+
+## Teaching prototype: explanation, practice and feedback
+
+This module now has an intermediate concepts page and three independently completed functions. Use the [pilot protocol](../../instructor/teaching-prototype-pilot.md) to observe understanding and support needs. Map learner artifacts with the [practice evidence table](practice.md#evidence-for-the-unchanged-outcomes). Visible code checks and solution execution are technical evidence; review the learner's reasoning and transfer separately. Preserve the existing outcomes and official assessment rules.

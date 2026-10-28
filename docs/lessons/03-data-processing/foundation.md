@@ -35,3 +35,7 @@ print(result.report["rows_accepted"])
 Use the help channel chosen by your instructor, or a project issue for a nonsensitive reproducible problem. Include the command, expected result, actual result/error, and one attempted fix. A plain-text error is more useful than a screenshot alone. Keep sensitive files and credentials private.
 
 [Return to Module 3](index.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

@@ -33,3 +33,16 @@ claim. Reusing this public benchmark and its known results is a reproduction or
 development exercise, even when the student supplies a fresh run identifier.
 Teamwork evidence, where required, must be assessed separately from technical
 execution by one person.
+
+## Checkpoints and revision
+
+| Checkpoint | Bring for review | Feedback and required response |
+| --- | --- | --- |
+| Proposal | Stakeholder, decision time, target, non-ML alternative and permitted source | If the target is unavailable or inappropriate, revise the question before collecting more data. |
+| Data audit | Dictionary, missingness, entity/time boundaries and label delay | Trace one record into a feature; remove unavailable fields and rerun preparation. |
+| Protocol | Baselines, candidate budget, validation rule, seeds and final holdout | Resolve leakage or selection ambiguity before training the full study. |
+| Development | All candidate results, adverse cases and compute cost | Explain one failed hypothesis; revise using development evidence only. |
+| Draft report | Locked evaluation, uncertainty, limitations and delivery policy | Have a reviewer trace each main claim to an artifact. Correct unsupported claims rather than tuning on final results. |
+| Final defense | Revised report, reproducible commands and revision log | Explain a changed-case decision independently and identify remaining deployment evidence. |
+
+Use [the revision log](../../templates/project-revision.md) at every checkpoint. A solo learner should take a separate review pass against the same criteria and explicitly record self-review. In teams, record each contributor's implementation, review and explanation; running the shared notebook alone does not demonstrate everyone's understanding. Official weights and deadlines remain with the adopting instructor.

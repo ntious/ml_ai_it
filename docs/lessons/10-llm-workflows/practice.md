@@ -1,39 +1,50 @@
-# Module 10 practice and reflection
+# Module 10: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module10/practice.ipynb "site-download:module10/practice.ipynb"). In a source checkout open `notebooks/practice/module10-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P10
+## Construct `parse_label`
 
-Reproduce the recorded model revision, strict-schema rate, label score including invalid outputs as wrong, and measured local duration. Inspect two failure modes. Compare the workflow's purpose/cost with Module 9's baseline and write a short model-card/literature note using the official card plus one primary paper.
+Return ham/spam only for an exact one-key JSON object; otherwise return None. Predict the result on `['{"label":"spam"}']`, implement it and call `m10_parse_label` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for parse_label</summary>
 
-## Discussion or solo equivalent
+Reject prose and extra keys; parsing is separate from correctness.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `valid_fraction`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Input parsed labels or None. Return valid/total, or None for empty input. Predict the result on `[['spam', None, 'ham']]`, implement it and call `m10_valid_fraction` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for valid_fraction</summary>
 
-Declare a prompt/template or decoding comparison on validation examples. Freeze it before a new final evaluation. Larger models or hosted providers are optional and need separate rights, privacy, compute, and evaluation decisions.
+Count malformed outputs in the denominator.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M10.1 | Explain token generation and distinguish instructions from untrusted message data. |
-| M10.2 | Run a recorded public model revision with bounded greedy decoding. |
-| M10.3 | Validate an exact JSON schema and count failures. |
-| M10.4 | Compare task fit, latency, and limitations with simpler NLP. |
-| M10.5 | Write a source-grounded model-use note with privacy and cost constraints. |
+## Construct `end_to_end_accuracy`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Return exact matches / all cases, counting None as wrong; None for no cases. Predict the result on `[['spam', 'ham'], ['spam', None]]`, implement it and call `m10_end_to_end_accuracy` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for end_to_end_accuracy</summary>
 
-Inspect matched_comparison.csv after the real run. Reconcile per-record baseline and LLM outcomes and explain preprocessing, prevalence and sample-size limits. Declare any prompt experiment on validation first.
+Do not condition accuracy on the outputs the parser accepted.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Evaluate three changed message outputs including one malformed response. Explain why structural validity alone cannot justify automation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M10.1:** Explain token generation and distinguish instructions from untrusted message data.
+- **M10.2:** Run a recorded public model revision with bounded greedy decoding.
+- **M10.3:** Validate an exact JSON schema and count failures.
+- **M10.4:** Compare task fit, latency, and limitations with simpler NLP.
+- **M10.5:** Write a source-grounded model-use note with privacy and cost constraints.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

@@ -1,43 +1,51 @@
-# Module 1 practice: choose, predict, verify
+# Module 1: implement, explain and transfer
 
-This is original companion practice, usable independently or selected by an instructor. There is no automatic submission, grade, or Canvas requirement. Read the [lesson](index.md) before beginning. Allow approximately 25–40 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module01/practice.ipynb "site-download:module01/practice.ipynb"). In a source checkout open `notebooks/practice/module01-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P01
+## Construct `route`
 
-1. Run the supplied example at 85 and save its text output.
-2. Before running again, predict the decisions at 80 and 81. Run both and save each to a different filename under `runs/module01/`. Explain the comparison operator in one sentence.
-3. Write a short problem brief: name a stakeholder, input, output, and reason to use a rule or learned model. Name one failure and one check. You may use the storage example or a fictional game-performance alert.
-4. Explain how AI, ML, deep learning, and generative AI relate. Identify which of them the supplied rule actually demonstrates: ordinary programmed automation; it does not demonstrate a learned model.
-5. Record the command, Python version, and where you saved the result. If using the notebook, save it, restart its kernel, and run all cells. Explain one difference between a notebook file and its running kernel.
+Return a bool: priority >= threshold. Predict the result on `[2]`, implement it and call `m01_route` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Useful evidence is text: commands, outputs, a saved program/notebook, and your explanation. Screenshots are not required. Do not include real tickets, credentials, or student information.
+<details>
+<summary>Hint for route</summary>
 
-## Discussion or solo reflection
+Use an inclusive boundary; do not return the priority itself.
 
-A colleague says, “We should replace every threshold rule with an LLM.” Respond with one situation where a rule meets the need and one where another method might help. Ask what evidence would justify a change. In a class, compare reasoning with a peer; independently, write a counterargument and answer it. Public feedback is available in either route.
+</details>
 
-## Work with GenAI
+## Construct `partition_role`
 
-Optional prompt: “Explain whether this storage threshold program learns from data. Identify the line that supports your answer.” Check its answer against the actual function and run results. Record the suggestion, what you checked, and anything you corrected. Follow your instructor's disclosure policy; without an assistant, use the worked feedback for comparison.
+Return fit, choose or evaluate for train, validation or test. Predict the result on `['train']`, implement it and call `m01_partition_role` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for partition_role</summary>
 
-Transfer the problem brief to an agriculture sensor alert. Describe how missing measurements and false alarms could affect the decision. No new package, data collection, or deployment is required. This extension is skippable and has no implied extra-credit value.
+The final test must not choose a model.
 
-## Self-check and adaptable criteria
+</details>
 
-| Criterion | Evidence of a satisfactory result |
-| --- | --- |
-| Concepts, M01.1 | Distinct definitions; no claim that the threshold learned from data |
-| Problem framing, M01.2 | Named stakeholder/input/output, justified method, failure, and check |
-| Execution, M01.3 | Reproducible command and saved output; notebook operation recorded if that route is used |
-| Interpretation, M01.4 | Correct predictions and explanation for both boundary values |
-| Reflection | A checked suggestion or a reasoned independent comparison |
+## Construct `error_counts`
 
-Adopting instructors can set their own weights and submission rules. See [worked feedback](feedback.md); self-study does not require an instructor to unlock it.
+Return [false_alerts, misses] for equally sized boolean lists. Predict the result on `[[False, True, True], [True, False, True]]`, implement it and call `m01_error_counts` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for error_counts</summary>
 
-Change the threshold to 90. Predict 90 and 91 before running. Explain what data a learned alternative would need.
+Count errors by their consequences, not only total accuracy.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M01.1:** Distinguish AI, ML, deep learning, and generative AI using an IT example.
+- **M01.2:** Identify a problem's stakeholder, input, output, and reason for choosing a rule or learned model.
+- **M01.3:** Execute and save a supplied Python example; in the notebook route, launch the interface, run a cell, and save the notebook. Explain the installation route.
+- **M01.4:** Change an input, predict the result, and explain what happened.
+
+The script route supplies the same programming evidence when a notebook interface is a barrier. It does not demonstrate notebook-interface operation. An instructor assessing that particular skill should arrange an accessible interface and support with the learner.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

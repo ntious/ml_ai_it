@@ -1,39 +1,61 @@
-# Module 8 practice and reflection
+# Module 8: independent implementation practice
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Use [concepts](concepts.md) and [guided construction](guided.md) first. Work in the existing module environment. These tasks support the same outcomes as the complete reference; your instructor's assessment requirements remain authoritative.
 
-## Core task P08
+## Start with the clean practice notebook
 
-Explain each layer and tensor shape. Use the learning-history table to identify the best validation epoch and any divergence. Compare confusion counts with the logistic baseline, then verify that reloaded predictions agree on actual held-out rows.
+- [Practice notebook](https://ntious.github.io/ml_ai_it/downloads/module08/practice.ipynb "site-download:module08/practice.ipynb") — complete three function bodies and record predictions.
+- In a source checkout: `notebooks/practice/module08-practice.ipynb`.
+- The notebook must stay inside the complete source tree and use its installed package/kernel. It does not install dependencies for you.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+Run Setup, then define a function and run its check. `not_attempted` means the placeholder remains; `needs_revision` supplies feedback; `passed` covers the visible cases. Repeating a check replaces its earlier state. When all three pass, run the supplied real-development sandbox. Partial work deliberately skips that sandbox rather than pretending it ran.
 
-## Discussion or solo equivalent
+## Implement, check and explain
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+### Task 1: Dense ReLU layer
 
-## Work with GenAI
+Implement `dense_relu(x, weights, bias)` preserving batch-by-hidden shape. Reconcile one activation by hand.
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
 
-## Optional extension
+<details><summary>Hint if stuck on task 1</summary><p>A batch multiplies the input-by-hidden weight matrix; add the hidden bias vector and replace negative activations with zero.</p></details>
 
-Declare another width, epoch budget, or class-weight policy as a development experiment. Explain parameter count and resource effects; do not require a GPU or treat the extension as necessary for core completion.
+### Task 2: Validation checkpoint
 
-## Self-check and adaptable criteria
+Implement `select_checkpoint(train_loss, validation_loss)`. Return a one-based minimum-validation-loss epoch; ties retain the earliest.
 
-| Outcome | Evidence to check |
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
+
+<details><summary>Hint if stuck on task 2</summary><p>The training curve helps interpretation, but its minimum must not choose the checkpoint.</p></details>
+
+### Task 3: Configurable network
+
+Implement `build_network(inputs, width)` with one ReLU hidden layer and one sigmoid output. Predict the parameter count for two widths.
+
+Before checking, write an expected output and explain one likely mistake. After checking, try a changed case and record what the feedback helped you diagnose.
+
+<details><summary>Hint if stuck on task 3</summary><p>Count input-hidden weights, hidden biases, hidden-output weights and output bias; batch size is not a learned dimension.</p></details>
+
+## Transfer with less support
+
+In a separate development run, change width from 8 to 4 or 16 and predict the parameter count before training. Keep the data slice, eight-epoch budget and checkpoint rule fixed. Report observed validation loss and compute; a width increase is not guaranteed to help. Use a fresh notebook/kernel or reset all model/optimizer/checkpoint state.
+
+For a hypothetical IT alert queue, describe which false-alarm workload evidence would be needed before preferring a high-recall network. Do not treat the chemistry target as an incident label. Complete the original Module 8 study to compare the actual network with logistic regression on the declared final evaluation.
+
+## Evidence for the unchanged outcomes
+
+| Outcome | Evidence to retain |
 | --- | --- |
-| M08.1 | Explain input, hidden activation, output probability, loss, and gradient updates. |
-| M08.2 | Fit training-only numeric preprocessing and a TensorFlow network. |
-| M08.3 | Select a checkpoint using validation loss without fitting to final labels. |
-| M08.4 | Compare held-out errors with a logistic baseline. |
-| M08.5 | Save/reload a trained model and document compute and limitations. |
+| M08.1 | Explained activation, probability/loss update and batch/parameter calculations |
+| M08.2 | Constructed TensorFlow model and training-only preprocessing in the development scaffold |
+| M08.3 | Selected validation epoch and restoration of its actual saved weights |
+| M08.4 | Complete-reference neural/logistic confusion comparison with a justified tradeoff |
+| M08.5 | Saved/reloaded probabilities, bounded compute record and limitations |
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Keep your changed code, one hand-checked numerical claim, expected versus observed output, one diagnosed failure and a short decision memo. Record source/environment/command evidence when using real data. Interpretive reading alone does not replace an implementation outcome.
 
-## Required independent construction
+## Get feedback, then revisit
 
-In a separate development cell construct the 11-input/16-hidden/1-output TensorFlow model. Print and explain every shape and parameter count; make one declared width change before final evaluation.
+Open [practice solutions](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use [recorded-study feedback](feedback.md) after the complete reference run.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+If using GenAI, keep a short disclosure of the help used and what you verified. Be able to explain and change the code independently; an equivalent no-assistant route uses the same hints and feedback. Never upload student records or credentials.

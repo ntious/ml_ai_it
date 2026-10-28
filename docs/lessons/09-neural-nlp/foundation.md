@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 A token ID is an index, not an amount. In this hand example 0 is padding, 1 and 2 index vectors [1,0] and [0,2]. The masked mean of [1,2,0] is [.5,1], not [1/3,2/3]. In the real model, training learns vectors; the hand table only explains the operation.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

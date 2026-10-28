@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 A token model chooses continuations. Greedy decoding chooses a highest-scoring next token at each step; it does not guarantee a globally best answer. Valid JSON and correct classification are separate events. On 100 records, one changed outcome moves the observed rate by one percentage point; uncertainty still depends on the sample and its design.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

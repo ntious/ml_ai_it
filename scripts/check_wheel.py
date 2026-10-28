@@ -26,6 +26,8 @@ from practical_ml_ai.continuation_data import RUNS_ROOT, runtime_directory
 from practical_ml_ai.classical import classification_bundle
 from practical_ml_ai.deployment import checked_predict
 from practical_ml_ai.agent_study import requests_frame
+from practical_ml_ai.practice import check as practice_check
+assert practice_check('m08_checkpoint', lambda train, validation: min(range(len(validation)), key=validation.__getitem__) + 1)['state'] == 'passed'
 assert Path(practical_ml_ai.__file__).is_relative_to(target)
 controls = requests_frame()
 assert (controls.split == "test").sum() == 26

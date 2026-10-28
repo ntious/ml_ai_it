@@ -23,3 +23,7 @@ If packages are missing, install the documented extra with the same Python execu
 The model ranks three permitted plans. The policy and exact schema are enforced by code; the model does not grant itself permissions. A request may still be routed to the wrong legal operation. This bounded router has no general planning or memory implementation.
 
 Work through the [numerical construction](guided.md) before using the complete runner. Explain every new symbol using the [glossary](../../glossary.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.

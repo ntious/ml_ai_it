@@ -1,39 +1,50 @@
-# Module 11 practice and reflection
+# Module 11: implement, explain and transfer
 
-This independently authored companion activity is usable with or without an instructor. It is not an original Canvas task or an official grading policy. Allow roughly 45–75 minutes after the walkthrough.
+Read [concepts](concepts.md), then attempt [the starter notebook](https://ntious.github.io/ml_ai_it/downloads/module11/practice.ipynb "site-download:module11/practice.ipynb"). In a source checkout open `notebooks/practice/module11-practice.ipynb`. Use the module’s existing environment. Three unfinished functions report **not_attempted**, not a pass.
 
-## Core task P11
+## Construct `trainable_count`
 
-Identify trainable parameters and masked token positions. Verify a nonzero adapter update, exact source/revision, disjoint IDs, held-out losses, and saved-adapter replay. Explain why a lower token loss does not prove safe, factual, or accurate task output.
+Input [size, trainable] pairs; return number of trainable scalar values. Predict the result on `[[[100, False], [8, True], [2, True]]]`, implement it and call `m11_trainable_count` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-Save the source/citation, environment versions, split/protocol manifest, commands, output tables, and your interpretation. Verify at least one numerical claim by hand from the actual evidence. Explain one failure/limitation and one next investigation. Screenshots are not required. If you use only the worked report, identify your evidence as interpretation rather than claiming that you executed training.
+<details>
+<summary>Hint for trainable_count</summary>
 
-## Discussion or solo equivalent
+Count scalars in trainable tensors, not the number of tensors.
 
-A colleague argues that successful execution makes the method ready for use. Respond with a concrete missing piece of evidence from this module. In class, compare reasoning with a peer; independently, write and answer the strongest counterargument. Distinguish a design judgment from a fact measured in the data.
+</details>
 
-## Work with GenAI
+## Construct `completion_labels`
 
-Optional prompt: “Critique my reasoning against these tables and the declared protocol. Identify an unsupported generalization, availability error, metric confusion, or missing limitation.” Verify suggestions against code and actual values; record what you accepted/rejected. Without an assistant, apply that same checklist using the public feedback. Follow your instructor's disclosure policy and do not upload secrets/personal records.
+Return ids with prompt and padding positions replaced by -100. Predict the result on `[[5, 6, 7, 0], 2, [1, 1, 1, 0]]`, implement it and call `m11_completion_labels` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Optional extension
+<details>
+<summary>Hint for completion_labels</summary>
 
-Use a predeclared validation plan for another rank, step budget, or target projection. More complete supervised training and a credible prospective evaluation require additional real data, compute, and review; they are optional depth.
+Mask both prompt and padding, while retaining completion tokens.
 
-## Self-check and adaptable criteria
+</details>
 
-| Outcome | Evidence to check |
-| --- | --- |
-| M11.1 | Distinguish prompting, inference, supervised fine-tuning, and LoRA. |
-| M11.2 | Prepare completion labels with prompt-token loss masking. |
-| M11.3 | Update a small adapter on training-only real annotations. |
-| M11.4 | Compare predeclared base/adapted held-out completion losses without promising improvement. |
-| M11.5 | Save/reload adapter arrays with the exact model revision and disclose limits. |
+## Construct `changed_tensors`
 
-Use correct denominators/units, preserve evaluation boundaries, explain changes, and state limitations. Adopting instructors set weights and submission rules. Public [feedback](feedback.md) supports independent study.
+Input equally sized lists of scalar lists. Return indices of tensors with any changed value. Predict the result on `[[[1, 2], [3]], [[1, 2], [4]]]`, implement it and call `m11_changed_tensors` through the notebook check. Then add a changed case and explain which assumption it tests.
 
-## Required independent construction
+<details>
+<summary>Hint for changed_tensors</summary>
 
-Inspect one packed training example and identify prompt/completion masks. Explain a saved adapter shape. Compare base/adapted held-out generation as well as loss; do not select training settings from those final comparisons.
+Demonstrate an actual parameter change; a new loss string is insufficient.
 
-Use the [guided construction](guided.md) for a worked example, then reconstruct its central step without copying it. Retain changed code, expected/observed evidence and an explanation. This clarifies companion practice; Canvas remains the authority for assessed submissions.
+</details>
+
+## Transfer to an IT decision
+
+Explain a run where adapter weights change but held-out validity does not. Propose a development-only investigation. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+
+## Evidence and feedback
+
+- **M11.1:** Distinguish prompting, inference, supervised fine-tuning, and LoRA.
+- **M11.2:** Prepare completion labels with prompt-token loss masking.
+- **M11.3:** Update a small adapter on training-only real annotations.
+- **M11.4:** Compare predeclared base/adapted held-out completion losses without promising improvement.
+- **M11.5:** Save/reload adapter arrays with the exact model revision and disclose limits.
+
+Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.

@@ -134,6 +134,7 @@ fs.mkdirSync(path.join(site, 'assets'), { recursive: true });
 for (const name of ['site.css', 'site.js', 'favicon.svg']) {
   fs.copyFileSync(path.join(root, 'docs/assets', name), path.join(site, 'assets', name));
 }
+fs.cpSync(path.join(root, 'docs/assets/teaching'), path.join(site, 'assets/teaching'), { recursive: true });
 fs.writeFileSync(path.join(site, 'search-index.json'), JSON.stringify(searchEntries));
 fs.writeFileSync(path.join(site, 'site-build.json'), JSON.stringify({
   repository: config.repository, source_ref: sourceRef,

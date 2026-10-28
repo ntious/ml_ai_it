@@ -151,7 +151,18 @@ def run_fairness(output):
         for value in sorted(test[attribute].unique()):
             mask = test[attribute].eq(value).to_numpy()
             row = binary_metrics(target(test).to_numpy()[mask], predicted[mask])
-            metrics.append({"attribute": attribute, "recorded_group": value, **row})
+            from practical_ml_ai.learning import wilson_interval
+            intervals = {}
+            for name, numerator, denominator in [
+                ("recall", row["tp"], row["tp"] + row["fn"]),
+                ("fpr", row["fp"], row["fp"] + row["tn"]),
+                ("selection_rate", row["tp"] + row["fp"], int(mask.sum())),
+            ]:
+                low, high = wilson_interval(int(numerator), int(denominator)) if denominator else (None, None)
+                intervals.update({name + "_denominator": denominator,
+                                  name + "_illustrative_low": low, name + "_illustrative_high": high,
+                                  name + "_small_denominator": denominator < 30})
+            metrics.append({"attribute": attribute, "recorded_group": value, **row, **intervals})
     table = pd.DataFrame(metrics)
     summary = {"module": 13, "dataset": "UCI Adult historic census extract", "train_rows": len(train),
                "validation_rows": len(validation), "test_rows": len(test), "selected_threshold": threshold,
@@ -164,4 +175,4 @@ def run_fairness(output):
                           ["Historical income is not a measure of merit, need, or a justified allocation outcome. Do not deploy this model for eligibility or targeting.",
                            "The source records limited sex/race categories. They do not capture identity, intersectional experience, or all affected groups. Differences are descriptive, not causal findings.",
                            "Excluding protected columns does not remove proxy effects or label bias. A metric does not establish fairness or legal compliance.",
-                           "Rates include group counts and confusion denominators; undefined rates remain unavailable. Small groups and uncertainty require investigation before comparison."])
+                           "Interval columns are 95% Wilson illustrations conditional on independent binomial sampling, which this historical extract does not establish. They are not population confidence claims. Undefined rates and intervals remain unavailable; small-denominator flags use each rate denominator below 30. Interval overlap is not a test of group differences."])

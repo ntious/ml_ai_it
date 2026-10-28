@@ -16,6 +16,10 @@ Start with a clean source notebook when working through the steps. Use the execu
 
 On GitHub, the source notebooks are in notebooks/lessons/. The built site supplies the individual download links above. Keep a notebook inside the complete source tree when running locally.
 
+## Practice with less support
+
+Modules [5](lessons/05-regression/practice.md), [6](lessons/06-classification/practice.md) and [8](lessons/08-neural-networks/practice.md) provide separate starter notebooks and worked solutions. Start with a learner function, use its visible feedback, then inspect solutions after attempting the task. Sources are also under `notebooks/practice/` in the complete archive. Executed starters retain unfinished feedback; executed solutions contain the actual development sandbox outputs. Those are distinct evidence claims.
+
 ## Reviewed external data caches
 
 Initial data downloads require internet. These separately attributed caches preserve the reviewed original archive/member bytes and provenance. Follow the module's cache instructions rather than scattering extracted files into its source.

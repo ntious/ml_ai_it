@@ -34,3 +34,7 @@ A scatter point is not a causal experiment. If request count and latency rise to
 Identify the plotted unit, count, scale, grouping, and missing-value policy. Locate the relevant values in the companion table. Then describe the same relationship in words, including uncertainty. A short alt label identifies a figure; the longer description and table carry the analytical evidence. Practice uses these routes to support the same interpretation goal.
 
 Return to [Module 4](index.md).
+
+## Continue the learning route
+
+Continue with [concepts and a small trace](concepts.md) before the full workflow.
