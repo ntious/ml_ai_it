@@ -5,6 +5,8 @@ conditions?” Stability asks “How sensitive is the result to a justified chan
 The [capstone exemplar](../../projects/phishing-triage/README.md) keeps two sources
 of variation separate.
 
+A smaller version of both experiments runs in the core route as the [Module 6 stability exercise](../lessons/06-classification/practice.md#core-stability-exercise-two-kinds-of-variation).
+
 ## Experiment A: training randomness, fixed observations
 
 Keep the outer split, inner folds, selected configuration, feature processing

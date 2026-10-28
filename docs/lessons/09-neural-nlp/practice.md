@@ -35,13 +35,17 @@ Use actual positives, not total messages or predicted positives.
 
 </details>
 
+## Work with the complete study's results
+
+Open `comparison.csv` from the complete study. Recompute recall and precision for the neural model and the lexical baseline from their TP, FN and FP counts. Which finds more spam, and what does it cost in false alarms? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 With `vocab = vocabulary(['FREE offer', 'offer now'])`, predict `encode('Offer FREE prize now', vocab, 3)`. Which word is lost, which becomes unknown, and what would a length of 2 also lose? The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
 
 ## Transfer to an IT decision
 
-Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Add a message with unseen words and a suspicious suffix beyond the length limit. Explain what the model can and cannot inspect. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

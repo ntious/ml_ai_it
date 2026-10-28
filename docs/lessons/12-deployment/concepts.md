@@ -22,6 +22,31 @@ Predict `valid_request({'x': 2}, ['x'])`, `valid_request({'x': True}, ['x'])` an
 
 The complete module runs `examples/model-service/scripts/run.py`. `service_contract.json` records the expected features and numeric bounds that `valid_request` enforces in miniature. `batch_monitoring.csv` reports each batch's largest standardized mean shift, using the training standard deviation as a fixed scale, as `shift_score` does. It also reports the mean prediction time, not a percentile. Apply your `nearest_rank` to the per-request `prediction_seconds` in `prediction_log.csv` to compare the two summaries. Both treat a feature with zero training variance the same way: your function returns `None`, and the complete script leaves that feature out of the standardized shift and lists it in `standardized_shift_unavailable` with its raw mean difference. Reporting 0 would falsely imply no change. No wine feature has zero variance, so that column is empty in the recorded run. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. A request sends `"alcohol": true`. Should the service treat it as 1.0?</summary>
+
+No. A boolean is not a measurement in this contract; reject the request rather than silently coercing it.
+
+</details>
+
+<details>
+<summary>2. An input-shift alert fires before any outcome labels arrive. Should the model be retrained automatically?</summary>
+
+No. Input monitoring cannot show whether predictions are still correct. Assign an owner to investigate and wait for delayed labels before judging accuracy.
+
+</details>
+
+<details>
+<summary>3. One request took 5 ms. What does that tell you about latency?</summary>
+
+Very little. State the percentile definition, the number of requests and the environment before making a latency claim.
+
+</details>
+
 ## Optional reading
 
 [Google: Rules of Machine Learning](https://developers.google.com/machine-learning/guides/rules-of-ml), the rules on monitoring and on training–serving skew, explains why a deployed model needs checked inputs and an owner for alerts. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

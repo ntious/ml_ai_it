@@ -53,6 +53,31 @@ Continue to the complete study for the logistic baseline, separately validation-
 
 For a hypothetical IT alert queue, state the observation unit and when inputs become available. Ask whether a high-recall setting creates an investigation workload the team can handle. Chemistry labels are not actual alert labels; genuine IT performance needs appropriate records and evaluation.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. How many parameters does an 11 → 16 → 1 network have, and does batch size change the count?</summary>
+
+11 × 16 + 16 = 192 in the hidden layer plus 16 + 1 = 17 in the output: 209 in total. Batch size does not change it; hidden width does.
+
+</details>
+
+<details>
+<summary>2. Training loss falls at epoch 4 but validation loss rises. Which epoch does the minimum-validation-loss rule keep?</summary>
+
+Epoch 3, the epoch with the lowest validation loss. Training loss does not choose the checkpoint.
+
+</details>
+
+<details>
+<summary>3. A saved and reloaded network gives identical probabilities. Does that show the model is useful?</summary>
+
+No. It shows serialization preserved the predictions. Usefulness needs the baseline comparison and final evaluation.
+
+</details>
+
 ## Optional open mathematical depth
 
 - [Dive into Deep Learning: multilayer perceptrons](https://d2l.ai/chapter_multilayer-perceptrons/mlp.html): layers, hidden activations and capacity.

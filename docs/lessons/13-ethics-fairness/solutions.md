@@ -30,14 +30,18 @@ def wilson(successes, observations):
     return list(wilson_interval(successes,observations))
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the group has TP 8 and FN 11: recall 8/19 = 0.42, with an illustrative Wilson interval of about 0.23–0.64 (flagged as a small denominator). The female group's interval is about 0.57–0.64 on 590 actual positives. The small group's interval is wide; overlap is not a test of equal treatment, and the intervals assume a sampling model the Adult extract does not establish.
+
 ## Reasoning task feedback
 
 A group with TP = 0, FN = 0, FP = 0 and TN = 5 has selection rate 0/5 = 0, but recall's denominator is 0, so `safe_rate(0, 0)` is `None`. A group with TP = 3, FN = 0 has recall 1.0. Nothing about the first group's misses was measured, so comparing the two recalls is impossible, not a finding of parity.
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. A defensible response reports counts and intervals with each rate: equal rates on 10 and 100 records carry very different uncertainty. It explains that neither a group ranking nor equitable outcomes follows without the decision context and the people affected. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Compare two groups with equal rates and unequal counts. Explain why this does not establish equitable outcomes or justify a group ranking. A defensible response reports counts and intervals with each rate: equal rates on 10 and 100 records carry very different uncertainty. It explains that neither a group ranking nor equitable outcomes follows without the decision context and the people affected.

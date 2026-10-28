@@ -57,6 +57,31 @@ In the real development sandbox, use the course's grouped training and validatio
 
 For the complete study, retain its fixed model/threshold rule and evaluate the frozen choice as instructed. Once you have seen a public final report, a rerun is a reproduction exercise; making another directory does not create new unseen data.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. At threshold 0.5, an actual negative scores exactly 0.5. Which outcome is it?</summary>
+
+A false positive: in this course a score equal to or above the threshold is predicted positive.
+
+</details>
+
+<details>
+<summary>2. With TP 19, FP 30 and FN 10, what are precision and recall?</summary>
+
+Precision is 19/49, about 0.39; recall is 19/29, about 0.66. They answer different questions and use different denominators.
+
+</details>
+
+<details>
+<summary>3. You add many easy negatives to the evaluation set. Which of accuracy and recall changes?</summary>
+
+Accuracy can rise because its denominator grows with correct negatives; recall is unchanged because no new positive was found.
+
+</details>
+
 ## Optional open mathematical depth
 
 - [scikit-learn classification metrics](https://scikit-learn.org/1.8/modules/model_evaluation.html#classification-metrics): compare the confusion-matrix, precision and recall definitions with the four-record example.

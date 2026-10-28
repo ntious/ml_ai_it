@@ -35,13 +35,17 @@ Join root, runs, the run name and summary.json; keep outputs separate from sourc
 
 </details>
 
+## Work with the complete study's results
+
+Run the Module 2 summary and open `category_summary.csv`. Recompute the network category's ticket count and total minutes by hand from `data/samples/service-files/tickets.csv`, then compute the category's mean handling time. Does your `status_counts`-style counting give the same ticket count? Compare with the [construction feedback](solutions.md#complete-study-results-feedback) afterwards.
+
 ## Reason beyond the visible checks
 
 Predict `observed_mean([0, None])` and `observed_mean([None])`. For each, write what a report should print, and explain why printing 0 for the second case would mislead a reader. The checks cannot mark this; compare your reasoning with the [construction feedback](solutions.md#reasoning-task-feedback).
 
 ## Transfer to an IT decision
 
-Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. Retain an input, predicted output, actual result and a brief explanation of a failure or limitation. Run the complete module study and verify one claim against its actual artifacts. If you use the published report, identify your evidence as interpretation.
+Summarize ticket status with an unknown status added. Explain which output changes and which source remains unchanged. Run the complete module study and verify one claim against its actual artifacts; keep the evidence the [study workflow](../../study-workflow.md#save-evidence-that-explains-your-work) lists.
 
 ## Evidence and feedback
 

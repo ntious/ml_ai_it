@@ -22,6 +22,31 @@ Predict `recall_denominator(8, 2, 11, 30)` before running: recall conditions on 
 
 The complete module runs `examples/income-fairness/scripts/run.py`. `group_audit.csv` lists, for each recorded group, the numerator and denominator behind recall, false-positive rate and selection rate. It also lists their illustrative Wilson intervals and a small-denominator flag. For example, female recall is 357 of 590 actual positives. Recompute one row's recall with `safe_rate` and its interval with `wilson`, and check that the flag follows the recall denominator, not the group size. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. A group has no actual positives and a selection rate of 0. What is its recall?</summary>
+
+Undefined (unavailable), because its denominator is zero. That is not evidence that the group is treated equally.
+
+</details>
+
+<details>
+<summary>2. Recall is 8/10 in one group and 80/100 in another. Is the evidence equally certain?</summary>
+
+No. The rates match, but the 95% Wilson intervals are about 0.49–0.94 and 0.71–0.87. Report counts and intervals with each rate.
+
+</details>
+
+<details>
+<summary>3. Does removing recorded sex and race from the inputs make the model fair?</summary>
+
+No. Other features can act as proxies, historical labels reflect past conditions, and fairness depends on the decision and the people affected.
+
+</details>
+
 ## Optional reading
 
 [Fairlearn user guide: Assessment](https://fairlearn.org/main/user_guide/assessment/index.html) explains disaggregated metrics by group and why a single fairness number cannot settle whether a system is appropriate. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

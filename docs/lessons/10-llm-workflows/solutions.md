@@ -34,14 +34,18 @@ def end_to_end_accuracy(actual, parsed):
     return sum(a==p for a,p in zip(actual,parsed))/len(actual) if actual else None
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), 99 of 100 outputs are schema-valid and 39 are correct: validity 0.99 and end-to-end accuracy 0.39. Dropping the invalid output gives 39/99, about 0.394; here the difference is small, but the rule matters whenever many outputs fail. High validity with low accuracy shows that format compliance and correctness are separate.
+
 ## Reasoning task feedback
 
 The parsed labels are `spam`, `None` and `ham`, so `valid_fraction` is 2/3. End-to-end accuracy is 1/3: only the first is correct, and `None` counts as wrong. Dropping the malformed output gives 1/2, which rewards the model for failing to answer.
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Evaluate three changed message outputs including one malformed response. Explain why structural validity alone cannot justify automation. A defensible response counts the malformed response in the denominator for both validity and accuracy. It explains that a structurally valid label can still be wrong, so automation also needs accuracy, error costs and a fallback for unparseable output. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Evaluate three changed message outputs including one malformed response. Explain why structural validity alone cannot justify automation. A defensible response counts the malformed response in the denominator for both validity and accuracy. It explains that a structurally valid label can still be wrong, so automation also needs accuracy, error costs and a fallback for unparseable output.

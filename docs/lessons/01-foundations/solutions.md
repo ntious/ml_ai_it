@@ -29,14 +29,18 @@ def error_counts(actual, predicted):
     return [sum((not a) and p for a,p in zip(actual,predicted)), sum(a and not p for a,p in zip(actual,predicted))]
 ```
 
+## Complete-study results feedback
+
+80 gives `Within the chosen threshold` (80 > 80 is false); 81 and 100 give `Review storage`; 100.5 is rejected with "storage_percent must be a finite number from 0 through 100". The rule decides only valid inputs; the input check runs first and stops impossible percentages. These values come from running the script during the October 28, 2026 review.
+
 ## Reasoning task feedback
 
 For example, `[False, False, False]` gives `[0, 1]` (one miss) and `[True, True, False]` gives `[1, 0]` (one false alert); both are 2/3 accurate. The preferred list depends on which error costs more. A missed storage problem can cause an outage, while a false alert costs a review. Accuracy alone cannot express that choice.
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. A defensible response names the decision time (ticket arrival), the affected stakeholder, the evidence source and the human fallback. It also names a field that only exists after escalation, such as the resolver group. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Frame an escalation aid with a human fallback. Explain one field unavailable at ticket arrival. A defensible response names the decision time (ticket arrival), the affected stakeholder, the evidence source and the human fallback. It also names a field that only exists after escalation, such as the resolver group.

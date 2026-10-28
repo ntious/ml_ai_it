@@ -28,8 +28,14 @@ const basePath = process.env.SITE_BASE_PATH || config.base_path;
 if (!/^\/(?:[a-zA-Z0-9_-]+\/)*$/.test(basePath)) throw new Error('Use a slash-delimited site base path.');
 const searchEntries = [];
 const lessonURLForFirst = () => modules[0].lesson.replace(/^docs\//, '').replace(/\.md$/, '.html');
+// Review records and maintainer guides stay out of learner search results.
+const MAINTAINER_ONLY = ['maintainers.html', 'review-guide.html', 'release-checklist.html', 'publishing.html', 'maintenance/reviews/',
+  'maintenance/editorial-review.html', 'maintenance/publication-boundaries.html', 'maintenance/repository-hygiene.html',
+  'maintenance/development.html', 'maintenance/architecture.html'];
+const maintainerOnly = output => MAINTAINER_ONLY.some(prefix => output === prefix || (prefix.endsWith('/') && output.startsWith(prefix)));
 const pages = walk(path.join(root, 'docs')).filter(p => p.endsWith('.md')).map(source => ({
-  source, output: path.relative(path.join(root, 'docs'), source).replace(/\.md$/, '.html')
+  // Output paths are URLs, so use forward slashes on every platform.
+  source, output: slash(path.relative(path.join(root, 'docs'), source)).replace(/\.md$/, '.html')
 }));
 pages.push({ source: path.join(root, 'QUICKSTART.md'), output: 'setup/quickstart.html' });
 pages.push({ source: path.join(root, 'ACCESSIBILITY.md'), output: 'accessibility/policy.html' });
@@ -96,14 +102,15 @@ for (const page of pages) {
   body = body.replace('<!-- LEARNING_STAGES -->', learningStages(modules, relative));
   body = body.replace('<!-- NOTEBOOK_DOWNLOADS -->', notebookDownloads(modules, relative));
   body = body.replace('<!-- HOME_ACTIONS -->', '<div class="hero-actions"><a class="button button-primary" href="' + relative(lessonURLForFirst()) + '">Start with Module 1</a><a class="button button-secondary" href="' + relative('modules.html') + '">Explore all modules</a><a class="text-action" href="' + config.repository + '/tree/' + sourceRef + '">View on GitHub <span aria-hidden="true">↗</span></a></div>');
+  // Learner tasks first; maintainer material is reached from the footer.
   const navigation = [
-    ['projects/phishing-triage/index.html', 'Complete project'], ['advanced/index.html', 'Advanced'], ['modules.html', 'Modules'], ['examples.html', 'Examples'], ['downloads.html', 'Downloads'],
-    ['instructor/index.html', 'Teach'], ['setup/index.html', 'Get started'], ['search.html', 'Search']
+    ['setup/index.html', 'Get started'], ['modules.html', 'Modules'], ['examples.html', 'Examples'], ['projects/phishing-triage/index.html', 'Complete project'],
+    ['advanced/index.html', 'Advanced'], ['downloads.html', 'Downloads'], ['search.html', 'Search'], ['instructor/index.html', 'Teach']
   ].map(([url, label]) => '<li><a href="' + relative(url) + '"' + (url === page.output ? ' aria-current="page"' : '') + '>' + label + '</a></li>').join('');
   const sourcePath = slash(path.relative(root, page.source));
   const sourceURL = config.repository + '/blob/' + sourceRef + '/' + sourcePath;
   const plainText = body.replace(/<pre[\s\S]*?<\/pre>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\s+/g, ' ').trim();
-  if (page.output !== '404.html' && page.output !== 'search.html') {
+  if (page.output !== '404.html' && page.output !== 'search.html' && !maintainerOnly(page.output)) {
     searchEntries.push({ title, url: page.output, summary: plainText.slice(0, 220), text: plainText.slice(0, 16000) });
   }
   const html = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
@@ -125,7 +132,7 @@ for (const page of pages) {
     (module ? modulePager(modules, module, relative) : '') +
     '<div class="page-source"><a href="' + escape(sourceURL) + '">View source for this page on GitHub</a></div></main></div>' +
     '<footer class="site-footer"><div><a class="footer-title" href="' + relative('index.html') + '">Practical Machine Learning and AI Systems</a><p>Build understanding. Inspect evidence. Explain the limits.</p><p>' + escape(config.edition) + ' · Independent learning and adaptable teaching.</p></div>' +
-    '<nav aria-label="Resource links"><ul><li><a href="' + relative('accessibility/index.html') + '">Accessibility and support</a></li><li><a href="' + relative('data-sources.html') + '">Data and model sources</a></li><li><a href="' + relative('ai-collaboration.html') + '">Learning with GenAI</a></li><li><a href="' + config.repository + '">Repository home</a></li><li><a href="' + relative('maintenance/oer_license.html') + '">Reuse and licensing</a></li></ul></nav><p class="license-note">Original code: MIT. Original educational content: CC BY 4.0. External sources retain their own terms.</p></footer></body></html>\n';
+    '<nav aria-label="Resource links"><ul><li><a href="' + relative('accessibility/index.html') + '">Accessibility and support</a></li><li><a href="' + relative('data-sources.html') + '">Data and model sources</a></li><li><a href="' + relative('ai-collaboration.html') + '">Learning with GenAI</a></li><li><a href="' + config.repository + '">Repository home</a></li><li><a href="' + relative('maintenance/oer_license.html') + '">Reuse and licensing</a></li><li><a href="' + relative('maintainers.html') + '">Maintain and review</a></li></ul></nav><p class="license-note">Original code: MIT. Original educational content: CC BY 4.0. External sources retain their own terms.</p></footer></body></html>\n';
   const destination = path.join(site, page.output);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);

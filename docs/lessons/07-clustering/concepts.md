@@ -22,6 +22,31 @@ Predict `squared_distance([2, 4], [1, 2])` before running: (2−1)² + (4−2)²
 
 The complete module runs `examples/wine-clustering/scripts/run.py`. `k_comparison.csv` lists the validation silhouette for each K (0.206 for K = 2, 0.184 for K = 3, 0.162 for K = 4), and selecting K from it is the job of `select_k`. `cluster_profiles.csv` and `cluster_counts.csv` describe clusters by size and original-unit features, which is what `profile` produces. Wine quality is never used to fit or select clusters, so a cluster number is not a quality grade. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. For point `[2, 4]` and centres `[1, 2]` and `[4, 4]`, which centre does k-means choose?</summary>
+
+The second: squared distances are 5 and 4.
+
+</details>
+
+<details>
+<summary>2. Training inertia keeps falling as K increases. Should you choose the largest K?</summary>
+
+No. Inertia generally falls with more clusters even when the extra subdivisions are unhelpful. Choose among predeclared candidates using validation silhouette.
+
+</details>
+
+<details>
+<summary>3. Cluster 1 has high average acidity. Can you call it the "bad wine" cluster?</summary>
+
+No. Cluster IDs are arbitrary and quality was not used. Describe each cluster's size and original-unit profile before naming anything.
+
+</details>
+
 ## Optional reading
 
 [scikit-learn user guide: Clustering](https://scikit-learn.org/stable/modules/clustering.html), the K-means and silhouette sections, explains the inertia objective and why the number of clusters must be chosen by a separate criterion. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

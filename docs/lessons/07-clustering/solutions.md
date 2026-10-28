@@ -33,14 +33,18 @@ def profile(values, labels):
     return result
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), cluster 0 holds 90 test observations (37%) and cluster 1 holds 153 (63%); validation silhouette chose K = 2 (0.206, against 0.184 for K = 3 and 0.162 for K = 4). Size does not make a cluster normal: the IDs are arbitrary, quality was not used, and the grouping reflects chemistry geometry only.
+
 ## Reasoning task feedback
 
 Inertia sums squared distances to the nearest centre. Adding centres can only shorten those distances for an optimal solution, so inertia generally falls as K grows and "smallest inertia" picks the largest candidate. The validation silhouette can peak at a small K, as in the recorded study, where K = 2 scored 0.206. Choose K by a declared criterion, not by inertia.
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. A defensible response describes each cluster by size and original-unit profile, and notes that a cluster ID has no rank. Throttling a service needs an owner, a defined outcome and evidence about consequences; cluster membership alone is not that evidence. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Cluster service workload profiles on development data. State why a cluster alone cannot authorize throttling a service. A defensible response describes each cluster by size and original-unit profile, and notes that a cluster ID has no rank. Throttling a service needs an owner, a defined outcome and evidence about consequences; cluster membership alone is not that evidence.

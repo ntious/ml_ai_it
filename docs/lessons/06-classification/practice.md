@@ -52,6 +52,27 @@ You must decide on Tuesday. Identify labels unavailable for training that day, e
 
 After the complete reference study, trace one row through the exported shallow-tree rules. Explain each branch and why a predictive feature is not automatically causal.
 
+## Core stability exercise: two kinds of variation
+
+A single validation score depends on both the model's random choices and the records it was given. This exercise separates the two on development data only; the final test is never used.
+
+Run it in the core environment from the `ml_ai_it` folder (it takes a few seconds):
+
+```sh
+python -m practical_ml_ai.stability --output runs/module06-stability
+```
+
+- **Experiment A** keeps the Module 6 training/validation split and changes only a random forest's seed (11, 23, 37, 53, 71).
+- **Experiment B** keeps the seed at 17 and redraws the training/validation split five times from the same development records, grouping identical chemistry profiles as the module does.
+
+Before running, predict which experiment will spread more. Then open `summary.txt` and `variation.csv` and answer:
+
+1. Which experiment has the larger standard deviation of balanced accuracy, and by roughly how much?
+2. How many actual positives does each validation set contain in experiment B? Why does that matter for recall?
+3. Does the fixed Module 6 validation split look typical among the resplits? What does that imply about trusting one split?
+
+A random forest is used because its result depends on the seed; logistic regression with this solver does not, so its seed spread would be zero by construction. The [capstone stability investigation](../../advanced/stability.md) runs the fuller version of both experiments.
+
 ## Evidence for the unchanged outcomes
 
 | Outcome | Evidence to retain |

@@ -31,14 +31,18 @@ def nearest_rank(values, percentile):
     return sorted(values)[math.ceil(percentile*len(values))-1]
 ```
 
+## Complete-study results feedback
+
+In the verified CI run 40697234797 (October 28, 2026), the four batches had 95th percentiles of 1.37, 1.10, 1.09 and 1.12 ms against means of 1.20, 1.06, 1.06 and 1.06 ms. With about 61 requests per batch, the 95th percentile is the 58th or 59th value, so it reflects the slower tail that a mean smooths away. Local CPU timings are not production latency.
+
 ## Reasoning task feedback
 
 The 95th percentile is the value at position ceil(0.95 × 4) = 4, which is 0.250 s, while the mean is about 0.071 s and hides the slow request. Below 20 requests, ceil(0.95 × n) equals n, so the 95th percentile is the maximum. With 20 requests it is the second largest. Report the sample count with any percentile.
 
 ## Judge the explanation
 
-**Developing:** the visible case passes, but the explanation does not identify its denominator, boundary or contract. **Meets the task:** a changed case is predicted correctly, implemented and linked to a specific module artifact. **Extends:** the learner identifies where the operation is insufficient for the IT transfer case and proposes an investigation using development evidence.
+Compare your explanation with the [criteria in the study workflow](../../study-workflow.md#how-explanations-are-judged): passing the visible checks alone is *developing*; a changed case that you predict, implement and explain *meets* the task.
 
 ## Transfer feedback
 
-Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response rejects the invalid request with a reason, routes outages to the human fallback, and treats an input-shift alert as an investigation until delayed labels arrive. It names the owner and the rollback trigger. A changed narrative alone is insufficient: retain changed inputs/code and observed outputs. Follow the [research comparison guide](../../advanced/research-comparison.md) when making a claim from published work.
+Write a service response policy for an invalid request, a model outage and an alert without outcome labels. A defensible response rejects the invalid request with a reason, routes outages to the human fallback, and treats an input-shift alert as an investigation until delayed labels arrive. It names the owner and the rollback trigger.

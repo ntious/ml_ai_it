@@ -22,6 +22,31 @@ Predict `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'op
 
 The complete module runs `examples/service-files/scripts/summarize.py`. Its `category_summary.csv` counts tickets per category the way `status_counts` counts statuses, and `summary.txt` reports the average handling minutes (15.0 for the fixture). It writes into the `--output` folder you choose, which is the job `output_path` does in miniature. Compare one count in `category_summary.csv` with a count you make by hand from `tickets.csv`. Success on an authored fixture does not establish performance on a real service.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. What is the mean of the observed durations `[10, None, 20]`, and why is 10 wrong?</summary>
+
+15: the total of 30 divided by the 2 observed values. Dividing by 3 treats the missing value as a zero-duration observation.
+
+</details>
+
+<details>
+<summary>2. A script works from the repository folder but raises `FileNotFoundError` for `data/samples/...` when run from elsewhere. Why?</summary>
+
+A relative path starts from the current working folder, not from the script's location. Run from the repository folder or build the path from a located root.
+
+</details>
+
+<details>
+<summary>3. A function uses a variable defined in an earlier notebook cell instead of taking it as an argument. What can happen after you restart the kernel?</summary>
+
+It can fail with a `NameError` or silently use a different value. Pass inputs explicitly so the result does not depend on hidden state.
+
+</details>
+
 ## Optional reading
 
 [Python tutorial: Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) explains tracebacks, `try`/`except` and raising errors: the tools for diagnosing the path and type errors in outcome M02.4. Read the named section after the worked case; external mathematics is optional unless your instructor explicitly adopts it. For deeper experiment reasoning, use the [research comparison guide](../../advanced/research-comparison.md).

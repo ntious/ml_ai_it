@@ -59,6 +59,31 @@ Use the actual comparison table to write: task and origin → baseline → selec
 
 For an IT transfer, propose a daily support-ticket forecast. State the ticket counting rule, when a day is complete, one available lag, one tempting unavailable field and what the team does if the forecast is missing. This is a design exercise, not evidence from real ticket records.
 
+## Check yourself
+
+Answer each question before opening its explanation.
+
+<details>
+<summary>1. Actual 110 with prediction 100, and actual 125 with prediction 140: what are the mean residual and the MAE?</summary>
+
+Residuals are +10 and -15, so the mean residual is -2.5 and the MAE is 12.5. Signed errors cancel; their sizes do not.
+
+</details>
+
+<details>
+<summary>2. Can tomorrow's measured weather be an input to a forecast issued today?</summary>
+
+No: it is observed after the forecast is issued. A weather forecast published today could be considered under a separately documented contract.
+
+</details>
+
+<details>
+<summary>3. Previous-day persistence beats both linear models on validation. What do you report?</summary>
+
+Select persistence, evaluate it once on the final test and report it. Switching to a linear model after seeing final results would turn the test into development data.
+
+</details>
+
 ## Optional open mathematical depth
 
 - [Dive into Deep Learning: linear regression](https://d2l.ai/chapter_linear-regression/linear-regression.html): read the model and squared-loss explanation; parameter-estimation derivations are optional.

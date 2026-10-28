@@ -31,6 +31,14 @@ The real Wine Quality sandbox uses grouped training/validation partitions, not f
 
 For the authored IT alert scenario, repeated host rows can share behavior and labels may arrive after investigation. A strong transfer response states the intended future population, grouping/time boundary and label delay before proposing a split. With only the supplied few rows, no credible operational model comparison is possible; identify the additional records needed instead of inventing an accuracy claim.
 
+## Core stability exercise feedback
+
+The recorded run (October 28, 2026) gave a balanced-accuracy standard deviation of 0.009 for experiment A (seed only; range 0.561–0.586) and 0.017 for experiment B (split only; range 0.624–0.664). Changing which records are used moved the result about twice as much as changing the seed.
+
+Experiment B's validation sets contain between 27 and 42 actual positives, so recall rests on a different denominator in each run, and one record changes it by 2–4 percentage points. Every resplit (lowest 0.624) scored higher than any seed on the fixed split (highest 0.586), which suggests the fixed validation set is a harder sample than most; a single split can be unrepresentative without anything being wrong.
+
+A good answer separates the two sources: seed spread describes training randomness, while split spread describes sensitivity to the particular records. Neither is an estimate of performance on future data, and neither justifies looking at the final test to pick a seed. The threshold here is fixed at 0.5, so recall is low; tuning it would be a separate, validation-only decision.
+
 ## Compare the quality of explanations
 
 **Developing:** “Recall is higher, so deploy.” The false-alert workload and label meaning are unexplained.

@@ -4,7 +4,7 @@ Edition 0.7.0 contains all 14 modules, eight teaching pages per module, public s
 
 ## Revision-specific verification
 
-At the October 28, 2026 review, `main` revision `fdd5a70` had failed Windows encoding checks and a framework timeout. PR #11 corrects these. Its run at `12e49bb` passed every job: three core jobs, the framework tests (57 minutes) and notebooks (48 minutes) as separate jobs, and the complete site, download and browser checks. Later commits on the branch need their own passing run. A proposed fix is not evidence that `main` is verified; check the exact workflow revision before adopting a release.
+At the October 28, 2026 review, `main` revision `fdd5a70` had failed Windows encoding checks and a framework timeout. PR #11 corrects these. Its run at `f23e804` (workflow run 40697234797) passed every job: three core jobs, the framework tests (71 minutes) and notebooks (48 minutes) as separate jobs, and the complete site, download and browser checks. Any later commit needs its own passing run. A proposed fix is not evidence that `main` is verified; check the exact workflow revision before adopting a release.
 
 ## Reference environments and evidence
 

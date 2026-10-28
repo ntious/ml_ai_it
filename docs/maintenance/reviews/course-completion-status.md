@@ -17,11 +17,11 @@ Each finding's disposition, evidence and remaining action is in section M of the
 
 | Check | Environment | Result |
 | --- | --- | --- |
-| Full CI run at `12e49bb` | GitHub Actions: Linux 3.12, Windows 3.12 and 3.13, Linux framework | All jobs pass, including the site build, 200 page checks, 349 HTTP routes, download and archive checks, the installed wheel and 10 browser tests |
-| Unit tests at the branch head | Windows 11, Python 3.13, UTF-8 mode off | 132 OK, 11 skipped (framework tests; not a pass) |
+| Full CI run 40697234797 at `f23e804` | GitHub Actions: Linux 3.12, Windows 3.12 and 3.13, Linux framework (2 vCPU, 7.9 GB RAM) | All jobs pass, including the site build, 200 page checks, 349 HTTP routes, 356 byte-matched source files, download and wheel checks and 10 browser tests. Framework tests took 71 of their 90 allowed minutes |
+| Unit tests at `f23e804` | Windows 11, Python 3.13, UTF-8 mode off | 135 OK, 11 skipped (framework tests; not a pass) |
 | Repository, practice (16 core notebooks), lesson notebooks, phishing case, capstone | Same, fresh learner venv with the `ml-ai-core` kernel | Pass |
 | Encoding regression | Same | Fails on unfixed `main`; passes on the branch |
-| Full CI at the branch head | GitHub Actions | See PR #11; a later commit is verified only by its own run |
+| Later commits | GitHub Actions | Verified only by their own run |
 
 ## Not verified
 
