@@ -1,6 +1,6 @@
 # Educational content licensing
 
-Original educational prose, activities, feedback, diagrams, and original synthetic fixtures are offered under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), except where marked otherwise. Credit ML_AI_IT contributors, link to the source/version and license, and indicate adaptations.
+Original educational prose, activities, feedback, diagrams, and original synthetic fixtures are offered under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), except where marked otherwise. Credit Isaac K. Nti, link to the source/version and license, and indicate adaptations.
 
 Original Python/JavaScript/CSS, scripts, tests, configuration, and notebook code cells use the [MIT License](LICENSE). Original explanatory notebook text uses CC BY 4.0. These are component-specific terms, not a choice of either license for every component.
 

@@ -18,6 +18,7 @@ jobs:
         with:
           script: |
             const allowed = [
+              'improvement/site-experience', 'improvement/public-readiness',
               'development/github-pages', 'development/module-03-foundation',
               'docs/independent-review-wording', 'docs/learner-readme-and-hygiene',
               'feature/capstone-exemplar', 'improvement/mixed-background-learning',
