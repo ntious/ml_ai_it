@@ -60,7 +60,7 @@ jobs:
       - name: Verify the downloaded source/run manifest
         run: node --input-type=module -e "import fs from 'node:fs'; import { validateManifest } from './scripts/pages_release.mjs'; validateManifest(JSON.parse(fs.readFileSync('site/site-build.json', 'utf8')), process.env.REVIEWED_SHA, process.env.RELEASE_RUN_ID, 'https://github.com/' + process.env.GITHUB_REPOSITORY);"
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Package the reviewed static artifact for Pages
         uses: actions/upload-pages-artifact@v4
         with:
