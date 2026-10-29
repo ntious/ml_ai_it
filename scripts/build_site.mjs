@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
-import { moduleDirectory, learningStages, notebookDownloads, courseOutline, moduleTabs, modulePager } from './site_components.mjs';
+import { moduleDirectory, learningStages, notebookDownloads, courseOutline, moduleTabs, modulePager, heroFigure } from './site_components.mjs';
 
 const require = createRequire(import.meta.url);
 const { marked } = await import(pathToFileURL(require.resolve('marked')).href);
@@ -101,6 +101,7 @@ for (const page of pages) {
   body = body.replace(/<!-- MODULE_DIRECTORY_START -->[\s\S]*?<!-- MODULE_DIRECTORY_END -->/g, moduleDirectory(modules, relative));
   body = body.replace('<!-- LEARNING_STAGES -->', learningStages(modules, relative));
   body = body.replace('<!-- NOTEBOOK_DOWNLOADS -->', notebookDownloads(modules, relative));
+  body = body.replace('<!-- HOME_FIGURE -->', heroFigure());
   body = body.replace('<!-- HOME_ACTIONS -->', '<div class="hero-actions"><a class="button button-primary" href="' + relative(lessonURLForFirst()) + '">Start with Module 1</a><a class="button button-secondary" href="' + relative('modules.html') + '">Explore all modules</a><a class="text-action" href="' + config.repository + '/tree/' + sourceRef + '">View on GitHub <span aria-hidden="true">↗</span></a></div>');
   // Learner tasks first; maintainer material is reached from the footer.
   const navigation = [
@@ -122,8 +123,10 @@ for (const page of pages) {
     '<script type="module" src="' + relative('assets/site.js') + '"></script></head>' +
     '<body class="' + (page.output === 'index.html' ? 'home-page' : 'reading-page') + '" data-search-index="' + relative('search-index.json') + '">' +
     '<a class="skip-link" href="#main">Skip to main content</a>' +
-    '<header class="site-header"><a class="brand" href="' + relative('index.html') + '"><span class="brand-mark" aria-hidden="true">ML</span><span>Practical ML <span class="brand-amp">&amp;</span> AI</span></a>' +
-    '<nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><a class="repo-link" href="' + config.repository + '/tree/' + sourceRef + '">GitHub repository <span aria-hidden="true">↗</span></a></header>' +
+    '<header class="site-header" data-site-header><a class="brand" href="' + relative('index.html') + '"><span class="brand-mark" aria-hidden="true">ML</span><span>Practical ML <span class="brand-amp">&amp;</span> AI</span></a>' +
+    // The menu button appears only with JavaScript on narrow screens; without it the full menu stays visible.
+    '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-icon" aria-hidden="true"></span>Menu</button>' +
+    '<div class="site-menu" id="site-menu"><nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><a class="repo-link" href="' + config.repository + '/tree/' + sourceRef + '">GitHub repository <span aria-hidden="true">↗</span></a></div></header>' +
     '<div class="site-layout' + (module ? ' lesson-layout' : '') + '">' +
     (module ? courseOutline(modules, module, relative) : '') +
     '<main id="main" tabindex="-1">' +

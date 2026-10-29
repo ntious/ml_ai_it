@@ -130,3 +130,70 @@ test('representative light and dark pages have no detected axe WCAG A/AA violati
     }
   }
 });
+
+test('narrow screens get a compact menu that opens, closes with Escape and keeps content first', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('index.html');
+  const menu = page.getByRole('button', { name: 'Menu' });
+  const nav = page.getByRole('navigation', { name: 'Main navigation' });
+  await expect(menu).toHaveAttribute('aria-expanded', 'false');
+  await expect(nav).toBeHidden();
+  expect(await page.locator('[data-site-header]').evaluate(element => element.getBoundingClientRect().height)).toBeLessThan(110);
+  await menu.click();
+  await expect(menu).toHaveAttribute('aria-expanded', 'true');
+  await expect(nav.getByRole('link', { name: 'Modules' })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(nav).toBeHidden();
+  await expect(menu).toBeFocused();
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await expect(menu).toBeHidden();
+  await expect(nav).toBeVisible();
+});
+
+test('search ranks relevant pages first and highlights matches', async ({ page }) => {
+  await page.goto('search.html?q=threshold');
+  const first = page.locator('#search-results li').first();
+  await expect(first.getByRole('link')).toContainText('Module 6');
+  await expect(first.locator('mark').first()).toHaveText(/threshold/i);
+  await expect(page.locator('#search-status')).toContainText('most relevant first');
+});
+
+test('lesson tabs stay on one row and progress marks persist in this browser', async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await page.goto('lessons/06-classification/concepts.html');
+  const tops = await page.locator('.lesson-tabs li').evaluateAll(items => new Set(items.map(item => item.offsetTop)).size);
+  expect(tops).toBe(1);
+  // The row is not scrolled away from the first tab, and the current tab is fully visible.
+  expect(await page.locator('.lesson-tabs ul').evaluate(list => {
+    const current = list.querySelector('[aria-current="page"]').getBoundingClientRect();
+    const row = list.getBoundingClientRect();
+    return [list.scrollLeft, current.left >= row.left && current.right <= row.right];
+  })).toEqual([0, true]);
+  await expect(page.locator('.page-progress')).toContainText('Page 3 of 8');
+  const mark = page.getByRole('button', { name: 'Mark this page complete' });
+  await mark.click();
+  await expect(page.getByRole('button', { name: /Completed/ })).toHaveAttribute('aria-pressed', 'true');
+  await page.reload();
+  await expect(page.getByRole('button', { name: /Completed/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.lesson-tabs a.is-done')).toHaveCount(1);
+  await expect(page.locator('[data-progress-module="lessons/06-classification/"] [data-progress-count]')).toHaveText('1 done');
+});
+
+test('self-checks invite an answer first, and reduced motion removes transitions', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('lessons/06-classification/concepts.html');
+  await expect(page.getByRole('textbox', { name: /Your answer to question \d/ })).toHaveCount(3);
+  expect(await page.locator('main details').first().evaluate(element => getComputedStyle(element).transitionDuration)).toBe('0s');
+  await page.goto('index.html');
+  await expect(page.getByRole('img', { name: 'How every result in the course is checked' })).toBeVisible();
+});
+
+test('on a phone, the current lesson tab is scrolled into view', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('lessons/06-classification/feedback.html');
+  expect(await page.locator('.lesson-tabs ul').evaluate(list => {
+    const current = list.querySelector('[aria-current="page"]').getBoundingClientRect();
+    const row = list.getBoundingClientRect();
+    return current.left >= row.left - 1 && current.right <= row.right + 1;
+  })).toBe(true);
+});

@@ -1,5 +1,7 @@
 # Learn machine learning. Build practical AI.
 
+<!-- HOME_FIGURE -->
+
 <p class="eyebrow">A practical learning resource · IT7071C companion</p>
 
 <p class="lead">Start with the fundamentals and work toward real implementations. Learn through clear explanations, shared Python code, guided notebooks, and evidence you can inspect.</p>
