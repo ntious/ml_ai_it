@@ -23,14 +23,16 @@ MODEL_REVISION = "12fd25f77366fa6b3b4b768ec3050bf629380bac"  # Verified real-mod
 
 @lru_cache(maxsize=1)
 def local_model():
+    if not MODEL_REVISION:
+        # Never fall back to whatever revision is newest upstream; results and safety depend on the reviewed one.
+        raise ValueError("Set MODEL_REVISION to a reviewed model revision before loading the model.")
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     os.environ.setdefault("USE_TF", "0")
     import torch
-    from huggingface_hub import HfApi
     from transformers import AutoModelForCausalLM, AutoTokenizer
     torch.set_num_threads(2)
     torch.manual_seed(42)
-    revision = MODEL_REVISION or HfApi().model_info(MODEL_ID, token=False).sha
+    revision = MODEL_REVISION
     cache = RUNS_ROOT / "models"
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, revision=revision, cache_dir=cache, trust_remote_code=False)
     model = AutoModelForCausalLM.from_pretrained(MODEL_ID, revision=revision, cache_dir=cache,

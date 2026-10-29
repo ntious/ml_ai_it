@@ -4,7 +4,7 @@ Read the overview and learning outcomes here, then follow the learning route. Re
 
 Build a training-only vocabulary and neural text classifier on human-labeled messages, and compare it with a TF-IDF/logistic baseline.
 
-This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Estimates need learner piloting; small CPU runs demonstrate mechanisms, not production readiness.
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Small CPU runs demonstrate mechanisms, not production readiness.
 
 ## Learning outcomes
 

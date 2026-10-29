@@ -4,7 +4,7 @@ Read the overview and learning outcomes here, then follow the learning route. Re
 
 Train a first ML model and ask whether it improves on a simple baseline. The real-data case forecasts tomorrow's bike rentals for a digitally operated sharing service. Its historical counts are not network traffic; an optional transfer question connects the workflow to IT demand.
 
-No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Allow 2–3 hours plus practice; this estimate needs piloting. Use the [foundation bridge](foundation.md), [Module 3](../03-data-processing/index.md), and [Module 4](../04-exploration/index.md) as needed.
+No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Allow 2–3 hours plus practice. Use the [foundation bridge](foundation.md), [Module 3](../03-data-processing/index.md), and [Module 4](../04-exploration/index.md) as needed.
 
 ## Learning outcomes
 
@@ -18,7 +18,7 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 
 Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
-The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract. Human learner piloting of this prototype is pending.
+The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
 ## Define the forecast
 

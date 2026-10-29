@@ -1,0 +1,8 @@
+# Keep GitHub Actions current. Python and npm pins stay fixed on purpose: recorded
+# course results depend on them, so they are upgraded deliberately and re-verified.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

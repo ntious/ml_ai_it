@@ -1,4 +1,4 @@
-# Recorded Phase B framework results
+# Recorded framework results
 
 Generated from actual `runs/verified/moduleNN/summary.json` files using `python scripts/update_framework_results.py`. Regenerate after changing the protocol; the site builder does not fabricate results or silently update source.
 
@@ -20,4 +20,4 @@ These historical benchmarks and authored controls have been inspected during dev
 - [Module 11 workflow](lessons/11-fine-tuning/index.md) and [feedback](lessons/11-fine-tuning/feedback.md).
 - [Module 14 workflow](lessons/14-agents/index.md) and [feedback](lessons/14-agents/feedback.md).
 
-The [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md) retains the earlier failure cases. Consult each report’s rate_intervals.csv where provided. Remaining repository-wide uncertainty work belongs to Phase C.
+The [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md) retains the earlier failure cases. Consult each report’s rate_intervals.csv where provided.

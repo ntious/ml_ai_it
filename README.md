@@ -2,7 +2,7 @@
 
 **[Course website on GitHub Pages](https://ntious.github.io/ml_ai_it/)** · [Start here](docs/start-here.md) · [Course outline](docs/modules.md)
 
-If repository or download links return 404, request the complete course archive from your instructor and follow the [offline access route](docs/setup/student-workspace.md#if-a-download-link-does-not-open). Keep its folder structure intact. Public access requires a successful site deployment and repository access.
+Read the lessons here on GitHub or on the [reading site](https://ntious.github.io/ml_ai_it/). If a download link does not open, use the [offline access route](docs/setup/student-workspace.md#if-a-download-link-does-not-open).
 
 Learn to frame a useful problem, work with data, build and evaluate models, and explain whether an AI system should be used. This open educational resource combines short lessons, runnable Python examples, guided notebooks, independent practice and worked feedback across 14 modules.
 
@@ -112,7 +112,7 @@ All modules include outcomes, a foundation bridge, guided construction, practice
 
 Early modules use clearly labeled original teaching fixtures. Regression and the later modeling modules use attributed public datasets; the phishing case uses real historical security attributes. The [source register](docs/data-sources.md) documents rights, reviewed hashes, transformations and model provenance. Historical benchmark results do not establish current operational performance.
 
-Lesson source is readable directly on GitHub. The [reading-site publication address](https://ntious.github.io/ml_ai_it/) provides verified reports, executed notebook copies and source/data downloads once the owner enables publication and the first deployment succeeds. CI builds the complete site separately from deployment. Until publication, use the site archive supplied for your review or class; see [reading the reports](docs/setup/student-workspace.md#reading-reports-from-github). You do not need to build the full site to study one module.
+Lesson source is readable directly on GitHub. The [reading site](https://ntious.github.io/ml_ai_it/) adds verified reports, executed notebook copies and source/data downloads; if a link there does not open, see [reading the reports](docs/setup/student-workspace.md#reading-reports-from-github). You do not need to build the full site to study one module.
 
 GenAI assistance is optional. Verify suggestions against code and evidence, protect private data, and follow the [AI collaboration guidance](docs/ai-collaboration.md) and your instructor's disclosure rules. Public feedback supports self-study; it is not a confidential answer key.
 
@@ -138,7 +138,7 @@ Generated site files, runtime results, environment folders, credentials, student
 
 Independent reviewers can use the [review guide](docs/review-guide.md). Start with [teach and adapt](docs/instructor/index.md), [assessment guidance](docs/instructor/assessment.md) and [pacing](docs/instructor/teaching-plan.md). The resource does not replace Canvas grading, deadlines, accommodations or official course policies. Pilot preparation and workload with your actual learners. Text/table and script routes support access; [accessibility status](docs/accessibility/index.md) records remaining human testing.
 
-For a nonsensitive reproducible software problem, [open an issue](https://github.com/ntious/ml_ai_it/issues) with the module, environment, command and error text. Report accessibility barriers to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu); see the [reporting guide](docs/accessibility/index.md). Use the institution's established channels for course assessment or accommodation decisions.
+Report security problems privately as described in [SECURITY.md](SECURITY.md). For a nonsensitive reproducible software problem, [open an issue](https://github.com/ntious/ml_ai_it/issues) with the module, environment, command and error text. Report accessibility barriers to [ntiik@ucmail.uc.edu](mailto:ntiik@ucmail.uc.edu); see the [reporting guide](docs/accessibility/index.md). Use the institution's established channels for course assessment or accommodation decisions.
 
 Maintainers should use [DEVELOPMENT.md](DEVELOPMENT.md) for the separate core/framework test profiles, notebook verification, site assembly, archive checks and browser checks. Read [CONTRIBUTING.md](CONTRIBUTING.md), the [architecture](REPOSITORY_STRUCTURE.md) and [release checklist](docs/release-checklist.md) before extending the course. Students do not need the maintainer toolchain for their first lesson.
 

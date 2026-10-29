@@ -58,11 +58,14 @@ def write_json(path, value):
 def fetch_source(name):
     """Download once. A changed cached file is an error, not a silent refresh."""
     spec = SOURCES[name]
+    if not spec.get("sha256"):
+        # Every source is verified; an unreviewed source is never downloaded or trusted.
+        raise ValueError(f"No reviewed SHA-256 is recorded for {name}; review the source before using it.")
     directory = RUNS_ROOT / "datasets" / name
     meta_path = directory / "provenance.json"
     if meta_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
-        if spec["sha256"] and meta["archive_sha256"] != spec["sha256"]:
+        if meta["archive_sha256"] != spec["sha256"]:
             raise ValueError("Cache differs from the reviewed archive; use the reviewed source.")
         if set(meta["files"]) != set(spec["members"]):
             raise ValueError("Cached member schema changed.")
@@ -80,7 +83,7 @@ def fetch_source(name):
     if len(raw) > 10_000_000:
         raise ValueError("Unexpected archive size.")
     checksum = sha_bytes(raw)
-    if spec["sha256"] and checksum != spec["sha256"]:
+    if checksum != spec["sha256"]:
         raise ValueError("Upstream archive changed; review before updating the recorded source.")
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         members = {member: archive.read(member) for member in spec["members"]}

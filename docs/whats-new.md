@@ -2,9 +2,9 @@
 
 Learner-facing notes on what changed. The [changelog](../CHANGELOG.md) has the full record, and [status](status.md) says which revision has been verified.
 
-## Review corrections and additions (October 2026, under review)
+## Review corrections and additions (October 2026)
 
-These changes are proposed and verified on review branches; they reach the published course when the owner merges them.
+These changes are part of the current edition.
 
 - **If a link does not open,** an [offline route](setup/student-workspace.md#if-a-download-link-does-not-open) shows where every download lives in the course source.
 - **Setup:** one clearly named notebook kernel for each environment, step-by-step notebook setup, and a WSL route for the framework modules on Windows.
