@@ -50,7 +50,7 @@ jobs:
         run: python scripts/check_practice.py --group core --kernel ml-ai-core
       - name: Execute the separate optional capstone exemplar
         run: python scripts/check_capstone.py --kernel ml-ai-core
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: verified-core-${{ matrix.os }}-py${{ matrix.python }}
           path: runs/verified/
@@ -95,7 +95,7 @@ jobs:
       - name: Check the neural teaching practice and solution separately
         if: matrix.part == 'notebooks'
         run: python scripts/check_practice.py --group frameworks --kernel ml-ai-frameworks
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: matrix.part == 'notebooks'
         with:
           name: verified-frameworks
@@ -150,20 +150,20 @@ jobs:
         run: python -m pip wheel . --no-deps --wheel-dir dist
       - name: Exercise the installed wheel outside the checkout
         run: python scripts/check_wheel.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: complete-reading-site
           path: site/
           include-hidden-files: true
       - name: Exercise site navigation and search
         run: npm run check:browser
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: site-browser-evidence
           path: browser-results/
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: reading-browser-review
           path: runs/browser-review/
