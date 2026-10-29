@@ -102,7 +102,7 @@ for (const page of pages) {
   body = body.replace('<!-- LEARNING_STAGES -->', learningStages(modules, relative));
   body = body.replace('<!-- NOTEBOOK_DOWNLOADS -->', notebookDownloads(modules, relative));
   body = body.replace('<!-- HOME_FIGURE -->', heroFigure());
-  body = body.replace('<!-- HOME_ACTIONS -->', '<div class="hero-actions"><a class="button button-primary" href="' + relative(lessonURLForFirst()) + '">Start with Module 1</a><a class="button button-secondary" href="' + relative('modules.html') + '">Explore all modules</a><a class="text-action" href="' + config.repository + '/tree/' + sourceRef + '">View on GitHub <span aria-hidden="true">↗</span></a></div>');
+  body = body.replace('<!-- HOME_ACTIONS -->', '<div class="hero-actions"><a class="button button-primary" href="' + relative(lessonURLForFirst()) + '">Start with Module 1</a><a class="button button-secondary" href="' + relative('modules.html') + '">Explore all modules</a><a class="text-action" href="' + config.repository + '/tree/main">View on GitHub <span aria-hidden="true">↗</span></a></div>');
   // Learner tasks first; maintainer material is reached from the footer.
   const navigation = [
     ['setup/index.html', 'Get started'], ['modules.html', 'Modules'], ['examples.html', 'Examples'], ['projects/phishing-triage/index.html', 'Complete project'],
@@ -126,7 +126,7 @@ for (const page of pages) {
     '<header class="site-header" data-site-header><a class="brand" href="' + relative('index.html') + '"><span class="brand-mark" aria-hidden="true">ML</span><span>Practical ML <span class="brand-amp">&amp;</span> AI</span></a>' +
     // The menu button appears only with JavaScript on narrow screens; without it the full menu stays visible.
     '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-icon" aria-hidden="true"></span>Menu</button>' +
-    '<div class="site-menu" id="site-menu"><nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><a class="repo-link" href="' + config.repository + '/tree/' + sourceRef + '">GitHub repository <span aria-hidden="true">↗</span></a></div></header>' +
+    '<div class="site-menu" id="site-menu"><nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><a class="repo-link" href="' + config.repository + '/tree/main">GitHub repository <span aria-hidden="true">↗</span></a></div></header>' +
     '<div class="site-layout' + (module ? ' lesson-layout' : '') + '">' +
     (module ? courseOutline(modules, module, relative) : '') +
     '<main id="main" tabindex="-1">' +
@@ -135,7 +135,7 @@ for (const page of pages) {
     (module ? modulePager(modules, module, relative) : '') +
     '<div class="page-source"><a href="' + escape(sourceURL) + '">View source for this page on GitHub</a></div></main></div>' +
     '<footer class="site-footer"><div><a class="footer-title" href="' + relative('index.html') + '">Practical Machine Learning and AI Systems</a><p>Build understanding. Inspect evidence. Explain the limits.</p><p>' + escape(config.edition) + ' · Independent learning and adaptable teaching.</p></div>' +
-    '<nav aria-label="Resource links"><ul><li><a href="' + relative('accessibility/index.html') + '">Accessibility and support</a></li><li><a href="' + relative('data-sources.html') + '">Data and model sources</a></li><li><a href="' + relative('ai-collaboration.html') + '">Learning with GenAI</a></li><li><a href="' + config.repository + '">Repository home</a></li><li><a href="' + relative('maintenance/oer_license.html') + '">Reuse and licensing</a></li><li><a href="' + relative('maintainers.html') + '">Maintain and review</a></li></ul></nav><p class="license-note">Original code: MIT. Original educational content: CC BY 4.0. External sources retain their own terms.</p></footer></body></html>\n';
+    '<nav aria-label="Resource links"><ul><li><a href="' + relative('accessibility/index.html') + '">Accessibility and support</a></li><li><a href="' + relative('data-sources.html') + '">Data and model sources</a></li><li><a href="' + relative('ai-collaboration.html') + '">Learning with GenAI</a></li><li><a href="' + config.repository + '">Repository home</a></li><li><a href="' + relative('maintenance/oer_license.html') + '">Reuse and licensing</a></li><li><a href="' + relative('maintainers.html') + '">Maintain and review</a></li></ul></nav><p class="license-note">Original code: MIT. Original educational content: CC BY 4.0. External sources retain their own terms. Built by <a href="https://github.com/ntious">I. K. N.</a></p></footer></body></html>\n';
   const destination = path.join(site, page.output);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);
