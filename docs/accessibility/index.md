@@ -8,6 +8,12 @@ The reading site uses semantic headings, landmarks, descriptive links, a keyboar
 
 Scripts and notebooks call the same shared functions. If a notebook interface presents a barrier, the script route preserves execution, data decisions, outputs and practice goals. Interpretation uses the same numerical evidence; plotting-authoring or implementation outcomes still require code and execution evidence.
 
+## Display preferences and repository counts
+
+Use the header’s **Theme** control to choose Light, Dark or System. The choice is stored in this browser; System follows your device setting. With JavaScript disabled, the site follows the device setting automatically.
+
+The **Course repository** link opens the main branch. Its star and fork counts come from GitHub’s public API, with a 30-minute cache in the current browser tab. This request contacts GitHub without credentials or a referrer; it does not send exercise answers or search terms. These are repository statistics, not visitor analytics. If GitHub is unavailable or rate-limits the request, the link remains usable without counts.
+
 ## Verification scope
 
 CI validates source/generated links, defined HTML properties, real notebook kernels, software behavior, app forms and HTTP health. Scripted Chromium checks cover the course overview, readiness, Python bridge, neural construction and phishing case, including skip-link focus, 320px page reflow and selected axe rules. The readiness page also has a dark-mode scan.

@@ -19,11 +19,11 @@ test('prototype practice hints work by keyboard and solutions stay a separate pa
   }
 });
 
-test('home connects learning paths, all modules, and the exact repository revision', async ({ page }) => {
+test('home connects learning paths, all modules, and the main repository', async ({ page }) => {
   await page.goto('');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Learn machine learning. Build practical AI.');
   await expect(page.locator('.stage-grid a')).toHaveCount(14);
-  await expect(page.getByRole('link', { name: 'GitHub repository' })).toHaveAttribute('href', /github\.com\/ntious\/ml_ai_it\/tree\/[0-9a-f]{40}$/);
+  await expect(page.getByRole('link', { name: /Course repository/ })).toHaveAttribute('href', /github\.com\/ntious\/ml_ai_it\/tree\/main$/);
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Skip to main content' })).toBeFocused();
   await page.keyboard.press('Enter');
@@ -196,4 +196,44 @@ test('on a phone, the current lesson tab is scrolled into view', async ({ page }
     const row = list.getBoundingClientRect();
     return current.left >= row.left - 1 && current.right <= row.right + 1;
   })).toBe(true);
+});
+
+test('theme overrides system, persists across pages, and returns to system', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('');
+  const theme = page.getByRole('combobox', { name: 'Color theme' });
+  await expect(theme).toHaveValue('system');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(17, 30, 37)');
+  await theme.selectOption('light');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(248, 250, 247)');
+  await page.goto(module3);
+  await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveValue('light');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('dark');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(17, 30, 37)');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('system');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(248, 250, 247)');
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.getByRole('button', { name: 'Menu' }).click();
+  await expect(page.getByRole('combobox', { name: 'Color theme' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('repository counts are cached and failed requests leave a usable link', async ({ page }) => {
+  let requests = 0;
+  await page.route('https://api.github.com/repos/ntious/ml_ai_it', route => {
+    requests++;
+    return route.fulfill({ json: { stargazers_count: 12, forks_count: 3 } });
+  });
+  await page.goto('');
+  await expect(page.locator('[data-repo-stats]')).toHaveText('★ 12 stars · 3 forks');
+  await page.goto(module3);
+  await expect(page.locator('[data-repo-stats]')).toHaveText('★ 12 stars · 3 forks');
+  expect(requests).toBe(1);
+  await page.evaluate(() => sessionStorage.clear());
+  await page.unroute('https://api.github.com/repos/ntious/ml_ai_it');
+  await page.route('https://api.github.com/repos/ntious/ml_ai_it', route => route.fulfill({ status: 403, body: '{}' }));
+  await page.reload();
+  await expect(page.locator('[data-repo-stats]')).toBeHidden();
+  await expect(page.locator('.repo-link')).toHaveAttribute('href', 'https://github.com/ntious/ml_ai_it/tree/main');
 });

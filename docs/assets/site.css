@@ -196,7 +196,7 @@ main details[open] > summary::before { content: "\2212"; }
 @keyframes reveal { from { opacity: 0; transform: translateY(-4px); } }
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #111e25; --paper: #192a33; --ink: #edf5ef; --muted: #c1d2cd; --accent: #91e4c2; --accent-ink: #102c23; --tint: #203b34; --border: #607c73; --code: #182f35; --link: #a8e9d4; --warm: #3c3627; }
+  :root:not([data-theme="light"]) { color-scheme: dark; --bg: #111e25; --paper: #192a33; --ink: #edf5ef; --muted: #c1d2cd; --accent: #91e4c2; --accent-ink: #102c23; --tint: #203b34; --border: #607c73; --code: #182f35; --link: #a8e9d4; --warm: #3c3627; }
 }
 @media (forced-colors: active) {
   .button, .brand-mark, .current-module { border: 2px solid ButtonText; }
@@ -211,3 +211,9 @@ main details[open] > summary::before { content: "\2212"; }
   main { max-width: none; }
   pre { white-space: pre-wrap; }
 }
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --bg: #111e25; --paper: #192a33; --ink: #edf5ef; --muted: #c1d2cd; --accent: #91e4c2; --accent-ink: #102c23; --tint: #203b34; --border: #607c73; --code: #182f35; --link: #a8e9d4; --warm: #3c3627; }
+.theme-control { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; }
+.theme-control select { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--border); border-radius: .4rem; padding: .4rem; }
+.repo-stats { display: block; font-size: .75rem; font-weight: 400; color: var(--muted); white-space: nowrap; }

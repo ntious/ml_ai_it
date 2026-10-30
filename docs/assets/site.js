@@ -220,3 +220,49 @@ if (searchForm) {
     fallback.hidden = false;
   });
 }
+
+// A native select supports keyboard and touch; System follows device changes via CSS.
+const themeSelect = document.querySelector('[data-theme-select]');
+if (themeSelect) {
+  themeSelect.value = document.documentElement.dataset.theme || 'system';
+  themeSelect.closest('label').hidden = false;
+  themeSelect.addEventListener('change', () => {
+    const theme = themeSelect.value;
+    if (theme === 'system') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = theme;
+    try {
+      if (theme === 'system') localStorage.removeItem('ml-ai-it-theme');
+      else localStorage.setItem('ml-ai-it-theme', theme);
+    } catch { /* The current page still changes when storage is blocked. */ }
+  });
+}
+
+// Public GitHub counts, not visitor analytics. Cache for 30 minutes per browser tab.
+const repoStats = document.querySelector('[data-repo-stats]');
+if (repoStats) {
+  const key = 'ml-ai-it-repository-counts-v1';
+  const valid = data => Number.isSafeInteger(data?.stars) && data.stars >= 0 &&
+    Number.isSafeInteger(data?.forks) && data.forks >= 0;
+  const show = data => {
+    repoStats.textContent = `★ ${data.stars.toLocaleString()} stars · ${data.forks.toLocaleString()} forks`;
+    repoStats.hidden = false;
+  };
+  (async () => {
+    try {
+      let cached;
+      try { cached = JSON.parse(sessionStorage.getItem(key)); } catch { /* Fetch without cache. */ }
+      if (valid(cached) && Number.isFinite(cached.at) && Date.now() - cached.at >= 0 && Date.now() - cached.at < 1800000) {
+        show(cached); return;
+      }
+      const response = await fetch('https://api.github.com/repos/ntious/ml_ai_it', {
+        credentials: 'omit', referrerPolicy: 'no-referrer', signal: AbortSignal.timeout(5000)
+      });
+      if (!response.ok) return;
+      const result = await response.json();
+      const data = { stars: result.stargazers_count, forks: result.forks_count, at: Date.now() };
+      if (!valid(data)) return;
+      show(data);
+      try { sessionStorage.setItem(key, JSON.stringify(data)); } catch { /* Counts do not require storage. */ }
+    } catch { /* Offline/rate-limited: retain the ordinary repository link. */ }
+  })();
+}

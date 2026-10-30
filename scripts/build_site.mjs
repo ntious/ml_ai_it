@@ -119,6 +119,7 @@ for (const page of pages) {
     '<meta name="description" content="' + escape(page.output === 'index.html' ? config.description : plainText.slice(0, 170)) + '">' +
     '<meta name="color-scheme" content="light dark"><title>' + escape(title) + ' | Practical ML &amp; AI</title>' +
     '<link rel="icon" href="' + relative('assets/favicon.svg') + '" type="image/svg+xml">' +
+    '<script src="' + relative('assets/theme.js') + '"></script>' +
     '<link rel="stylesheet" href="' + relative('assets/site.css') + '">' +
     '<script type="module" src="' + relative('assets/site.js') + '"></script></head>' +
     '<body class="' + (page.output === 'index.html' ? 'home-page' : 'reading-page') + '" data-search-index="' + relative('search-index.json') + '">' +
@@ -126,7 +127,7 @@ for (const page of pages) {
     '<header class="site-header" data-site-header><a class="brand" href="' + relative('index.html') + '"><span class="brand-mark" aria-hidden="true">ML</span><span>Practical ML <span class="brand-amp">&amp;</span> AI</span></a>' +
     // The menu button appears only with JavaScript on narrow screens; without it the full menu stays visible.
     '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-icon" aria-hidden="true"></span>Menu</button>' +
-    '<div class="site-menu" id="site-menu"><nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><a class="repo-link" href="' + config.repository + '/tree/main">GitHub repository <span aria-hidden="true">↗</span></a></div></header>' +
+    '<div class="site-menu" id="site-menu"><nav aria-label="Main navigation"><ul>' + navigation + '</ul></nav><label class="theme-control" hidden>Theme <select aria-label="Color theme" data-theme-select><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label><a class="repo-link" href="' + config.repository + '/tree/main">Course repository <span aria-hidden="true">↗</span><span class="repo-stats" data-repo-stats hidden></span></a></div></header>' +
     '<div class="site-layout' + (module ? ' lesson-layout' : '') + '">' +
     (module ? courseOutline(modules, module, relative) : '') +
     '<main id="main" tabindex="-1">' +
@@ -141,7 +142,7 @@ for (const page of pages) {
   fs.writeFileSync(destination, html);
 }
 fs.mkdirSync(path.join(site, 'assets'), { recursive: true });
-for (const name of ['site.css', 'site.js', 'favicon.svg']) {
+for (const name of ['site.css', 'site.js', 'theme.js', 'favicon.svg']) {
   fs.copyFileSync(path.join(root, 'docs/assets', name), path.join(site, 'assets', name));
 }
 fs.cpSync(path.join(root, 'docs/assets/teaching'), path.join(site, 'assets/teaching'), { recursive: true });
