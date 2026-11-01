@@ -119,11 +119,11 @@ jobs:
           python-version: '3.12'
       - name: Install site and data dependencies
         run: python -m pip install -e ".[visualization,regression,verification]" -c environments/constraints-tested.txt
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: verified-core-ubuntu-latest-py3.12
           path: runs/verified/
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: verified-frameworks
           path: runs/verified/
@@ -183,7 +183,7 @@ jobs:
       group: pages
       cancel-in-progress: false
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: complete-reading-site
           path: site/

@@ -51,7 +51,7 @@ jobs:
             validateRelease(run, artifacts, process.env.REVIEWED_SHA, context.repo.owner + '/' + context.repo.repo, context.payload.repository.default_branch);
             core.setOutput('run_id', String(runID));
       - name: Download the complete tested site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: complete-reading-site
           path: site
