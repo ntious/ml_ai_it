@@ -31,7 +31,7 @@ jobs:
       RELEASE_RUN_ID: ${{ inputs.run_id }}
       REVIEWED_SHA: ${{ inputs.reviewed_sha }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '22'
