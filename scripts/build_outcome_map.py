@@ -195,7 +195,9 @@ def main():
     stale = []
     for path, text in wanted.items():
         current = path.read_bytes().decode("utf-8") if path.exists() else None
-        if current != text:
+        # Git may check out Markdown with CRLF on Windows. Compare content,
+        # not checkout line endings; real wording changes must still fail.
+        if current is None or current.replace("\r\n", "\n") != text.replace("\r\n", "\n"):
             stale.append(path.relative_to(ROOT).as_posix())
             if not check:
                 path.write_bytes(text.encode("utf-8"))

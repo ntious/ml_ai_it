@@ -3,7 +3,9 @@ from pathlib import Path
 import copy
 import subprocess
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -53,6 +55,25 @@ class OutcomeMapTests(unittest.TestCase):
         result = subprocess.run([sys.executable, str(ROOT / "scripts/build_outcome_map.py"), "--check"],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_windows_checkout_line_endings_do_not_hide_content_changes(self):
+        data, modules = outcome_map.load()
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            paths = ["docs/outcome-map.md"]
+            for module in modules:
+                paths.extend([module["lesson"], str(Path(module["lesson"]).with_name("practice.md"))])
+            for name in paths:
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                source = (ROOT / name).read_text(encoding="utf-8")
+                target.write_bytes(source.replace("\n", "\r\n").encode("utf-8"))
+            with patch.object(outcome_map, "ROOT", root), patch.object(outcome_map, "load", return_value=(data, modules)), patch.object(outcome_map, "validate", return_value=[]), patch.object(sys, "argv", ["build_outcome_map.py", "--check"]):
+                outcome_map.main()
+                target = root / "docs/outcome-map.md"
+                target.write_bytes(target.read_bytes() + b"Unreviewed content\r\n")
+                with self.assertRaisesRegex(SystemExit, "Stale generated outcome text"):
+                    outcome_map.main()
 
 
 if __name__ == "__main__":
