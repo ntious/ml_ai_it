@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M07.4:** Describe clusters through counts and original-unit profiles.
 - **M07.5:** Explain why internal scores and observational data do not validate actions or rewards.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO1 (Learning paradigms), CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO2 (Applying ML/AI to IT operations)
+- **Data and tools:** Real public
+- **Evidence you produce:** Cluster-count choice made without labels, with an interpretation and its limits.
+- **Boundary:** CLO3 here concerns interpreting groupings; wine data is not network data.
+- **Responsible-AI check:** Does the data support the name given to a cluster, or does the name imply more than it shows?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

@@ -51,6 +51,10 @@ Extend the pattern beyond the prototype after the owner and independent reviewer
 
 Keep one applied question, a concrete hand example, a bounded code construction, a task with less support, meaningful diagnostic checks, separate public solutions, a development-data connection and outcome-specific evidence. Retain each module's independent entry and complete reference. Adopt useful teaching patterns rather than copying another course's text, assignments or prerequisite assumptions.
 
+## Observe outcome evidence
+
+When piloting a module, record whether learners produce the artifact named in its [outcome map](../outcome-map.md) entry, whether the data and tool label matched what they believed they demonstrated, and whether the optional bridge activities were needed. Record these as formative observations; they are not proof of outcome attainment.
+
 ## Observe reproducibility and setup friction
 
 Pilot the [module evidence activities](../evidence-practice.md) in the selected modules. Use the [worksheet](../../templates/evidence-review.md) to separate setup time, active work and waiting; record route, stalls, skipped pages and help. Apply the [evidence rubric](evidence-assessment.md) without adding unannounced graded requirements.

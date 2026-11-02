@@ -10,6 +10,10 @@ Python Foundation is preparation within the supported learning route, not a form
 
 For adoption, maintain a course-owned alignment register connecting the resource outcomes to approved assessment artifacts. The adopting instructor supplies current contact details, policies and deadlines; this resource does not set institutional rules.
 
+## Source and independence
+
+The institutional course and module outcomes are the fixed framework. The explanations, code, examples, feedback and practice here are original materials written to build toward them. The resource stands on its own, and adopters map it to their own outcomes. See the [outcome map](../outcome-map.md) for the module-by-outcome connections and the [adoption guide](adopt-outcomes.md) for mapping the modules to another course.
+
 ## Course-label summaries
 
 | Label | Existing repository summary |

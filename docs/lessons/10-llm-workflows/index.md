@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M10.4:** Compare task fit, latency, and limitations with simpler NLP.
 - **M10.5:** Write a source-grounded model-use note with privacy and cost constraints.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO5 (GenAI and LLM integration), CLO7 (Data representations), CLO8 (Communication)
+- **Supporting practice:** CLO4 (Frameworks and evaluation)
+- **Data and tools:** Real public, Local model
+- **Evidence you produce:** Local prompting experiment with output-contract failures counted and a literature critique.
+- **Boundary:** No live closed-provider API call is established.
+- **Responsible-AI check:** What happens when output is fluent but wrong or exposes sensitive text, and which human check catches it?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

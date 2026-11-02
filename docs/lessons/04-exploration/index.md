@@ -13,6 +13,20 @@ Explore a service-workload table, choose useful charts, and communicate what the
 
 You need basic functions, file paths, and dataframe selection/grouping. Use the [foundation bridge](foundation.md), [Module 2](../02-python-workflows/index.md), or [Module 3](../03-data-processing/index.md) as needed. You may enter here directly with the complete source archive and setup below.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO3 (Interpreting network data), CLO8 (Communication)
+- **Supporting practice:** none
+- **Data and tools:** Synthetic
+- **Evidence you produce:** Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo.
+- **Boundary:** Synthetic workload data; a flagged point means investigate, not incident.
+- **Responsible-AI check:** Could a chart or summary hide an unusual group or overstate certainty to a stakeholder?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

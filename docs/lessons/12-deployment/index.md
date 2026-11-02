@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M12.4:** Distinguish batch diagnostics from genuine time drift and production service guarantees.
 - **M12.5:** Propose ownership, escalation, monitoring, and rollback criteria.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
+- **Supporting practice:** none
+- **Data and tools:** Real public, Local model
+- **Evidence you produce:** Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.
+- **Boundary:** A local replay; production reliability is not measured and a diagnostic is not time drift.
+- **Responsible-AI check:** Who owns alerts, escalation and rollback, and do logs retain personal data?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

@@ -2,6 +2,13 @@
 
 Learner-facing notes on what changed. The [changelog](../CHANGELOG.md) has the full record, and [status](status.md) says which revision has been verified.
 
+## Outcome map and bridge activities (November 2026)
+
+- **[Course outcome map](outcome-map.md):** every module now states which course outcomes it supports directly or indirectly, what you produce as evidence, and a clear label for synthetic data, real public data, local models and offline fixtures.
+- **Bridge activities (optional):** [interpret network records](cases/network-record-interpretation.md), write a [monitoring decision record](advanced/monitoring-decision-record.md), and practice a [live API route](advanced/live-api-route.md) with an offline-testable pattern.
+- **A responsible-AI question** closes each module's outcome section.
+- **Instructors:** an [adoption guide](instructor/adopt-outcomes.md) shows how to map the modules to your own outcomes.
+
 ## Review corrections and additions (October 2026)
 
 These changes are part of the current edition.

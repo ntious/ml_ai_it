@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M06.4:** Justify group boundaries and a decision threshold before final evaluation.
 - **M06.5:** Communicate error trade-offs and limits of the chosen label.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO1 (Learning paradigms)
+- **Data and tools:** Real public
+- **Evidence you produce:** Classifier comparison chosen on validation data, with a confusion-matrix explanation.
+- **Boundary:** Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.
+- **Responsible-AI check:** What do a false positive and a false negative cost, and who bears each?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning sequence for this module
 
 Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.

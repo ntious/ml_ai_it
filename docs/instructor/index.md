@@ -29,7 +29,7 @@ All 14 modules have individual instructor pages. [Alignment conventions](../modu
 
 ## Adoption resources
 
-Use the [Canvas linking guide](canvas-linking.md), [adaptable assessment criteria](assessment.md), [teaching plan](teaching-plan.md), and [alignment status](alignment.md). The [AI collaboration guide](../ai-collaboration.md) supports verified assistance and an equivalent no-assistant route. Reusable authoring and review templates are included in the complete source download and built reading site.
+Use the [Canvas linking guide](canvas-linking.md), [adaptable assessment criteria](assessment.md), [teaching plan](teaching-plan.md), and [alignment status](alignment.md). Map the modules to your own outcomes with the [adoption guide](adopt-outcomes.md) and the [course outcome map](../outcome-map.md). The [AI collaboration guide](../ai-collaboration.md) supports verified assistance and an equivalent no-assistant route. Reusable authoring and review templates are included in the complete source download and built reading site.
 
 ## Preserve independence and rigor
 

@@ -22,6 +22,8 @@ Isaac K. Nti developed this supplementary learning resource for students in the 
 
 Repository outcome identifiers describe the activities and evidence offered here. Similar subject coverage does not establish that wording is original, and small edits to institutional wording do not establish permission. Keep the official-to-resource mapping in the adopting instructor’s private alignment register. Identify any permitted quotation or adaptation locally with its source and rights basis; attribution alone is not a permission grant.
 
+The outcome map in docs/outcome-map.md and curriculum/outcomes.json records which original modules support which working course-outcome summaries. It is original planning content, not a reproduction of institutional text, and adopters should substitute their own outcomes using the adoption guide.
+
 Author affiliation is biographical. These notices grant no institutional branding or trademark rights and imply no university sponsorship, approval or endorsement. They do not claim exclusive rights over general ideas, facts or standard subject names. Ownership questions depend on applicable university policy and any relevant agreements; this notice does not adjudicate them.
 
 ## Reuse and attribution

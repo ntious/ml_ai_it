@@ -14,6 +14,20 @@ Build a small service-file processing program before adding ML libraries. You wi
 
 Start with the [Python foundation bridge](foundation.md) if variables, loops, functions, or paths are unfamiliar. [Module 1](../01-foundations/index.md) supplies the first-run route. You may enter here directly by obtaining the complete source and following the commands below.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO7 (Data representations)
+- **Supporting practice:** CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Data and tools:** Synthetic
+- **Evidence you produce:** CSV and JSON summary with units, and a verified correction of a seeded error.
+- **Boundary:** Small service files, not telemetry.
+- **Responsible-AI check:** Which fields are personal or sensitive, and should they be summarized at all?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

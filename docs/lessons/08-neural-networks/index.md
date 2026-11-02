@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M08.4:** Compare held-out errors with a logistic baseline.
 - **M08.5:** Save/reload a trained model and document compute and limitations.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** none
+- **Data and tools:** Real public
+- **Evidence you produce:** Trained and reloaded TensorFlow model compared with a simpler reference.
+- **Boundary:** CPU-scale tabular network; scale is not claimed.
+- **Responsible-AI check:** Does the added complexity earn its cost in compute and explainability?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning sequence for this module
 
 Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.

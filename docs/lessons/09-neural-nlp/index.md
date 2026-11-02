@@ -14,6 +14,20 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **M09.4:** Compare neural errors with TF-IDF/logistic regression.
 - **M09.5:** Document privacy, prevalence, vocabulary limits, and reproducibility.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO7 (Data representations), CLO8 (Communication)
+- **Supporting practice:** CLO5 (GenAI and LLM integration)
+- **Data and tools:** Real public
+- **Evidence you produce:** Text representation comparison and a neural text classifier with documented failures.
+- **Boundary:** Public SMS messages; masked reports, no production claim.
+- **Responsible-AI check:** Message text can contain personal content: what is masked, stored and shown?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning route
 
 Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.

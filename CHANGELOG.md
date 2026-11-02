@@ -1,5 +1,12 @@
 # Changelog
 
+## November 2026 — outcome-evidence map and bridge activities
+
+- Added `curriculum/outcomes.json` as the single source for module-to-outcome links, data and tool labels, evidence artifacts, boundaries and one responsible-AI question per module. `scripts/build_outcome_map.py` generates the [course outcome map](docs/outcome-map.md) and a "Course outcomes and evidence" section on each lesson entry page; a test fails when they are stale.
+- Added an adoption guide with a mapping-register template, and source-and-independence statements in the alignment notes and OER license.
+- Added optional bridge activities: network record interpretation, a monitoring decision record, and a live API route with an offline-testable client pattern.
+- Learning outcomes are unchanged. The live API route is untested against a real provider, and no learner pilot has occurred.
+
 ## October 2026 — independent-review corrections and additions
 
 - Offline access: a learner route for when site downloads do not open, a source-only archive build for instructors, and a link check that requires the route on every page with downloads (F1).

@@ -32,6 +32,10 @@ Accept code plus readable text/CSV or an equivalent effective format. Do not req
 
 Try the task from a clean setup, confirm the public feedback fits the chosen data/version, check the intended outcome against the authoritative syllabus, and pilot the workload. Keep restricted assessments and student submissions outside the open repository.
 
+## Evidence by course outcome
+
+The [outcome map](../outcome-map.md) lists, for each module, the artifact a learner produces and its boundary. Choose evidence from a module that provides *direct* evidence for the outcome you assess, and add a bridge activity when a label such as *Synthetic* or *Offline fixture* falls short of your claim. A monitoring record assesses observed indicators and a justified decision, not improved production reliability. A fixture-based API exercise assesses client logic, not a live provider call.
+
 ## Module mastery and independent transfer
 
 Each module's guided page now identifies required changed code, checked evidence, a diagnosed failure and an explanation. Use its specific question and worked feedback to diagnose misconceptions. Public solutions support independent learning; use a changed task or explanation to establish authorship rather than hiding feedback. A diagnostic routes preparation and does not lower the shared outcome standard. Reading-only evidence supports interpretation; implementation requires execution and an explainable modification.

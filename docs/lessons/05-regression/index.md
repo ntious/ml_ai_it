@@ -14,6 +14,20 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 - **M05.4:** Justify train/validation/test boundaries and interpret MAE and residuals.
 - **M05.5:** Report an operational interpretation, limitations, and reproducibility evidence.
 
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO1 (Learning paradigms)
+- **Data and tools:** Real public
+- **Evidence you produce:** Time-aware split, baseline comparison, error analysis and a reproducible memo.
+- **Boundary:** Bike demand is a service-demand analogue, not IT incident telemetry.
+- **Responsible-AI check:** Is any feature unavailable at prediction time, and who acts on the forecast?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+<!-- OUTCOME_EVIDENCE_END -->
+
 ## Learning sequence for this module
 
 Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
