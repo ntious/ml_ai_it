@@ -18,15 +18,15 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** none
-- **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
+- **Direct evidence:** CLO8 (Communication)
+- **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring)
 - **Curriculum extension:** Responsible AI practice (privacy, fairness, limits)
 - **Data and tools:** <span class="data-label">Real public</span>
-- **Evidence you produce:** Group error and selection-rate audit with a governance recommendation, including reasons not to deploy.
+- **Evidence you produce:** Group error and selection-rate audit with a governance recommendation, including reasons not to deploy. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Descriptive fairness reasoning only; no legal compliance claim.
 - **Responsible-AI check:** Is the task itself justified, not only the metric?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route
@@ -43,7 +43,7 @@ Fairness is a contextual normative question, not one scalar score. Excluding a p
 
 UCI Adult; historical census-income records. Recorded categories and collection conditions limit interpretation. This audit is not an eligibility service. See the source register.
 
-[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
 
 ## The complete workflow
 

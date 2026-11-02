@@ -18,14 +18,15 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
-- **Supporting practice:** CLO1 (Learning paradigms)
+- **Direct evidence:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO1 (Learning paradigms), CLO2 (Applying ML/AI to IT operations)
+- **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
 - **Data and tools:** <span class="data-label">Real public</span>
-- **Evidence you produce:** Time-aware split, baseline comparison, error analysis and a reproducible memo.
+- **Evidence you produce:** Time-aware split, baseline comparison, error analysis and a reproducible memo. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Bike demand is a service-demand analogue, not IT incident telemetry.
 - **Responsible-AI check:** Is any feature unavailable at prediction time, and who acts on the forecast?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning sequence for this module

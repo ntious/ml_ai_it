@@ -5,6 +5,7 @@ learner declares. It does not choose thresholds or a decision.
 """
 import argparse
 import csv
+import math
 from pathlib import Path
 
 COLUMNS = ["batch", "rows", "mean_prediction_seconds", "largest_standardized_mean_shift", "fp", "fn", "recall", "precision", "selection_rate"]
@@ -25,23 +26,26 @@ def number(value):
         result = float(value)
     except (TypeError, ValueError):
         return None
-    return None if result != result else result
+    return result if math.isfinite(result) else None
 
 
 def draft_record(rows, latency_limit=None, shift_limit=None):
+    for limit in (latency_limit, shift_limit):
+        if limit is not None and (not math.isfinite(limit) or limit < 0):
+            raise ValueError("thresholds must be finite and nonnegative")
     def flag(value, limit):
         if limit is None:
             return "no threshold declared"
         if value is None:
             return "unavailable"
         return "ABOVE" if value > limit else "within"
-    lines = ["| Batch | Rows | Mean seconds | Latency vs threshold | Largest shift | Shift vs threshold | FP | FN | Recall | Precision |",
-             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
+    lines = ["| Batch | Rows | Mean seconds | Latency vs threshold | Largest shift | Shift vs threshold | FP | FN | Recall | Precision | Selection rate | Unavailable shift features |",
+             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for row in rows:
         seconds, shift = number(row["mean_prediction_seconds"]), number(row["largest_standardized_mean_shift"])
         fmt = lambda v, p=4: "unavailable" if v is None else f"{v:.{p}f}"
         lines.append(f"| {row['batch']} | {row['rows']} | {fmt(seconds, 6)} | {flag(seconds, latency_limit)} | {fmt(shift, 3)} | "
-                     f"{flag(shift, shift_limit)} | {row['fp']} | {row['fn']} | {fmt(number(row['recall']), 3)} | {fmt(number(row['precision']), 3)} |")
+                     f"{flag(shift, shift_limit)} | {row['fp']} | {row['fn']} | {fmt(number(row['recall']), 3)} | {fmt(number(row['precision']), 3)} | {fmt(number(row['selection_rate']), 3)} | {row.get('standardized_shift_unavailable', '') or 'none recorded'} |")
     lines += ["", "Complete these parts yourself in docs/advanced/monitoring-decision-record.md:",
               "service and owner; why each threshold was chosen; decision and what would change it; escalation and rollback; limits.",
               "A source-order batch shift is a diagnostic, not time drift."]

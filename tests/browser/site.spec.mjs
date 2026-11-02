@@ -185,7 +185,7 @@ test('self-checks invite an answer first, and reduced motion removes transitions
   await expect(page.getByRole('textbox', { name: /Your answer to question \d/ })).toHaveCount(3);
   expect(await page.locator('main details').first().evaluate(element => getComputedStyle(element).transitionDuration)).toBe('0s');
   await page.goto('index.html');
-  await expect(page.getByRole('img', { name: 'How every result in the course is checked' })).toBeVisible();
+  await expect(page.getByRole('img', { name: 'The evaluation workflow taught in the modeling studies' })).toBeVisible();
 });
 
 test('on a phone, the current lesson tab is scrolled into view', async ({ page }) => {

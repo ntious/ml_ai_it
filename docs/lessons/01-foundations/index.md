@@ -20,11 +20,11 @@ The script route supplies the same programming evidence when a notebook interfac
 - **Direct evidence:** CLO1 (Learning paradigms), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation)
 - **Data and tools:** <span class="data-label">Synthetic</span>
-- **Evidence you produce:** Problem brief, saved first run, and a reasoned interpretation of a changed input.
+- **Evidence you produce:** Problem brief, saved first run, and a reasoned interpretation of a changed input. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Introduces framing only; no trained model.
 - **Responsible-AI check:** Who is affected if the rule or prediction is wrong, and who reviews it?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route

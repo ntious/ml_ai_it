@@ -66,7 +66,7 @@ export function heroFigure() {
       (index < steps.length - 1 ? '<path class="hero-arrow" d="M172 ' + (y + 60) + 'v12"/>' : '');
   }).join('');
   return '<figure class="hero-figure"><svg viewBox="0 0 344 330" role="img" aria-labelledby="hero-figure-title hero-figure-desc">' +
-    '<title id="hero-figure-title">How every result in the course is checked</title>' +
-    '<desc id="hero-figure-desc">Four steps: decide the task and error costs, try a simple baseline first, choose settings on development data, then test the locked choice once. Poor results stay visible.</desc>' +
+    '<title id="hero-figure-title">The evaluation workflow taught in the modeling studies</title>' +
+    '<desc id="hero-figure-desc">Four steps: decide the task and error costs, try a simple baseline first, choose settings on development data, then evaluate the locked choice. Historical benchmark replays are reproduction exercises, not new untouched holdouts. Poor results stay visible.</desc>' +
     cards + '<text class="hero-foot" x="172" y="322" text-anchor="middle">Poor results stay visible.</text></svg></figure>';
 }

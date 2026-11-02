@@ -17,14 +17,15 @@ You need basic functions, file paths, and dataframe selection/grouping. Use the 
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO3 (Interpreting network data), CLO8 (Communication)
-- **Supporting practice:** none
+- **Direct evidence:** CLO8 (Communication)
+- **Supporting practice:** CLO3 (Interpreting network data)
+- **Additional direct-evidence route (complete separately):** [NETWORK (CLO3)](../../cases/network-record-interpretation.md)
 - **Data and tools:** <span class="data-label">Synthetic</span>
-- **Evidence you produce:** Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo.
+- **Evidence you produce:** Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Synthetic workload data; a flagged point means investigate, not incident.
 - **Responsible-AI check:** Could a chart or summary hide an unusual group or overstate certainty to a stakeholder?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route

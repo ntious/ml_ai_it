@@ -20,14 +20,15 @@ These are resource learning outcomes. They do not claim course credit or certifi
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO3 (Interpreting network data), CLO7 (Data representations)
-- **Supporting practice:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Direct evidence:** CLO7 (Data representations)
+- **Supporting practice:** CLO4 (Frameworks and evaluation), CLO8 (Communication), CLO3 (Interpreting network data)
+- **Additional direct-evidence route (complete separately):** [NETWORK (CLO3)](../../cases/network-record-interpretation.md)
 - **Data and tools:** <span class="data-label">Synthetic</span>
-- **Evidence you produce:** Data dictionary, reconciled rejected-record counts and a cleaning rationale.
+- **Evidence you produce:** Data dictionary, reconciled rejected-record counts and a cleaning rationale. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Original synthetic event records. Interpreting genuine network flows needs the bridge activity.
 - **Responsible-AI check:** Could rejecting or imputing records remove some sources or devices more than others, and who is told?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route

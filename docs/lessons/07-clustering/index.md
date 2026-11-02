@@ -18,14 +18,15 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO1 (Learning paradigms), CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
-- **Supporting practice:** CLO2 (Applying ML/AI to IT operations)
+- **Direct evidence:** CLO1 (Learning paradigms), CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO3 (Interpreting network data)
+- **Additional direct-evidence route (complete separately):** [NETWORK (CLO3)](../../cases/network-record-interpretation.md)
 - **Data and tools:** <span class="data-label">Real public</span>
-- **Evidence you produce:** Cluster-count choice made without labels, with an interpretation and its limits.
-- **Boundary:** CLO3 here concerns interpreting groupings; wine data is not network data.
+- **Evidence you produce:** Cluster-count choice made without labels, with an interpretation and its limits. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
+- **Boundary:** Wine groupings support interpretation technique; they do not demonstrate network-data interpretation.
 - **Responsible-AI check:** Does the data support the name given to a cluster, or does the name imply more than it shows?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route
@@ -42,7 +43,7 @@ K-means minimizes squared distances to centers, so units and scaling affect the 
 
 UCI Wine Quality; real red-wine chemistry and human ratings. See the central source register for citation, rights, archive hash, and limitations.
 
-[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
 
 ## The complete workflow
 

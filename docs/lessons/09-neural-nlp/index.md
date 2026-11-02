@@ -18,14 +18,15 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO7 (Data representations), CLO8 (Communication)
-- **Supporting practice:** CLO5 (GenAI and LLM integration)
+- **Direct evidence:** CLO4 (Frameworks and evaluation), CLO7 (Data representations), CLO8 (Communication)
+- **Supporting practice:** CLO5 (GenAI and LLM integration), CLO2 (Applying ML/AI to IT operations)
+- **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
 - **Data and tools:** <span class="data-label">Real public</span>
-- **Evidence you produce:** Text representation comparison and a neural text classifier with documented failures.
+- **Evidence you produce:** Text representation comparison and a neural text classifier with documented failures. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Public SMS messages; masked reports, no production claim.
 - **Responsible-AI check:** Message text can contain personal content: what is masked, stored and shown?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route
@@ -42,7 +43,7 @@ Tokens are discrete representations; embeddings are learned numeric vectors. Pad
 
 UCI SMS Spam Collection; real human-labeled messages. Public messages may contain personal content; processing stays local and reports use hashes/contact masking. See the source register.
 
-[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
 
 ## The complete workflow
 

@@ -1,6 +1,6 @@
 # Real data and model source register
 
-Modules 6–14 use actual external records and human annotations. No new synthetic illustration/training dataset is created. Earlier foundation fixtures remain labeled separately.
+The reference modeling studies in Modules 6–14 use attributed external records. Practice fixtures, authored agent requests and fictional runbooks are also used and identified separately below. Task labels may be derived from source annotations, such as the declared wine-rating threshold; they are not new human judgments.
 
 ## External datasets
 
@@ -26,7 +26,7 @@ Almeida, T. & Hidalgo, J. (2011). SMS Spam Collection. UCI. DOI:10.24432/C5CC84.
 
 Reviewed archive SHA-256: 1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3.
 
-Derived processing hashes normalized text, removes duplicate/conflicting texts, selects a declared real sample, and preserves human labels. LLM cases mask contact-like strings and disclose tiny balanced subsets. Public messages can still contain personal content.
+Derived processing hashes normalized text, removes duplicate/conflicting texts, selects a declared real sample, and preserves human labels. LLM cases mask contact-like strings. Module 10 uses a stratified final subset; Module 11 uses a balanced final subset, so their accuracy figures are not a matched comparison. Public messages can still contain personal content.
 
 ## Acquisition and offline replay
 
@@ -38,7 +38,7 @@ Separate attributed caches are available for [wine](https://ntious.github.io/ml_
 
 [HuggingFaceTB/SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct) has an Apache-2.0 card/license. Reviewed revision: 12fd25f77366fa6b3b4b768ec3050bf629380bac. It runs locally on CPU with safetensors and remote code disabled. The course does not claim to reproduce or audit every pretraining source. Our fine-tuning illustrations use real human SMS labels, not generated records.
 
-First use downloads several hundred MB; retain runs/models for replay. Base weights remain separate from the original-source archive. Consult the official card and [SmolLM2 technical report](https://arxiv.org/abs/2502.02737). A pinned revision is reproducible, not a quality guarantee.
+First use downloads several hundred MB; retain runs/models for replay. Base weights remain separate from the original-source archive. Consult the official card and [SmolLM2 technical report](https://arxiv.org/abs/2502.02737). A pinned revision identifies the intended model version; reproducibility also depends on the environment, inputs and execution settings. Pinning alone does not establish output quality or continued source availability.
 
 ## Use limits
 

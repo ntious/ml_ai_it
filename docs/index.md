@@ -60,7 +60,7 @@ Read the [access routes and known limitations](accessibility/index.md). Manual s
 
 ## What sets this course apart
 
-Every result in the course is checked the way a careful practitioner would check it: a stated decision, a simple baseline that is allowed to win, settings chosen on development data, and a final test used once. Poor model results stay in the reports so you can learn from them. You can run every core exercise on an ordinary laptop, without a paid account or GPU.
+The modeling studies state their decision, compare baselines and separate development choices from final evaluation. Introductory fixtures and authored controls answer narrower questions. Historical benchmarks have been inspected during development; reproducing their results is not a new untouched holdout evaluation. Poor model results stay in the reports so you can learn from them. The documented execution routes use CPUs without a paid AI account or GPU; check the [environment requirements](setup/index.md), including the separate framework environment, before installing.
 
 [Ask a question or share your work](community.md) · [Learning paths](paths.md)
 
@@ -73,3 +73,7 @@ Original code uses MIT; original educational content uses CC BY 4.0. External so
 ## Optional complete project and advanced investigations
 
 Start with [readiness and Python Foundation](start-here.md), then use the [separate completed capstone](../projects/phishing-triage/README.md) and [advanced investigations](advanced/index.md) after the relevant core modules. The 14 modules remain independent.
+
+## Authorship and course relationship
+
+**Isaac K. Nti** developed the original explanations, activities, worked examples, code, and supporting materials in this repository. These supplementary resources support the course he teaches in the School of Information Technology at the University of Cincinnati. The official course description, course learning outcomes, and module learning outcomes are attributed to the University of Cincinnati and are excluded from this repository’s license grants. External materials retain their respective attribution and terms. These resources supplement the official syllabus. See [licensing and institutional boundaries](../OER_LICENSE.md).

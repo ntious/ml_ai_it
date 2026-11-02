@@ -16,7 +16,7 @@ A useful recommendation has this structure: “For [declared task], the recorded
 
 **Recorded evidence.** The selected all-layer adapter has 460,800 trainable parameters. Validation completion loss moves from 1.5358 to 0.0030; validation loss selects step 200 within the 200-step maximum. On 100 balanced final messages, JSON validity changes from 0% to 100%, and label accuracy from 0% to 94%.
 
-**Explain the improvement.** This study updates rank-8 adapters in every query/value layer, rather than eight updates to a single rank-2 projection. More training capacity and examples can change completion behavior. The checkpoint uses validation loss only; the final comparison cannot choose steps. The rank-2 hand construction remains useful for understanding the matrix operation.
+**Interpret the recorded change.** This study updates rank-8 adapters in every query/value layer, rather than eight updates to a single rank-2 projection. Several protocol choices changed together; this comparison does not isolate which change caused the difference from the earlier run. The checkpoint uses validation loss only; the final comparison cannot choose steps. The rank-2 hand construction remains useful for understanding the matrix operation.
 
 **Check what each output establishes.** validation_generation.csv provides development format/label checks; generation_comparison.csv provides the frozen final comparison. Safetensors replay checks serialization, not quality. Valid JSON can still be wrong, the balanced sample changes prevalence, and the interval does not correct historical sampling bias. If the last checkpoint wins, later training behavior is unknown.
 

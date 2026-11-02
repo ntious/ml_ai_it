@@ -2,17 +2,69 @@
   "schema_version": 1,
   "note": "Working summaries of the fixed course outcomes, not verbatim institutional text. Edit this file, then run: python scripts/build_outcome_map.py",
   "outcomes": [
-    {"id": "CLO1", "summary": "Learning paradigms", "evidence_status": "Conceptual comparison; reinforcement learning is explained, not implemented.", "bridge": "lessons/07-clustering/index.md"},
-    {"id": "CLO2", "summary": "Applying ML/AI to IT operations", "evidence_status": "Strongest when the task, data and decision come from an IT workflow. Wine and bike examples build technique only.", "bridge": "cases/network-record-interpretation.md"},
-    {"id": "CLO3", "summary": "Interpreting network data", "evidence_status": "Modules 3 and 4 use original synthetic event records. Genuine flow records appear only in the optional RT-IoT and phishing extensions.", "bridge": "cases/network-record-interpretation.md"},
-    {"id": "CLO4", "summary": "Frameworks and evaluation", "evidence_status": "Executed training and evaluation with baselines. Fixtures and screenshots are not evidence of training.", "bridge": "advanced/evaluation.md"},
-    {"id": "CLO5", "summary": "GenAI and LLM integration", "evidence_status": "Local models and offline fixtures. Live closed-provider API use is an adoption choice.", "bridge": "advanced/live-api-route.md"},
-    {"id": "CLO6", "summary": "Deployment and monitoring", "evidence_status": "Checked local app and monitoring replay. Production reliability is not measured.", "bridge": "advanced/monitoring-decision-record.md"},
-    {"id": "CLO7", "summary": "Data representations", "evidence_status": "Data dictionaries for CSV, JSON, arrays, text and tuning records.", "bridge": "lessons/03-data-processing/index.md"},
-    {"id": "CLO8", "summary": "Communication", "evidence_status": "Result explanations tied to named evidence and limits. Presentation requirements belong to the adopting course.", "bridge": "lessons/04-exploration/index.md"}
+    {
+      "id": "CLO1",
+      "summary": "Learning paradigms",
+      "evidence_status": "Conceptual comparison; reinforcement learning is explained, not implemented.",
+      "bridge": "lessons/07-clustering/index.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    },
+    {
+      "id": "CLO2",
+      "summary": "Applying ML/AI to IT operations",
+      "evidence_status": "Strongest when the task, data and decision come from an IT workflow. Wine and bike examples build technique only.",
+      "bridge": "cases/network-record-interpretation.md",
+      "coverage_note": "The shared IT-OPS activity adds real network-triage application after Module 6; it is not automatically completed by the technique lessons."
+    },
+    {
+      "id": "CLO3",
+      "summary": "Interpreting network data",
+      "evidence_status": "Core modules rehearse interpretation on synthetic events; genuine flow interpretation is supplied by the optional RT-IoT bridge. The phishing case uses website attributes, not network flows.",
+      "bridge": "cases/network-record-interpretation.md",
+      "coverage_note": "No direct core-module evidence on genuine network flows; the optional bridge supplies a separate interpretation artifact."
+    },
+    {
+      "id": "CLO4",
+      "summary": "Frameworks and evaluation",
+      "evidence_status": "Executed training and evaluation with baselines. Fixtures and screenshots are not evidence of training.",
+      "bridge": "advanced/evaluation.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    },
+    {
+      "id": "CLO5",
+      "summary": "GenAI and LLM integration",
+      "evidence_status": "Local models and offline fixtures. Live closed-provider API use is an adoption choice.",
+      "bridge": "advanced/live-api-route.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    },
+    {
+      "id": "CLO6",
+      "summary": "Deployment and monitoring",
+      "evidence_status": "Checked local app and monitoring replay. Production reliability is not measured.",
+      "bridge": "advanced/monitoring-decision-record.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    },
+    {
+      "id": "CLO7",
+      "summary": "Data representations",
+      "evidence_status": "Data dictionaries for CSV, JSON, arrays, text and tuning records.",
+      "bridge": "lessons/03-data-processing/index.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    },
+    {
+      "id": "CLO8",
+      "summary": "Communication",
+      "evidence_status": "Result explanations tied to named evidence and limits. Presentation requirements belong to the adopting course.",
+      "bridge": "lessons/04-exploration/index.md",
+      "coverage_note": "Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course."
+    }
   ],
   "extensions": [
-    {"id": "RAI", "summary": "Responsible AI practice (privacy, fairness, limits)", "note": "Curriculum extension, not an original course outcome."}
+    {
+      "id": "RAI",
+      "summary": "Responsible AI practice (privacy, fairness, limits)",
+      "note": "Curriculum extension, not an original course outcome."
+    }
   ],
   "data_labels": {
     "Synthetic": "Original teaching records written for this resource. They are not genuine operational data.",
@@ -21,61 +73,303 @@
     "Offline fixture": "Saved inputs or outputs used to test logic. A fixture is not a live call and not a training run."
   },
   "modules": [
-    {"id": 1, "direct": ["CLO1", "CLO8"], "support": ["CLO2", "CLO4"], "labels": ["Synthetic"],
-     "evidence": "Problem brief, saved first run, and a reasoned interpretation of a changed input.",
-     "boundary": "Introduces framing only; no trained model.",
-     "responsible": "Who is affected if the rule or prediction is wrong, and who reviews it?"},
-    {"id": 2, "direct": ["CLO7"], "support": ["CLO3", "CLO4", "CLO8"], "labels": ["Synthetic"],
-     "evidence": "CSV and JSON summary with units, and a verified correction of a seeded error.",
-     "boundary": "Small service files, not telemetry.",
-     "responsible": "Which fields are personal or sensitive, and should they be summarized at all?"},
-    {"id": 3, "direct": ["CLO3", "CLO7"], "support": ["CLO4", "CLO8"], "labels": ["Synthetic"],
-     "evidence": "Data dictionary, reconciled rejected-record counts and a cleaning rationale.",
-     "boundary": "Original synthetic event records. Interpreting genuine network flows needs the bridge activity.",
-     "responsible": "Could rejecting or imputing records remove some sources or devices more than others, and who is told?"},
-    {"id": 4, "direct": ["CLO3", "CLO8"], "support": [], "labels": ["Synthetic"],
-     "evidence": "Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo.",
-     "boundary": "Synthetic workload data; a flagged point means investigate, not incident.",
-     "responsible": "Could a chart or summary hide an unusual group or overstate certainty to a stakeholder?"},
-    {"id": 5, "direct": ["CLO2", "CLO4", "CLO8"], "support": ["CLO1"], "labels": ["Real public"],
-     "evidence": "Time-aware split, baseline comparison, error analysis and a reproducible memo.",
-     "boundary": "Bike demand is a service-demand analogue, not IT incident telemetry.",
-     "responsible": "Is any feature unavailable at prediction time, and who acts on the forecast?"},
-    {"id": 6, "direct": ["CLO2", "CLO4", "CLO8"], "support": ["CLO1"], "labels": ["Real public"],
-     "evidence": "Classifier comparison chosen on validation data, with a confusion-matrix explanation.",
-     "boundary": "Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.",
-     "responsible": "What do a false positive and a false negative cost, and who bears each?"},
-    {"id": 7, "direct": ["CLO1", "CLO3", "CLO4", "CLO8"], "support": ["CLO2"], "labels": ["Real public"],
-     "evidence": "Cluster-count choice made without labels, with an interpretation and its limits.",
-     "boundary": "CLO3 here concerns interpreting groupings; wine data is not network data.",
-     "responsible": "Does the data support the name given to a cluster, or does the name imply more than it shows?"},
-    {"id": 8, "direct": ["CLO2", "CLO4", "CLO8"], "support": [], "labels": ["Real public"],
-     "evidence": "Trained and reloaded TensorFlow model compared with a simpler reference.",
-     "boundary": "CPU-scale tabular network; scale is not claimed.",
-     "responsible": "Does the added complexity earn its cost in compute and explainability?"},
-    {"id": 9, "direct": ["CLO2", "CLO4", "CLO7", "CLO8"], "support": ["CLO5"], "labels": ["Real public"],
-     "evidence": "Text representation comparison and a neural text classifier with documented failures.",
-     "boundary": "Public SMS messages; masked reports, no production claim.",
-     "responsible": "Message text can contain personal content: what is masked, stored and shown?"},
-    {"id": 10, "direct": ["CLO5", "CLO7", "CLO8"], "support": ["CLO4"], "labels": ["Real public", "Local model"],
-     "evidence": "Local prompting experiment with output-contract failures counted and a literature critique.",
-     "boundary": "No live closed-provider API call is established.",
-     "responsible": "What happens when output is fluent but wrong or exposes sensitive text, and which human check catches it?"},
-    {"id": 11, "direct": ["CLO4", "CLO5", "CLO8"], "support": [], "labels": ["Real public", "Local model"],
-     "evidence": "Saved configuration, logs and adapters from a real tiny fine-tuning run, with an evaluation.",
-     "boundary": "Tiny balanced subset; scale and generalization are limited.",
-     "responsible": "Could the tuned model reproduce private text, and do the data and model licenses allow this use?"},
-    {"id": 12, "direct": ["CLO2", "CLO5", "CLO6", "CLO8"], "support": [], "labels": ["Real public", "Local model"],
-     "evidence": "Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.",
-     "boundary": "A local replay; production reliability is not measured and a diagnostic is not time drift.",
-     "responsible": "Who owns alerts, escalation and rollback, and do logs retain personal data?"},
-    {"id": 13, "direct": [], "support": ["CLO2", "CLO5", "CLO6", "CLO8"], "extension": "RAI", "labels": ["Real public"],
-     "evidence": "Group error and selection-rate audit with a governance recommendation, including reasons not to deploy.",
-     "boundary": "Descriptive fairness reasoning only; no legal compliance claim.",
-     "responsible": "Is the task itself justified, not only the metric?"},
-    {"id": 14, "direct": ["CLO2", "CLO4", "CLO5", "CLO6", "CLO8"], "support": [], "labels": ["Real public", "Local model", "Offline fixture"],
-     "evidence": "Bounded router and tool-loop comparison with a recorded trace and failure cases.",
-     "boundary": "No full agent-framework implementation is claimed; tools are local and read-only.",
-     "responsible": "What actions may the agent take, who approves them, and how is a trace audited?"}
+    {
+      "id": 1,
+      "direct": [
+        "CLO1",
+        "CLO8"
+      ],
+      "support": [
+        "CLO2",
+        "CLO4"
+      ],
+      "labels": [
+        "Synthetic"
+      ],
+      "evidence": "Problem brief, saved first run, and a reasoned interpretation of a changed input.",
+      "boundary": "Introduces framing only; no trained model.",
+      "responsible": "Who is affected if the rule or prediction is wrong, and who reviews it?",
+      "additional_direct": []
+    },
+    {
+      "id": 2,
+      "direct": [
+        "CLO7"
+      ],
+      "support": [
+        "CLO3",
+        "CLO4",
+        "CLO8"
+      ],
+      "labels": [
+        "Synthetic"
+      ],
+      "evidence": "CSV and JSON summary with units, and a verified correction of a seeded error.",
+      "boundary": "Small service files, not telemetry.",
+      "responsible": "Which fields are personal or sensitive, and should they be summarized at all?",
+      "additional_direct": []
+    },
+    {
+      "id": 3,
+      "direct": [
+        "CLO7"
+      ],
+      "support": [
+        "CLO4",
+        "CLO8",
+        "CLO3"
+      ],
+      "labels": [
+        "Synthetic"
+      ],
+      "evidence": "Data dictionary, reconciled rejected-record counts and a cleaning rationale.",
+      "boundary": "Original synthetic event records. Interpreting genuine network flows needs the bridge activity.",
+      "responsible": "Could rejecting or imputing records remove some sources or devices more than others, and who is told?",
+      "additional_direct": [
+        "NETWORK"
+      ]
+    },
+    {
+      "id": 4,
+      "direct": [
+        "CLO8"
+      ],
+      "support": [
+        "CLO3"
+      ],
+      "labels": [
+        "Synthetic"
+      ],
+      "evidence": "Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo.",
+      "boundary": "Synthetic workload data; a flagged point means investigate, not incident.",
+      "responsible": "Could a chart or summary hide an unusual group or overstate certainty to a stakeholder?",
+      "additional_direct": [
+        "NETWORK"
+      ]
+    },
+    {
+      "id": 5,
+      "direct": [
+        "CLO4",
+        "CLO8"
+      ],
+      "support": [
+        "CLO1",
+        "CLO2"
+      ],
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Time-aware split, baseline comparison, error analysis and a reproducible memo.",
+      "boundary": "Bike demand is a service-demand analogue, not IT incident telemetry.",
+      "responsible": "Is any feature unavailable at prediction time, and who acts on the forecast?",
+      "additional_direct": [
+        "IT-OPS"
+      ]
+    },
+    {
+      "id": 6,
+      "direct": [
+        "CLO4",
+        "CLO8"
+      ],
+      "support": [
+        "CLO1",
+        "CLO2"
+      ],
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Classifier comparison chosen on validation data, with a confusion-matrix explanation.",
+      "boundary": "Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.",
+      "responsible": "What do a false positive and a false negative cost, and who bears each?",
+      "additional_direct": [
+        "IT-OPS"
+      ]
+    },
+    {
+      "id": 7,
+      "direct": [
+        "CLO1",
+        "CLO4",
+        "CLO8"
+      ],
+      "support": [
+        "CLO2",
+        "CLO3"
+      ],
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Cluster-count choice made without labels, with an interpretation and its limits.",
+      "boundary": "Wine groupings support interpretation technique; they do not demonstrate network-data interpretation.",
+      "responsible": "Does the data support the name given to a cluster, or does the name imply more than it shows?",
+      "additional_direct": [
+        "NETWORK"
+      ]
+    },
+    {
+      "id": 8,
+      "direct": [
+        "CLO4",
+        "CLO8"
+      ],
+      "support": [
+        "CLO2"
+      ],
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Trained and reloaded TensorFlow model compared with a simpler reference.",
+      "boundary": "CPU-scale wine classification; IT operations transfer and production scale are not demonstrated.",
+      "responsible": "Does the added complexity earn its cost in compute and explainability?",
+      "additional_direct": [
+        "IT-OPS"
+      ]
+    },
+    {
+      "id": 9,
+      "direct": [
+        "CLO4",
+        "CLO7",
+        "CLO8"
+      ],
+      "support": [
+        "CLO5",
+        "CLO2"
+      ],
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Text representation comparison and a neural text classifier with documented failures.",
+      "boundary": "Public SMS messages; masked reports, no production claim.",
+      "responsible": "Message text can contain personal content: what is masked, stored and shown?",
+      "additional_direct": [
+        "IT-OPS"
+      ]
+    },
+    {
+      "id": 10,
+      "direct": [
+        "CLO5",
+        "CLO7",
+        "CLO8"
+      ],
+      "support": [
+        "CLO4"
+      ],
+      "labels": [
+        "Real public",
+        "Local model"
+      ],
+      "evidence": "Local prompting experiment with output-contract failures counted and a literature critique.",
+      "boundary": "No live closed-provider API call is established.",
+      "responsible": "What happens when output is fluent but wrong or exposes sensitive text, and which human check catches it?",
+      "additional_direct": []
+    },
+    {
+      "id": 11,
+      "direct": [
+        "CLO4",
+        "CLO5",
+        "CLO8"
+      ],
+      "support": [],
+      "labels": [
+        "Real public",
+        "Local model"
+      ],
+      "evidence": "Saved configuration, logs and adapters from a real tiny fine-tuning run, with an evaluation.",
+      "boundary": "Tiny balanced subset; scale and generalization are limited.",
+      "responsible": "Could the tuned model reproduce private text, and do the data and model licenses allow this use?",
+      "additional_direct": []
+    },
+    {
+      "id": 12,
+      "direct": [
+        "CLO2",
+        "CLO5",
+        "CLO6",
+        "CLO8"
+      ],
+      "support": [],
+      "labels": [
+        "Real public",
+        "Local model"
+      ],
+      "evidence": "Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.",
+      "boundary": "A local replay; production reliability is not measured and a diagnostic is not time drift.",
+      "responsible": "Who owns alerts, escalation and rollback, and do logs retain personal data?",
+      "additional_direct": []
+    },
+    {
+      "id": 13,
+      "direct": [
+        "CLO8"
+      ],
+      "support": [
+        "CLO2",
+        "CLO5",
+        "CLO6"
+      ],
+      "extension": "RAI",
+      "labels": [
+        "Real public"
+      ],
+      "evidence": "Group error and selection-rate audit with a governance recommendation, including reasons not to deploy.",
+      "boundary": "Descriptive fairness reasoning only; no legal compliance claim.",
+      "responsible": "Is the task itself justified, not only the metric?",
+      "additional_direct": []
+    },
+    {
+      "id": 14,
+      "direct": [
+        "CLO4",
+        "CLO5",
+        "CLO8"
+      ],
+      "support": [
+        "CLO2",
+        "CLO6"
+      ],
+      "labels": [
+        "Real public",
+        "Local model",
+        "Offline fixture"
+      ],
+      "evidence": "Bounded router and tool-loop comparison with a recorded trace and failure cases.",
+      "boundary": "No full agent-framework implementation is claimed; tools are local and read-only.",
+      "responsible": "What actions may the agent take, who approves them, and how is a trace audited?",
+      "additional_direct": [
+        "IT-OPS",
+        "MONITOR"
+      ]
+    }
+  ],
+  "additional_activities": [
+    {
+      "id": "NETWORK",
+      "outcomes": [
+        "CLO3"
+      ],
+      "path": "cases/network-record-interpretation.md",
+      "summary": "Inspect genuine network records and submit the analyst notes; after Module 4."
+    },
+    {
+      "id": "IT-OPS",
+      "outcomes": [
+        "CLO2"
+      ],
+      "path": "cases/it-operations-evidence.md",
+      "summary": "Run the RT-IoT study and submit the cost, workload and operations decision record; after Module 6. Reuse one dossier across the linked modules."
+    },
+    {
+      "id": "MONITOR",
+      "outcomes": [
+        "CLO6"
+      ],
+      "path": "advanced/monitoring-decision-record.md",
+      "summary": "Complete the executed Module 12 service/monitoring work and submit its decision record; a Module 14 trace alone is insufficient."
+    }
   ]
 }

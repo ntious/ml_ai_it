@@ -8,10 +8,12 @@ These are educational model-use records for the implemented examples, not approv
 | Forecasting, M5 | Availability, baselines, frozen evaluation | Chronological train/validation/test; rolling one-day observations | Historical bike demand is not current IT demand |
 | Wine classifiers, M6/M8/M12 | Compare classical/neural approaches and checked inference | Group identical chemistry profiles across splits; validation-only selection | Classroom quality >=7 label is not certification; record groups are not verified physical identities |
 | Wine clustering, M7 | Unsupervised selection and profile interpretation | Training scaling; validation silhouette; quality excluded | Cluster IDs are arbitrary, not quality ranks |
-| SMS neural classifier, M9 | Training-only vocabulary, imbalance, error analysis | Deduplicated normalized real text; disjoint split IDs | Initial neural model missed all 30 positives despite 87.5% accuracy |
-| Local LLM, M10/M12/M14 | Prompt/schema evaluation, checked interfaces, bounded tools | Fixed SmolLM2-135M-Instruct revision and bounded real examples | Initial M10 output schema success was 0/8; valid syntax would still not prove correctness |
-| LoRA, M11 | Real adapter gradients, save/reload, and prompt masking | Eight tiny training steps; separate validation/final text IDs | Small completion-loss changes do not establish useful behavioral improvement |
+| SMS neural classifier, M9 | Training-only vocabulary, imbalance, error analysis | Deduplicated normalized real text; disjoint split IDs | Recorded current run finds 118/128 positives but makes 30 false alerts; the lexical baseline has higher precision and slightly higher balanced accuracy on this split |
+| Local LLM, M10/M12/M14 | Prompt/schema evaluation, checked interfaces, bounded tools | Fixed SmolLM2-135M-Instruct revision and bounded real examples | Recorded M10 generation is schema-valid on 99/100 messages but correct on 39/100; M14 uses authored controls, not a real-user reliability sample |
+| LoRA, M11 | Real adapter gradients, save/reload, and prompt masking | Rank-8 query/value adapters across layers; validation selects a checkpoint within 200 steps; separate final text IDs | Recorded 94/100 correct labels on a balanced historical sample; this does not establish performance at operational prevalence |
 | Adult classifier, M13 | Denominators, group audit, decision ethics | Provided benchmark boundaries with overlap removal; validation threshold | Historic income/category labels are limited and harmful if generalized to people; age remains an input |
+
+The figures above summarize the [recorded framework results](framework-results.md). Earlier failure cases remain in the [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md); they describe different configurations.
 
 ## Intended users and exclusions
 

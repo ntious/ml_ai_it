@@ -21,11 +21,11 @@ Start with the [Python foundation bridge](foundation.md) if variables, loops, fu
 - **Direct evidence:** CLO7 (Data representations)
 - **Supporting practice:** CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Data and tools:** <span class="data-label">Synthetic</span>
-- **Evidence you produce:** CSV and JSON summary with units, and a verified correction of a seeded error.
+- **Evidence you produce:** CSV and JSON summary with units, and a verified correction of a seeded error. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Small service files, not telemetry.
 - **Responsible-AI check:** Which fields are personal or sensitive, and should they be summarized at all?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route

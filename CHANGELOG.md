@@ -2,6 +2,8 @@
 
 ## November 2026 — outcome-evidence map and bridge activities
 
+- Reviewed public claims against saved model outputs: distinguish recorded comparisons from causal explanations, refresh model-use summaries, clarify historical verification, and preserve the owner's authorship wording on the homepage.
+- Added a separately completed RT-IoT operations decision record and conditional direct-evidence routes; hardened the bridge client, monitoring helper and outcome-map generator.
 - Added `curriculum/outcomes.json` as the single source for module-to-outcome links, data and tool labels, evidence artifacts, boundaries and one responsible-AI question per module. `scripts/build_outcome_map.py` generates the [course outcome map](docs/outcome-map.md) and a "Course outcomes and evidence" section on each lesson entry page; a test fails when they are stale.
 - Added an adoption guide with a mapping-register template, and source-and-independence statements in the alignment notes and OER license.
 - Added optional bridge activities: network record interpretation, a monitoring decision record, and a live API route with an offline-testable client pattern.

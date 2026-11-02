@@ -33,17 +33,17 @@ For the authored IT alert scenario, repeated host rows can share behavior and la
 
 ## Core stability exercise feedback
 
-The recorded run (October 28, 2026) gave a balanced-accuracy standard deviation of 0.009 for experiment A (seed only; range 0.561–0.586) and 0.017 for experiment B (split only; range 0.624–0.664). Changing which records are used moved the result about twice as much as changing the seed.
+The recorded run (October 28, 2026) gave a balanced-accuracy standard deviation of 0.009 for experiment A (seed only; range 0.561–0.586) and 0.017 for experiment B (split only; range 0.624–0.664). The observed split-study standard deviation is about twice the seed-study standard deviation in these runs. This is a descriptive comparison of two experiments, not an isolated causal effect or a general ratio.
 
-Experiment B's validation sets contain between 27 and 42 actual positives, so recall rests on a different denominator in each run, and one record changes it by 2–4 percentage points. Every resplit (lowest 0.624) scored higher than any seed on the fixed split (highest 0.586), which suggests the fixed validation set is a harder sample than most; a single split can be unrepresentative without anything being wrong.
+Experiment B's validation sets contain between 27 and 42 actual positives, so recall rests on a different denominator in each run, and one record changes it by 2–4 percentage points. Every resplit (lowest 0.624) scored higher than any seed on the fixed split (highest 0.586), which is consistent with sensitivity to the chosen partitions. Resplitting changes training as well as validation records, so these scores alone do not identify validation-set difficulty as the cause.
 
 A good answer separates the two sources: seed spread describes training randomness, while split spread describes sensitivity to the particular records. Neither is an estimate of performance on future data, and neither justifies looking at the final test to pick a seed. The threshold here is fixed at 0.5, so recall is low; tuning it would be a separate, validation-only decision.
 
 ## Applied extension feedback: bounded tuning
 
-In the recorded run (October 28, 2026), cross-validation chose C = 0.1 for logistic regression (CV balanced accuracy 0.790), depth 3 for the tree (0.743) and learning rate 0.05 with depth 2 for gradient boosting (0.775). On validation, logistic regression scored 0.811, the tree 0.784 and gradient boosting 0.723. Gradient boosting did not win here, and that is a valid result: a more flexible model needs enough data and signal to pay off.
+In the recorded run (October 28, 2026), cross-validation chose C = 0.1 for logistic regression (CV balanced accuracy 0.790), depth 3 for the tree (0.743) and learning rate 0.05 with depth 2 for gradient boosting (0.775). On validation, logistic regression scored 0.811, the tree 0.784 and gradient boosting 0.723. Gradient boosting had the lowest validation score among these selected candidates. This bounded search does not establish that the model family is generally worse or identify why it scored lower.
 
-The three logistic settings differ by less than their cross-validation standard deviations (about 0.03–0.04), so the choice among them is not meaningful. CV and validation agree on the best family here; if they disagreed, the honest response is to report both and treat the choice as uncertain, not to pick whichever looks better. Selecting by validation score and then reporting that same score reuses the evidence that made the choice, which biases it upwards; that is why the final test stays untouched.
+The differences between the three logistic settings are small relative to their fold-score standard deviations (about 0.03–0.04). Fold standard deviations are not uncertainty intervals for paired differences; this comparison alone establishes neither equivalence nor a meaningful advantage. Retain the declared selection rule and report its sensitivity. CV and validation agree on the best family here; if they disagreed, the honest response is to report both and treat the choice as uncertain, not to pick whichever looks better. Selecting by validation score and then reporting that same score reuses the evidence that made the choice, which biases it upwards; that is why the final test stays untouched.
 
 ## Compare the quality of explanations
 

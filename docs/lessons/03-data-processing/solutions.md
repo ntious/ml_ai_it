@@ -52,7 +52,7 @@ For example, `{'event_id': 'a', 'v': 1}` and `{'event_id': 'a', 'v': 2}`: the ro
 
 In the recorded run (October 28, 2026), validation balanced accuracy was 0.932 for codes as numbers (30 inputs), 0.949 for one-hot (68 inputs) and 0.949 for one-hot plus the count (69 inputs); false-positive rates were 0.049, 0.037 and 0.037. One-hot creates 68 columns rather than 90 because many attributes use only two of the three codes.
 
-The count adds nothing because its assumption fails: -1 goes with the higher training phishing rate in only 22 of the 30 attributes, so counting -1 codes mixes signals that point in opposite directions. An engineered feature needs a reason that holds in the training data. Carrying one-hot forward is reasonable on this evidence, but the 0.017 gain is on one validation split; confirm it is not split noise (compare the Module 6 stability exercise) before treating it as settled, and keep the final test for the locked choice.
+The added count did not improve the reported validation score in this run. Its directional assumption is questionable: -1 goes with the higher training phishing rate in only 22 of the 30 attributes, so the count mixes signals with different directions. This observation does not isolate the cause of the unchanged score; the count also reuses information already available to the one-hot model. An engineered feature needs a reason that holds in the training data. Carrying one-hot forward is reasonable on this evidence, but the 0.017 gain is on one validation split; confirm it is not split noise (compare the Module 6 stability exercise) before treating it as settled, and keep the final test for the locked choice.
 
 ## Judge the explanation
 

@@ -1,5 +1,7 @@
 # Course completion work record
 
+**Historical record:** the checks and owner actions below describe the dated October 2026 reviews, not the current publication state or verification of later commits. Security observations are limited to the methods and revisions inspected; absence of detected issues is not proof of absence. Use [current verification guidance](../../status.md) for the revision you intend to use.
+
 This work extends the three-module teaching prototype to all 14 modules and applies the October 2026 independent-review corrections (F1–F14). Learning outcomes remain unchanged; the practice checker verifies their text for all 14 modules.
 
 ## Implemented
@@ -43,10 +45,10 @@ Each PR's own CI run is the authoritative check. Deferred until learner evidence
 
 Scope: all 78 commits including the 17 retained pull-request refs (1,409 file versions), every PR description and review comment, repository settings, workflows, pinned dependencies and code patterns.
 
-- No secrets, tokens, keys or passwords in any file version; all commits use the GitHub no-reply address.
-- No institutional material: the private `documentations/` folder was never committed, and none of its syllabus, module texts or final-project documents shares a 10-word passage with any committed file.
+- The review reported no detected secrets, tokens, keys or passwords in the inspected file versions; all commits use the GitHub no-reply address.
+- The review checked the private source folder: the private `documentations/` folder was never committed, and none of its syllabus, module texts or final-project documents shares a 10-word passage with any committed file.
 - Workflows: no `pull_request_target`, read-only default token, write scopes limited to deploy, branch cleanup and issue creation; the release workflow validates its inputs.
-- Dependencies: core and site tooling have no known advisories. The framework pins (`transformers 4.46.3`, `torch 2.6.0`, `streamlit 1.44.1`) have advisories of low exploitability for the course's pinned, local use; documented in `SECURITY.md`, upgrade planned.
+- Dependencies: the dated review reported no known advisories for the inspected core and site tooling. This is not a current advisory check. The framework pins (`transformers 4.46.3`, `torch 2.6.0`, `streamlit 1.44.1`) have advisories of low exploitability for the course's pinned, local use; documented in `SECURITY.md`, upgrade planned.
 - Hardened: a data source without a reviewed checksum, or a model without a pinned revision, is now refused instead of being used unverified.
 
 ## Owner actions before student delivery

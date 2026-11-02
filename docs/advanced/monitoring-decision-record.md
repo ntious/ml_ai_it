@@ -2,7 +2,7 @@
 
 This guide supports the course outcome on deploying and monitoring AI-driven solutions. [Module 12](../lessons/12-deployment/index.md) produces monitoring artifacts from a local replay. A decision record turns those artifacts into a justified recommendation. It assesses what you observed and decided. It does not show that a system became more reliable in production, because the replay does not measure that.
 
-Use it after Module 12, or after the optional [RT-IoT project](../../projects/rt-iot-triage/README.md). It is optional and adds no required assessment.
+Use it after Module 12. You can adapt the written questions to the optional [RT-IoT project](../../projects/rt-iot-triage/README.md), but that project does not produce the batch-monitoring files required by the helper below. It is optional and adds no required assessment.
 
 ## Evidence to gather
 
@@ -13,7 +13,7 @@ From a Module 12 run, open `batch_monitoring.csv`, `prediction_log.csv`, and `se
 | Latency | `mean_prediction_seconds` per batch | Local CPU speed for this replay, not production capacity |
 | Input shift | `largest_standardized_mean_shift` per batch | A diagnostic against training data; row order is not event time, so it is not drift |
 | Errors and workload | `fp`, `fn`, `selection_rate`, `recall`, `precision` per batch | Held-out behavior with known labels. Live labels usually arrive late |
-| Contract failures | Requests rejected by `service_contract.json` rules | Whether invalid inputs are stopped, not whether valid inputs are good |
+| Contract failures | Your recorded invalid-request tests, interpreted alongside `service_contract.json` | The contract file describes rules; it does not log rejections. Test responses show which invalid requests were stopped |
 
 ## Draft the evidence table
 
@@ -23,7 +23,7 @@ Run the helper on your batch file. It reports observed values and compares them 
 python -m practical_ml_ai.monitoring_record runs/module12/study/batch_monitoring.csv --latency-limit 0.001 --shift-limit 0.5
 ~~~
 
-The numbers above are placeholders. Replace them with limits you can justify, and say where each came from. A missing standardized shift is shown as unavailable rather than zero.
+The numbers above are placeholders. Replace them with limits you can justify, and say where each came from. A missing or nonfinite standardized shift is shown as unavailable rather than zero. The table retains selection rate and any recorded features with unavailable standardized shifts; a defined maximum for other features must not hide these gaps.
 
 ## Write the record
 

@@ -18,14 +18,15 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
-- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
-- **Supporting practice:** CLO1 (Learning paradigms)
+- **Direct evidence:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
+- **Supporting practice:** CLO1 (Learning paradigms), CLO2 (Applying ML/AI to IT operations)
+- **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
 - **Data and tools:** <span class="data-label">Real public</span>
-- **Evidence you produce:** Classifier comparison chosen on validation data, with a confusion-matrix explanation.
+- **Evidence you produce:** Classifier comparison chosen on validation data, with a confusion-matrix explanation. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.
 - **Responsible-AI check:** What do a false positive and a false negative cost, and who bears each?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning sequence for this module
@@ -44,7 +45,7 @@ A probability estimate is not automatically calibrated confidence. A threshold c
 
 UCI Wine Quality; real red-wine chemistry and human ratings. See the central source register for citation, rights, archive hash, and limitations.
 
-[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
 
 ## The complete workflow
 

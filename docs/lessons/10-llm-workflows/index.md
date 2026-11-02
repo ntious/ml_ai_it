@@ -21,11 +21,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Direct evidence:** CLO5 (GenAI and LLM integration), CLO7 (Data representations), CLO8 (Communication)
 - **Supporting practice:** CLO4 (Frameworks and evaluation)
 - **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
-- **Evidence you produce:** Local prompting experiment with output-contract failures counted and a literature critique.
+- **Evidence you produce:** Local prompting experiment with output-contract failures counted and a literature critique. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
 - **Boundary:** No live closed-provider API call is established.
 - **Responsible-AI check:** What happens when output is fluent but wrong or exposes sensitive text, and which human check catches it?
 
-See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
 <!-- OUTCOME_EVIDENCE_END -->
 
 ## Learning route
@@ -42,7 +42,7 @@ A language model predicts token continuations, not guaranteed facts or valid JSO
 
 UCI SMS Spam Collection; real human-labeled messages. Public messages may contain personal content; processing stays local and reports use hashes/contact masking. See the source register.
 
-[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. No generated dataset or invented labels are used in this module. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
 
 ## The complete workflow
 

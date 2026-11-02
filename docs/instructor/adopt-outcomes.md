@@ -28,7 +28,7 @@ Copy the [private alignment register template](../../templates/alignment-registe
 - Allowed AI assistance, disclosure and an equivalent no-assistant route are published before grading.
 - Accessible alternatives still demonstrate the same outcome.
 - Weights, deadlines and submission rules come from your course, not from this repository.
-- No institutional text, student work or restricted assessments are added to the public repository.
+- Keep student records and restricted assessments private. Publish institutional wording only when its source, attribution and permission or applicable reuse terms have been checked.
 
 ## Limits
 

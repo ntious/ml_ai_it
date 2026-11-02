@@ -4,7 +4,7 @@
 
 The institutional course outcomes are the fixed framework this resource supports. The lessons, code and examples are original teaching materials written to build toward them. An adopting course keeps its own outcomes and assessments; use the [adoption guide](instructor/adopt-outcomes.md) to map these modules to yours.
 
-**Direct** means the module's own work produces evidence for the outcome. **Support** means it builds a skill the outcome needs. Neither claims student attainment, a rubric, or accreditation evidence.
+**Direct** means the module offers an assessable artifact for a stated part of the working outcome summary, in the indicated context. **Support** means it builds a transferable skill without demonstrating that application. Optional bridges are separate activities, not completed core evidence. Neither claims student attainment, a rubric, or accreditation evidence.
 
 ## Modules and outcomes
 
@@ -12,31 +12,41 @@ The institutional course outcomes are the fixed framework this resource supports
 | --- | --- | --- | --- |
 | [1. ML and AI foundations for practical decisions](lessons/01-foundations/index.md) | CLO1, CLO8 | CLO2, CLO4 | <span class="data-label">Synthetic</span> |
 | [2. Python for reproducible ML workflows](lessons/02-python-workflows/index.md) | CLO7 | CLO3, CLO4, CLO8 | <span class="data-label">Synthetic</span> |
-| [3. Data processing and trustworthy inputs](lessons/03-data-processing/index.md) | CLO3, CLO7 | CLO4, CLO8 | <span class="data-label">Synthetic</span> |
-| [4. Exploration and visual communication](lessons/04-exploration/index.md) | CLO3, CLO8 | — | <span class="data-label">Synthetic</span> |
-| [5. Regression and reliable evaluation](lessons/05-regression/index.md) | CLO2, CLO4, CLO8 | CLO1 | <span class="data-label">Real public</span> |
-| [6. Classification and decision trees](lessons/06-classification/index.md) | CLO2, CLO4, CLO8 | CLO1 | <span class="data-label">Real public</span> |
-| [7. Clustering and learning paradigms](lessons/07-clustering/index.md) | CLO1, CLO3, CLO4, CLO8 | CLO2 | <span class="data-label">Real public</span> |
-| [8. Neural networks with TensorFlow](lessons/08-neural-networks/index.md) | CLO2, CLO4, CLO8 | — | <span class="data-label">Real public</span> |
-| [9. Neural NLP for real messages](lessons/09-neural-nlp/index.md) | CLO2, CLO4, CLO7, CLO8 | CLO5 | <span class="data-label">Real public</span> |
+| [3. Data processing and trustworthy inputs](lessons/03-data-processing/index.md) | CLO7 | CLO4, CLO8, CLO3 | <span class="data-label">Synthetic</span> |
+| [4. Exploration and visual communication](lessons/04-exploration/index.md) | CLO8 | CLO3 | <span class="data-label">Synthetic</span> |
+| [5. Regression and reliable evaluation](lessons/05-regression/index.md) | CLO4, CLO8 | CLO1, CLO2 | <span class="data-label">Real public</span> |
+| [6. Classification and decision trees](lessons/06-classification/index.md) | CLO4, CLO8 | CLO1, CLO2 | <span class="data-label">Real public</span> |
+| [7. Clustering and learning paradigms](lessons/07-clustering/index.md) | CLO1, CLO4, CLO8 | CLO2, CLO3 | <span class="data-label">Real public</span> |
+| [8. Neural networks with TensorFlow](lessons/08-neural-networks/index.md) | CLO4, CLO8 | CLO2 | <span class="data-label">Real public</span> |
+| [9. Neural NLP for real messages](lessons/09-neural-nlp/index.md) | CLO4, CLO7, CLO8 | CLO5, CLO2 | <span class="data-label">Real public</span> |
 | [10. LLMs and evaluated generative workflows](lessons/10-llm-workflows/index.md) | CLO5, CLO7, CLO8 | CLO4 | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
 | [11. Fine-tuning language models responsibly](lessons/11-fine-tuning/index.md) | CLO4, CLO5, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
 | [12. Deployment and monitoring](lessons/12-deployment/index.md) | CLO2, CLO5, CLO6, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
-| [13. Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) | — | CLO2, CLO5, CLO6, CLO8; RAI extension | <span class="data-label">Real public</span> |
-| [14. Bounded agents and AI workflows](lessons/14-agents/index.md) | CLO2, CLO4, CLO5, CLO6, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> <span class="data-label">Offline fixture</span> |
+| [13. Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) | CLO8 | CLO2, CLO5, CLO6; RAI extension | <span class="data-label">Real public</span> |
+| [14. Bounded agents and AI workflows](lessons/14-agents/index.md) | CLO4, CLO5, CLO8 | CLO2, CLO6 | <span class="data-label">Real public</span> <span class="data-label">Local model</span> <span class="data-label">Offline fixture</span> |
 
 ## Outcomes and what the evidence shows
 
 | Outcome | Direct modules | Supporting modules | Evidence status and boundary | Bridge |
 | --- | --- | --- | --- | --- |
-| CLO1 Learning paradigms | 1, 7 | 5, 6 | Conceptual comparison; reinforcement learning is explained, not implemented. | [Bridge activity](lessons/07-clustering/index.md) |
-| CLO2 Applying ML/AI to IT operations | 5, 6, 8, 9, 12, 14 | 1, 7, 13 | Strongest when the task, data and decision come from an IT workflow. Wine and bike examples build technique only. | [Bridge activity](cases/network-record-interpretation.md) |
-| CLO3 Interpreting network data | 3, 4, 7 | 2 | Modules 3 and 4 use original synthetic event records. Genuine flow records appear only in the optional RT-IoT and phishing extensions. | [Bridge activity](cases/network-record-interpretation.md) |
-| CLO4 Frameworks and evaluation | 5, 6, 7, 8, 9, 11, 14 | 1, 2, 3, 10 | Executed training and evaluation with baselines. Fixtures and screenshots are not evidence of training. | [Bridge activity](advanced/evaluation.md) |
-| CLO5 GenAI and LLM integration | 10, 11, 12, 14 | 9, 13 | Local models and offline fixtures. Live closed-provider API use is an adoption choice. | [Bridge activity](advanced/live-api-route.md) |
-| CLO6 Deployment and monitoring | 12, 14 | 13 | Checked local app and monitoring replay. Production reliability is not measured. | [Bridge activity](advanced/monitoring-decision-record.md) |
-| CLO7 Data representations | 2, 3, 9, 10 | — | Data dictionaries for CSV, JSON, arrays, text and tuning records. | [Bridge activity](lessons/03-data-processing/index.md) |
-| CLO8 Communication | 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 | 2, 3, 13 | Result explanations tied to named evidence and limits. Presentation requirements belong to the adopting course. | [Bridge activity](lessons/04-exploration/index.md) |
+| CLO1 Learning paradigms | 1, 7 | 5, 6 | Conceptual comparison; reinforcement learning is explained, not implemented. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](lessons/07-clustering/index.md) |
+| CLO2 Applying ML/AI to IT operations | 12 | 1, 5, 6, 7, 8, 9, 13, 14 | Strongest when the task, data and decision come from an IT workflow. Wine and bike examples build technique only. The shared IT-OPS activity adds real network-triage application after Module 6; it is not automatically completed by the technique lessons. | [Related resource / optional bridge](cases/network-record-interpretation.md) |
+| CLO3 Interpreting network data | — | 2, 3, 4, 7 | Core modules rehearse interpretation on synthetic events; genuine flow interpretation is supplied by the optional RT-IoT bridge. The phishing case uses website attributes, not network flows. No direct core-module evidence on genuine network flows; the optional bridge supplies a separate interpretation artifact. | [Related resource / optional bridge](cases/network-record-interpretation.md) |
+| CLO4 Frameworks and evaluation | 5, 6, 7, 8, 9, 11, 14 | 1, 2, 3, 10 | Executed training and evaluation with baselines. Fixtures and screenshots are not evidence of training. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](advanced/evaluation.md) |
+| CLO5 GenAI and LLM integration | 10, 11, 12, 14 | 9, 13 | Local models and offline fixtures. Live closed-provider API use is an adoption choice. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](advanced/live-api-route.md) |
+| CLO6 Deployment and monitoring | 12 | 13, 14 | Checked local app and monitoring replay. Production reliability is not measured. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](advanced/monitoring-decision-record.md) |
+| CLO7 Data representations | 2, 3, 9, 10 | — | Data dictionaries for CSV, JSON, arrays, text and tuning records. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](lessons/03-data-processing/index.md) |
+| CLO8 Communication | 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 | 2, 3 | Result explanations tied to named evidence and limits. Presentation requirements belong to the adopting course. Planned partial evidence only; confirm the authoritative outcome and assessment in the adopting course. | [Related resource / optional bridge](lessons/04-exploration/index.md) |
+
+## Additional direct-evidence activities
+
+These links offer additional evidence only when the named activity and its assessment artifact are completed. They do not relabel the original datasets or add new official outcomes. Reusing one artifact across modules is not independent evidence from each module.
+
+| Activity | Outcome | Used with modules | Required evidence |
+| --- | --- | --- | --- |
+| [NETWORK](cases/network-record-interpretation.md) | CLO3 | 3, 4, 7 | Inspect genuine network records and submit the analyst notes; after Module 4. |
+| [IT-OPS](cases/it-operations-evidence.md) | CLO2 | 5, 6, 8, 9, 14 | Run the RT-IoT study and submit the cost, workload and operations decision record; after Module 6. Reuse one dossier across the linked modules. |
+| [MONITOR](advanced/monitoring-decision-record.md) | CLO6 | 14 | Complete the executed Module 12 service/monitoring work and submit its decision record; a Module 14 trace alone is insufficient. |
 
 ## Data and tool labels
 
@@ -57,8 +67,8 @@ The institutional course outcomes are the fixed framework this resource supports
 | 4 | Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo. | Synthetic workload data; a flagged point means investigate, not incident. |
 | 5 | Time-aware split, baseline comparison, error analysis and a reproducible memo. | Bike demand is a service-demand analogue, not IT incident telemetry. |
 | 6 | Classifier comparison chosen on validation data, with a confusion-matrix explanation. | Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension. |
-| 7 | Cluster-count choice made without labels, with an interpretation and its limits. | CLO3 here concerns interpreting groupings; wine data is not network data. |
-| 8 | Trained and reloaded TensorFlow model compared with a simpler reference. | CPU-scale tabular network; scale is not claimed. |
+| 7 | Cluster-count choice made without labels, with an interpretation and its limits. | Wine groupings support interpretation technique; they do not demonstrate network-data interpretation. |
+| 8 | Trained and reloaded TensorFlow model compared with a simpler reference. | CPU-scale wine classification; IT operations transfer and production scale are not demonstrated. |
 | 9 | Text representation comparison and a neural text classifier with documented failures. | Public SMS messages; masked reports, no production claim. |
 | 10 | Local prompting experiment with output-contract failures counted and a literature critique. | No live closed-provider API call is established. |
 | 11 | Saved configuration, logs and adapters from a real tiny fine-tuning run, with an evaluation. | Tiny balanced subset; scale and generalization are limited. |

@@ -4,7 +4,7 @@ Edition 0.7.0 contains all 14 modules, eight teaching pages per module, public s
 
 ## How this edition is verified
 
-Every change to `main` runs the full workflow: core checks on Linux (Python 3.12) and Windows (Python 3.12 and 3.13), framework tests and notebooks on Linux CPU, and the complete site, download and browser checks. Check the [workflow results](https://github.com/ntious/ml_ai_it/actions/workflows/checks.yml) for the exact commit you use; a failed, cancelled or timed-out run does not verify that revision.
+The workflow is configured to run on pushes to `main`, pull requests and manual dispatches: core checks on Linux (Python 3.12) and Windows (Python 3.12 and 3.13), framework tests and notebooks on Linux CPU, and the complete site, download and browser checks. Check the [workflow results](https://github.com/ntious/ml_ai_it/actions/workflows/checks.yml) for the exact commit you use; a failed, cancelled or timed-out run does not verify that revision.
 
 ## Reference environments and evidence
 
@@ -25,6 +25,8 @@ Early fixtures are labeled teaching data. Later modeling uses attributed public 
 Adult results are descriptive audits, batch replay is not a measured timeline, and a legal tool plan may misunderstand intent. Historical benchmark performance and successful execution do not establish operational suitability.
 
 ## Verified results
+
+Here, verified refers to the recorded executions described below, not every later revision or operational use.
 
 **Modules 8–11 and 14:** use [the current framework results](framework-results.md). The [archived framework baseline](maintenance/reviews/framework-baseline-0.7.0.md) describes earlier weak configurations and is not the current result.
 

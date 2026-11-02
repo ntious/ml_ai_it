@@ -26,7 +26,7 @@ def refresh(runs):
         positives = neural["tp"] + neural["fn"]
         rows.append(f'| {n} | {result["sample_rows"]:,} source rows; {neural["n"]:,} final | '
                     f'Neural recall {neural["tp"]}/{positives} = {neural["recall"]:.3f}; precision {neural["precision"]:.3f}; '
-                    f'balanced accuracy {neural["balanced_accuracy"]:.3f} | Lexical/logistic recall {baseline["recall"]:.3f}; '
+                    f'balanced accuracy {neural["balanced_accuracy"]:.3f} | {"Logistic" if n == 8 else "Lexical logistic"} recall {baseline["recall"]:.3f}; '
                     f'balanced accuracy {baseline["balanced_accuracy"]:.3f} |')
         diagnoses[n] = (
             f'**Recorded evidence.** Of {positives} actual positives among {neural["n"]} final records, the network finds '
@@ -74,8 +74,8 @@ def refresh(runs):
         f'within the {eleven["steps"]}-step maximum. On {eleven["test_examples"]} balanced final messages, '
         f'JSON validity changes from {eleven["base_schema_rate"]:.0%} to {eleven["adapted_schema_rate"]:.0%}, '
         f'and label accuracy from {eleven["base_generation_accuracy"]:.0%} to {eleven["adapted_generation_accuracy"]:.0%}.\n\n'
-        '**Explain the improvement.** This study updates rank-8 adapters in every query/value layer, rather than '
-        'eight updates to a single rank-2 projection. More training capacity and examples can change completion behavior. '
+        '**Interpret the recorded change.** This study updates rank-8 adapters in every query/value layer, rather than '
+        'eight updates to a single rank-2 projection. Several protocol choices changed together; this comparison does not isolate which change caused the difference from the earlier run. '
         'The checkpoint uses validation loss only; the final comparison cannot choose steps. '
         'The rank-2 hand construction remains useful for understanding the matrix operation.\n\n'
         '**Check what each output establishes.** validation_generation.csv provides development format/label checks; '
@@ -113,7 +113,7 @@ def refresh(runs):
             end = source.index('\n## What a good explanation contains', start)
             source = source[:start] + '\nCompare the current run below with the [archived under-trained/failed baseline](../../maintenance/reviews/framework-baseline-0.7.0.md). The archive records earlier settings; it is not the current protocol. A working mechanism and a useful task model require different evidence.\n' + source[end:]
         path.write_text(source, encoding="utf-8")
-    heading = '# Recorded Phase B framework results\n\n'
+    heading = '# Recorded framework results\n\n'
     context = ('Generated from actual `runs/verified/moduleNN/summary.json` files using '
                '`python scripts/update_framework_results.py`. Regenerate after changing the protocol; '
                'the site builder does not fabricate results or silently update source.\n\n'
@@ -125,7 +125,7 @@ def refresh(runs):
     links = '\n## Reproduce and inspect\n\n'
     for n, name in NAMES.items():
         links += f'- [Module {n} workflow](lessons/{name}/index.md) and [feedback](lessons/{name}/feedback.md).\n'
-    links += '\nThe [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md) retains the earlier failure cases. Consult each report’s rate_intervals.csv where provided. Remaining repository-wide uncertainty work belongs to Phase C.\n'
+    links += '\nThe [historical baseline](maintenance/reviews/framework-baseline-0.7.0.md) retains the earlier failure cases. Consult each report’s rate_intervals.csv where provided.\n'
     (ROOT / 'docs/framework-results.md').write_text(heading + context + table + links, encoding="utf-8")
     path = ROOT / 'docs/status.md'
     source = path.read_text(encoding="utf-8")

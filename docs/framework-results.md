@@ -6,8 +6,8 @@ These historical benchmarks and authored controls have been inspected during dev
 
 | Module | Evaluation sample | Recorded result | Comparison / qualification |
 | --- | --- | --- | --- |
-| 8 | 1,599 source rows; 243 final | Neural recall 29/29 = 1.000; precision 0.244; balanced accuracy 0.790 | Lexical/logistic recall 0.897; balanced accuracy 0.829 |
-| 9 | 5,159 source rows; 1,032 final | Neural recall 118/128 = 0.922; precision 0.797; balanced accuracy 0.944 | Lexical/logistic recall 0.906; balanced accuracy 0.946 |
+| 8 | 1,599 source rows; 243 final | Neural recall 29/29 = 1.000; precision 0.244; balanced accuracy 0.790 | Logistic recall 0.897; balanced accuracy 0.829 |
+| 9 | 5,159 source rows; 1,032 final | Neural recall 118/128 = 0.922; precision 0.797; balanced accuracy 0.944 | Lexical logistic recall 0.906; balanced accuracy 0.946 |
 | 10 | 100 stratified final SMS | Likelihood accuracy 0.85; free-generation validity 0.99, accuracy 0.39 | Lexical accuracy 0.97; training-majority accuracy 0.88 |
 | 11 | 100 balanced final SMS | JSON validity 0.00 → 1.00; label accuracy 0.00 → 0.94 | Validation loss 1.5358 → 0.0030; selected step 200/200 |
 | 14 | 26 authored final controls | Routing 22/26 = 0.846 | Correct refusals 9/10; no destructive tools available |
