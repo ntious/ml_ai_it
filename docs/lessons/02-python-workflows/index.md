@@ -20,7 +20,7 @@ Start with the [Python foundation bridge](foundation.md) if variables, loops, fu
 
 - **Direct evidence:** CLO7 (Data representations)
 - **Supporting practice:** CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
-- **Data and tools:** Synthetic
+- **Data and tools:** <span class="data-label">Synthetic</span>
 - **Evidence you produce:** CSV and JSON summary with units, and a verified correction of a seeded error.
 - **Boundary:** Small service files, not telemetry.
 - **Responsible-AI check:** Which fields are personal or sensitive, and should they be summarized at all?

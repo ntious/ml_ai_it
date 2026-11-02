@@ -62,3 +62,13 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use the saved base/adapted outputs and evaluation results. Recompute the change in one task metric on the same held-out examples and compare it with the reported training loss change. Explain why decreasing loss alone does not establish improved task performance.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Could the tuned model reproduce private text, and do the data and model licenses allow this use?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

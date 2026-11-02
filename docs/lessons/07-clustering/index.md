@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO1 (Learning paradigms), CLO3 (Interpreting network data), CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations)
-- **Data and tools:** Real public
+- **Data and tools:** <span class="data-label">Real public</span>
 - **Evidence you produce:** Cluster-count choice made without labels, with an interpretation and its limits.
 - **Boundary:** CLO3 here concerns interpreting groupings; wine data is not network data.
 - **Responsible-AI check:** Does the data support the name given to a cluster, or does the name imply more than it shows?

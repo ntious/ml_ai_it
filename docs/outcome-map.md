@@ -10,20 +10,20 @@ The institutional course outcomes are the fixed framework this resource supports
 
 | Module | Direct evidence | Supporting practice | Data and tools |
 | --- | --- | --- | --- |
-| [1. ML and AI foundations for practical decisions](lessons/01-foundations/index.md) | CLO1, CLO8 | CLO2, CLO4 | Synthetic |
-| [2. Python for reproducible ML workflows](lessons/02-python-workflows/index.md) | CLO7 | CLO3, CLO4, CLO8 | Synthetic |
-| [3. Data processing and trustworthy inputs](lessons/03-data-processing/index.md) | CLO3, CLO7 | CLO4, CLO8 | Synthetic |
-| [4. Exploration and visual communication](lessons/04-exploration/index.md) | CLO3, CLO8 | — | Synthetic |
-| [5. Regression and reliable evaluation](lessons/05-regression/index.md) | CLO2, CLO4, CLO8 | CLO1 | Real public |
-| [6. Classification and decision trees](lessons/06-classification/index.md) | CLO2, CLO4, CLO8 | CLO1 | Real public |
-| [7. Clustering and learning paradigms](lessons/07-clustering/index.md) | CLO1, CLO3, CLO4, CLO8 | CLO2 | Real public |
-| [8. Neural networks with TensorFlow](lessons/08-neural-networks/index.md) | CLO2, CLO4, CLO8 | — | Real public |
-| [9. Neural NLP for real messages](lessons/09-neural-nlp/index.md) | CLO2, CLO4, CLO7, CLO8 | CLO5 | Real public |
-| [10. LLMs and evaluated generative workflows](lessons/10-llm-workflows/index.md) | CLO5, CLO7, CLO8 | CLO4 | Real public, Local model |
-| [11. Fine-tuning language models responsibly](lessons/11-fine-tuning/index.md) | CLO4, CLO5, CLO8 | — | Real public, Local model |
-| [12. Deployment and monitoring](lessons/12-deployment/index.md) | CLO2, CLO5, CLO6, CLO8 | — | Real public, Local model |
-| [13. Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) | — | CLO2, CLO5, CLO6, CLO8; RAI extension | Real public |
-| [14. Bounded agents and AI workflows](lessons/14-agents/index.md) | CLO2, CLO4, CLO5, CLO6, CLO8 | — | Real public, Local model, Offline fixture |
+| [1. ML and AI foundations for practical decisions](lessons/01-foundations/index.md) | CLO1, CLO8 | CLO2, CLO4 | <span class="data-label">Synthetic</span> |
+| [2. Python for reproducible ML workflows](lessons/02-python-workflows/index.md) | CLO7 | CLO3, CLO4, CLO8 | <span class="data-label">Synthetic</span> |
+| [3. Data processing and trustworthy inputs](lessons/03-data-processing/index.md) | CLO3, CLO7 | CLO4, CLO8 | <span class="data-label">Synthetic</span> |
+| [4. Exploration and visual communication](lessons/04-exploration/index.md) | CLO3, CLO8 | — | <span class="data-label">Synthetic</span> |
+| [5. Regression and reliable evaluation](lessons/05-regression/index.md) | CLO2, CLO4, CLO8 | CLO1 | <span class="data-label">Real public</span> |
+| [6. Classification and decision trees](lessons/06-classification/index.md) | CLO2, CLO4, CLO8 | CLO1 | <span class="data-label">Real public</span> |
+| [7. Clustering and learning paradigms](lessons/07-clustering/index.md) | CLO1, CLO3, CLO4, CLO8 | CLO2 | <span class="data-label">Real public</span> |
+| [8. Neural networks with TensorFlow](lessons/08-neural-networks/index.md) | CLO2, CLO4, CLO8 | — | <span class="data-label">Real public</span> |
+| [9. Neural NLP for real messages](lessons/09-neural-nlp/index.md) | CLO2, CLO4, CLO7, CLO8 | CLO5 | <span class="data-label">Real public</span> |
+| [10. LLMs and evaluated generative workflows](lessons/10-llm-workflows/index.md) | CLO5, CLO7, CLO8 | CLO4 | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
+| [11. Fine-tuning language models responsibly](lessons/11-fine-tuning/index.md) | CLO4, CLO5, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
+| [12. Deployment and monitoring](lessons/12-deployment/index.md) | CLO2, CLO5, CLO6, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> |
+| [13. Ethics and fairness across the lifecycle](lessons/13-ethics-fairness/index.md) | — | CLO2, CLO5, CLO6, CLO8; RAI extension | <span class="data-label">Real public</span> |
+| [14. Bounded agents and AI workflows](lessons/14-agents/index.md) | CLO2, CLO4, CLO5, CLO6, CLO8 | — | <span class="data-label">Real public</span> <span class="data-label">Local model</span> <span class="data-label">Offline fixture</span> |
 
 ## Outcomes and what the evidence shows
 
@@ -42,10 +42,10 @@ The institutional course outcomes are the fixed framework this resource supports
 
 | Label | Meaning |
 | --- | --- |
-| Synthetic | Original teaching records written for this resource. They are not genuine operational data. |
-| Real public | Genuine records from a cited public source. They may not represent any production environment. |
-| Local model | A model that runs on the learner's machine, with no paid account. |
-| Offline fixture | Saved inputs or outputs used to test logic. A fixture is not a live call and not a training run. |
+| <span class="data-label">Synthetic</span> | Original teaching records written for this resource. They are not genuine operational data. |
+| <span class="data-label">Real public</span> | Genuine records from a cited public source. They may not represent any production environment. |
+| <span class="data-label">Local model</span> | A model that runs on the learner's machine, with no paid account. |
+| <span class="data-label">Offline fixture</span> | Saved inputs or outputs used to test logic. A fixture is not a live call and not a training run. |
 
 ## Evidence by module
 

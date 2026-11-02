@@ -19,7 +19,7 @@ You need basic functions, file paths, and dataframe selection/grouping. Use the 
 
 - **Direct evidence:** CLO3 (Interpreting network data), CLO8 (Communication)
 - **Supporting practice:** none
-- **Data and tools:** Synthetic
+- **Data and tools:** <span class="data-label">Synthetic</span>
 - **Evidence you produce:** Labeled plot with matching numbers, an anomaly interpretation with uncertainty, and a stakeholder memo.
 - **Boundary:** Synthetic workload data; a flagged point means investigate, not incident.
 - **Responsible-AI check:** Could a chart or summary hide an unusual group or overstate certainty to a stakeholder?
@@ -121,6 +121,10 @@ Saved outputs include normalized observations, `summary.json`, named text values
 Read only the named sections. Current documentation may describe newer versions than the tested environment; the repository records its exercised versions.
 
 Complete [practice and the operations memo](practice.md), then consult [worked feedback](feedback.md). [Module 5](../05-regression/index.md) introduces regression and held-out evaluation. When exploration informs model choices, use training/development data and preserve final test data for its planned evaluation; no predictive evaluation is performed here.
+
+## Optional bridge: genuine network records
+
+The [network record interpretation activity](../../cases/network-record-interpretation.md) applies this module's interpretation habits to documented real flow records and compares them with synthetic events.
 
 ## Instructor adaptation
 

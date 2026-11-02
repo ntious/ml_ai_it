@@ -21,7 +21,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Direct evidence:** none
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
 - **Curriculum extension:** Responsible AI practice (privacy, fairness, limits)
-- **Data and tools:** Real public
+- **Data and tools:** <span class="data-label">Real public</span>
 - **Evidence you produce:** Group error and selection-rate audit with a governance recommendation, including reasons not to deploy.
 - **Boundary:** Descriptive fairness reasoning only; no legal compliance claim.
 - **Responsible-AI check:** Is the task itself justified, not only the metric?

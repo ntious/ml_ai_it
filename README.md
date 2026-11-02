@@ -91,7 +91,7 @@ Core execution is checked on Windows and Linux. Framework modules 8–12 and 14 
 | 13 | [Ethics, fairness and uncertainty](docs/lessons/13-ethics-fairness/index.md) |
 | 14 | [Bounded agents and tool workflows](docs/lessons/14-agents/index.md) |
 
-The [historical phishing-detection case](docs/cases/phishing.md) adds an authentic IT security example with separate preparation, training, validation, evaluation and reporting stages, plus a combined notebook. The [project companion](docs/project.md) helps you connect concepts across an existing course project or independent study.
+The [historical phishing-detection case](docs/cases/phishing.md) adds an authentic IT security example with separate preparation, training, validation, evaluation and reporting stages, plus a combined notebook. The [project companion](docs/project.md) helps you connect concepts across an existing course project or independent study. The [course outcome map](docs/outcome-map.md) shows which outcomes each module supports and what evidence it produces; instructors can map modules to their own outcomes with the [adoption guide](docs/instructor/adopt-outcomes.md).
 
 ## A repeatable learning workflow
 

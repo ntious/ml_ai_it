@@ -55,6 +55,10 @@ def summary(data):
     return {item["id"]: item["summary"] for item in data["outcomes"]}
 
 
+def badges(labels):
+    return " ".join(f'<span class="data-label">{label}</span>' for label in labels)
+
+
 def module_block(data, item, module):
     names = summary(data)
     label = lambda ids: ", ".join(f"{x} ({names[x]})" for x in ids) or "none"
@@ -64,13 +68,32 @@ def module_block(data, item, module):
     if item.get("extension"):
         extension = next(x for x in data["extensions"] if x["id"] == item["extension"])
         lines.append(f"- **Curriculum extension:** {extension['summary']}")
-    lines += [f"- **Data and tools:** {', '.join(item['labels'])}",
+    lines += [    f"- **Data and tools:** {badges(item['labels'])}",
               f"- **Evidence you produce:** {item['evidence']}",
               f"- **Boundary:** {item['boundary']}",
               f"- **Responsible-AI check:** {item['responsible']}", "",
               "See the [outcome map](../../outcome-map.md) for all modules and the label definitions. "
               "These are repository outcomes mapped to fixed course outcomes; they do not claim course credit.", END]
     return "\n".join(lines)
+
+
+PRACTICE_START, PRACTICE_END = "<!-- RESPONSIBLE_AI_START -->", "<!-- RESPONSIBLE_AI_END -->"
+
+
+def practice_block(item):
+    return "\n".join([
+        "## Responsible-AI check", "", PRACTICE_START, "",
+        f"{item['responsible']}", "",
+        "Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. "
+        "This is a reasoning prompt, not an extra graded task.", "", PRACTICE_END])
+
+
+def with_practice(text, block):
+    if PRACTICE_START in text:
+        head = text.split("## Responsible-AI check", 1)[0].rstrip("\n")
+        tail = text.split(PRACTICE_END, 1)[1]
+        return head + "\n\n" + block + tail
+    return text.rstrip("\n") + "\n\n" + block + "\n"
 
 
 def map_page(data, modules):
@@ -90,14 +113,14 @@ def map_page(data, modules):
         support = ", ".join(item["support"]) or "—"
         if item.get("extension"):
             support += f"; {item['extension']} extension"
-        out.append(f"| [{item['id']}. {titles[item['id']]}]({link[item['id']]}) | {direct} | {support} | {', '.join(item['labels'])} |")
+        out.append(f"| [{item['id']}. {titles[item['id']]}]({link[item['id']]}) | {direct} | {support} | {badges(item['labels'])} |")
     out += ["", "## Outcomes and what the evidence shows", "",
             "| Outcome | Direct modules | Supporting modules | Evidence status and boundary | Bridge |", "| --- | --- | --- | --- | --- |"]
     for outcome in data["outcomes"]:
         pick = lambda key: ", ".join(str(m["id"]) for m in data["modules"] if outcome["id"] in m[key]) or "—"
         out.append(f"| {outcome['id']} {outcome['summary']} | {pick('direct')} | {pick('support')} | {outcome['evidence_status']} | [Bridge activity]({outcome['bridge']}) |")
     out += ["", "## Data and tool labels", "", "| Label | Meaning |", "| --- | --- |"]
-    out += [f"| {key} | {value} |" for key, value in data["data_labels"].items()]
+    out += [f"| {badges([key])} | {value} |" for key, value in data["data_labels"].items()]
     out += ["", "## Evidence by module", "", "| Module | Evidence you produce | Boundary |", "| --- | --- | --- |"]
     out += [f"| {item['id']} | {item['evidence']} | {item['boundary']} |" for item in data["modules"]]
     out += ["", "## Responsible-AI extension", "",
@@ -135,6 +158,10 @@ def main():
         crlf = "\r\n" in original
         text = with_block(original.replace("\r\n", "\n"), module_block(data, items[module["id"]], module), page)
         wanted[page] = text.replace("\n", "\r\n") if crlf else text
+        practice = page.with_name("practice.md")
+        original = practice.read_bytes().decode("utf-8")
+        text = with_practice(original.replace("\r\n", "\n"), practice_block(items[module["id"]]))
+        wanted[practice] = text.replace("\n", "\r\n") if "\r\n" in original else text
     stale = []
     for path, text in wanted.items():
         current = path.read_bytes().decode("utf-8") if path.exists() else None

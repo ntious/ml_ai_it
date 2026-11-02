@@ -66,3 +66,13 @@ Windows paths normally use backslashes; Linux paths use forward slashes. The pat
 Use your service-file summary and original CSV/JSON inputs. Independently count one status and recompute one observed-value mean, excluding missing values rather than treating them as zero. Give a peer the exact input and output paths; explain why a changed path or input can change a reproducibility claim.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Which fields are personal or sensitive, and should they be summarized at all?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

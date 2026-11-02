@@ -25,6 +25,7 @@ Support complete beginners through advanced optional work; let an instructor lin
 | tests/ | Behavioral, real-data, framework, replay, CLI, and app checks | Accessibility conformance claims |
 | templates/ | Reusable lesson, case, instructor, provenance, AI, and review records | Completed results invented from a checklist |
 | docs/instructor/ | Adoption, assessment, pacing, and alignment status | Changes to master grading rules |
+| curriculum/outcomes.json and scripts/build_outcome_map.py | Single source for module-to-outcome links, data labels and evidence; generates docs/outcome-map.md and each lesson's outcomes-and-evidence section | Hand edits to generated text, or claims of institutional equivalence |
 | docs/accessibility/ | Access routes, limitations, and manual-review evidence | An untested compatibility promise |
 | .github/ | CI and contribution/reporting templates | Automatic public deployment |
 | .binder/ and .devcontainer/ | Optional environment definitions | Verified hosted accessibility or universal support |

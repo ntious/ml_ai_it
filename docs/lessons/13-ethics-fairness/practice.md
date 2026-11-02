@@ -62,3 +62,13 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use group_audit.csv to recompute one group recall from its TP and FN counts and reconcile its denominator. Compare its interval and sample size with another group, then describe a plausible harm and missing contextual evidence. Do not treat overlapping intervals as proof of fairness or use final labels to choose a mitigation.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Is the task itself justified, not only the metric?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

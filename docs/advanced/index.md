@@ -14,6 +14,9 @@ completed report as well as machine-readable artifacts.
 | [Training-seed and split stability](stability.md) | Modules 6–9 | Executed multi-seed study and optional separate split experiment |
 | [Uncertainty, calibration and error costs](evaluation.md) | Modules 6, 12–13 | Executed bootstrap/reliability/cost evidence with interpretation tasks |
 | [Complete project assessment](capstone-assessment.md) | Project companion | Annotated exemplar and evidence crosswalk for independent transfer |
+| [Monitoring decision record](monitoring-decision-record.md) | Module 12 | Evidence table helper and a written, justified decision |
+| [Optional live API route](live-api-route.md) | Module 10 | Offline-tested client wrapper; no live provider call is made |
+| [Interpret network records](../cases/network-record-interpretation.md) | Modules 3–4 | Synthetic-to-genuine flow interpretation using the RT-IoT project |
 
 ## Further depth, without pretending it is already implemented
 

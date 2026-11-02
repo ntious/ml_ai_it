@@ -67,3 +67,13 @@ If using GenAI, keep a short disclosure of the help used and what you verified. 
 Use the saved final predictions and selected-model record. Recompute MAE from absolute residuals, compare the selected method with persistence, and explain why signed errors can cancel. Preserve the chronological boundary; a poor final result is not permission to select a new method on those same days.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Is any feature unavailable at prediction time, and who acts on the forecast?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

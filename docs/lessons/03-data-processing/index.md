@@ -22,7 +22,7 @@ These are resource learning outcomes. They do not claim course credit or certifi
 
 - **Direct evidence:** CLO3 (Interpreting network data), CLO7 (Data representations)
 - **Supporting practice:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
-- **Data and tools:** Synthetic
+- **Data and tools:** <span class="data-label">Synthetic</span>
 - **Evidence you produce:** Data dictionary, reconciled rejected-record counts and a cleaning rationale.
 - **Boundary:** Original synthetic event records. Interpreting genuine network flows needs the bridge activity.
 - **Responsible-AI check:** Could rejecting or imputing records remove some sources or devices more than others, and who is told?
@@ -147,6 +147,10 @@ For the complete beginner sequence, start with [Module 1: ML and AI foundations]
 ## Next module
 
 Continue to [Module 4: Exploration and visual communication](../04-exploration/index.md) to investigate workload patterns with plots, underlying tables, and descriptions.
+
+## Optional bridge: genuine network records
+
+After Module 4, the [network record interpretation activity](../../cases/network-record-interpretation.md) repeats these interpretation steps on documented real flow records. This page's records are original synthetic events.
 
 ## Instructor adaptation
 

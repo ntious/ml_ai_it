@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
 - **Supporting practice:** none
-- **Data and tools:** Real public, Local model
+- **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
 - **Evidence you produce:** Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.
 - **Boundary:** A local replay; production reliability is not measured and a diagnostic is not time drift.
 - **Responsible-AI check:** Who owns alerts, escalation and rollback, and do logs retain personal data?
@@ -79,6 +79,10 @@ The app has classifier and local-LLM forms. The CLI/text report remains a usable
 - **Core concept/reference:** [Streamlit AppTest](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest) — form interaction, exceptions, and test limitations. Read these named sections, not an entire external course.
 - **Source/model context:** [central source register](../../data-sources.md), including the relevant official card and license.
 - **Optional depth:** Package a local container or add an authenticated service only under an explicit deployment plan. Do not expose the teaching app publicly by default. An extra platform is optional, with its own validation burden.
+
+## Optional bridge: monitoring decision record
+
+Turn your batch results into a justified recommendation with the [monitoring decision record](../../advanced/monitoring-decision-record.md). Its helper script drafts the evidence table; the decision and thresholds remain yours.
 
 ## Practice and continue
 

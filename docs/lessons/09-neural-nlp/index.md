@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO7 (Data representations), CLO8 (Communication)
 - **Supporting practice:** CLO5 (GenAI and LLM integration)
-- **Data and tools:** Real public
+- **Data and tools:** <span class="data-label">Real public</span>
 - **Evidence you produce:** Text representation comparison and a neural text classifier with documented failures.
 - **Boundary:** Public SMS messages; masked reports, no production claim.
 - **Responsible-AI check:** Message text can contain personal content: what is masked, stored and shown?

@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** CLO1 (Learning paradigms)
-- **Data and tools:** Real public
+- **Data and tools:** <span class="data-label">Real public</span>
 - **Evidence you produce:** Classifier comparison chosen on validation data, with a confusion-matrix explanation.
 - **Boundary:** Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.
 - **Responsible-AI check:** What do a false positive and a false negative cost, and who bears each?

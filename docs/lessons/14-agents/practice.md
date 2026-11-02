@@ -62,3 +62,13 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use the recorded requests, selected plans and execution/refusal outcomes. Trace one routing result and one blocked request, identifying which component made each decision. Explain why correct tool authorization does not guarantee correct intent interpretation, and propose a new permitted test before running it.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+What actions may the agent take, who approves them, and how is a trace audited?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

@@ -11,11 +11,11 @@ The [outcome map](../outcome-map.md) shows the existing connections. Its data li
 3. **Check the label.** A module labeled *Synthetic* or *Offline fixture* builds technique but does not show work on genuine operational data or a live service. Add a bridge activity when your outcome requires that. The [network record interpretation](../cases/network-record-interpretation.md), [monitoring decision record](../advanced/monitoring-decision-record.md) and [live API route](../advanced/live-api-route.md) pages are bridges.
 4. **Name the artifact and rubric.** Use the criteria in [adaptable assessment](assessment.md). State what a learner produces, what the support allowed, and how you will judge it.
 5. **Record the mapping.** Keep it in a private register. Mark each link as direct evidence, supporting practice or no mapping.
-6. **Pilot before grading.** Run the task from a clean setup and check workload and access. Use the [pilot protocol](teaching-prototype-pilot.md).
+6. **Pilot before grading.** Run the task from a clean setup and check workload and access. Use the [pilot protocol](teaching-prototype-pilot.md) and the [outcome-evidence pilot record](../../templates/outcome-pilot-record.md).
 
 ## Mapping register template
 
-Copy this table into your own register. Leave anything you have not verified marked as unverified.
+Copy the [private alignment register template](../../templates/alignment-register.md), or use this table. Leave anything you have not verified marked as unverified.
 
 | Your outcome (private wording) | Module(s) | Link type | Artifact you assess | Bridge needed | Assessor | Reviewed | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -62,3 +62,13 @@ Use [construction feedback](solutions.md) after an attempt and [recorded experim
 Use saved neural and lexical-baseline results. Recompute recall from confusion counts and compare their evaluation denominators before interpreting a difference. Trace one false negative when present; distinguish an observed error from a claim about all future spam.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Message text can contain personal content: what is masked, stored and shown?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

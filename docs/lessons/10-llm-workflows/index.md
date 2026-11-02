@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO5 (GenAI and LLM integration), CLO7 (Data representations), CLO8 (Communication)
 - **Supporting practice:** CLO4 (Frameworks and evaluation)
-- **Data and tools:** Real public, Local model
+- **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
 - **Evidence you produce:** Local prompting experiment with output-contract failures counted and a literature critique.
 - **Boundary:** No live closed-provider API call is established.
 - **Responsible-AI check:** What happens when output is fluent but wrong or exposes sensitive text, and which human check catches it?
@@ -72,6 +72,10 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 - **Core concept/reference:** [Transformers generation strategies](https://huggingface.co/docs/transformers/v4.46.3/en/generation_strategies) — greedy decoding, token limits, and inference. Read these named sections, not an entire external course.
 - **Source/model context:** [central source register](../../data-sources.md), including the relevant official card and license.
 - **Optional depth:** Declare a prompt/template or decoding comparison on validation examples. Freeze it before a new final evaluation. Larger models or hosted providers are optional and need separate rights, privacy, compute, and evaluation decisions.
+
+## Optional bridge: provider-neutral client
+
+The [live API route](../../advanced/live-api-route.md) shows a tested client wrapper you can exercise offline with fake providers. It separates fixture, local and live results; this module makes no live provider call.
 
 ## Practice and continue
 

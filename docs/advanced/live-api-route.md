@@ -18,41 +18,18 @@ State which route produced each result in your report. A fixture result is never
 
 ## Provider-neutral client pattern
 
-Write the workflow so the provider call is one replaceable function. Tests then pass a fake function and exercise everything else offline. The same wrapper accepts a real provider function later.
+The package provides `practical_ml_ai.llm_client`, with the provider call as one replaceable function. Tests pass a fake function and exercise everything else offline, and a real provider function can replace it later. `check_output` accepts only the declared JSON shape. `classify` retries timeouts and connection errors with a limit and returns the result with the number of calls used.
 
 ```python
-import json
-import time
+from practical_ml_ai.llm_client import classify
 
+def fake_send(prompt):
+    return '{"label": "spam", "reason": "asks for a code"}'
 
-class OutputContractError(ValueError):
-    pass
-
-
-def check_output(text, allowed_labels):
-    """Accept only the declared JSON shape; anything else is a contract failure."""
-    try:
-        data = json.loads(text)
-    except json.JSONDecodeError as error:
-        raise OutputContractError("not valid JSON") from error
-    if set(data) != {"label", "reason"} or data["label"] not in allowed_labels:
-        raise OutputContractError("unexpected fields or label")
-    return data
-
-
-def classify(send, prompt, allowed_labels, attempts=3, wait=0.0):
-    """Call send(prompt), retry transient failures, and never accept unchecked output."""
-    last = None
-    for attempt in range(attempts):
-        try:
-            return check_output(send(prompt), allowed_labels)
-        except (TimeoutError, ConnectionError, OutputContractError) as error:
-            last = error
-            time.sleep(wait * (2 ** attempt))
-    raise RuntimeError(f"gave up after {attempts} attempts: {last}")
+result, calls = classify(fake_send, "Classify: win a prize", {"spam", "ham"})
 ```
 
-Practice offline with fakes that fail in each way: a timeout, malformed JSON, an extra field, and an unlisted label. Count how many calls each case consumed.
+Practice offline with fakes that fail in each way: a timeout, malformed JSON, an extra field, and an unlisted label. [tests/test_bridge_tools.py](../../tests/test_bridge_tools.py) shows each case. Count how many calls each one consumed. Unexpected errors are not swallowed, and unchecked output is never returned.
 
 ## If you add a live call
 

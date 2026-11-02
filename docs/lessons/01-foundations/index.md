@@ -19,7 +19,7 @@ The script route supplies the same programming evidence when a notebook interfac
 
 - **Direct evidence:** CLO1 (Learning paradigms), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation)
-- **Data and tools:** Synthetic
+- **Data and tools:** <span class="data-label">Synthetic</span>
 - **Evidence you produce:** Problem brief, saved first run, and a reasoned interpretation of a changed input.
 - **Boundary:** Introduces framing only; no trained model.
 - **Responsible-AI check:** Who is affected if the rule or prediction is wrong, and who reviews it?

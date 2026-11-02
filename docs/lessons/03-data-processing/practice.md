@@ -92,3 +92,13 @@ For the RT-IoT transfer, inspect the validation policy comparison and the select
 Use your processing report and source events. Trace an accepted record, a rejected record and a duplicate where present. Reconcile the reported input/output counts under the script’s actual processing order; explain how duplicate identity differs from identical rows. If a category is absent, record zero rather than inventing an example.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Could rejecting or imputing records remove some sources or devices more than others, and who is told?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

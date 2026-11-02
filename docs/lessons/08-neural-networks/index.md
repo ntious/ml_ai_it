@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** none
-- **Data and tools:** Real public
+- **Data and tools:** <span class="data-label">Real public</span>
 - **Evidence you produce:** Trained and reloaded TensorFlow model compared with a simpler reference.
 - **Boundary:** CPU-scale tabular network; scale is not claimed.
 - **Responsible-AI check:** Does the added complexity earn its cost in compute and explainability?

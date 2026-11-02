@@ -89,3 +89,13 @@ Follow the four steps in [reproduce a result and justify its use](../../evidence
 ## Optional chronological anomaly extension
 
 Use [unusual days and review workload](../../advanced/anomaly-detection.md) to compare a detector with a simple baseline on dated observations. This extension reports flags and distribution context, not verified incident accuracy.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Who owns alerts, escalation and rollback, and do logs retain personal data?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

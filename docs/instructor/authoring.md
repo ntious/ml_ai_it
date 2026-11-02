@@ -12,5 +12,7 @@ Copy a template, replace all placeholders, and record actual evidence. Templates
 | [Data card](../../templates/data-card.md) | Source, meaning, rights, privacy, transformation, split |
 | [Model card](../../templates/model-card.md) | Intended use, identity, observed results, failures, limitations |
 | [AI assistance note](../../templates/ai-assistance-log.md) | Bounded assistance and independent verification |
+| [Private alignment register](../../templates/alignment-register.md) | Map your own outcomes to modules and artifacts without publishing institutional text |
+| [Outcome-evidence pilot record](../../templates/outcome-pilot-record.md) | Observe whether learners produce a module's evidence and understand its data label |
 
 Keep shared behavior in the package. Register new module paths and profiles in curriculum/modules.json. Preserve source rights and meaningful test coverage. The [architecture](../../REPOSITORY_STRUCTURE.md) explains the maintenance boundaries; the [release checklist](../release-checklist.md) separates automated evidence from human task-based review.

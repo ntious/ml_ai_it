@@ -120,3 +120,13 @@ Use test_predictions.csv and the recorded selected threshold. Recompute TP, FP, 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
 
 Continue with the [small core stability experiment](../../advanced/core-stability.md), which uses the core environment and keeps the final test untouched.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+What do a false positive and a false negative cost, and who bears each?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

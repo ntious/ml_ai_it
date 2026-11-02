@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO4 (Frameworks and evaluation), CLO5 (GenAI and LLM integration), CLO8 (Communication)
 - **Supporting practice:** none
-- **Data and tools:** Real public, Local model
+- **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
 - **Evidence you produce:** Saved configuration, logs and adapters from a real tiny fine-tuning run, with an evaluation.
 - **Boundary:** Tiny balanced subset; scale and generalization are limited.
 - **Responsible-AI check:** Could the tuned model reproduce private text, and do the data and model licenses allow this use?

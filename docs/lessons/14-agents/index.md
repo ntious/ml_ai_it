@@ -20,7 +20,7 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
 - **Supporting practice:** none
-- **Data and tools:** Real public, Local model, Offline fixture
+- **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span> <span class="data-label">Offline fixture</span>
 - **Evidence you produce:** Bounded router and tool-loop comparison with a recorded trace and failure cases.
 - **Boundary:** No full agent-framework implementation is claimed; tools are local and read-only.
 - **Responsible-AI check:** What actions may the agent take, who approves them, and how is a trace audited?

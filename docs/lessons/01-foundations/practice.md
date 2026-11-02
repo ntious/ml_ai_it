@@ -67,3 +67,13 @@ Follow the notebook setup in [QUICKSTART](../../../QUICKSTART.md). The standard-
 Use your first-run output and its input records. Recompute one rule decision, including the exact threshold boundary. Identify what a wrong decision would mean and explain why agreement with the rule is not measured predictive accuracy.
 
 Follow the four steps in [reproduce a result and justify its use](../../evidence-practice.md). Submit your artifact path, independent calculation, discrepancy or agreement, and bounded use decision in the [evidence worksheet](../../../templates/evidence-review.md). Use your complete reference run; this activity complements the small function checks.
+
+## Responsible-AI check
+
+<!-- RESPONSIBLE_AI_START -->
+
+Who is affected if the rule or prediction is wrong, and who reviews it?
+
+Answer in two or three sentences about your own work. Cite one specific result or record, state what you do not know, and name who would review or act on it. This is a reasoning prompt, not an extra graded task.
+
+<!-- RESPONSIBLE_AI_END -->

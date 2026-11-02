@@ -36,7 +36,7 @@ Build the foundations, compare classical approaches, explore neural and language
 
 <!-- LEARNING_STAGES -->
 
-[Browse the complete module directory](modules.md), including the environment needed for each topic.
+[Browse the complete module directory](modules.md), including the environment needed for each topic. See the [course outcome map](outcome-map.md) for what evidence each module produces.
 
 ## Work with evidence from real examples
 

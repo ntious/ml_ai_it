@@ -47,6 +47,8 @@ h3 { font-size: 1.15rem; margin-top: 1.6rem; }
 p { margin-block: 1rem; }
 li { margin-block: .35rem; }
 .eyebrow { color: var(--accent); font-weight: 700; font-size: .76rem; letter-spacing: .075em; text-transform: uppercase; }
+/* Data and tool labels carry their meaning in text; the shared style never relies on color alone. */
+.data-label { display: inline-block; padding: .05rem .5rem; margin: 0 .25rem .2rem 0; border: 1px solid var(--border); border-radius: .75rem; background: var(--tint); color: var(--ink); font-size: .85rem; font-weight: 600; white-space: nowrap; }
 .lead { color: var(--muted); font-size: 1.22rem; max-width: 64ch; line-height: 1.7; }
 .home-page main { max-width: 82rem; }
 .home-page main > h1 { font-size: clamp(2.5rem, 5.2vw, 4.5rem); max-width: 22ch; letter-spacing: -.045em; }

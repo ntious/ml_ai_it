@@ -15,6 +15,16 @@ From a Module 12 run, open `batch_monitoring.csv`, `prediction_log.csv`, and `se
 | Errors and workload | `fp`, `fn`, `selection_rate`, `recall`, `precision` per batch | Held-out behavior with known labels. Live labels usually arrive late |
 | Contract failures | Requests rejected by `service_contract.json` rules | Whether invalid inputs are stopped, not whether valid inputs are good |
 
+## Draft the evidence table
+
+Run the helper on your batch file. It reports observed values and compares them only with thresholds you declare. It does not choose thresholds or a decision.
+
+~~~sh
+python -m practical_ml_ai.monitoring_record runs/module12/study/batch_monitoring.csv --latency-limit 0.001 --shift-limit 0.5
+~~~
+
+The numbers above are placeholders. Replace them with limits you can justify, and say where each came from. A missing standardized shift is shown as unavailable rather than zero.
+
 ## Write the record
 
 Complete each part in a few sentences, citing numbers from your own run.
