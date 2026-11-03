@@ -4,6 +4,7 @@ Learner-facing notes on what changed. The [changelog](../CHANGELOG.md) has the f
 
 ## Outcome map and bridge activities (November 2026)
 
+- **Reading preferences:** red is the default palette; choose Teal to retain the original colors. The separate Mode control selects System, Light or Dark. Both preferences are saved in your browser when storage is available; no account is required.
 - **[Course outcome map](outcome-map.md):** every module now states which course outcomes it supports directly or indirectly, what you produce as evidence, and a clear label for synthetic data, real public data, local models and offline fixtures.
 - **Bridge activities (optional):** [interpret network records](cases/network-record-interpretation.md), complete the [IT operations evidence activity](cases/it-operations-evidence.md), write a [monitoring decision record](advanced/monitoring-decision-record.md), and practice a [live API route](advanced/live-api-route.md) with an offline-testable pattern.
 - **A responsible-AI question** closes each module's outcome section.

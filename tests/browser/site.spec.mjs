@@ -119,7 +119,10 @@ test('representative pages reflow at three widths and enlarged text', async ({ p
   await page.screenshot({ path: 'browser-results/home-desktop.png', fullPage: true });
 });
 
-test('representative light and dark pages have no detected axe WCAG A/AA violations', async ({ page }) => {
+test('both palettes in light and dark have no detected axe WCAG A/AA violations', async ({ page }) => {
+  for (const palette of ['red', 'teal']) {
+  await page.goto('');
+  await page.getByRole('combobox', { name: 'Color palette' }).selectOption(palette);
   for (const colorScheme of ['light', 'dark']) {
     await page.emulateMedia({ colorScheme });
     for (const route of ['', 'modules.html', module3, 'search.html', 'downloads.html', 'instructor/index.html']) {
@@ -127,7 +130,9 @@ test('representative light and dark pages have no detected axe WCAG A/AA violati
       await page.addScriptTag({ path: axePath });
       const result = await page.evaluate(async () => window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } }));
       expect(result.violations.map(item => ({ id: item.id, impact: item.impact, nodes: item.nodes.map(node => node.target) })), route + ' / ' + colorScheme).toEqual([]);
+      if (route === '') await page.screenshot({ path: `browser-results/home-${palette}-${colorScheme}.png`, animations: 'disabled' });
     }
+  }
   }
 });
 
@@ -201,6 +206,7 @@ test('on a phone, the current lesson tab is scrolled into view', async ({ page }
 test('theme overrides system, persists across pages, and returns to system', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('');
+  await page.getByRole('combobox', { name: 'Color palette' }).selectOption('teal');
   const theme = page.getByRole('combobox', { name: 'Color theme' });
   await expect(theme).toHaveValue('system');
   await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(17, 30, 37)');
@@ -217,6 +223,41 @@ test('theme overrides system, persists across pages, and returns to system', asy
   await page.getByRole('button', { name: 'Menu' }).click();
   await expect(page.getByRole('combobox', { name: 'Color theme' })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('palette defaults to red and persists independently of mode', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('');
+  await expect(page.getByRole('combobox', { name: 'Color palette' })).toHaveValue('red');
+  const accent = () => page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim());
+  expect(await accent()).toBe('#b8011c');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('dark');
+  await page.getByRole('combobox', { name: 'Color palette' }).selectOption('teal');
+  expect(await accent()).toBe('#91e4c2');
+  await page.goto(module3);
+  await expect(page.getByRole('combobox', { name: 'Color palette' })).toHaveValue('teal');
+  await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveValue('dark');
+  await page.getByRole('combobox', { name: 'Color palette' }).selectOption('red');
+  expect(await accent()).toBe('#ffb3bd');
+  await page.reload();
+  await expect(page.getByRole('combobox', { name: 'Color palette' })).toHaveValue('red');
+  await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveValue('dark');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('system');
+  expect(await accent()).toBe('#b8011c');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  expect(await accent()).toBe('#ffb3bd');
+});
+
+test('palette remains usable when preference storage is blocked', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Blocked', 'SecurityError'); } });
+  });
+  await page.goto('');
+  await expect(page.getByRole('combobox', { name: 'Color palette' })).toHaveValue('red');
+  await page.getByRole('combobox', { name: 'Color palette' }).selectOption('teal');
+  await expect(page.locator('html')).toHaveAttribute('data-palette', 'teal');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('dark');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
 test('repository counts are cached and failed requests leave a usable link', async ({ page }) => {
