@@ -237,6 +237,22 @@ if (themeSelect) {
   });
 }
 
+// Preserve the original teal palette without changing the light/dark preference.
+const paletteSelect = document.querySelector('[data-palette-select]');
+if (paletteSelect) {
+  paletteSelect.value = document.documentElement.dataset.palette || 'red';
+  paletteSelect.closest('label').hidden = false;
+  paletteSelect.addEventListener('change', () => {
+    const palette = paletteSelect.value;
+    if (palette === 'teal') document.documentElement.dataset.palette = 'teal';
+    else delete document.documentElement.dataset.palette;
+    try {
+      if (palette === 'teal') localStorage.setItem('ml-ai-it-palette', palette);
+      else localStorage.removeItem('ml-ai-it-palette');
+    } catch { /* The current page still changes when storage is blocked. */ }
+  });
+}
+
 // Public GitHub counts, not visitor analytics. Cache for 30 minutes per browser tab.
 const repoStats = document.querySelector('[data-repo-stats]');
 if (repoStats) {
