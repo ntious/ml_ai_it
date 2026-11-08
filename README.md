@@ -1,5 +1,7 @@
 # Practical Machine Learning and AI Systems
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24046108.svg)](https://doi.org/10.5281/zenodo.24046108)
+
 **[Course website on GitHub Pages](https://ntious.github.io/ml_ai_it/)** · [Start here](docs/start-here.md) · [Course outline](docs/modules.md)
 
 Read the lessons here on GitHub or on the [reading site](https://ntious.github.io/ml_ai_it/). If a download link does not open, use the [offline access route](docs/setup/student-workspace.md#if-a-download-link-does-not-open).
@@ -144,7 +146,7 @@ Maintainers should use [DEVELOPMENT.md](DEVELOPMENT.md) for the separate core/fr
 
 ## Maintainer and license
 
-Maintained by [Isaac K. Nti](https://github.com/ntious). Code is licensed under [MIT](LICENSE); original educational content is [CC BY 4.0 with component boundaries](OER_LICENSE.md). External datasets and models retain their own rights. Use [citation metadata](CITATION.cff) and cite the datasets/models used in your work.
+Maintained by [Isaac K. Nti](https://github.com/ntious). Code is licensed under [MIT](LICENSE); original educational content is [CC BY 4.0 with component boundaries](OER_LICENSE.md). External datasets and models retain their own rights. Use the [citation guide](docs/citing.md) and [citation metadata](CITATION.cff); cite the datasets/models used in your work separately.
 
 ## Authorship and course relationship
 

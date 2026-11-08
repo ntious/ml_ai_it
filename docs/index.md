@@ -77,3 +77,9 @@ Start with [readiness and Python Foundation](start-here.md), then use the [separ
 ## Authorship and course relationship
 
 **Isaac K. Nti** developed the original explanations, activities, worked examples, code, and supporting materials in this repository. These supplementary resources support the course he teaches in the School of Information Technology at the University of Cincinnati. The official course description, course learning outcomes, and module learning outcomes are attributed to the University of Cincinnati and are excluded from this repository’s license grants. External materials retain their respective attribution and terms. These resources supplement the official syllabus. See [licensing and institutional boundaries](../OER_LICENSE.md).
+
+## Cite this resource
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24046108.svg)](https://doi.org/10.5281/zenodo.24046108)
+
+Use the [citation guide](citing.md) to cite the archived edition you used. The DOI above covers all archived versions.
