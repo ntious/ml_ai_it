@@ -4,6 +4,9 @@ Dataset archives are retained unmodified, with attribution and observed hashes.
 Only named members are read: arbitrary ZIP paths are never extracted. Reviewed
 hashes can be added to SOURCES after inspecting a successful acquisition run.
 """
+from .network_help import with_download_help
+from .report_terms import explain_terms
+
 from datetime import datetime, timezone
 import hashlib
 from html import escape
@@ -55,6 +58,7 @@ def write_json(path, value):
     Path(path).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
+@with_download_help
 def fetch_source(name):
     """Download once. A changed cached file is an error, not a silent refresh."""
     spec = SOURCES[name]
@@ -216,7 +220,8 @@ def publish_report(directory, title, summary, tables, notes):
     """Text/JSON, CSV, and captioned/scoped HTML tables carry the same evidence."""
     directory = Path(directory)
     write_json(directory / "summary.json", summary)
-    text = title + "\n\n" + json.dumps(summary, indent=2) + "\n\n" + "\n\n".join(notes) + "\n"
+    term_text, term_html = explain_terms(summary, tables)
+    text = title + "\n\n" + json.dumps(summary, indent=2) + "\n\n" + "\n\n".join(notes) + "\n\n" + term_text + "\n"
     (directory / "summary.txt").write_text(text, encoding="utf-8")
     sections = []
     for name, frame in tables.items():
@@ -225,7 +230,7 @@ def publish_report(directory, title, summary, tables, notes):
         rows = "".join("<tr>" + "".join("<td>" + escape(str(v)) + "</td>" for v in row) + "</tr>" for row in frame.itertuples(index=False, name=None))
         caption = name.replace("_", " ")
         sections.append('<section><h2>' + escape(caption.title()) + '</h2><p><a href="' + name + '.csv">Download ' + escape(caption) + ' (CSV)</a></p><div class="table-wrap" tabindex="0" role="region" aria-label="' + escape(caption) + '"><table><caption>' + escape(caption) + '</caption><thead><tr>' + head + '</tr></thead><tbody>' + rows + '</tbody></table></div></section>')
-    html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + escape(title) + '</title><style>body{font:1.1rem/1.6 system-ui,sans-serif;max-width:78ch;margin:auto;padding:1rem;color:#18232d;background:white}table{border-collapse:collapse}th,td{border:1px solid #718096;padding:.4rem;text-align:left}.table-wrap{overflow-x:auto;max-width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#075985}a:focus-visible,pre:focus-visible,.table-wrap:focus-visible{outline:3px solid currentColor;outline-offset:3px}.skip{position:absolute;top:-6rem}.skip:focus{top:0;background:white}</style></head><body><a class="skip" href="#main">Skip to main content</a><main id="main" tabindex="-1"><h1>' + escape(title) + '</h1><pre tabindex="0" aria-label="Named results">' + escape(json.dumps(summary, indent=2)) + '</pre>' + "".join("<p>" + escape(n) + "</p>" for n in notes) + "".join(sections) + '</main><footer><p>Original educational content: CC BY 4.0. External data retain their source attribution. Results are available as text, tables and downloads; consult the course accessibility guide for interface test scope.</p></footer></body></html>'
+    html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + escape(title) + '</title><style>body{font:1.1rem/1.6 system-ui,sans-serif;max-width:78ch;margin:auto;padding:1rem;color:#18232d;background:white}table{border-collapse:collapse}th,td{border:1px solid #718096;padding:.4rem;text-align:left}.table-wrap{overflow-x:auto;max-width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#075985}a:focus-visible,pre:focus-visible,.table-wrap:focus-visible{outline:3px solid currentColor;outline-offset:3px}.skip{position:absolute;top:-6rem}.skip:focus{top:0;background:white}</style></head><body><a class="skip" href="#main">Skip to main content</a><main id="main" tabindex="-1"><h1>' + escape(title) + '</h1><pre tabindex="0" aria-label="Named results">' + escape(json.dumps(summary, indent=2)) + '</pre>' + "".join("<p>" + escape(n) + "</p>" for n in notes) + term_html + "".join(sections) + '</main><footer><p>Original educational content: CC BY 4.0. External data retain their source attribution. Results are available as text, tables and downloads; consult the course accessibility guide for interface test scope.</p></footer></body></html>'
     (directory / "index.html").write_text(html + "\n", encoding="utf-8")
     print("MODULE_RESULT", title, json.dumps(summary, sort_keys=True))
     return summary

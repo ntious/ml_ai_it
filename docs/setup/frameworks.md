@@ -127,3 +127,9 @@ The short neural NLP model can miss positives, and free-text LLM output can fail
 ## Study controls
 
 Module 9 defaults to the full deduplicated corpus and a 25-epoch maximum; `--epochs 3 --sample-limit 1200` provides a deliberately smaller diagnostic variant. It is not byte-identical to the archived run because tokenization and threshold selection were corrected. Module 10 accepts `--examples N` (20 through the final-partition size; default 100). Module 11 accepts `--steps N` (1–300; default 200). Smaller budgets exercise the software interface without promising the default study quality. Keep outputs in new directories and declare settings before inspecting final results.
+
+## Runtime and cached replay
+
+The learning-time estimates on module pages include reading and practice; they are not script runtime benchmarks. Apart from the qualified Module 11 estimate, per-module CPU timings have not yet been measured consistently. Keep the terminal open while a study runs and record elapsed time and hardware when reporting a slow run.
+
+Complete, valid dataset caches are reused without downloading again. Model loading may still check Hugging Face even when weights are cached. Do not assume that one successful download guarantees every later task will run offline: additional files or a different model revision may be needed. Keep the original error and use the worked report while resolving network access.

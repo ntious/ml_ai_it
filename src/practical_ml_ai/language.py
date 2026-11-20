@@ -4,6 +4,8 @@ The small public model runs on CPU. Tiny balanced SMS subsets are engineering
 checks, not credible estimates of deployment quality. No invented SMS records or
 generated labels replace the source's human annotations.
 """
+from .network_help import with_download_help
+
 from functools import lru_cache
 import json
 import os
@@ -22,6 +24,7 @@ MODEL_REVISION = "12fd25f77366fa6b3b4b768ec3050bf629380bac"  # Verified real-mod
 
 
 @lru_cache(maxsize=1)
+@with_download_help
 def local_model():
     if not MODEL_REVISION:
         # Never fall back to whatever revision is newest upstream; results and safety depend on the reviewed one.

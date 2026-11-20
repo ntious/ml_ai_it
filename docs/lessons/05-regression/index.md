@@ -1,6 +1,12 @@
 # Module 5: Regression and reliable evaluation
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Train a first ML model and ask whether it improves on a simple baseline. The real-data case forecasts tomorrow's bike rentals for a digitally operated sharing service. Its historical counts are not network traffic; an optional transfer question connects the workflow to IT demand.
 
@@ -18,6 +24,9 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** CLO1 (Learning paradigms), CLO2 (Applying ML/AI to IT operations)
 - **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
@@ -27,11 +36,11 @@ No earlier notebook state, Canvas assignment, paid account, or GPU is needed. Al
 - **Responsible-AI check:** Is any feature unavailable at prediction time, and who acts on the forecast?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning sequence for this module
 
-Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice notebook answers](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
 The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
@@ -188,3 +197,13 @@ Use the [guided construction and mastery check](guided.md) before the full study
 ## Optional project connection
 
 For a complete worked lifecycle beyond this bounded regression study, use the [optional capstone exemplar](../../../projects/phishing-triage/README.md). The [tuning investigation](../../advanced/tuning.md) separates search, validation and final evaluation.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Time-aware split, baseline comparison, error analysis and a reproducible memo.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Bike demand is a service-demand analogue, not IT incident telemetry.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

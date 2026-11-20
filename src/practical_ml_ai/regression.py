@@ -4,6 +4,8 @@ The selected model is frozen before final evaluation. Models are stored as
 transparent numeric JSON, not executable pickle files. These small exporters
 support only this lesson's named linear and baseline models.
 """
+from .network_help import with_download_help
+
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -51,6 +53,7 @@ def read_json(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+@with_download_help
 def download_bike_data(output_dir):
     """Fetch the official CC BY 4.0 archive once, retaining attribution/hashes.
 

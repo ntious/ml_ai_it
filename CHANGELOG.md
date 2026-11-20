@@ -1,5 +1,12 @@
 # Changelog
 
+## Learner recovery and guidance
+
+- Shared download boundaries now explain network failures in notebooks and scripts while preserving the original error. Environment-creation errors receive setup guidance.
+- Added numbered learning routes, evidence-specific completion checks, and collapsible instructor outcome mappings. Matched practice notebook titles to lesson titles.
+- Added offline-readable metric definitions to generated reports and qualified cache/runtime claims.
+
+
 ## November 2026 — new-learner setup clarity
 
 - Setup: QUICKSTART explains virtual environments, states which modules overwrite reruns, maps plain `python` to each environment, and says which modules download data or models. A glossary entry defines virtual environments.

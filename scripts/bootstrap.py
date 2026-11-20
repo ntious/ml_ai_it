@@ -16,7 +16,7 @@ def check_python(profile):
     found=sys.version_info[:2]; shown=".".join(map(str,found))
     if profile == "frameworks" and found != FRAMEWORK_PYTHON:
         sys.exit(f"The frameworks profile needs Python 3.12, but this command is running Python {shown}.\n"
-                 "TensorFlow 2.19 does not install on other versions. Check with: python3.12 --version\n"
+                 "Python 3.12 is the verified course framework environment. Check with: python3.12 --version\n"
                  "Then run: python3.12 scripts/bootstrap.py --profile frameworks\n"
                  "No Python 3.12? See docs/setup/frameworks.md (Install Python 3.12) or use Codespaces.")
     if found < CORE_MINIMUM:
@@ -35,7 +35,13 @@ def main():
         executable=Path(sys.executable)
     else:
         directory=ROOT/(".venv-ml" if args.profile == "frameworks" else ".venv")
-        venv.EnvBuilder(with_pip=True,symlinks=platform.system()!="Windows").create(directory)
+        try:
+            venv.EnvBuilder(with_pip=True,symlinks=platform.system()!="Windows").create(directory)
+        except (OSError, subprocess.CalledProcessError) as error:
+            sys.exit(f"Could not create the course environment at {directory}: {error}\n"
+                     "Check free disk space and folder permissions. On Ubuntu, install the venv package for your Python "
+                     "(for Python 3.12: sudo apt install python3.12-venv). Then retry the same command.\n"
+                     "More help: docs/setup/troubleshooting.md")
         executable=directory/("Scripts/python.exe" if platform.system()=="Windows" else "bin/python")
     def run(*arguments):
         try: subprocess.run([str(executable),*arguments],cwd=ROOT,check=True)
