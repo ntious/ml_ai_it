@@ -51,8 +51,16 @@ Write a service response policy for an invalid request, a model outage and an al
 
 A web form is one interface; services usually call a model through an API. This extension serves the Module 6 model, the same one the replay monitors, with the same checked input contract, using only Python's standard library. It needs the core environment with the regression extra.
 
+macOS/Linux:
+
 ```sh
-python -m practical_ml_ai.api --port 8000
+.venv/bin/python -m practical_ml_ai.api --port 8000
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m practical_ml_ai.api --port 8000
 ```
 
 In a second terminal, send a request, for example with `curl -s localhost:8000/health`, or from Python with `urllib.request`. Then try each case and record the status code and message:
@@ -72,7 +80,7 @@ Explain why the service rejects cases 2–4 instead of guessing, which status co
 - **M12.4:** Distinguish batch diagnostics from genuine time drift and production service guarantees.
 - **M12.5:** Propose ownership, escalation, monitoring, and rollback criteria.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Operational-data connection
 

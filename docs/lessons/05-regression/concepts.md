@@ -91,4 +91,4 @@ Select persistence, evaluate it once on the final test and report it. Switching 
 
 The explanations and hand examples on this page are original. External readings provide additional depth; you do not need to reproduce their proofs to complete the existing module outcomes.
 
-Continue to [guided construction](guided.md), [practice](practice.md), then [feedback](feedback.md) and the [complete reference study](index.md#run-distinct-stages).
+Continue to [guided construction](guided.md), [practice](practice.md), then [interpretation feedback](feedback.md) and the [complete reference study](index.md#run-distinct-stages).

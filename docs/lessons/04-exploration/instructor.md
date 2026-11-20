@@ -4,7 +4,7 @@ Link the [entry page](index.md) directly. Use [Canvas linking guidance](../../in
 
 ## Teach the core first
 
-Start with a prediction or written decision, run the shared implementation, change one input or assumption, and explain the observed result. Use the [foundation bridge](foundation.md) as prerequisite support. The [practice](practice.md) has public [feedback](feedback.md); use these for formative learning. Optional depth is skippable. Pilot pacing with learners before setting deadlines.
+Start with a prediction or written decision, run the shared implementation, change one input or assumption, and explain the observed result. Use the [foundation bridge](foundation.md) as prerequisite support. The [practice](practice.md) has public [interpretation feedback](feedback.md); use these for formative learning. Optional depth is skippable. Pilot pacing with learners before setting deadlines.
 
 The script/text route supports implementation and reasoning; it does not prove notebook-interface operation. If an interface skill is assessed, arrange an effective accessible route. Offer the solo discussion alternative. GenAI is optional; adopting instructors state disclosure and assessment rules.
 

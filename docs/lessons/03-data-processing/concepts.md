@@ -16,7 +16,7 @@ Schema checks describe what is allowed; learned transformations estimate propert
 
 ## Trace a small case
 
-Predict `parse_latency('')`, `parse_latency('0')` and `parse_latency('12.5')` before running: missing, measured zero and a measured value are three different results. Then predict `reconcile(10, 7, 2, 1)` and `reconcile(10, 8, 2, 1)`: only the first accounts for every source row exactly once. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `parse_latency('')`, `parse_latency('0')` and `parse_latency('12.5')` before running: missing, measured zero and a measured value are three different results. Then predict `reconcile(10, 7, 2, 1)` and `reconcile(10, 8, 2, 1)`: only the first accounts for every source row exactly once. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

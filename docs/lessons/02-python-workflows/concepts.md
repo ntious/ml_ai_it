@@ -16,7 +16,7 @@ A relative path starts at the process working directory, not automatically at th
 
 ## Trace a small case
 
-Predict `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}])` and `status_counts([])` before running. The empty file must return an empty dictionary, not raise an error. Then predict `observed_mean([0, None])`: zero is an observed value, so the mean is 0. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `status_counts([{'status': 'open'}, {'status': 'closed'}, {'status': 'open'}])` and `status_counts([])` before running. The empty file must return an empty dictionary, not raise an error. Then predict `observed_mean([0, None])`: zero is an observed value, so the mean is 0. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

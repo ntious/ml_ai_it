@@ -1,4 +1,6 @@
-# Module 4 worked feedback
+# Module 4: interpretation feedback
+
+*This page gives feedback on interpreting results and writing explanations. For the practice notebook's answers, see [practice notebook answers](solutions.md).*
 
 Use this after attempting the [practice](practice.md). Different defensible memos are possible; compare their evidence and limitations.
 
@@ -48,4 +50,4 @@ Judge your answer with the [study workflow criteria](../../study-workflow.md#how
 
 ## Continue the learning route
 
-For feedback on your own functions, use [construction solutions](solutions.md). The results here describe the separate complete reference.
+For feedback on your own functions, use the [practice notebook answers](solutions.md). The results here describe the separate complete reference.

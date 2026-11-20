@@ -1,4 +1,6 @@
-# Module 3 worked feedback
+# Module 3: interpretation feedback
+
+*This page gives feedback on interpreting results and writing explanations. For the practice notebook's answers, see [practice notebook answers](solutions.md).*
 
 Try the [practice](practice.md) before reading the worked examples. Feedback is public so independent learners can check their reasoning.
 
@@ -36,4 +38,4 @@ Judge your answer with the [study workflow criteria](../../study-workflow.md#how
 
 ## Continue the learning route
 
-For feedback on your own functions, use [construction solutions](solutions.md). The results here describe the separate complete reference.
+For feedback on your own functions, use the [practice notebook answers](solutions.md). The results here describe the separate complete reference.

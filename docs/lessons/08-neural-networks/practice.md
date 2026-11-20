@@ -58,7 +58,7 @@ Keep your changed code, one hand-checked numerical claim, expected versus observ
 
 ## Get feedback, then revisit
 
-Open [practice solutions](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use [recorded-study feedback](feedback.md) after the complete reference run.
+Open [practice notebook answers](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use the [interpretation feedback](feedback.md) after the complete reference run.
 
 If using GenAI, keep a short disclosure of the help used and what you verified. Be able to explain and change the code independently; an equivalent no-assistant route uses the same hints and feedback. Never upload student records or credentials.
 

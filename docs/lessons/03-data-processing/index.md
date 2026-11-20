@@ -33,7 +33,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Prerequisite help
 
@@ -67,11 +67,19 @@ Our documented policy retains missing latency and reports it. It keeps the first
 
 After [setup](../../setup/index.md), run from the repository root:
 
+macOS/Linux:
+
 ```sh
-python examples/network-events/scripts/prepare.py --input data/samples/network-events/events.csv --output runs/module03
+.venv/bin/python examples/network-events/scripts/prepare.py --input data/samples/network-events/events.csv --output runs/module03
 ```
 
-`python` should refer to the project environment; the setup page provides explicit Windows and Unix executable paths. The script imports `prepare_file` from `src/practical_ml_ai/data/events.py`. The notebook imports that same function. Neither contains a separate copy of the cleaning algorithm.
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe examples/network-events/scripts/prepare.py --input data/samples/network-events/events.csv --output runs/module03
+```
+
+The script imports `prepare_file` from `src/practical_ml_ai/data/events.py`. The notebook imports that same function. Neither contains a separate copy of the cleaning algorithm.
 
 Download the [sample CSV](https://ntious.github.io/ml_ai_it/downloads/events.csv "site-download:events.csv"), [data contract](https://ntious.github.io/ml_ai_it/downloads/network-events.schema.json "site-download:network-events.schema.json"), [guided notebook](https://ntious.github.io/ml_ai_it/downloads/complete_walkthrough.ipynb "site-download:complete_walkthrough.ipynb"), or [complete source archive](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip"). The archive includes setup, data, package, scripts, and tests. Downloading a notebook alone does not install its dependencies or provide the package. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
@@ -131,7 +139,7 @@ This workflow validates field values and applies a fixed policy. It does not est
 
 ## Practice and continuation
 
-Complete the [original practice, discussion, and self-checks](practice.md). Then inspect [worked feedback](feedback.md). Instructors can select individual sections and adapt the rubric; no automatic submission or grading rule applies.
+Complete the [original practice, discussion, and self-checks](practice.md). Then inspect [interpretation feedback](feedback.md). Instructors can select individual sections and adapt the rubric; no automatic submission or grading rule applies.
 
 ## Selected readings
 

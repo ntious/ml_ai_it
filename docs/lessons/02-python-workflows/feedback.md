@@ -1,4 +1,6 @@
-# Module 2 worked feedback
+# Module 2: interpretation feedback
+
+*This page gives feedback on interpreting results and writing explanations. For the practice notebook's answers, see [practice notebook answers](solutions.md).*
 
 Compare this with your [practice](practice.md) evidence. A matching number without an explanation is incomplete.
 
@@ -38,4 +40,4 @@ Judge your answer with the [study workflow criteria](../../study-workflow.md#how
 
 ## Continue the learning route
 
-For feedback on your own functions, use [construction solutions](solutions.md). The results here describe the separate complete reference.
+For feedback on your own functions, use the [practice notebook answers](solutions.md). The results here describe the separate complete reference.

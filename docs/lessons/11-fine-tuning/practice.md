@@ -55,7 +55,7 @@ Explain a run where adapter weights change but held-out validity does not. Propo
 - **M11.4:** Compare predeclared base/adapted held-out completion losses without promising improvement.
 - **M11.5:** Save/reload adapter arrays with the exact model revision and disclose limits.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Evidence activity: Check the adaptation claim
 

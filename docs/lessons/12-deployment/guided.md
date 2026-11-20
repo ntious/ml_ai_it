@@ -31,7 +31,7 @@ Implement one rejected-input test on a copy. Run both app forms and write a moni
 
 ## Debug a plausible misconception
 
-Does an input mean shift prove concept drift? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Does an input mean shift prove concept drift? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

@@ -16,7 +16,7 @@ A model can memorize the adaptation set and still fail the output contract on he
 
 ## Trace a small case
 
-Predict `trainable_count([[100, False], [8, True], [2, True]])` before running: only trainable tensors count, and you count their scalar values, giving 10. Then predict `completion_labels([5, 6, 7, 0], 2, [1, 1, 1, 0])`: the two prompt positions and the padding position become -100, giving `[-100, -100, 7, -100]`. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `trainable_count([[100, False], [8, True], [2, True]])` before running: only trainable tensors count, and you count their scalar values, giving 10. Then predict `completion_labels([5, 6, 7, 0], 2, [1, 1, 1, 0])`: the two prompt positions and the padding position become -100, giving `[-100, -100, 7, -100]`. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

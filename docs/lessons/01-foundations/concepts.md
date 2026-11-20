@@ -16,7 +16,7 @@ This is a preview: [Module 5](../05-regression/index.md) builds these split role
 
 ## Trace a small case
 
-Predict `route(2)`, `route(3)` and `route(4, threshold=5)` before running. The first two sit on either side of the inclusive boundary; the third checks that your function uses its `threshold` argument rather than a fixed 3. Then predict `error_counts([False, False, True], [True, True, True])`: the two actual negatives were flagged, so there are two false alerts and no misses. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `route(2)`, `route(3)` and `route(4, threshold=5)` before running. The first two sit on either side of the inclusive boundary; the third checks that your function uses its `threshold` argument rather than a fixed 3. Then predict `error_counts([False, False, True], [True, True, True])`: the two actual negatives were flagged, so there are two false alerts and no misses. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

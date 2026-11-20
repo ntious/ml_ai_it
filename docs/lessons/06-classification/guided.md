@@ -33,4 +33,4 @@ Open [independent practice](practice.md). Implement the three functions in its s
 
 After practice, use the [complete reference walkthrough](index.md). Its real-data protocol, baseline comparison, final evaluation and artifacts remain the module reference. The small sandbox is development practice and does not replace that evidence.
 
-Use [practice solutions](solutions.md) for misconception-specific feedback and [recorded-study feedback](feedback.md) to interpret the complete study. The [pilot guide](../../instructor/teaching-prototype-pilot.md) distinguishes technical verification from observed learner mastery.
+Use the [practice notebook answers](solutions.md) for misconception-specific feedback and [interpretation feedback](feedback.md) to interpret the complete study. The [pilot guide](../../instructor/teaching-prototype-pilot.md) distinguishes technical verification from observed learner mastery.

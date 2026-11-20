@@ -30,7 +30,7 @@ Trace legitimate, unsupported and adversarial requests. Verify returned values a
 
 ## Debug a plausible misconception
 
-Does a legal JSON plan prove correct understanding? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Does a legal JSON plan prove correct understanding? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

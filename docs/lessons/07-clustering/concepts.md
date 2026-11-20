@@ -16,7 +16,7 @@ A cluster ID is an arbitrary identifier. Swapping 0 and 1 preserves the partitio
 
 ## Trace a small case
 
-Predict `squared_distance([2, 4], [1, 2])` before running: (2−1)² + (4−2)² = 5. Signed differences would sum to 3 and could cancel. Then predict `select_k([[4, 0.5], [2, 0.5]])`: the scores tie, so the declared rule chooses the smaller K, 2. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `squared_distance([2, 4], [1, 2])` before running: (2−1)² + (4−2)² = 5. Signed differences would sum to 3 and could cancel. Then predict `select_k([[4, 0.5], [2, 0.5]])`: the scores tie, so the declared rule chooses the smaller K, 2. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

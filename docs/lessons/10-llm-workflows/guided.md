@@ -25,7 +25,7 @@ Inspect matched_comparison.csv after the real run. Reconcile per-record baseline
 
 ## Debug a plausible misconception
 
-Can 100 percent valid JSON establish a useful classifier? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Can 100 percent valid JSON establish a useful classifier? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

@@ -1,4 +1,6 @@
-# Module 5: practice solutions and diagnostic feedback
+# Module 5: practice notebook answers
+
+*This page has the answers to the practice notebook's code and reasoning tasks. For feedback on interpreting results and writing explanations, see [interpretation feedback](feedback.md).*
 
 Attempt the [practice](practice.md) before opening the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module05/solutions.ipynb "site-download:module05/solutions.ipynb"). The notebook executes the three functions and a real-data development comparison. Reading it is useful feedback, not evidence of independent implementation. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
@@ -39,4 +41,4 @@ For the support-ticket transfer, distinguish an observed zero-ticket day from a 
 
 **Extends:** Predeclare a cost or feature-availability sensitivity question using development data, reconcile the changed result, and justify whether more complexity helps the decision. Extra code alone does not strengthen the evidence.
 
-Return to [practice](practice.md), then the [complete reference workflow](index.md#run-distinct-stages) and its [recorded feedback](feedback.md).
+Return to [practice](practice.md), then the [complete reference workflow](index.md#run-distinct-stages) and its [interpretation feedback](feedback.md).

@@ -55,7 +55,7 @@ Compare two groups with equal rates and unequal counts. Explain why this does no
 - **M13.4:** Explain metric trade-offs, proxy effects, and uncertainty without causal/legal claims.
 - **M13.5:** Write a governance recommendation, including reasons not to deploy.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Evidence activity: Audit a group comparison
 

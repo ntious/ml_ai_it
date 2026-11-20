@@ -16,7 +16,7 @@ Choose prompts and decoding settings using development messages. Lock the prompt
 
 ## Trace a small case
 
-Predict `parse_label('{"label":"spam"}')`, `parse_label('spam')` and `parse_label('{"label":"ham","why":"x"}')` before running. Only the first meets the exact one-key contract; prose and extra keys are rejected even when the label inside them looks right. Then predict `valid_fraction(['spam', None, 'ham'])`: the malformed output stays in the denominator, giving 2/3. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `parse_label('{"label":"spam"}')`, `parse_label('spam')` and `parse_label('{"label":"ham","why":"x"}')` before running. Only the first meets the exact one-key contract; prose and extra keys are rejected even when the label inside them looks right. Then predict `valid_fraction(['spam', None, 'ham'])`: the malformed output stays in the denominator, giving 2/3. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

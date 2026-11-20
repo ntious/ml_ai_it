@@ -16,7 +16,7 @@ Follow the full sequence or enter a single module. Every module includes prerequ
 <section class="path-card">
 <h3>Start from the beginning</h3>
 <p>New to Python or machine learning? Begin with a small decision, run your first script, and build the foundations one step at a time.</p>
-<p><a href="lessons/01-foundations/index.md">Begin Module 1</a> · <a href="../QUICKSTART.md">Set up your first run</a></p>
+<p>In order: 1. <a href="start-here.md">Check your readiness</a> → 2. <a href="../QUICKSTART.md">Set up your first run</a> → 3. <a href="lessons/01-foundations/index.md">Begin Module 1</a></p>
 </section>
 <section class="path-card">
 <h3>Follow a guided path</h3>

@@ -24,7 +24,7 @@ Reconcile two real group rates and denominators. Explain the historical label an
 
 ## Debug a plausible misconception
 
-Does removing protected columns remove bias? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Does removing protected columns remove bias? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

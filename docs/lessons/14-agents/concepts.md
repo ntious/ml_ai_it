@@ -16,7 +16,7 @@ A call budget limits repeated execution and cost. Validate it before running a t
 
 ## Trace a small case
 
-Predict `route_intent('count')`, `route_intent('alcohol')` and `route_intent('delete')` before running. An unsupported intent must return `None` rather than fall through to an unrelated tool. Then predict `allowed_call('count_rows', {'path': 'secret'})`: the tool name is allowed, but arguments are not, so the call is refused. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `route_intent('count')`, `route_intent('alcohol')` and `route_intent('delete')` before running. An unsupported intent must return `None` rather than fall through to an unrelated tool. Then predict `allowed_call('count_rows', {'path': 'secret'})`: the tool name is allowed, but arguments are not, so the call is refused. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

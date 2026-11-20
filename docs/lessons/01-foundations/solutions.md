@@ -1,4 +1,6 @@
-# Module 1: construction feedback
+# Module 1: practice notebook answers
+
+*This page has the answers to the practice notebook's code and reasoning tasks. For feedback on interpreting results and writing explanations, see [interpretation feedback](feedback.md).*
 
 Try [practice](practice.md) before reading the worked notebook. [Download solutions](https://ntious.github.io/ml_ai_it/downloads/module01/solutions.ipynb "site-download:module01/solutions.ipynb") or open `notebooks/practice/module01-solutions.ipynb` in the complete source tree. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 

@@ -1,4 +1,6 @@
-# Module 5 worked feedback
+# Module 5: interpretation feedback
+
+*This page gives feedback on interpreting results and writing explanations. For the practice notebook's answers, see [practice notebook answers](solutions.md).*
 
 Compare reasoning and artifacts after [practice](practice.md). Your generated report supplies fitted values and scores; retain its source/version record when comparing runs.
 
@@ -58,4 +60,4 @@ Judge your answer with the [study workflow criteria](../../study-workflow.md#how
 
 ## Feedback for your own implementation
 
-Use the separate [practice solutions and diagnostic feedback](solutions.md) to investigate function-level mistakes and compare developing, meeting and extending explanations. This page retains the complete reference study's results.
+Use the separate [practice notebook answers](solutions.md) to investigate function-level mistakes and compare developing, meeting and extending explanations. This page retains the complete reference study's results.
