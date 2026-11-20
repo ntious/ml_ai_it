@@ -15,7 +15,7 @@ test('prototype practice hints work by keyboard and solutions stay a separate pa
     await expect(hint).toHaveJSProperty('open', true);
     await page.locator('main a[href="solutions.html"]').last().click();
     await expect(page).toHaveURL(new RegExp(`${slug}/solutions.html$`));
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('practice solutions');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('practice notebook answers');
   }
 });
 

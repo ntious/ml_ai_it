@@ -16,7 +16,7 @@ A weekday pattern might reflect traffic volume, maintenance or data collection. 
 
 ## Trace a small case
 
-Predict `error_rate(3, 10)` and `error_rate(0, 0)` before running. A zero denominator means no requests were observed, so the rate is unavailable (`None`), not 0%. Then predict `median([1, 2, 3, 100])`: with an even count, average the two middle values (2.5). The outlier 100 does not move it. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `error_rate(3, 10)` and `error_rate(0, 0)` before running. A zero denominator means no requests were observed, so the rate is unavailable (`None`), not 0%. Then predict `median([1, 2, 3, 100])`: with an even count, average the two middle values (2.5). The outlier 100 does not move it. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

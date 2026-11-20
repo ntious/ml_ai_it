@@ -51,8 +51,16 @@ Evaluate three changed message outputs including one malformed response. Explain
 
 Retrieval-augmented generation (RAG) answers from retrieved passages, so its answers can only be as good as what retrieval returns. This extension evaluates that step on 12 original, fictional IT runbooks and 32 authored questions, eight of which the runbooks cannot answer. It runs in the core environment with the regression extra; no language model is needed.
 
+macOS/Linux:
+
 ```sh
-python -m practical_ml_ai.retrieval --output runs/module10-retrieval
+.venv/bin/python -m practical_ml_ai.retrieval --output runs/module10-retrieval
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m practical_ml_ai.retrieval --output runs/module10-retrieval
 ```
 
 Validation questions choose the TF-IDF settings and an abstention threshold: below that similarity the system should say it has no grounded answer. Test questions then evaluate the locked choice once. Before running, predict whether the threshold will refuse every unanswerable test question. Then use `summary.txt` and `test_decisions.csv`:
@@ -69,7 +77,7 @@ Validation questions choose the TF-IDF settings and an abstention threshold: bel
 - **M10.4:** Compare task fit, latency, and limitations with simpler NLP.
 - **M10.5:** Write a source-grounded model-use note with privacy and cost constraints.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Evidence activity: Separate validity from correctness
 

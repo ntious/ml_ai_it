@@ -29,7 +29,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Understand the methods
 
@@ -79,7 +79,7 @@ Read `src/practical_ml_ai/foundations.py`. The central expression is `storage_pe
 
 ## Notebook route
 
-The [first-steps notebook](https://ntious.github.io/ml_ai_it/downloads/module01/first_steps.ipynb "site-download:module01/first_steps.ipynb") calls the same functions. Keep the source archive's folder structure and open `notebooks/lessons/01-foundations/first_steps.ipynb` using the [notebook setup instructions](../../../QUICKSTART.md#notebook-option).
+The [first-steps notebook](https://ntious.github.io/ml_ai_it/downloads/module01/first_steps.ipynb "site-download:module01/first_steps.ipynb") calls the same functions. Keep the source archive's folder structure and open `notebooks/lessons/01-foundations/first_steps.ipynb` using the [notebook setup instructions](../../../QUICKSTART.md#notebook-option). The Module 1 *script* needs no extra packages, but every course notebook, including this one and the Module 1 practice notebook, needs the course environment (`.venv` with NumPy). Those setup steps take about 10 minutes and are the same ones you will use from Module 3 onward.
 
 A notebook contains text cells and code cells. Its kernel is the Python process holding variables. Open the notebook, select the first code cell, and use your interface's Run command. Run subsequent cells in order. Use File → Save (or the interface's documented keyboard command), then close, reopen, restart the kernel, and run all cells to check that saved work does not depend on hidden state. A downloaded notebook is a file, not an installed interface. Installation and screen-reader usability are separate checks; see [current accessibility status](../../accessibility/index.md).
 
@@ -91,7 +91,7 @@ A notebook contains text cells and code cells. Its kernel is the Python process 
 
 ## Practice and continue
 
-Complete [practice and reflection](practice.md), then use [worked feedback](feedback.md). If using GenAI, ask it to explain why 80 and 81 give different results. Verify the explanation by reading `>` and running both values; you should be able to explain the result yourself. No AI account is required: the feedback supplies a sample explanation.
+Complete [practice and reflection](practice.md), then use the [interpretation feedback](feedback.md). If using GenAI, ask it to explain why 80 and 81 give different results. Verify the explanation by reading `>` and running both values; you should be able to explain the result yourself. No AI account is required: the feedback supplies a sample explanation.
 
 Next: [Module 2, Python for reproducible ML workflows](../02-python-workflows/index.md). A learner arriving directly at a later module can use this page as a short setup and terminology bridge.
 

@@ -31,7 +31,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -53,10 +53,18 @@ Age remains a model input. Excluding sex/race does not exclude all sensitive or 
 
 ## Run and inspect
 
-Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the [core environment instructions](../../../QUICKSTART.md) and install the regression extra. In commands below, **python means your environment executable**; use its full path if not activated. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the [core environment instructions](../../../QUICKSTART.md) and install the regression extra. Commands below start with the core environment's Python, `.venv`, which you created in [first run](../../../QUICKSTART.md#module-3-add-the-data-libraries). **The first run downloads the public dataset or model, so it needs internet**; later runs reuse the verified cache. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
+macOS/Linux:
 
 ~~~sh
-python examples/income-fairness/scripts/run.py --output runs/module13
+.venv/bin/python examples/income-fairness/scripts/run.py --output runs/module13
+~~~
+
+Windows PowerShell:
+
+~~~powershell
+.\.venv\Scripts\python.exe examples/income-fairness/scripts/run.py --output runs/module13
 ~~~
 
 Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module13/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module13/example/index.html "site-download:module13/example/index.html") without installing an execution interface.
@@ -77,7 +85,7 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 
 ## Practice and continue
 
-Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+Complete [original practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
 
 Next: [Module 14](../14-agents/index.md).
 

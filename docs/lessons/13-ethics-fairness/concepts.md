@@ -16,7 +16,7 @@ Historical income labels reflect past social conditions; predicting them accurat
 
 ## Trace a small case
 
-Predict `recall_denominator(8, 2, 11, 30)` before running: recall conditions on actual positives, TP + FN = 19, not on predictions. Then predict `safe_rate(0, 0)` and `safe_rate(0, 10)`: no actual positives means the rate is unavailable (`None`), while 0 of 10 is a measured 0. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `recall_denominator(8, 2, 11, 30)` before running: recall conditions on actual positives, TP + FN = 19, not on predictions. Then predict `safe_rate(0, 0)` and `safe_rate(0, 10)`: no actual positives means the rate is unavailable (`None`), while 0 of 10 is a measured 0. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

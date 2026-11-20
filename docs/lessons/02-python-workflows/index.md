@@ -30,7 +30,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## The service-file problem
 
@@ -108,7 +108,7 @@ Individual files are available as [ticket CSV](https://ntious.github.io/ml_ai_it
 
 Read the named sections as needed; entire documentation sites are not assignments. Current documentation may show features beyond the Python version used here.
 
-Complete [practice](practice.md), then compare [worked feedback](feedback.md). Continue to [Module 3: Data processing](../03-data-processing/index.md).
+Complete [practice](practice.md), then compare [interpretation feedback](feedback.md). Continue to [Module 3: Data processing](../03-data-processing/index.md).
 
 ## Instructor adaptation
 

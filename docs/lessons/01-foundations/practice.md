@@ -56,7 +56,7 @@ Frame an escalation aid with a human fallback. Explain one field unavailable at 
 
 The script route supplies the same programming evidence when a notebook interface is a barrier. It does not demonstrate notebook-interface operation. An instructor assessing that particular skill should arrange an accessible interface and support with the learner.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Before opening the notebook
 

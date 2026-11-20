@@ -22,6 +22,7 @@ from .capstone_models import candidate, export_model, numeric_predict
 from .continuation_data import ROOT, binary_metrics, fetch_source, publish_report
 from .learning import calibration_table
 from .phishing import prepare as prepare_case
+from .network_help import describe
 
 PARENTS = {"prepare": [], "tune": ["prepare"], "stability": ["tune"],
            "split-study": ["tune"], "freeze": ["stability"], "evaluate": ["freeze"],
@@ -422,7 +423,7 @@ def main(argv=None):
             else: {"split-study": split_study}.get(stage, globals().get(stage))(args.run)
             print("COMPLETED", stage, flush=True)
     except (ValueError, OSError, KeyError, TypeError) as error:
-        parser.exit(2, f"Capstone failed: {error}\n")
+        parser.exit(2, f"Capstone failed: {describe(error)}\n")
 
 
 if __name__ == "__main__":

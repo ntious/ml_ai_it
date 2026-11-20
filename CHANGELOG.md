@@ -1,5 +1,16 @@
 # Changelog
 
+## November 2026 — new-learner setup clarity
+
+- Setup: QUICKSTART explains virtual environments, states which modules overwrite reruns, maps plain `python` to each environment, and says which modules download data or models. A glossary entry defines virtual environments.
+- Lesson and practice pages give the exact environment command (`.venv/bin/python`, `.\.venv\Scripts\python.exe` or `.venv-ml/bin/python`) instead of plain `python`, with PowerShell commands for core modules and a first-run download note on Modules 6–14.
+- Framework setup: a route table by computer, a Python 3.12 check with install help, `python3.12` for bootstrap, a Codespaces route for macOS, and maintainer-only timing labels.
+- `scripts/bootstrap.py` stops before any download unless the frameworks profile runs on Python 3.12, reports which install step failed instead of a traceback, and can be rerun over an existing environment.
+- Module, regression and capstone commands add a plain-language hint when a dataset or model download fails.
+- Binder pins Python 3.12 in `.binder/runtime.txt`; the pinned NumPy and scikit-learn need Python 3.11 or newer.
+- Answer pages are titled "practice notebook answers" and "interpretation feedback", with consistent links and an Answers lesson tab. The README and homepage give one starting order.
+- Learning outcomes, data, models and results are unchanged.
+
 ## November 2026 — outcome-evidence map and bridge activities
 
 - Added a default red/charcoal palette and retained the original teal palette as a separate saved preference, independent of light/dark/system mode.

@@ -28,7 +28,7 @@ Inspect one packed training example and identify prompt/completion masks. Explai
 
 ## Debug a plausible misconception
 
-Does a nonzero adapter update establish better labels? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Does a nonzero adapter update establish better labels? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

@@ -51,8 +51,16 @@ Add a repeated event with a changed annotation and a missing latency. Explain th
 
 The historical phishing attributes are coded -1, 0 and 1. These codes are categories, not measurements, so treating them as numbers assumes an order and equal spacing that may not exist. This extension compares three representations of the same records, fitting every transformation on training records and scoring on validation only. It needs the regression extra (`pip install -e ".[regression]"`) and downloads the attributed UCI data on first use.
 
+macOS/Linux:
+
 ```sh
-python -m practical_ml_ai.encoding --output runs/module03-encoding
+.venv/bin/python -m practical_ml_ai.encoding --output runs/module03-encoding
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m practical_ml_ai.encoding --output runs/module03-encoding
 ```
 
 - **codes_as_numbers:** the 30 codes, scaled, as numeric inputs.
@@ -77,7 +85,7 @@ By completing the core route, you can:
 
 These are resource learning outcomes. They do not claim course credit or certified program-outcome attainment.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Operational-data connection
 

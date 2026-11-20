@@ -1,6 +1,7 @@
 """Explicit module dispatcher. Optional frameworks are imported only when used."""
 import argparse
 from pathlib import Path
+from .network_help import describe
 
 
 def run_module(number, output, **options):
@@ -41,4 +42,4 @@ def main(number):
     try:
         run_module(number, args.output, **options)
     except (ValueError, OSError, KeyError, ImportError) as error:
-        parser.exit(2, f"Module {number} failed: {error}\n")
+        parser.exit(2, f"Module {number} failed: {describe(error)}\n")

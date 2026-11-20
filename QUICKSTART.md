@@ -22,7 +22,7 @@ python3 --version
 python3 examples/first-run/scripts/first_run.py --storage-percent 85 --output runs/module01/first-run.txt
 ```
 
-Expect storage used 85 percent, threshold 80 percent, and `Review storage`. Open the saved text file. This is a human-written rule; no model is trained. Continue with [Module 1](docs/lessons/01-foundations/index.md).
+Expect storage used 85 percent, threshold 80 percent, and `Review storage`. Open the saved text file. This is a human-written rule; no model is trained. Continue with [Module 1](docs/lessons/01-foundations/index.md). The Module 1 script needs nothing extra, but its practice notebook does: if you want the notebook, do the Module 3 environment steps and the [notebook option](#notebook-option) first (about 10 minutes).
 
 ## Module 2: read CSV and JSON
 
@@ -42,7 +42,14 @@ Expect 4 tickets, 60 total minutes, average 15 minutes, and 3 events. Inspect `s
 
 ## Module 3: add the data libraries
 
-Create an isolated environment and install the local package. Calling the environment's Python directly avoids a script-activation requirement. These commands install third-party dependencies; internet access is normally needed. The constraints record the NumPy/pandas versions used in development.
+From here on, the course uses a **virtual environment**: a private copy of Python, stored in a folder named `.venv` inside `ml_ai_it`, that holds the course's packages without changing the rest of your computer.
+
+- You create it **once**, with the first command below.
+- After that, start every course command with the environment's own Python: `.venv/bin/python` on macOS/Linux, or `.\.venv\Scripts\python.exe` on Windows. That is how the command finds the packages you installed.
+- You do not need to "activate" the environment. Activation is an optional shortcut that lets you type plain `python`; if you have not activated it, plain `python` runs a different Python that does not have the course packages.
+- If something goes badly wrong, you can delete the `.venv` folder and create it again.
+
+The install commands download third-party packages, so internet access is needed. The constraints file pins the NumPy/pandas versions the course was tested with.
 
 Windows PowerShell:
 
@@ -130,18 +137,28 @@ From the opened interface, open the module's notebook under `notebooks/lessons/`
 
 ## Save and troubleshoot
 
-Use different output names/directories for experiments; rerunning replaces generated files at the same paths. Keep raw samples unchanged. A failed run may leave an older report from a previous successful run, so retain commands and error text with your experiment.
+Use different output names/directories for experiments. Overwriting rules differ by module: **Modules 1–4 replace** generated files at the same paths when you rerun, while **Modules 5–14 refuse** to overwrite an existing run, so give each rerun a new `--output` or `--run` folder (for example `runs/module06-try2`). Keep raw samples unchanged. A failed run may leave an older report from a previous successful run, so retain commands and error text with your experiment.
 
 - Command unavailable: check the installed Python command and version.
 - File not found: check the working folder and the exact input path.
 - Missing columns or invalid value: inspect the CSV header and named field; use a synthetic copy for repair practice.
-- Missing NumPy/pandas: install with the same environment executable used to run Module 3.
+- Missing NumPy/pandas (`ModuleNotFoundError`): you probably ran plain `python` or `python3`. Run the command again starting with `.venv/bin/python` (macOS/Linux) or `.\.venv\Scripts\python.exe` (Windows).
+- `urlopen error`, `Max retries` or a proxy message: a dataset or model download failed. Check that you are online and that your network allows archive.ics.uci.edu and huggingface.co, then rerun.
 
 For help, retain the command, Python/platform version, error text, and small synthetic input. Screenshots are not required. Keep credentials and personal information out of public issues.
 
 ## Modules 6–14
 
-Choose a module from the [curriculum map](docs/modules.md). Modules 6, 7, and 13 use the core environment; Modules 8–12 and 14 use the [isolated CPU framework setup](docs/setup/frameworks.md). Each entry supplies its script, commented notebook, actual source, and evidence requirements. Use fresh output directories and retain verified data/model caches for replay.
+Choose a module from the [curriculum map](docs/modules.md). Modules 6, 7, and 13 use the core environment; Modules 8–12 and 14 use the [isolated CPU framework setup](docs/setup/frameworks.md), which needs Python 3.12 and has its own environment folder, `.venv-ml`.
+
+Lesson pages write commands with the environment's Python in front. If a command you copy starts with plain `python`, replace that word as follows:
+
+| Modules | macOS/Linux | Windows PowerShell |
+| --- | --- | --- |
+| 1–7 and 13 | `.venv/bin/python` | `.\.venv\Scripts\python.exe` |
+| 8–12 and 14 | `.venv-ml/bin/python` | Use WSL (see the framework setup), then `.venv-ml/bin/python` |
+
+The first run of Modules 5–14 downloads a public dataset (from the UCI repository) or a small language model (from Hugging Face), so it needs internet. Later runs reuse the verified cache. Each entry supplies its script, commented notebook, actual source, and evidence requirements. Use fresh output directories and retain verified data/model caches for replay.
 
 ## Maintainer verification
 

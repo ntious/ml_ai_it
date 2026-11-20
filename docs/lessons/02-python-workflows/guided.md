@@ -32,7 +32,7 @@ Write an explicit loop version independently. Add one record on a copy and recon
 
 ## Debug a plausible misconception
 
-Why does replacing unknown with zero change the question? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Why does replacing unknown with zero change the question? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

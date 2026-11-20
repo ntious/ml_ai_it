@@ -10,6 +10,14 @@ Learn to frame a useful problem, work with data, build and evaluate models, and 
 
 **Start with [the readiness check and learning routes](docs/start-here.md)**, or pick one of the [learning paths](docs/paths.md). If you have never programmed, begin with [Python Foundation](https://ntious.github.io/python_foundation/), then return for our [Python-to-ML bridge](docs/setup/python-bridge.md). You can learn through this resource independently or use it alongside an instructor's course.
 
+**New here? Do these in order:**
+
+1. [Readiness check](docs/start-here.md): see whether to start with Python Foundation or go straight to Module 1.
+2. [First run](QUICKSTART.md): run your first script and set up the course environment.
+3. [Module 1](docs/lessons/01-foundations/index.md): begin the lessons.
+
+**What runs where:** Modules 1–7 and 13 run on Windows, macOS and Linux (Python 3.11–3.13). Modules 8–12 and 14 use larger ML frameworks and need Linux with Python 3.12: on Windows use WSL, and on macOS use GitHub Codespaces. See [framework setup](docs/setup/frameworks.md). The first run of Modules 5–14 downloads a public dataset or model, so it needs internet.
+
 Edition 0.7.0. [Current status and tested scope](docs/status.md).
 
 All 14 modules include separate practice and solution notebooks. Attempt practice before consulting solutions; connect the small operations to the complete study and transfer task.

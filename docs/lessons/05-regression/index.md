@@ -31,7 +31,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning sequence for this module
 
-Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
+Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice notebook answers](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
 The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
@@ -82,29 +82,58 @@ First download and normally installation require internet access, with no accoun
 
 ## Run distinct stages
 
-Below, **python means your environment executable**: the Windows or Unix path above if not activated.
+Each stage runs with the same environment Python as above.
+
+macOS/Linux:
 
 ~~~sh
-python examples/bike-demand/scripts/study.py prepare --input runs/datasets/bike-sharing/day.csv --run runs/module05 --holdout-days 110
-python examples/bike-demand/scripts/study.py train --run runs/module05
-python examples/bike-demand/scripts/study.py validate --run runs/module05
-python examples/bike-demand/scripts/study.py evaluate --run runs/module05
-python examples/bike-demand/scripts/study.py predict --run runs/module05
-python examples/bike-demand/scripts/study.py report --run runs/module05 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+.venv/bin/python examples/bike-demand/scripts/study.py prepare --input runs/datasets/bike-sharing/day.csv --run runs/module05 --holdout-days 110
+.venv/bin/python examples/bike-demand/scripts/study.py train --run runs/module05
+.venv/bin/python examples/bike-demand/scripts/study.py validate --run runs/module05
+.venv/bin/python examples/bike-demand/scripts/study.py evaluate --run runs/module05
+.venv/bin/python examples/bike-demand/scripts/study.py predict --run runs/module05
+.venv/bin/python examples/bike-demand/scripts/study.py report --run runs/module05 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+~~~
+
+Windows PowerShell:
+
+~~~powershell
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py prepare --input runs/datasets/bike-sharing/day.csv --run runs/module05 --holdout-days 110
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py train --run runs/module05
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py validate --run runs/module05
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py evaluate --run runs/module05
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py predict --run runs/module05
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py report --run runs/module05 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
 ~~~
 
 Preparation requires a **new directory**. Training, selection, and final evaluation each refuse accidental repetition. These are protocol guards, not access control: the entire historical dataset is public. Repeated classroom runs are an evaluation rehearsal, not an independent blind benchmark.
 
 One command can reproduce the complete demonstration:
 
+macOS/Linux:
+
 ~~~sh
-python examples/bike-demand/scripts/study.py all --input runs/datasets/bike-sharing/day.csv --run runs/module05-complete --holdout-days 110 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+.venv/bin/python examples/bike-demand/scripts/study.py all --input runs/datasets/bike-sharing/day.csv --run runs/module05-complete --holdout-days 110 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
+~~~
+
+Windows PowerShell:
+
+~~~powershell
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py all --input runs/datasets/bike-sharing/day.csv --run runs/module05-complete --holdout-days 110 --plots --dataset-label "UCI Bike Sharing daily counts, CC BY 4.0"
 ~~~
 
 For an explicitly synthetic offline route after installing dependencies:
 
+macOS/Linux:
+
 ~~~sh
-python examples/bike-demand/scripts/study.py all --input data/samples/forecast-demand/daily.csv --run runs/module05-smoke --dataset-label "Original synthetic smoke fixture"
+.venv/bin/python examples/bike-demand/scripts/study.py all --input data/samples/forecast-demand/daily.csv --run runs/module05-smoke --dataset-label "Original synthetic smoke fixture"
+~~~
+
+Windows PowerShell:
+
+~~~powershell
+.\.venv\Scripts\python.exe examples/bike-demand/scripts/study.py all --input data/samples/forecast-demand/daily.csv --run runs/module05-smoke --dataset-label "Original synthetic smoke fixture"
 ~~~
 
 Without the plots flag, the same study still produces text, HTML tables, and CSV evidence; Matplotlib is then unnecessary.
@@ -150,7 +179,7 @@ Forecast.csv predicts the next day after the last observed day, without an actua
 - **Reference:** [MAE](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html): units and aggregation.
 - **Optional:** [TimeSeriesSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html): expanding windows.
 
-Read named sections; current docs may describe newer versions than the tested constraints. Use the [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module05/regression.ipynb "site-download:module05/regression.ipynb") inside the complete source folder, complete [practice](practice.md), then compare [worked feedback](feedback.md). [Instructor adaptation notes](instructor.md) explain alignment and alternatives. [Module 6](../06-classification/index.md) introduces classification and decision trees.
+Read named sections; current docs may describe newer versions than the tested constraints. Use the [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module05/regression.ipynb "site-download:module05/regression.ipynb") inside the complete source folder, complete [practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor adaptation notes](instructor.md) explain alignment and alternatives. [Module 6](../06-classification/index.md) introduces classification and decision trees.
 
 ## Build understanding step by step
 

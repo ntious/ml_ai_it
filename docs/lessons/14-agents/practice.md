@@ -55,7 +55,7 @@ Trace an unsupported destructive request and a valid count question. Identify wh
 - **M14.4:** Inspect traces for intent match, refusals, and source-grounded answers.
 - **M14.5:** Test unsupported/destructive requests and explain remaining limitations.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Evidence activity: Separate routing from permission
 

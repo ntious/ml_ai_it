@@ -30,7 +30,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## A question before a chart
 
@@ -121,7 +121,7 @@ Saved outputs include normalized observations, `summary.json`, named text values
 
 Read only the named sections. Current documentation may describe newer versions than the tested environment; the repository records its exercised versions.
 
-Complete [practice and the operations memo](practice.md), then consult [worked feedback](feedback.md). [Module 5](../05-regression/index.md) introduces regression and held-out evaluation. When exploration informs model choices, use training/development data and preserve final test data for its planned evaluation; no predictive evaluation is performed here.
+Complete [practice and the operations memo](practice.md), then consult [interpretation feedback](feedback.md). [Module 5](../05-regression/index.md) introduces regression and held-out evaluation. When exploration informs model choices, use training/development data and preserve final test data for its planned evaluation; no predictive evaluation is performed here.
 
 ## Optional bridge: genuine network records
 

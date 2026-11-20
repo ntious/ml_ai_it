@@ -24,6 +24,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import make_pipeline
+from .network_help import describe
 
 FEATURES = ["prior_day_requests", "prior_week_requests"]
 TARGET = "target_requests"
@@ -477,7 +478,7 @@ def main():
         if (args.run / "summary.txt").exists():
             print((args.run / "summary.txt").read_text(encoding="utf-8"))
     except (ValueError, OSError, KeyError, zipfile.BadZipFile) as error:
-        parser.exit(2, f"Regression workflow failed: {error}\n")
+        parser.exit(2, f"Regression workflow failed: {describe(error)}\n")
 
 
 if __name__ == "__main__":

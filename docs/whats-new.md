@@ -2,6 +2,15 @@
 
 Learner-facing notes on what changed. The [changelog](../CHANGELOG.md) has the full record, and [status](status.md) explains verification scope and links to commit-specific workflow results.
 
+## Clearer setup for new learners (November 2026)
+
+- **Start in order:** [readiness check](start-here.md) → [first run](../QUICKSTART.md) → [Module 1](lessons/01-foundations/index.md).
+- **Virtual environments explained:** the [first run](../QUICKSTART.md#module-3-add-the-data-libraries) says what `.venv` is and why commands start with `.venv/bin/python` (or `.\.venv\Scripts\python.exe` on Windows).
+- **Exact commands on every lesson:** each command shows the environment to use, with Windows PowerShell versions for the core modules.
+- **Framework modules (8–12 and 14):** a [route for each kind of computer](setup/frameworks.md), including Codespaces for macOS, and a check that Python 3.12 is installed.
+- **Clearer messages:** setup and download failures now say what went wrong and what to try.
+- **Answer pages renamed:** each module has *practice notebook answers* (the Answers tab) and *interpretation feedback* (the Feedback tab).
+
 ## Outcome map and bridge activities (November 2026)
 
 - **Reading preferences:** red is the default palette; choose Teal to retain the original colors. The separate Mode control selects System, Light or Dark. Both preferences are saved in your browser when storage is available; no account is required.

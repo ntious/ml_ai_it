@@ -27,7 +27,7 @@ Inspect the training-fitted real vocabulary. Demonstrate an unknown token and tr
 
 ## Debug a plausible misconception
 
-Why is adapting vocabulary on test text leakage? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Why is adapting vocabulary on test text leakage? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

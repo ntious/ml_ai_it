@@ -84,4 +84,4 @@ No. It shows serialization preserved the predictions. Usefulness needs the basel
 - [Dive into Deep Learning: forward/backward propagation](https://d2l.ai/chapter_multilayer-perceptrons/backprop.html): optional chain-rule and computational-graph derivation.
 - [TensorFlow automatic differentiation](https://www.tensorflow.org/guide/autodiff): trace the role of `GradientTape`; start with the basic gradient example, not every advanced case.
 
-Readings extend the original explanation; completing formal proofs is not an added requirement. Continue to [guided construction](guided.md), [practice](practice.md), then [feedback](feedback.md) and the [complete study](index.md).
+Readings extend the original explanation; completing formal proofs is not an added requirement. Continue to [guided construction](guided.md), [practice](practice.md), then [interpretation feedback](feedback.md) and the [complete study](index.md).

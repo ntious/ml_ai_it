@@ -1,4 +1,6 @@
-# Module 8: practice solutions and diagnostic feedback
+# Module 8: practice notebook answers
+
+*This page has the answers to the practice notebook's code and reasoning tasks. For feedback on interpreting results and writing explanations, see [interpretation feedback](feedback.md).*
 
 Attempt the [practice](practice.md), then open the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module08/solutions.ipynb "site-download:module08/solutions.ipynb"). These solutions expose the mechanism; they do not replace an independently explained change or the complete module's baseline comparison. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
@@ -39,4 +41,4 @@ Reloaded probabilities matching the saved model support serialization correctnes
 
 **Extends:** Declare a width or learning-rate comparison on development data before running it, preserve the selection rule and explain measured compute/error tradeoffs. Mathematical derivations are optional; accountable applied reasoning remains required.
 
-Return to [practice](practice.md), then the [complete reference study](index.md) and [recorded feedback](feedback.md).
+Return to [practice](practice.md), then the [complete reference study](index.md) and [interpretation feedback](feedback.md).

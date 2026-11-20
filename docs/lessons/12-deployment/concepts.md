@@ -16,7 +16,7 @@ Measure latency with its percentile definition, sample count and environment. A 
 
 ## Trace a small case
 
-Predict `valid_request({'x': 2}, ['x'])`, `valid_request({'x': True}, ['x'])` and `valid_request({'extra': 1, 'x': 2}, ['x'])` before running. Only the first meets the contract: a boolean is not a measurement, and extra fields are rejected rather than ignored. Then predict `shift_score(12, 10, 2)`: an absolute standardized difference of 1. Use the practice notebook to test your prediction, then the [separate solutions](solutions.md) after your attempt.
+Predict `valid_request({'x': 2}, ['x'])`, `valid_request({'x': True}, ['x'])` and `valid_request({'extra': 1, 'x': 2}, ['x'])` before running. Only the first meets the contract: a boolean is not a measurement, and extra fields are rejected rather than ignored. Then predict `shift_score(12, 10, 2)`: an absolute standardized difference of 1. Use the practice notebook to test your prediction, then the [practice notebook answers](solutions.md) after your attempt.
 
 ## Connect this to the full experiment
 

@@ -7,6 +7,21 @@ import sys
 import venv
 
 ROOT=Path(__file__).resolve().parents[1]
+FRAMEWORK_PYTHON=(3, 12)
+CORE_MINIMUM=(3, 11)
+
+
+def check_python(profile):
+    """Stop before any download when this interpreter cannot build the requested profile."""
+    found=sys.version_info[:2]; shown=".".join(map(str,found))
+    if profile == "frameworks" and found != FRAMEWORK_PYTHON:
+        sys.exit(f"The frameworks profile needs Python 3.12, but this command is running Python {shown}.\n"
+                 "TensorFlow 2.19 does not install on other versions. Check with: python3.12 --version\n"
+                 "Then run: python3.12 scripts/bootstrap.py --profile frameworks\n"
+                 "No Python 3.12? See docs/setup/frameworks.md (Install Python 3.12) or use Codespaces.")
+    if found < CORE_MINIMUM:
+        sys.exit(f"The course needs Python 3.11 or newer, but this command is running Python {shown}.\n"
+                 "Install Python 3.12 and run this command with it. See QUICKSTART.md.")
 
 
 def main():
@@ -15,13 +30,20 @@ def main():
     args=parser.parse_args()
     if args.profile == "frameworks" and platform.system() != "Linux":
         parser.error("Use the verified Linux CPU route for frameworks.")
+    check_python(args.profile)
     if args.current:
         executable=Path(sys.executable)
     else:
         directory=ROOT/(".venv-ml" if args.profile == "frameworks" else ".venv")
-        venv.EnvBuilder(with_pip=True).create(directory)
+        venv.EnvBuilder(with_pip=True,symlinks=platform.system()!="Windows").create(directory)
         executable=directory/("Scripts/python.exe" if platform.system()=="Windows" else "bin/python")
-    def run(*arguments): subprocess.run([str(executable),*arguments],cwd=ROOT,check=True)
+    def run(*arguments):
+        try: subprocess.run([str(executable),*arguments],cwd=ROOT,check=True)
+        except subprocess.CalledProcessError as error:
+            step=" ".join(str(argument) for argument in arguments[:4])
+            sys.exit(f"\nSetup stopped during: {step} (exit code {error.returncode}).\n"
+                     "Read the last error lines above. A download or network message means the computer could not reach the package site.\n"
+                     "Fix that, then run the same bootstrap command again. More help: docs/setup/troubleshooting.md")
     if args.profile == "frameworks": run("-m","pip","install","torch==2.6.0","--index-url","https://download.pytorch.org/whl/cpu")
     extras="regression,visualization,verification"+(",neural,language,deployment" if args.profile == "frameworks" else "")
     constraint="constraints-neural.txt" if args.profile == "frameworks" else "constraints-tested.txt"

@@ -25,7 +25,7 @@ Construct one labeled plot from development data and supply its numeric table an
 
 ## Debug a plausible misconception
 
-Does a rising scatter pattern establish causation? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Does a rising scatter pattern establish causation? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

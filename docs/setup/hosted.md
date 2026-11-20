@@ -6,14 +6,14 @@ The default executable reference is Linux CPU, Python 3.12. Core workflows also 
 | --- | --- | --- | --- |
 | Local Linux CPU | Automated execution reference | Separate environment tested | Persistent files; allow download space and memory |
 | Local Windows | Core CI exercised | Installation recipe; no complete platform claim | Use explicit environment executable |
-| Local macOS | Use the Linux reference | Use the Linux reference | Use instructor support if installation fails |
+| Local macOS | Follow the macOS/Linux commands in the [first run](../../QUICKSTART.md) | Not verified natively: use Codespaces (below) | Persistent files; use instructor support if installation fails |
 | Codespaces | Core devcontainer configured | Run framework bootstrap in a separate environment | Account/access/usage allowance required; download work before deleting workspace |
 | Colab | Import complete source and core bootstrap | Requires a matching runtime/kernel; use the Linux reference when incompatible | Upload the complete source archive; download runs and notebooks |
 | Binder | Core requirements configured | Heavy frameworks excluded | Public source required by ordinary launch; ephemeral and quota-dependent |
 
 ## Codespaces
 
-Signed in to GitHub, choose Code, Codespaces, Create codespace. The checked-in devcontainer installs the core dependencies and notebook kernel. Open the desired notebook and select the installed Python. Run `python scripts/preflight.py --profile core`. To use frameworks in the Linux terminal, run `python scripts/bootstrap.py --profile frameworks`, then select the ml-ai-frameworks kernel. This installs several large packages; review your provider's available resources first.
+Signed in to GitHub, choose Code, Codespaces, Create codespace. The checked-in devcontainer installs the core dependencies and notebook kernel. Open the desired notebook and select the installed Python. Run `python scripts/preflight.py --profile core`. To use frameworks in the Linux terminal, run `python3.12 scripts/bootstrap.py --profile frameworks`, then select the ml-ai-frameworks kernel. This is the recommended framework route for macOS users. This installs several large packages; review your provider's available resources first.
 
 ## Colab
 
@@ -21,7 +21,7 @@ Obtain the complete source ZIP from the repository or supplied archive, upload i
 
 ## Binder
 
-A Binder service must be able to retrieve the complete source repository. If it cannot access the source or build the environment, use the local reference environment or an instructor-provided workspace. The .binder requirements install only the core profile. Binder build success, capacity and interface accessibility remain service checks. Save notebooks and runs outside the session before it closes.
+A Binder service must be able to retrieve the complete source repository. If it cannot access the source or build the environment, use the local reference environment or an instructor-provided workspace. The .binder requirements install only the core profile, and `.binder/runtime.txt` pins Python 3.12. Binder build success, capacity and interface accessibility remain service checks. Save notebooks and runs outside the session before it closes.
 
 ## Local setup
 

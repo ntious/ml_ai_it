@@ -28,7 +28,7 @@ Inspect a rejected record and explain its policy reason. On a copy, repair one l
 
 ## Debug a plausible misconception
 
-Should a missing latency be replaced by zero? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Should a missing latency be replaced by zero? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

@@ -1,4 +1,6 @@
-# Module 6: practice solutions and diagnostic feedback
+# Module 6: practice notebook answers
+
+*This page has the answers to the practice notebook's code and reasoning tasks. For feedback on interpreting results and writing explanations, see [interpretation feedback](feedback.md).*
 
 Try the [practice](practice.md), then compare the [worked solution notebook](https://ntious.github.io/ml_ai_it/downloads/module06/solutions.ipynb "site-download:module06/solutions.ipynb"). Use the notebook to inspect a completed approach; assess your understanding with changed inputs and an independent explanation. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
 
@@ -53,4 +55,4 @@ The differences between the three logistic settings are small relative to their 
 
 **Extends:** Predeclare a development-only sensitivity analysis and discuss capacity, sampling and label uncertainty. A larger model or a final-test-driven threshold change does not establish stronger reasoning.
 
-Return to [practice](practice.md), then the [complete reference study](index.md) and [recorded feedback](feedback.md).
+Return to [practice](practice.md), then the [complete reference study](index.md) and [interpretation feedback](feedback.md).

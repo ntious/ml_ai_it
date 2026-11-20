@@ -25,7 +25,7 @@ Change the threshold to 90. Predict 90 and 91 before running. Explain what data 
 
 ## Debug a plausible misconception
 
-Why is changing 80 to 90 not training? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Why is changing 80 to 90 not training? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

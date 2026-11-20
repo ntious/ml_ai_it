@@ -29,7 +29,7 @@ Fit a predeclared second K using training and compare development geometry and c
 
 ## Debug a plausible misconception
 
-Is silhouette a classification accuracy? Write a prediction before opening [feedback](feedback.md). Include a counterexample or calculation, not only a definition.
+Is silhouette a classification accuracy? Write a prediction before opening [interpretation feedback](feedback.md). Include a counterexample or calculation, not only a definition.
 
 ## Independent transfer
 

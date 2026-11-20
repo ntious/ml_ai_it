@@ -31,7 +31,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning sequence for this module
 
-Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice feedback](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
+Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice notebook answers](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
 The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
@@ -53,10 +53,12 @@ Training-only scaling feeds eleven numeric inputs, a 16-unit ReLU layer and one 
 
 ## Run and inspect
 
-Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. Commands below start with the framework environment's Python, `.venv-ml` (Python 3.12), created in the [framework setup](../../setup/frameworks.md). **The first run downloads the public dataset or model, so it needs internet**; later runs reuse the verified cache. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
+Linux, WSL or Codespaces (framework environment):
 
 ~~~sh
-python examples/wine-neural-network/scripts/run.py --output runs/module08
+.venv-ml/bin/python examples/wine-neural-network/scripts/run.py --output runs/module08
 ~~~
 
 Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module08/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module08/example/index.html "site-download:module08/example/index.html") without installing an execution interface.
@@ -79,7 +81,7 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 
 ## Practice and continue
 
-Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+Complete [original practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
 
 Next: [Module 9](../09-neural-nlp/index.md).
 

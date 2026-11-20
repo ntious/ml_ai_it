@@ -88,4 +88,4 @@ Accuracy can rise because its denominator grows with correct negatives; recall i
 - [Dive into Deep Learning: classification](https://d2l.ai/chapter_linear-classification/softmax-regression.html): optional reading on scores, probabilities and cross-entropy. Its multiclass derivations go beyond the arithmetic required here.
 - [UBC CPSC 330 generalization lesson](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/03_ml-fundamentals.html): optional alternative explanation of tree depth and generalization. This page uses original examples and does not reproduce that course's materials.
 
-Continue to [guided construction](guided.md) and [practice](practice.md). Use [feedback](feedback.md) after your first attempt.
+Continue to [guided construction](guided.md) and [practice](practice.md). Use the [interpretation feedback](feedback.md) after your first attempt.

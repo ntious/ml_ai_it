@@ -30,7 +30,7 @@ See the [outcome map](../../outcome-map.md) for all modules and the label defini
 
 ## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use [solutions](solutions.md) after your attempt, then connect your work to the complete reference below.
+Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -50,10 +50,12 @@ The app's default numeric values come from one actual held-out wine record. Chec
 
 ## Run and inspect
 
-Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. In commands below, **python means your environment executable**; use its full path if not activated. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. Commands below start with the framework environment's Python, `.venv-ml` (Python 3.12), created in the [framework setup](../../setup/frameworks.md). **The first run downloads the public dataset or model, so it needs internet**; later runs reuse the verified cache. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
+Linux, WSL or Codespaces (framework environment):
 
 ~~~sh
-python examples/model-service/scripts/run.py --output runs/module12
+.venv-ml/bin/python examples/model-service/scripts/run.py --output runs/module12
 ~~~
 
 Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module12/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module12/example/index.html "site-download:module12/example/index.html") without installing an execution interface.
@@ -68,8 +70,10 @@ The shared implementation is under src/practical_ml_ai; scripts and [commented n
 
 To launch the local interface after installing the deployment/framework extras:
 
+Linux, WSL or Codespaces (framework environment):
+
 ~~~sh
-python -m streamlit run apps/wine_quality.py --server.address 127.0.0.1
+.venv-ml/bin/python -m streamlit run apps/wine_quality.py --server.address 127.0.0.1
 ~~~
 
 The app has classifier and local-LLM forms. The CLI/text report remains a usable route when an interface is a barrier.
@@ -86,7 +90,7 @@ Turn your batch results into a justified recommendation with the [monitoring dec
 
 ## Practice and continue
 
-Complete [original practice](practice.md), then compare [worked feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+Complete [original practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
 
 Next: [Module 13](../13-ethics-fairness/index.md).
 

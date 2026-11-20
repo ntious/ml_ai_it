@@ -55,7 +55,7 @@ Add a message with unseen words and a suspicious suffix beyond the length limit.
 - **M09.4:** Compare neural errors with TF-IDF/logistic regression.
 - **M09.5:** Document privacy, prevalence, vocabulary limits, and reproducibility.
 
-Use [construction feedback](solutions.md) after an attempt and [recorded experiment feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
+Use the [practice notebook answers](solutions.md) after an attempt and [interpretation feedback](feedback.md) for the full workflow. Follow [the shared study workflow](../../study-workflow.md) for evidence, recovery and optional AI disclosure. Official assessment weights remain with your instructor.
 
 ## Evidence activity: Compare on the same messages
 

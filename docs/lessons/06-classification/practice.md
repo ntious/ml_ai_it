@@ -58,8 +58,16 @@ A single validation score depends on both the model's random choices and the rec
 
 Run it in the core environment from the `ml_ai_it` folder (it takes a few seconds):
 
+macOS/Linux:
+
 ```sh
-python -m practical_ml_ai.stability --output runs/module06-stability
+.venv/bin/python -m practical_ml_ai.stability --output runs/module06-stability
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m practical_ml_ai.stability --output runs/module06-stability
 ```
 
 - **Experiment A** keeps the Module 6 training/validation split and changes only a random forest's seed (11, 23, 37, 53, 71).
@@ -77,8 +85,16 @@ A random forest is used because its result depends on the seed; logistic regress
 
 Choosing settings is part of fitting, so it must stay inside the development data. This extension searches a fixed budget of 12 configurations across three model families using grouped 3-fold cross-validation on the Module 6 training records only, then scores each family's chosen configuration once on validation. Gradient boosting (scikit-learn's `HistGradientBoostingClassifier`, widely used for tabular data) is one candidate, not an assumed winner. The final test is never used.
 
+macOS/Linux:
+
 ```sh
-python -m practical_ml_ai.tuning --output runs/module06-tuning
+.venv/bin/python -m practical_ml_ai.tuning --output runs/module06-tuning
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m practical_ml_ai.tuning --output runs/module06-tuning
 ```
 
 Before running, predict which family will score best. Then open `cv_trials.csv` and `validation_choices.csv` and answer:
@@ -103,7 +119,7 @@ Keep your changed code, one hand-checked numerical claim, expected versus observ
 
 ## Get feedback, then revisit
 
-Open [practice solutions](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use [recorded-study feedback](feedback.md) after the complete reference run.
+Open [practice notebook answers](solutions.md) after your first attempt. Compare the reasoning and a changed case, not only the final number. Return to your original notebook and reproduce the central operation without copying. Use the [interpretation feedback](feedback.md) after the complete reference run.
 
 If using GenAI, keep a short disclosure of the help used and what you verified. Be able to explain and change the code independently; an equivalent no-assistant route uses the same hints and feedback. Never upload student records or credentials.
 
