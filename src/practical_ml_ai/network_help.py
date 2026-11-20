@@ -23,5 +23,7 @@ def describe(error):
             "and the download did not complete.\n"
             "Check that this computer is online and that a firewall or proxy allows "
             "archive.ics.uci.edu and huggingface.co, then run the same command again.\n"
+            "If the retry says to use a fresh output directory, the failed run saved partial results: "
+            "give --output (or --run) a new folder name. Keep the dataset and model caches.\n"
             "Once a download succeeds it is cached, and later runs work offline.\n"
             f"Meanwhile you can read the worked reports: {WORKED_REPORTS}")

@@ -200,10 +200,15 @@ def binary_metrics(actual, predicted):
 
 
 def new_run(path):
+    """Create a run directory, refusing one that already holds results.
+
+    An existing empty directory is reused: a run whose first download failed leaves one
+    behind, and retrying the same command should then work.
+    """
     path = Path(path)
-    if path.exists():
+    if path.exists() and (not path.is_dir() or any(path.iterdir())):
         raise ValueError("Use a fresh output directory; do not overwrite a completed study.")
-    path.mkdir(parents=True)
+    path.mkdir(parents=True, exist_ok=True)
     return path
 
 
