@@ -1,6 +1,12 @@
 # Module 12: Deployment and monitoring
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Expose shared model inference through a checked local app and rehearse monitoring with actual held-out records.
 
@@ -18,6 +24,9 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
 - **Supporting practice:** none
 - **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
@@ -26,11 +35,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Responsible-AI check:** Who owns alerts, escalation and rollback, and do logs retain personal data?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -101,3 +110,13 @@ Use the [guided construction and mastery check](guided.md) before the full study
 ## Optional project connection
 
 The [complete project exemplar](../../../projects/phishing-triage/README.md) connects development, frozen inference, invalid-input handling, offline monitoring and a rollback decision. It is an optional local delivery demonstration, not a live service.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: A local replay; production reliability is not measured and a diagnostic is not time drift.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

@@ -74,7 +74,7 @@ test('reading and module navigation remain usable without JavaScript', async ({ 
   try {
     await page.goto('http://127.0.0.1:4173/ml_ai_it/' + module3);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-    await page.locator('summary').click();
+    await page.locator('summary').filter({ hasText: /^Course outline$/ }).click();
     await expect(page.getByRole('navigation', { name: 'Course outline' })).toBeVisible();
     await page.getByRole('navigation', { name: 'Module pages' }).getByRole('link', { name: 'Foundation', exact: true }).click();
     await expect(page).toHaveURL(/03-data-processing\/foundation\.html$/);
@@ -277,4 +277,16 @@ test('repository counts are cached and failed requests leave a usable link', asy
   await page.reload();
   await expect(page.locator('[data-repo-stats]')).toBeHidden();
   await expect(page.locator('.repo-link')).toHaveAttribute('href', 'https://github.com/ntious/ml_ai_it/tree/main');
+});
+
+
+test('learner route is visible and instructor mapping expands by keyboard', async ({ page }) => {
+  await page.goto('lessons/01-foundations/index.html');
+  await expect(page.getByRole('heading', { name: 'Your route through this module' })).toBeVisible();
+  const disclosure = page.locator('details').filter({ has: page.locator('summary', { hasText: 'For instructors: course outcomes and evidence' }) });
+  await expect(disclosure).toHaveJSProperty('open', false);
+  await disclosure.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(disclosure).toHaveJSProperty('open', true);
+  await expect(page.getByRole('heading', { name: 'Check before continuing' })).toBeVisible();
 });

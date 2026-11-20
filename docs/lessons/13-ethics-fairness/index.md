@@ -1,6 +1,12 @@
 # Module 13: Ethics and fairness across the lifecycle
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Audit group error/selection rates on historical census-income data while questioning whether the target and task are justified.
 
@@ -18,6 +24,9 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring)
 - **Curriculum extension:** Responsible AI practice (privacy, fairness, limits)
@@ -27,11 +36,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Responsible-AI check:** Is the task itself justified, not only the metric?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -96,3 +105,13 @@ Use the [guided construction and mastery check](guided.md) before the full study
 ## Optional project connection
 
 The [optional evaluation investigation](../../advanced/evaluation.md) distinguishes seed variation, illustrative bootstrap uncertainty, calibration and assumed error costs. It does not turn benchmark metrics into a deployment or fairness approval.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Group error and selection-rate audit with a governance recommendation, including reasons not to deploy.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Descriptive fairness reasoning only; no legal compliance claim.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

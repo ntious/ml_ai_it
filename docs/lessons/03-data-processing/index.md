@@ -1,6 +1,12 @@
 # Module 3 Data processing
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Turn raw event records into documented, inspectable inputs for later analysis. This module works independently: its small sample, setup, explanations, and practice are available from this page. No earlier notebook state or Canvas assignment is required.
 
@@ -20,6 +26,9 @@ These are resource learning outcomes. They do not claim course credit or certifi
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO7 (Data representations)
 - **Supporting practice:** CLO4 (Frameworks and evaluation), CLO8 (Communication), CLO3 (Interpreting network data)
 - **Additional direct-evidence route (complete separately):** [NETWORK (CLO3)](../../cases/network-record-interpretation.md)
@@ -29,11 +38,11 @@ These are resource learning outcomes. They do not claim course credit or certifi
 - **Responsible-AI check:** Could rejecting or imputing records remove some sources or devices more than others, and who is told?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Prerequisite help
 
@@ -168,3 +177,13 @@ See [instructor guidance](instructor.md) for evidence selection, accessible rout
 ## Build understanding step by step
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Data dictionary, reconciled rejected-record counts and a cleaning rationale.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Original synthetic event records. Interpreting genuine network flows needs the bridge activity.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

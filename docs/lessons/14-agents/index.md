@@ -1,6 +1,12 @@
 # Module 14: Bounded agents and AI workflows
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Connect a real local LLM router to narrowly allowed read-only tools, with exact evidence and enforceable limits.
 
@@ -18,6 +24,9 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO4 (Frameworks and evaluation), CLO5 (GenAI and LLM integration), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO6 (Deployment and monitoring)
 - **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md); [MONITOR (CLO6)](../../advanced/monitoring-decision-record.md)
@@ -27,11 +36,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Responsible-AI check:** What actions may the agent take, who approves them, and how is a trace audited?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -85,3 +94,13 @@ This completes the 14-module sequence. Revisit the evaluation, deployment, and g
 ## Build understanding step by step
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Bounded router and tool-loop comparison with a recorded trace and failure cases.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: No full agent-framework implementation is claimed; tools are local and read-only.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

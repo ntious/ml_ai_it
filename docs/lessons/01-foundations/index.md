@@ -1,6 +1,12 @@
 # Module 1: ML and AI foundations for practical decisions
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Begin here if you are new to ML, AI, or Python. You will compare ways to solve a service problem, run a small program, change its input, and save an explained result. No prior programming, paid account, GPU, or AI service is required. Estimated effort: 60–90 minutes plus installation.
 
@@ -17,6 +23,9 @@ The script route supplies the same programming evidence when a notebook interfac
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO1 (Learning paradigms), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO4 (Frameworks and evaluation)
 - **Data and tools:** <span class="data-label">Synthetic</span>
@@ -25,11 +34,11 @@ The script route supplies the same programming evidence when a notebook interfac
 - **Responsible-AI check:** Who is affected if the rule or prediction is wrong, and who reviews it?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Understand the methods
 
@@ -102,3 +111,13 @@ Use the [foundation bridge](foundation.md) for the rule/model distinction and fi
 ## Build understanding step by step
 
 Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Problem brief, saved first run, and a reasoned interpretation of a changed input.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Introduces framing only; no trained model.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

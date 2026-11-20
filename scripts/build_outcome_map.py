@@ -77,7 +77,7 @@ def badges(labels):
 def module_block(data, item, module):
     names = summary(data)
     label = lambda ids: ", ".join(f"{x} ({names[x]})" for x in ids) or "none"
-    lines = [START, "",
+    lines = [START, "", '<details>', '<summary>For instructors: course outcomes and evidence</summary>', "",
              f"- **Direct evidence:** {label(item['direct'])}",
              f"- **Supporting practice:** {label(item['support'])}"]
     if item["additional_direct"]:
@@ -92,7 +92,7 @@ def module_block(data, item, module):
               f"- **Boundary:** {item['boundary']}",
               f"- **Responsible-AI check:** {item['responsible']}", "",
               "See the [outcome map](../../outcome-map.md) for all modules and the label definitions. "
-              "These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.", END]
+              "These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.", "", "</details>", END]
     return "\n".join(lines)
 
 

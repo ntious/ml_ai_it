@@ -1,6 +1,12 @@
 # Module 7: Clustering and learning paradigms
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Discover and describe chemistry groups without pretending that clusters are known classes or quality ranks.
 
@@ -18,6 +24,9 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO1 (Learning paradigms), CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** CLO2 (Applying ML/AI to IT operations), CLO3 (Interpreting network data)
 - **Additional direct-evidence route (complete separately):** [NETWORK (CLO3)](../../cases/network-record-interpretation.md)
@@ -27,11 +36,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Responsible-AI check:** Does the data support the name given to a cluster, or does the name imply more than it shows?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning route
 
-Follow [foundation](foundation.md) → [concepts and small cases](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md). Use the [practice notebook answers](solutions.md) after your attempt, then connect your work to the complete reference below.
 
 ## Entry support and topics
 
@@ -95,3 +104,13 @@ Use the [guided construction and mastery check](guided.md) before the full study
 ## Optional project connection
 
 Read [training-seed versus split stability](../../advanced/stability.md) before proposing a clustering stability study. The executable capstone uses classification; clustering needs its own partition-comparison measures.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Cluster-count choice made without labels, with an interpretation and its limits.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Wine groupings support interpretation technique; they do not demonstrate network-data interpretation.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.

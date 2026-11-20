@@ -1,6 +1,12 @@
 # Module 6: Classification and decision trees
 
-Read the overview and learning outcomes here, then follow the learning route. Return to this page’s run instructions for the complete study.
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
 
 Classify a declared human-rating threshold from real chemistry measurements, then explain the mistakes and decision threshold.
 
@@ -18,6 +24,9 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 
 <!-- OUTCOME_EVIDENCE_START -->
 
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
 - **Direct evidence:** CLO4 (Frameworks and evaluation), CLO8 (Communication)
 - **Supporting practice:** CLO1 (Learning paradigms), CLO2 (Applying ML/AI to IT operations)
 - **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
@@ -27,11 +36,11 @@ This module works independently: no earlier notebook state, Canvas assignment, p
 - **Responsible-AI check:** What do a false positive and a false negative cost, and who bears each?
 
 See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
 <!-- OUTCOME_EVIDENCE_END -->
 
-## Learning sequence for this module
 
-Follow [foundation](foundation.md) → [applied concepts](concepts.md) → [guided construction](guided.md) → [independent practice](practice.md) → [practice notebook answers](solutions.md) → the complete reference workflow below. If experienced, attempt practice first and use feedback to locate gaps.
 
 The practice sandbox uses development data and its own declared bounds. The full reference retains its model-selection, final-evaluation and artifact contract.
 
@@ -98,3 +107,13 @@ Use the [guided construction and mastery check](guided.md) before the full study
 ## Optional project connection
 
 Extend model comparison with the [optional grouped tuning investigation](../../advanced/tuning.md) and [complete capstone exemplar](../../../projects/phishing-triage/README.md). These are separate experiments; this module remains independently runnable.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Classifier comparison chosen on validation data, with a confusion-matrix explanation.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
