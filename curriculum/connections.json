@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "external_case": {
+    "repository": "https://github.com/ntious/3-Tier-LSTM",
+    "revision": "a6ca70ada14ce6b98f8ffccc71164d549c733dbb",
+    "reviewed_on": "2026-11-23",
+    "license": "MIT",
+    "execution": "source-and-committed-output review; upstream training not rerun",
+    "paths": [
+      "README.md",
+      "main.py",
+      "config.yaml",
+      "requirements.txt",
+      "environment.yml",
+      "src/load_data.py",
+      "src/preprocess.py",
+      "src/models/lstm_model.py",
+      "src/evaluate.py",
+      "src/explain.py",
+      "src/plots.py",
+      "tests/test_research_pipeline.py",
+      "outputs/reports/metrics_numeric.json",
+      "outputs/reports/classification_report.txt",
+      "outputs/figures/confusion_matrix.png"
+    ]
+  },
+  "modules": [
+    {
+      "id": 1,
+      "lesson": "docs/lessons/01-foundations/index.md",
+      "role": "Frame the decision",
+      "connection": "Identify the observation, input, target, output, and error costs.",
+      "case_page": "docs/cases/three-tier-lstm/01-study.md",
+      "encounter": "recommended",
+      "outcomes": [
+        "CLO1",
+        "CLO4",
+        "CLO7",
+        "CLO8"
+      ]
+    },
+    {
+      "id": 2,
+      "lesson": "docs/lessons/02-python-workflows/index.md",
+      "role": "Make the workflow readable",
+      "connection": "Use functions, files, configuration, and a controller to connect stages.",
+      "case_page": "docs/cases/three-tier-lstm/02-structure.md",
+      "encounter": "optional",
+      "outcomes": [
+        "CLO7",
+        "CLO8"
+      ]
+    },
+    {
+      "id": 3,
+      "lesson": "docs/lessons/03-data-processing/index.md",
+      "role": "Preserve data meaning",
+      "connection": "Separate the table, target, feature names, and array shapes.",
+      "case_page": "docs/cases/three-tier-lstm/03-data.md",
+      "encounter": "recommended",
+      "outcomes": [
+        "CLO7",
+        "CLO4"
+      ]
+    },
+    {
+      "id": 4,
+      "lesson": "docs/lessons/04-exploration/index.md",
+      "role": "Communicate the evidence",
+      "connection": "Choose a figure or table for a question and verify its labels.",
+      "case_page": "docs/cases/three-tier-lstm/04-figures.md",
+      "encounter": "optional",
+      "outcomes": [
+        "CLO8"
+      ]
+    },
+    {
+      "id": 5,
+      "lesson": "docs/lessons/05-regression/index.md",
+      "role": "Protect the experiment",
+      "connection": "Split before fitting learned transformations; define validation before resampling.",
+      "case_page": "docs/cases/three-tier-lstm/05-integrity.md",
+      "encounter": "recommended",
+      "outcomes": [
+        "CLO4"
+      ]
+    },
+    {
+      "id": 6,
+      "lesson": "docs/lessons/06-classification/index.md",
+      "role": "Compare decisions and errors",
+      "connection": "Distinguish feature selection from prediction; check a confusion matrix.",
+      "case_page": "docs/cases/three-tier-lstm/06-classification.md",
+      "encounter": "recommended",
+      "outcomes": [
+        "CLO1",
+        "CLO4",
+        "CLO8"
+      ]
+    },
+    {
+      "id": 7,
+      "lesson": "docs/lessons/07-clustering/index.md",
+      "role": "Choose the learning paradigm",
+      "connection": "Compare supervised classification with clustering and reinforcement learning.",
+      "case_page": "docs/cases/three-tier-lstm/07-paradigms.md",
+      "encounter": "contrast",
+      "outcomes": [
+        "CLO1"
+      ]
+    },
+    {
+      "id": 8,
+      "lesson": "docs/lessons/08-neural-networks/index.md",
+      "role": "Trace the complete study",
+      "connection": "Follow shapes through Dense, one-step LSTM, prediction, evaluation, and explanation.",
+      "case_page": "docs/cases/three-tier-lstm/08-integration.md",
+      "encounter": "checkpoint",
+      "outcomes": [
+        "CLO4",
+        "CLO7",
+        "CLO8"
+      ]
+    },
+    {
+      "id": 9,
+      "lesson": "docs/lessons/09-neural-nlp/index.md",
+      "role": "Change the input representation",
+      "connection": "Move from numeric measurements to text tokens; the tumor case itself is not NLP.",
+      "case_page": null,
+      "encounter": "complement",
+      "outcomes": [
+        "CLO4",
+        "CLO7"
+      ]
+    },
+    {
+      "id": 10,
+      "lesson": "docs/lessons/10-llm-workflows/index.md",
+      "role": "Add a generative component only for a defined task",
+      "connection": "Evaluate a language model separately; do not treat generated text as measured model evidence.",
+      "case_page": null,
+      "encounter": "complement",
+      "outcomes": [
+        "CLO5",
+        "CLO8"
+      ]
+    },
+    {
+      "id": 11,
+      "lesson": "docs/lessons/11-fine-tuning/index.md",
+      "role": "Decide whether adaptation is justified",
+      "connection": "Fine-tune a language model only with a separate justified objective, dataset, and evaluation.",
+      "case_page": null,
+      "encounter": "complement",
+      "outcomes": [
+        "CLO5",
+        "CLO4"
+      ]
+    },
+    {
+      "id": 12,
+      "lesson": "docs/lessons/12-deployment/index.md",
+      "role": "Separate training from serving",
+      "connection": "Identify the missing inference bundle, checked inputs, and monitoring contract.",
+      "case_page": "docs/cases/three-tier-lstm/12-deployment.md",
+      "encounter": "optional",
+      "outcomes": [
+        "CLO6"
+      ]
+    },
+    {
+      "id": 13,
+      "lesson": "docs/lessons/13-ethics-fairness/index.md",
+      "role": "Question whether to use the result",
+      "connection": "Connect errors, explanations, provenance, fairness limits, and human responsibility.",
+      "case_page": "docs/cases/three-tier-lstm/13-responsibility.md",
+      "encounter": "checkpoint",
+      "outcomes": [
+        "CLO8",
+        "RAI"
+      ]
+    },
+    {
+      "id": 14,
+      "lesson": "docs/lessons/14-agents/index.md",
+      "role": "Bound an automated assistant",
+      "connection": "Distinguish a fixed pipeline controller from an LLM that selects allowed tools.",
+      "case_page": null,
+      "encounter": "complement",
+      "outcomes": [
+        "CLO5",
+        "CLO6"
+      ]
+    }
+  ]
+}

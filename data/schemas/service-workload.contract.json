@@ -1,0 +1,24 @@
+{
+  "description": "Teaching contract documentation, not executable JSON Schema. Shared Python functions implement validation.",
+  "format": "UTF-8 CSV with header",
+  "required_fields": {
+    "date": "YYYY-MM-DD UTC calendar date",
+    "service": "authentication_gateway or network_monitor after trimming/lowercasing",
+    "requests": "nonnegative whole-number text within signed int64 range",
+    "p95_latency_ms": "finite nonnegative number, or blank when unavailable"
+  },
+  "key": [
+    "date",
+    "service"
+  ],
+  "policies": {
+    "extra_columns": "ignored",
+    "exact_duplicates": "keep first after documented normalization",
+    "conflicting_keys": "raise error; investigate rather than choose a version",
+    "missing_latency": "retain row for workload totals; omit only from latency-specific calculations",
+    "outlier": "flag using 1.5 IQR fences for investigation, never automatically delete",
+    "empty_input": "raise explanatory error",
+    "incomplete_calendar": "report supplied dates only; never infer zero workload for absent dates",
+    "arithmetic": "Combined requests must fit signed int64 so grouped sums remain exact; otherwise validation stops."
+  }
+}

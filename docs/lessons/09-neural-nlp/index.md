@@ -1,0 +1,116 @@
+# Module 9: Neural NLP for real messages
+
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
+
+Build a training-only vocabulary and neural text classifier on human-labeled messages, and compare it with a TF-IDF/logistic baseline.
+
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Small CPU runs demonstrate mechanisms, not production readiness.
+
+## Learning outcomes
+
+- **M09.1:** Explain tokenization, vocabulary, padding, embeddings, and pooling.
+- **M09.2:** Deduplicate real texts before a declared sample/split.
+- **M09.3:** Adapt text preprocessing only on training and train a TensorFlow text model.
+- **M09.4:** Compare neural errors with TF-IDF/logistic regression.
+- **M09.5:** Document privacy, prevalence, vocabulary limits, and reproducibility.
+
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
+- **Direct evidence:** CLO4 (Frameworks and evaluation), CLO7 (Data representations), CLO8 (Communication)
+- **Supporting practice:** CLO5 (GenAI and LLM integration), CLO2 (Applying ML/AI to IT operations)
+- **Additional direct-evidence route (complete separately):** [IT-OPS (CLO2)](../../cases/it-operations-evidence.md)
+- **Data and tools:** <span class="data-label">Real public</span>
+- **Evidence you produce:** Text representation comparison and a neural text classifier with documented failures. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
+- **Boundary:** Public SMS messages; masked reports, no production claim.
+- **Responsible-AI check:** Message text can contain personal content: what is masked, stored and shown?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
+<!-- OUTCOME_EVIDENCE_END -->
+
+
+
+## Entry support and topics
+
+Use the [foundation bridge](foundation.md) if these concepts are new. Basic Python/functions/files and the train/validation/test distinction are assumed with support from [Module 2](../02-python-workflows/index.md) and [Module 5](../05-regression/index.md).
+
+Tokens are discrete representations; embeddings are learned numeric vectors. Padding supports fixed-length batches and should not become a real word signal. Global average pooling summarizes token vectors. Unknown words and truncated messages limit what the model can use.
+
+## Real data and its limits
+
+UCI SMS Spam Collection; real human-labeled messages. Public messages may contain personal content; processing stays local and reports use hashes/contact masking. See the source register.
+
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+
+## The complete workflow
+
+Normalized text hashes remove duplicates and conflicting labels before a seeded 60/20/20 split of all 5,159 usable messages. TextVectorization adapts on training only, with at most 6,000 tokens and length 96. Lowercasing retains punctuation so emoticon-only messages do not become all-padding inputs. A 16-dimensional embedding, masked pooling and sigmoid output train for at most 25 epochs with patience 5. A class-balanced TF-IDF/logistic baseline fits the same training partition. Each method selects its threshold using validation balanced accuracy before final evaluation.
+
+## Run and inspect
+
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. Commands below start with the framework environment's Python, `.venv-ml` (Python 3.12), created in the [framework setup](../../setup/frameworks.md). **The first run downloads the public dataset or model, so it needs internet**; later runs reuse the verified cache. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
+Linux, WSL or Codespaces (framework environment):
+
+~~~sh
+.venv-ml/bin/python examples/sms-neural-nlp/scripts/run.py --output runs/module09
+~~~
+
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module09/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module09/example/index.html "site-download:module09/example/index.html") without installing an execution interface.
+
+Key artifacts:
+
+- learning_history.csv
+- comparison.csv
+- test_predictions.csv
+- vocabulary.json
+- vocabulary_preview.csv
+- model.keras
+
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module09/walkthrough.ipynb "site-download:module09/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. For interface choices and test coverage, see the [accessibility guide](../../accessibility/index.md).
+
+## Read selectively
+
+- **Core concept/reference:** [TensorFlow text classification](https://www.tensorflow.org/tutorials/keras/text_classification) — vectorization, embeddings, padding, and evaluation. Read these named sections, not an entire external course.
+- **Source/model context:** [central source register](../../data-sources.md), including the relevant official card and license.
+- **Optional depth:** Study a CNN/recurrent encoder, a larger vocabulary, or a length change with a predefined development protocol. Measure compute and errors. A different encoder is optional, not an entrance requirement.
+
+## Practice and continue
+
+Complete [original practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+
+Next: [Module 10](../10-llm-workflows/index.md).
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+## Optional project connection
+
+Use the [optional stability investigation](../../advanced/stability.md) to design a multi-seed extension. Keep training seeds, data splits and evaluation boundaries distinct.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Text representation comparison and a neural text classifier with documented failures.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: Public SMS messages; masked reports, no production claim.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Move from numeric measurements to text tokens; the tumor case itself is not NLP. Use the [course-wide lifecycle map](../../connections.md#module-9-change-the-input-representation) and the [research-case connection](../../cases/three-tier-lstm/extensions.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

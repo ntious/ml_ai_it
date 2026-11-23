@@ -1,0 +1,27 @@
+{
+  "description": "Teaching contract documentation, not an executable JSON Schema validator. The Python readers implement validation.",
+  "tickets": {
+    "format": "CSV with header",
+    "required_fields": {
+      "ticket_id": "nonempty text, unique within file",
+      "category": "nonempty text",
+      "minutes": "nonnegative integer represented as text"
+    },
+    "extra_fields": "ignored",
+    "empty_records": "header-only file accepted; average unavailable"
+  },
+  "events": {
+    "format": "JSON list of objects",
+    "required_fields": {
+      "event_id": "nonempty text, unique within file",
+      "source": "nonempty text",
+      "severity": [
+        "info",
+        "warning",
+        "critical"
+      ]
+    },
+    "extra_fields": "ignored"
+  },
+  "validation_policy": "Stop at first invalid record with text error. Keep raw inputs separate from output files."
+}

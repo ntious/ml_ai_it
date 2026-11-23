@@ -1,0 +1,2 @@
+# Preserve licensed raw fixtures byte-for-byte, including their recorded checksums.
+data/samples/** -text

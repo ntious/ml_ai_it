@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the tested commit or release you used. Dataset and model citations are separate."
+type: software
+title: "Practical Machine Learning and AI Systems"
+authors:
+  - family-names: "Nti"
+    given-names: "Isaac K."
+repository-code: "https://github.com/ntious/ml_ai_it"
+url: "https://ntious.github.io/ml_ai_it/"
+doi: "10.5281/zenodo.24046108"
+license: MIT
+abstract: "Modular educational source code and companion learning resources for practical machine learning and AI. Original educational prose is separately licensed CC BY 4.0; third-party data and models retain their own rights."

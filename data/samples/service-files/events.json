@@ -1,0 +1,5 @@
+[
+  {"event_id": "E001", "source": "authentication_gateway", "severity": "info"},
+  {"event_id": "E002", "source": "network_monitor", "severity": "warning"},
+  {"event_id": "E003", "source": "authentication_gateway", "severity": "info"}
+]

@@ -1,0 +1,24 @@
+{
+  "title": "Fictional daily service workload",
+  "license": "CC-BY-4.0",
+  "provenance": "Original deterministic teaching fixture; no actual events, people, systems, or measurements.",
+  "purpose": "Illustrate descriptive exploration and chart interpretation, not operational generalization.",
+  "deliberate_features": [
+    "24 distinct date/service observations plus one exact duplicate",
+    "One whitespace/case service-label inconsistency",
+    "One unavailable daily p95 latency",
+    "One deliberately constructed network spike on 2027-01-07"
+  ],
+  "statistical_unit": "One service on one UTC calendar date. Requests are counts; p95_latency_ms is an already aggregated per-service daily 95th percentile.",
+  "limitations": [
+    "Fictional values intentionally encode patterns; associations are constructed, not empirical findings.",
+    "Averaging daily service p95 values does not produce an overall request-level p95.",
+    "Not a held-out evaluation dataset or representative sample."
+  ],
+  "files": [
+    {
+      "path": "data/samples/service-workload/daily.csv",
+      "sha256": "719e0ef498a39179a417075ad42fa9f2397d453b5398392b82b218e28b4f2564"
+    }
+  ]
+}

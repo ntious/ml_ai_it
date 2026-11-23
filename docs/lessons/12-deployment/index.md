@@ -1,0 +1,126 @@
+# Module 12: Deployment and monitoring
+
+## Your route through this module
+
+1. **Read:** start with the [foundation](foundation.md) and [concepts](concepts.md); use the [guided activity](guided.md) to work through an example.
+2. **Run:** follow the complete-example commands on this page and inspect the saved output.
+3. **Practice:** attempt the [practice tasks](practice.md) before opening answers.
+4. **Check:** compare [practice notebook answers](solutions.md) and [interpretation feedback](feedback.md), then explain any corrections.
+
+
+Expose shared model inference through a checked local app and rehearse monitoring with actual held-out records.
+
+This module works independently: no earlier notebook state, Canvas assignment, paid AI account, or GPU is required. Allow approximately 2–3 hours plus first installation/downloads. Small CPU runs demonstrate mechanisms, not production readiness.
+
+## Learning outcomes
+
+- **M12.1:** Define an input/output contract and reject invalid requests.
+- **M12.2:** Serve the same trained classifier and a bounded local LLM workflow through Streamlit.
+- **M12.3:** Replay actual held-out records and measure prediction duration/outcomes.
+- **M12.4:** Distinguish batch diagnostics from genuine time drift and production service guarantees.
+- **M12.5:** Propose ownership, escalation, monitoring, and rollback criteria.
+
+## Course outcomes and evidence
+
+<!-- OUTCOME_EVIDENCE_START -->
+
+<details>
+<summary>For instructors: course outcomes and evidence</summary>
+
+- **Direct evidence:** CLO2 (Applying ML/AI to IT operations), CLO5 (GenAI and LLM integration), CLO6 (Deployment and monitoring), CLO8 (Communication)
+- **Supporting practice:** none
+- **Data and tools:** <span class="data-label">Real public</span> <span class="data-label">Local model</span>
+- **Evidence you produce:** Service contract, prediction log, batch monitoring table, and an escalation and rollback plan. See [practice and evidence tasks](practice.md) and the [assessment criteria](../../study-workflow.md#how-explanations-are-judged).
+- **Boundary:** A local replay; production reliability is not measured and a diagnostic is not time drift.
+- **Responsible-AI check:** Who owns alerts, escalation and rollback, and do logs retain personal data?
+
+See the [outcome map](../../outcome-map.md) for all modules and the label definitions. These are proposed evidence links to working course-outcome summaries; they do not establish complete outcome coverage.
+
+</details>
+<!-- OUTCOME_EVIDENCE_END -->
+
+
+
+## Entry support and topics
+
+Use the [foundation bridge](foundation.md) if these concepts are new. Basic Python/functions/files and the train/validation/test distinction are assumed with support from [Module 2](../02-python-workflows/index.md) and [Module 5](../05-regression/index.md).
+
+Training and serving must use the same feature order, transformation, and threshold. Schema validation protects the contract, but does not guarantee in-distribution inputs. Monitoring combines input quality, score/outcome behavior, resource cost, and operational responsibilities.
+
+## Real data and its limits
+
+UCI Wine Quality and SMS Spam Collection; actual records supply app defaults, inference, and replay. See the source register.
+
+[Sources, licenses, hashes, and model provenance](../../data-sources.md) distinguish external records from original teaching code. The reference study uses attributed public observations. Practice fixtures, derived task labels and authored evaluation controls are identified separately; they are not additional real-world observations. Public files still require responsible handling. Source versions are fixed after verified acquisition; changed cached/upstream bytes cause an error. The first data/model download requires internet; retain the cache for offline replay.
+
+## The complete workflow
+
+The app's default numeric values come from one actual held-out wine record. Checked inference rejects missing/extra fields, booleans, nonfinite values, and a documented technical range; it flags departures from observed training ranges. A separate form performs local LLM triage with strict rejection. Four actual-record batches measure durations and a training-referenced mean-shift diagnostic; source row order is not event time.
+
+## Run and inspect
+
+Download the [complete source](https://ntious.github.io/ml_ai_it/downloads/ml_ai_it-source.zip "site-download:ml_ai_it-source.zip") or use a checkout. Work from its ml_ai_it folder. Use the isolated [CPU framework environment](../../setup/frameworks.md). Run framework commands in the Linux CPU reference environment; see the [support matrix](../../status.md) for platform coverage. Reading the reports needs no framework installation. Commands below start with the framework environment's Python, `.venv-ml` (Python 3.12), created in the [framework setup](../../setup/frameworks.md). **The first run downloads the public dataset or model, so it needs internet**; later runs reuse the verified cache. If a download link does not open, use the [offline access route](../../setup/student-workspace.md#if-a-download-link-does-not-open).
+
+Linux, WSL or Codespaces (framework environment):
+
+~~~sh
+.venv-ml/bin/python examples/model-service/scripts/run.py --output runs/module12
+~~~
+
+Use a fresh output directory for a new run; completed studies are not silently overwritten. Open runs/module12/index.html or read summary.txt/summary.json and the companion CSV tables. [Read the verified worked report](https://ntious.github.io/ml_ai_it/downloads/module12/example/index.html "site-download:module12/example/index.html") without installing an execution interface.
+
+Key artifacts:
+
+- batch_monitoring.csv
+- prediction_log.csv
+- service_contract.json
+
+The shared implementation is under src/practical_ml_ai; scripts and [commented notebook](https://ntious.github.io/ml_ai_it/downloads/module12/walkthrough.ipynb "site-download:module12/walkthrough.ipynb") call the same functions. Keep the notebook inside the complete source tree. Named results and captioned/scoped tables support interpretation without a chart or screenshot. For interface choices and test coverage, see the [accessibility guide](../../accessibility/index.md).
+
+To launch the local interface after installing the deployment/framework extras:
+
+Linux, WSL or Codespaces (framework environment):
+
+~~~sh
+.venv-ml/bin/python -m streamlit run apps/wine_quality.py --server.address 127.0.0.1
+~~~
+
+The app has classifier and local-LLM forms. The CLI/text report remains a usable route when an interface is a barrier.
+
+## Read selectively
+
+- **Core concept/reference:** [Streamlit AppTest](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest) — form interaction, exceptions, and test limitations. Read these named sections, not an entire external course.
+- **Source/model context:** [central source register](../../data-sources.md), including the relevant official card and license.
+- **Optional depth:** Package a local container or add an authenticated service only under an explicit deployment plan. Do not expose the teaching app publicly by default. An extra platform is optional, with its own validation burden.
+
+## Optional bridge: monitoring decision record
+
+Turn your batch results into a justified recommendation with the [monitoring decision record](../../advanced/monitoring-decision-record.md). Its helper script drafts the evidence table; the decision and thresholds remain yours.
+
+## Practice and continue
+
+Complete [original practice](practice.md), then compare [interpretation feedback](feedback.md). [Instructor notes](instructor.md) map evidence and explain adaptation.
+
+Next: [Module 13](../13-ethics-fairness/index.md).
+
+## Build understanding step by step
+
+Use the [guided construction and mastery check](guided.md) before the full study. New programmers should start with [Python Foundation and readiness](../../start-here.md); use the [glossary](../../glossary.md) for notation.
+
+## Optional project connection
+
+The [complete project exemplar](../../../projects/phishing-triage/README.md) connects development, frozen inference, invalid-input handling, offline monitoring and a rollback decision. It is an optional local delivery demonstration, not a live service.
+
+## Check before continuing
+
+You have completed this module’s core learning route when you can:
+
+- Save and explain this evidence: Service contract, prediction log, batch monitoring table, and an escalation and rollback plan.
+- Attempt the practice tasks and explain a correction or why your original answer was sound.
+- Explain this limitation in your own words: A local replay; production reliability is not measured and a diagnostic is not time drift.
+
+Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Identify the missing inference bundle, checked inputs, and monitoring contract. Use the [course-wide lifecycle map](../../connections.md#module-12-separate-training-from-serving) and the [research-case connection](../../cases/three-tier-lstm/12-deployment.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.
