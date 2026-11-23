@@ -10,11 +10,12 @@ Reading route: no installation, data download, or model execution is required. O
 
 Read [the committed numeric report](https://github.com/ntious/3-Tier-LSTM/blob/a6ca70ada14ce6b98f8ffccc71164d549c733dbb/outputs/reports/metrics_numeric.json) and [the committed classification report](https://github.com/ntious/3-Tier-LSTM/blob/a6ca70ada14ce6b98f8ffccc71164d549c733dbb/outputs/reports/classification_report.txt). Optionally inspect [the source confusion matrix](https://github.com/ntious/3-Tier-LSTM/blob/a6ca70ada14ce6b98f8ffccc71164d549c733dbb/outputs/figures/confusion_matrix.png). The following table supplies the matrix's full numeric content: rows are source labels, columns are predicted labels.
 
-| Actual label | Predicted benign 0 | Predicted malignant 1 | Actual total |
-| --- | --- | --- | --- |
-| Benign 0 | 71 | 1 | 72 |
-| Malignant 1 | 3 | 39 | 42 |
-| Predicted total | 74 | 40 | 114 |
+| Actual label | Predicted benign 0 | Predicted malignant 1 |
+| --- | --- | --- |
+| Benign 0 | 71 | 1 |
+| Malignant 1 | 3 | 39 |
+
+In words: 71 benign cases were predicted benign and 1 was predicted malignant; 3 malignant cases were predicted benign and 39 were predicted malignant. There are 72 actual benign cases and 42 actual malignant cases, totaling 114. The predictions total 74 benign and 40 malignant.
 
 These are committed upstream results at the reviewed revision, not a new run or independently verified cohort. They allow a reading exercise without requiring image interpretation.
 
