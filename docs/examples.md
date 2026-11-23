@@ -45,3 +45,7 @@ Inspect denominators and group evidence from a historic income benchmark. Then t
 The examples teach transferable engineering decisions. They do not establish current operational performance, justify decisions about people, or certify a production system. Read the [model-use summaries](model-cards.md), [data rights](data-sources.md), and [access routes](accessibility/index.md).
 
 [Download the source](downloads.md) or [choose a module](modules.md) to make and explain your own bounded change.
+
+## Revisit one advanced research workflow
+
+The [3-Tier-LSTM reading companion](cases/three-tier-lstm/index.md) connects selected concepts inside a public research repository, with pinned files, an accessible error-count table, source-review caveats, and public feedback. Its stored upstream results were inspected, not reproduced by this reading activity. Use the [all-module map](connections.md) to locate NLP, GenAI, and agent topics that the source does not implement.

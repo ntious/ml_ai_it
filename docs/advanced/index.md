@@ -40,3 +40,7 @@ Use the [small stability experiment](core-stability.md) after Module 6, and the 
 ## Chronological anomaly triage
 
 The [optional anomaly extension](anomaly-detection.md) connects Modules 7 and 12 using existing core dependencies and pinned bike-demand data.
+
+## Inspect an advanced research pipeline
+
+Use the [3-Tier-LSTM source-reading companion](../cases/three-tier-lstm/index.md) to audit validation order, shape meaning, feature labels, explanation limits, and the deployment gap. The [all-module map](../connections.md) explains the shared lifecycle. This reading route does not add an unverified external training requirement.

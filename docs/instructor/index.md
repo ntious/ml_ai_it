@@ -48,3 +48,7 @@ Use the [reusable templates](authoring.md) to build consistent lessons, cases, a
 ## Observe the applied teaching prototype
 
 Use the [pilot protocol](teaching-prototype-pilot.md) and [owner/independent-review handoff](../maintenance/reviews/applied-teaching-prototype-handoff.md) for Modules 5, 6 and 8, which add concept figures and a real-data sandbox. The other modules have practice and solution notebooks with authored checks; the same protocol applies to them. Outcome text is unchanged. Technical solution execution is recorded separately from human learner evidence; the human pilot remains pending.
+
+## Connect the modules through one case
+
+Use the [research-case placement and evidence guide](connected-research-case.md) for bounded Canvas links, optional/core distinctions, synchronous or solo facilitation, and course-outcome support. The [detailed review](../maintenance/reviews/connected-lstm-guide-review.md) records the supplied guide review and source caveats.

@@ -121,3 +121,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Introduces framing only; no trained model.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Identify the observation, input, target, output, and error costs. Use the [course-wide lifecycle map](../../connections.md#module-1-frame-the-decision) and the [research-case connection](../../cases/three-tier-lstm/01-study.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

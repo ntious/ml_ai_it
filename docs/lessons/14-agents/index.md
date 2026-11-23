@@ -104,3 +104,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: No full agent-framework implementation is claimed; tools are local and read-only.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Distinguish a fixed pipeline controller from an LLM that selects allowed tools. Use the [course-wide lifecycle map](../../connections.md#module-14-bound-an-automated-assistant) and the [research-case connection](../../cases/three-tier-lstm/extensions.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

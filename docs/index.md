@@ -83,3 +83,7 @@ Start with [readiness and Python Foundation](start-here.md), then use the [separ
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24046108.svg)](https://doi.org/10.5281/zenodo.24046108)
 
 Use the [citation guide](citing.md) to cite the archived edition you used. The DOI above covers all archived versions.
+
+## See how the topics work together
+
+Follow the [course-wide lifecycle map](connections.md) and revisit the [3-Tier-LSTM research case](cases/three-tier-lstm/index.md) in short, no-installation reading encounters. Use the existing runnable IT project for implementation; the case also shows what the source does not yet establish.

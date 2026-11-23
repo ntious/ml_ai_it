@@ -42,3 +42,7 @@ IT examples recur through the course alongside other datasets. Each has limits, 
 | Module 10 extension | Runbook retrieval | Original fictional runbooks | The retrieval and abstention method; a small corpus |
 | Module 12 | Model service, monitoring and API | Real wine records as stand-in inputs | Contracts and monitoring mechanics; not IT telemetry |
 | Module 14 | Bounded tool workflow | Authored requests over real data | Permission boundaries; not real user intent |
+
+## Connect concepts across the course
+
+Use the [all-module lifecycle map](connections.md) when topics feel separate. The [progressive research case](cases/three-tier-lstm/index.md) supplies bounded source-reading encounters and a Module 8 integration checkpoint. Existing practice and the complete IT exemplar remain the runnable routes.

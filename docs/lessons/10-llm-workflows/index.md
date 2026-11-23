@@ -107,3 +107,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: No live closed-provider API call is established.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Evaluate a language model separately; do not treat generated text as measured model evidence. Use the [course-wide lifecycle map](../../connections.md#module-10-add-a-generative-component-only-for-a-defined-task) and the [research-case connection](../../cases/three-tier-lstm/extensions.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

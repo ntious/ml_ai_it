@@ -110,3 +110,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Public SMS messages; masked reports, no production claim.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Move from numeric measurements to text tokens; the tumor case itself is not NLP. Use the [course-wide lifecycle map](../../connections.md#module-9-change-the-input-representation) and the [research-case connection](../../cases/three-tier-lstm/extensions.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

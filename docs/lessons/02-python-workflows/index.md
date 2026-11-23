@@ -136,3 +136,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Small service files, not telemetry.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Use functions, files, configuration, and a controller to connect stages. Use the [course-wide lifecycle map](../../connections.md#module-2-make-the-workflow-readable) and the [research-case connection](../../cases/three-tier-lstm/02-structure.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

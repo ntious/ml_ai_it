@@ -115,3 +115,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Descriptive fairness reasoning only; no legal compliance claim.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Connect errors, explanations, provenance, fairness limits, and human responsibility. Use the [course-wide lifecycle map](../../connections.md#module-13-question-whether-to-use-the-result) and the [research-case connection](../../cases/three-tier-lstm/13-responsibility.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

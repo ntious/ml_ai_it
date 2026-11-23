@@ -105,7 +105,7 @@ for (const page of pages) {
   body = body.replace('<!-- HOME_ACTIONS -->', '<div class="hero-actions"><a class="button button-primary" href="' + relative(lessonURLForFirst()) + '">Start with Module 1</a><a class="button button-secondary" href="' + relative('modules.html') + '">Explore all modules</a><a class="text-action" href="' + config.repository + '/tree/main">View on GitHub <span aria-hidden="true">↗</span></a></div>');
   // Learner tasks first; maintainer material is reached from the footer.
   const navigation = [
-    ['setup/index.html', 'Get started'], ['modules.html', 'Modules'], ['examples.html', 'Examples'], ['projects/phishing-triage/index.html', 'Complete project'],
+    ['setup/index.html', 'Get started'], ['modules.html', 'Modules'], ['connections.html', 'Connections'], ['examples.html', 'Examples'], ['projects/phishing-triage/index.html', 'Complete project'],
     ['advanced/index.html', 'Advanced'], ['downloads.html', 'Downloads'], ['search.html', 'Search'], ['instructor/index.html', 'Teach']
   ].map(([url, label]) => '<li><a href="' + relative(url) + '"' + (url === page.output ? ' aria-current="page"' : '') + '>' + label + '</a></li>').join('');
   const sourcePath = slash(path.relative(root, page.source));

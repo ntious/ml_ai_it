@@ -114,3 +114,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Wine groupings support interpretation technique; they do not demonstrate network-data interpretation.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Compare supervised classification with clustering and reinforcement learning. Use the [course-wide lifecycle map](../../connections.md#module-7-choose-the-learning-paradigm) and the [research-case connection](../../cases/three-tier-lstm/07-paradigms.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.
