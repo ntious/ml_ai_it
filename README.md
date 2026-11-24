@@ -159,3 +159,7 @@ Maintained by [Isaac K. Nti](https://github.com/ntious). Code is licensed under 
 ## Authorship and course relationship
 
 **Isaac K. Nti** developed the original explanations, activities, worked examples, code, and supporting materials in this repository. These supplementary resources support the course he teaches in the School of Information Technology at the University of Cincinnati. The official course description, course learning outcomes, and module learning outcomes are attributed to the University of Cincinnati and are excluded from this repository’s license grants. External materials retain their respective attribution and terms. These resources supplement the official syllabus. See [licensing and institutional boundaries](OER_LICENSE.md).
+
+## Connect the topics as one workflow
+
+The [course-wide lifecycle map](docs/connections.md) links all 14 modules through their inputs, outputs, fitted state, evidence, and decisions. A [progressive 3-Tier-LSTM research companion](docs/cases/three-tier-lstm/index.md) adds bounded source reading, an integration checkpoint, and project transfer alongside the existing runnable IT exemplar.

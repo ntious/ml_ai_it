@@ -120,3 +120,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: A local replay; production reliability is not measured and a diagnostic is not time drift.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Identify the missing inference bundle, checked inputs, and monitoring contract. Use the [course-wide lifecycle map](../../connections.md#module-12-separate-training-from-serving) and the [research-case connection](../../cases/three-tier-lstm/12-deployment.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

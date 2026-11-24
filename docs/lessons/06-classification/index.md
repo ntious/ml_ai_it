@@ -117,3 +117,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Wine chemistry builds technique; genuine flow classification is in the RT-IoT extension.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Distinguish feature selection from prediction; check a confusion matrix. Use the [course-wide lifecycle map](../../connections.md#module-6-compare-decisions-and-errors) and the [research-case connection](../../cases/three-tier-lstm/06-classification.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

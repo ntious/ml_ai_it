@@ -1,5 +1,12 @@
 # Changelog
 
+## Connected research reading route
+
+- Connect all 14 modules through one lifecycle map and a source-pinned 3-Tier-LSTM reading companion.
+- Add short encounters, a Module 8 integration checkpoint, optional extension bridges, accessible metric evidence, feedback, project transfer, and instructor placement/outcome guidance.
+- Record source-review caveats without changing the upstream research code or the existing course outcomes and assessments.
+- Add targeted reading/browser checks that reuse verified outputs only when computational materials are unchanged.
+
 ## Learner recovery and guidance
 
 - Shared download boundaries now explain network failures in notebooks and scripts while preserving the original error. Environment-creation errors receive setup guidance.

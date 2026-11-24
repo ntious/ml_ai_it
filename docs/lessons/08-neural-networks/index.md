@@ -111,3 +111,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: CPU-scale wine classification; IT operations transfer and production scale are not demonstrated.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Follow shapes through Dense, one-step LSTM, prediction, evaluation, and explanation. Use the [course-wide lifecycle map](../../connections.md#module-8-trace-the-complete-study) and the [research-case connection](../../cases/three-tier-lstm/08-integration.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

@@ -31,7 +31,7 @@ try {
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await context.newPage();
   const results = [];
-  for (const route of ['overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html',
+  for (const route of ['connections.html', 'cases/three-tier-lstm/index.html', 'cases/three-tier-lstm/08-integration.html', 'cases/three-tier-lstm/04-figures.html', 'cases/three-tier-lstm/extensions.html', 'overview.html', 'start-here.html', 'setup/python-bridge.html', 'lessons/08-neural-networks/guided.html', 'cases/phishing.html',
     'projects/phishing-triage/index.html', 'projects/phishing-triage/reports/annotated-report.html',
     'advanced/index.html', 'advanced/tuning.html', 'advanced/stability.html', 'advanced/evaluation.html',
     ...JSON.parse(await fs.readFile(path.join(root, 'curriculum/modules.json'), 'utf8')).modules.flatMap(({ slug }) =>

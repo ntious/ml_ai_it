@@ -7,6 +7,14 @@
   --border: #c8b9bd; --code: #f1edef; --link: #b8011c; --warm: #f2ead9;
   --brand: #e00122; --brand-ink: #ffffff;
 }
+
+/* The lifecycle remains an ordinary ordered list in source and without CSS.
+   The layout provides a compact text diagram without color-only meaning. */
+.pipeline-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.8rem; padding-inline-start: 1.5rem; }
+.pipeline-stages li { padding: .8rem; border: 1px solid var(--border); border-radius: .4rem; background: var(--paper); }
+.pipeline-stages strong, .pipeline-stages span { display: block; }
+.pipeline-stages span { margin-top: .4rem; }
+@media (max-width: 42rem) { .pipeline-stages { grid-template-columns: 1fr; } }
 /* Palette and appearance are independent: red is the default, teal is optional. */
 :root[data-palette="teal"] {
   --brand: var(--accent); --brand-ink: var(--accent-ink);

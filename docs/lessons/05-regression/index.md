@@ -207,3 +207,7 @@ You have completed this module’s core learning route when you can:
 - Explain this limitation in your own words: Bike demand is a service-demand analogue, not IT incident telemetry.
 
 Use the answer pages to resolve gaps before continuing. Optional extensions are separate from this checklist.
+
+## Connect this module to the whole study
+
+Split before fitting learned transformations; define validation before resampling. Use the [course-wide lifecycle map](../../connections.md#module-5-protect-the-experiment) and the [research-case connection](../../cases/three-tier-lstm/05-integrity.md). This is a short reading/reflection route; use this module's existing practice for implementation evidence.

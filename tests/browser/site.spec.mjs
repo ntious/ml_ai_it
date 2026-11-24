@@ -290,3 +290,62 @@ test('learner route is visible and instructor mapping expands by keyboard', asyn
   await expect(disclosure).toHaveJSProperty('open', true);
   await expect(page.getByRole('heading', { name: 'Check before continuing' })).toBeVisible();
 });
+
+// The connected-case route is source reading, with no external model or data
+// download. Follow a real learner journey through the map and public feedback.
+test('connected map leads from Module 8 to the integrated study and feedback', async ({ page }) => {
+  await page.goto('connections.html');
+  await expect(page.locator('.pipeline-stages li')).toHaveCount(6);
+  await page.screenshot({ path: 'browser-results/connected-map-desktop.png' });
+  await page.getByRole('link', { name: 'Module 8 lesson', exact: true }).click();
+  await page.getByRole('link', { name: 'research-case connection', exact: true }).click();
+  await expect(page).toHaveURL(/cases\/three-tier-lstm\/08-integration\.html$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Module 8 Bring the pieces together');
+  await page.screenshot({ path: 'browser-results/connected-checkpoint-desktop.png' });
+  const model = page.locator('main a').filter({ hasText: 'src/models/lstm_model.py' });
+  await expect(model).toHaveAttribute('href', /3-Tier-LSTM\/blob\/[0-9a-f]{40}\/src\/models\/lstm_model\.py$/);
+  await page.getByRole('link', { name: 'worked feedback', exact: true }).click();
+  await expect(page).toHaveURL(/feedback\.html#module-8$/);
+  await expect(page.getByRole('heading', { name: 'Module 8', exact: true })).toBeVisible();
+});
+
+test('committed confusion counts have a text table and fit a narrow reader', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('cases/three-tier-lstm/04-figures.html');
+  await expect(page.getByRole('cell', { name: '71', exact: true })).toBeVisible();
+  await expect(page.getByRole('cell', { name: '39', exact: true })).toBeVisible();
+  await expect(page.locator('main')).toContainText('not a new run');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBeTruthy();
+  await page.screenshot({ path: 'browser-results/connected-case-mobile.png', fullPage: true });
+});
+
+test('connected reading and its source links remain available without JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 1000 } });
+  const page = await context.newPage();
+  try {
+    await page.goto(new URL('connections.html', test.info().project.use.baseURL).href);
+    await expect(page.locator('.pipeline-stages li')).toHaveCount(6);
+    await page.getByRole('link', { name: '3-Tier-LSTM case', exact: true }).click();
+    await expect(page).toHaveURL(/cases\/three-tier-lstm\/index\.html$/);
+    await expect(page.getByRole('link', { name: 'Bring the pieces together', exact: true })).toBeVisible();
+  } finally { await context.close(); }
+});
+
+test('connected case pages retain semantic reading and narrow-screen access', async ({ page }) => {
+  const routes = ['connections.html', 'instructor/connected-research-case.html',
+    ...['index', '01-study', '02-structure', '03-data', '04-figures', '05-integrity',
+      '06-classification', '07-paradigms', '08-integration', '12-deployment',
+      '13-responsibility', 'extensions', 'transfer', 'feedback', 'source-notes'].map(name => `cases/three-tier-lstm/${name}.html`)];
+  for (const route of routes) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(route);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+    await page.addScriptTag({ path: axePath });
+    const violations = await page.evaluate(async () => (await window.axe.run(document, {
+      runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa'] }
+    })).violations.map(item => ({ id: item.id, targets: item.nodes.map(node => node.target) })));
+    expect(violations, route).toEqual([]);
+    await page.setViewportSize({ width: 320, height: 900 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), route).toBeTruthy();
+  }
+});
